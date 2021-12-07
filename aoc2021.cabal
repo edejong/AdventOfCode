@@ -1,0 +1,62 @@
+cabal-version:      2.4
+name:               aoc2021
+version:            0.1.0.0
+
+-- A short (one-line) description of the package.
+-- synopsis:
+
+-- A longer description of the package.
+-- description:
+
+-- A URL where users can report bugs.
+-- bug-reports:
+
+-- The license under which the package is released.
+-- license:
+author:             Erik de Jong
+maintainer:         ecco256@gmail.com
+
+-- A copyright notice.
+-- copyright:
+-- category:
+extra-source-files: CHANGELOG.md
+
+executable aoc2020
+    main-is:          Main.hs
+    other-modules:
+          Paths_aoc2021
+        , Day01.ReportRepair
+        , Day02.PasswordPhilosophy
+        , Day03.TobogganTrajectory
+        , Day04.PassportProcessing
+        , Day05.BinaryBoarding
+        , Day06.CustomCustoms
+        -- !!aoc2020 module hook!! --
+    build-depends:
+          base >=4.7 && <5
+        , containers
+        , split
+    hs-source-dirs:   2020
+    ghc-options:      -threaded -rtsopts -with-rtsopts=-N
+    default-language: Haskell2010
+
+executable aoc2021
+    main-is:          Main.hs
+    other-modules:
+          Paths_aoc2021
+        , Day01.SonarSweep
+        , Day02.Dive
+        , Day03.BinaryDiagnostic
+        , Day04.Bingo
+        , Day05.HydrothermalVenture
+        , Day06.Lanternfish
+        , Day07.TheTreacherOfWhales
+        -- !!aoc2021 module hook!! --
+    build-depends:
+          array
+        , base >=4.7 && <5
+        , containers
+        , split
+    hs-source-dirs:   2021
+    ghc-options:      -threaded -rtsopts -with-rtsopts=-N
+    default-language: Haskell2010
