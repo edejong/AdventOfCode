@@ -7,6 +7,9 @@ import qualified Day04.Bingo
 import qualified Day05.HydrothermalVenture
 import qualified Day06.Lanternfish
 import qualified Day07.TheTreacherOfWhales
+import qualified Day08.SevenSegmentSearch
+import qualified Day09.SmokeBasin
+-- !!aoc2021 import hook!! --
 import System.Environment ( getArgs, getProgName )
 import System.Exit ( die )
 
@@ -20,6 +23,9 @@ tmp =
   , Day05.HydrothermalVenture.main
   , Day06.Lanternfish.main
   , Day07.TheTreacherOfWhales.main
+  , Day08.SevenSegmentSearch.main
+  , Day09.SmokeBasin.main
+  -- !!aoc2021 main hook!! --
   ]
 
 main :: IO ()

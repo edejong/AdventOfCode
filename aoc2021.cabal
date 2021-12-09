@@ -51,6 +51,8 @@ executable aoc2021
         , Day05.HydrothermalVenture
         , Day06.Lanternfish
         , Day07.TheTreacherOfWhales
+        , Day08.SevenSegmentSearch
+        , Day09.SmokeBasin
         -- !!aoc2021 module hook!! --
     build-depends:
           array
