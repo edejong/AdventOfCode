@@ -31,10 +31,12 @@ executable aoc2020
         , Day04.PassportProcessing
         , Day05.BinaryBoarding
         , Day06.CustomCustoms
+        , Day07.HandyHaversacks
         -- !!aoc2020 module hook!! --
     build-depends:
           base >=4.7 && <5
         , containers
+        , parsec
         , split
     hs-source-dirs:   2020
     ghc-options:      -threaded -rtsopts -with-rtsopts=-N
@@ -53,6 +55,7 @@ executable aoc2021
         , Day07.TheTreacherOfWhales
         , Day08.SevenSegmentSearch
         , Day09.SmokeBasin
+        , Day10.SyntaxScoring
         -- !!aoc2021 module hook!! --
     build-depends:
           array

@@ -6,6 +6,7 @@ import qualified Day03.TobogganTrajectory
 import qualified Day04.PassportProcessing
 import qualified Day05.BinaryBoarding
 import qualified Day06.CustomCustoms
+import qualified Day07.HandyHaversacks
 -- !!aoc2020 import hook!! --
 import System.Environment ( getArgs, getProgName )
 import System.Exit ( die )
@@ -19,6 +20,7 @@ tmp =
   , Day04.PassportProcessing.main
   , Day05.BinaryBoarding.main
   , Day06.CustomCustoms.main
+  , Day07.HandyHaversacks.main
   -- !!aoc2020 main hook!! --
   ]
 
