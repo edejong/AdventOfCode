@@ -14,25 +14,28 @@ do
         t) title=${OPTARG};;
     esac
 done
+
+[ -z "$year" ] || [ -z "$day" ] || [ -z "$title" ] && usage
+
+title=${title// /}
+module="Day${day}.${title// /}"
+
 echo "Year: $year";
 echo "Day: $day";
 echo "Title: $title";
-
-[ -z "$year" ] || [ -z "$day" ] || [ -z "$title" ] && usage
+echo "Module: $module";
 
 mkdir -p $year/Day$day
 touch $year/data/day$day.txt
 touch $year/data/day$day-test.txt
 cat >$year/Day$day/"$title".hs <<EOL
-module Day${day}.${title} where
+module ${module} where
 
 main :: IO ()
 main = do
     xs <- readFile "${year}/data/day${day}-test.txt"
     print xs
 EOL
-
-module="Day${day}.${title}"
 
 insert_at_hook()
 {

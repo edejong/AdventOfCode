@@ -11,6 +11,7 @@ import qualified Day08.SevenSegmentSearch
 import qualified Day09.SmokeBasin
 import qualified Day10.SyntaxScoring
 import qualified Day11.DumboOctopus
+import qualified Day12.PassagePathing
 -- !!aoc2021 import hook!! --
 import System.Environment ( getArgs, getProgName )
 import System.Exit ( die )
@@ -29,6 +30,7 @@ tmp =
   , Day09.SmokeBasin.main
   , Day10.SyntaxScoring.main
   , Day11.DumboOctopus.main
+  , Day12.PassagePathing.main
   -- !!aoc2021 main hook!! --
   ]
 
