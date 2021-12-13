@@ -3,8 +3,7 @@ module Day07.HandyHaversacks where
 import Text.ParserCombinators.Parsec
 import Text.Parsec (endOfLine)
 import Text.Parsec.Token (GenTokenParser(whiteSpace))
-import Data.List
-import Data.Map hiding (foldr, map)
+import Data.Map ( Map, (!), empty, fromList, insertWith, toList )
 import Data.Graph (graphFromEdges, dfs)
 import Data.Maybe (fromJust)
 
