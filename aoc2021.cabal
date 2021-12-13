@@ -58,6 +58,7 @@ executable aoc2021
         , Day10.SyntaxScoring
         , Day11.DumboOctopus
         , Day12.PassagePathing
+        , Day13.TransparentOrigami
         -- !!aoc2021 module hook!! --
     build-depends:
           array
