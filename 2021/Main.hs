@@ -13,6 +13,8 @@ import qualified Day10.SyntaxScoring
 import qualified Day11.DumboOctopus
 import qualified Day12.PassagePathing
 import qualified Day13.TransparentOrigami
+import qualified Day14.ExtendedPolymerization
+import qualified Day15.Chiton
 -- !!aoc2021 import hook!! --
 import System.Environment ( getArgs, getProgName )
 import System.Exit ( die )
@@ -33,6 +35,8 @@ tmp =
   , Day11.DumboOctopus.main
   , Day12.PassagePathing.main
   , Day13.TransparentOrigami.main
+  , Day14.ExtendedPolymerization.main
+  , Day15.Chiton.main
   -- !!aoc2021 main hook!! --
   ]
 

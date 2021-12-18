@@ -59,11 +59,15 @@ executable aoc2021
         , Day11.DumboOctopus
         , Day12.PassagePathing
         , Day13.TransparentOrigami
+        , Day14.ExtendedPolymerization
+        , Day15.Chiton
         -- !!aoc2021 module hook!! --
     build-depends:
           array
         , base >=4.7 && <5
         , containers
+        , heap
+        , mtl
         , split
     hs-source-dirs:   2021
     ghc-options:      -threaded -rtsopts -with-rtsopts=-N
