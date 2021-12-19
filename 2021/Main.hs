@@ -15,6 +15,7 @@ import qualified Day12.PassagePathing
 import qualified Day13.TransparentOrigami
 import qualified Day14.ExtendedPolymerization
 import qualified Day15.Chiton
+import qualified Day16.PacketDecoder
 -- !!aoc2021 import hook!! --
 import System.Environment ( getArgs, getProgName )
 import System.Exit ( die )
@@ -37,6 +38,7 @@ tmp =
   , Day13.TransparentOrigami.main
   , Day14.ExtendedPolymerization.main
   , Day15.Chiton.main
+  , Day16.PacketDecoder.main
   -- !!aoc2021 main hook!! --
   ]
 

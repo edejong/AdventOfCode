@@ -61,6 +61,7 @@ executable aoc2021
         , Day13.TransparentOrigami
         , Day14.ExtendedPolymerization
         , Day15.Chiton
+        , Day16.PacketDecoder
         -- !!aoc2021 module hook!! --
     build-depends:
           array
@@ -68,6 +69,7 @@ executable aoc2021
         , containers
         , heap
         , mtl
+        , parsec
         , split
     hs-source-dirs:   2021
     ghc-options:      -threaded -rtsopts -with-rtsopts=-N
