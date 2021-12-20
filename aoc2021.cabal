@@ -62,6 +62,7 @@ executable aoc2021
         , Day14.ExtendedPolymerization
         , Day15.Chiton
         , Day16.PacketDecoder
+        , Day17.TrickShot
         -- !!aoc2021 module hook!! --
     build-depends:
           array
