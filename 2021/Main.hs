@@ -17,6 +17,7 @@ import qualified Day14.ExtendedPolymerization
 import qualified Day15.Chiton
 import qualified Day16.PacketDecoder
 import qualified Day17.TrickShot
+import qualified Day18.Snailfish
 -- !!aoc2021 import hook!! --
 import System.Environment ( getArgs, getProgName )
 import System.Exit ( die )
@@ -41,6 +42,7 @@ tmp =
   , Day15.Chiton.main
   , Day16.PacketDecoder.main
   , Day17.TrickShot.main
+  , Day18.Snailfish.main
   -- !!aoc2021 main hook!! --
   ]
 

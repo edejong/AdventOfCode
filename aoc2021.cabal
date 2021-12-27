@@ -63,6 +63,7 @@ executable aoc2021
         , Day15.Chiton
         , Day16.PacketDecoder
         , Day17.TrickShot
+        , Day18.Snailfish
         -- !!aoc2021 module hook!! --
     build-depends:
           array
