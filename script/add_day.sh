@@ -25,6 +25,11 @@ echo "Day: $day";
 echo "Title: $title";
 echo "Module: $module";
 
+if [[ -d "$year/Day$day" ]]; then
+  echo "no"
+  exit 2
+fi
+
 mkdir -p $year/Day$day
 touch $year/data/day$day.txt
 touch $year/data/day$day-test.txt
