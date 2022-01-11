@@ -64,12 +64,14 @@ executable aoc2021
         , Day16.PacketDecoder
         , Day17.TrickShot
         , Day18.Snailfish
+        , Day19.BeaconScanner
         -- !!aoc2021 module hook!! --
     build-depends:
           array
         , base >=4.7 && <5
         , containers
         , heap
+        , hmatrix
         , mtl
         , parsec
         , split
