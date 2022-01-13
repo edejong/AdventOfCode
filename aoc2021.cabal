@@ -65,6 +65,7 @@ executable aoc2021
         , Day17.TrickShot
         , Day18.Snailfish
         , Day19.BeaconScanner
+        , Day20.TrenchMap
         -- !!aoc2021 module hook!! --
     build-depends:
           array
@@ -74,6 +75,7 @@ executable aoc2021
         , hmatrix
         , mtl
         , parsec
+        , repa
         , split
     hs-source-dirs:   2021
     ghc-options:      -threaded -rtsopts -with-rtsopts=-N

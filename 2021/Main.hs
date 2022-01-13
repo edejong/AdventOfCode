@@ -19,6 +19,7 @@ import qualified Day16.PacketDecoder
 import qualified Day17.TrickShot
 import qualified Day18.Snailfish
 import qualified Day19.BeaconScanner
+import qualified Day20.TrenchMap
 -- !!aoc2021 import hook!! --
 import System.Environment ( getArgs, getProgName )
 import System.Exit ( die )
@@ -45,6 +46,7 @@ tmp =
   , Day17.TrickShot.main
   , Day18.Snailfish.main
   , Day19.BeaconScanner.main
+  , Day20.TrenchMap.main
   -- !!aoc2021 main hook!! --
   ]
 
