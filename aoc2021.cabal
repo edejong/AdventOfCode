@@ -66,6 +66,7 @@ executable aoc2021
         , Day18.Snailfish
         , Day19.BeaconScanner
         , Day20.TrenchMap
+        , Day21.DiracDice
         -- !!aoc2021 module hook!! --
     build-depends:
           array
@@ -73,6 +74,7 @@ executable aoc2021
         , containers
         , heap
         , hmatrix
+        , MemoTrie
         , mtl
         , parsec
         , repa
