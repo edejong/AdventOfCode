@@ -26,7 +26,7 @@ echo "Title: $title";
 echo "Module: $module";
 
 if [[ -d "$year/Day$day" ]]; then
-  echo "no"
+  echo "(!) Already exists, exiting"
   exit 2
 fi
 

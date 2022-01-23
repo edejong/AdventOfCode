@@ -67,6 +67,7 @@ executable aoc2021
         , Day19.BeaconScanner
         , Day20.TrenchMap
         , Day21.DiracDice
+        , Day22.ReactorReboot
         -- !!aoc2021 module hook!! --
     build-depends:
           array

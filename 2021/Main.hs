@@ -21,6 +21,7 @@ import qualified Day18.Snailfish
 import qualified Day19.BeaconScanner
 import qualified Day20.TrenchMap
 import qualified Day21.DiracDice
+import qualified Day22.ReactorReboot
 -- !!aoc2021 import hook!! --
 import System.Environment ( getArgs, getProgName )
 import System.Exit ( die )
@@ -49,6 +50,7 @@ tmp =
   , Day19.BeaconScanner.main
   , Day20.TrenchMap.main
   , Day21.DiracDice.main
+  , Day22.ReactorReboot.main
   -- !!aoc2021 main hook!! --
   ]
 
