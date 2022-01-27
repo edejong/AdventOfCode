@@ -1,12 +1,16 @@
 cabal-version:      2.4
-name:               aoc2021
+name:               adventOfCode
 version:            0.1.0.0
 
 -- A short (one-line) description of the package.
--- synopsis:
+synopsis: My Advent of Code solutions in Haskell.
 
 -- A longer description of the package.
--- description:
+description:
+  These are my solutions for Advent of Code in pure Haskell.
+  I don't aim to write any production code here. What I do aim
+  for is performance and conciseness without writing any code
+  that is too obfuscated.
 
 -- A URL where users can report bugs.
 -- bug-reports:
@@ -24,7 +28,7 @@ extra-source-files: CHANGELOG.md
 executable aoc2020
     main-is:          Main.hs
     other-modules:
-          Paths_aoc2021
+          Paths_adventOfCode
         , Day01.ReportRepair
         , Day02.PasswordPhilosophy
         , Day03.TobogganTrajectory
@@ -45,7 +49,7 @@ executable aoc2020
 executable aoc2021
     main-is:          Main.hs
     other-modules:
-          Paths_aoc2021
+          Paths_adventOfCode
         , Day01.SonarSweep
         , Day02.Dive
         , Day03.BinaryDiagnostic
@@ -68,6 +72,7 @@ executable aoc2021
         , Day20.TrenchMap
         , Day21.DiracDice
         , Day22.ReactorReboot
+        , Day23.Amphipod
         -- !!aoc2021 module hook!! --
     build-depends:
           array
@@ -82,4 +87,5 @@ executable aoc2021
         , split
     hs-source-dirs:   2021
     ghc-options:      -threaded -rtsopts -with-rtsopts=-N
+    -- ghc-options:      -O2 -threaded -prof -fprof-auto "-with-rtsopts=-N -p -s -h -i0.1"
     default-language: Haskell2010

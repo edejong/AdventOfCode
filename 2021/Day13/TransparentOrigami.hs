@@ -1,7 +1,6 @@
 {-# LANGUAGE TypeApplications #-}
 {-# OPTIONS_GHC -Wno-incomplete-patterns #-}
 module Day13.TransparentOrigami where
-
 import Data.Array
     ( Ix(range), (//), bounds, elems, listArray, Array )
 import Data.Bifunctor ( Bifunctor(second, first) )
