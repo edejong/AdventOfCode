@@ -78,11 +78,13 @@ executable aoc2021
           array
         , base >=4.7 && <5
         , containers
+        , hashable
         , heap
         , hmatrix
         , MemoTrie
         , mtl
         , parsec
+        , psqueues
         , repa
         , split
     hs-source-dirs:   2021
