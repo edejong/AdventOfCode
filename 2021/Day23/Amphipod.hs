@@ -12,8 +12,7 @@ import Data.Hashable
 import Debug.Trace (trace)
 import Data.Bifunctor (Bifunctor(first))
 
-data FrontOrBack = Front | Back deriving (Enum, Eq, Generic, Ord, Show)
-data BurrowPos = Hallway { _hallwayPos::Int } | Room { _roomNo::Int, _roomPos::FrontOrBack } deriving (Eq, Generic, Ord, Show)
+data BurrowPos = Hallway { _hallwayPos::Int } | Room { _roomNo::Int, _roomPos::Int } deriving (Eq, Generic, Ord, Show)
 data AmphipodType = A | B | C | D deriving (Enum, Eq, Generic, Ord, Read, Show)
 data Amphipod = Amphipod { _amphipodType::AmphipodType, _pos::BurrowPos } deriving (Eq, Generic, Ord, Show)
 type Amphipods = Set Amphipod
@@ -29,7 +28,6 @@ data DoorInfo = DoorInfo { canEnter::Bool, openHallwayRange::(Int, Int) } derivi
 instance Hashable AmphipodType
 instance Hashable Amphipod
 instance Hashable BurrowPos
-instance Hashable FrontOrBack
 
 --  0123456789a
 --  ........... 
@@ -77,22 +75,22 @@ validMoves as = concatMap moveFirst . rotations $ as
 
 validMovesForAmphipod :: BurrowState -> [DoorInfo] -> Amphipod -> [(Cost, BurrowPos)]
 validMovesForAmphipod (hallway, rooms) doors (Amphipod t (Hallway p))
-  | canEnter door && canReach = [(numSteps * cost t, Room r frontOrBack)]
+  | canEnter door && canReach = [(numSteps * cost t, Room r roomPos)]
   where
     r = fromEnum t
     canReach = (\ (l, r) -> p `elem` [l-1..r+1]) . openHallwayRange $ door
     door = doors !! r
-    roomPos = r * 2 + 2
-    frontOrBack = if null (rooms !! r) then Back else Front
-    numSteps = fromIntegral $ abs (p - roomPos) + fromEnum frontOrBack + 1
-validMovesForAmphipod (hallway, rooms) doors (Amphipod t (Room r frontOrBack))
+    doorPos = r * 2 + 2
+    roomPos = if null (rooms !! r) then 1 else 0
+    numSteps = fromIntegral $ abs (p - doorPos) + fromEnum roomPos + 1
+validMovesForAmphipod (hallway, rooms) doors (Amphipod t (Room r roomPos))
   | canExit = [(numSteps x * cost t, Hallway x) | let (l, r) = openHallwayRange door, x <- [l..r] \\ [2,4..8]]
   where
-    canExit = frontOrBack == Front || length room == 1
+    canExit = roomPos == 0 || length room == 1
     door = doors !! r
     room = rooms !! r
-    roomPos = r * 2 + 2
-    numSteps p = fromIntegral $ abs (p - roomPos) + fromEnum frontOrBack + 1
+    doorPos = r * 2 + 2
+    numSteps p = fromIntegral $ abs (p - doorPos) + fromEnum roomPos + 1
 validMovesForAmphipod _ _ _ = []
 
 cost :: AmphipodType  -> Integer
@@ -125,14 +123,14 @@ isHallway (Hallway _) = True
 isHallway _ = False
 
 showBurrow :: Amphipods -> String
-showBurrow as = hallway ++ "\n " ++ rooms Front ++ "\n " ++ rooms Back ++ "\n"
+showBurrow as = hallway ++ "\n " ++ rooms 0 ++ "\n " ++ rooms 1 ++ "\n"
   where
     hallway = buildStr 11 0 . sort $ [(pos, t) | a@(Amphipod t p) <- S.toList as, isHallway p, let (Hallway pos) = p]
     buildStr w i _ | w == i= ""
     buildStr w i ((pos, t):xs)
       | i == pos = show t ++ buildStr w (i+1) xs
     buildStr w i xs = '.' : buildStr w (i+1) xs
-    inRooms frontOrBack = concatMap (\case { (Amphipod t (Room r f)) | f == frontOrBack -> [(r, t)]; _ -> []}) $ as
+    inRooms frontOrBack = concatMap (\case { (Amphipod t (Room r f)) | f == frontOrBack -> [(r, t)]; _ -> []}) as
     rooms frontOrBack = concatMap ((\a b -> [a, b]) ' ') . buildStr 4 0 . sort $ inRooms frontOrBack
 
 readBurrow :: String -> Amphipods
@@ -144,6 +142,6 @@ readBurrow s = S.fromList xs
     xs = concat . zipWith (\line str -> map (toAmphipod line) . readPositions $ str) [1..3] . drop 1 $ ls
     toAmphipod line (i, c) = Amphipod (read [c]) pos
       where pos = case line of 1 -> Hallway i
-                               2 -> Room i Front
-                               3 -> Room i Back
+                               2 -> Room i 0
+                               3 -> Room i 1
                                _ -> undefined
