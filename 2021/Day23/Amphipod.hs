@@ -1,147 +1,85 @@
-{-# LANGUAGE DeriveGeneric #-}
-{-# LANGUAGE LambdaCase #-}
 module Day23.Amphipod where
-import Data.Char
+import Data.Char ( ord, chr, isAlpha )
+import Data.List ( find, (\\), transpose )
+import Data.Maybe ( fromJust )
+import Data.Bifunctor ( Bifunctor(second, first) )
 import qualified Data.HashPSQ as PSQ
-import Data.List
-import Data.Maybe
-import Data.Set (Set)
 import qualified Data.Set as S
-import GHC.Generics --(Generic)
-import Data.Hashable
-import Debug.Trace (trace)
-import Data.Bifunctor (Bifunctor(first))
+import Data.Set (Set)
+import GHC.Generics (Generic)
+import Data.Hashable ( Hashable )
 
-data BurrowPos = Hallway { _hallwayPos::Int } | Room { _roomNo::Int, _roomPos::Int } deriving (Eq, Generic, Ord, Show)
-data AmphipodType = A | B | C | D deriving (Enum, Eq, Generic, Ord, Read, Show)
-data Amphipod = Amphipod { _amphipodType::AmphipodType, _pos::BurrowPos } deriving (Eq, Generic, Ord, Show)
-type Amphipods = Set Amphipod
-type Cost = Integer
-type HallwayState = [(Int, AmphipodType)]
-type SideRoomState = [AmphipodType]
-type BurrowState = (HallwayState, [SideRoomState])
+type MinHeap = PSQ.HashPSQ Burrow Cost ()
+type Cost = Int
 
-type MinHeap = PSQ.HashPSQ Amphipods Cost ()
-
-data DoorInfo = DoorInfo { canEnter::Bool, openHallwayRange::(Int, Int) } deriving Show
-
-instance Hashable AmphipodType
-instance Hashable Amphipod
-instance Hashable BurrowPos
-
---  0123456789a
---  ........... 
---    B C B D   
---    A D C A   
--- r: 0 1 2 3
+type Burrow = (String, [String])
 
 main :: IO ()
 main = do
-    b <- readBurrow <$> readFile "2021/data/day23.txt"
-    -- let b = readBurrow "\n...........\nABCD\nABCD"
-    let tmp = minimalCost b
-    print tmp
-    -- let tmp = validMoves $ (S.toList b)
-    -- putStr $ unlines . map (\ (cost, as) -> show cost ++ "\n" ++ showBurrow as) $ tmp
+    f <- readFile "2021/data/day23.txt"
+    let part1 = readBurrow f
+    let part2 = readBurrow . unlines . insertAt 3 "#D#C#B#A#\n#D#B#A#C#" . lines $ f
+    print $ uncurry minimalCost part1
+    print $ uncurry minimalCost part2
 
-finished :: Amphipods
-finished = readBurrow "\n...........\nABCD\nABCD"
+isFinished :: Burrow -> Bool
+isFinished b@(hallway, rooms) = all (=='.') hallway && all (==True) [all (==a) room | (a, room) <- zip ['A'..] rooms]
 
-reducePrio :: Cost -> Amphipods -> MinHeap -> MinHeap
-reducePrio prio key h = snd $ PSQ.alter f key h
+insertOrReducePrio :: Cost -> Burrow -> MinHeap -> MinHeap
+insertOrReducePrio prio key h = snd $ PSQ.alter f key h
   where f (Just (p, v)) = ((), Just (min p prio, v))
         f Nothing = ((), Just (prio, ()))
 
-minimalCost :: Amphipods -> Cost
-minimalCost as = minimalCost' (PSQ.singleton as 0 ()) S.empty
+minimalCost :: Int -> Burrow -> Cost
+minimalCost roomSize b = minimalCost' roomSize (PSQ.singleton b 0 ()) S.empty
 
-minimalCost' :: MinHeap -> Set Amphipods -> Cost
-minimalCost' h visited
-  | trace (show cost ++ "\n" ++ showBurrow as ++ "\n") False = 0
-  | as == finished = cost
-  | otherwise = minimalCost' h'' visited'
+minimalCost' :: Int -> MinHeap -> Set Burrow -> Cost
+minimalCost' roomSize h visited
+  | isFinished b = cost
+  | otherwise = minimalCost' roomSize h'' visited'
   where
-    (as, cost, _, h') = fromJust . PSQ.minView $ h
-    h'' = foldr f h' moves
-    visited' = S.insert as visited
-    moves = map (first (+cost)) . filter (flip S.notMember visited . snd) . validMoves . S.toList $ as
-    f (p, k) = reducePrio p k
+    (b, cost, _, h') = fromJust . PSQ.minView $ h
+    h'' = foldr f h' moves'
+    visited' = S.insert b visited
+    moves' = map (first (+cost)) . filter (flip S.notMember visited . snd) . moves roomSize $ b
+    f (p, k) = insertOrReducePrio p k
 
-validMoves :: [Amphipod] -> [(Cost, Amphipods)]
-validMoves as = concatMap moveFirst . rotations $ as
-  where st = mkBurrowState as
-        moveFirst (x:xs) = map (\ (cost, pos) -> (cost, S.fromList $ x { _pos=pos } : xs)) . validMovesForAmphipod st (doorInfo st) $ x
-        moveFirst _ = undefined
-
-validMovesForAmphipod :: BurrowState -> [DoorInfo] -> Amphipod -> [(Cost, BurrowPos)]
-validMovesForAmphipod (hallway, rooms) doors (Amphipod t (Hallway p))
-  | canEnter door && canReach = [(numSteps * cost t, Room r roomPos)]
+moves :: Int -> Burrow -> [(Cost, Burrow)]
+moves roomSize b@(hallway, rooms) = movesIntoHallway ++ movesIntoRooms
   where
-    r = fromEnum t
-    canReach = (\ (l, r) -> p `elem` [l-1..r+1]) . openHallwayRange $ door
-    door = doors !! r
-    doorPos = r * 2 + 2
-    roomPos = if null (rooms !! r) then 1 else 0
-    numSteps = fromIntegral $ abs (p - doorPos) + fromEnum roomPos + 1
-validMovesForAmphipod (hallway, rooms) doors (Amphipod t (Room r roomPos))
-  | canExit = [(numSteps x * cost t, Hallway x) | let (l, r) = openHallwayRange door, x <- [l..r] \\ [2,4..8]]
-  where
-    canExit = roomPos == 0 || length room == 1
-    door = doors !! r
-    room = rooms !! r
-    doorPos = r * 2 + 2
-    numSteps p = fromIntegral $ abs (p - doorPos) + fromEnum roomPos + 1
-validMovesForAmphipod _ _ _ = []
-
-cost :: AmphipodType  -> Integer
-cost = (10 ^) . fromEnum
-
-mkBurrowState :: [Amphipod] -> BurrowState
-mkBurrowState as = (hallwayState, rooms)
-  where
-    hallwayState = sort . mapMaybe (\case { Amphipod t (Hallway pos) -> Just (pos, t); _ -> Nothing }) $ as
-    inRoom = mapMaybe (\case { Amphipod t (Room r _) -> Just (r, t); _ -> Nothing }) as
-    rooms = [map snd . filter (\x -> fst x == r) $ inRoom | r <- [0..3], let a = toEnum r :: AmphipodType]
-
-doorInfo :: BurrowState -> [DoorInfo]
-doorInfo (hallwayState, rooms) = zipWith DoorInfo canEnter hallwayOpenRangePerDoor
-  where
-    hallwayOccupied = [-1] ++ map fst hallwayState ++ [11]
-    hallwayOpenRanges = filter (uncurry (<=)) . zipWith (\ a b -> (a + 1, b - 1)) hallwayOccupied $ tail hallwayOccupied
+    hallwayOccupied         = (\ xs -> [-1] ++ xs ++ [11]) . map fst . filter (isAlpha . snd) . zip [0..] $ hallway
+    hallwayOpenRanges       = filter (uncurry (<=)) . zipWith (\ l r -> (l+1, r-1)) hallwayOccupied $ tail hallwayOccupied
     hallwayOpenRangePerDoor = [fromJust . find (\ (l, r) -> x `elem` [l..r]) $ hallwayOpenRanges | x <- [2,4..8]]
-    canEnter = [all (==a) r | (a, r) <- zip [A, B, C, D] rooms]
+    movesIntoHallway        = [move roomSize b r x | (r, room, range) <- unemptyRooms, x <- [fst range..snd range] \\ [2,4..8]]
+    movesIntoRooms          = [move roomSize b r x | (x, a) <- inHallway, let r = targetRoom a, canEnter r && canReach r x]
+    unemptyRooms            = filter (\ (_, room, _) -> (not . null) room) . zip3 [0..] rooms $ hallwayOpenRangePerDoor
+    inHallway               = filter (isAlpha . snd) . zip [0..] $ hallway
+    canEnter r              = let a = targetAmphipod r in all (== a) (rooms !! r)
+    canReach r pos          = let (l', r') = hallwayOpenRangePerDoor !! r in pos `elem` [l'-1..r'+1]
+    targetAmphipod          = chr . (+ ord 'A')
 
----------- Util
-
-rotations :: [a] -> [[a]]
-rotations xs = init . zipWith (flip (++)) (inits xs) $ tails xs
-
----------- Debug
-
-isHallway :: BurrowPos -> Bool
-isHallway (Hallway _) = True
-isHallway _ = False
-
-showBurrow :: Amphipods -> String
-showBurrow as = hallway ++ "\n " ++ rooms 0 ++ "\n " ++ rooms 1 ++ "\n"
+move :: Int -> Burrow -> Int -> Int -> (Cost, Burrow)
+move roomSize b@(hallway, rooms) r pos = (cost', (hallway', rooms'))
   where
-    hallway = buildStr 11 0 . sort $ [(pos, t) | a@(Amphipod t p) <- S.toList as, isHallway p, let (Hallway pos) = p]
-    buildStr w i _ | w == i= ""
-    buildStr w i ((pos, t):xs)
-      | i == pos = show t ++ buildStr w (i+1) xs
-    buildStr w i xs = '.' : buildStr w (i+1) xs
-    inRooms frontOrBack = concatMap (\case { (Amphipod t (Room r f)) | f == frontOrBack -> [(r, t)]; _ -> []}) as
-    rooms frontOrBack = concatMap ((\a b -> [a, b]) ' ') . buildStr 4 0 . sort $ inRooms frontOrBack
+    toHallway = hallway !! pos == '.'
+    room = rooms !! r
+    (a, n, c, f) = if toHallway then (head room, 1, a, tail) else (hallway !! pos, 0, '.', (a:))
+    doorPos = 2 * r + 2
+    numSteps = abs (pos - doorPos) + roomSize - length room + n
+    cost' = ((10 ^) . targetRoom) a * numSteps
+    hallway' = adjust (const c) pos hallway
+    rooms' = adjust f r rooms
 
-readBurrow :: String -> Amphipods
-readBurrow s = S.fromList xs
+targetRoom :: Char -> Int
+targetRoom = subtract (ord 'A') . ord
+
+readBurrow :: String -> (Int, Burrow)
+readBurrow = (\ (h:ds) -> (length ds, (h, map (filter isAlpha) . transpose $ ds))) . filter (not . null) . map (filter f) . lines
   where
-    ls = lines s
-    isPos c = c == '.' || isAlpha c
-    readPositions = filter (\ (i, c) -> isAlpha c) . zip [0..] . filter isPos
-    xs = concat . zipWith (\line str -> map (toAmphipod line) . readPositions $ str) [1..3] . drop 1 $ ls
-    toAmphipod line (i, c) = Amphipod (read [c]) pos
-      where pos = case line of 1 -> Hallway i
-                               2 -> Room i 0
-                               3 -> Room i 1
-                               _ -> undefined
+    f c = isAlpha c || c == '.'
+
+adjust :: (a -> a) -> Int -> [a] -> [a]
+adjust f i = uncurry (++) . second (\(x:xs) -> f x : xs) . splitAt i
+
+insertAt :: Int -> a -> [a] -> [a]
+insertAt k x = (\ (l, r) -> l ++ [x] ++ r) . splitAt k
