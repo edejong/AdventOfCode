@@ -29,8 +29,7 @@ import System.Exit ( die )
 
 tmp :: [IO ()]
 tmp =
-  [
-    Day01.SonarSweep.main
+  [ Day01.SonarSweep.main
   , Day02.Dive.main
   , Day03.BinaryDiagnostic.main
   , Day04.Bingo.main

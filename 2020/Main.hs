@@ -13,8 +13,7 @@ import System.Exit ( die )
 
 tmp :: [IO ()]
 tmp =
-  [
-    Day01.ReportRepair.main
+  [ Day01.ReportRepair.main
   , Day02.PasswordPhilosophy.main
   , Day03.TobogganTrajectory.main
   , Day04.PassportProcessing.main

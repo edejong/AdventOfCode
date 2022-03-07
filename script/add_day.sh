@@ -52,6 +52,6 @@ insert_at_hook()
   rm ${filepath}.backup
 }
 
-insert_at_hook aoc2021.cabal "-- !!aoc${year} module hook!! --" ", ${module}"
-insert_at_hook $year/Main.hs "-- !!aoc${year} import hook!! --" "import qualified ${module}"
-insert_at_hook $year/Main.hs "-- !!aoc${year} main hook!! --" ", ${module}.main"
+insert_at_hook adventOfCode.cabal "-- !!aoc${year} module hook!! --" ", ${module}"
+insert_at_hook $year/Main.hs "-- !!import hook!! --" "import qualified ${module}"
+insert_at_hook $year/Main.hs "-- !!main hook!! --" ", ${module}.main"
