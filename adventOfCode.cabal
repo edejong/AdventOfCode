@@ -31,6 +31,7 @@ executable aoc2015
           Paths_adventOfCode
         , Day01.NotQuiteLisp
         , Day02.IWasToldThereWouldBeNoMath
+        , Day03.PerfectlySphericalHousesinaVacuum
         -- !!aoc2015 module hook!! --
     build-depends:
           base >=4.7 && <5
