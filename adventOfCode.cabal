@@ -30,6 +30,7 @@ executable aoc2015
     other-modules:
           Paths_adventOfCode
         , Day01.NotQuiteLisp
+        , Day02.IWasToldThereWouldBeNoMath
         -- !!aoc2015 module hook!! --
     build-depends:
           base >=4.7 && <5
