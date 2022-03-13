@@ -32,11 +32,15 @@ executable aoc2015
         , Day01.NotQuiteLisp
         , Day02.IWasToldThereWouldBeNoMath
         , Day03.PerfectlySphericalHousesinaVacuum
+        , Day04.TheIdealStockingStuffer
         -- !!aoc2015 module hook!! --
     build-depends:
           base >=4.7 && <5
+        , bytestring
         , containers
+        -- , cryptohash-md5
         , parsec
+        , pureMD5
         , split
     hs-source-dirs:   2015
     ghc-options:      -threaded -rtsopts -with-rtsopts=-N
