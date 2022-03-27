@@ -33,6 +33,7 @@ executable aoc2015
         , Day02.IWasToldThereWouldBeNoMath
         , Day03.PerfectlySphericalHousesinaVacuum
         , Day04.TheIdealStockingStuffer
+        , Day05.DoesntHeHaveInternElvesForThis
         -- !!aoc2015 module hook!! --
     build-depends:
           base >=4.7 && <5

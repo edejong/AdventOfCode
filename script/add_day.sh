@@ -17,7 +17,7 @@ done
 
 [ -z "$year" ] || [ -z "$day" ] || [ -z "$title" ] && usage
 
-title=${title// /}
+title=$(echo $title | tr -cd [:alnum:])
 module="Day${day}.${title// /}"
 
 echo "Year: $year";
