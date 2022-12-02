@@ -175,6 +175,7 @@ executable aoc2022
     other-modules:
           Paths_adventOfCode
         , Day01.CalorieCounting
+        , Day02.RockPaperScissors
         -- !!aoc2022 module hook!! --
     build-depends:
           base >=4.7 && <5
