@@ -177,6 +177,7 @@ executable aoc2022
         , Day01.CalorieCounting
         , Day02.RockPaperScissors
         , Day03.RucksackReorganization
+        , Day04.CampCleanup
         -- !!aoc2022 module hook!! --
     build-depends:
           base >=4.7 && <5

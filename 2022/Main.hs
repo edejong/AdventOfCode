@@ -3,7 +3,8 @@ module Main where
 import qualified Day01.CalorieCounting
 import qualified Day02.RockPaperScissors
 import qualified Day03.RucksackReorganization
--- !!aoc2022 import hook!! --
+import qualified Day04.CampCleanup
+-- !!import hook!! --
 import System.Environment ( getArgs, getProgName )
 import System.Exit ( die )
 
@@ -12,7 +13,8 @@ tmp =
   [ Day01.CalorieCounting.main
   , Day02.RockPaperScissors.main
   , Day03.RucksackReorganization.main
-  -- !!aoc2022 main hook!! --
+  , Day04.CampCleanup.main
+  -- !!main hook!! --
   ]
 
 main :: IO ()
