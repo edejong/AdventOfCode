@@ -4,6 +4,7 @@ import qualified Day01.CalorieCounting
 import qualified Day02.RockPaperScissors
 import qualified Day03.RucksackReorganization
 import qualified Day04.CampCleanup
+import qualified Day05.SupplyStacks
 -- !!import hook!! --
 import System.Environment ( getArgs, getProgName )
 import System.Exit ( die )
@@ -14,6 +15,7 @@ tmp =
   , Day02.RockPaperScissors.main
   , Day03.RucksackReorganization.main
   , Day04.CampCleanup.main
+  , Day05.SupplyStacks.main
   -- !!main hook!! --
   ]
 
