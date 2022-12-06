@@ -179,6 +179,7 @@ executable aoc2022
         , Day03.RucksackReorganization
         , Day04.CampCleanup
         , Day05.SupplyStacks
+        , Day06.TuningTrouble
         -- !!aoc2022 module hook!! --
     build-depends:
           base >=4.7 && <5
