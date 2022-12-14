@@ -18,25 +18,6 @@ main = do
     print (part1, part2)
 
 data Entry = File String Int | Directory String Int [Entry] deriving (Eq, Ord, Show)
-
-isDir :: Entry -> Bool
-isDir (Directory {}) = True
-isDir _ = False
-
-totalSize :: Entry -> Entry
-totalSize f@(File _ _) = f
-totalSize (Directory name _ entries) =
-    let entries' = map totalSize entries
-        size = sum $ map getSize entries'
-    in Directory name size entries'
-  where
-    getSize (File _ sz) = sz
-    getSize (Directory _ sz entries') = sz
-
-toList :: Entry -> [Entry]
-toList f@(File _ _) = [f]
-toList d@(Directory name size entries) = Directory name size [] : concatMap toList entries
-
 type MyState = [String]
 type MyStateMonad = State MyState
 
@@ -51,17 +32,16 @@ prompt = do
         let command = drop 2 xs
         if command == "cd .." then
             return []
+        else if "ls" == command then do
+            entries <- lsDir
+            rest <- prompt
+            return $ entries <> rest
+        else if "cd " `isPrefixOf` command then do
+            entries <- chDir command
+            rest <- prompt
+            return $ entries <> rest
         else
-            if "ls" == command then do
-                entries <- lsDir
-                rest <- prompt
-                return $ entries <> rest
-            else if "cd " `isPrefixOf` command then do
-                entries <- chDir command
-                rest <- prompt
-                return $ entries <> rest
-            else
-                error $ "Not implemented: " ++ xs
+            error $ "Not implemented: " ++ xs
 
 chDir :: String -> MyStateMonad [Entry]
 chDir xs = do
@@ -80,3 +60,21 @@ lsDir = do
     isCommand xs = head xs == '$'
     isDir xs = "dir " `isPrefixOf` xs
     toFile xs = let [size, name] = splitOn " " xs in File name (read size)
+
+isDir :: Entry -> Bool
+isDir (Directory {}) = True
+isDir _ = False
+
+totalSize :: Entry -> Entry
+totalSize f@(File {}) = f
+totalSize (Directory name _ entries) =
+    let entries' = map totalSize entries
+        size = sum $ map getSize entries'
+    in Directory name size entries'
+  where
+    getSize (File _ sz) = sz
+    getSize (Directory _ sz entries') = sz
+
+toList :: Entry -> [Entry]
+toList f@(File _ _) = [f]
+toList d@(Directory name size entries) = Directory name size [] : concatMap toList entries
