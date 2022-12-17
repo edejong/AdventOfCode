@@ -9,6 +9,7 @@ import qualified Day06.TuningTrouble
 import qualified Day07.NoSpaceLeftOnDevice
 import qualified Day08.TreetopTreeHouse
 import qualified Day09.RopeBridge
+import qualified Day10.CathodeRayTube
 -- !!import hook!! --
 import System.Environment ( getArgs, getProgName )
 import System.Exit ( die )
@@ -24,6 +25,7 @@ tmp =
   , Day07.NoSpaceLeftOnDevice.main
   , Day08.TreetopTreeHouse.main
   , Day09.RopeBridge.main
+  , Day10.CathodeRayTube.main
   -- !!main hook!! --
   ]
 
