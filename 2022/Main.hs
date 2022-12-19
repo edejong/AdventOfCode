@@ -12,6 +12,7 @@ import qualified Day09.RopeBridge
 import qualified Day10.CathodeRayTube
 import qualified Day11.MonkeyintheMiddle
 import qualified Day12.HillClimbingAlgorithm
+import qualified Day13.DistressSignal
 -- !!import hook!! --
 import System.Environment ( getArgs, getProgName )
 import System.Exit ( die )
@@ -30,6 +31,7 @@ tmp =
   , Day10.CathodeRayTube.main
   , Day11.MonkeyintheMiddle.main
   , Day12.HillClimbingAlgorithm.main
+  , Day13.DistressSignal.main
   -- !!main hook!! --
   ]
 
