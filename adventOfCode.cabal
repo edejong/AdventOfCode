@@ -151,6 +151,7 @@ executable aoc2021
         , Day21.DiracDice
         , Day22.ReactorReboot
         , Day23.Amphipod
+        , Day24.ArithmeticLogicUnit
         -- !!aoc2021 module hook!! --
     build-depends:
           array
@@ -163,6 +164,7 @@ executable aoc2021
         , mtl
         , parsec
         , psqueues
+        , QuickCheck
         , repa
         , split
     hs-source-dirs:   2021
@@ -180,11 +182,18 @@ executable aoc2022
         , Day04.CampCleanup
         , Day05.SupplyStacks
         , Day06.TuningTrouble
+        , Day07.NoSpaceLeftOnDevice
+        , Day08.TreetopTreeHouse
+        , Day09.RopeBridge
+        , Day10.CathodeRayTube
+        , Day11.MonkeyintheMiddle
+        , Day12.HillClimbingAlgorithm
         -- !!aoc2022 module hook!! --
     build-depends:
           base >=4.7 && <5
         , containers
         , lens
+        , mtl
         , parsec
         , split
     hs-source-dirs:   2022
