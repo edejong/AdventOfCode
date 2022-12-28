@@ -1,76 +1,81 @@
 {-# LANGUAGE TypeApplications #-}
-{-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
-{-# LANGUAGE TupleSections #-}
 module Day16.ProboscideaVolcanium where
-import Data.Map ( Map, (!) )
 import qualified Data.Map as Map
-import Data.List.Split (splitOn)
-import Data.List ((\\), delete, foldl')
-import Data.Char (isDigit, isAlpha, isSpace)
+import Data.Map (Map, (!))
 import Control.Monad.State
-import Data.Int (Int64)
-import Data.Bits (testBit, Bits (clearBit), setBit)
+    ( modify, MonadState(get), State, evalState )
+import Data.List.Split ( splitOn )
+import Data.Char ( isSpace )
+import Data.List (foldl', inits, tails, sort)
+import Data.Bits ( Bits(clearBit, testBit) )
+
+-- TODO: Cache is probably a lot faster with a mutable Array.
+-- Alternatively, could try bottom-up DP.
 
 main :: IO ()
 main = do
     valves <- map parseValve . lines <$> readFile "2022/data/day16.txt"
-    let valveLabels = Map.fromList . flip zip [0..] . map (\(a,_,_)->a) $ valves
-        valves' = Map.fromList . map (\(lbl,p,nbrs) -> (valveLabels ! lbl, Valve p (map (valveLabels !) nbrs))) $ valves
-        openValves = foldl' setBit (0::Int64) . map fst . filter ((>0) . pressure . snd) . Map.toList $ valves'
-    print $ evalState (maxPressure valves' (valveLabels ! "AA") 30 openValves) Map.empty
+    let valvesMap = simplify . Map.fromList . map (\v -> (label v, v)) $ valves
+    let valveLabels = Map.fromList . flip zip [(0::Int)..] . reverse . sort . Map.keys $ valvesMap
+    let valvesMap' = Map.fromList . map ((\v -> (label v, v)) . transformLabels (valveLabels !) . snd) . Map.toList $ valvesMap
+    let openValves = 2^(Map.size valvesMap - 1) - 1
+    print $ evalState (maxPressure valvesMap' [(30, valveLabels ! "AA")] openValves) Map.empty
+    print $ evalState (maxPressure valvesMap' [(26, valveLabels ! "AA"), (26, valveLabels ! "AA")] openValves) Map.empty
 
-data Valve = Valve { pressure :: Int, neighbours :: [ValveLabel] } deriving Show
-type Valves = Map ValveLabel Valve
+data Valve a = Valve { label :: a, pressure :: Int, tunnels :: [Tunnel a] } deriving Show
+type ValvesMap a = Map a (Valve a)
 type ValveLabel = Int
-type ValveSet = Int64
+type ValveSet = Int
+data Tunnel a = Tunnel { length :: Int, valveLabel :: a } deriving Show
 
-parseValve :: String -> (String, Int, [String])
+transformLabels :: (a -> b) -> Valve a -> Valve b
+transformLabels f (Valve lbl p ts) = Valve (f lbl) p (map (\(Tunnel l lbl) -> Tunnel l (f lbl)) ts)
+
+parseValve :: String -> Valve String
 parseValve str =
     let [a, b] = splitOn "; " str
         label = take 2 . drop 6 $ a
         flowRate = read @Int . drop 23 $ a
-        neighbours = splitOn "," . filter (not . isSpace) . drop 22 $ b
-    in (label, flowRate, neighbours)
+        tunnels = map (Tunnel 1) . splitOn "," . filter (not . isSpace) . drop 22 $ b
+    in Valve label flowRate tunnels
 
-type MemoKey =  (ValveLabel, Int, ValveSet)
+simplify :: ValvesMap String -> ValvesMap String
+simplify valvesMap =
+    let uselessValves = map label . filter (\v -> pressure v == 0 && label v /= "AA") . map snd . Map.toList $ valvesMap
+    in foldl' removeValve valvesMap uselessValves
+
+choose :: [a] -> [(a, [a])]
+choose xs = map (\(xs, ys) -> (head ys, xs ++ tail ys)) $ init (zip (inits xs) (tails xs))
+
+removeValve :: Ord a => Map a (Valve a) -> a -> Map a (Valve a)
+removeValve vmap lbl =
+    let valve = vmap ! lbl
+        vmap1 = Map.delete lbl vmap
+        vmap2 = foldl' (flip (Map.adjust (`removeTunnel` lbl)) ) vmap1 (map valveLabel (tunnels valve))
+        ts = map (\(Tunnel l lbl, ts) -> (lbl, map (\(Tunnel l2 lbl2) -> Tunnel (l+l2) lbl2) ts)) . choose . tunnels $ valve
+    in foldl' (\ vm (lbl', ts) -> Map.adjust (`addTunnels` ts) lbl' vm) vmap2 ts
+
+addTunnels :: Valve a -> [Tunnel a] -> Valve a
+addTunnels (Valve lbl p ts) tunnels = Valve lbl p (tunnels ++ ts)
+
+removeTunnel :: Eq a => Valve a -> a -> Valve a
+removeTunnel v lbl = v { tunnels = filter ((/= lbl) . valveLabel) (tunnels v) }
+
+type MemoKey =  ([(Int, ValveLabel)], ValveSet)
 type MemoState = State (Map MemoKey Int)
 
-maxPressure' :: Valves -> ValveLabel -> Int -> ValveSet -> MemoState Int
-maxPressure' valvesMap = memoized (maxPressure valvesMap)
-
-maxPressure :: Valves -> ValveLabel -> Int -> ValveSet -> MemoState Int
-maxPressure _ _ 0 _ = return 0
-maxPressure valvesMap valveLabel timeRemaining openValves = do
-    let moves = tmp valve valveLabel
-    moves' <- mapM (\(p, lbl) -> (+p) <$> maxPressure' valvesMap lbl timeRemaining' (if p == 0 then openValves else clearBit openValves lbl)) moves
-    return $ maximum moves'
-  where
-    timeRemaining' = timeRemaining - 1
-    valve = valvesMap ! valveLabel
-    releasedPressure = pressure valve * timeRemaining'
-    tmp v lbl = [(releasedPressure, lbl) | testBit openValves lbl] ++ map (0,) (neighbours v)
-
-
-memoized :: (ValveLabel -> Int -> ValveSet -> MemoState Int) -> ValveLabel -> Int -> ValveSet -> MemoState Int
-memoized f valveLabel timeRemaining openValves = do
+maxPressure :: ValvesMap ValveLabel -> [(Int, ValveLabel)] -> ValveSet -> MemoState Int
+maxPressure _ [] _ = return 0
+maxPressure vm ((t,_):xs) openValves | t <= 0 = maxPressure vm xs openValves
+maxPressure vm xs openValves = do
     cache <- get
-    let key = (valveLabel, timeRemaining, openValves)
+    let key = (sort xs, openValves)
     if Map.member key cache then
         return $ cache ! key
     else do
-        result <- f valveLabel timeRemaining openValves
+        let ((t,lbl), xs') = (\xs -> (head xs, tail xs)) . sort $ xs
+        let moves = [(pressure (vm ! lbl) * (t-1), t-1, lbl, clearBit openValves lbl) | testBit openValves lbl]
+                 ++ map (\ (Tunnel l nbr) -> (0, t - l, nbr, openValves)) (tunnels (vm ! lbl))
+        result <- maximum <$> mapM (\(p, t, lbl, vs) -> (+p) <$> maxPressure vm ((t, lbl):xs') vs) moves
         modify (Map.insert key result)
         return result
-
-
-
-
--- doStep [posA, posB] timeRemaining openValves =
---     [nextA <- ["AA", "BB", "CC"], nbrsB <- ["BB", "DD"]]
-
--- >>> xs = [1,2]
--- >>> ys =  [3,4,5]
--- >>> zs = [6,7]
--- >>> foldl' (\as bs -> [(b:a) | a <- as, b <- bs]) ([[]]) [zs, ys,xs]
--- [[1,3,6],[2,3,6],[1,4,6],[2,4,6],[1,5,6],[2,5,6],[1,3,7],[2,3,7],[1,4,7],[2,4,7],[1,5,7],[2,5,7]]
-
