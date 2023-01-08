@@ -16,6 +16,7 @@ import qualified Day13.DistressSignal
 import qualified Day14.RegolithReservoir
 import qualified Day15.BeaconExclusionZone
 import qualified Day16.ProboscideaVolcanium
+import qualified Day17.PyroclasticFlow
 -- !!import hook!! --
 import System.Environment ( getArgs, getProgName )
 import System.Exit ( die )
@@ -38,6 +39,7 @@ tmp =
   , Day14.RegolithReservoir.main
   , Day15.BeaconExclusionZone.main
   , Day16.ProboscideaVolcanium.main
+  , Day17.PyroclasticFlow.main
   -- !!main hook!! --
   ]
 
