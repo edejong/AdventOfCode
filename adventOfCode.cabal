@@ -193,6 +193,7 @@ executable aoc2022
         , Day15.BeaconExclusionZone
         , Day16.ProboscideaVolcanium
         , Day17.PyroclasticFlow
+        , Day18.BoilingBoulders
         -- !!aoc2022 module hook!! --
     build-depends:
           base >=4.7 && <5
