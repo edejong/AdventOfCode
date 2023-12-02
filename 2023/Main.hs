@@ -1,6 +1,7 @@
 {-# LANGUAGE TypeApplications #-}
 module Main where
 import qualified Day01.Trebuchet
+import qualified Day02.CubeConundrum
 -- !!import hook!! --
 import System.Environment ( getArgs, getProgName )
 import System.Exit ( die )
@@ -9,6 +10,7 @@ tmp :: [IO ()]
 tmp =
   [ 
     Day01.Trebuchet.main
+  , Day02.CubeConundrum.main
   -- !!main hook!! --
   ]
 

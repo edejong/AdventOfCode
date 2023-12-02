@@ -223,7 +223,8 @@ executable aoc2023
     other-modules:
           Paths_adventOfCode
         , Day01.Trebuchet
-        -- !!aoc2022 module hook!! --
+        , Day02.CubeConundrum
+        -- !!aoc2023 module hook!! --
     build-depends:
           base >=4.17 && <5
         -- , array
