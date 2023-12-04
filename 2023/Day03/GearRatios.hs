@@ -2,29 +2,32 @@ module Day03.GearRatios where
 
 import qualified Data.Vector as V
 import Data.Char
-import Data.List (transpose)
--- import qualified Data.Vector.Unboxed as V
+import Data.List (transpose, tails, nub, sort)
 
 main :: IO ()
 main = do
-    xss <- lines <$> readFile "2023/data/day03-test.txt"
-    let xss' = transpose $ f (transpose (f xss))
-    putStrLn $ unlines xss
-    putStrLn $ unlines xss'
+    xss <- lines <$> readFile "2023/data/day03.txt"
 
-    let foo = zipWith zip xss xss'
-    print $ sum [x | row <- foo, x <- nums row]
+    let part1 = adjacentNums (\c -> c /= '.' && (not . isDigit) c) xss
+    print $ sum [x | (x, labels) <- part1, not . null $ labels]
 
-f = map ((\xs -> zipWith3 (\a b c -> if any isSym [a,b,c] then '#' else '.') xs (tail xs) ((tail . tail) xs ++ repeat '.')) . ('.':))
-
-isSym :: Char -> Bool
-isSym c = c /= '.' && (not . isDigit) c
-
-nums :: [(Char, Char)] -> [Int]
-nums xs | null xs = []
-        | null as = nums (tail xs)
-        | all ((== '.') . snd) as = nums bs
-        | otherwise = num : nums bs
+    let part2 = adjacentNums (== '*') xss
+    let tmp = group . sort $ [(l, [x]) | (x, labels) <- part1, l <- labels]
+    print $ sum [product nums | (label, nums) <- tmp, length nums == 2]
   where
-    (as, bs) = span (isDigit . fst) xs
-    num = read . map fst $ as
+    group xs = foldr (\(l1, xs) ((l2, ys) : res) -> if l1 == l2 then (l1, xs++ys):res else (l1, xs):(l2, ys):res) [last xs] (init xs)
+
+adjacentNums isSym xss =
+    let labels = zipWith (zipWith (\x c -> ([c | isSym x]))) xss (iterate (drop 150) [1..])
+        labels' = transpose $ expand (transpose (expand labels))
+    in [x | row <- zipWith zip xss labels', x <- readNums row]
+  where
+    expand = map ((\xs -> zipWith3 (\a b c -> let cs = a++b++c in cs) xs (tail xs) ((tail . tail) xs ++ repeat [])) . ([]:))
+    readNums :: [(Char, [Int])] -> [(Integer, [Int])]
+    readNums [] = []
+    readNums xs | null ds = readNums (tail xs)
+            | otherwise = (num, labels) : readNums xs'
+      where
+        (ds, xs') = span (isDigit . fst) xs
+        num = read . map fst $ ds
+        labels = nub [l | (_, lbls) <- ds, l <- lbls]
