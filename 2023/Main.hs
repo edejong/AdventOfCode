@@ -4,6 +4,7 @@ import qualified Day01.Trebuchet
 import qualified Day02.CubeConundrum
 import qualified Day03.GearRatios
 import qualified Day04.Scratchcards
+import qualified Day05.IfYouGiveASeedAFertilizer
 -- !!import hook!! --
 import System.Environment ( getArgs, getProgName )
 import System.Exit ( die )
@@ -15,6 +16,7 @@ tmp =
   , Day02.CubeConundrum.main
   , Day03.GearRatios.main
   , Day04.Scratchcards.main
+  , Day05.IfYouGiveASeedAFertilizer.main
   -- !!main hook!! --
   ]
 
