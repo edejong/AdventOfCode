@@ -3,38 +3,27 @@
 {-# LANGUAGE TupleSections #-}
 {-# LANGUAGE TypeApplications #-}
 module Day07.CamelCards where
-import Data.List (elemIndex, sortOn)
+import Data.List (elemIndex, sortOn, nub)
 import Data.Maybe (fromJust)
 import qualified Data.Map as M ( fromListWith, toList )
 import Data.Ord
 
 main :: IO ()
 main = do
-    xs <- map words . lines <$> readFile "2023/data/day07-test.txt"
+    xs <- map words . lines <$> readFile "2023/data/day07.txt"
     let xs1 = map (\[a,b] -> (mkHand "23456789TJQKA" a, read @Int b)) xs
-    print $ sum . zipWith (*) [1..] . map snd . sortOn fst $ xs1
+    print $ sum . zipWith (*) [1..] . map snd . sortOn (\x -> let xs = fst x in score xs : xs)  $ xs1
 
     let xs2 = map (\[a,b] -> (mkHand "J23456789TQKA" a, read @Int b)) xs
-    print $ sum . zipWith (*) [1..] . map snd . sortOn fst $ xs2
+    print $ sum . zipWith (*) [1..] . map snd . sortOn (\x -> let xs = fst x in score' xs : xs) $ xs2
+    
 
-card :: [Char] -> Char -> Int
-card xs = (+2) . fromJust . flip elemIndex xs
-
-data Hand = Hand [Int] deriving (Eq, Show)
-
-mkHand :: [Char] -> [Char] -> Hand
-mkHand xs = Hand . map (card xs)
-
-instance Ord Hand where
-  compare (Hand xs) (Hand ys) = compare (score xs : xs) (score ys : ys)
+mkHand xs = map (fromJust . flip elemIndex xs)
 
 hist = sortOn (Down . snd) . M.toList . M.fromListWith (+) . map (, 1)
 
 score xs = 
-    let xs' = hist xs
-        jokers = length . filter (==1) $ xs
-    in
-    case map snd xs' of
+    case map snd (hist xs) of
         [5] -> 6       -- J: 6
         [4,1] -> 5     -- J: 6
         [3,2] -> 4     -- J: 6
@@ -42,3 +31,5 @@ score xs =
         [2,2,1] -> 2   -- J: 4 or 5
         [2,1,1,1] -> 1 -- J: 3
         _ -> 0
+
+score' xs = maximum $ map score $ nub $ xs:[map (\k -> if k == 0 then c else k) xs | c <- nub xs, c /= 0]
