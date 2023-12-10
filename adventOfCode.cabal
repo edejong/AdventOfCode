@@ -228,6 +228,7 @@ executable aoc2023
         , Day04.Scratchcards
         , Day05.IfYouGiveASeedAFertilizer
         , Day06.WaitForIt
+        , Day07.CamelCards
         -- !!aoc2023 module hook!! --
     build-depends:
           base >=4.17 && <5
