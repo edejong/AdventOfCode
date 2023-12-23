@@ -7,6 +7,7 @@ import qualified Day04.Scratchcards
 import qualified Day05.IfYouGiveASeedAFertilizer
 import qualified Day06.WaitForIt
 import qualified Day07.CamelCards
+import qualified Day08.HauntedWasteland
 -- !!import hook!! --
 import System.Environment ( getArgs, getProgName )
 import System.Exit ( die )
@@ -21,6 +22,7 @@ tmp =
   , Day05.IfYouGiveASeedAFertilizer.main
   , Day06.WaitForIt.main
   , Day07.CamelCards.main
+  , Day08.HauntedWasteland.main
   -- !!main hook!! --
   ]
 
