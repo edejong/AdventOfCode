@@ -19,26 +19,27 @@ done
 
 title=$(echo $title | tr -cd [:alnum:])
 module="Day${day}.${title// /}"
+srcdir="$year/Day$day"
 
 echo "Year: $year";
 echo "Day: $day";
 echo "Title: $title";
 echo "Module: $module";
 
-if [[ -d "$year/Day$day" ]]; then
+if [[ -d "$srcdir" ]]; then
   echo "(!) Already exists, exiting"
   exit 2
 fi
 
-mkdir -p $year/Day$day
-touch $year/data/day$day.txt
-touch $year/data/day$day-test.txt
-cat >$year/Day$day/"$title".hs <<EOL
+mkdir -p "$srcdir"
+touch $srcdir/day$day.txt
+touch $srcdir/day$day-test.txt
+cat >$srcdir/"$title".hs <<EOL
 module ${module} where
 
 main :: IO ()
 main = do
-    xs <- readFile "${year}/data/day${day}-test.txt"
+    xs <- readFile "${srcdir}/day${day}-test.txt"
     print xs
 EOL
 
