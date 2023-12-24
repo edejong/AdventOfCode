@@ -35,13 +35,23 @@ mkdir -p "$srcdir"
 touch $srcdir/day$day.txt
 touch $srcdir/day$day-test.txt
 cat >$srcdir/"$title".hs <<EOL
-module ${module} where
-
 main :: IO ()
 main = do
     xs <- readFile "${srcdir}/day${day}-test.txt"
     print xs
 EOL
+
+read -r -d '' VAR <<- EOM
+executable aoc${year}-${day}
+    main-is:          HotSprings.hs
+    other-modules:
+          Paths_adventOfCode
+    build-depends:
+          base >=4.17 && <5
+    hs-source-dirs:   2023/Day12
+    ghc-options:      -threaded -rtsopts -with-rtsopts=-N
+    default-language: Haskell2010
+EOM
 
 insert_at_hook()
 {
@@ -53,6 +63,9 @@ insert_at_hook()
   rm ${filepath}.backup
 }
 
-insert_at_hook adventOfCode.cabal "-- !!aoc${year} module hook!! --" ", ${module}"
-insert_at_hook $year/Main.hs "-- !!import hook!! --" "import qualified ${module}"
-insert_at_hook $year/Main.hs "-- !!main hook!! --" ", ${module}.main"
+echo $VAR
+
+# insert_at_hook adventOfCode.cabal "-- !!aoc${year} module hook!! --" ", ${module}"
+# insert_at_hook $year/Main.hs "-- !!import hook!! --" "import qualified ${module}"
+# insert_at_hook $year/Main.hs "-- !!main hook!! --" ", ${module}.main"
+# insert_at_hook adventOfCode.cabal "-- !!aoc${year} module hook!! --" ", ${module}"
