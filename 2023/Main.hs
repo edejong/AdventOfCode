@@ -10,6 +10,7 @@ import qualified Day07.CamelCards
 import qualified Day08.HauntedWasteland
 import qualified Day09.MirageMaintenance
 import qualified Day10.PipeMaze
+import qualified Day11.CosmicExpansion
 -- !!import hook!! --
 import System.Environment ( getArgs, getProgName )
 import System.Exit ( die )
@@ -27,6 +28,7 @@ tmp =
   , Day08.HauntedWasteland.main
   , Day09.MirageMaintenance.main
   , Day10.PipeMaze.main
+  , Day11.CosmicExpansion.main
   -- !!main hook!! --
   ]
 
