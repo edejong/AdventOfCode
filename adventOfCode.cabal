@@ -231,6 +231,7 @@ executable aoc2023
         , Day07.CamelCards
         , Day08.HauntedWasteland
         , Day09.MirageMaintenance
+        , Day10.PipeMaze
         -- !!aoc2023 module hook!! --
     build-depends:
           base >=4.17 && <5
