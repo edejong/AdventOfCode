@@ -29,5 +29,4 @@ possibilities = memoize2 possibilities'
                 | otherwise = possibilities bs' ys
       where
         (as, bs) = splitAt y xs
-        as' = replicate y '#'
         bs' = if null bs then bs else '.':tail bs
