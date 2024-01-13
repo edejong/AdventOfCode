@@ -33,11 +33,11 @@ fi
 
 mkdir -p "$srcdir"
 touch $srcdir/day$day.txt
-touch $srcdir/day$day-test.txt
+touch $srcdir/day$day-ex.txt
 cat >$srcdir/"$title".hs <<EOL
 main :: IO ()
 main = do
-    xs <- readFile "${srcdir}/day${day}-test.txt"
+    xs <- readFile "${srcdir}/day${day}-ex.txt"
     print xs
 EOL
 
