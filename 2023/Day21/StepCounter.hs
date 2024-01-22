@@ -18,6 +18,8 @@ main = do
 
     let arr' = Arr.amap (/= '#') arr :: Array (V2 Int) Bool
 
+    print $ length $ evens . Set.toList . dfs arr' $ 64
+
     let sq = fmap (`div` 131) . (+ V2 65 65) . (rot45 !*)
     let getDiamond (r, c) = filter ((== V2 r c) . sq)
 
