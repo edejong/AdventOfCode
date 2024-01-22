@@ -352,3 +352,17 @@ executable aoc2023-20
     hs-source-dirs:   2023/Day20
     ghc-options:      -threaded -rtsopts -with-rtsopts=-N
     default-language: Haskell2010
+
+executable aoc2023-21
+    main-is:          StepCounter.hs
+    other-modules:
+          Paths_adventOfCode
+    build-depends:
+          base >=4.17 && <5
+        , bytestring
+        , containers
+        , gloss
+        , linear
+    hs-source-dirs:   2023/Day21
+    ghc-options:      -threaded -rtsopts -with-rtsopts=-N
+    default-language: Haskell2010
