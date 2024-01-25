@@ -1,0 +1,158 @@
+	Thu Jan 25 16:04 2024 Time and Allocation Profiling Report  (Final)
+
+	   aoc2023-22 +RTS -N -p -RTS
+
+	total time  =        0.08 secs   (304 ticks @ 1000 us, 8 processors)
+	total alloc = 624,959,104 bytes  (excludes profiling overheads)
+
+COST CENTRE       MODULE                   SRC                                           %time %alloc
+
+boundsOverlapType Data.Range.Util          Data/Range/Util.hs:(80,1)-(84,94)              14.5   14.7
+rangeBnds         Main                     2023/Day22/SandSlabs.hs:(133,1)-(141,69)       12.2   42.3
+findSupports      Main                     2023/Day22/SandSlabs.hs:128:1-97               11.8    5.4
+boundIsBetween    Data.Range.Util          Data/Range/Util.hs:(108,1)-(113,25)            11.5    0.0
+dropBrick         Main                     2023/Day22/SandSlabs.hs:(39,1)-(46,49)          8.6   10.0
+getMax            Main                     2023/Day22/SandSlabs.hs:67:1-41                 7.6    8.4
+blocksOverlap     Main                     2023/Day22/SandSlabs.hs:125:1-76                6.2    5.3
+rangesOverlap     Data.Range               Data/Range.hs:200:1-54                          4.6    0.0
+z                 Main                     2023/Day22/SandSlabs.hs:48:68                   3.6    0.0
+x                 Main                     2023/Day22/SandSlabs.hs:48:32                   3.3    0.0
+main              Main                     2023/Day22/SandSlabs.hs:(17,1)-(36,86)          3.3    7.0
+settleBlocks      Main                     2023/Day22/SandSlabs.hs:(108,1)-(122,18)        2.6    2.1
+getMin            Main                     2023/Day22/SandSlabs.hs:64:1-41                 2.6    0.0
+orOverlapType     Data.Range.Util          Data/Range/Util.hs:(87,1)-(91,28)               2.3    0.0
+isEmptySpan       Data.Range.Util          Data/Range/Util.hs:74:1-97                      2.3    0.0
+unionRangeMerges  Data.Range.RangeInternal Data/Range/RangeInternal.hs:(137,1)-(170,26)    1.3    0.7
+
+
+                                                                                                                        individual      inherited
+COST CENTRE                MODULE                      SRC                                           no.     entries  %time %alloc   %time %alloc
+
+MAIN                       MAIN                        <built-in>                                    299           0    0.0    0.0   100.0  100.0
+ CAF                       Main                        <entire-module>                               597           0    0.0    0.0     0.0    0.0
+  getBounds                Main                        2023/Day22/SandSlabs.hs:61:1-137              611           1    0.0    0.0     0.0    0.0
+  main                     Main                        2023/Day22/SandSlabs.hs:(17,1)-(36,86)        598           1    0.0    0.0     0.0    0.0
+   +=+                     Data.Range.Operators        Data/Range/Operators.hs:9:1-61                609           1    0.0    0.0     0.0    0.0
+   settleBlocks            Main                        2023/Day22/SandSlabs.hs:(108,1)-(122,18)      601           0    0.0    0.0     0.0    0.0
+    getMax                 Main                        2023/Day22/SandSlabs.hs:67:1-41               628           1    0.0    0.0     0.0    0.0
+    getMin                 Main                        2023/Day22/SandSlabs.hs:64:1-41               602           1    0.0    0.0     0.0    0.0
+  rangeBnds                Main                        2023/Day22/SandSlabs.hs:(133,1)-(141,69)      604           1    0.0    0.0     0.0    0.0
+  blockCoords              Main                        2023/Day22/SandSlabs.hs:105:1-111             638           0    0.0    0.0     0.0    0.0
+   fromRanges              Data.Range                  Data/Range.hs:(386,1)-(395,30)                639           1    0.0    0.0     0.0    0.0
+    rangeAlgebra           Data.Range.Algebra.Range    Data/Range/Algebra/Range.hs:10:1-90           644           1    0.0    0.0     0.0    0.0
+ CAF                       Data.Range                  <entire-module>                               595           0    0.0    0.0     0.0    0.0
+  fromRanges               Data.Range                  Data/Range.hs:(386,1)-(395,30)                650           0    0.0    0.0     0.0    0.0
+   union                   Data.Range.Algebra          Data/Range/Algebra.hs:57:1-60                 651           0    0.0    0.0     0.0    0.0
+    getFree                Data.Range.Algebra.Internal Data/Range/Algebra/Internal.hs:48:35-41       652           1    0.0    0.0     0.0    0.0
+ CAF                       Data.Range.Algebra          <entire-module>                               594           0    0.0    0.0     0.0    0.0
+  const                    Data.Range.Algebra          Data/Range/Algebra.hs:49:1-24                 653           1    0.0    0.0     0.0    0.0
+ CAF                       Data.Range.RangeInternal    <entire-module>                               591           0    0.0    0.0     0.0    0.0
+  emptyRangeMerge          Data.Range.RangeInternal    Data/Range/RangeInternal.hs:31:1-39           654           1    0.0    0.0     0.0    0.0
+ CAF                       GHC.Conc.Signal             <entire-module>                               413           0    0.0    0.0     0.0    0.0
+ CAF                       GHC.IO.Encoding             <entire-module>                               395           0    0.0    0.0     0.0    0.0
+ CAF                       GHC.IO.Encoding.Iconv       <entire-module>                               393           0    0.0    0.0     0.0    0.0
+ CAF                       GHC.IO.Exception            <entire-module>                               387           0    0.0    0.0     0.0    0.0
+ CAF                       GHC.IO.FD                   <entire-module>                               386           0    0.0    0.0     0.0    0.0
+ CAF                       GHC.IO.Handle.FD            <entire-module>                               384           0    0.0    0.0     0.0    0.0
+ CAF                       GHC.IO.Handle.Internals     <entire-module>                               383           0    0.0    0.0     0.0    0.0
+ CAF                       GHC.Read                    <entire-module>                               366           0    0.0    0.0     0.0    0.0
+ CAF                       GHC.Event.Thread            <entire-module>                               319           0    0.0    0.0     0.0    0.0
+ main                      Main                        2023/Day22/SandSlabs.hs:(17,1)-(36,86)        599           0    3.3    7.0   100.0  100.0
+  lbl                      Main                        2023/Day22/SandSlabs.hs:48:22-24              694        5959    0.0    0.0     0.0    0.0
+  findSupports             Main                        2023/Day22/SandSlabs.hs:128:1-97              695        1456   11.8    5.4    37.2   54.6
+   getMax                  Main                        2023/Day22/SandSlabs.hs:67:1-41               697     2119936    7.2    8.1    22.4   48.8
+    z                      Main                        2023/Day22/SandSlabs.hs:48:68                 699     2119936    3.6    0.0     3.6    0.0
+    rangeBnds              Main                        2023/Day22/SandSlabs.hs:(133,1)-(141,69)      698           0   11.5   40.7    11.5   40.7
+   getMin                  Main                        2023/Day22/SandSlabs.hs:64:1-41               696     2119936    2.6    0.0     2.6    0.0
+    z                      Main                        2023/Day22/SandSlabs.hs:48:68                 701        1456    0.0    0.0     0.0    0.0
+    rangeBnds              Main                        2023/Day22/SandSlabs.hs:(133,1)-(141,69)      700           0    0.0    0.0     0.0    0.0
+   blocksOverlap           Main                        2023/Day22/SandSlabs.hs:125:1-76              702       13773    0.0    0.1     0.3    0.3
+    x                      Main                        2023/Day22/SandSlabs.hs:48:32                 703       27546    0.0    0.0     0.0    0.0
+    rangesOverlap          Data.Range                  Data/Range.hs:200:1-54                        704       18003    0.3    0.0     0.3    0.2
+     boundsOverlapType     Data.Range.Util             Data/Range/Util.hs:(80,1)-(84,94)             705       18003    0.0    0.2     0.0    0.2
+      isEmptySpan          Data.Range.Util             Data/Range/Util.hs:74:1-97                    706       36006    0.0    0.0     0.0    0.0
+      boundIsBetween       Data.Range.Util             Data/Range/Util.hs:(108,1)-(113,25)           707       27438    0.0    0.0     0.0    0.0
+       pointJoinType       Data.Range.Util             Data/Range/Util.hs:(94,1)-(96,26)             710         524    0.0    0.0     0.0    0.0
+      orOverlapType        Data.Range.Util             Data/Range/Util.hs:(87,1)-(91,28)             708       14268    0.0    0.0     0.0    0.0
+    y                      Main                        2023/Day22/SandSlabs.hs:48:50                 709        8460    0.0    0.0     0.0    0.0
+  dropBrick                Main                        2023/Day22/SandSlabs.hs:(39,1)-(46,49)        711        1455    8.6   10.0     8.6   10.0
+  mkBlock                  Main                        2023/Day22/SandSlabs.hs:(57,1)-(58,23)        607        1455    0.0    0.1     0.0    0.1
+   +=+                     Data.Range.Operators        Data/Range/Operators.hs:9:1-61                608        4365    0.0    0.0     0.0    0.0
+  +=+                      Data.Range.Operators        Data/Range/Operators.hs:9:1-61                630           2    0.0    0.0     0.0    0.0
+  showBlocks               Main                        2023/Day22/SandSlabs.hs:(70,1)-(92,26)        610           2    0.0    0.3     3.0    4.6
+   intToChar               Main                        2023/Day22/SandSlabs.hs:95:1-31               691        8910    0.3    0.0     0.3    0.0
+   blockCoords             Main                        2023/Day22/SandSlabs.hs:105:1-111             637        2912    0.3    0.4     2.6    3.9
+    lbl                    Main                        2023/Day22/SandSlabs.hs:48:22-24              692        8910    0.0    0.0     0.0    0.0
+    x                      Main                        2023/Day22/SandSlabs.hs:48:32                 657        2912    0.0    0.0     0.0    0.0
+    y                      Main                        2023/Day22/SandSlabs.hs:48:50                 685        2912    0.0    0.0     0.0    0.0
+    z                      Main                        2023/Day22/SandSlabs.hs:48:68                 688        2912    0.0    0.0     0.0    0.0
+    fromRanges             Data.Range                  Data/Range.hs:(386,1)-(395,30)                640           0    0.0    0.4     2.3    3.5
+     iter                  Control.Monad.Free          src/Control/Monad/Free.hs:(312,1)-(313,40)    643       26208    0.3    0.2     0.3    0.2
+     takeEvenly            Data.Range.Util             Data/Range/Util.hs:(131,1)-(132,102)          679       23308    0.0    0.3     0.0    0.3
+      safeHead             Data.Range.Util             Data/Range/Util.hs:(135,1)-(136,25)           680       14572    0.0    0.0     0.0    0.0
+     getFree               Data.Range.Algebra.Internal Data/Range/Algebra/Internal.hs:48:35-41       641        8736    0.0    0.0     0.0    0.0
+     union                 Data.Range.Algebra          Data/Range/Algebra.hs:57:1-60                 642        8736    0.0    0.0     0.0    0.0
+      getFree              Data.Range.Algebra.Internal Data/Range/Algebra/Internal.hs:48:35-41       655        8736    0.0    0.0     0.0    0.0
+     rangeAlgebra          Data.Range.Algebra.Range    Data/Range/Algebra/Range.hs:10:1-90           645           0    0.0    0.3     2.0    2.6
+      iter                 Control.Monad.Free          src/Control/Monad/Free.hs:(312,1)-(313,40)    646       26208    0.3    0.2     0.3    0.2
+      storeRanges          Data.Range.RangeInternal    Data/Range/RangeInternal.hs:43:1-79           649       17472    0.3    0.1     1.0    1.1
+       storeRange          Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(34,1)-(40,105)   656        8736    0.0    0.3     0.0    0.3
+        maxBounds          Data.Range.Util             Data/Range/Util.hs:51:1-62                    683        8736    0.0    0.0     0.0    0.0
+         compareHigher     Data.Range.Util             Data/Range/Util.hs:(21,1)-(25,22)             684        8736    0.0    0.0     0.0    0.0
+        minBounds          Data.Range.Util             Data/Range/Util.hs:48:1-61                    681        8736    0.0    0.0     0.0    0.0
+         compareLower      Data.Range.Util             Data/Range/Util.hs:(14,1)-(18,22)             682        8736    0.0    0.0     0.0    0.0
+        pointJoinType      Data.Range.Util             Data/Range/Util.hs:(94,1)-(96,26)             686        5898    0.0    0.0     0.0    0.0
+       unionRangeMerges    Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(137,1)-(170,26)  658        8736    0.7    0.3     0.7    0.6
+        spanRanges         Data.Range.RangeInternal    Data/Range/RangeInternal.hs:25:6-15           661       26208    0.0    0.0     0.0    0.0
+        largestLowerBound  Data.Range.RangeInternal    Data/Range/RangeInternal.hs:23:6-22           664       17472    0.0    0.0     0.0    0.0
+        largestUpperBound  Data.Range.RangeInternal    Data/Range/RangeInternal.hs:24:6-22           667       17472    0.0    0.0     0.0    0.0
+        filterLowerBound   Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(173,1)-(179,73)  663        8736    0.0    0.1     0.0    0.1
+         spanRanges        Data.Range.RangeInternal    Data/Range/RangeInternal.hs:25:6-15           665        8736    0.0    0.0     0.0    0.0
+        filterUpperBound   Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(182,1)-(188,72)  666        8736    0.0    0.1     0.0    0.1
+         spanRanges        Data.Range.RangeInternal    Data/Range/RangeInternal.hs:25:6-15           672        8736    0.0    0.0     0.0    0.0
+        insertionSortSpans Data.Range.Spans            Data/Range/Spans.hs:11:1-73                   659        8736    0.0    0.1     0.0    0.1
+         insertionSort     Data.Range.Util             Data/Range/Util.hs:(60,1)-(67,17)             660        8736    0.0    0.0     0.0    0.0
+        unionSpans         Data.Range.Spans            Data/Range/Spans.hs:(45,1)-(48,18)            662        8736    0.0    0.0     0.0    0.0
+      exportRangeMerge     Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(50,1)-(61,27)    678        8736    0.0    0.3     0.0    0.3
+       pointJoinType       Data.Range.Util             Data/Range/Util.hs:(94,1)-(96,26)             687        5898    0.0    0.0     0.0    0.0
+      rangeMergeAlgebra    Data.Range.Algebra.Internal Data/Range/Algebra/Internal.hs:(57,1)-(60,75) 647        8736    0.0    0.0     0.7    0.6
+       unionRangeMerges    Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(137,1)-(170,26)  648        8736    0.7    0.3     0.7    0.6
+        spanRanges         Data.Range.RangeInternal    Data/Range/RangeInternal.hs:25:6-15           670       26208    0.0    0.0     0.0    0.0
+        largestLowerBound  Data.Range.RangeInternal    Data/Range/RangeInternal.hs:23:6-22           674       17472    0.0    0.0     0.0    0.0
+        largestUpperBound  Data.Range.RangeInternal    Data/Range/RangeInternal.hs:24:6-22           677       17472    0.0    0.0     0.0    0.0
+        filterLowerBound   Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(173,1)-(179,73)  673        8736    0.0    0.1     0.0    0.1
+         spanRanges        Data.Range.RangeInternal    Data/Range/RangeInternal.hs:25:6-15           675        8736    0.0    0.0     0.0    0.0
+        filterUpperBound   Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(182,1)-(188,72)  676        8736    0.0    0.1     0.0    0.1
+         spanRanges        Data.Range.RangeInternal    Data/Range/RangeInternal.hs:25:6-15           689        8736    0.0    0.0     0.0    0.0
+        insertionSortSpans Data.Range.Spans            Data/Range/Spans.hs:11:1-73                   668        8736    0.0    0.1     0.0    0.1
+         insertionSort     Data.Range.Util             Data/Range/Util.hs:(60,1)-(67,17)             669        8736    0.0    0.0     0.0    0.0
+        unionSpans         Data.Range.Spans            Data/Range/Spans.hs:(45,1)-(48,18)            671        8736    0.0    0.0     0.0    0.0
+   showArray2D             Main                        2023/Day22/SandSlabs.hs:(98,1)-(102,43)       690           2    0.0    0.1     0.0    0.1
+   getBounds               Main                        2023/Day22/SandSlabs.hs:61:1-137              612           0    0.0    0.2     0.0    0.3
+    getMax                 Main                        2023/Day22/SandSlabs.hs:67:1-41               613        5824    0.0    0.0     0.0    0.1
+     z                     Main                        2023/Day22/SandSlabs.hs:48:68                 615        2912    0.0    0.0     0.0    0.0
+     x                     Main                        2023/Day22/SandSlabs.hs:48:32                 636        1456    0.0    0.0     0.0    0.0
+     y                     Main                        2023/Day22/SandSlabs.hs:48:50                 693        1456    0.0    0.0     0.0    0.0
+     rangeBnds             Main                        2023/Day22/SandSlabs.hs:(133,1)-(141,69)      614           0    0.0    0.1     0.0    0.1
+  settleBlocks             Main                        2023/Day22/SandSlabs.hs:(108,1)-(122,18)      600           1    2.6    2.1    48.0   23.5
+   blocksOverlap           Main                        2023/Day22/SandSlabs.hs:125:1-76              620     1059240    6.2    5.2    44.4   19.7
+    x                      Main                        2023/Day22/SandSlabs.hs:48:32                 621     2118480    3.3    0.0     3.3    0.0
+    rangesOverlap          Data.Range                  Data/Range.hs:200:1-54                        622     1353690    4.3    0.0    34.9   14.5
+     boundsOverlapType     Data.Range.Util             Data/Range/Util.hs:(80,1)-(84,94)             623     1353690   14.5   14.5    30.6   14.5
+      isEmptySpan          Data.Range.Util             Data/Range/Util.hs:74:1-97                    624     2707380    2.3    0.0     2.3    0.0
+      boundIsBetween       Data.Range.Util             Data/Range/Util.hs:(108,1)-(113,25)           625     2193664   11.5    0.0    11.5    0.0
+       pointJoinType       Data.Range.Util             Data/Range/Util.hs:(94,1)-(96,26)             629       38187    0.0    0.0     0.0    0.0
+      orOverlapType        Data.Range.Util             Data/Range/Util.hs:(87,1)-(91,28)             626     1133490    2.3    0.0     2.3    0.0
+    y                      Main                        2023/Day22/SandSlabs.hs:48:50                 627      588900    0.0    0.0     0.0    0.0
+   getMax                  Main                        2023/Day22/SandSlabs.hs:67:1-41               617        1455    0.3    0.3     1.0    1.6
+    z                      Main                        2023/Day22/SandSlabs.hs:48:68                 619       69133    0.0    0.0     0.0    0.0
+    rangeBnds              Main                        2023/Day22/SandSlabs.hs:(133,1)-(141,69)      618           0    0.7    1.3     0.7    1.3
+   getMin                  Main                        2023/Day22/SandSlabs.hs:64:1-41               603        1455    0.0    0.0     0.0    0.1
+    z                      Main                        2023/Day22/SandSlabs.hs:48:68                 606        2911    0.0    0.0     0.0    0.0
+    rangeBnds              Main                        2023/Day22/SandSlabs.hs:(133,1)-(141,69)      605           0    0.0    0.1     0.0    0.1
+   z                       Main                        2023/Day22/SandSlabs.hs:48:68                 616        1455    0.0    0.0     0.0    0.0
+  getBounds                Main                        2023/Day22/SandSlabs.hs:61:1-137              631           0    0.0    0.1     0.0    0.2
+   getMax                  Main                        2023/Day22/SandSlabs.hs:67:1-41               632        2910    0.0    0.0     0.0    0.1
+    x                      Main                        2023/Day22/SandSlabs.hs:48:32                 634        1455    0.0    0.0     0.0    0.0
+    y                      Main                        2023/Day22/SandSlabs.hs:48:50                 635        1455    0.0    0.0     0.0    0.0
+    rangeBnds              Main                        2023/Day22/SandSlabs.hs:(133,1)-(141,69)      633           0    0.0    0.1     0.0    0.1

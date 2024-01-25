@@ -35,6 +35,7 @@ mkdir -p "$srcdir"
 touch $srcdir/day$day.txt
 touch $srcdir/day$day-ex.txt
 cat >$srcdir/"$title".hs <<EOL
+
 main :: IO ()
 main = do
     xs <- readFile "${srcdir}/day${day}-ex.txt"
@@ -43,14 +44,10 @@ EOL
 
 read -r -d '' VAR <<- EOM
 executable aoc${year}-${day}
+    import:           defaults
     main-is:          ${title}.hs
-    other-modules:
-          Paths_adventOfCode
-    build-depends:
-          base >=4.17 && <5
     hs-source-dirs:   ${srcdir}
-    ghc-options:      -threaded -rtsopts -with-rtsopts=-N
-    default-language: Haskell2010
+--     build-depends:
 EOM
 
 echo "" >> adventOfCode.cabal

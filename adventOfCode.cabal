@@ -23,6 +23,12 @@ maintainer:         ecco256@gmail.com
 -- category:
 extra-source-files: CHANGELOG.md
 
+common defaults
+  build-depends:    base >=4.17 && <5
+  other-modules:    Paths_adventOfCode
+  ghc-options:      -Wall -threaded -rtsopts -with-rtsopts=-N
+  default-language: Haskell2010
+
 library algos
   exposed-modules: FloydCycleDetect, FloydWarshall
   -- other-modules:
@@ -340,29 +346,19 @@ executable aoc2023-19
     default-language: Haskell2010
 
 executable aoc2023-20
+    import:           defaults
     main-is:          PulsePropagation.hs
-    other-modules:
-          Paths_adventOfCode
-    build-depends:
-          base >=4.17 && <5
-        , binary
-        , bytestring
-        , containers
-        , parsec
     hs-source-dirs:   2023/Day20
-    ghc-options:      -threaded -rtsopts -with-rtsopts=-N
-    default-language: Haskell2010
+    build-depends:    binary, bytestring, containers, parsec
 
 executable aoc2023-21
+    import:           defaults
     main-is:          StepCounter.hs
-    other-modules:
-          Paths_adventOfCode
-    build-depends:
-          base >=4.17 && <5
-        , bytestring
-        , containers
-        , gloss
-        , linear
     hs-source-dirs:   2023/Day21
-    ghc-options:      -threaded -rtsopts -with-rtsopts=-N
-    default-language: Haskell2010
+    build-depends:    bytestring, containers, gloss, linear
+
+executable aoc2023-22
+    import:           defaults
+    main-is:          SandSlabs.hs
+    hs-source-dirs:   2023/Day22
+    build-depends:    containers, range
