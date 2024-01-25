@@ -359,6 +359,7 @@ executable aoc2023-21
 
 executable aoc2023-22
     import:           defaults
+    other-modules:    Paths_adventOfCode
     main-is:          SandSlabs.hs
     hs-source-dirs:   2023/Day22
-    build-depends:    containers, range
+    build-depends:    containers, lens, linear
