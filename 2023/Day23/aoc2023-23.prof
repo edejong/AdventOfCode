@@ -1,0 +1,87 @@
+	Tue Jan 30 22:52 2024 Time and Allocation Profiling Report  (Final)
+
+	   aoc2023-23 +RTS -N -p -RTS
+
+	total time  =        1.48 secs   (5484 ticks @ 1000 us, 8 processors)
+	total alloc = 3,752,434,192 bytes  (excludes profiling overheads)
+
+COST CENTRE   MODULE                     SRC                                     %time %alloc
+
+memoizeFinite Data.Function.Memoize      src/Data/Function/Memoize.hs:214:1-53    68.1    0.0
+longestPath   Main                       2023/Day23/ALongWalk.hs:(72,1)-(82,44)   18.8   87.7
+notMember     Main                       2023/Day23/ALongWalk.hs:15:1-28           5.5    0.0
+member        Main                       2023/Day23/ALongWalk.hs:12:1-26           3.4    0.0
+ins           Main                       2023/Day23/ALongWalk.hs:18:1-25           2.4    5.1
+insEdges      Data.Graph.Inductive.Graph Data/Graph/Inductive/Graph.hs:332:1-42    0.3    2.9
+collapse      Main                       2023/Day23/ALongWalk.hs:(85,1)-(94,39)    0.2    1.7
+
+
+                                                                                                                  individual      inherited
+COST CENTRE      MODULE                       SRC                                              no.     entries  %time %alloc   %time %alloc
+
+MAIN             MAIN                         <built-in>                                       173           0    0.0    0.0   100.0  100.0
+ CAF             Main                         <entire-module>                                  345           0    0.0    0.0     0.0    0.0
+  main           Main                         2023/Day23/ALongWalk.hs:(21,1)-(44,65)           346           1    0.0    0.0     0.0    0.0
+   fixEnd        Main                         2023/Day23/ALongWalk.hs:(53,1)-(56,23)           394           0    0.0    0.0     0.0    0.0
+    pre          Data.Graph.Inductive.Graph   Data/Graph/Inductive/Graph.hs:406:1-26           395           1    0.0    0.0     0.0    0.0
+   fixStart      Main                         2023/Day23/ALongWalk.hs:(47,1)-(50,23)           387           0    0.0    0.0     0.0    0.0
+    suc          Data.Graph.Inductive.Graph   Data/Graph/Inductive/Graph.hs:402:1-26           388           1    0.0    0.0     0.0    0.0
+  member         Main                         2023/Day23/ALongWalk.hs:12:1-26                  373           1    0.0    0.0     0.0    0.0
+ CAF             Data.Function.Memoize        <entire-module>                                  343           0    0.0    0.0     0.0    0.0
+ CAF             Data.Graph.Inductive.Graph   <entire-module>                                  342           0    0.0    0.0     0.0    0.0
+  lpre'          Data.Graph.Inductive.Graph   Data/Graph/Inductive/Graph.hs:471:1-30           368           1    0.0    0.0     0.0    0.0
+  lsuc'          Data.Graph.Inductive.Graph   Data/Graph/Inductive/Graph.hs:467:1-30           360           1    0.0    0.0     0.0    0.0
+ CAF             Data.Graph.Inductive.NodeMap <entire-module>                                  341           0    0.0    0.0     0.0    0.0
+  new            Data.Graph.Inductive.NodeMap Data/Graph/Inductive/NodeMap.hs:53:1-40          353           1    0.0    0.0     0.0    0.0
+ CAF             GHC.Conc.Signal              <entire-module>                                  282           0    0.0    0.0     0.0    0.0
+ CAF             GHC.IO.Encoding              <entire-module>                                  264           0    0.0    0.0     0.0    0.0
+ CAF             GHC.IO.Encoding.Iconv        <entire-module>                                  262           0    0.0    0.0     0.0    0.0
+ CAF             GHC.IO.Exception             <entire-module>                                  256           0    0.0    0.0     0.0    0.0
+ CAF             GHC.IO.FD                    <entire-module>                                  255           0    0.0    0.0     0.0    0.0
+ CAF             GHC.IO.Handle.FD             <entire-module>                                  253           0    0.0    0.0     0.0    0.0
+ CAF             GHC.IO.Handle.Internals      <entire-module>                                  252           0    0.0    0.0     0.0    0.0
+ CAF             GHC.Event.Thread             <entire-module>                                  193           0    0.0    0.0     0.0    0.0
+ main            Main                         2023/Day23/ALongWalk.hs:(21,1)-(44,65)           347           0    0.0    0.1   100.0  100.0
+  mkNode_        Data.Graph.Inductive.NodeMap Data/Graph/Inductive/NodeMap.hs:77:1-30          356           4    0.0    0.0     0.0    0.0
+   mkNode        Data.Graph.Inductive.NodeMap Data/Graph/Inductive/NodeMap.hs:(68,1)-(73,27)   357           4    0.0    0.0     0.0    0.0
+  buildGraph     Main                         2023/Day23/ALongWalk.hs:(59,1)-(62,36)           348           2    0.0    0.2     1.4    3.3
+   nbrs          Main                         2023/Day23/ALongWalk.hs:(99,1)-(112,94)          349       18792    0.0    0.6     0.0    0.6
+   mkMapGraph    Data.Graph.Inductive.NodeMap Data/Graph/Inductive/NodeMap.hs:(164,1)-(168,53) 350           2    0.0    0.2     1.4    2.6
+    insEdges     Data.Graph.Inductive.Graph   Data/Graph/Inductive/Graph.hs:332:1-42           365           2    0.2    1.6     0.2    1.6
+    mkEdges      Data.Graph.Inductive.NodeMap Data/Graph/Inductive/NodeMap.hs:88:1-27          351           2    0.0    0.0     0.7    0.1
+     mkEdge      Data.Graph.Inductive.NodeMap Data/Graph/Inductive/NodeMap.hs:(81,1)-(84,25)   355       37442    0.7    0.0     0.7    0.0
+    mkNodes      Data.Graph.Inductive.NodeMap Data/Graph/Inductive/NodeMap.hs:92:1-21          352           2    0.1    0.1     0.4    0.7
+     mkNode      Data.Graph.Inductive.NodeMap Data/Graph/Inductive/NodeMap.hs:(68,1)-(73,27)   354       18792    0.4    0.5     0.4    0.5
+  collapse       Main                         2023/Day23/ALongWalk.hs:(85,1)-(94,39)           363           2    0.2    1.7     0.5    3.7
+   neighbors'    Data.Graph.Inductive.Graph   Data/Graph/Inductive/Graph.hs:451:1-43           366       18792    0.0    0.2     0.0    0.2
+   insEdges      Data.Graph.Inductive.Graph   Data/Graph/Inductive/Graph.hs:332:1-42           371       18720    0.1    1.3     0.1    1.3
+   insert        Data.Graph.Inductive.Graph   Data/Graph/Inductive/Graph.hs:194:1-12           367          72    0.0    0.0     0.0    0.0
+   nodes         Data.Graph.Inductive.Graph   Data/Graph/Inductive/Graph.hs:247:1-26           364           2    0.0    0.1     0.0    0.1
+   lpre'         Data.Graph.Inductive.Graph   Data/Graph/Inductive/Graph.hs:471:1-30           369           0    0.0    0.2     0.0    0.2
+   lsuc'         Data.Graph.Inductive.Graph   Data/Graph/Inductive/Graph.hs:467:1-30           370           0    0.1    0.2     0.1    0.2
+  longestPath    Main                         2023/Day23/ALongWalk.hs:(72,1)-(82,44)           358           2   18.8   87.7    98.1   92.8
+   notMember     Main                         2023/Day23/ALongWalk.hs:15:1-28                  372    55963784    5.5    0.0     8.8    0.0
+    member       Main                         2023/Day23/ALongWalk.hs:12:1-26                  374           0    3.4    0.0     3.4    0.0
+   ins           Main                         2023/Day23/ALongWalk.hs:18:1-25                  375    11944884    2.4    5.1     2.4    5.1
+   memoizeFinite Data.Function.Memoize        src/Data/Function/Memoize.hs:214:1-53            359           2   68.1    0.0    68.1    0.0
+    context      Data.Graph.Inductive.Graph   Data/Graph/Inductive/Graph.hs:(385,1)-(386,41)   362          70    0.0    0.0     0.0    0.0
+    lsuc'        Data.Graph.Inductive.Graph   Data/Graph/Inductive/Graph.hs:467:1-30           361           0    0.0    0.0     0.0    0.0
+  fixEnd         Main                         2023/Day23/ALongWalk.hs:(53,1)-(56,23)           393           1    0.0    0.0     0.0    0.0
+   delEdges      Data.Graph.Inductive.Graph   Data/Graph/Inductive/Graph.hs:341:1-42           397           1    0.0    0.0     0.0    0.0
+    delEdge      Data.Graph.Inductive.Graph   Data/Graph/Inductive/Graph.hs:(303,1)-(305,78)   398           2    0.0    0.0     0.0    0.0
+   pre           Data.Graph.Inductive.Graph   Data/Graph/Inductive/Graph.hs:406:1-26           396           0    0.0    0.0     0.0    0.0
+  fixStart       Main                         2023/Day23/ALongWalk.hs:(47,1)-(50,23)           386           1    0.0    0.0     0.0    0.0
+   delEdges      Data.Graph.Inductive.Graph   Data/Graph/Inductive/Graph.hs:341:1-42           391           1    0.0    0.0     0.0    0.0
+    delEdge      Data.Graph.Inductive.Graph   Data/Graph/Inductive/Graph.hs:(303,1)-(305,78)   392           2    0.0    0.0     0.0    0.0
+   suc           Data.Graph.Inductive.Graph   Data/Graph/Inductive/Graph.hs:402:1-26           389           0    0.0    0.0     0.0    0.0
+  rebuildGraph   Main                         2023/Day23/ALongWalk.hs:(65,1)-(69,34)           376           1    0.0    0.0     0.0    0.0
+   lab           Data.Graph.Inductive.Graph   Data/Graph/Inductive/Graph.hs:390:1-37           382         472    0.0    0.0     0.0    0.0
+    lab'         Data.Graph.Inductive.Graph   Data/Graph/Inductive/Graph.hs:443:1-18           383         472    0.0    0.0     0.0    0.0
+   edges         Data.Graph.Inductive.Graph   Data/Graph/Inductive/Graph.hs:251:1-29           380           1    0.0    0.0     0.0    0.0
+    toEdge       Data.Graph.Inductive.Graph   Data/Graph/Inductive/Graph.hs:255:1-22           381         118    0.0    0.0     0.0    0.0
+   mkMapGraph    Data.Graph.Inductive.NodeMap Data/Graph/Inductive/NodeMap.hs:(164,1)-(168,53) 377           1    0.0    0.0     0.0    0.0
+    insEdges     Data.Graph.Inductive.Graph   Data/Graph/Inductive/Graph.hs:332:1-42           390           1    0.0    0.0     0.0    0.0
+    mkEdges      Data.Graph.Inductive.NodeMap Data/Graph/Inductive/NodeMap.hs:88:1-27          378           1    0.0    0.0     0.0    0.0
+     mkEdge      Data.Graph.Inductive.NodeMap Data/Graph/Inductive/NodeMap.hs:(81,1)-(84,25)   385         118    0.0    0.0     0.0    0.0
+    mkNodes      Data.Graph.Inductive.NodeMap Data/Graph/Inductive/NodeMap.hs:92:1-21          379           1    0.0    0.0     0.0    0.0
+     mkNode      Data.Graph.Inductive.NodeMap Data/Graph/Inductive/NodeMap.hs:(68,1)-(73,27)   384         236    0.0    0.0     0.0    0.0
