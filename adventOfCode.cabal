@@ -26,7 +26,8 @@ extra-source-files: CHANGELOG.md
 common defaults
   build-depends:    base >=4.17 && <5
   other-modules:    Paths_adventOfCode
-  ghc-options:      -Wall -threaded -rtsopts -with-rtsopts=-N
+--   ghc-options:      -Wall -threaded -rtsopts -with-rtsopts=-N
+  ghc-options:      -threaded -rtsopts -with-rtsopts=-N
   default-language: Haskell2010
 
 library algos
@@ -368,3 +369,9 @@ executable aoc2023-23
     main-is:          ALongWalk.hs
     hs-source-dirs:   2023/Day23
     build-depends:    containers, fgl, lens, memoize
+
+executable aoc2023-24
+    import:           defaults
+    main-is:          NeverTellMeTheOdds.hs
+    hs-source-dirs:   2023/Day24
+    build-depends:    lens, linear, mfsolve, split
