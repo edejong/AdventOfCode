@@ -1,0 +1,68 @@
+	Mon Feb  5 17:02 2024 Time and Allocation Profiling Report  (Final)
+
+	   aoc2023-25 +RTS -N -p -RTS
+
+	total time  =        0.01 secs   (40 ticks @ 1000 us, 8 processors)
+	total alloc =  27,963,608 bytes  (excludes profiling overheads)
+
+COST CENTRE MODULE                         SRC                                                 %time %alloc
+
+main        Main                           2023/Day25/Snowverload.hs:(5,1)-(16,35)              77.5   25.3
+MAIN        MAIN                           <built-in>                                            5.0    0.5
+mkNode      Data.Graph.Inductive.NodeMap   Data/Graph/Inductive/NodeMap.hs:(68,1)-(73,27)        5.0    3.4
+insEdges    Data.Graph.Inductive.Graph     Data/Graph/Inductive/Graph.hs:332:1-42                5.0   15.5
+xdfWith     Data.Graph.Inductive.Query.DFS Data/Graph/Inductive/Query/DFS.hs:(129,1)-(135,67)    2.5   19.0
+mkEdge      Data.Graph.Inductive.NodeMap   Data/Graph/Inductive/NodeMap.hs:(81,1)-(84,25)        2.5    0.5
+ufold       Data.Graph.Inductive.Graph     Data/Graph/Inductive/Graph.hs:(215,1)-(219,23)        2.5   26.6
+mkNodes     Data.Graph.Inductive.NodeMap   Data/Graph/Inductive/NodeMap.hs:92:1-21               0.0    1.4
+mkMapGraph  Data.Graph.Inductive.NodeMap   Data/Graph/Inductive/NodeMap.hs:(164,1)-(168,53)      0.0    2.1
+neighbors'  Data.Graph.Inductive.Graph     Data/Graph/Inductive/Graph.hs:451:1-43                0.0    1.9
+undir       Data.Graph.Inductive.Basic     Data/Graph/Inductive/Basic.hs:33:1-61                 0.0    1.9
+
+
+                                                                                                                        individual      inherited
+COST CENTRE        MODULE                         SRC                                                no.     entries  %time %alloc   %time %alloc
+
+MAIN               MAIN                           <built-in>                                         176           0    5.0    0.5   100.0  100.0
+ CAF               Main                           <entire-module>                                    351           0    0.0    0.0     0.0    0.0
+  main             Main                           2023/Day25/Snowverload.hs:(5,1)-(16,35)            352           1    0.0    0.0     0.0    0.0
+   components      Data.Graph.Inductive.Query.DFS Data/Graph/Inductive/Query/DFS.hs:202:1-33         354           1    0.0    0.0     0.0    0.0
+    udff'          Data.Graph.Inductive.Query.DFS Data/Graph/Inductive/Query/DFS.hs:179:1-23         356           1    0.0    0.0     0.0    0.0
+     udffWith'     Data.Graph.Inductive.Query.DFS Data/Graph/Inductive/Query/DFS.hs:176:1-35         357           1    0.0    0.0     0.0    0.0
+      udffWith     Data.Graph.Inductive.Query.DFS Data/Graph/Inductive/Query/DFS.hs:173:1-30         360           1    0.0    0.0     0.0    0.0
+   undir           Data.Graph.Inductive.Basic     Data/Graph/Inductive/Basic.hs:33:1-61              364           1    0.0    0.0     0.0    0.0
+    gmap           Data.Graph.Inductive.Graph     Data/Graph/Inductive/Graph.hs:223:1-33             365           1    0.0    0.0     0.0    0.0
+ CAF               Data.Graph.Inductive.Basic     <entire-module>                                    348           0    0.0    0.0     0.0    0.0
+  preorder         Data.Graph.Inductive.Basic     Data/Graph/Inductive/Basic.hs:129:1-18             382           1    0.0    0.0     0.0    0.0
+ CAF               Data.Graph.Inductive.NodeMap   <entire-module>                                    346           0    0.0    0.0     0.0    0.0
+  new              Data.Graph.Inductive.NodeMap   Data/Graph/Inductive/NodeMap.hs:53:1-40            372           1    0.0    0.0     0.0    0.0
+ CAF               GHC.Conc.Signal                <entire-module>                                    285           0    0.0    0.0     0.0    0.0
+ CAF               GHC.IO.Encoding                <entire-module>                                    267           0    0.0    0.0     0.0    0.0
+ CAF               GHC.IO.Encoding.Iconv          <entire-module>                                    265           0    0.0    0.0     0.0    0.0
+ CAF               GHC.IO.Exception               <entire-module>                                    259           0    0.0    0.0     0.0    0.0
+ CAF               GHC.IO.FD                      <entire-module>                                    258           0    0.0    0.0     0.0    0.0
+ CAF               GHC.IO.Handle.FD               <entire-module>                                    256           0    0.0    0.1     0.0    0.1
+ CAF               GHC.IO.Handle.Internals        <entire-module>                                    255           0    0.0    0.0     0.0    0.0
+ CAF               GHC.Event.Thread               <entire-module>                                    196           0    0.0    0.0     0.0    0.0
+ main              Main                           2023/Day25/Snowverload.hs:(5,1)-(16,35)            353           0   77.5   25.3    95.0   99.4
+  mkNode_          Data.Graph.Inductive.NodeMap   Data/Graph/Inductive/NodeMap.hs:77:1-30            378           6    0.0    0.0     0.0    0.0
+   mkNode          Data.Graph.Inductive.NodeMap   Data/Graph/Inductive/NodeMap.hs:(68,1)-(73,27)     379           6    0.0    0.0     0.0    0.0
+  delEdges         Data.Graph.Inductive.Graph     Data/Graph/Inductive/Graph.hs:341:1-42             376           1    0.0    0.0     0.0    0.3
+   delEdge         Data.Graph.Inductive.Graph     Data/Graph/Inductive/Graph.hs:(303,1)-(305,78)     377           6    0.0    0.3     0.0    0.3
+  mkMapGraph       Data.Graph.Inductive.NodeMap   Data/Graph/Inductive/NodeMap.hs:(164,1)-(168,53)   369           1    0.0    2.1    12.5   23.4
+   insEdges        Data.Graph.Inductive.Graph     Data/Graph/Inductive/Graph.hs:332:1-42             375           1    5.0   15.5     5.0   15.5
+   mkEdges         Data.Graph.Inductive.NodeMap   Data/Graph/Inductive/NodeMap.hs:88:1-27            370           1    0.0    0.5     2.5    1.0
+    mkEdge         Data.Graph.Inductive.NodeMap   Data/Graph/Inductive/NodeMap.hs:(81,1)-(84,25)     374        3148    2.5    0.5     2.5    0.5
+   mkNodes         Data.Graph.Inductive.NodeMap   Data/Graph/Inductive/NodeMap.hs:92:1-21            371           1    0.0    1.4     5.0    4.8
+    mkNode         Data.Graph.Inductive.NodeMap   Data/Graph/Inductive/NodeMap.hs:(68,1)-(73,27)     373        1408    5.0    3.4     5.0    3.4
+  components       Data.Graph.Inductive.Query.DFS Data/Graph/Inductive/Query/DFS.hs:202:1-33         355           0    0.0    0.5     2.5   21.4
+   udff'           Data.Graph.Inductive.Query.DFS Data/Graph/Inductive/Query/DFS.hs:179:1-23         358           0    0.0    0.0     2.5   20.9
+    udffWith'      Data.Graph.Inductive.Query.DFS Data/Graph/Inductive/Query/DFS.hs:176:1-35         359           0    0.0    0.0     2.5   20.9
+     nodes         Data.Graph.Inductive.Graph     Data/Graph/Inductive/Graph.hs:247:1-26             363           1    0.0    0.0     0.0    0.0
+     udffWith      Data.Graph.Inductive.Query.DFS Data/Graph/Inductive/Query/DFS.hs:173:1-30         361           0    0.0    0.0     2.5   20.9
+      xdffWith     Data.Graph.Inductive.Query.DFS Data/Graph/Inductive/Query/DFS.hs:148:1-42         362           1    0.0    0.0     2.5   20.9
+       xdfWith     Data.Graph.Inductive.Query.DFS Data/Graph/Inductive/Query/DFS.hs:(129,1)-(135,67) 380        6973    2.5   19.0     2.5   20.9
+        neighbors' Data.Graph.Inductive.Graph     Data/Graph/Inductive/Graph.hs:451:1-43             381        1408    0.0    1.9     0.0    1.9
+  undir            Data.Graph.Inductive.Basic     Data/Graph/Inductive/Basic.hs:33:1-61              366           0    0.0    1.9     2.5   29.0
+   gmap            Data.Graph.Inductive.Graph     Data/Graph/Inductive/Graph.hs:223:1-33             367           0    0.0    0.6     2.5   27.2
+    ufold          Data.Graph.Inductive.Graph     Data/Graph/Inductive/Graph.hs:(215,1)-(219,23)     368        1409    2.5   26.6     2.5   26.6

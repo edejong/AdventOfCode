@@ -375,3 +375,9 @@ executable aoc2023-24
     main-is:          NeverTellMeTheOdds.hs
     hs-source-dirs:   2023/Day24
     build-depends:    lens, linear, mfsolve, split
+
+executable aoc2023-25
+    import:           defaults
+    main-is:          Snowverload.hs
+    hs-source-dirs:   2023/Day25
+    build-depends:    fgl
