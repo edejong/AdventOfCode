@@ -1,9 +1,10 @@
 module FloydCycleDetect where
 
-{- Floyd Cycle Detection
+{-|Floyd Cycle Detection
+
 Returns (mu, la) where mu is the start of a cycle, la is the length of the cycle
 -}
-findCycle :: Eq a => (a -> a) -> a -> (Integer, Integer)
+findCycle :: (Eq n, Integral a) => (n -> n) -> n -> (a, a)
 findCycle f x0 =
   let (_, x1) = run (1, 2) (move 1 x0) (move 2 x0) 0
       (mu, x2) = run (1, 1) x0 x1 0

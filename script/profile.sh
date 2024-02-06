@@ -1,15 +1,5 @@
 #!/bin/bash
 
-# usage()
-# {
-#   echo "Usage: $0 PROJECT"
-#   exit 2
-# }
-
-# proj=$1
-
-# [ -z "$proj" ] && usage
-
 usage()
 {
   echo "Usage: $0 -y YEAR -d DAY"
@@ -29,8 +19,11 @@ done
 srcdir="$year/Day$day"
 proj="aoc$year-$day"
 
-cabal run ${proj} -- +RTS -p -RTS
-cat ${proj}.prof | ghc-prof-flamegraph > ${proj}.svg
+cabal run $proj -- +RTS -p -hy -l-agu -RTS
 
-mv ${proj}.prof $srcdir
-mv ${proj}.svg $srcdir
+cat $proj.prof | ghc-prof-flamegraph > $proj.prof.svg
+eventlog2html $proj.eventlog
+
+mv $proj.prof $srcdir
+rm $proj.eventlog
+rm $proj.hp
