@@ -34,14 +34,10 @@ common defaults
   default-language: Haskell2010
 
 library algos
-  exposed-modules: FloydCycleDetect, FloydWarshall
-  -- other-modules:
-  -- build-depends:
-  build-depends:
-          base >=4.17 && <5
-        , array
-  hs-source-dirs: Algorithms
-  default-language: Haskell2010
+  import:           defaults
+  exposed-modules:  CycleDetect, ShortestPath, Mincut
+  build-depends:    array, fgl, random
+  hs-source-dirs:   Algorithms
 
 -- executable aoc2015
 --     main-is:          Main.hs
@@ -383,4 +379,4 @@ executable aoc2023-25
     import:           defaults
     main-is:          Snowverload.hs
     hs-source-dirs:   2023/Day25
-    build-depends:    array, fgl, random
+    build-depends:    algos, array, fgl, random
