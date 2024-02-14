@@ -1,6 +1,6 @@
-{-# LANGUAGE TypeApplications #-}
+{-# OPTIONS_GHC -Wno-incomplete-uni-patterns #-}
+
 import Data.List.Split (splitOn)
-import Debug.Trace (trace)
 import Data.List (intercalate)
 import Data.Function.Memoize (memoize2)
 

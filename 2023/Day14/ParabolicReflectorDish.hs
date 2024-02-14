@@ -1,6 +1,5 @@
-import Data.List (sort, sortBy, transpose)
-import Data.Ord (Down (..), comparing)
-import FloydCycleDetect
+import CycleDetect
+import Data.List (transpose)
 
 main :: IO ()
 main = do

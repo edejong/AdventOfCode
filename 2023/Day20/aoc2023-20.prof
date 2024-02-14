@@ -1,0 +1,40 @@
+	Wed Feb 14 08:58 2024 Time and Allocation Profiling Report  (Final)
+
+	   aoc2023-20 +RTS -N -p -hy -l-agu -RTS
+
+	total time  =        0.05 secs   (180 ticks @ 1000 us, 8 processors)
+	total alloc = 524,441,664 bytes  (excludes profiling overheads)
+
+COST CENTRE  MODULE    SRC                                            %time %alloc
+
+processQueue Main      2023/Day20/PulsePropagation.hs:(62,1)-(73,22)   61.1   69.0
+processPulse Main      2023/Day20/PulsePropagation.hs:(76,1)-(95,57)   36.7   30.8
+main         Main      2023/Day20/PulsePropagation.hs:(12,1)-(24,33)    1.7    0.1
+
+
+                                                                                                             individual      inherited
+COST CENTRE         MODULE                  SRC                                           no.     entries  %time %alloc   %time %alloc
+
+MAIN                MAIN                    <built-in>                                    198           0    0.6    0.0   100.0  100.0
+ CAF                Main                    <entire-module>                               395           0    0.0    0.0     0.0    0.0
+  inputP            Main                    2023/Day20/PulsePropagation.hs:(40,1)-(44,25) 402           1    0.0    0.0     0.0    0.0
+  main              Main                    2023/Day20/PulsePropagation.hs:(12,1)-(24,33) 396           1    0.0    0.0     0.0    0.0
+ CAF                GHC.Conc.Signal         <entire-module>                               307           0    0.0    0.0     0.0    0.0
+ CAF                GHC.IO.Encoding         <entire-module>                               289           0    0.0    0.0     0.0    0.0
+ CAF                GHC.IO.Encoding.Iconv   <entire-module>                               287           0    0.0    0.0     0.0    0.0
+ CAF                GHC.IO.Exception        <entire-module>                               281           0    0.0    0.0     0.0    0.0
+ CAF                GHC.IO.FD               <entire-module>                               280           0    0.0    0.0     0.0    0.0
+ CAF                GHC.IO.Handle.FD        <entire-module>                               278           0    0.0    0.0     0.0    0.0
+ CAF                GHC.IO.Handle.Internals <entire-module>                               277           0    0.0    0.0     0.0    0.0
+ CAF                GHC.Event.Thread        <entire-module>                               218           0    0.0    0.0     0.0    0.0
+ main               Main                    2023/Day20/PulsePropagation.hs:(12,1)-(24,33) 397           0    1.7    0.1    99.4  100.0
+  counters          Main                    2023/Day20/PulsePropagation.hs:37:29-36       407       16926    0.0    0.0     0.0    0.0
+  pushButton        Main                    2023/Day20/PulsePropagation.hs:59:1-86        398           2    0.0    0.0    97.8   99.8
+   processQueue     Main                    2023/Day20/PulsePropagation.hs:(62,1)-(73,22) 400      346895   61.1   69.0    97.8   99.8
+    processPulse    Main                    2023/Day20/PulsePropagation.hs:(76,1)-(95,57) 401      341874   36.7   30.8    36.7   30.8
+     ==             Main                    2023/Day20/PulsePropagation.hs:26:75-76       406      143590    0.0    0.0     0.0    0.0
+  mkStateWithCounts Main                    2023/Day20/PulsePropagation.hs:(54,1)-(56,36) 399           1    0.0    0.0     0.0    0.0
+  mkSystemState     Main                    2023/Day20/PulsePropagation.hs:(47,1)-(51,25) 404           1    0.0    0.0     0.0    0.0
+   ==               Main                    2023/Day20/PulsePropagation.hs:26:75-76       405          58    0.0    0.0     0.0    0.0
+  st                Main                    2023/Day20/PulsePropagation.hs:37:66-67       408           1    0.0    0.0     0.0    0.0
+  inputP            Main                    2023/Day20/PulsePropagation.hs:(40,1)-(44,25) 403           0    0.0    0.1     0.0    0.1

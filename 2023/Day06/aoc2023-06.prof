@@ -1,0 +1,35 @@
+	Tue Feb 13 22:06 2024 Time and Allocation Profiling Report  (Final)
+
+	   aoc2023-06 +RTS -N -p -hy -l-agu -RTS
+
+	total time  =        0.00 secs   (0 ticks @ 1000 us, 8 processors)
+	total alloc =     258,632 bytes  (excludes profiling overheads)
+
+COST CENTRE MODULE           SRC                                    %time %alloc
+
+MAIN        MAIN             <built-in>                               0.0   53.3
+CAF         GHC.IO.Handle.FD <entire-module>                          0.0   13.4
+CAF         GHC.IO.Encoding  <entire-module>                          0.0    1.2
+solve       Main             2023/Day06/WaitForIt.hs:(9,1)-(10,89)    0.0   14.3
+main        Main             2023/Day06/WaitForIt.hs:(4,1)-(6,53)     0.0   16.0
+
+
+                                                                                              individual      inherited
+COST CENTRE  MODULE                  SRC                                   no.     entries  %time %alloc   %time %alloc
+
+MAIN         MAIN                    <built-in>                            129           0    0.0   53.3     0.0  100.0
+ CAF         Main                    <entire-module>                       257           0    0.0    0.7     0.0    0.7
+  main       Main                    2023/Day06/WaitForIt.hs:(4,1)-(6,53)  258           1    0.0    0.0     0.0    0.0
+  solve      Main                    2023/Day06/WaitForIt.hs:(9,1)-(10,89) 260           1    0.0    0.0     0.0    0.0
+ CAF         GHC.Conc.Signal         <entire-module>                       234           0    0.0    0.2     0.0    0.2
+ CAF         GHC.IO.Encoding         <entire-module>                       216           0    0.0    1.2     0.0    1.2
+ CAF         GHC.IO.Encoding.Iconv   <entire-module>                       214           0    0.0    0.1     0.0    0.1
+ CAF         GHC.IO.Exception        <entire-module>                       208           0    0.0    0.2     0.0    0.2
+ CAF         GHC.IO.FD               <entire-module>                       207           0    0.0    0.0     0.0    0.0
+ CAF         GHC.IO.Handle.FD        <entire-module>                       205           0    0.0   13.4     0.0   13.4
+ CAF         GHC.IO.Handle.Internals <entire-module>                       204           0    0.0    0.0     0.0    0.0
+ CAF         GHC.Read                <entire-module>                       189           0    0.0    0.0     0.0    0.0
+ CAF         GHC.Event.Thread        <entire-module>                       149           0    0.0    0.5     0.0    0.5
+ main        Main                    2023/Day06/WaitForIt.hs:(4,1)-(6,53)  259           0    0.0   16.0     0.0   30.4
+  solve      Main                    2023/Day06/WaitForIt.hs:(9,1)-(10,89) 261           0    0.0   14.3     0.0   14.4
+   roots     Main                    2023/Day06/WaitForIt.hs:13:1-80       262           4    0.0    0.1     0.0    0.1

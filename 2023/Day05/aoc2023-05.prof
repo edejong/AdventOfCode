@@ -1,0 +1,246 @@
+	Tue Feb 13 22:04 2024 Time and Allocation Profiling Report  (Final)
+
+	   aoc2023-05 +RTS -N -p -hy -l-agu -RTS
+
+	total time  =        0.03 secs   (124 ticks @ 1000 us, 8 processors)
+	total alloc = 322,909,216 bytes  (excludes profiling overheads)
+
+COST CENTRE       MODULE                   SRC                                                     %time %alloc
+
+boundsOverlapType Data.Range.Util          Data/Range/Util.hs:(80,1)-(84,94)                        17.7   21.5
+unionSpans        Data.Range.Spans         Data/Range/Spans.hs:(45,1)-(48,18)                       17.7   14.9
+filterUpperBound  Data.Range.RangeInternal Data/Range/RangeInternal.hs:(182,1)-(188,72)             12.9   22.0
+insertionSort     Data.Range.Util          Data/Range/Util.hs:(60,1)-(67,17)                        11.3    8.3
+filterLowerBound  Data.Range.RangeInternal Data/Range/RangeInternal.hs:(173,1)-(179,73)              8.1   22.0
+orOverlapType     Data.Range.Util          Data/Range/Util.hs:(87,1)-(91,28)                         6.5    0.0
+boundIsBetween    Data.Range.Util          Data/Range/Util.hs:(108,1)-(113,25)                       6.5    0.0
+unionRangeMerges  Data.Range.RangeInternal Data/Range/RangeInternal.hs:(137,1)-(170,26)              4.0    2.8
+isEmptySpan       Data.Range.Util          Data/Range/Util.hs:74:1-97                                2.4    0.0
+compareLower      Data.Range.Util          Data/Range/Util.hs:(14,1)-(18,22)                         2.4    0.0
+joinSpans         Data.Range.Spans         Data/Range/Spans.hs:(37,1)-(41,17)                        2.4    0.7
+exportRangeMerge  Data.Range.RangeInternal Data/Range/RangeInternal.hs:(50,1)-(61,27)                1.6    0.9
+input             Main                     2023/Day05/IfYouGiveASeedAFertilizer.hs:(29,1)-(36,27)    1.6    1.6
+storeRange        Data.Range.RangeInternal Data/Range/RangeInternal.hs:(34,1)-(40,105)               0.8    2.3
+
+
+                                                                                                                                         individual      inherited
+COST CENTRE                        MODULE                      SRC                                                    no.     entries  %time %alloc   %time %alloc
+
+MAIN                               MAIN                        <built-in>                                             309           0    0.8    0.0   100.0  100.0
+ CAF                               Main                        <entire-module>                                        617           0    0.0    0.0     0.0    0.0
+  input                            Main                        2023/Day05/IfYouGiveASeedAFertilizer.hs:(29,1)-(36,27) 637           1    0.0    0.0     0.0    0.0
+  main                             Main                        2023/Day05/IfYouGiveASeedAFertilizer.hs:(11,1)-(18,42) 618           1    0.0    0.0     0.0    0.0
+   fromRanges                      Data.Range                  Data/Range.hs:(386,1)-(395,30)                         620           1    0.0    0.0     0.0    0.0
+    rangeAlgebra                   Data.Range.Algebra.Range    Data/Range/Algebra/Range.hs:10:1-90                    625           1    0.0    0.0     0.0    0.0
+  mapRanges                        Main                        2023/Day05/IfYouGiveASeedAFertilizer.hs:(21,1)-(26,46) 668           0    0.0    0.0     0.0    0.0
+   rangeAlgebra                    Data.Range.Algebra.Range    Data/Range/Algebra/Range.hs:10:1-90                    669           1    0.0    0.0     0.0    0.0
+ CAF                               Data.Range                  <entire-module>                                        614           0    0.0    0.0     0.0    0.0
+  fromRanges                       Data.Range                  Data/Range.hs:(386,1)-(395,30)                         631           0    0.0    0.0     0.0    0.0
+   union                           Data.Range.Algebra          Data/Range/Algebra.hs:57:1-60                          632           0    0.0    0.0     0.0    0.0
+    getFree                        Data.Range.Algebra.Internal Data/Range/Algebra/Internal.hs:48:35-41                633           1    0.0    0.0     0.0    0.0
+ CAF                               Data.Range.Algebra          <entire-module>                                        613           0    0.0    0.0     0.0    0.0
+  const                            Data.Range.Algebra          Data/Range/Algebra.hs:49:1-24                          634           1    0.0    0.0     0.0    0.0
+ CAF                               Data.Range.RangeInternal    <entire-module>                                        610           0    0.0    0.0     0.0    0.0
+  emptyRangeMerge                  Data.Range.RangeInternal    Data/Range/RangeInternal.hs:31:1-39                    635           1    0.0    0.0     0.0    0.0
+ CAF                               Text.Parsec.Language        <entire-module>                                        556           0    0.0    0.0     0.0    0.0
+ CAF                               GHC.Conc.Signal             <entire-module>                                        423           0    0.0    0.0     0.0    0.0
+ CAF                               GHC.IO.Encoding             <entire-module>                                        405           0    0.0    0.0     0.0    0.0
+ CAF                               GHC.IO.Encoding.Iconv       <entire-module>                                        403           0    0.0    0.0     0.0    0.0
+ CAF                               GHC.IO.Exception            <entire-module>                                        397           0    0.0    0.0     0.0    0.0
+ CAF                               GHC.IO.FD                   <entire-module>                                        396           0    0.0    0.0     0.0    0.0
+ CAF                               GHC.IO.Handle.FD            <entire-module>                                        394           0    0.0    0.0     0.0    0.0
+ CAF                               GHC.IO.Handle.Internals     <entire-module>                                        393           0    0.0    0.0     0.0    0.0
+ CAF                               GHC.Event.Thread            <entire-module>                                        329           0    0.0    0.0     0.0    0.0
+ main                              Main                        2023/Day05/IfYouGiveASeedAFertilizer.hs:(11,1)-(18,42) 619           0    0.8    0.1    99.2   99.9
+  mapRanges                        Main                        2023/Day05/IfYouGiveASeedAFertilizer.hs:(21,1)-(26,46) 666         456    0.0    0.1    96.0   97.4
+   iter                            Control.Monad.Free          src/Control/Monad/Free.hs:(312,1)-(313,40)             667        2652    0.0    0.0     0.0    0.0
+   getFree                         Data.Range.Algebra.Internal Data/Range/Algebra/Internal.hs:48:35-41                727         884    0.0    0.0     0.0    0.0
+   difference                      Data.Range.Algebra          Data/Range/Algebra.hs:65:1-70                          733         442    0.0    0.0     0.0    0.0
+    getFree                        Data.Range.Algebra.Internal Data/Range/Algebra/Internal.hs:48:35-41                734         884    0.0    0.0     0.0    0.0
+   intersection                    Data.Range.Algebra          Data/Range/Algebra.hs:61:1-74                          675         442    0.0    0.0     0.0    0.0
+    getFree                        Data.Range.Algebra.Internal Data/Range/Algebra/Internal.hs:48:35-41                676         884    0.0    0.0     0.0    0.0
+   joinRanges                      Data.Range                  Data/Range.hs:423:1-51                                 728         442    0.0    0.0    44.4   43.7
+    exportRangeMerge               Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(50,1)-(61,27)             759         442    1.6    0.5     1.6    0.5
+     pointJoinType                 Data.Range.Util             Data/Range/Util.hs:(94,1)-(96,26)                      765        2405    0.0    0.0     0.0    0.0
+    joinRM                         Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(223,1)-(242,18)           758         442    0.0    0.1     2.4    0.9
+     joinSpans                     Data.Range.Spans            Data/Range/Spans.hs:(37,1)-(41,17)                     763       13618    2.4    0.7     2.4    0.8
+      highestValueInUpperBound     Data.Range.Util             Data/Range/Util.hs:(147,1)-(148,53)                    771       13189    0.0    0.0     0.0    0.0
+      lowestValueInLowerBound      Data.Range.Util             Data/Range/Util.hs:(143,1)-(144,52)                    772       13189    0.0    0.0     0.0    0.0
+     largestLowerBound             Data.Range.RangeInternal    Data/Range/RangeInternal.hs:23:6-22                    761         429    0.0    0.0     0.0    0.0
+     largestUpperBound             Data.Range.RangeInternal    Data/Range/RangeInternal.hs:24:6-22                    760         429    0.0    0.0     0.0    0.0
+     spanRanges                    Data.Range.RangeInternal    Data/Range/RangeInternal.hs:25:6-15                    762         429    0.0    0.0     0.0    0.0
+    storeRanges                    Data.Range.RangeInternal    Data/Range/RangeInternal.hs:43:1-79                    729         442    0.0    0.2    40.3   42.3
+     storeRange                    Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(34,1)-(40,105)            730       13684    0.8    0.9     0.8    0.9
+      maxBounds                    Data.Range.Util             Data/Range/Util.hs:51:1-62                             812       11279    0.0    0.0     0.0    0.0
+       compareHigher               Data.Range.Util             Data/Range/Util.hs:(21,1)-(25,22)                      813       11279    0.0    0.0     0.0    0.0
+      minBounds                    Data.Range.Util             Data/Range/Util.hs:48:1-61                             810       11279    0.0    0.0     0.0    0.0
+       compareLower                Data.Range.Util             Data/Range/Util.hs:(14,1)-(18,22)                      811       11279    0.0    0.0     0.0    0.0
+     unionRangeMerges              Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(137,1)-(170,26)           732       13684    0.0    1.0    39.5   41.2
+      unionSpans                   Data.Range.Spans            Data/Range/Spans.hs:(45,1)-(48,18)                     752      369071    8.9    6.2    19.4   15.0
+       boundsOverlapType           Data.Range.Util             Data/Range/Util.hs:(80,1)-(84,94)                      767      355387    4.8    8.8    10.5    8.8
+        boundIsBetween             Data.Range.Util             Data/Range/Util.hs:(108,1)-(113,25)                    769      710774    1.6    0.0     1.6    0.0
+         pointJoinType             Data.Range.Util             Data/Range/Util.hs:(94,1)-(96,26)                      814           3    0.0    0.0     0.0    0.0
+        isEmptySpan                Data.Range.Util             Data/Range/Util.hs:74:1-97                             768      710774    0.8    0.0     0.8    0.0
+        orOverlapType              Data.Range.Util             Data/Range/Util.hs:(87,1)-(91,28)                      770      355387    3.2    0.0     3.2    0.0
+       maxBounds                   Data.Range.Util             Data/Range/Util.hs:51:1-62                             815          66    0.0    0.0     0.0    0.0
+        compareHigher              Data.Range.Util             Data/Range/Util.hs:(21,1)-(25,22)                      816          66    0.0    0.0     0.0    0.0
+      filterLowerBound             Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(173,1)-(179,73)           753      369005    3.2    9.1     3.2    9.1
+       spanRanges                  Data.Range.RangeInternal    Data/Range/RangeInternal.hs:25:6-15                    755      369005    0.0    0.0     0.0    0.0
+      filterUpperBound             Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(182,1)-(188,72)           756      369005    5.6    9.1     5.6    9.1
+       spanRanges                  Data.Range.RangeInternal    Data/Range/RangeInternal.hs:25:6-15                    764      369005    0.0    0.0     0.0    0.0
+      spanRanges                   Data.Range.RangeInternal    Data/Range/RangeInternal.hs:25:6-15                    751       41052    0.0    0.0     0.0    0.0
+      largestLowerBound            Data.Range.RangeInternal    Data/Range/RangeInternal.hs:23:6-22                    754       27368    0.0    0.0     0.0    0.0
+      largestUpperBound            Data.Range.RangeInternal    Data/Range/RangeInternal.hs:24:6-22                    757       27368    0.0    0.0     0.0    0.0
+      insertionSortSpans           Data.Range.Spans            Data/Range/Spans.hs:11:1-73                            749       13684    0.0    0.2    11.3    7.0
+       insertionSort               Data.Range.Util             Data/Range/Util.hs:(60,1)-(67,17)                      750       13684    9.7    6.8    11.3    6.8
+        compareLower               Data.Range.Util             Data/Range/Util.hs:(14,1)-(18,22)                      766      337229    1.6    0.0     1.6    0.0
+   rangeAlgebra                    Data.Range.Algebra.Range    Data/Range/Algebra/Range.hs:10:1-90                    670           0    0.0    0.1    51.6   53.5
+    iter                           Control.Monad.Free          src/Control/Monad/Free.hs:(312,1)-(313,40)             671        2652    0.0    0.0     0.0    0.0
+    storeRanges                    Data.Range.RangeInternal    Data/Range/RangeInternal.hs:43:1-79                    674        1768    0.0    0.4    47.6   51.0
+     storeRange                    Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(34,1)-(40,105)            677       23474    0.0    1.4     0.0    1.4
+      maxBounds                    Data.Range.Util             Data/Range/Util.hs:51:1-62                             705       18638    0.0    0.0     0.0    0.0
+       compareHigher               Data.Range.Util             Data/Range/Util.hs:(21,1)-(25,22)                      706       18638    0.0    0.0     0.0    0.0
+      minBounds                    Data.Range.Util             Data/Range/Util.hs:48:1-61                             708       18638    0.0    0.0     0.0    0.0
+       compareLower                Data.Range.Util             Data/Range/Util.hs:(14,1)-(18,22)                      709       18638    0.0    0.0     0.0    0.0
+     unionRangeMerges              Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(137,1)-(170,26)           679       23474    4.0    1.7    47.6   49.2
+      filterLowerBound             Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(173,1)-(179,73)           684      510308    4.8   12.6     4.8   12.6
+       spanRanges                  Data.Range.RangeInternal    Data/Range/RangeInternal.hs:25:6-15                    686      510308    0.0    0.0     0.0    0.0
+      filterUpperBound             Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(182,1)-(188,72)           687      510308    7.3   12.6     7.3   12.6
+       spanRanges                  Data.Range.RangeInternal    Data/Range/RangeInternal.hs:25:6-15                    690      505255    0.0    0.0     0.0    0.0
+      unionSpans                   Data.Range.Spans            Data/Range/Spans.hs:(45,1)-(48,18)                     683      510308    8.1    8.4    29.8   20.5
+       boundsOverlapType           Data.Range.Util             Data/Range/Util.hs:(80,1)-(84,94)                      691      486834   12.1   12.1    21.8   12.1
+        boundIsBetween             Data.Range.Util             Data/Range/Util.hs:(108,1)-(113,25)                    693      973668    4.8    0.0     4.8    0.0
+        isEmptySpan                Data.Range.Util             Data/Range/Util.hs:74:1-97                             692      973668    1.6    0.0     1.6    0.0
+        orOverlapType              Data.Range.Util             Data/Range/Util.hs:(87,1)-(91,28)                      694      486834    3.2    0.0     3.2    0.0
+      spanRanges                   Data.Range.RangeInternal    Data/Range/RangeInternal.hs:25:6-15                    682       70422    0.0    0.0     0.0    0.0
+      largestLowerBound            Data.Range.RangeInternal    Data/Range/RangeInternal.hs:23:6-22                    685       46948    0.0    0.0     0.0    0.0
+      largestUpperBound            Data.Range.RangeInternal    Data/Range/RangeInternal.hs:24:6-22                    688       46948    0.0    0.0     0.0    0.0
+      insertionSortSpans           Data.Range.Spans            Data/Range/Spans.hs:11:1-73                            680       23474    0.0    0.3     1.6    1.6
+       insertionSort               Data.Range.Util             Data/Range/Util.hs:(60,1)-(67,17)                      681       23474    0.8    1.3     1.6    1.3
+        compareLower               Data.Range.Util             Data/Range/Util.hs:(14,1)-(18,22)                      689       59264    0.8    0.0     0.8    0.0
+    exportRangeMerge               Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(50,1)-(61,27)             696         884    0.0    0.4     0.0    0.4
+     pointJoinType                 Data.Range.Util             Data/Range/Util.hs:(94,1)-(96,26)                      731        2405    0.0    0.0     0.0    0.0
+    rangeMergeAlgebra              Data.Range.Algebra.Internal Data/Range/Algebra/Internal.hs:(57,1)-(60,75)          672         884    0.0    0.0     4.0    1.9
+     intersectionRangeMerges       Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(85,1)-(119,32)            673         884    0.0    0.3     4.0    1.9
+      unionSpans                   Data.Range.Spans            Data/Range/Spans.hs:(45,1)-(48,18)                     722       11727    0.8    0.2     0.8    0.5
+       boundsOverlapType           Data.Range.Util             Data/Range/Util.hs:(80,1)-(84,94)                      723       10843    0.0    0.3     0.0    0.3
+        boundIsBetween             Data.Range.Util             Data/Range/Util.hs:(108,1)-(113,25)                    725       21686    0.0    0.0     0.0    0.0
+        isEmptySpan                Data.Range.Util             Data/Range/Util.hs:74:1-97                             724       21686    0.0    0.0     0.0    0.0
+        orOverlapType              Data.Range.Util             Data/Range/Util.hs:(87,1)-(91,28)                      726       10843    0.0    0.0     0.0    0.0
+      intersectSpans               Data.Range.Spans            Data/Range/Spans.hs:(20,1)-(32,23)                     704        7581    0.0    0.1     0.8    0.2
+       spanCmp                     Data.Range.Spans            Data/Range/Spans.hs:(14,1)-(17,53)                     707        6697    0.0    0.0     0.0    0.2
+        boundsOverlapType          Data.Range.Util             Data/Range/Util.hs:(80,1)-(84,94)                      710        6697    0.0    0.2     0.0    0.2
+         isEmptySpan               Data.Range.Util             Data/Range/Util.hs:74:1-97                             711       13394    0.0    0.0     0.0    0.0
+         boundIsBetween            Data.Range.Util             Data/Range/Util.hs:(108,1)-(113,25)                    712       12826    0.0    0.0     0.0    0.0
+         orOverlapType             Data.Range.Util             Data/Range/Util.hs:(87,1)-(91,28)                      713        6693    0.0    0.0     0.0    0.0
+       isEmptySpan                 Data.Range.Util             Data/Range/Util.hs:74:1-97                             718         679    0.0    0.0     0.0    0.0
+       maxBoundsIntersection       Data.Range.Util             Data/Range/Util.hs:57:1-86                             714         679    0.0    0.0     0.8    0.0
+        compareHigherIntersection  Data.Range.Util             Data/Range/Util.hs:(35,1)-(39,22)                      715         679    0.8    0.0     0.8    0.0
+       minBoundsIntersection       Data.Range.Util             Data/Range/Util.hs:54:1-85                             716         679    0.0    0.0     0.0    0.0
+        compareLowerIntersection   Data.Range.Util             Data/Range/Util.hs:(28,1)-(32,22)                      717         679    0.0    0.0     0.0    0.0
+      intersectWith                Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(71,1)-(72,67)             702        3536    0.0    0.2     1.6    0.5
+       fixLower                    Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(75,1)-(77,44)             740       11295    0.0    0.2     0.0    0.2
+        maxBoundsIntersection      Data.Range.Util             Data/Range/Util.hs:57:1-86                             744        4964    0.0    0.0     0.0    0.0
+         compareHigherIntersection Data.Range.Util             Data/Range/Util.hs:(35,1)-(39,22)                      745        4964    0.0    0.0     0.0    0.0
+       fixUpper                    Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(80,1)-(82,44)             741       11295    0.8    0.2     1.6    0.2
+        minBoundsIntersection      Data.Range.Util             Data/Range/Util.hs:54:1-85                             747        5889    0.8    0.0     0.8    0.0
+         compareLowerIntersection  Data.Range.Util             Data/Range/Util.hs:(28,1)-(32,22)                      748        5889    0.0    0.0     0.0    0.0
+      largestLowerBound            Data.Range.RangeInternal    Data/Range/RangeInternal.hs:23:6-22                    701        3536    0.0    0.0     0.0    0.0
+      largestUpperBound            Data.Range.RangeInternal    Data/Range/RangeInternal.hs:24:6-22                    697        3536    0.0    0.0     0.0    0.0
+      spanRanges                   Data.Range.RangeInternal    Data/Range/RangeInternal.hs:25:6-15                    703        2626    0.0    0.0     0.0    0.0
+      calculateBoundOverlap        Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(122,1)-(134,22)           719         884    0.0    0.0     0.0    0.0
+       largestLowerBound           Data.Range.RangeInternal    Data/Range/RangeInternal.hs:23:6-22                    720        1768    0.0    0.0     0.0    0.0
+       largestUpperBound           Data.Range.RangeInternal    Data/Range/RangeInternal.hs:24:6-22                    743         442    0.0    0.0     0.0    0.0
+      insertionSortSpans           Data.Range.Spans            Data/Range/Spans.hs:11:1-73                            699         884    0.0    0.0     0.8    0.1
+       insertionSort               Data.Range.Util             Data/Range/Util.hs:(60,1)-(67,17)                      700        4420    0.8    0.1     0.8    0.1
+        compareLower               Data.Range.Util             Data/Range/Util.hs:(14,1)-(18,22)                      746        4959    0.0    0.0     0.0    0.0
+      removeEmptySpans             Data.Range.Util             Data/Range/Util.hs:77:1-45                             698         884    0.0    0.2     0.0    0.2
+       isEmptySpan                 Data.Range.Util             Data/Range/Util.hs:74:1-97                             721       11532    0.0    0.0     0.0    0.0
+     invertRM                      Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(191,1)-(220,50)           735         442    0.0    0.0     0.0    0.0
+      spanRanges                   Data.Range.RangeInternal    Data/Range/RangeInternal.hs:25:6-15                    738        1287    0.0    0.0     0.0    0.0
+      largestLowerBound            Data.Range.RangeInternal    Data/Range/RangeInternal.hs:23:6-22                    737         871    0.0    0.0     0.0    0.0
+      largestUpperBound            Data.Range.RangeInternal    Data/Range/RangeInternal.hs:24:6-22                    736         871    0.0    0.0     0.0    0.0
+      invertBound                  Data.Range.Util             Data/Range/Util.hs:(70,1)-(71,51)                      739         858    0.0    0.0     0.0    0.0
+      invertSpans                  Data.Range.Spans            Data/Range/Spans.hs:(52,1)-(53,18)                     742         429    0.0    0.0     0.0    0.0
+  +=*                              Data.Range.Operators        Data/Range/Operators.hs:15:1-61                        809          10    0.0    0.0     0.0    0.0
+  chunksOf                         Data.List.Split.Internals   src/Data/List/Split/Internals.hs:(603,1)-(607,48)      807           1    0.0    0.0     0.0    0.0
+   build                           Data.List.Split.Internals   src/Data/List/Split/Internals.hs:580:1-18              808           1    0.0    0.0     0.0    0.0
+  joinRanges                       Data.Range                  Data/Range.hs:423:1-51                                 639           1    0.0    0.0     0.0    0.0
+   exportRangeMerge                Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(50,1)-(61,27)             659           1    0.0    0.0     0.0    0.0
+    pointJoinType                  Data.Range.Util             Data/Range/Util.hs:(94,1)-(96,26)                      678          20    0.0    0.0     0.0    0.0
+   joinRM                          Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(223,1)-(242,18)           658           1    0.0    0.0     0.0    0.0
+    joinSpans                      Data.Range.Spans            Data/Range/Spans.hs:(37,1)-(41,17)                     663          20    0.0    0.0     0.0    0.0
+     highestValueInUpperBound      Data.Range.Util             Data/Range/Util.hs:(147,1)-(148,53)                    664          19    0.0    0.0     0.0    0.0
+     lowestValueInLowerBound       Data.Range.Util             Data/Range/Util.hs:(143,1)-(144,52)                    665          19    0.0    0.0     0.0    0.0
+    largestLowerBound              Data.Range.RangeInternal    Data/Range/RangeInternal.hs:23:6-22                    661           1    0.0    0.0     0.0    0.0
+    largestUpperBound              Data.Range.RangeInternal    Data/Range/RangeInternal.hs:24:6-22                    660           1    0.0    0.0     0.0    0.0
+    spanRanges                     Data.Range.RangeInternal    Data/Range/RangeInternal.hs:25:6-15                    662           1    0.0    0.0     0.0    0.0
+   storeRanges                     Data.Range.RangeInternal    Data/Range/RangeInternal.hs:43:1-79                    640           1    0.0    0.0     0.0    0.0
+    storeRange                     Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(34,1)-(40,105)            641          20    0.0    0.0     0.0    0.0
+    unionRangeMerges               Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(137,1)-(170,26)           642          20    0.0    0.0     0.0    0.0
+     filterLowerBound              Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(173,1)-(179,73)           647         210    0.0    0.0     0.0    0.0
+      spanRanges                   Data.Range.RangeInternal    Data/Range/RangeInternal.hs:25:6-15                    649         210    0.0    0.0     0.0    0.0
+     filterUpperBound              Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(182,1)-(188,72)           650         210    0.0    0.0     0.0    0.0
+      spanRanges                   Data.Range.RangeInternal    Data/Range/RangeInternal.hs:25:6-15                    653         210    0.0    0.0     0.0    0.0
+     unionSpans                    Data.Range.Spans            Data/Range/Spans.hs:(45,1)-(48,18)                     646         210    0.0    0.0     0.0    0.0
+      boundsOverlapType            Data.Range.Util             Data/Range/Util.hs:(80,1)-(84,94)                      654         190    0.0    0.0     0.0    0.0
+       boundIsBetween              Data.Range.Util             Data/Range/Util.hs:(108,1)-(113,25)                    656         380    0.0    0.0     0.0    0.0
+       isEmptySpan                 Data.Range.Util             Data/Range/Util.hs:74:1-97                             655         380    0.0    0.0     0.0    0.0
+       orOverlapType               Data.Range.Util             Data/Range/Util.hs:(87,1)-(91,28)                      657         190    0.0    0.0     0.0    0.0
+     spanRanges                    Data.Range.RangeInternal    Data/Range/RangeInternal.hs:25:6-15                    645          60    0.0    0.0     0.0    0.0
+     largestLowerBound             Data.Range.RangeInternal    Data/Range/RangeInternal.hs:23:6-22                    648          40    0.0    0.0     0.0    0.0
+     largestUpperBound             Data.Range.RangeInternal    Data/Range/RangeInternal.hs:24:6-22                    651          40    0.0    0.0     0.0    0.0
+     insertionSortSpans            Data.Range.Spans            Data/Range/Spans.hs:11:1-73                            643          20    0.0    0.0     0.0    0.0
+      insertionSort                Data.Range.Util             Data/Range/Util.hs:(60,1)-(67,17)                      644          20    0.0    0.0     0.0    0.0
+       compareLower                Data.Range.Util             Data/Range/Util.hs:(14,1)-(18,22)                      652          94    0.0    0.0     0.0    0.0
+  fromRanges                       Data.Range                  Data/Range.hs:(386,1)-(395,30)                         621           0    0.0    0.0     0.8    0.8
+   iter                            Control.Monad.Free          src/Control/Monad/Free.hs:(312,1)-(313,40)             624           6    0.0    0.0     0.0    0.0
+   getFree                         Data.Range.Algebra.Internal Data/Range/Algebra/Internal.hs:48:35-41                622           2    0.0    0.0     0.0    0.0
+   takeEvenly                      Data.Range.Util             Data/Range/Util.hs:(131,1)-(132,102)                   804           2    0.0    0.0     0.0    0.0
+    safeHead                       Data.Range.Util             Data/Range/Util.hs:(135,1)-(136,25)                    805           8    0.0    0.0     0.0    0.0
+   union                           Data.Range.Algebra          Data/Range/Algebra.hs:57:1-60                          623           2    0.0    0.0     0.0    0.0
+    getFree                        Data.Range.Algebra.Internal Data/Range/Algebra/Internal.hs:48:35-41                636           2    0.0    0.0     0.0    0.0
+   rangeAlgebra                    Data.Range.Algebra.Range    Data/Range/Algebra/Range.hs:10:1-90                    626           0    0.0    0.0     0.8    0.8
+    iter                           Control.Monad.Free          src/Control/Monad/Free.hs:(312,1)-(313,40)             627           6    0.0    0.0     0.0    0.0
+    storeRanges                    Data.Range.RangeInternal    Data/Range/RangeInternal.hs:43:1-79                    630           4    0.0    0.0     0.8    0.8
+     storeRange                    Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(34,1)-(40,105)            773         139    0.0    0.0     0.0    0.0
+      maxBounds                    Data.Range.Util             Data/Range/Util.hs:51:1-62                             819         119    0.0    0.0     0.0    0.0
+       compareHigher               Data.Range.Util             Data/Range/Util.hs:(21,1)-(25,22)                      820         119    0.0    0.0     0.0    0.0
+      minBounds                    Data.Range.Util             Data/Range/Util.hs:48:1-61                             817         119    0.0    0.0     0.0    0.0
+       compareLower                Data.Range.Util             Data/Range/Util.hs:(14,1)-(18,22)                      818         119    0.0    0.0     0.0    0.0
+     unionRangeMerges              Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(137,1)-(170,26)           774         139    0.0    0.0     0.8    0.8
+      filterLowerBound             Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(173,1)-(179,73)           779        7350    0.0    0.2     0.0    0.2
+       spanRanges                  Data.Range.RangeInternal    Data/Range/RangeInternal.hs:25:6-15                    781        7350    0.0    0.0     0.0    0.0
+      filterUpperBound             Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(182,1)-(188,72)           782        7350    0.0    0.2     0.0    0.2
+       spanRanges                  Data.Range.RangeInternal    Data/Range/RangeInternal.hs:25:6-15                    785        7350    0.0    0.0     0.0    0.0
+      unionSpans                   Data.Range.Spans            Data/Range/Spans.hs:(45,1)-(48,18)                     778        7350    0.0    0.1     0.8    0.3
+       boundsOverlapType           Data.Range.Util             Data/Range/Util.hs:(80,1)-(84,94)                      786        7211    0.8    0.2     0.8    0.2
+        boundIsBetween             Data.Range.Util             Data/Range/Util.hs:(108,1)-(113,25)                    788       14422    0.0    0.0     0.0    0.0
+        isEmptySpan                Data.Range.Util             Data/Range/Util.hs:74:1-97                             787       14422    0.0    0.0     0.0    0.0
+        orOverlapType              Data.Range.Util             Data/Range/Util.hs:(87,1)-(91,28)                      789        7211    0.0    0.0     0.0    0.0
+      spanRanges                   Data.Range.RangeInternal    Data/Range/RangeInternal.hs:25:6-15                    777         417    0.0    0.0     0.0    0.0
+      largestLowerBound            Data.Range.RangeInternal    Data/Range/RangeInternal.hs:23:6-22                    780         278    0.0    0.0     0.0    0.0
+      largestUpperBound            Data.Range.RangeInternal    Data/Range/RangeInternal.hs:24:6-22                    783         278    0.0    0.0     0.0    0.0
+      insertionSortSpans           Data.Range.Spans            Data/Range/Spans.hs:11:1-73                            775         139    0.0    0.0     0.0    0.1
+       insertionSort               Data.Range.Util             Data/Range/Util.hs:(60,1)-(67,17)                      776         139    0.0    0.1     0.0    0.1
+        compareLower               Data.Range.Util             Data/Range/Util.hs:(14,1)-(18,22)                      784        7211    0.0    0.0     0.0    0.0
+    exportRangeMerge               Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(50,1)-(61,27)             803           2    0.0    0.0     0.0    0.0
+     pointJoinType                 Data.Range.Util             Data/Range/Util.hs:(94,1)-(96,26)                      806           1    0.0    0.0     0.0    0.0
+    rangeMergeAlgebra              Data.Range.Algebra.Internal Data/Range/Algebra/Internal.hs:(57,1)-(60,75)          628           2    0.0    0.0     0.0    0.0
+     unionRangeMerges              Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(137,1)-(170,26)           629           2    0.0    0.0     0.0    0.0
+      filterLowerBound             Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(173,1)-(179,73)           798         139    0.0    0.0     0.0    0.0
+       spanRanges                  Data.Range.RangeInternal    Data/Range/RangeInternal.hs:25:6-15                    800         139    0.0    0.0     0.0    0.0
+      filterUpperBound             Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(182,1)-(188,72)           801         139    0.0    0.0     0.0    0.0
+       spanRanges                  Data.Range.RangeInternal    Data/Range/RangeInternal.hs:25:6-15                    821           6    0.0    0.0     0.0    0.0
+      unionSpans                   Data.Range.Spans            Data/Range/Spans.hs:(45,1)-(48,18)                     793         139    0.0    0.0     0.0    0.0
+       boundsOverlapType           Data.Range.Util             Data/Range/Util.hs:(80,1)-(84,94)                      794         137    0.0    0.0     0.0    0.0
+        boundIsBetween             Data.Range.Util             Data/Range/Util.hs:(108,1)-(113,25)                    796         274    0.0    0.0     0.0    0.0
+        isEmptySpan                Data.Range.Util             Data/Range/Util.hs:74:1-97                             795         274    0.0    0.0     0.0    0.0
+        orOverlapType              Data.Range.Util             Data/Range/Util.hs:(87,1)-(91,28)                      797         137    0.0    0.0     0.0    0.0
+      spanRanges                   Data.Range.RangeInternal    Data/Range/RangeInternal.hs:25:6-15                    792           6    0.0    0.0     0.0    0.0
+      largestLowerBound            Data.Range.RangeInternal    Data/Range/RangeInternal.hs:23:6-22                    799           4    0.0    0.0     0.0    0.0
+      largestUpperBound            Data.Range.RangeInternal    Data/Range/RangeInternal.hs:24:6-22                    802           4    0.0    0.0     0.0    0.0
+      insertionSortSpans           Data.Range.Spans            Data/Range/Spans.hs:11:1-73                            790           2    0.0    0.0     0.0    0.0
+       insertionSort               Data.Range.Util             Data/Range/Util.hs:(60,1)-(67,17)                      791           2    0.0    0.0     0.0    0.0
+  input                            Main                        2023/Day05/IfYouGiveASeedAFertilizer.hs:(29,1)-(36,27) 638           0    1.6    1.6     1.6    1.6
+   +=+                             Data.Range.Operators        Data/Range/Operators.hs:9:1-61                         695         221    0.0    0.0     0.0    0.0

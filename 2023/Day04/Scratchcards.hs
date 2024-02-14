@@ -1,15 +1,16 @@
 {-# LANGUAGE OverloadedStrings #-}
-module Day04.Scratchcards where
-import qualified Data.Text as T
-import qualified Data.Text.IO as T
-import Data.Text.Read as T
-import Data.List (intersect, foldl')
+{-# OPTIONS_GHC -Wno-incomplete-patterns #-}
+
+import           Data.List      (intersect)
+import qualified Data.Text      as T
+import qualified Data.Text.IO   as T
+import           Data.Text.Read as T
 
 main :: IO ()
 main = do
-    xs <- map ((map (map (either error fst . T.decimal) . T.words) . T.splitOn "|") . (!!1) . T.splitOn ":") . T.lines <$> T.readFile "2023/data/day04.txt"
-    print $ sum $ map (score . scratch) xs
-    print $ sum $ scorePart2 (map scratch xs) (repeat 1)
+    xs <- map ((map (map (either error fst . T.decimal) . T.words) . T.splitOn "|") . (!!1) . T.splitOn ":") . T.lines <$> T.readFile "2023/Day04/day04.txt"
+    print @Integer $ sum $ map (score . scratch) (xs :: [[[Integer]]])
+    print @Integer $ sum $ scorePart2 (map scratch xs) (repeat 1)
   where
     scratch [as, bs] = length (as `intersect` bs)
     score n = if n == 0 then 0 else 2 ^ (n-1)

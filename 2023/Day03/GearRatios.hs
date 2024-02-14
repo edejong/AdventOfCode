@@ -1,22 +1,21 @@
-module Day03.GearRatios where
-
-import qualified Data.Vector as V
+{-# OPTIONS_GHC -Wno-incomplete-uni-patterns #-}
 import Data.Char
-import Data.List (transpose, tails, nub, sort)
+import Data.List (transpose, nub, sort)
 
 main :: IO ()
 main = do
-    xss <- lines <$> readFile "2023/data/day03.txt"
+    xss <- lines <$> readFile "2023/Day03/day03.txt"
 
     let part1 = adjacentNums (\c -> c /= '.' && (not . isDigit) c) xss
     print $ sum [x | (x, labels) <- part1, not . null $ labels]
 
-    let part2 = adjacentNums (== '*') xss
+    -- let part2 = adjacentNums (== '*') xss
     let tmp = group . sort $ [(l, [x]) | (x, labels) <- part1, l <- labels]
-    print $ sum [product nums | (label, nums) <- tmp, length nums == 2]
+    print $ sum [product nums | (_, nums) <- tmp, length nums == 2]
   where
-    group xs = foldr (\(l1, xs) ((l2, ys) : res) -> if l1 == l2 then (l1, xs++ys):res else (l1, xs):(l2, ys):res) [last xs] (init xs)
+    group as = foldr (\(l1, xs) ((l2, ys) : res) -> if l1 == l2 then (l1, xs++ys):res else (l1, xs):(l2, ys):res) [last as] (init as)
 
+adjacentNums :: (Char -> Bool) -> [[Char]] -> [(Integer, [Int])]
 adjacentNums isSym xss =
     let labels = zipWith (zipWith (\x c -> ([c | isSym x]))) xss (iterate (drop 150) [1..])
         labels' = transpose $ expand (transpose (expand labels))

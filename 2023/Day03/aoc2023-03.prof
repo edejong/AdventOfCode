@@ -1,0 +1,32 @@
+	Tue Feb 13 22:04 2024 Time and Allocation Profiling Report  (Final)
+
+	   aoc2023-03 +RTS -N -p -hy -l-agu -RTS
+
+	total time  =        0.00 secs   (13 ticks @ 1000 us, 8 processors)
+	total alloc =  28,200,400 bytes  (excludes profiling overheads)
+
+COST CENTRE  MODULE    SRC                                      %time %alloc
+
+adjacentNums Main      2023/Day03/GearRatios.hs:(19,1)-(32,53)   69.2   84.4
+main         Main      2023/Day03/GearRatios.hs:(6,1)-(16,133)   23.1   15.0
+MAIN         MAIN      <built-in>                                 7.7    0.5
+
+
+                                                                                                   individual      inherited
+COST CENTRE     MODULE                  SRC                                     no.     entries  %time %alloc   %time %alloc
+
+MAIN            MAIN                    <built-in>                              129           0    7.7    0.5   100.0  100.0
+ CAF            Main                    <entire-module>                         257           0    0.0    0.0     0.0    5.4
+  main          Main                    2023/Day03/GearRatios.hs:(6,1)-(16,133) 258           1    0.0    0.0     0.0    5.4
+   adjacentNums Main                    2023/Day03/GearRatios.hs:(19,1)-(32,53) 261           0    0.0    5.4     0.0    5.4
+ CAF            GHC.Conc.Signal         <entire-module>                         234           0    0.0    0.0     0.0    0.0
+ CAF            GHC.IO.Encoding         <entire-module>                         216           0    0.0    0.0     0.0    0.0
+ CAF            GHC.IO.Encoding.Iconv   <entire-module>                         214           0    0.0    0.0     0.0    0.0
+ CAF            GHC.IO.Exception        <entire-module>                         208           0    0.0    0.0     0.0    0.0
+ CAF            GHC.IO.FD               <entire-module>                         207           0    0.0    0.0     0.0    0.0
+ CAF            GHC.IO.Handle.FD        <entire-module>                         205           0    0.0    0.1     0.0    0.1
+ CAF            GHC.IO.Handle.Internals <entire-module>                         204           0    0.0    0.0     0.0    0.0
+ CAF            GHC.Read                <entire-module>                         189           0    0.0    0.0     0.0    0.0
+ CAF            GHC.Event.Thread        <entire-module>                         149           0    0.0    0.0     0.0    0.0
+ main           Main                    2023/Day03/GearRatios.hs:(6,1)-(16,133) 259           0   23.1   15.0    92.3   94.0
+  adjacentNums  Main                    2023/Day03/GearRatios.hs:(19,1)-(32,53) 260           1   69.2   79.0    69.2   79.0

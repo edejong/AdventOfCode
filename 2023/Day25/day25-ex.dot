@@ -1,6 +1,4 @@
 graph G {
-    // splines="FALSE";
-    // len=2000
     len = 10.0;
     
     jqt -- {rhn xhk nvd};
@@ -16,19 +14,4 @@ graph G {
     lsr -- lhk;
     rzs -- {qnr cmg lsr rsh};
     frs -- {qnr lhk lsr};
-    
-    /**
-     * Entities
-     */
-    // shortName [label="shortName", shape="square"]
-    
-    /**
-     * Relationships
-     */
-    // F1 -> shortName[label=".63"]
-    
-    /**
-     * Ranks
-     */
-    // { rank=same; shortName; };
 }

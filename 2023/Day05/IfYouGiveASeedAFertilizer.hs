@@ -1,15 +1,15 @@
-module Day05.IfYouGiveASeedAFertilizer where
+{-# OPTIONS_GHC -Wno-incomplete-uni-patterns #-}
 import Text.Parsec
 import Text.Parsec.String (Parser, parseFromFile)
 import qualified Text.Parsec.Token as P
 import Text.Parsec.Language (haskellDef)
-import Data.List (intercalate, foldl', sort, unfoldr)
+import Data.List ( foldl' )
 import Data.Range
 import Data.List.Split (chunksOf)
 
 main :: IO ()
 main = do
-    xs <- parseFromFile input "2023/data/day05.txt"
+    xs <- parseFromFile input "2023/Day05/day05.txt"
     let (seeds, maps) = either (error . show) id xs
     let f s = foldl' mapRanges s maps
     let seeds1 = joinRanges $ map SingletonRange seeds
@@ -25,6 +25,7 @@ mapRanges xs ((r, d):ms) =
         ints' = map (fmap (+d)) ints
     in joinRanges $ ints' ++ mapRanges diff ms
 
+input :: Parser ([Integer], [[(Range Integer, Integer)]])
 input = (,) <$> seeds <*> count 7 categoryMap
   where
     seeds = string "seeds: " *> many1 (lexeme decimal)

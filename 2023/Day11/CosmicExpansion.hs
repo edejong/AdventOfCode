@@ -1,4 +1,5 @@
-module Day11.CosmicExpansion where
+{-# OPTIONS_GHC -Wno-incomplete-uni-patterns #-}
+
 import Data.Function (on)
 import Data.List (sort, tails, transpose)
 

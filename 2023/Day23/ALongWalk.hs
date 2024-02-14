@@ -1,4 +1,5 @@
--- import Data.List
+{-# OPTIONS_GHC -Wno-incomplete-uni-patterns #-}
+
 import Data.Function.Memoize (memoize)
 import Data.Graph.Inductive
 import Data.List (foldl', nub)

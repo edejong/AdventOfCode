@@ -1,4 +1,4 @@
-import Control.Lens
+import Control.Lens hiding (children)
 import Data.Char (isDigit)
 import Data.List (sortOn, foldl')
 import Data.Ord ( Down(Down) )
@@ -50,7 +50,7 @@ dropBrick (ps, cs) brick = drop' Set.empty [brick]
          in drop' dropped' (xs ++ fallingChildren)
 
 getBounds' :: [Brick] -> V3 Int
-getBounds' = foldl' (\(V3 x1 y1 z1) (V3 x2 y2 z2) -> V3 (max x1 x2) (max y1 y2) (max z1 z2)) (V3 0 0 0) . map ((\(V2 lo hi) -> hi) . getBounds)
+getBounds' = foldl' (liftU2 max) (V3 0 0 0) . map ((^._2) . getBounds)
 
 minZ :: Brick -> Int
 minZ b = getBounds b ^. (_1 . _z)

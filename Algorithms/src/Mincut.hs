@@ -1,3 +1,5 @@
+{-# OPTIONS_GHC -Wno-incomplete-uni-patterns #-}
+
 module Mincut (fastMincut, genMincuts) where
 import Data.Graph.Inductive
 import System.Random
@@ -28,7 +30,9 @@ fastMincut gr gen
 
 See https://en.wikipedia.org/wiki/Karger%27s_algorithm
 -}
-contract :: (RandomGen gen, Semigroup a, DynGraph g) => Int -> g a b -> gen -> (g a b, gen)
+contract :: (RandomGen gen, Semigroup a, DynGraph g)
+  => Int -> g a b -> gen
+  -> (g a b, gen)
 contract t gr gen
   | noNodes gr <= t = (gr, gen)
   | otherwise =

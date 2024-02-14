@@ -1,8 +1,6 @@
-module Day10.PipeMaze where
-
-import Data.List (unfoldr)
-import GHC.Arr (Array, bounds, inRange, (!))
-import qualified GHC.Arr as Arr
+import           Data.List (unfoldr)
+import           GHC.Arr   (Array, bounds, inRange, (!))
+import qualified GHC.Arr   as Arr
 
 -- There's an off by one error in part 2. Output is 510 but solution is 511
 
@@ -22,12 +20,12 @@ data Dir = N | S | E | W deriving (Show)
 type PosDir = (Pos, Dir)
 
 walk :: Maze -> PosDir -> [PosDir]
-walk maze posDir = unfoldr f posDir
+walk maze = unfoldr f
   where
-    f posDir = (\p -> (p, p)) <$> step maze posDir
+    f posDir' = (\p -> (p, p)) <$> step maze posDir'
 
 step :: Maze -> PosDir -> Maybe PosDir
-step maze (pos@(row, col), dir) | inRange (bounds maze) pos = next (maze ! pos) dir
+step maze (pos, dir) | inRange (bounds maze) pos = next (maze ! pos) dir
   where
     next '|' N = Just $ south pos
     next '|' S = Just $ north pos
@@ -41,12 +39,16 @@ step maze (pos@(row, col), dir) | inRange (bounds maze) pos = next (maze ! pos) 
     next '7' W = Just $ south pos
     next 'F' S = Just $ east pos
     next 'F' E = Just $ south pos
-    next _ _ = Nothing
+    next _ _   = Nothing
 step _ _ = Nothing
 
+north :: (Int, Int) -> ((Int, Int), Dir)
 north (row, col) = ((row - 1, col), S)
+south :: (Int, Int) -> ((Int, Int), Dir)
 south (row, col) = ((row + 1, col), N)
+east :: (Int, Int) -> ((Int, Int), Dir)
 east (row, col) = ((row, col + 1), W)
+west :: (Int, Int) -> ((Int, Int), Dir)
 west (row, col) = ((row, col - 1), E)
 
 polygonArea :: Integral c => [(c, c)] -> c

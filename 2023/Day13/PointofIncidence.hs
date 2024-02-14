@@ -1,6 +1,6 @@
 import Data.List.Split (splitOn)
 import Data.List (tails, inits, transpose)
-import Data.Bifunctor (second, first)
+
 main :: IO ()
 main = do
     xss <- map lines . splitOn "\n\n" <$> readFile "2023/Day13/day13.txt"
@@ -8,6 +8,7 @@ main = do
   where
     f nSmudges = sum . map (\xs -> 100 * (sum . mirrorIndex nSmudges $ xs) + (sum . mirrorIndex nSmudges . transpose $ xs))
 
+mirrorIndex :: Int -> [[Char]] -> [Int]
 mirrorIndex nSmudges = map fst . filter snd . zip [1..] . map ((== nSmudges) . uncurry mirrorDiff) . splits
   where
     splits xs = tail . init $ zip (inits xs) (tails xs)

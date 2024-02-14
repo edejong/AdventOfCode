@@ -1,7 +1,3 @@
-{-# LANGUAGE TypeApplications #-}
-module Day09.MirageMaintenance where
-import Debug.Trace (trace)
-
 main :: IO ()
 main = do
     xs <- map (map (read @Integer) . words) . lines <$> readFile "2023/Day09/day09.txt"

@@ -1,3 +1,5 @@
 dist-newstyle
 *.eventlog.html
 *.prof.svg
+.vscode/phoityne.log
+.vscode/dist-cabal-repl/*

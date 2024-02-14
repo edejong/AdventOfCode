@@ -1,3 +1,5 @@
+{-# OPTIONS_GHC -Wno-incomplete-uni-patterns #-}
+{-# OPTIONS_GHC -Wno-incomplete-patterns #-}
 import Data.Bifunctor (second)
 import Data.Graph.Inductive
 import Data.List (transpose, tails, inits, foldl')
@@ -19,14 +21,14 @@ genGraph minSteps maxSteps xss =
   let (nRows, nCols) = (length xss, length . head $ xss)
       xss' = zipWith (\i xs -> zipWith (\j x -> ((i, j), x)) [0 ..] xs) [0 ..] xss
       nodeLabels = [((r, c), dir) | r <- [0 .. (nRows - 1)], c <- [0 .. (nCols - 1)], dir <- [H, V]] :: [NodeLabel]
-      (nodes, nodeMap) = mkNodes new nodeLabels
-      edges = fromJust . mkEdges nodeMap $ genEdges minSteps maxSteps xss'
+      (nodes', nodeMap) = mkNodes new nodeLabels
+      edges' = fromJust . mkEdges nodeMap $ genEdges minSteps maxSteps xss'
       ([start, end], nodeMap') = mkNodes nodeMap [((nRows, nCols), H), ((nRows, nCols), V)]
       startEdges = fromJust $ mkEdges nodeMap' [(snd start, ((0, 0), d), 0) | d <- [H, V]]
       endEdges = fromJust $ mkEdges nodeMap' [(((nRows - 1, nCols - 1), d), snd end, 0) | d <- [H, V]]
-      nodes' = nodes ++ [start, end]
-      edges' = edges ++ startEdges ++ endEdges
-      g = mkGraph nodes' edges'
+      nodes'' = nodes' ++ [start, end]
+      edges'' = edges' ++ startEdges ++ endEdges
+      g = mkGraph nodes'' edges''
    in (g, fst start, fst end)
 
 genEdges :: Int -> Int -> [[(Point, Int)]] -> [(NodeLabel, NodeLabel, Int)]

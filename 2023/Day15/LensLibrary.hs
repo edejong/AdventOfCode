@@ -1,13 +1,12 @@
+{-# OPTIONS_GHC -Wno-incomplete-patterns #-}
 import Data.Char (isAlpha, ord)
 import Data.Foldable (toList)
 import Data.List (foldl')
 import Data.List.Split (splitOn)
-import Data.Map (Map)
 import Data.Sequence (Seq)
 import qualified Data.Sequence as S
 import Data.Word (Word8)
 
--- import qualified Data.Map as M
 main :: IO ()
 main = do
   xs <- splitOn "," <$> readFile "2023/Day15/day15.txt"
@@ -34,7 +33,7 @@ doOp (Insert lens) = insertLens lens (hash . fst $ lens)
 doOp (Remove lbl) = removeLens lbl (hash lbl)
 
 insertLens :: Lens -> Int -> Boxes -> Boxes
-insertLens l@(lbl, fLen) = S.adjust insert
+insertLens l@(lbl, _) = S.adjust insert
   where
     insert ls =
       let (as, bs) = span ((/= lbl) . fst) ls

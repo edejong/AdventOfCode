@@ -1,3 +1,5 @@
+{-# OPTIONS_GHC -Wno-incomplete-patterns #-}
+
 import Data.List (iterate', foldl')
 import qualified Data.Map as M
 import Data.Map (Map, (!))
@@ -43,9 +45,9 @@ inputP = sepBy1 edgeP spaces
 
 mkSystemState :: [(ModuleType, ModuleName, [ModuleName])] -> SystemState
 mkSystemState xs =
-    let cs = M.fromList [(src, M.empty) | (t, src, dsts) <- xs, t == Conjunction]
-        cs' = Data.List.foldl' (\memo (src,dst) -> M.adjust (M.insert src False) dst memo) cs [(src,dst) | (t, src, dsts) <- xs, dst <- dsts]
-        os = M.fromList [(dst, M.singleton "" False) | (t, src, dsts) <- xs, dst <- dsts, dst `M.notMember` cs]
+    let cs = M.fromList [(src, M.empty) | (t, src, _) <- xs, t == Conjunction]
+        cs' = Data.List.foldl' (\memo (src,dst) -> M.adjust (M.insert src False) dst memo) cs [(src,dst) | (_, src, dsts) <- xs, dst <- dsts]
+        os = M.fromList [(dst, M.singleton "" False) | (_, _, dsts) <- xs, dst <- dsts, dst `M.notMember` cs]
     in M.unions [cs', os]
 
 mkStateWithCounts :: SystemState -> StateWithCounts
@@ -57,29 +59,29 @@ pushButton :: ModuleConfig -> StateWithCounts -> StateWithCounts
 pushButton cfg = processQueue cfg (Seq.singleton (Pulse "button" False "broadcaster"))
 
 processQueue :: ModuleConfig -> Seq Pulse -> StateWithCounts -> StateWithCounts
-processQueue cfg Seq.Empty st = st
-processQueue cfg (pulse :<| queue) (ST c st) = do
-    let monitorSrc = M.keys $ (! "cl") st
-    let c' = foldl' (\c nm -> updateSrc nm pulse c) (updateTotal pulse c) ("button":monitorSrc)
-    let (st', ps) = processPulse cfg pulse st
+processQueue _ Seq.Empty s = s
+processQueue cfg (pulse :<| queue) (ST c s) = do
+    let monitorSrc = M.keys $ (! "cl") s
+    let c' = foldl' (\c'' nm -> updateSrc nm pulse c'') (updateTotal pulse c) ("button":monitorSrc)
+    let (st', ps) = processPulse cfg pulse s
     processQueue cfg (queue <> Seq.fromList ps) (ST c' st')
   where
     updateCounter False (x, y) = (x+1, y)
     updateCounter True (x, y) = (x, y+1)
     updateTotal (Pulse _ val _) = M.adjust (updateCounter val) "totals"
     updateSrc n (Pulse src val _) | n == src = M.adjust (updateCounter val) src
-    updateSrc n _ = id
+    updateSrc _ _ = id
 
 processPulse :: ModuleConfig -> Pulse -> SystemState -> (SystemState, [Pulse])
-processPulse cfg p@(Pulse src val name) st =
+processPulse cfg (Pulse src val name) s =
     let (t, dsts) = cfg ! name
         input = if t == Conjunction then src else ""
-        updateState x = setModuleState name input x st
+        updateState x = setModuleState name input x s
         st' = case (t, val) of
-            (Flipflop, False) -> updateState (not (getModuleState name st))
+            (Flipflop, False) -> updateState (not (getModuleState name s))
             (Conjunction, _) -> updateState val
             (Output, _) -> updateState val
-            _ -> st
+            _ -> s
         newVal = getModuleState name st'
         ps = case (t, val) of
             (Flipflop, False) -> bcast dsts newVal
@@ -88,6 +90,6 @@ processPulse cfg p@(Pulse src val name) st =
             _ -> []
      in (st', ps)
   where
-    getModuleState name = and . (! name)
-    setModuleState name input val = M.adjust (M.insert input val) name
+    getModuleState name' = and . (! name')
+    setModuleState name' input val' = M.adjust (M.insert input val') name'
     bcast dsts val' = [Pulse name val' dst | dst <- dsts]

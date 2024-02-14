@@ -1,0 +1,39 @@
+	Wed Feb 14 08:47 2024 Time and Allocation Profiling Report  (Final)
+
+	   aoc2023-18 +RTS -N -p -hy -l-agu -RTS
+
+	total time  =        0.00 secs   (4 ticks @ 1000 us, 8 processors)
+	total alloc =   8,896,872 bytes  (excludes profiling overheads)
+
+COST CENTRE MODULE    SRC                                          %time %alloc
+
+parseLine   Main      2023/Day18/LavaductLagoon.hs:(19,1)-(23,64)   50.0   66.8
+MAIN        MAIN      <built-in>                                    25.0    1.5
+main        Main      2023/Day18/LavaductLagoon.hs:(8,1)-(14,82)    25.0   21.6
+polygonArea Main      2023/Day18/LavaductLagoon.hs:40:1-105          0.0    4.3
+pathArea    Main      2023/Day18/LavaductLagoon.hs:(32,1)-(34,52)    0.0    3.6
+dig         Main      2023/Day18/LavaductLagoon.hs:28:1-108          0.0    1.1
+
+
+                                                                                                        individual      inherited
+COST CENTRE      MODULE                  SRC                                         no.     entries  %time %alloc   %time %alloc
+
+MAIN             MAIN                    <built-in>                                  129           0   25.0    1.5   100.0  100.0
+ CAF             Main                    <entire-module>                             257           0    0.0    0.0     0.0    0.0
+  main           Main                    2023/Day18/LavaductLagoon.hs:(8,1)-(14,82)  258           1    0.0    0.0     0.0    0.0
+  parseLine      Main                    2023/Day18/LavaductLagoon.hs:(19,1)-(23,64) 262           1    0.0    0.0     0.0    0.0
+ CAF             GHC.Conc.Signal         <entire-module>                             234           0    0.0    0.0     0.0    0.0
+ CAF             GHC.IO.Encoding         <entire-module>                             216           0    0.0    0.0     0.0    0.0
+ CAF             GHC.IO.Encoding.Iconv   <entire-module>                             214           0    0.0    0.0     0.0    0.0
+ CAF             GHC.IO.Exception        <entire-module>                             208           0    0.0    0.0     0.0    0.0
+ CAF             GHC.IO.FD               <entire-module>                             207           0    0.0    0.0     0.0    0.0
+ CAF             GHC.IO.Handle.FD        <entire-module>                             205           0    0.0    0.4     0.0    0.4
+ CAF             GHC.IO.Handle.Internals <entire-module>                             204           0    0.0    0.0     0.0    0.0
+ CAF             GHC.Read                <entire-module>                             189           0    0.0    0.0     0.0    0.0
+ CAF             GHC.Event.Thread        <entire-module>                             149           0    0.0    0.0     0.0    0.0
+ main            Main                    2023/Day18/LavaductLagoon.hs:(8,1)-(14,82)  259           0   25.0   21.6    75.0   98.0
+  dig            Main                    2023/Day18/LavaductLagoon.hs:28:1-108       261        1326    0.0    1.1     0.0    1.1
+  pathArea       Main                    2023/Day18/LavaductLagoon.hs:(32,1)-(34,52) 260           2    0.0    3.6     0.0    8.5
+   manhattanDist Main                    2023/Day18/LavaductLagoon.hs:37:1-61        264        1328    0.0    0.6     0.0    0.6
+   polygonArea   Main                    2023/Day18/LavaductLagoon.hs:40:1-105       265           2    0.0    4.3     0.0    4.3
+  parseLine      Main                    2023/Day18/LavaductLagoon.hs:(19,1)-(23,64) 263           0   50.0   66.8    50.0   66.8

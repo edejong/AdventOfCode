@@ -1,6 +1,7 @@
-{-# LANGUAGE LambdaCase #-}
-import Data.List (foldl', unfoldr, uncons)
-import Debug.Trace (trace)
+{-# OPTIONS_GHC -Wno-incomplete-uni-patterns #-}
+{-# OPTIONS_GHC -Wno-incomplete-patterns #-}
+
+import Data.List (unfoldr, uncons)
 import Numeric (readHex)
 
 main :: IO ()

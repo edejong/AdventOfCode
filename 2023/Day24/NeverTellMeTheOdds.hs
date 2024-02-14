@@ -1,5 +1,3 @@
-{-# LANGUAGE TypeApplications #-}
-{-# LANGUAGE LambdaCase #-}
 import Control.Lens
 import Data.List (tails, intercalate)
 import Data.Maybe (isJust, catMaybes)
@@ -27,7 +25,7 @@ main = do
     -- Solving this set for three hailstones yields 9 equations. I cheated and
     -- used sympy for this as mfsolve does not seem to be working.
     
-    print 669042940632377
+    print (669042940632377 :: Integer)
 
     -- let [p1, p2, p3, v1, v2, v3] = map (makeVariable . SimpleVar) . words $ "p1 p2 p3 v1 v2 v3" :: [Expr SimpleVar Double]
     
@@ -103,9 +101,7 @@ intersectInArea area l1 l2 =
         _ -> Parallel
   where
     (V2 lo hi) = toRational <$> area
-    inArea :: V2 Rational -> Bool
-    inArea (V2 x y) = x >= lo && x <= hi
-                   && y >= lo && y <= hi
+    inArea (V2 x y) = x >= lo && x <= hi && y >= lo && y <= hi
 
 intersectLines2D :: Line2D -> Line2D -> Maybe Intersection
 intersectLines2D (V2 x1 y1, V2 x2 y2) (V2 x3 y3, V2 x4 y4)

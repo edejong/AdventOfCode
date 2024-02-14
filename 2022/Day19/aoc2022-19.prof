@@ -1,0 +1,42 @@
+	Fri Feb 16 18:58 2024 Time and Allocation Profiling Report  (Final)
+
+	   aoc2022-19 +RTS -N -p -hy -l-agu -RTS
+
+	total time  =       10.02 secs   (37106 ticks @ 1000 us, 8 processors)
+	total alloc = 209,191,466,448 bytes  (excludes profiling overheads)
+
+COST CENTRE MODULE SRC                                             %time %alloc
+
+maxGeodes   Main   2022/Day19/NotEnoughMinerals.hs:(20,1)-(33,74)   64.1   79.5
+wait        Main   2022/Day19/NotEnoughMinerals.hs:43:1-47          22.6   18.5
+timeNeeded  Main   2022/Day19/NotEnoughMinerals.hs:(36,1)-(40,55)   13.3    2.0
+
+
+                                                                                                                  individual      inherited
+COST CENTRE       MODULE                        SRC                                            no.     entries  %time %alloc   %time %alloc
+
+MAIN              MAIN                          <built-in>                                     356           0    0.0    0.0   100.0  100.0
+ CAF              Main                          <entire-module>                                710           0    0.0    0.0     0.0    0.0
+  main            Main                          2022/Day19/NotEnoughMinerals.hs:(8,1)-(15,123) 712           1    0.0    0.0     0.0    0.0
+   maxGeodes      Main                          2022/Day19/NotEnoughMinerals.hs:(20,1)-(33,74) 718           0    0.0    0.0     0.0    0.0
+    basis         Linear.Vector                 src/Linear/Vector.hs:317:1-46                  719           0    0.0    0.0     0.0    0.0
+     basisFor     Linear.Vector                 src/Linear/Vector.hs:(322,1)-(326,32)          720           1    0.0    0.0     0.0    0.0
+      runIndexed  Control.Lens.Internal.Indexed src/Control/Lens/Internal/Indexed.hs:116:35-44 722           1    0.0    0.0     0.0    0.0
+      runIndexing Control.Lens.Internal.Indexed src/Control/Lens/Internal/Indexed.hs:242:35-45 721           1    0.0    0.0     0.0    0.0
+  basisFor        Linear.Vector                 src/Linear/Vector.hs:(322,1)-(326,32)          723           0    0.0    0.0     0.0    0.0
+   runIndexed     Control.Lens.Internal.Indexed src/Control/Lens/Internal/Indexed.hs:116:35-44 725          19    0.0    0.0     0.0    0.0
+   runIndexing    Control.Lens.Internal.Indexed src/Control/Lens/Internal/Indexed.hs:242:35-45 724           4    0.0    0.0     0.0    0.0
+ CAF              GHC.Conc.Signal               <entire-module>                                470           0    0.0    0.0     0.0    0.0
+ CAF              GHC.IO.Encoding               <entire-module>                                452           0    0.0    0.0     0.0    0.0
+ CAF              GHC.IO.Encoding.Iconv         <entire-module>                                450           0    0.0    0.0     0.0    0.0
+ CAF              GHC.IO.Exception              <entire-module>                                444           0    0.0    0.0     0.0    0.0
+ CAF              GHC.IO.FD                     <entire-module>                                443           0    0.0    0.0     0.0    0.0
+ CAF              GHC.IO.Handle.FD              <entire-module>                                441           0    0.0    0.0     0.0    0.0
+ CAF              GHC.IO.Handle.Internals       <entire-module>                                440           0    0.0    0.0     0.0    0.0
+ CAF              GHC.Read                      <entire-module>                                423           0    0.0    0.0     0.0    0.0
+ CAF              GHC.Event.Thread              <entire-module>                                376           0    0.0    0.0     0.0    0.0
+ main             Main                          2022/Day19/NotEnoughMinerals.hs:(8,1)-(15,123) 713           0    0.0    0.0   100.0  100.0
+  maxGeodes       Main                          2022/Day19/NotEnoughMinerals.hs:(20,1)-(33,74) 714          33   64.1   79.5   100.0  100.0
+   wait           Main                          2022/Day19/NotEnoughMinerals.hs:43:1-47        715   323067628   22.6   18.5    22.6   18.5
+   timeNeeded     Main                          2022/Day19/NotEnoughMinerals.hs:(36,1)-(40,55) 716   256568692   13.3    2.0    13.3    2.0
+   basis          Linear.Vector                 src/Linear/Vector.hs:317:1-46                  717    86738714    0.0    0.0     0.0    0.0

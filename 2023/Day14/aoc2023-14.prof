@@ -1,0 +1,36 @@
+	Tue Feb 13 23:01 2024 Time and Allocation Profiling Report  (Final)
+
+	   aoc2023-14 +RTS -N -p -hy -l-agu -RTS
+
+	total time  =        0.75 secs   (2784 ticks @ 1000 us, 8 processors)
+	total alloc = 9,985,947,288 bytes  (excludes profiling overheads)
+
+COST CENTRE MODULE    SRC                                                  %time %alloc
+
+tilt        Main      2023/Day14/ParabolicReflectorDish.hs:(14,1)-(19,67)   67.0   53.5
+cycleOnce   Main      2023/Day14/ParabolicReflectorDish.hs:(27,1)-(31,58)   32.7   46.4
+
+
+                                                                                                            individual      inherited
+COST CENTRE  MODULE                  SRC                                                 no.     entries  %time %alloc   %time %alloc
+
+MAIN         MAIN                    <built-in>                                          130           0    0.0    0.0   100.0  100.0
+ CAF         Main                    <entire-module>                                     259           0    0.0    0.0     0.0    0.0
+  main       Main                    2023/Day14/ParabolicReflectorDish.hs:(5,1)-(11,44)  260           1    0.0    0.0     0.0    0.0
+  weigh      Main                    2023/Day14/ParabolicReflectorDish.hs:(22,1)-(24,75) 262           1    0.0    0.0     0.0    0.0
+ CAF         GHC.Conc.Signal         <entire-module>                                     235           0    0.0    0.0     0.0    0.0
+ CAF         GHC.IO.Encoding         <entire-module>                                     217           0    0.0    0.0     0.0    0.0
+ CAF         GHC.IO.Encoding.Iconv   <entire-module>                                     215           0    0.0    0.0     0.0    0.0
+ CAF         GHC.IO.Exception        <entire-module>                                     209           0    0.0    0.0     0.0    0.0
+ CAF         GHC.IO.FD               <entire-module>                                     208           0    0.0    0.0     0.0    0.0
+ CAF         GHC.IO.Handle.FD        <entire-module>                                     206           0    0.0    0.0     0.0    0.0
+ CAF         GHC.IO.Handle.Internals <entire-module>                                     205           0    0.0    0.0     0.0    0.0
+ CAF         GHC.Event.Thread        <entire-module>                                     150           0    0.0    0.0     0.0    0.0
+ main        Main                    2023/Day14/ParabolicReflectorDish.hs:(5,1)-(11,44)  261           0    0.0    0.0   100.0  100.0
+  tilt       Main                    2023/Day14/ParabolicReflectorDish.hs:(14,1)-(19,67) 264        3152    0.1    0.0     0.1    0.0
+  cycleOnce  Main                    2023/Day14/ParabolicReflectorDish.hs:(27,1)-(31,58) 269         118    4.4    7.4    13.8   16.0
+   tilt      Main                    2023/Day14/ParabolicReflectorDish.hs:(14,1)-(19,67) 270     1482080    9.3    8.5     9.3    8.5
+  findCycle  CycleDetect             Algorithms/CycleDetect.hs:(12,1)-(21,73)            265           1    0.2    0.0    86.1   83.9
+   cycleOnce Main                    2023/Day14/ParabolicReflectorDish.hs:(27,1)-(31,58) 266         620   28.3   39.0    85.9   83.9
+    tilt     Main                    2023/Day14/ParabolicReflectorDish.hs:(14,1)-(19,67) 267     7787200   57.6   44.9    57.6   44.9
+  weigh      Main                    2023/Day14/ParabolicReflectorDish.hs:(22,1)-(24,75) 263           0    0.1    0.1     0.1    0.1
