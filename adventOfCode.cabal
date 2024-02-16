@@ -251,19 +251,23 @@ executable aoc2022-17
     import:           defaults
     main-is:          PyroclasticFlow.hs
     hs-source-dirs:   2022/Day17
-    build-depends:    
 
 executable aoc2022-18
     import:           defaults
     main-is:          BoilingBoulders.hs
     hs-source-dirs:   2022/Day18
-    build-depends:    
 
 executable aoc2022-19
     import:           defaults
     main-is:          NotEnoughMinerals.hs
     hs-source-dirs:   2022/Day19
     build-depends:    lens, linear
+
+executable aoc2022-20
+    import:           defaults
+    main-is:          GrovePositioningSystem.hs
+    hs-source-dirs:   2022/Day20
+    build-depends:    containers
 
 executable aoc2023-01
     import:           defaults
