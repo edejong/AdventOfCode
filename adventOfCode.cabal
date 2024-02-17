@@ -412,3 +412,9 @@ executable aoc2023-25
     main-is:          Snowverload.hs
     hs-source-dirs:   2023/Day25
     build-depends:    algos, array, fgl, random
+
+executable aoc2022-21
+    import:           defaults
+    main-is:          MonkeyMath.hs
+    hs-source-dirs:   2022/Day21
+    build-depends:    fgl
