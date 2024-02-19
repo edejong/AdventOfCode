@@ -1,8 +1,8 @@
 {-# OPTIONS_GHC -Wno-incomplete-uni-patterns #-}
 
 module Mincut (fastMincut, genMincuts) where
-import Data.Graph.Inductive
-import System.Random
+import           Data.Graph.Inductive
+import           System.Random
 
 genMincuts :: (RandomGen gen, Semigroup a, DynGraph g) => g a b -> gen -> [g a b]
 genMincuts gr gen = let (gs, gen') = fastMincut gr gen in gs ++ genMincuts gr gen'

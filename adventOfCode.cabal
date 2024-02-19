@@ -56,9 +56,9 @@ test-suite algos-test
 
 library algos
   import:           defaults
-  exposed-modules:  CycleDetect, ShortestPath, Mincut
-  build-depends:    array, fgl, random
-  hs-source-dirs:   Algorithms/src
+  exposed-modules:  CycleDetect, Geometry, ShortestPath, Mincut
+  build-depends:    linear, array, fgl, random
+  hs-source-dirs:   Common/src
 
 -- executable aoc2015
 --     main-is:          Main.hs
@@ -418,3 +418,9 @@ executable aoc2022-21
     main-is:          MonkeyMath.hs
     hs-source-dirs:   2022/Day21
     build-depends:    fgl
+
+executable aoc2022-22
+    import:           defaults
+    main-is:          MonkeyMap.hs
+    hs-source-dirs:   2022/Day22
+    build-depends:    algos, lens, linear, split

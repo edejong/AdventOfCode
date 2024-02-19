@@ -1,0 +1,151 @@
+	Tue Feb 20 16:41 2024 Time and Allocation Profiling Report  (Final)
+
+	   aoc2022-22 +RTS -N -p -hy -l-agu -RTS
+
+	total time  =        0.00 secs   (7 ticks @ 1000 us, 8 processors)
+	total alloc =  16,722,504 bytes  (excludes profiling overheads)
+
+COST CENTRE MODULE                    SRC                                                %time %alloc
+
+MAIN        MAIN                      <built-in>                                          28.6    1.0
+main        Main                      2022/Day22/MonkeyMap.hs:(33,1)-(63,41)              28.6    7.4
+onSublist   Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70           14.3    0.0
+matchDelim  Data.List.Split.Internals src/Data/List/Split/Internals.hs:(72,1)-(76,23)     14.3    0.0
+main.arr2   Main                      2022/Day22/MonkeyMap.hs:59:9-56                     14.3    1.4
+breakDelim  Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34)    0.0   23.5
+showArr     Main                      2022/Day22/MonkeyMap.hs:(85,1)-(86,74)               0.0   36.2
+parseRoute  Main                      2022/Day22/MonkeyMap.hs:(89,1)-(92,85)               0.0    1.1
+main.xss'.\ Main                      2022/Day22/MonkeyMap.hs:38:30-81                     0.0    9.6
+main.xss    Main                      2022/Day22/MonkeyMap.hs:36:9-22                      0.0   15.5
+main.arr    Main                      2022/Day22/MonkeyMap.hs:39:9-62                      0.0    1.4
+
+
+                                                                                                                                individual      inherited
+COST CENTRE                  MODULE                        SRC                                               no.     entries  %time %alloc   %time %alloc
+
+MAIN                         MAIN                          <built-in>                                        361           0   28.6    1.0   100.0  100.0
+ CAF                         Main                          <entire-module>                                   720           0    0.0    0.0     0.0    0.0
+  main                       Main                          2022/Day22/MonkeyMap.hs:(33,1)-(63,41)            722           1    0.0    0.0     0.0    0.0
+   main.seams                Main                          2022/Day22/MonkeyMap.hs:(41,9)-(50,11)            775           1    0.0    0.0     0.0    0.0
+    down                     Main                          2022/Day22/MonkeyMap.hs:159:1-13                  782           1    0.0    0.0     0.0    0.0
+    left                     Main                          2022/Day22/MonkeyMap.hs:161:1-16                  781           1    0.0    0.0     0.0    0.0
+    up                       Main                          2022/Day22/MonkeyMap.hs:163:1-14                  779           1    0.0    0.0     0.0    0.0
+   main.ss                   Main                          2022/Day22/MonkeyMap.hs:52:9-173                  774           1    0.0    0.0     0.0    0.0
+    stitch                   Main                          2022/Day22/MonkeyMap.hs:(24,1)-(30,21)            776           6    0.0    0.0     0.0    0.0
+     stitch.(...)            Main                          2022/Day22/MonkeyMap.hs:29:9-55                   778           6    0.0    0.0     0.0    0.0
+     stitch.h                Main                          2022/Day22/MonkeyMap.hs:29:9-55                   780           6    0.0    0.0     0.0    0.0
+     stitch.l                Main                          2022/Day22/MonkeyMap.hs:29:9-55                   777           6    0.0    0.0     0.0    0.0
+     stitch.adir             Main                          2022/Day22/MonkeyMap.hs:25:9-33                   792           3    0.0    0.0     0.0    0.0
+     stitch.bdir             Main                          2022/Day22/MonkeyMap.hs:26:9-33                   793           3    0.0    0.0     0.0    0.0
+     stitch.mtx              Main                          2022/Day22/MonkeyMap.hs:28:9-65                   803           3    0.0    0.0     0.0    0.0
+      !*!                    Linear.Matrix                 src/Linear/Matrix.hs:103:1-72                     806           6    0.0    0.0     0.0    0.0
+      translate              Main                          2022/Day22/MonkeyMap.hs:(152,1)-(154,34)          804           6    0.0    0.0     0.0    0.0
+      m22_to_m33             Main                          2022/Day22/MonkeyMap.hs:(147,1)-(149,49)          805           3    0.0    0.0     0.0    0.0
+     stitch.rot              Main                          2022/Day22/MonkeyMap.hs:27:9-89                   794           3    0.0    0.0     0.0    0.0
+      stitch.rot.\           Main                          2022/Day22/MonkeyMap.hs:27:36-54                  798           7    0.0    0.0     0.0    0.0
+       !*                    Linear.Matrix                 src/Linear/Matrix.hs:127:1-53                     799           7    0.0    0.0     0.0    0.0
+      identity               Linear.Matrix                 src/Linear/Matrix.hs:250:1-26                     795           1    0.0    0.0     0.0    0.0
+       runIndexed            Control.Lens.Internal.Indexed src/Control/Lens/Internal/Indexed.hs:116:35-44    797           6    0.0    0.0     0.0    0.0
+       runIndexing           Control.Lens.Internal.Indexed src/Control/Lens/Internal/Indexed.hs:242:35-45    796           3    0.0    0.0     0.0    0.0
+      rot180                 Main                          2022/Day22/MonkeyMap.hs:140:1-35                  801           1    0.0    0.0     0.0    0.0
+      rot270                 Main                          2022/Day22/MonkeyMap.hs:144:1-32                  802           1    0.0    0.0     0.0    0.0
+      rot90                  Main                          2022/Day22/MonkeyMap.hs:136:1-31                  800           1    0.0    0.0     0.0    0.0
+   main.start                Main                          2022/Day22/MonkeyMap.hs:55:9-23                   769           1    0.0    0.0     0.0    0.0
+   main.toChar               Main                          2022/Day22/MonkeyMap.hs:57:9-91                   827           1    0.0    0.0     0.0    0.0
+   splitOn                   Data.List.Split.Internals     src/Data/List/Split/Internals.hs:488:1-40         730           0    0.0    0.0     0.0    0.0
+    dropDelims               Data.List.Split.Internals     src/Data/List/Split/Internals.hs:320:1-37         732           1    0.0    0.0     0.0    0.0
+    onSublist                Data.List.Split.Internals     src/Data/List/Split/Internals.hs:299:1-70         737           0    0.0    0.0     0.0    0.0
+  turnLeft                   Main                          2022/Day22/MonkeyMap.hs:130:1-22                  785           1    0.0    0.0     0.0    0.0
+   rot270                    Main                          2022/Day22/MonkeyMap.hs:144:1-32                  788           1    0.0    0.0     0.0    0.0
+  turnRight                  Main                          2022/Day22/MonkeyMap.hs:127:1-22                  817           1    0.0    0.0     0.0    0.0
+   rot90                     Main                          2022/Day22/MonkeyMap.hs:136:1-31                  820           1    0.0    0.0     0.0    0.0
+  parseRoute                 Main                          2022/Day22/MonkeyMap.hs:(89,1)-(92,85)            763           0    0.0    0.0     0.0    0.0
+ CAF                         Data.List.Split.Internals     <entire-module>                                   719           0    0.0    0.0     0.0    0.0
+  defaultSplitter            Data.List.Split.Internals     src/Data/List/Split/Internals.hs:(55,1)-(62,5)    731           1    0.0    0.0     0.0    0.0
+ CAF                         GHC.Conc.Signal               <entire-module>                                   475           0    0.0    0.0     0.0    0.0
+ CAF                         GHC.IO.Encoding               <entire-module>                                   457           0    0.0    0.0     0.0    0.0
+ CAF                         GHC.IO.Encoding.Iconv         <entire-module>                                   455           0    0.0    0.0     0.0    0.0
+ CAF                         GHC.IO.Exception              <entire-module>                                   449           0    0.0    0.0     0.0    0.0
+ CAF                         GHC.IO.FD                     <entire-module>                                   448           0    0.0    0.0     0.0    0.0
+ CAF                         GHC.IO.Handle.FD              <entire-module>                                   446           0    0.0    0.2     0.0    0.2
+ CAF                         GHC.IO.Handle.Internals       <entire-module>                                   445           0    0.0    0.0     0.0    0.0
+ CAF                         GHC.Read                      <entire-module>                                   428           0    0.0    0.0     0.0    0.0
+ CAF                         GHC.Event.Thread              <entire-module>                                   381           0    0.0    0.0     0.0    0.0
+ main                        Main                          2022/Day22/MonkeyMap.hs:(33,1)-(63,41)            723           0   28.6    7.4    71.4   98.7
+  main.(...)                 Main                          2022/Day22/MonkeyMap.hs:37:9-65                   751           1    0.0    0.1     0.0    0.1
+  main.arr                   Main                          2022/Day22/MonkeyMap.hs:39:9-62                   754           1    0.0    1.4     0.0    1.4
+  main.arr2                  Main                          2022/Day22/MonkeyMap.hs:59:9-56                   748           1   14.3    1.4    14.3    1.4
+  main.nCols                 Main                          2022/Day22/MonkeyMap.hs:37:9-65                   752           1    0.0    0.0     0.0    0.0
+  main.nRows                 Main                          2022/Day22/MonkeyMap.hs:37:9-65                   753           1    0.0    0.0     0.0    0.0
+  main.route                 Main                          2022/Day22/MonkeyMap.hs:35:9-29                   759           1    0.0    0.0     0.0    1.2
+   parseRoute                Main                          2022/Day22/MonkeyMap.hs:(89,1)-(92,85)            760          95    0.0    1.1     0.0    1.2
+    parseRoute.(...)         Main                          2022/Day22/MonkeyMap.hs:92:21-46                  765          48    0.0    0.1     0.0    0.1
+    parseRoute.ns            Main                          2022/Day22/MonkeyMap.hs:92:21-46                  764          48    0.0    0.0     0.0    0.0
+    parseRoute.xs'           Main                          2022/Day22/MonkeyMap.hs:92:21-46                  783          47    0.0    0.0     0.0    0.0
+  main.steps                 Main                          2022/Day22/MonkeyMap.hs:56:9-60                   761           1    0.0    0.0     0.0    1.7
+   followRoute               Main                          2022/Day22/MonkeyMap.hs:(95,1)-(114,74)           762         561    0.0    0.8     0.0    1.7
+    followRoute.(...)        Main                          2022/Day22/MonkeyMap.hs:103:17-53                 772         503    0.0    0.0     0.0    0.9
+     followRoute.handleSeams Main                          2022/Day22/MonkeyMap.hs:111:5-99                  773         503    0.0    0.9     0.0    0.9
+      transf                 Main                          2022/Day22/MonkeyMap.hs:(15,1)-(18,19)            789           5    0.0    0.0     0.0    0.0
+       transf.dir'           Main                          2022/Day22/MonkeyMap.hs:17:9-33                   809           5    0.0    0.0     0.0    0.0
+        !*                   Linear.Matrix                 src/Linear/Matrix.hs:127:1-53                     815           5    0.0    0.0     0.0    0.0
+        _m22                 Linear.Matrix                 src/Linear/Matrix.hs:268:1-21                     810           5    0.0    0.0     0.0    0.0
+         column              Linear.Matrix                 src/Linear/Matrix.hs:(89,1)-(92,64)               811           5    0.0    0.0     0.0    0.0
+          ex                 Linear.V1                     src/Linear/V1.hs:259:1-9                          812           5    0.0    0.0     0.0    0.0
+          ey                 Linear.V2                     src/Linear/V2.hs:295:1-9                          813           5    0.0    0.0     0.0    0.0
+          ez                 Linear.V3                     src/Linear/V3.hs:299:1-9                          814           5    0.0    0.0     0.0    0.0
+       transf.pos            Main                          2022/Day22/MonkeyMap.hs:16:9-38                   790           5    0.0    0.0     0.0    0.0
+        !*                   Linear.Matrix                 src/Linear/Matrix.hs:127:1-53                     791           5    0.0    0.0     0.0    0.0
+    followRoute.pos2         Main                          2022/Day22/MonkeyMap.hs:102:17-35                 766         503    0.0    0.0     0.0    0.0
+     step                    Main                          2022/Day22/MonkeyMap.hs:(117,1)-(123,11)          767         503    0.0    0.0     0.0    0.0
+      step.pos'              Main                          2022/Day22/MonkeyMap.hs:121:9-22                  768         503    0.0    0.0     0.0    0.0
+    followRoute.pos3         Main                          2022/Day22/MonkeyMap.hs:103:17-53                 771         503    0.0    0.0     0.0    0.0
+    followRoute.pos4         Main                          2022/Day22/MonkeyMap.hs:104:17-27                 770         503    0.0    0.0     0.0    0.0
+    followRoute.att'         Main                          2022/Day22/MonkeyMap.hs:105:17-34                 807         466    0.0    0.0     0.0    0.0
+    followRoute.dir'         Main                          2022/Day22/MonkeyMap.hs:103:17-53                 808         466    0.0    0.0     0.0    0.0
+    followRoute.att'         Main                          2022/Day22/MonkeyMap.hs:99:25-51                  816          32    0.0    0.0     0.0    0.0
+     turnRight               Main                          2022/Day22/MonkeyMap.hs:127:1-22                  818           0    0.0    0.0     0.0    0.0
+      *!                     Linear.Matrix                 src/Linear/Matrix.hs:139:1-31                     819          32    0.0    0.0     0.0    0.0
+    followRoute.att'         Main                          2022/Day22/MonkeyMap.hs:98:25-51                  784          15    0.0    0.0     0.0    0.0
+     turnLeft                Main                          2022/Day22/MonkeyMap.hs:130:1-22                  786           0    0.0    0.0     0.0    0.0
+      *!                     Linear.Matrix                 src/Linear/Matrix.hs:139:1-31                     787          15    0.0    0.0     0.0    0.0
+  main.steps'                Main                          2022/Day22/MonkeyMap.hs:58:9-48                   758           1    0.0    0.6     0.0    0.6
+  main.xss                   Main                          2022/Day22/MonkeyMap.hs:36:9-22                   749           1    0.0   15.5     0.0   15.5
+  main.xss'                  Main                          2022/Day22/MonkeyMap.hs:38:9-86                   755           1    0.0    0.1     0.0    9.7
+   main.xss'.\               Main                          2022/Day22/MonkeyMap.hs:38:30-81                  756         200    0.0    9.6     0.0    9.6
+    main.xss'.\.n            Main                          2022/Day22/MonkeyMap.hs:38:34-55                  757         200    0.0    0.0     0.0    0.0
+  password                   Main                          2022/Day22/MonkeyMap.hs:(75,1)-(82,22)            833           1    0.0    0.0     0.0    0.0
+   password.orientation      Main                          2022/Day22/MonkeyMap.hs:(77,5)-(82,22)            834           1    0.0    0.0     0.0    0.0
+    password.orientation.\   Main                          2022/Day22/MonkeyMap.hs:80:25                     835           1    0.0    0.0     0.0    0.0
+  showArr                    Main                          2022/Day22/MonkeyMap.hs:(85,1)-(86,74)            821           1    0.0   36.2     0.0   36.2
+   showArr.(...)             Main                          2022/Day22/MonkeyMap.hs:85:19-50                  823           1    0.0    0.0     0.0    0.0
+   showArr.c1                Main                          2022/Day22/MonkeyMap.hs:85:19-50                  825           1    0.0    0.0     0.0    0.0
+   showArr.c2                Main                          2022/Day22/MonkeyMap.hs:85:19-50                  826           1    0.0    0.0     0.0    0.0
+   showArr.r1                Main                          2022/Day22/MonkeyMap.hs:85:19-50                  822           1    0.0    0.0     0.0    0.0
+   showArr.r2                Main                          2022/Day22/MonkeyMap.hs:85:19-50                  824           1    0.0    0.0     0.0    0.0
+  splitOn                    Data.List.Split.Internals     src/Data/List/Split/Internals.hs:488:1-40         724           1    0.0    0.0    28.6   23.5
+   onSublist                 Data.List.Split.Internals     src/Data/List/Split/Internals.hs:299:1-70         729           1    0.0    0.0     0.0    0.0
+   split                     Data.List.Split.Internals     src/Data/List/Split/Internals.hs:262:1-68         725           1    0.0    0.0    28.6   23.5
+    fromElem                 Data.List.Split.Internals     src/Data/List/Split/Internals.hs:(124,1)-(125,24) 750           2    0.0    0.0     0.0    0.0
+    splitInternal            Data.List.Split.Internals     src/Data/List/Split/Internals.hs:(147,1)-(156,71) 735           2    0.0    0.0    28.6   23.5
+     breakDelim              Data.List.Split.Internals     src/Data/List/Split/Internals.hs:(159,1)-(164,34) 738       25869    0.0   23.5    28.6   23.5
+      matchDelim             Data.List.Split.Internals     src/Data/List/Split/Internals.hs:(72,1)-(76,23)   739       26069   14.3    0.0    28.6    0.0
+       onSublist             Data.List.Split.Internals     src/Data/List/Split/Internals.hs:299:1-70         747           0   14.3    0.0    14.3    0.0
+    delimiter                Data.List.Split.Internals     src/Data/List/Split/Internals.hs:22:5-13          736           1    0.0    0.0     0.0    0.0
+    postProcess              Data.List.Split.Internals     src/Data/List/Split/Internals.hs:(171,1)-(177,35) 726           1    0.0    0.0     0.0    0.0
+     condensePolicy          Data.List.Split.Internals     src/Data/List/Split/Internals.hs:29:5-18          734           1    0.0    0.0     0.0    0.0
+     delimPolicy             Data.List.Split.Internals     src/Data/List/Split/Internals.hs:24:5-15          728           1    0.0    0.0     0.0    0.0
+     doCondense              Data.List.Split.Internals     src/Data/List/Split/Internals.hs:(187,1)-(194,20) 733           1    0.0    0.0     0.0    0.0
+     doDrop                  Data.List.Split.Internals     src/Data/List/Split/Internals.hs:(181,1)-(182,14) 742           1    0.0    0.0     0.0    0.0
+     doMerge                 Data.List.Split.Internals     src/Data/List/Split/Internals.hs:(216,1)-(218,14) 727           1    0.0    0.0     0.0    0.0
+     dropFinal               Data.List.Split.Internals     src/Data/List/Split/Internals.hs:(248,1)-(254,17) 745           1    0.0    0.0     0.0    0.0
+     dropInitial             Data.List.Split.Internals     src/Data/List/Split/Internals.hs:(243,1)-(244,19) 743           1    0.0    0.0     0.0    0.0
+     finalBlankPolicy        Data.List.Split.Internals     src/Data/List/Split/Internals.hs:34:5-20          746           1    0.0    0.0     0.0    0.0
+     initBlankPolicy         Data.List.Split.Internals     src/Data/List/Split/Internals.hs:32:5-19          744           1    0.0    0.0     0.0    0.0
+     insertBlanks            Data.List.Split.Internals     src/Data/List/Split/Internals.hs:(200,1)-(202,38) 740           1    0.0    0.0     0.0    0.0
+      insertBlanks'          Data.List.Split.Internals     src/Data/List/Split/Internals.hs:(206,1)-(212,49) 741           4    0.0    0.0     0.0    0.0
+  main.toChar                Main                          2022/Day22/MonkeyMap.hs:57:9-91                   828           0    0.0    0.0     0.0    0.0
+   main.toChar.\             Main                          2022/Day22/MonkeyMap.hs:57:51-53                  830         179    0.0    0.0     0.0    0.0
+   main.toChar.\             Main                          2022/Day22/MonkeyMap.hs:57:69-71                  831         146    0.0    0.0     0.0    0.0
+   main.toChar.\             Main                          2022/Day22/MonkeyMap.hs:57:36-38                  832          79    0.0    0.0     0.0    0.0
+   main.toChar.\             Main                          2022/Day22/MonkeyMap.hs:57:87-89                  829          19    0.0    0.0     0.0    0.0
