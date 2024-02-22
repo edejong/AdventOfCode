@@ -1,0 +1,83 @@
+	Thu Feb 22 16:23 2024 Time and Allocation Profiling Report  (Final)
+
+	   aoc2022-23 +RTS -N -p -hy -l-agu -RTS
+
+	total time  =        0.39 secs   (1443 ticks @ 1000 us, 8 processors)
+	total alloc = 6,429,859,496 bytes  (excludes profiling overheads)
+
+COST CENTRE               MODULE    SRC                                             %time %alloc
+
+proposeMove.x             Main      2022/Day23/UnstableDiffusion.hs:48:9-54          16.8   28.5
+proposeMoves.xs           Main      2022/Day23/UnstableDiffusion.hs:32:9-96          12.3   10.0
+proposeMove               Main      2022/Day23/UnstableDiffusion.hs:(47,1)-(56,72)   10.5    8.4
+rounds.rounds'.hasMoves   Main      2022/Day23/UnstableDiffusion.hs:26:13-86          9.7    8.1
+proposeMove.xs            Main      2022/Day23/UnstableDiffusion.hs:(49,9)-(52,54)    8.2   18.3
+proposeMove.canMove       Main      2022/Day23/UnstableDiffusion.hs:56:5-72           7.5    0.0
+proposeMoves.bnds         Main      2022/Day23/UnstableDiffusion.hs:33:9-52           6.3    6.6
+move.xs                   Main      2022/Day23/UnstableDiffusion.hs:(41,9)-(43,46)    6.2    4.6
+rotate                    Main      2022/Day23/UnstableDiffusion.hs:59:1-73           5.5    6.6
+move                      Main      2022/Day23/UnstableDiffusion.hs:(40,1)-(44,75)    4.0    6.1
+proposeMoves.calcBounds   Main      2022/Day23/UnstableDiffusion.hs:37:5-76           2.9    0.0
+rounds.rounds'.hasMoves.\ Main      2022/Day23/UnstableDiffusion.hs:26:41-67          2.6    0.1
+proposeMoves.arr'         Main      2022/Day23/UnstableDiffusion.hs:34:9-47           2.3    2.7
+rounds.rounds'            Main      2022/Day23/UnstableDiffusion.hs:(24,5)-(28,25)    1.5    0.0
+proposeMoves.xs.\         Main      2022/Day23/UnstableDiffusion.hs:32:27-50          1.1    0.0
+
+
+                                                                                                                          individual      inherited
+COST CENTRE                     MODULE                  SRC                                            no.     entries  %time %alloc   %time %alloc
+
+MAIN                            MAIN                    <built-in>                                     354           0    0.1    0.0   100.0  100.0
+ CAF                            Main                    <entire-module>                                706           0    0.0    0.0     0.0    0.0
+  main                          Main                    2022/Day23/UnstableDiffusion.hs:(10,1)-(17,21) 708           1    0.0    0.0     0.0    0.0
+  rounds                        Main                    2022/Day23/UnstableDiffusion.hs:(22,1)-(28,25) 712           1    0.0    0.0     0.0    0.0
+   rounds.rounds'               Main                    2022/Day23/UnstableDiffusion.hs:(24,5)-(28,25) 729           0    0.0    0.0     0.0    0.0
+    rounds.rounds'.moves        Main                    2022/Day23/UnstableDiffusion.hs:25:13-38       730           0    0.0    0.0     0.0    0.0
+     proposeMoves               Main                    2022/Day23/UnstableDiffusion.hs:(31,1)-(37,76) 731           0    0.0    0.0     0.0    0.0
+      proposeMoves.xs           Main                    2022/Day23/UnstableDiffusion.hs:32:9-96        732           0    0.0    0.0     0.0    0.0
+       proposeMoves.xs.\        Main                    2022/Day23/UnstableDiffusion.hs:32:27-50       733           0    0.0    0.0     0.0    0.0
+        proposeMove             Main                    2022/Day23/UnstableDiffusion.hs:(47,1)-(56,72) 734           0    0.0    0.0     0.0    0.0
+         proposeMove.(...)      Main                    2022/Day23/UnstableDiffusion.hs:55:5-75        736           1    0.0    0.0     0.0    0.0
+         proposeMove.e          Main                    2022/Day23/UnstableDiffusion.hs:55:5-75        740           1    0.0    0.0     0.0    0.0
+         proposeMove.n          Main                    2022/Day23/UnstableDiffusion.hs:55:5-75        737           1    0.0    0.0     0.0    0.0
+         proposeMove.ne         Main                    2022/Day23/UnstableDiffusion.hs:55:5-75        738           1    0.0    0.0     0.0    0.0
+         proposeMove.nw         Main                    2022/Day23/UnstableDiffusion.hs:55:5-75        735           1    0.0    0.0     0.0    0.0
+         proposeMove.s          Main                    2022/Day23/UnstableDiffusion.hs:55:5-75        745           1    0.0    0.0     0.0    0.0
+         proposeMove.se         Main                    2022/Day23/UnstableDiffusion.hs:55:5-75        746           1    0.0    0.0     0.0    0.0
+         proposeMove.sw         Main                    2022/Day23/UnstableDiffusion.hs:55:5-75        744           1    0.0    0.0     0.0    0.0
+         proposeMove.w          Main                    2022/Day23/UnstableDiffusion.hs:55:5-75        739           1    0.0    0.0     0.0    0.0
+ CAF                            GHC.Conc.Signal         <entire-module>                                468           0    0.0    0.0     0.0    0.0
+ CAF                            GHC.IO.Encoding         <entire-module>                                450           0    0.0    0.0     0.0    0.0
+ CAF                            GHC.IO.Encoding.Iconv   <entire-module>                                448           0    0.0    0.0     0.0    0.0
+ CAF                            GHC.IO.Exception        <entire-module>                                442           0    0.0    0.0     0.0    0.0
+ CAF                            GHC.IO.FD               <entire-module>                                441           0    0.0    0.0     0.0    0.0
+ CAF                            GHC.IO.Handle.FD        <entire-module>                                439           0    0.0    0.0     0.0    0.0
+ CAF                            GHC.IO.Handle.Internals <entire-module>                                438           0    0.0    0.0     0.0    0.0
+ CAF                            GHC.Event.Thread        <entire-module>                                374           0    0.0    0.0     0.0    0.0
+ main                           Main                    2022/Day23/UnstableDiffusion.hs:(10,1)-(17,21) 709           0    0.1    0.0    99.9  100.0
+  main.(...)                    Main                    2022/Day23/UnstableDiffusion.hs:12:9-58        718           1    0.0    0.0     0.0    0.0
+  main.arr                      Main                    2022/Day23/UnstableDiffusion.hs:13:9-61        721           1    0.0    0.0     0.0    0.0
+  main.arr'                     Main                    2022/Day23/UnstableDiffusion.hs:15:9-23        710           1    0.0    0.0     0.0    0.0
+  main.nCols                    Main                    2022/Day23/UnstableDiffusion.hs:12:9-58        719           1    0.0    0.0     0.0    0.0
+  main.nRows                    Main                    2022/Day23/UnstableDiffusion.hs:12:9-58        720           1    0.0    0.0     0.0    0.0
+  main.rs                       Main                    2022/Day23/UnstableDiffusion.hs:14:9-23        711           1    0.0    0.0    99.9  100.0
+   rounds                       Main                    2022/Day23/UnstableDiffusion.hs:(22,1)-(28,25) 713           0    1.0    0.0    99.9  100.0
+    rounds.rounds'              Main                    2022/Day23/UnstableDiffusion.hs:(24,5)-(28,25) 714         978    1.5    0.0    98.9  100.0
+     rounds.rounds'.hasMoves    Main                    2022/Day23/UnstableDiffusion.hs:26:13-86       747         978    9.7    8.1    12.3    8.2
+      rounds.rounds'.hasMoves.\ Main                    2022/Day23/UnstableDiffusion.hs:26:41-67       748     2808862    2.6    0.1     2.6    0.1
+     rounds.rounds'.moves       Main                    2022/Day23/UnstableDiffusion.hs:25:13-38       715         978    0.3    0.0    74.8   81.0
+      proposeMoves              Main                    2022/Day23/UnstableDiffusion.hs:(31,1)-(37,76) 716         978    0.8    0.0    74.6   81.0
+       proposeMoves.arr'        Main                    2022/Day23/UnstableDiffusion.hs:34:9-47        724         978    2.3    2.7     2.3    2.7
+       proposeMoves.bnds        Main                    2022/Day23/UnstableDiffusion.hs:33:9-52        722         978    6.3    6.6     9.2    6.6
+        proposeMoves.calcBounds Main                    2022/Day23/UnstableDiffusion.hs:37:5-76        723         978    2.9    0.0     2.9    0.0
+       proposeMoves.xs          Main                    2022/Day23/UnstableDiffusion.hs:32:9-96        717         978   12.3   10.0    62.2   71.7
+        proposeMoves.xs.\       Main                    2022/Day23/UnstableDiffusion.hs:32:27-50       725     2533020    1.1    0.0    49.9   61.7
+         proposeMove            Main                    2022/Day23/UnstableDiffusion.hs:(47,1)-(56,72) 726     2533020   10.5    8.4    48.8   61.7
+          proposeMove.x         Main                    2022/Day23/UnstableDiffusion.hs:48:9-54        728     2533020   16.8   28.5    16.8   28.5
+          proposeMove.xs        Main                    2022/Day23/UnstableDiffusion.hs:(49,9)-(52,54) 741     1239071    8.2   18.3    14.0   24.8
+           rotate               Main                    2022/Day23/UnstableDiffusion.hs:59:1-73        742     1239071    5.5    6.6     5.8    6.6
+            rotate.k            Main                    2022/Day23/UnstableDiffusion.hs:59:19-31       743     1239071    0.3    0.0     0.3    0.0
+          proposeMove.canMove   Main                    2022/Day23/UnstableDiffusion.hs:56:5-72        727         978    7.5    0.0     7.5    0.0
+     rounds.rounds'.next        Main                    2022/Day23/UnstableDiffusion.hs:27:13-80       749         978    0.0    0.0    10.2   10.8
+      move                      Main                    2022/Day23/UnstableDiffusion.hs:(40,1)-(44,75) 750         977    4.0    6.1    10.2   10.7
+       move.xs                  Main                    2022/Day23/UnstableDiffusion.hs:(41,9)-(43,46) 751         977    6.2    4.6     6.2    4.6
