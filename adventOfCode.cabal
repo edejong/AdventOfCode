@@ -440,3 +440,9 @@ executable aoc2022-24
     main-is:          BlizzardBasin.hs
     hs-source-dirs:   2022/Day24
     build-depends:    algos, linear
+
+executable aoc2022-25
+    import:           defaults
+    main-is:          FullofHotAir.hs
+    hs-source-dirs:   2022/Day25
+--     build-depends:
