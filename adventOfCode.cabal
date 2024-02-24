@@ -30,8 +30,6 @@ common defaults
         -Wall
         -threaded
         -j4
-        -rtsopts
-        -with-rtsopts=-N
   default-language: Haskell2010
   default-extensions:
           LambdaCase
@@ -40,8 +38,14 @@ common defaults
         , TupleSections
         , TypeApplications
 
+common exec-defaults
+  build-depends:    algos
+  ghc-options:
+        -rtsopts
+        -with-rtsopts=-N
+
 test-suite algos-test
-    -- import:           defaults
+    import:           defaults
     type:             exitcode-stdio-1.0
     -- Directories containing source files.
     hs-source-dirs:   Algorithms/test
@@ -152,281 +156,287 @@ library algos
 
 
 executable aoc2022-01
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          CalorieCounting.hs
     hs-source-dirs:   2022/Day01
     build-depends:    
 
 executable aoc2022-02
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          RockPaperScissors.hs
     hs-source-dirs:   2022/Day02
     build-depends:    
 
 executable aoc2022-03
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          RucksackReorganization.hs
     hs-source-dirs:   2022/Day03
     build-depends:    
 
 executable aoc2022-04
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          CampCleanup.hs
     hs-source-dirs:   2022/Day04
     build-depends:    
 
 executable aoc2022-05
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          SupplyStacks.hs
     hs-source-dirs:   2022/Day05
     build-depends:    
 
 executable aoc2022-06
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          TuningTrouble.hs
     hs-source-dirs:   2022/Day06
     build-depends:    
 
 executable aoc2022-07
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          NoSpaceLeftOnDevice.hs
     hs-source-dirs:   2022/Day07
     build-depends:    
 
 executable aoc2022-08
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          TreetopTreeHouse.hs
     hs-source-dirs:   2022/Day08
     build-depends:    
 
 executable aoc2022-09
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          RopeBridge.hs
     hs-source-dirs:   2022/Day09
     build-depends:    
 
 executable aoc2022-10
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          CathodeRayTube.hs
     hs-source-dirs:   2022/Day10
     build-depends:    
 
 executable aoc2022-11
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          MonkeyintheMiddle.hs
     hs-source-dirs:   2022/Day11
     build-depends:    
 
 executable aoc2022-12
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          HillClimbingAlgorithm.hs
     hs-source-dirs:   2022/Day12
     build-depends:    
 
 executable aoc2022-13
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          DistressSignal.hs
     hs-source-dirs:   2022/Day13
     build-depends:    
 
 executable aoc2022-14
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          RegolithReservoir.hs
     hs-source-dirs:   2022/Day14
     build-depends:    
 
 executable aoc2022-15
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          BeaconExclusionZone.hs
     hs-source-dirs:   2022/Day15
     build-depends:    
 
 executable aoc2022-16
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          ProboscideaVolcanium.hs
     hs-source-dirs:   2022/Day16
     build-depends:    
 
 executable aoc2022-17
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          PyroclasticFlow.hs
     hs-source-dirs:   2022/Day17
 
 executable aoc2022-18
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          BoilingBoulders.hs
     hs-source-dirs:   2022/Day18
 
 executable aoc2022-19
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          NotEnoughMinerals.hs
     hs-source-dirs:   2022/Day19
     build-depends:    lens, linear
 
 executable aoc2022-20
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          GrovePositioningSystem.hs
     hs-source-dirs:   2022/Day20
     build-depends:    containers
 
 executable aoc2023-01
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          Trebuchet.hs
     hs-source-dirs:   2023/Day01
     build-depends:    parsec
 
 executable aoc2023-02
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          CubeConundrum.hs
     hs-source-dirs:   2023/Day02
     build-depends:    parsec
 
 executable aoc2023-03
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          GearRatios.hs
     hs-source-dirs:   2023/Day03
 
 executable aoc2023-04
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          Scratchcards.hs
     hs-source-dirs:   2023/Day04
     build-depends:    text
 
 executable aoc2023-05
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          IfYouGiveASeedAFertilizer.hs
     hs-source-dirs:   2023/Day05
     build-depends:    parsec, range, split
 
 executable aoc2023-06
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          WaitForIt.hs
     hs-source-dirs:   2023/Day06
 
 executable aoc2023-07
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          CamelCards.hs
     hs-source-dirs:   2023/Day07
     build-depends:    containers
 
 executable aoc2023-08
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          HauntedWasteland.hs
     hs-source-dirs:   2023/Day08
     build-depends:    containers
 
 executable aoc2023-09
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          MirageMaintenance.hs
     hs-source-dirs:   2023/Day09
 
 executable aoc2023-10
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          PipeMaze.hs
     hs-source-dirs:   2023/Day10
 
 executable aoc2023-11
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          CosmicExpansion.hs
     hs-source-dirs:   2023/Day11
 
 executable aoc2023-12
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          HotSprings.hs
     hs-source-dirs:   2023/Day12
     build-depends:    memoize, split
 
 executable aoc2023-13
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          PointofIncidence.hs
     hs-source-dirs:   2023/Day13
     build-depends:    split
 
 executable aoc2023-14
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          ParabolicReflectorDish.hs
     hs-source-dirs:   2023/Day14
     build-depends:    algos
 
 executable aoc2023-15
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          LensLibrary.hs
     hs-source-dirs:   2023/Day15
     build-depends:    containers, split
 
 executable aoc2023-16
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          TheFloorWillBeLava.hs
     hs-source-dirs:   2023/Day16
     build-depends:    containers, split
 
 executable aoc2023-17
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          ClumsyCrucible.hs
     hs-source-dirs:   2023/Day17
     build-depends:    containers, fgl
 
 executable aoc2023-18
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          LavaductLagoon.hs
     hs-source-dirs:   2023/Day18
 
 executable aoc2023-19
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          Aplenty.hs
     build-depends:    containers, parsec, range
     hs-source-dirs:   2023/Day19
 
 executable aoc2023-20
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          PulsePropagation.hs
     hs-source-dirs:   2023/Day20
     build-depends:    binary, bytestring, containers, parsec
 
 executable aoc2023-21
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          StepCounter.hs
     hs-source-dirs:   2023/Day21
     build-depends:    bytestring, containers, gloss, linear
 
 executable aoc2023-22
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          SandSlabs.hs
     hs-source-dirs:   2023/Day22
     build-depends:    containers, lens, linear
 
 executable aoc2023-23
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          ALongWalk.hs
     hs-source-dirs:   2023/Day23
     build-depends:    containers, fgl, lens, memoize
 
 executable aoc2023-24
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          NeverTellMeTheOdds.hs
     hs-source-dirs:   2023/Day24
     build-depends:    lens, linear, mfsolve, split
 
 executable aoc2023-25
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          Snowverload.hs
     hs-source-dirs:   2023/Day25
     build-depends:    algos, array, fgl, random
 
 executable aoc2022-21
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          MonkeyMath.hs
     hs-source-dirs:   2022/Day21
     build-depends:    fgl
 
 executable aoc2022-22
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          MonkeyMap.hs
     hs-source-dirs:   2022/Day22
     build-depends:    algos, lens, linear, split
 
 executable aoc2022-23
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          UnstableDiffusion.hs
     hs-source-dirs:   2022/Day23
+    build-depends:    algos, linear
+
+executable aoc2022-24
+    import:           defaults, exec-defaults
+    main-is:          BlizzardBasin.hs
+    hs-source-dirs:   2022/Day24
     build-depends:    algos, linear
