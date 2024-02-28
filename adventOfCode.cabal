@@ -23,29 +23,21 @@ maintainer:         ecco256@gmail.com
 -- category:
 extra-source-files: CHANGELOG.md
 
-common defaults-old
---   build-depends:    -- base >=4.17 && <5
-  other-modules:    Paths_adventOfCode
-  ghc-options:
-        -Wall
-        -threaded
-        -j4
-  default-language: Haskell2010
-  default-extensions:
-          LambdaCase
-        , PartialTypeSignatures
-        , ScopedTypeVariables
-        , TupleSections
-        , TypeApplications
-
 common defaults
   build-depends:    base >=4.17 && <5
   other-modules:    Paths_adventOfCode
+  -- https://downloads.haskell.org/ghc/latest/docs/users_guide/debugging.html#suppressing-unwanted-information
   ghc-options:
         -Wall
         -threaded
         -j4
-  default-language: Haskell2010
+        -- -ddump-simpl
+        -- -ddump-to-file
+        -- -dsuppress-idinfo
+        -- -dsuppress-module-prefixes
+        -- -dppr-case-as-let
+        -- -dppr-cols=1000
+  default-language: GHC2021
   default-extensions:
           LambdaCase
         , PartialTypeSignatures
@@ -63,7 +55,7 @@ test-suite algos-test
     import:           defaults
     type:             exitcode-stdio-1.0
     -- Directories containing source files.
-    hs-source-dirs:   Algorithms/test
+    hs-source-dirs:   Common/test
     main-is:          AlgorithmsTest.hs
     build-depends:
         algos,
@@ -265,107 +257,105 @@ executable aoc2022-01
     import:           defaults, exec-defaults
     main-is:          CalorieCounting.hs
     hs-source-dirs:   2022/Day01
-    build-depends:    
+    build-depends:    split
 
 executable aoc2022-02
     import:           defaults, exec-defaults
     main-is:          RockPaperScissors.hs
     hs-source-dirs:   2022/Day02
-    build-depends:    
 
 executable aoc2022-03
     import:           defaults, exec-defaults
     main-is:          RucksackReorganization.hs
     hs-source-dirs:   2022/Day03
-    build-depends:    
+    build-depends:    containers, split
 
 executable aoc2022-04
     import:           defaults, exec-defaults
     main-is:          CampCleanup.hs
     hs-source-dirs:   2022/Day04
-    build-depends:    
+    build-depends:    split
 
 executable aoc2022-05
     import:           defaults, exec-defaults
     main-is:          SupplyStacks.hs
     hs-source-dirs:   2022/Day05
-    build-depends:    
+    build-depends:    lens, split
 
 executable aoc2022-06
     import:           defaults, exec-defaults
     main-is:          TuningTrouble.hs
     hs-source-dirs:   2022/Day06
-    build-depends:    
 
 executable aoc2022-07
     import:           defaults, exec-defaults
     main-is:          NoSpaceLeftOnDevice.hs
     hs-source-dirs:   2022/Day07
-    build-depends:    
+    build-depends:    mtl, split
 
 executable aoc2022-08
     import:           defaults, exec-defaults
     main-is:          TreetopTreeHouse.hs
     hs-source-dirs:   2022/Day08
-    build-depends:    
 
 executable aoc2022-09
     import:           defaults, exec-defaults
     main-is:          RopeBridge.hs
     hs-source-dirs:   2022/Day09
-    build-depends:    
 
 executable aoc2022-10
     import:           defaults, exec-defaults
     main-is:          CathodeRayTube.hs
     hs-source-dirs:   2022/Day10
-    build-depends:    
+    build-depends:    split
 
 executable aoc2022-11
     import:           defaults, exec-defaults
     main-is:          MonkeyintheMiddle.hs
     hs-source-dirs:   2022/Day11
-    build-depends:    
+    build-depends:    containers, split
 
 executable aoc2022-12
     import:           defaults, exec-defaults
     main-is:          HillClimbingAlgorithm.hs
     hs-source-dirs:   2022/Day12
-    build-depends:    
+    build-depends:    containers
 
 executable aoc2022-13
     import:           defaults, exec-defaults
     main-is:          DistressSignal.hs
     hs-source-dirs:   2022/Day13
-    build-depends:    
+    build-depends:    parsec, split
 
 executable aoc2022-14
     import:           defaults, exec-defaults
     main-is:          RegolithReservoir.hs
     hs-source-dirs:   2022/Day14
-    build-depends:    
+    build-depends:    array, split
 
 executable aoc2022-15
     import:           defaults, exec-defaults
     main-is:          BeaconExclusionZone.hs
     hs-source-dirs:   2022/Day15
-    build-depends:    
+    build-depends:    split
 
 executable aoc2022-16
     import:           defaults, exec-defaults
     main-is:          ProboscideaVolcanium.hs
     hs-source-dirs:   2022/Day16
-    build-depends:    
+    build-depends:    containers, mtl, split
 
 executable aoc2022-17
     import:           defaults, exec-defaults
     main-is:          PyroclasticFlow.hs
     hs-source-dirs:   2022/Day17
+    build-depends:    containers, mtl
 
 executable aoc2022-18
     import:           defaults, exec-defaults
     main-is:          BoilingBoulders.hs
     hs-source-dirs:   2022/Day18
+    build-depends:    array, containers, mtl, split
 
 executable aoc2022-19
     import:           defaults, exec-defaults
@@ -404,7 +394,7 @@ executable aoc2022-24
     build-depends:    algos, linear
 
 executable aoc2022-25
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          FullofHotAir.hs
     hs-source-dirs:   2022/Day25
 

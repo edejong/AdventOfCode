@@ -1,14 +1,12 @@
-{-# LANGUAGE TypeApplications #-}
-module Day14.RegolithReservoir where
-import Data.List.Split (splitOn, chunksOf)
-import Data.List ( sort, transpose )
-import Data.Char (intToDigit)
-import Data.Array.IO (IOUArray, MArray (newArray, getBounds), getElems, writeArray, readArray)
-import Control.Monad (forM_)
+{-# OPTIONS_GHC -Wno-incomplete-patterns #-}
+import           Control.Monad   (forM_)
+import           Data.Array.IO   (IOUArray, MArray (getBounds, newArray),
+                                  readArray, writeArray)
+import           Data.List.Split (splitOn)
 
 main :: IO ()
 main = do
-    xs <- map (map (map (read @Int) . splitOn ",") . splitOn " -> ") . lines <$> readFile "2022/data/day14.txt"
+    xs <- map (map (map (read @Int) . splitOn ",") . splitOn " -> ") . lines <$> readFile "2022/Day14/day14.txt"
     let maxY = maximum . map (!!1) . concat $ xs
     part1 <- solve xs
     part2 <- solve ([[0, maxY + 2], [1000, maxY + 2]]:xs)
@@ -38,7 +36,6 @@ asCoords xss = concat . zipWith f xss $ tail xss
     range' a b = if a < b then [a..b] else [b..a]
 
 type Grid = IOUArray Point Char
-data Result = Open | Blocked | OutOfBounds
 
 tryDrop :: Grid -> Point -> IO Bool
 tryDrop grid (x,y) = do
@@ -60,10 +57,3 @@ tryDrop' grid pos (a:as) = do
         if c == '.' then tryDrop grid a else tryDrop' grid pos as
   where
     inBounds ((x1,y1), (x2,y2)) (x, y) = x >= x1 && x <= x2 && y >= y1 && y <= y2
-
-printGrid :: Grid -> IO ()
-printGrid grid = do
-    elems <- getElems grid
-    ((x0,y0),(x1,y1)) <- getBounds grid
-    let tmp = unlines . transpose . chunksOf (y1-y0+1) $ elems
-    putStr tmp

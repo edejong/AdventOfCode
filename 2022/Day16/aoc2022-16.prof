@@ -1,0 +1,149 @@
+	Thu Feb 29 21:39 2024 Time and Allocation Profiling Report  (Final)
+
+	   aoc2022-16 +RTS -N -i0.05 -p -hy -l-agu -s2022/Day16/aoc2022-16.stats -RTS
+
+	total time  =       21.14 secs   (78332 ticks @ 1000 us, 8 processors)
+	total alloc = 39,628,341,320 bytes  (excludes profiling overheads)
+
+COST CENTRE         MODULE    SRC                                                 %time %alloc
+
+maxPressure         Main      2022/Day16/ProboscideaVolcanium.hs:(71,1)-(84,21)    93.8   54.7
+maxPressure.\       Main      2022/Day16/ProboscideaVolcanium.hs:82:57-97           3.0   23.3
+maxPressure.moves   Main      2022/Day16/ProboscideaVolcanium.hs:(80,13)-(81,94)    1.7   13.7
+maxPressure.key     Main      2022/Day16/ProboscideaVolcanium.hs:75:9-35            0.6    4.5
+maxPressure.moves.\ Main      2022/Day16/ProboscideaVolcanium.hs:81:46-72           0.3    1.1
+maxPressure.(...)   Main      2022/Day16/ProboscideaVolcanium.hs:79:13-68           0.2    2.6
+
+
+                                                                                                                               individual      inherited
+COST CENTRE                    MODULE                    SRC                                                no.     entries  %time %alloc   %time %alloc
+
+MAIN                           MAIN                      <built-in>                                         164           0    0.0    0.0   100.0  100.0
+ CAF                           Main                      <entire-module>                                    326           0    0.0    0.0     0.0    0.0
+  main                         Main                      2022/Day16/ProboscideaVolcanium.hs:(14,1)-(29,120) 328           1    0.0    0.0     0.0    0.0
+   main.valveLabels            Main                      2022/Day16/ProboscideaVolcanium.hs:17:9-98         424           0    0.0    0.0     0.0    0.0
+  parseValve                   Main                      2022/Day16/ProboscideaVolcanium.hs:(41,1)-(46,35)  347           0    0.0    0.0     0.0    0.0
+   parseValve.(...)            Main                      2022/Day16/ProboscideaVolcanium.hs:42:9-33         348           0    0.0    0.0     0.0    0.0
+    splitOn                    Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40          349           0    0.0    0.0     0.0    0.0
+     dropDelims                Data.List.Split.Internals src/Data/List/Split/Internals.hs:320:1-37          351           1    0.0    0.0     0.0    0.0
+     onSublist                 Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70          356           0    0.0    0.0     0.0    0.0
+   parseValve.flowRate         Main                      2022/Day16/ProboscideaVolcanium.hs:44:9-42         373           0    0.0    0.0     0.0    0.0
+   parseValve.tunnels          Main                      2022/Day16/ProboscideaVolcanium.hs:45:9-85         388           0    0.0    0.0     0.0    0.0
+    splitOn                    Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40          389           0    0.0    0.0     0.0    0.0
+     dropDelims                Data.List.Split.Internals src/Data/List/Split/Internals.hs:320:1-37          390           1    0.0    0.0     0.0    0.0
+     onSublist                 Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70          396           0    0.0    0.0     0.0    0.0
+ CAF                           Data.List.Split.Internals <entire-module>                                    325           0    0.0    0.0     0.0    0.0
+  defaultSplitter              Data.List.Split.Internals src/Data/List/Split/Internals.hs:(55,1)-(62,5)     350           1    0.0    0.0     0.0    0.0
+ CAF                           GHC.Conc.Signal           <entire-module>                                    273           0    0.0    0.0     0.0    0.0
+ CAF                           GHC.IO.Encoding           <entire-module>                                    255           0    0.0    0.0     0.0    0.0
+ CAF                           GHC.IO.Encoding.Iconv     <entire-module>                                    253           0    0.0    0.0     0.0    0.0
+ CAF                           GHC.IO.Exception          <entire-module>                                    247           0    0.0    0.0     0.0    0.0
+ CAF                           GHC.IO.FD                 <entire-module>                                    246           0    0.0    0.0     0.0    0.0
+ CAF                           GHC.IO.Handle.FD          <entire-module>                                    244           0    0.0    0.0     0.0    0.0
+ CAF                           GHC.IO.Handle.Internals   <entire-module>                                    243           0    0.0    0.0     0.0    0.0
+ CAF                           GHC.Read                  <entire-module>                                    227           0    0.0    0.0     0.0    0.0
+ CAF                           Data.OldList              <entire-module>                                    199           0    0.0    0.0     0.0    0.0
+ CAF                           GHC.Event.Thread          <entire-module>                                    184           0    0.0    0.0     0.0    0.0
+ main                          Main                      2022/Day16/ProboscideaVolcanium.hs:(14,1)-(29,120) 329           0    0.0    0.0   100.0  100.0
+  maxPressure                  Main                      2022/Day16/ProboscideaVolcanium.hs:(71,1)-(84,21)  330    36039133   93.8   54.7   100.0  100.0
+   maxPressure.\               Main                      2022/Day16/ProboscideaVolcanium.hs:82:57-97        432    30281556    3.0   23.3     3.6   26.0
+    maxPressure.(...)          Main                      2022/Day16/ProboscideaVolcanium.hs:79:13-68        435     7188700    0.2    2.6     0.4    2.6
+     maxPressure.(...).\       Main                      2022/Day16/ProboscideaVolcanium.hs:79:38-55        437     7188700    0.2    0.0     0.2    0.0
+    maxPressure.lbl            Main                      2022/Day16/ProboscideaVolcanium.hs:79:13-68        434     7188700    0.0    0.0     0.0    0.0
+    maxPressure.t              Main                      2022/Day16/ProboscideaVolcanium.hs:79:13-68        438     7188700    0.1    0.0     0.1    0.0
+    maxPressure.xs'            Main                      2022/Day16/ProboscideaVolcanium.hs:79:13-68        439     7188700    0.0    0.0     0.0    0.0
+   maxPressure.key             Main                      2022/Day16/ProboscideaVolcanium.hs:75:9-35         331    24730292    0.6    4.5     0.6    4.5
+   maxPressure.moves           Main                      2022/Day16/ProboscideaVolcanium.hs:(80,13)-(81,94) 332     7194288    1.7   13.7     2.1   14.8
+    maxPressure.moves.\        Main                      2022/Day16/ProboscideaVolcanium.hs:81:46-72        431    26802221    0.3    1.1     0.3    1.1
+    tunnels                    Main                      2022/Day16/ProboscideaVolcanium.hs:31:53-59        429     7194288    0.0    0.0     0.0    0.0
+    pressure                   Main                      2022/Day16/ProboscideaVolcanium.hs:31:36-43        440     3479335    0.0    0.0     0.0    0.0
+   maxPressure.(...)           Main                      2022/Day16/ProboscideaVolcanium.hs:79:13-68        442        5586    0.0    0.0     0.0    0.0
+    maxPressure.(...).\        Main                      2022/Day16/ProboscideaVolcanium.hs:79:38-55        443        5586    0.0    0.0     0.0    0.0
+   maxPressure.lbl             Main                      2022/Day16/ProboscideaVolcanium.hs:79:13-68        441        5586    0.0    0.0     0.0    0.0
+   maxPressure.t               Main                      2022/Day16/ProboscideaVolcanium.hs:79:13-68        444        5586    0.0    0.0     0.0    0.0
+   maxPressure.xs'             Main                      2022/Day16/ProboscideaVolcanium.hs:79:13-68        445        5586    0.0    0.0     0.0    0.0
+  parseValve                   Main                      2022/Day16/ProboscideaVolcanium.hs:(41,1)-(46,35)  337          61    0.0    0.0     0.0    0.0
+   parseValve.(...)            Main                      2022/Day16/ProboscideaVolcanium.hs:42:9-33         340          61    0.0    0.0     0.0    0.0
+    splitOn                    Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40          341          61    0.0    0.0     0.0    0.0
+     onSublist                 Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70          346          61    0.0    0.0     0.0    0.0
+     split                     Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68          342          61    0.0    0.0     0.0    0.0
+      fromElem                 Data.List.Split.Internals src/Data/List/Split/Internals.hs:(124,1)-(125,24)  367         122    0.0    0.0     0.0    0.0
+      splitInternal            Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71)  354         122    0.0    0.0     0.0    0.0
+       breakDelim              Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34)  357        3477    0.0    0.0     0.0    0.0
+        matchDelim             Data.List.Split.Internals src/Data/List/Split/Internals.hs:(72,1)-(76,23)    358        3538    0.0    0.0     0.0    0.0
+      delimiter                Data.List.Split.Internals src/Data/List/Split/Internals.hs:22:5-13           355          61    0.0    0.0     0.0    0.0
+      postProcess              Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35)  343          61    0.0    0.0     0.0    0.0
+       condensePolicy          Data.List.Split.Internals src/Data/List/Split/Internals.hs:29:5-18           353          61    0.0    0.0     0.0    0.0
+       delimPolicy             Data.List.Split.Internals src/Data/List/Split/Internals.hs:24:5-15           345          61    0.0    0.0     0.0    0.0
+       doCondense              Data.List.Split.Internals src/Data/List/Split/Internals.hs:(187,1)-(194,20)  352          61    0.0    0.0     0.0    0.0
+       doDrop                  Data.List.Split.Internals src/Data/List/Split/Internals.hs:(181,1)-(182,14)  361          61    0.0    0.0     0.0    0.0
+       doMerge                 Data.List.Split.Internals src/Data/List/Split/Internals.hs:(216,1)-(218,14)  344          61    0.0    0.0     0.0    0.0
+       dropFinal               Data.List.Split.Internals src/Data/List/Split/Internals.hs:(248,1)-(254,17)  364          61    0.0    0.0     0.0    0.0
+       dropInitial             Data.List.Split.Internals src/Data/List/Split/Internals.hs:(243,1)-(244,19)  362          61    0.0    0.0     0.0    0.0
+       finalBlankPolicy        Data.List.Split.Internals src/Data/List/Split/Internals.hs:34:5-20           365          61    0.0    0.0     0.0    0.0
+       initBlankPolicy         Data.List.Split.Internals src/Data/List/Split/Internals.hs:32:5-19           363          61    0.0    0.0     0.0    0.0
+       insertBlanks            Data.List.Split.Internals src/Data/List/Split/Internals.hs:(200,1)-(202,38)  359          61    0.0    0.0     0.0    0.0
+        insertBlanks'          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(206,1)-(212,49)  360         244    0.0    0.0     0.0    0.0
+   parseValve.a                Main                      2022/Day16/ProboscideaVolcanium.hs:42:9-33         339          61    0.0    0.0     0.0    0.0
+   parseValve.b                Main                      2022/Day16/ProboscideaVolcanium.hs:42:9-33         394          61    0.0    0.0     0.0    0.0
+   parseValve.flowRate         Main                      2022/Day16/ProboscideaVolcanium.hs:44:9-42         372          61    0.0    0.0     0.0    0.0
+   parseValve.label            Main                      2022/Day16/ProboscideaVolcanium.hs:43:9-35         338          61    0.0    0.0     0.0    0.0
+   parseValve.tunnels          Main                      2022/Day16/ProboscideaVolcanium.hs:45:9-85         381          61    0.0    0.0     0.0    0.0
+    splitOn                    Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40          382          61    0.0    0.0     0.0    0.0
+     onSublist                 Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70          387          61    0.0    0.0     0.0    0.0
+     split                     Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68          383          61    0.0    0.0     0.0    0.0
+      fromElem                 Data.List.Split.Internals src/Data/List/Split/Internals.hs:(124,1)-(125,24)  407         150    0.0    0.0     0.0    0.0
+      splitInternal            Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71)  393         150    0.0    0.0     0.0    0.0
+       breakDelim              Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34)  397         450    0.0    0.0     0.0    0.0
+        matchDelim             Data.List.Split.Internals src/Data/List/Split/Internals.hs:(72,1)-(76,23)    398         478    0.0    0.0     0.0    0.0
+      delimiter                Data.List.Split.Internals src/Data/List/Split/Internals.hs:22:5-13           395          61    0.0    0.0     0.0    0.0
+      postProcess              Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35)  384          61    0.0    0.0     0.0    0.0
+       condensePolicy          Data.List.Split.Internals src/Data/List/Split/Internals.hs:29:5-18           392          61    0.0    0.0     0.0    0.0
+       delimPolicy             Data.List.Split.Internals src/Data/List/Split/Internals.hs:24:5-15           386          61    0.0    0.0     0.0    0.0
+       doCondense              Data.List.Split.Internals src/Data/List/Split/Internals.hs:(187,1)-(194,20)  391          61    0.0    0.0     0.0    0.0
+       doDrop                  Data.List.Split.Internals src/Data/List/Split/Internals.hs:(181,1)-(182,14)  401          61    0.0    0.0     0.0    0.0
+       doMerge                 Data.List.Split.Internals src/Data/List/Split/Internals.hs:(216,1)-(218,14)  385          61    0.0    0.0     0.0    0.0
+       dropFinal               Data.List.Split.Internals src/Data/List/Split/Internals.hs:(248,1)-(254,17)  404          61    0.0    0.0     0.0    0.0
+       dropInitial             Data.List.Split.Internals src/Data/List/Split/Internals.hs:(243,1)-(244,19)  402          61    0.0    0.0     0.0    0.0
+       finalBlankPolicy        Data.List.Split.Internals src/Data/List/Split/Internals.hs:34:5-20           405          61    0.0    0.0     0.0    0.0
+       initBlankPolicy         Data.List.Split.Internals src/Data/List/Split/Internals.hs:32:5-19           403          61    0.0    0.0     0.0    0.0
+       insertBlanks            Data.List.Split.Internals src/Data/List/Split/Internals.hs:(200,1)-(202,38)  399          61    0.0    0.0     0.0    0.0
+        insertBlanks'          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(206,1)-(212,49)  400         300    0.0    0.0     0.0    0.0
+  maxPressure.(...)            Main                      2022/Day16/ProboscideaVolcanium.hs:79:13-68        421           2    0.0    0.0     0.0    0.0
+   maxPressure.(...).\         Main                      2022/Day16/ProboscideaVolcanium.hs:79:38-55        422           2    0.0    0.0     0.0    0.0
+  maxPressure.lbl              Main                      2022/Day16/ProboscideaVolcanium.hs:79:13-68        420           2    0.0    0.0     0.0    0.0
+  maxPressure.t                Main                      2022/Day16/ProboscideaVolcanium.hs:79:13-68        433           2    0.0    0.0     0.0    0.0
+  maxPressure.xs'              Main                      2022/Day16/ProboscideaVolcanium.hs:79:13-68        436           2    0.0    0.0     0.0    0.0
+  main.openValves              Main                      2022/Day16/ProboscideaVolcanium.hs:19:9-51         333           1    0.0    0.0     0.0    0.0
+  main.valveLabels             Main                      2022/Day16/ProboscideaVolcanium.hs:17:9-98         423           1    0.0    0.0     0.0    0.0
+  main.valvesMap               Main                      2022/Day16/ProboscideaVolcanium.hs:16:9-79         334           1    0.0    0.0     0.0    0.0
+   main.valvesMap.\            Main                      2022/Day16/ProboscideaVolcanium.hs:16:58-69        335          61    0.0    0.0     0.0    0.0
+    label                      Main                      2022/Day16/ProboscideaVolcanium.hs:31:24-28        336          61    0.0    0.0     0.0    0.0
+   simplify                    Main                      2022/Day16/ProboscideaVolcanium.hs:(49,1)-(51,49)  368           1    0.0    0.0     0.0    0.0
+    removeValve                Main                      2022/Day16/ProboscideaVolcanium.hs:(57,1)-(65,83)  375          45    0.0    0.0     0.0    0.0
+     removeValve.\             Main                      2022/Day16/ProboscideaVolcanium.hs:62:35-70        414          90    0.0    0.0     0.0    0.0
+      removeValve.addTunnels   Main                      2022/Day16/ProboscideaVolcanium.hs:64:5-69         415          90    0.0    0.0     0.0    0.0
+     removeValve.ts            Main                      2022/Day16/ProboscideaVolcanium.hs:61:9-124        409          45    0.0    0.0     0.0    0.0
+      removeValve.ts.\         Main                      2022/Day16/ProboscideaVolcanium.hs:61:42-96        413          90    0.0    0.0     0.0    0.0
+       removeValve.ts.\.\      Main                      2022/Day16/ProboscideaVolcanium.hs:61:74-91        417          90    0.0    0.0     0.0    0.0
+      choose                   Main                      2022/Day16/ProboscideaVolcanium.hs:54:1-90         410          45    0.0    0.0     0.0    0.0
+       choose.\                Main                      2022/Day16/ProboscideaVolcanium.hs:54:31-54        412          90    0.0    0.0     0.0    0.0
+      tunnels                  Main                      2022/Day16/ProboscideaVolcanium.hs:31:53-59        411          45    0.0    0.0     0.0    0.0
+     removeValve.valve         Main                      2022/Day16/ProboscideaVolcanium.hs:58:9-26         376          45    0.0    0.0     0.0    0.0
+     removeValve.vmap1         Main                      2022/Day16/ProboscideaVolcanium.hs:59:9-35         378          45    0.0    0.0     0.0    0.0
+     removeValve.vmap2         Main                      2022/Day16/ProboscideaVolcanium.hs:60:9-103        379          45    0.0    0.0     0.0    0.0
+      removeValve.removeTunnel Main                      2022/Day16/ProboscideaVolcanium.hs:65:5-83         416          90    0.0    0.0     0.0    0.0
+       valveLabel              Main                      2022/Day16/ProboscideaVolcanium.hs:35:41-50        419         351    0.0    0.0     0.0    0.0
+       tunnels                 Main                      2022/Day16/ProboscideaVolcanium.hs:31:53-59        418          90    0.0    0.0     0.0    0.0
+      valveLabel               Main                      2022/Day16/ProboscideaVolcanium.hs:35:41-50        406          90    0.0    0.0     0.0    0.0
+      tunnels                  Main                      2022/Day16/ProboscideaVolcanium.hs:31:53-59        380          45    0.0    0.0     0.0    0.0
+    simplify.uselessValves     Main                      2022/Day16/ProboscideaVolcanium.hs:50:9-120        369           1    0.0    0.0     0.0    0.0
+     simplify.uselessValves.\  Main                      2022/Day16/ProboscideaVolcanium.hs:50:51-84        370          61    0.0    0.0     0.0    0.0
+      pressure                 Main                      2022/Day16/ProboscideaVolcanium.hs:31:36-43        371          61    0.0    0.0     0.0    0.0
+      label                    Main                      2022/Day16/ProboscideaVolcanium.hs:31:24-28        374          46    0.0    0.0     0.0    0.0
+     label                     Main                      2022/Day16/ProboscideaVolcanium.hs:31:24-28        377          45    0.0    0.0     0.0    0.0
+  main.valvesMap'              Main                      2022/Day16/ProboscideaVolcanium.hs:18:9-127        425           1    0.0    0.0     0.0    0.0
+   main.valvesMap'.\           Main                      2022/Day16/ProboscideaVolcanium.hs:18:49-60        426          16    0.0    0.0     0.0    0.0
+    label                      Main                      2022/Day16/ProboscideaVolcanium.hs:31:24-28        427          16    0.0    0.0     0.0    0.0
+   transformLabels             Main                      2022/Day16/ProboscideaVolcanium.hs:38:1-99         428          16    0.0    0.0     0.0    0.0
+    transformLabels.\          Main                      2022/Day16/ProboscideaVolcanium.hs:38:79-94        430          60    0.0    0.0     0.0    0.0

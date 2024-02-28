@@ -1,0 +1,128 @@
+	Thu Feb 29 21:30 2024 Time and Allocation Profiling Report  (Final)
+
+	   aoc2022-11 +RTS -N -i0.05 -p -hy -l-agu -s2022/Day11/aoc2022-11.stats -RTS
+
+	total time  =        0.03 secs   (100 ticks @ 1000 us, 8 processors)
+	total alloc = 368,629,304 bytes  (excludes profiling overheads)
+
+COST CENTRE          MODULE SRC                                             %time %alloc
+
+turn                 Main   2022/Day11/MonkeyintheMiddle.hs:(59,1)-(61,57)   36.0   54.6
+doRound.f.countMap'' Main   2022/Day11/MonkeyintheMiddle.hs:55:13-70         19.0    4.7
+turn.items'          Main   2022/Day11/MonkeyintheMiddle.hs:60:9-55          15.0   21.2
+doRound.f.itemsMap2  Main   2022/Day11/MonkeyintheMiddle.hs:54:13-54         11.0   10.2
+doOperation          Main   2022/Day11/MonkeyintheMiddle.hs:(64,1)-(66,34)    5.0    2.4
+doTest               Main   2022/Day11/MonkeyintheMiddle.hs:69:1-97           4.0    0.0
+doRound.f.itemsMap1  Main   2022/Day11/MonkeyintheMiddle.hs:52:13-49          3.0    2.6
+doRound.f.items      Main   2022/Day11/MonkeyintheMiddle.hs:51:13-35          2.0    0.0
+doRound.f            Main   2022/Day11/MonkeyintheMiddle.hs:(50,5)-(56,31)    2.0    3.5
+
+
+                                                                                                                           individual      inherited
+COST CENTRE                 MODULE                    SRC                                               no.     entries  %time %alloc   %time %alloc
+
+MAIN                        MAIN                      <built-in>                                        164           0    1.0    0.0   100.0  100.0
+ CAF                        Main                      <entire-module>                                   326           0    0.0    0.0     0.0    0.0
+  main                      Main                      2022/Day11/MonkeyintheMiddle.hs:(13,1)-(22,165)   328           1    0.0    0.0     0.0    0.0
+   splitOn                  Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         341           0    0.0    0.0     0.0    0.0
+    dropDelims              Data.List.Split.Internals src/Data/List/Split/Internals.hs:320:1-37         343           1    0.0    0.0     0.0    0.0
+    onSublist               Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70         348           0    0.0    0.0     0.0    0.0
+  parseMonkey               Main                      2022/Day11/MonkeyintheMiddle.hs:(25,1)-(31,31)    363           0    0.0    0.0     0.0    0.0
+   parseMonkey.id'          Main                      2022/Day11/MonkeyintheMiddle.hs:27:9-52           364           0    0.0    0.0     0.0    0.0
+   parseMonkey.items        Main                      2022/Day11/MonkeyintheMiddle.hs:28:9-65           381           0    0.0    0.0     0.0    0.0
+    splitOn                 Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         382           0    0.0    0.0     0.0    0.0
+     dropDelims             Data.List.Split.Internals src/Data/List/Split/Internals.hs:320:1-37         383           1    0.0    0.0     0.0    0.0
+     onSublist              Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70         388           0    0.0    0.0     0.0    0.0
+   parseMonkey.op           Main                      2022/Day11/MonkeyintheMiddle.hs:29:9-47           407           0    0.0    0.0     0.0    0.0
+    parseOperation          Main                      2022/Day11/MonkeyintheMiddle.hs:(34,1)-(37,48)    408           0    0.0    0.0     0.0    0.0
+     parseOperation.x       Main                      2022/Day11/MonkeyintheMiddle.hs:36:9-34           409           0    0.0    0.0     0.0    0.0
+   parseMonkey.test         Main                      2022/Day11/MonkeyintheMiddle.hs:30:9-38           411           0    0.0    0.0     0.0    0.0
+    parseTest               Main                      2022/Day11/MonkeyintheMiddle.hs:(40,1)-(44,38)    412           0    0.0    0.0     0.0    0.0
+     parseTest.divisor      Main                      2022/Day11/MonkeyintheMiddle.hs:41:9-51           413           0    0.0    0.0     0.0    0.0
+     parseTest.monkey1      Main                      2022/Day11/MonkeyintheMiddle.hs:42:9-51           418           0    0.0    0.0     0.0    0.0
+     parseTest.monkey2      Main                      2022/Day11/MonkeyintheMiddle.hs:43:9-51           415           0    0.0    0.0     0.0    0.0
+ CAF                        Data.List.Split.Internals <entire-module>                                   325           0    0.0    0.0     0.0    0.0
+  defaultSplitter           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(55,1)-(62,5)    342           1    0.0    0.0     0.0    0.0
+ CAF                        GHC.Conc.Signal           <entire-module>                                   273           0    0.0    0.0     0.0    0.0
+ CAF                        GHC.IO.Encoding           <entire-module>                                   255           0    0.0    0.0     0.0    0.0
+ CAF                        GHC.IO.Encoding.Iconv     <entire-module>                                   253           0    0.0    0.0     0.0    0.0
+ CAF                        GHC.IO.Exception          <entire-module>                                   247           0    0.0    0.0     0.0    0.0
+ CAF                        GHC.IO.FD                 <entire-module>                                   246           0    0.0    0.0     0.0    0.0
+ CAF                        GHC.IO.Handle.FD          <entire-module>                                   244           0    0.0    0.0     0.0    0.0
+ CAF                        GHC.IO.Handle.Internals   <entire-module>                                   243           0    0.0    0.0     0.0    0.0
+ CAF                        GHC.Read                  <entire-module>                                   227           0    0.0    0.0     0.0    0.0
+ CAF                        GHC.Event.Thread          <entire-module>                                   184           0    0.0    0.0     0.0    0.0
+ main                       Main                      2022/Day11/MonkeyintheMiddle.hs:(13,1)-(22,165)   329           0    0.0    0.0    99.0  100.0
+  parseMonkey               Main                      2022/Day11/MonkeyintheMiddle.hs:(25,1)-(31,31)    359           8    0.0    0.0     1.0    0.1
+   parseMonkey.id'          Main                      2022/Day11/MonkeyintheMiddle.hs:27:9-52           362           8    0.0    0.0     0.0    0.0
+   parseMonkey.items        Main                      2022/Day11/MonkeyintheMiddle.hs:28:9-65           374           8    0.0    0.0     0.0    0.0
+    splitOn                 Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         375           8    0.0    0.0     0.0    0.0
+     onSublist              Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70         380           8    0.0    0.0     0.0    0.0
+     split                  Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68         376           8    0.0    0.0     0.0    0.0
+      fromElem              Data.List.Split.Internals src/Data/List/Split/Internals.hs:(124,1)-(125,24) 404          36    0.0    0.0     0.0    0.0
+      splitInternal         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71) 386          36    0.0    0.0     0.0    0.0
+       breakDelim           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34) 389         136    0.0    0.0     0.0    0.0
+        matchDelim          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(72,1)-(76,23)   390         156    0.0    0.0     0.0    0.0
+      delimiter             Data.List.Split.Internals src/Data/List/Split/Internals.hs:22:5-13          387           8    0.0    0.0     0.0    0.0
+      postProcess           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35) 377           8    0.0    0.0     0.0    0.0
+       condensePolicy       Data.List.Split.Internals src/Data/List/Split/Internals.hs:29:5-18          385           8    0.0    0.0     0.0    0.0
+       delimPolicy          Data.List.Split.Internals src/Data/List/Split/Internals.hs:24:5-15          379           8    0.0    0.0     0.0    0.0
+       doCondense           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(187,1)-(194,20) 384           8    0.0    0.0     0.0    0.0
+       doDrop               Data.List.Split.Internals src/Data/List/Split/Internals.hs:(181,1)-(182,14) 393           8    0.0    0.0     0.0    0.0
+       doMerge              Data.List.Split.Internals src/Data/List/Split/Internals.hs:(216,1)-(218,14) 378           8    0.0    0.0     0.0    0.0
+       dropFinal            Data.List.Split.Internals src/Data/List/Split/Internals.hs:(248,1)-(254,17) 396           8    0.0    0.0     0.0    0.0
+       dropInitial          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(243,1)-(244,19) 394           8    0.0    0.0     0.0    0.0
+       finalBlankPolicy     Data.List.Split.Internals src/Data/List/Split/Internals.hs:34:5-20          397           8    0.0    0.0     0.0    0.0
+       initBlankPolicy      Data.List.Split.Internals src/Data/List/Split/Internals.hs:32:5-19          395           8    0.0    0.0     0.0    0.0
+       insertBlanks         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(200,1)-(202,38) 391           8    0.0    0.0     0.0    0.0
+        insertBlanks'       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(206,1)-(212,49) 392          72    0.0    0.0     0.0    0.0
+   parseMonkey.ls           Main                      2022/Day11/MonkeyintheMiddle.hs:26:9-22           365           8    1.0    0.0     1.0    0.0
+   parseMonkey.op           Main                      2022/Day11/MonkeyintheMiddle.hs:29:9-47           402           8    0.0    0.0     0.0    0.0
+    parseOperation          Main                      2022/Day11/MonkeyintheMiddle.hs:(34,1)-(37,48)    403           8    0.0    0.0     0.0    0.0
+     parseOperation.x       Main                      2022/Day11/MonkeyintheMiddle.hs:36:9-34           406           7    0.0    0.0     0.0    0.0
+   parseMonkey.test         Main                      2022/Day11/MonkeyintheMiddle.hs:30:9-38           399           8    0.0    0.0     0.0    0.0
+    parseTest               Main                      2022/Day11/MonkeyintheMiddle.hs:(40,1)-(44,38)    400           8    0.0    0.0     0.0    0.0
+     parseTest.divisor      Main                      2022/Day11/MonkeyintheMiddle.hs:41:9-51           410           8    0.0    0.0     0.0    0.0
+     parseTest.monkey1      Main                      2022/Day11/MonkeyintheMiddle.hs:42:9-51           417           8    0.0    0.0     0.0    0.0
+     parseTest.monkey2      Main                      2022/Day11/MonkeyintheMiddle.hs:43:9-51           414           8    0.0    0.0     0.0    0.0
+  main.divisorsProduct      Main                      2022/Day11/MonkeyintheMiddle.hs:16:9-103          420           1    0.0    0.0     0.0    0.0
+   main.divisorsProduct.\   Main                      2022/Day11/MonkeyintheMiddle.hs:16:66             422           8    0.0    0.0     0.0    0.0
+   main.divisorsProduct.\   Main                      2022/Day11/MonkeyintheMiddle.hs:16:91             421           8    0.0    0.0     0.0    0.0
+  main.itemsMap             Main                      2022/Day11/MonkeyintheMiddle.hs:17:9-83           369           1    0.0    0.0     0.0    0.0
+   main.itemsMap.\          Main                      2022/Day11/MonkeyintheMiddle.hs:17:66-77          370           8    0.0    0.0     0.0    0.0
+  main.mb                   Main                      2022/Day11/MonkeyintheMiddle.hs:18:9-44           330           1    0.0    0.0    98.0   99.7
+   main.monkeyBusiness      Main                      2022/Day11/MonkeyintheMiddle.hs:22:5-165          331           2    0.0    0.0    98.0   99.7
+    main.doRounds           Main                      2022/Day11/MonkeyintheMiddle.hs:21:5-110          332           2    0.0    0.2    98.0   99.7
+     doRound                Main                      2022/Day11/MonkeyintheMiddle.hs:(48,1)-(56,31)    333       10020    1.0    0.1    98.0   99.5
+      doRound.f             Main                      2022/Day11/MonkeyintheMiddle.hs:(50,5)-(56,31)    358       80160    2.0    3.5    97.0   99.4
+       doRound.f.countMap'' Main                      2022/Day11/MonkeyintheMiddle.hs:55:13-70          361       80160   19.0    4.7    19.0    4.7
+       doRound.f.items      Main                      2022/Day11/MonkeyintheMiddle.hs:51:13-35          367       80160    2.0    0.0     2.0    0.0
+       doRound.f.itemsMap1  Main                      2022/Day11/MonkeyintheMiddle.hs:52:13-49          368       80158    3.0    2.6     3.0    2.6
+       doRound.f.itemsMap2  Main                      2022/Day11/MonkeyintheMiddle.hs:54:13-54          416       80158   11.0   10.2    11.0   10.2
+       doRound.f.tmp        Main                      2022/Day11/MonkeyintheMiddle.hs:53:13-46          371       80158    0.0    0.0    60.0   78.5
+        turn                Main                      2022/Day11/MonkeyintheMiddle.hs:(59,1)-(61,57)    372       80158   36.0   54.6    60.0   78.5
+         doTest             Main                      2022/Day11/MonkeyintheMiddle.hs:69:1-97           398      546327    4.0    0.0     4.0    0.0
+         turn.items'        Main                      2022/Day11/MonkeyintheMiddle.hs:60:9-55           373       80158   15.0   21.2    20.0   23.9
+          doOperation       Main                      2022/Day11/MonkeyintheMiddle.hs:(64,1)-(66,34)    401       76474    5.0    2.4     5.0    2.7
+           doOperation.\    Main                      2022/Day11/MonkeyintheMiddle.hs:66:30-34          419       50404    0.0    0.2     0.0    0.2
+  main.monkeys              Main                      2022/Day11/MonkeyintheMiddle.hs:15:9-28           334           1    0.0    0.0     0.0    0.0
+  splitOn                   Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         335           1    0.0    0.0     0.0    0.1
+   onSublist                Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70         340           1    0.0    0.0     0.0    0.0
+   split                    Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68         336           1    0.0    0.0     0.0    0.1
+    fromElem                Data.List.Split.Internals src/Data/List/Split/Internals.hs:(124,1)-(125,24) 366           8    0.0    0.0     0.0    0.0
+    splitInternal           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71) 346           8    0.0    0.0     0.0    0.1
+     breakDelim             Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34) 349        1271    0.0    0.1     0.0    0.1
+      matchDelim            Data.List.Split.Internals src/Data/List/Split/Internals.hs:(72,1)-(76,23)   350        1324    0.0    0.0     0.0    0.0
+    delimiter               Data.List.Split.Internals src/Data/List/Split/Internals.hs:22:5-13          347           1    0.0    0.0     0.0    0.0
+    postProcess             Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35) 337           1    0.0    0.0     0.0    0.0
+     condensePolicy         Data.List.Split.Internals src/Data/List/Split/Internals.hs:29:5-18          345           1    0.0    0.0     0.0    0.0
+     delimPolicy            Data.List.Split.Internals src/Data/List/Split/Internals.hs:24:5-15          339           1    0.0    0.0     0.0    0.0
+     doCondense             Data.List.Split.Internals src/Data/List/Split/Internals.hs:(187,1)-(194,20) 344           1    0.0    0.0     0.0    0.0
+     doDrop                 Data.List.Split.Internals src/Data/List/Split/Internals.hs:(181,1)-(182,14) 353           1    0.0    0.0     0.0    0.0
+     doMerge                Data.List.Split.Internals src/Data/List/Split/Internals.hs:(216,1)-(218,14) 338           1    0.0    0.0     0.0    0.0
+     dropFinal              Data.List.Split.Internals src/Data/List/Split/Internals.hs:(248,1)-(254,17) 356           1    0.0    0.0     0.0    0.0
+     dropInitial            Data.List.Split.Internals src/Data/List/Split/Internals.hs:(243,1)-(244,19) 354           1    0.0    0.0     0.0    0.0
+     finalBlankPolicy       Data.List.Split.Internals src/Data/List/Split/Internals.hs:34:5-20          357           1    0.0    0.0     0.0    0.0
+     initBlankPolicy        Data.List.Split.Internals src/Data/List/Split/Internals.hs:32:5-19          355           1    0.0    0.0     0.0    0.0
+     insertBlanks           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(200,1)-(202,38) 351           1    0.0    0.0     0.0    0.0
+      insertBlanks'         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(206,1)-(212,49) 352          16    0.0    0.0     0.0    0.0

@@ -1,15 +1,13 @@
-module Day07.NoSpaceLeftOnDevice where
-import Control.Monad.State
-    ( evalState, MonadState(put, get), State )
-import Data.List.Split (splitOn)
-import Data.Char (isDigit)
-import Data.List (isPrefixOf)
+{-# OPTIONS_GHC -Wno-incomplete-uni-patterns #-}
+import           Control.Monad.State (MonadState (get, put), State, evalState)
+import           Data.List           (isPrefixOf)
+import           Data.List.Split     (splitOn)
 
 -- TODO: Clean this up
 
 main :: IO ()
 main = do
-    xs <- lines <$> readFile "2022/data/day07.txt"
+    xs <- lines <$> readFile "2022/Day07/day07.txt"
     let [root] = evalState prompt xs
         dirSizes = map (\(Directory _ sz _) -> sz) . filter isDir . toList . totalSize $ root
     let part1 = sum . filter (<= 100000) $ dirSizes
@@ -54,16 +52,16 @@ lsDir = do
     xss <- get
     let (files, xss') = break isCommand xss
     put xss'
-    let files' = filter (not . isDir) files
+    let files' = filter (not . isDir') files
     return $ map toFile files'
   where
     isCommand xs = head xs == '$'
-    isDir xs = "dir " `isPrefixOf` xs
+    isDir' xs = "dir " `isPrefixOf` xs
     toFile xs = let [size, name] = splitOn " " xs in File name (read size)
 
 isDir :: Entry -> Bool
 isDir (Directory {}) = True
-isDir _ = False
+isDir _              = False
 
 totalSize :: Entry -> Entry
 totalSize f@(File {}) = f
@@ -72,9 +70,9 @@ totalSize (Directory name _ entries) =
         size = sum $ map getSize entries'
     in Directory name size entries'
   where
-    getSize (File _ sz) = sz
-    getSize (Directory _ sz entries') = sz
+    getSize (File _ sz)               = sz
+    getSize (Directory _ sz _) = sz
 
 toList :: Entry -> [Entry]
 toList f@(File _ _) = [f]
-toList d@(Directory name size entries) = Directory name size [] : concatMap toList entries
+toList (Directory name size entries) = Directory name size [] : concatMap toList entries

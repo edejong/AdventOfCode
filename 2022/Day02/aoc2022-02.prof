@@ -1,0 +1,35 @@
+	Thu Feb 29 20:35 2024 Time and Allocation Profiling Report  (Final)
+
+	   aoc2022-02 +RTS -N -i0.05 -p -hy -l-agu -s2022/Day02/aoc2022-02.stats -RTS
+
+	total time  =        0.00 secs   (5 ticks @ 1000 us, 8 processors)
+	total alloc =   3,335,424 bytes  (excludes profiling overheads)
+
+COST CENTRE MODULE           SRC                                           %time %alloc
+
+MAIN        MAIN             <built-in>                                     80.0    4.1
+main        Main             2022/Day02/RockPaperScissors.hs:(4,1)-(9,51)   20.0   89.8
+CAF         GHC.IO.Handle.FD <entire-module>                                 0.0    1.0
+main.f2     Main             2022/Day02/RockPaperScissors.hs:9:5-51          0.0    1.2
+main.f1     Main             2022/Day02/RockPaperScissors.hs:8:5-51          0.0    1.2
+main.\      Main             2022/Day02/RockPaperScissors.hs:5:22-69         0.0    2.4
+
+
+                                                                                                     individual      inherited
+COST CENTRE  MODULE                  SRC                                          no.     entries  %time %alloc   %time %alloc
+
+MAIN         MAIN                    <built-in>                                   129           0   80.0    4.1   100.0  100.0
+ CAF         Main                    <entire-module>                              257           0    0.0    0.0     0.0    0.0
+  main       Main                    2022/Day02/RockPaperScissors.hs:(4,1)-(9,51) 258           1    0.0    0.0     0.0    0.0
+ CAF         GHC.Conc.Signal         <entire-module>                              234           0    0.0    0.0     0.0    0.0
+ CAF         GHC.IO.Encoding         <entire-module>                              216           0    0.0    0.1     0.0    0.1
+ CAF         GHC.IO.Encoding.Iconv   <entire-module>                              214           0    0.0    0.0     0.0    0.0
+ CAF         GHC.IO.Exception        <entire-module>                              208           0    0.0    0.0     0.0    0.0
+ CAF         GHC.IO.FD               <entire-module>                              207           0    0.0    0.0     0.0    0.0
+ CAF         GHC.IO.Handle.FD        <entire-module>                              205           0    0.0    1.0     0.0    1.0
+ CAF         GHC.IO.Handle.Internals <entire-module>                              204           0    0.0    0.0     0.0    0.0
+ CAF         GHC.Event.Thread        <entire-module>                              149           0    0.0    0.0     0.0    0.0
+ main        Main                    2022/Day02/RockPaperScissors.hs:(4,1)-(9,51) 259           0   20.0   89.8    20.0   94.6
+  main.\     Main                    2022/Day02/RockPaperScissors.hs:5:22-69      261        2500    0.0    2.4     0.0    2.4
+  main.f1    Main                    2022/Day02/RockPaperScissors.hs:8:5-51       260        2500    0.0    1.2     0.0    1.2
+  main.f2    Main                    2022/Day02/RockPaperScissors.hs:9:5-51       262        2500    0.0    1.2     0.0    1.2

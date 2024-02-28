@@ -1,10 +1,8 @@
-{-# LANGUAGE TypeApplications #-}
-module Day09.RopeBridge where
-import Data.List (foldl', unfoldr, nub)
+import           Data.List (nub, unfoldr)
 
 main :: IO ()
 main = do
-    xs <- map (\ l -> (head l, read @Int . drop 2 $ l)) . lines <$> readFile "2022/data/day09.txt"
+    xs <- map (\ l -> (head l, read @Int . drop 2 $ l)) . lines <$> readFile "2022/Day09/day09.txt"
     let hs = unfoldr step (xs, (0, 0))
         ts = follow hs
     print (length . nub $ ts !! 1, length . nub $ ts !! 9)
@@ -27,6 +25,7 @@ move 'R' (x, y) = (x + 1, y)
 move 'L' (x, y) = (x - 1, y)
 move 'U' (x, y) = (x, y + 1)
 move 'D' (x, y) = (x, y - 1)
+move _ _ = undefined
 
 followStep :: Point -> Point -> Point
 followStep t@(tX, tY) (hX, hY)

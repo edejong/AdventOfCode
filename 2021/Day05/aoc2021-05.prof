@@ -1,25 +1,25 @@
-	Sat Feb 24 15:57 2024 Time and Allocation Profiling Report  (Final)
+	Thu Feb 29 11:50 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2021-05 +RTS -N -p -hy -l-agu -RTS
+	   aoc2021-05 +RTS -N -i0.001 -p -hy -l-agu -s2021/Day05/aoc2021-05.stats -RTS
 
-	total time  =        0.01 secs   (33 ticks @ 1000 us, 8 processors)
-	total alloc =  76,779,728 bytes  (excludes profiling overheads)
+	total time  =        0.01 secs   (40 ticks @ 1000 us, 8 processors)
+	total alloc =  76,779,936 bytes  (excludes profiling overheads)
 
 COST CENTRE          MODULE                    SRC                                                %time %alloc
 
-main                 Main                      2021/Day05/HydrothermalVenture.hs:(6,1)-(14,51)     57.6   22.1
-main.grid            Main                      2021/Day05/HydrothermalVenture.hs:10:7-80           15.2   14.0
-main.parseLine       Main                      2021/Day05/HydrothermalVenture.hs:13:5-89           12.1   10.8
-segmentCoords.range' Main                      2021/Day05/HydrothermalVenture.hs:20:9-57            6.1   28.8
-segmentCoords        Main                      2021/Day05/HydrothermalVenture.hs:(17,1)-(20,57)     6.1   20.0
-MAIN                 MAIN                      <built-in>                                           3.0    0.2
-breakDelim           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34)    0.0    1.3
+main                 Main                      2021/Day05/HydrothermalVenture.hs:(6,1)-(14,51)     50.0   22.1
+main.grid            Main                      2021/Day05/HydrothermalVenture.hs:10:7-80           25.0   14.0
+segmentCoords.range' Main                      2021/Day05/HydrothermalVenture.hs:20:9-57           12.5   28.8
+main.parseLine       Main                      2021/Day05/HydrothermalVenture.hs:13:5-89            7.5   10.8
+splitInternal        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71)    2.5    0.6
+breakDelim           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34)    2.5    1.3
+segmentCoords        Main                      2021/Day05/HydrothermalVenture.hs:(17,1)-(20,57)     0.0   20.0
 
 
                                                                                                                          individual      inherited
 COST CENTRE               MODULE                    SRC                                               no.     entries  %time %alloc   %time %alloc
 
-MAIN                      MAIN                      <built-in>                                        130           0    3.0    0.2   100.0  100.0
+MAIN                      MAIN                      <built-in>                                        130           0    0.0    0.2   100.0  100.0
  CAF                      Main                      <entire-module>                                   258           0    0.0    0.0     0.0    0.0
   main                    Main                      2021/Day05/HydrothermalVenture.hs:(6,1)-(14,51)   260           1    0.0    0.0     0.0    0.0
    main.parseLine         Main                      2021/Day05/HydrothermalVenture.hs:13:5-89         265           0    0.0    0.0     0.0    0.0
@@ -49,22 +49,22 @@ MAIN                      MAIN                      <built-in>                  
  CAF                      GHC.IO.Handle.Internals   <entire-module>                                   205           0    0.0    0.0     0.0    0.0
  CAF                      GHC.Read                  <entire-module>                                   190           0    0.0    0.0     0.0    0.0
  CAF                      GHC.Event.Thread          <entire-module>                                   150           0    0.0    0.0     0.0    0.0
- main                     Main                      2021/Day05/HydrothermalVenture.hs:(6,1)-(14,51)   261           0   57.6   22.1    97.0   99.8
+ main                     Main                      2021/Day05/HydrothermalVenture.hs:(6,1)-(14,51)   261           0   50.0   22.1   100.0   99.8
   main.bnds               Main                      2021/Day05/HydrothermalVenture.hs:9:7-113         299           1    0.0    0.0     0.0    0.2
    main.bnds.xs           Main                      2021/Day05/HydrothermalVenture.hs:9:18-36         300           1    0.0    0.1     0.0    0.1
    main.bnds.ys           Main                      2021/Day05/HydrothermalVenture.hs:9:39-57         302           1    0.0    0.1     0.0    0.1
-  main.grid               Main                      2021/Day05/HydrothermalVenture.hs:10:7-80         298           1   15.2   14.0    27.3   62.8
-   segmentCoords          Main                      2021/Day05/HydrothermalVenture.hs:(17,1)-(20,57)  303         500    6.1   20.0    12.1   48.8
-    segmentCoords.xs      Main                      2021/Day05/HydrothermalVenture.hs:18:9-57         304         500    0.0    0.0     3.0   14.5
-     segmentCoords.range' Main                      2021/Day05/HydrothermalVenture.hs:20:9-57         305         340    3.0   14.5     3.0   14.5
-    segmentCoords.ys      Main                      2021/Day05/HydrothermalVenture.hs:19:9-57         306         500    0.0    0.0     3.0   14.3
-     segmentCoords.range' Main                      2021/Day05/HydrothermalVenture.hs:20:9-57         307         327    3.0   14.3     3.0   14.3
-  main.parseLine          Main                      2021/Day05/HydrothermalVenture.hs:13:5-89         263           1   12.1   10.8    12.1   14.5
+  main.grid               Main                      2021/Day05/HydrothermalVenture.hs:10:7-80         298           1   25.0   14.0    37.5   62.8
+   segmentCoords          Main                      2021/Day05/HydrothermalVenture.hs:(17,1)-(20,57)  303         500    0.0   20.0    12.5   48.8
+    segmentCoords.xs      Main                      2021/Day05/HydrothermalVenture.hs:18:9-57         304         500    0.0    0.0     5.0   14.5
+     segmentCoords.range' Main                      2021/Day05/HydrothermalVenture.hs:20:9-57         305         340    5.0   14.5     5.0   14.5
+    segmentCoords.ys      Main                      2021/Day05/HydrothermalVenture.hs:19:9-57         306         500    0.0    0.0     7.5   14.3
+     segmentCoords.range' Main                      2021/Day05/HydrothermalVenture.hs:20:9-57         307         327    7.5   14.3     7.5   14.3
+  main.parseLine          Main                      2021/Day05/HydrothermalVenture.hs:13:5-89         263           1    7.5   10.8    12.5   14.5
    main.toCoord           Main                      2021/Day05/HydrothermalVenture.hs:14:5-51         264         500    0.0    0.0     0.0    0.0
    oneOf                  Data.List.Split.Internals src/Data/List/Split/Internals.hs:278:1-68         287           0    0.0    0.0     0.0    0.0
-   split                  Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68         267           0    0.0    0.3     0.0    3.7
-    splitInternal         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71) 283        2500    0.0    0.6     0.0    2.2
-     breakDelim           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34) 285        9286    0.0    1.3     0.0    1.6
+   split                  Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68         267           0    0.0    0.3     5.0    3.7
+    splitInternal         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71) 283        2500    2.5    0.6     5.0    2.2
+     breakDelim           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34) 285        9286    2.5    1.3     2.5    1.6
       matchDelim          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(72,1)-(76,23)   286       10786    0.0    0.3     0.0    0.3
     fromElem              Data.List.Split.Internals src/Data/List/Split/Internals.hs:(124,1)-(125,24) 301        2000    0.0    0.0     0.0    0.0
     postProcess           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35) 269           0    0.0    0.0     0.0    1.3

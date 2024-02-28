@@ -1,23 +1,22 @@
-	Sat Feb 24 16:45 2024 Time and Allocation Profiling Report  (Final)
+	Thu Feb 29 11:52 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2021-19 +RTS -N -p -hy -l-agu -RTS
+	   aoc2021-19 +RTS -N -i0.001 -p -hy -l-agu -s2021/Day19/aoc2021-19.stats -RTS
 
-	total time  =        0.54 secs   (2018 ticks @ 1000 us, 8 processors)
-	total alloc = 6,358,460,280 bytes  (excludes profiling overheads)
+	total time  =        0.55 secs   (2022 ticks @ 1000 us, 8 processors)
+	total alloc = 6,358,460,144 bytes  (excludes profiling overheads)
 
 COST CENTRE                            MODULE          SRC                                         %time %alloc
 
-dists                                  Main            2021/Day19/BeaconScanner.hs:23:1-74          44.3   50.3
-multiplyR                              Internal.LAPACK src/Internal/LAPACK.hs:71:41-71              30.0   38.2
-probablySameBeacon.probablySameBeacon' Main            2021/Day19/BeaconScanner.hs:(28,5)-(33,37)   12.7    0.1
-magSq                                  Main            2021/Day19/BeaconScanner.hs:20:1-17          10.2   10.2
-combineScanners.a'                     Main            2021/Day19/BeaconScanner.hs:62:5-29           1.3    0.8
+dists                                  Main            2021/Day19/BeaconScanner.hs:23:1-74          46.4   50.3
+multiplyR                              Internal.LAPACK src/Internal/LAPACK.hs:71:41-71              28.4   38.2
+probablySameBeacon.probablySameBeacon' Main            2021/Day19/BeaconScanner.hs:(28,5)-(33,37)   11.9    0.1
+magSq                                  Main            2021/Day19/BeaconScanner.hs:20:1-17          11.0   10.2
 
 
                                                                                                                                                             individual      inherited
 COST CENTRE                                     MODULE                            SRC                                                    no.     entries  %time %alloc   %time %alloc
 
-MAIN                                            MAIN                              <built-in>                                             256           0    0.3    0.0   100.0  100.0
+MAIN                                            MAIN                              <built-in>                                             256           0    0.1    0.0   100.0  100.0
  CAF                                            Main                              <entire-module>                                        510           0    0.0    0.0     0.0    0.0
   int                                           Main                              2021/Day19/BeaconScanner.hs:69:1-66                    520           1    0.0    0.0     0.0    0.0
   main                                          Main                              2021/Day19/BeaconScanner.hs:(10,1)-(14,62)             512           1    0.0    0.0     0.0    0.0
@@ -56,30 +55,30 @@ MAIN                                            MAIN                            
  CAF                                            GHC.Read                          <entire-module>                                        322           0    0.0    0.0     0.0    0.0
  CAF                                            Text.Read.Lex                     <entire-module>                                        297           0    0.0    0.0     0.0    0.0
  CAF                                            GHC.Event.Thread                  <entire-module>                                        276           0    0.0    0.0     0.0    0.0
- main                                           Main                              2021/Day19/BeaconScanner.hs:(10,1)-(14,62)             513           0    0.0    0.0    99.7  100.0
+ main                                           Main                              2021/Day19/BeaconScanner.hs:(10,1)-(14,62)             513           0    0.0    0.0    99.9  100.0
   manhattanDist                                 Main                              2021/Day19/BeaconScanner.hs:17:1-56                    586        1024    0.0    0.0     0.0    0.0
    unId                                         Data.Vector.Fusion.Util           src/Data/Vector/Fusion/Util.hs:25:21-24                587       10240    0.0    0.0     0.0    0.0
-  main.(...)                                    Main                              2021/Day19/BeaconScanner.hs:12:9-39                    523           1    0.0    0.0    99.4   99.6
-   combineAllScanners                           Main                              2021/Day19/BeaconScanner.hs:45:1-69                    524           1    0.0    0.0    99.4   99.6
-    combineAllScanners'                         Main                              2021/Day19/BeaconScanner.hs:(48,1)-(52,55)             525          75    0.0    0.0    99.4   99.6
-     combineScanners                            Main                              2021/Day19/BeaconScanner.hs:(55,1)-(63,68)             526          71    0.0    0.0    99.4   99.6
-      combineScanners.overlapping               Main                              2021/Day19/BeaconScanner.hs:59:5-40                    527          71    0.0    0.0    97.9   98.8
-       overlappingBeacons                       Main                              2021/Day19/BeaconScanner.hs:(36,1)-(38,70)             528          71    0.7    0.0    97.9   98.8
-        probablySameBeacon                      Main                              2021/Day19/BeaconScanner.hs:(26,1)-(33,37)             530      273303    0.0    0.0    12.7    0.1
-         probablySameBeacon.probablySameBeacon' Main                              2021/Day19/BeaconScanner.hs:(28,5)-(33,37)             531    19999852   12.7    0.1    12.7    0.1
-        dists                                   Main                              2021/Day19/BeaconScanner.hs:23:1-74                    529         142   44.3   50.3    84.5   98.7
+  main.(...)                                    Main                              2021/Day19/BeaconScanner.hs:12:9-39                    523           1    0.0    0.0    99.5   99.6
+   combineAllScanners                           Main                              2021/Day19/BeaconScanner.hs:45:1-69                    524           1    0.0    0.0    99.5   99.6
+    combineAllScanners'                         Main                              2021/Day19/BeaconScanner.hs:(48,1)-(52,55)             525          75    0.0    0.0    99.5   99.6
+     combineScanners                            Main                              2021/Day19/BeaconScanner.hs:(55,1)-(63,68)             526          71    0.0    0.0    99.5   99.6
+      combineScanners.overlapping               Main                              2021/Day19/BeaconScanner.hs:59:5-40                    527          71    0.0    0.0    98.4   98.8
+       overlappingBeacons                       Main                              2021/Day19/BeaconScanner.hs:(36,1)-(38,70)             528          71    0.7    0.0    98.4   98.8
+        probablySameBeacon                      Main                              2021/Day19/BeaconScanner.hs:(26,1)-(33,37)             530      273303    0.0    0.0    11.9    0.1
+         probablySameBeacon.probablySameBeacon' Main                              2021/Day19/BeaconScanner.hs:(28,5)-(33,37)             531    19999852   11.9    0.1    11.9    0.1
+        dists                                   Main                              2021/Day19/BeaconScanner.hs:23:1-74                    529         142   46.4   50.3    85.8   98.7
          unId                                   Data.Vector.Fusion.Util           src/Data/Vector/Fusion/Util.hs:25:21-24                536    20876112    0.0    0.0     0.0    0.0
-         magSq                                  Main                              2021/Day19/BeaconScanner.hs:20:1-17                    532     2319568   10.2   10.2    40.2   48.4
+         magSq                                  Main                              2021/Day19/BeaconScanner.hs:20:1-17                    532     2319568   11.0   10.2    39.4   48.4
           unId                                  Data.Vector.Fusion.Util           src/Data/Vector/Fusion/Util.hs:25:21-24                535    16236976    0.0    0.0     0.0    0.0
-          multiplyR                             Internal.LAPACK                   src/Internal/LAPACK.hs:71:41-71                        542     2319568   30.0   38.2    30.0   38.2
+          multiplyR                             Internal.LAPACK                   src/Internal/LAPACK.hs:71:41-71                        542     2319568   28.3   38.2    28.3   38.2
            unId                                 Data.Vector.Fusion.Util           src/Data/Vector/Fusion/Util.hs:25:21-24                543     2319568    0.0    0.0     0.0    0.0
-      combineScanners.a'                        Main                              2021/Day19/BeaconScanner.hs:62:5-29                    544          32    1.3    0.8     1.3    0.8
+      combineScanners.a'                        Main                              2021/Day19/BeaconScanner.hs:62:5-29                    544          32    1.0    0.8     1.0    0.8
        sSize                                    Data.Vector.Fusion.Bundle.Monadic src/Data/Vector/Fusion/Bundle/Monadic.hs:124:30-34     546     2044729    0.0    0.0     0.0    0.0
        sElems                                   Data.Vector.Fusion.Bundle.Monadic src/Data/Vector/Fusion/Bundle/Monadic.hs:121:30-35     547     2043872    0.0    0.0     0.0    0.0
        unId                                     Data.Vector.Fusion.Util           src/Data/Vector/Fusion/Util.hs:25:21-24                545     1028632    0.0    0.0     0.0    0.0
        sChunks                                  Data.Vector.Fusion.Bundle.Monadic src/Data/Vector/Fusion/Bundle/Monadic.hs:122:30-36     584         857    0.0    0.0     0.0    0.0
        upperBound                               Data.Vector.Fusion.Bundle.Size    src/Data/Vector/Fusion/Bundle/Size.hs:(129,1)-(131,30) 583         857    0.0    0.0     0.0    0.0
-      combineScanners.b'                        Main                              2021/Day19/BeaconScanner.hs:61:5-54                    548          32    0.0    0.0     0.0    0.0
+      combineScanners.b'                        Main                              2021/Day19/BeaconScanner.hs:61:5-54                    548          32    0.0    0.0     0.1    0.0
        unId                                     Data.Vector.Fusion.Util           src/Data/Vector/Fusion/Util.hs:25:21-24                554        4932    0.0    0.0     0.0    0.0
        sChunks                                  Data.Vector.Fusion.Bundle.Monadic src/Data/Vector/Fusion/Bundle/Monadic.hs:122:30-36     561         192    0.0    0.0     0.0    0.0
        sSize                                    Data.Vector.Fusion.Bundle.Monadic src/Data/Vector/Fusion/Bundle/Monadic.hs:124:30-34     560         192    0.0    0.0     0.0    0.0
@@ -110,10 +109,10 @@ MAIN                                            MAIN                            
         unId                                    Data.Vector.Fusion.Util           src/Data/Vector/Fusion/Util.hs:25:21-24                595          32    0.0    0.0     0.0    0.0
   main.bs                                       Main                              2021/Day19/BeaconScanner.hs:12:9-39                    522           1    0.0    0.0     0.0    0.0
   main.ps                                       Main                              2021/Day19/BeaconScanner.hs:12:9-39                    585           1    0.0    0.0     0.0    0.0
-  parser                                        Main                              2021/Day19/BeaconScanner.hs:66:1-33                    515           0    0.0    0.0     0.2    0.3
-   scanner                                      Main                              2021/Day19/BeaconScanner.hs:67:1-103                   517           0    0.0    0.0     0.2    0.3
-    point                                       Main                              2021/Day19/BeaconScanner.hs:68:1-90                    519           0    0.0    0.0     0.2    0.3
-     int                                        Main                              2021/Day19/BeaconScanner.hs:69:1-66                    521           0    0.2    0.3     0.2    0.3
+  parser                                        Main                              2021/Day19/BeaconScanner.hs:66:1-33                    515           0    0.0    0.0     0.3    0.3
+   scanner                                      Main                              2021/Day19/BeaconScanner.hs:67:1-103                   517           0    0.0    0.0     0.3    0.3
+    point                                       Main                              2021/Day19/BeaconScanner.hs:68:1-90                    519           0    0.0    0.0     0.3    0.3
+     int                                        Main                              2021/Day19/BeaconScanner.hs:69:1-66                    521           0    0.3    0.3     0.3    0.3
       point.\                                   Main                              2021/Day19/BeaconScanner.hs:68:20-37                   537         851    0.0    0.0     0.0    0.0
        unId                                     Data.Vector.Fusion.Util           src/Data/Vector/Fusion/Util.hs:25:21-24                541        3404    0.0    0.0     0.0    0.0
        sChunks                                  Data.Vector.Fusion.Bundle.Monadic src/Data/Vector/Fusion/Bundle/Monadic.hs:122:30-36     540         851    0.0    0.0     0.0    0.0

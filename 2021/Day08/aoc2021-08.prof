@@ -1,34 +1,33 @@
-	Sat Feb 24 15:58 2024 Time and Allocation Profiling Report  (Final)
+	Thu Feb 29 11:50 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2021-08 +RTS -N -p -hy -l-agu -RTS
+	   aoc2021-08 +RTS -N -i0.001 -p -hy -l-agu -s2021/Day08/aoc2021-08.stats -RTS
 
-	total time  =        0.00 secs   (11 ticks @ 1000 us, 8 processors)
-	total alloc =  13,768,912 bytes  (excludes profiling overheads)
+	total time  =        0.00 secs   (6 ticks @ 1000 us, 8 processors)
+	total alloc =  13,768,848 bytes  (excludes profiling overheads)
 
-COST CENTRE                MODULE                    SRC                                                %time %alloc
+COST CENTRE              MODULE                    SRC                                                %time %alloc
 
-MAIN                       MAIN                      <built-in>                                          54.5    1.0
-makeNumbersMap             Main                      2021/Day08/SevenSegmentSearch.hs:(19,1)-(25,50)     18.2    4.8
-breakDelim                 Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34)    9.1   32.4
-makeNumbersMap.filterLen.\ Main                      2021/Day08/SevenSegmentSearch.hs:25:37-49            9.1    0.0
-decode.(...)               Main                      2021/Day08/SevenSegmentSearch.hs:14:9-39             9.1   16.3
-splitInternal              Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71)    0.0    4.5
-split                      Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68            0.0    2.4
-matchDelim                 Data.List.Split.Internals src/Data/List/Split/Internals.hs:(72,1)-(76,23)      0.0    2.1
-insertBlanks'              Data.List.Split.Internals src/Data/List/Split/Internals.hs:(206,1)-(212,49)    0.0    2.4
-doDrop                     Data.List.Split.Internals src/Data/List/Split/Internals.hs:(181,1)-(182,14)    0.0    1.1
-makeNumbersMap.filterLen   Main                      2021/Day08/SevenSegmentSearch.hs:25:9-50             0.0    1.2
-makeNumbersMap.(...).\     Main                      2021/Day08/SevenSegmentSearch.hs:23:36-65            0.0    3.5
-makeNumbersMap.(...).\     Main                      2021/Day08/SevenSegmentSearch.hs:22:32-47            0.0    1.6
-makeNumbersMap.(...)       Main                      2021/Day08/SevenSegmentSearch.hs:23:7-85             0.0    1.8
-makeNumbersMap.(...)       Main                      2021/Day08/SevenSegmentSearch.hs:22:7-75             0.0    1.3
-main                       Main                      2021/Day08/SevenSegmentSearch.hs:(7,1)-(10,33)       0.0   21.4
+breakDelim               Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34)   33.3   32.4
+makeNumbersMap           Main                      2021/Day08/SevenSegmentSearch.hs:(19,1)-(25,50)     33.3    4.8
+main                     Main                      2021/Day08/SevenSegmentSearch.hs:(7,1)-(10,33)      33.3   21.4
+MAIN                     MAIN                      <built-in>                                           0.0    1.0
+splitInternal            Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71)    0.0    4.5
+split                    Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68            0.0    2.4
+matchDelim               Data.List.Split.Internals src/Data/List/Split/Internals.hs:(72,1)-(76,23)      0.0    2.1
+insertBlanks'            Data.List.Split.Internals src/Data/List/Split/Internals.hs:(206,1)-(212,49)    0.0    2.4
+doDrop                   Data.List.Split.Internals src/Data/List/Split/Internals.hs:(181,1)-(182,14)    0.0    1.1
+makeNumbersMap.filterLen Main                      2021/Day08/SevenSegmentSearch.hs:25:9-50             0.0    1.2
+makeNumbersMap.(...).\   Main                      2021/Day08/SevenSegmentSearch.hs:23:36-65            0.0    3.5
+makeNumbersMap.(...).\   Main                      2021/Day08/SevenSegmentSearch.hs:22:32-47            0.0    1.6
+makeNumbersMap.(...)     Main                      2021/Day08/SevenSegmentSearch.hs:23:7-85             0.0    1.8
+makeNumbersMap.(...)     Main                      2021/Day08/SevenSegmentSearch.hs:22:7-75             0.0    1.3
+decode.(...)             Main                      2021/Day08/SevenSegmentSearch.hs:14:9-39             0.0   16.3
 
 
                                                                                                                                  individual      inherited
 COST CENTRE                       MODULE                    SRC                                               no.     entries  %time %alloc   %time %alloc
 
-MAIN                              MAIN                      <built-in>                                        164           0   54.5    1.0   100.0  100.0
+MAIN                              MAIN                      <built-in>                                        164           0    0.0    1.0   100.0  100.0
  CAF                              Main                      <entire-module>                                   326           0    0.0    0.0     0.0    0.0
   main                            Main                      2021/Day08/SevenSegmentSearch.hs:(7,1)-(10,33)    328           1    0.0    0.0     0.0    0.0
    splitOn                        Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         330           2    0.0    0.0     0.0    0.0
@@ -55,20 +54,20 @@ MAIN                              MAIN                      <built-in>          
  CAF                              GHC.IO.Handle.FD          <entire-module>                                   244           0    0.0    0.3     0.0    0.3
  CAF                              GHC.IO.Handle.Internals   <entire-module>                                   243           0    0.0    0.0     0.0    0.0
  CAF                              GHC.Event.Thread          <entire-module>                                   184           0    0.0    0.0     0.0    0.0
- main                             Main                      2021/Day08/SevenSegmentSearch.hs:(7,1)-(10,33)    329           0    0.0   21.4    45.5   98.7
+ main                             Main                      2021/Day08/SevenSegmentSearch.hs:(7,1)-(10,33)    329           0   33.3   21.4   100.0   98.7
   main.\                          Main                      2021/Day08/SevenSegmentSearch.hs:9:47-71          358         800    0.0    0.0     0.0    0.0
-  decode                          Main                      2021/Day08/SevenSegmentSearch.hs:(13,1)-(16,63)   359         200    0.0    0.6    36.4   32.1
+  decode                          Main                      2021/Day08/SevenSegmentSearch.hs:(13,1)-(16,63)   359         200    0.0    0.6    33.3   32.1
    decode.\                       Main                      2021/Day08/SevenSegmentSearch.hs:16:29-43         362         800    0.0    0.0     0.0    0.0
-   decode.(...)                   Main                      2021/Day08/SevenSegmentSearch.hs:14:9-39          360         200    9.1   16.3     9.1   16.3
-   decode.m                       Main                      2021/Day08/SevenSegmentSearch.hs:15:9-29          363         200    0.0    0.0    27.3   15.2
-    makeNumbersMap                Main                      2021/Day08/SevenSegmentSearch.hs:(19,1)-(25,50)   364         200   18.2    4.8    27.3   15.2
+   decode.(...)                   Main                      2021/Day08/SevenSegmentSearch.hs:14:9-39          360         200    0.0   16.3     0.0   16.3
+   decode.m                       Main                      2021/Day08/SevenSegmentSearch.hs:15:9-29          363         200    0.0    0.0    33.3   15.2
+    makeNumbersMap                Main                      2021/Day08/SevenSegmentSearch.hs:(19,1)-(25,50)   364         200   33.3    4.8    33.3   15.2
      makeNumbersMap.(...)         Main                      2021/Day08/SevenSegmentSearch.hs:22:7-75          382         200    0.0    1.3     0.0    3.1
       makeNumbersMap.(...).\      Main                      2021/Day08/SevenSegmentSearch.hs:22:32-47         389         400    0.0    1.6     0.0    1.6
       makeNumbersMap.filterLen    Main                      2021/Day08/SevenSegmentSearch.hs:25:9-50          383         200    0.0    0.2     0.0    0.2
        makeNumbersMap.filterLen.\ Main                      2021/Day08/SevenSegmentSearch.hs:25:37-49         388        1800    0.0    0.0     0.0    0.0
-     makeNumbersMap.(...)         Main                      2021/Day08/SevenSegmentSearch.hs:20:7-70          376         200    0.0    0.0     9.1    0.5
-      makeNumbersMap.filterLen    Main                      2021/Day08/SevenSegmentSearch.hs:25:9-50          377         800    0.0    0.5     9.1    0.5
-       makeNumbersMap.filterLen.\ Main                      2021/Day08/SevenSegmentSearch.hs:25:37-49         378        4375    9.1    0.0     9.1    0.0
+     makeNumbersMap.(...)         Main                      2021/Day08/SevenSegmentSearch.hs:20:7-70          376         200    0.0    0.0     0.0    0.5
+      makeNumbersMap.filterLen    Main                      2021/Day08/SevenSegmentSearch.hs:25:9-50          377         800    0.0    0.5     0.0    0.5
+       makeNumbersMap.filterLen.\ Main                      2021/Day08/SevenSegmentSearch.hs:25:37-49         378        4375    0.0    0.0     0.0    0.0
      makeNumbersMap.(...)         Main                      2021/Day08/SevenSegmentSearch.hs:23:7-85          369         200    0.0    1.8     0.0    5.6
       makeNumbersMap.(...).\      Main                      2021/Day08/SevenSegmentSearch.hs:23:36-65         374         600    0.0    3.5     0.0    3.5
       makeNumbersMap.filterLen    Main                      2021/Day08/SevenSegmentSearch.hs:25:9-50          370         200    0.0    0.3     0.0    0.3
@@ -88,11 +87,11 @@ MAIN                              MAIN                      <built-in>          
      makeNumbersMap.n9            Main                      2021/Day08/SevenSegmentSearch.hs:23:7-85          393         200    0.0    0.0     0.0    0.0
    decode.xs                      Main                      2021/Day08/SevenSegmentSearch.hs:14:9-39          371         200    0.0    0.0     0.0    0.0
    decode.ys                      Main                      2021/Day08/SevenSegmentSearch.hs:14:9-39          361         200    0.0    0.0     0.0    0.0
-  splitOn                         Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         332           0    0.0    0.0     9.1   45.1
-   split                          Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68         333           0    0.0    2.4     9.1   45.1
+  splitOn                         Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         332           0    0.0    0.0    33.3   45.1
+   split                          Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68         333           0    0.0    2.4    33.3   45.1
     fromElem                      Data.List.Split.Internals src/Data/List/Split/Internals.hs:(124,1)-(125,24) 357        3200    0.0    0.0     0.0    0.0
-    splitInternal                 Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71) 344        3200    0.0    4.5     9.1   39.1
-     breakDelim                   Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34) 346       32578    9.1   32.4     9.1   34.6
+    splitInternal                 Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71) 344        3200    0.0    4.5    33.3   39.1
+     breakDelim                   Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34) 346       32578   33.3   32.4    33.3   34.6
       matchDelim                  Data.List.Split.Internals src/Data/List/Split/Internals.hs:(72,1)-(76,23)   347       37378    0.0    2.1     0.0    2.1
     postProcess                   Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35) 335           0    0.0    0.2     0.0    3.6
      doCondense                   Data.List.Split.Internals src/Data/List/Split/Internals.hs:(187,1)-(194,20) 342         600    0.0    0.0     0.0    0.0

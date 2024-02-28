@@ -1,9 +1,9 @@
+{-# OPTIONS_GHC -Wno-incomplete-uni-patterns #-}
 import Control.Lens
 import Data.List (tails, intercalate)
-import Data.Maybe (isJust, catMaybes)
 import Linear (V2 (V2), V3 (V3), R2 (_xy))
 import Data.Ratio ((%))
-import Math.MFSolve
+-- import Math.MFSolve
 
 main :: IO ()
 main = do
@@ -50,11 +50,11 @@ main = do
     --   (p1 - 219025967354328)*(-v3 - 65) + (p3 - 241687357180579)*(v1 - 58) === 0
     --   (58 - v1)*(p2 - 361186328321686) + (p1 - 219025967354328)*(v2 + 211) === 0
 
-  where
-    showTest h1 h2 result = unlines [
-        "Hailstone A: " ++ show h1,
-        "Hailstone B: " ++ show h2,
-        show result]
+  -- where
+  --   showTest h1 h2 result = unlines [
+  --       "Hailstone A: " ++ show h1,
+  --       "Hailstone B: " ++ show h2,
+  --       show result]
 
 data Hailstone = HS { pos::V3 Integer, vel::V3 Integer }
 

@@ -1,9 +1,10 @@
-import GHC.Arr (listArray, amap, assocs, accumArray, bounds, Array, inRange, (!))
-import Linear (V2(..), (*^))
-import Data.Char (chr, ord)
-import Control.Applicative (liftA2)
-import Data.Bifunctor (Bifunctor (bimap))
-import Data.List (nub, unfoldr)
+import           Control.Applicative (liftA2)
+import           Data.Bifunctor      (Bifunctor (bimap))
+import           Data.Char           (chr, ord)
+import           Data.List           (nub, unfoldr)
+import           GHC.Arr             (Array, accumArray, amap, assocs, bounds,
+                                      inRange, listArray, (!))
+import           Linear              (V2 (..), (*^))
 
 main :: IO ()
 main = do

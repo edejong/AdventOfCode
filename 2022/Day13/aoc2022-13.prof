@@ -1,0 +1,86 @@
+	Thu Feb 29 21:32 2024 Time and Allocation Profiling Report  (Final)
+
+	   aoc2022-13 +RTS -N -i0.05 -p -hy -l-agu -s2022/Day13/aoc2022-13.stats -RTS
+
+	total time  =        0.00 secs   (10 ticks @ 1000 us, 8 processors)
+	total alloc =  28,418,112 bytes  (excludes profiling overheads)
+
+COST CENTRE        MODULE                    SRC                                                %time %alloc
+
+parsePacket.number Main                      2022/Day13/DistressSignal.hs:21:5-46                50.0   33.6
+parsePacket.list   Main                      2022/Day13/DistressSignal.hs:22:5-75                30.0   34.4
+breakDelim         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34)   10.0   11.7
+parsePacket.packet Main                      2022/Day13/DistressSignal.hs:20:5-28                10.0    5.2
+main               Main                      2022/Day13/DistressSignal.hs:(8,1)-(13,31)           0.0   13.2
+
+
+                                                                                                                         individual      inherited
+COST CENTRE               MODULE                    SRC                                               no.     entries  %time %alloc   %time %alloc
+
+MAIN                      MAIN                      <built-in>                                        189           0    0.0    0.5   100.0  100.0
+ CAF                      Main                      <entire-module>                                   376           0    0.0    0.0     0.0    0.1
+  main                    Main                      2022/Day13/DistressSignal.hs:(8,1)-(13,31)        378           1    0.0    0.0     0.0    0.1
+   main.dividerPackets    Main                      2022/Day13/DistressSignal.hs:11:9-67              424           1    0.0    0.0     0.0    0.1
+    parsePacket           Main                      2022/Day13/DistressSignal.hs:(18,1)-(22,75)       425           2    0.0    0.0     0.0    0.1
+     parsePacket.list     Main                      2022/Day13/DistressSignal.hs:22:5-75              429           0    0.0    0.0     0.0    0.0
+      parsePacket.packet  Main                      2022/Day13/DistressSignal.hs:20:5-28              430           0    0.0    0.0     0.0    0.0
+     parsePacket.number   Main                      2022/Day13/DistressSignal.hs:21:5-46              427           0    0.0    0.0     0.0    0.1
+      parsePacket.list    Main                      2022/Day13/DistressSignal.hs:22:5-75              431           0    0.0    0.0     0.0    0.0
+       parsePacket.packet Main                      2022/Day13/DistressSignal.hs:20:5-28              432           0    0.0    0.0     0.0    0.0
+      parsePacket.packet  Main                      2022/Day13/DistressSignal.hs:20:5-28              428           0    0.0    0.0     0.0    0.0
+     parsePacket.packet   Main                      2022/Day13/DistressSignal.hs:20:5-28              426           0    0.0    0.0     0.0    0.0
+   splitOn                Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         387           0    0.0    0.0     0.0    0.0
+    dropDelims            Data.List.Split.Internals src/Data/List/Split/Internals.hs:320:1-37         389           1    0.0    0.0     0.0    0.0
+    onSublist             Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70         394           0    0.0    0.0     0.0    0.0
+  parsePacket             Main                      2022/Day13/DistressSignal.hs:(18,1)-(22,75)       409           0    0.0    0.0     0.0    0.0
+   parsePacket.list       Main                      2022/Day13/DistressSignal.hs:22:5-75              415           1    0.0    0.0     0.0    0.0
+   parsePacket.number     Main                      2022/Day13/DistressSignal.hs:21:5-46              412           1    0.0    0.0     0.0    0.0
+   parsePacket.packet     Main                      2022/Day13/DistressSignal.hs:20:5-28              410           1    0.0    0.0     0.0    0.0
+ CAF                      Data.List.Split.Internals <entire-module>                                   375           0    0.0    0.0     0.0    0.0
+  defaultSplitter         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(55,1)-(62,5)    388           1    0.0    0.0     0.0    0.0
+ CAF                      GHC.Conc.Signal           <entire-module>                                   298           0    0.0    0.0     0.0    0.0
+ CAF                      GHC.IO.Encoding           <entire-module>                                   280           0    0.0    0.0     0.0    0.0
+ CAF                      GHC.IO.Encoding.Iconv     <entire-module>                                   278           0    0.0    0.0     0.0    0.0
+ CAF                      GHC.IO.Exception          <entire-module>                                   272           0    0.0    0.0     0.0    0.0
+ CAF                      GHC.IO.FD                 <entire-module>                                   271           0    0.0    0.0     0.0    0.0
+ CAF                      GHC.IO.Handle.FD          <entire-module>                                   269           0    0.0    0.1     0.0    0.1
+ CAF                      GHC.IO.Handle.Internals   <entire-module>                                   268           0    0.0    0.0     0.0    0.0
+ CAF                      GHC.Read                  <entire-module>                                   252           0    0.0    0.0     0.0    0.0
+ CAF                      GHC.Event.Thread          <entire-module>                                   209           0    0.0    0.0     0.0    0.0
+ main                     Main                      2022/Day13/DistressSignal.hs:(8,1)-(13,31)        379           0    0.0   13.2   100.0   99.3
+  parsePacket             Main                      2022/Day13/DistressSignal.hs:(18,1)-(22,75)       408         300    0.0    0.0    90.0   73.2
+   parsePacket.list       Main                      2022/Day13/DistressSignal.hs:22:5-75              416           0    0.0   11.0     0.0   13.9
+    parsePacket.number    Main                      2022/Day13/DistressSignal.hs:21:5-46              420           0    0.0    0.0     0.0    0.0
+    parsePacket.packet    Main                      2022/Day13/DistressSignal.hs:20:5-28              417           0    0.0    2.9     0.0    2.9
+     parsePacket.number   Main                      2022/Day13/DistressSignal.hs:21:5-46              421           0    0.0    0.0     0.0    0.0
+   parsePacket.number     Main                      2022/Day13/DistressSignal.hs:21:5-46              413           0   50.0   33.5    90.0   59.2
+    parsePacket.list      Main                      2022/Day13/DistressSignal.hs:22:5-75              418           0   30.0   23.4    40.0   25.6
+     parsePacket.packet   Main                      2022/Day13/DistressSignal.hs:20:5-28              419           0   10.0    2.2    10.0    2.2
+    parsePacket.packet    Main                      2022/Day13/DistressSignal.hs:20:5-28              414           0    0.0    0.1     0.0    0.1
+   parsePacket.packet     Main                      2022/Day13/DistressSignal.hs:20:5-28              411           0    0.0    0.1     0.0    0.1
+  main.part1              Main                      2022/Day13/DistressSignal.hs:10:9-109             380           1    0.0    0.1     0.0    0.1
+   main.part1.\           Main                      2022/Day13/DistressSignal.hs:10:89-103            406         150    0.0    0.0     0.0    0.0
+    compare               Main                      2022/Day13/DistressSignal.hs:(25,5)-(28,66)       407         610    0.0    0.0     0.0    0.0
+  main.part2              Main                      2022/Day13/DistressSignal.hs:12:9-109             422           1    0.0    0.7     0.0    0.8
+   compare                Main                      2022/Day13/DistressSignal.hs:(25,5)-(28,66)       423       10976    0.0    0.1     0.0    0.1
+   ==                     Main                      2022/Day13/DistressSignal.hs:15:56-57             433        1709    0.0    0.0     0.0    0.0
+  splitOn                 Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         381           1    0.0    0.0    10.0   12.0
+   onSublist              Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70         386           1    0.0    0.0     0.0    0.0
+   split                  Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68         382           1    0.0    0.0    10.0   12.0
+    fromElem              Data.List.Split.Internals src/Data/List/Split/Internals.hs:(124,1)-(125,24) 404         150    0.0    0.0     0.0    0.0
+    splitInternal         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71) 392         150    0.0    0.1    10.0   11.9
+     breakDelim           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34) 395       21949   10.0   11.7    10.0   11.7
+      matchDelim          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(72,1)-(76,23)   396       22396    0.0    0.1     0.0    0.1
+    delimiter             Data.List.Split.Internals src/Data/List/Split/Internals.hs:22:5-13          393           1    0.0    0.0     0.0    0.0
+    postProcess           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35) 383           1    0.0    0.0     0.0    0.1
+     condensePolicy       Data.List.Split.Internals src/Data/List/Split/Internals.hs:29:5-18          391           1    0.0    0.0     0.0    0.0
+     delimPolicy          Data.List.Split.Internals src/Data/List/Split/Internals.hs:24:5-15          385           1    0.0    0.0     0.0    0.0
+     doCondense           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(187,1)-(194,20) 390           1    0.0    0.0     0.0    0.0
+     doDrop               Data.List.Split.Internals src/Data/List/Split/Internals.hs:(181,1)-(182,14) 399           1    0.0    0.0     0.0    0.0
+     doMerge              Data.List.Split.Internals src/Data/List/Split/Internals.hs:(216,1)-(218,14) 384           1    0.0    0.0     0.0    0.0
+     dropFinal            Data.List.Split.Internals src/Data/List/Split/Internals.hs:(248,1)-(254,17) 402           1    0.0    0.0     0.0    0.0
+     dropInitial          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(243,1)-(244,19) 400           1    0.0    0.0     0.0    0.0
+     finalBlankPolicy     Data.List.Split.Internals src/Data/List/Split/Internals.hs:34:5-20          403           1    0.0    0.0     0.0    0.0
+     initBlankPolicy      Data.List.Split.Internals src/Data/List/Split/Internals.hs:32:5-19          401           1    0.0    0.0     0.0    0.0
+     insertBlanks         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(200,1)-(202,38) 397           1    0.0    0.0     0.0    0.1
+      insertBlanks'       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(206,1)-(212,49) 398         300    0.0    0.1     0.0    0.1

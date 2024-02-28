@@ -1,114 +1,176 @@
-	Wed Feb 14 08:55 2024 Time and Allocation Profiling Report  (Final)
+	Thu Feb 29 21:18 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2023-19 +RTS -N -p -hy -l-agu -RTS
+	   aoc2023-19 +RTS -N -i0.05 -p -hy -l-agu -s2023/Day19/aoc2023-19.stats -RTS
 
-	total time  =        0.01 secs   (19 ticks @ 1000 us, 8 processors)
-	total alloc =  42,797,040 bytes  (excludes profiling overheads)
+	total time  =        0.00 secs   (16 ticks @ 1000 us, 8 processors)
+	total alloc =  42,969,000 bytes  (excludes profiling overheads)
 
-COST CENTRE             MODULE                      SRC                                            %time %alloc
+COST CENTRE             MODULE                   SRC                                           %time %alloc
 
-inputP                  Main                        2023/Day19/Aplenty.hs:(26,1)-(36,159)           52.6   46.3
-insertionSortSpans      Data.Range.Spans            Data/Range/Spans.hs:11:1-73                     10.5    1.9
-MAIN                    MAIN                        <built-in>                                       5.3    0.3
-iter                    Control.Monad.Free          src/Control/Monad/Free.hs:(312,1)-(313,40)       5.3    4.0
-rangeMergeAlgebra       Data.Range.Algebra.Internal Data/Range/Algebra/Internal.hs:(57,1)-(60,75)    5.3    0.3
-removeEmptySpans        Data.Range.Util             Data/Range/Util.hs:77:1-45                       5.3    1.1
-filterUpperBound        Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(182,1)-(188,72)     5.3    1.1
-splitRange              Main                        2023/Day19/Aplenty.hs:(73,1)-(77,60)             5.3    5.1
-main                    Main                        2023/Day19/Aplenty.hs:(11,1)-(23,49)             5.3    3.2
-rangeAlgebra            Data.Range.Algebra.Range    Data/Range/Algebra/Range.hs:10:1-90              0.0    3.1
-insertionSort           Data.Range.Util             Data/Range/Util.hs:(60,1)-(67,17)                0.0    1.5
-unionRangeMerges        Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(137,1)-(170,26)     0.0    6.3
-storeRanges             Data.Range.RangeInternal    Data/Range/RangeInternal.hs:43:1-79              0.0    2.1
-storeRange              Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(34,1)-(40,105)      0.0    2.6
-intersectionRangeMerges Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(85,1)-(119,32)      0.0   13.8
-filterLowerBound        Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(173,1)-(179,73)     0.0    1.1
-exportRangeMerge        Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(50,1)-(61,27)       0.0    2.1
+inputP.integerP         Main                     2023/Day19/Aplenty.hs:35:5-35                  18.8   25.8
+unionRangeMerges        Data.Range.RangeInternal Data/Range/RangeInternal.hs:(137,1)-(170,26)   12.5    6.3
+iter                    Control.Monad.Free       src/Control/Monad/Free.hs:(312,1)-(313,40)      6.2    4.0
+rangeAlgebra            Data.Range.Algebra.Range Data/Range/Algebra/Range.hs:10:1-90             6.2    3.0
+insertionSort           Data.Range.Util          Data/Range/Util.hs:(60,1)-(67,17)               6.2    1.5
+unionSpans              Data.Range.Spans         Data/Range/Spans.hs:(45,1)-(48,18)              6.2    0.0
+storeRanges             Data.Range.RangeInternal Data/Range/RangeInternal.hs:43:1-79             6.2    2.1
+intersectionRangeMerges Data.Range.RangeInternal Data/Range/RangeInternal.hs:(85,1)-(119,32)     6.2   13.7
+splitRange.(...)        Main                     2023/Day19/Aplenty.hs:74:9-78                   6.2    1.0
+splitRange              Main                     2023/Day19/Aplenty.hs:(73,1)-(77,60)            6.2    4.4
+main.f                  Main                     2023/Day19/Aplenty.hs:13:9-65                   6.2    0.7
+inputP.identP           Main                     2023/Day19/Aplenty.hs:29:5-25                   6.2    6.2
+inputP.conditionListP   Main                     2023/Day19/Aplenty.hs:30:5-45                   6.2    8.0
+removeEmptySpans        Data.Range.Util          Data/Range/Util.hs:77:1-45                      0.0    1.1
+insertionSortSpans      Data.Range.Spans         Data/Range/Spans.hs:11:1-73                     0.0    1.9
+storeRange              Data.Range.RangeInternal Data/Range/RangeInternal.hs:(34,1)-(40,105)     0.0    2.6
+filterUpperBound        Data.Range.RangeInternal Data/Range/RangeInternal.hs:(182,1)-(188,72)    0.0    1.0
+filterLowerBound        Data.Range.RangeInternal Data/Range/RangeInternal.hs:(173,1)-(179,73)    0.0    1.0
+exportRangeMerge        Data.Range.RangeInternal Data/Range/RangeInternal.hs:(50,1)-(61,27)      0.0    2.1
+main                    Main                     2023/Day19/Aplenty.hs:(11,1)-(23,49)            0.0    2.2
+inputP.orderingP        Main                     2023/Day19/Aplenty.hs:34:5-53                   0.0    1.7
+inputP.ifThenP          Main                     2023/Day19/Aplenty.hs:(31,5)-(33,37)            0.0    4.4
 
 
-                                                                                                                                    individual      inherited
-COST CENTRE                            MODULE                      SRC                                           no.     entries  %time %alloc   %time %alloc
+                                                                                                                                      individual      inherited
+COST CENTRE                              MODULE                      SRC                                           no.     entries  %time %alloc   %time %alloc
 
-MAIN                                   MAIN                        <built-in>                                    304           0    5.3    0.3   100.0  100.0
- CAF                                   Main                        <entire-module>                               607           0    0.0    0.0     0.0    0.0
-  inputP                               Main                        2023/Day19/Aplenty.hs:(26,1)-(36,159)         610           1    0.0    0.0     0.0    0.0
-  main                                 Main                        2023/Day19/Aplenty.hs:(11,1)-(23,49)          608           1    0.0    0.0     0.0    0.0
-  mkAllParts                           Main                        2023/Day19/Aplenty.hs:58:1-70                 672           1    0.0    0.0     0.0    0.0
-   +=+                                 Data.Range.Operators        Data/Range/Operators.hs:9:1-61                673           1    0.0    0.0     0.0    0.0
-  splitRange                           Main                        2023/Day19/Aplenty.hs:(73,1)-(77,60)          620           0    0.0    0.0     0.0    0.0
-   rangeAlgebra                        Data.Range.Algebra.Range    Data/Range/Algebra/Range.hs:10:1-90           621           1    0.0    0.0     0.0    0.0
- CAF                                   Data.Range.Algebra          <entire-module>                               605           0    0.0    0.0     0.0    0.0
-  const                                Data.Range.Algebra          Data/Range/Algebra.hs:49:1-24                 628           1    0.0    0.0     0.0    0.0
- CAF                                   Data.Range.RangeInternal    <entire-module>                               602           0    0.0    0.0     0.0    0.0
-  emptyRangeMerge                      Data.Range.RangeInternal    Data/Range/RangeInternal.hs:31:1-39           632           1    0.0    0.0     0.0    0.0
- CAF                                   GHC.Conc.Signal             <entire-module>                               418           0    0.0    0.0     0.0    0.0
- CAF                                   GHC.IO.Encoding             <entire-module>                               400           0    0.0    0.0     0.0    0.0
- CAF                                   GHC.IO.Encoding.Iconv       <entire-module>                               398           0    0.0    0.0     0.0    0.0
- CAF                                   GHC.IO.Exception            <entire-module>                               392           0    0.0    0.0     0.0    0.0
- CAF                                   GHC.IO.FD                   <entire-module>                               391           0    0.0    0.0     0.0    0.0
- CAF                                   GHC.IO.Handle.FD            <entire-module>                               389           0    0.0    0.1     0.0    0.1
- CAF                                   GHC.IO.Handle.Internals     <entire-module>                               388           0    0.0    0.0     0.0    0.0
- CAF                                   GHC.Read                    <entire-module>                               371           0    0.0    0.0     0.0    0.0
- CAF                                   GHC.Event.Thread            <entire-module>                               324           0    0.0    0.0     0.0    0.0
- main                                  Main                        2023/Day19/Aplenty.hs:(11,1)-(23,49)          609           0    5.3    3.2    94.7   99.6
-  workflowFn                           Main                        2023/Day19/Aplenty.hs:(43,1)-(45,41)          612        2976    0.0    0.3    36.8   50.0
-   workflowFn'                         Main                        2023/Day19/Aplenty.hs:(48,1)-(52,34)          613        3636    0.0    0.5    36.8   49.8
-    splitParts'                        Main                        2023/Day19/Aplenty.hs:(61,1)-(62,54)          614        3636    0.0    0.0    36.8   49.3
-     splitParts                        Main                        2023/Day19/Aplenty.hs:(65,1)-(70,100)         615        2815    0.0    0.9    36.8   49.3
-      splitRange                       Main                        2023/Day19/Aplenty.hs:(73,1)-(77,60)          616        2815    5.3    5.1    36.8   48.3
-       iter                            Control.Monad.Free          src/Control/Monad/Free.hs:(312,1)-(313,40)    619       16890    0.0    2.0     0.0    2.0
-       getFree                         Data.Range.Algebra.Internal Data/Range/Algebra/Internal.hs:48:35-41       617        5630    0.0    0.0     0.0    0.0
-       intersection                    Data.Range.Algebra          Data/Range/Algebra.hs:61:1-74                 618        5630    0.0    0.0     0.0    0.0
-        getFree                        Data.Range.Algebra.Internal Data/Range/Algebra/Internal.hs:48:35-41       627       11260    0.0    0.0     0.0    0.0
-       lbi                             Data.Range.Operators        Data/Range/Operators.hs:33:1-43               643        1777    0.0    0.0     0.0    0.0
-       ube                             Data.Range.Operators        Data/Range/Operators.hs:51:1-43               659        1777    0.0    0.0     0.0    0.0
-       lbe                             Data.Range.Operators        Data/Range/Operators.hs:39:1-43               666        1038    0.0    0.0     0.0    0.0
-       ubi                             Data.Range.Operators        Data/Range/Operators.hs:45:1-43               665        1038    0.0    0.0     0.0    0.0
-       rangeAlgebra                    Data.Range.Algebra.Range    Data/Range/Algebra/Range.hs:10:1-90           622           0    0.0    3.1    31.6   41.3
-        iter                           Control.Monad.Free          src/Control/Monad/Free.hs:(312,1)-(313,40)    623       16890    5.3    2.0     5.3    2.0
-        storeRanges                    Data.Range.RangeInternal    Data/Range/RangeInternal.hs:43:1-79           626       11260    0.0    2.1    10.5   14.8
-         storeRange                    Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(34,1)-(40,105)   629       11260    0.0    2.6     0.0    2.6
-          maxBounds                    Data.Range.Util             Data/Range/Util.hs:51:1-62                    674        2256    0.0    0.0     0.0    0.0
-           compareHigher               Data.Range.Util             Data/Range/Util.hs:(21,1)-(25,22)             675        2256    0.0    0.0     0.0    0.0
-          minBounds                    Data.Range.Util             Data/Range/Util.hs:48:1-61                    676        2256    0.0    0.0     0.0    0.0
-           compareLower                Data.Range.Util             Data/Range/Util.hs:(14,1)-(18,22)             677        2256    0.0    0.0     0.0    0.0
-         unionRangeMerges              Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(137,1)-(170,26)  633       11260    0.0    6.3    10.5   10.1
-          spanRanges                   Data.Range.RangeInternal    Data/Range/RangeInternal.hs:25:6-15           636       33780    0.0    0.0     0.0    0.0
-          largestLowerBound            Data.Range.RangeInternal    Data/Range/RangeInternal.hs:23:6-22           639       22520    0.0    0.0     0.0    0.0
-          largestUpperBound            Data.Range.RangeInternal    Data/Range/RangeInternal.hs:24:6-22           642       22520    0.0    0.0     0.0    0.0
-          insertionSortSpans           Data.Range.Spans            Data/Range/Spans.hs:11:1-73                   634       11260    5.3    1.3     5.3    1.7
-           insertionSort               Data.Range.Util             Data/Range/Util.hs:(60,1)-(67,17)             635       11260    0.0    0.4     0.0    0.4
-          unionSpans                   Data.Range.Spans            Data/Range/Spans.hs:(45,1)-(48,18)            637       11260    0.0    0.0     0.0    0.0
-          filterLowerBound             Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(173,1)-(179,73)  638        5630    0.0    1.1     0.0    1.1
-           spanRanges                  Data.Range.RangeInternal    Data/Range/RangeInternal.hs:25:6-15           640        5630    0.0    0.0     0.0    0.0
-          filterUpperBound             Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(182,1)-(188,72)  641        5630    5.3    1.1     5.3    1.1
-           spanRanges                  Data.Range.RangeInternal    Data/Range/RangeInternal.hs:25:6-15           653        5630    0.0    0.0     0.0    0.0
-        exportRangeMerge               Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(50,1)-(61,27)    644        5630    0.0    2.1     0.0    2.1
-         pointJoinType                 Data.Range.Util             Data/Range/Util.hs:(94,1)-(96,26)             670        1389    0.0    0.0     0.0    0.0
-        rangeMergeAlgebra              Data.Range.Algebra.Internal Data/Range/Algebra/Internal.hs:(57,1)-(60,75) 624        5630    5.3    0.3    15.8   19.2
-         intersectionRangeMerges       Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(85,1)-(119,32)   625        5630    0.0   13.8    10.5   18.9
-          intersectWith                Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(71,1)-(72,67)    650       22520    0.0    0.8     0.0    1.8
-           fixLower                    Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(75,1)-(77,44)    652        2815    0.0    0.4     0.0    0.4
-            maxBoundsIntersection      Data.Range.Util             Data/Range/Util.hs:57:1-86                    667        1611    0.0    0.0     0.0    0.0
-             compareHigherIntersection Data.Range.Util             Data/Range/Util.hs:(35,1)-(39,22)             668        1611    0.0    0.0     0.0    0.0
-           fixUpper                    Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(80,1)-(82,44)    660        2815    0.0    0.6     0.0    0.6
-            minBoundsIntersection      Data.Range.Util             Data/Range/Util.hs:54:1-85                    662        2332    0.0    0.0     0.0    0.0
-             compareLowerIntersection  Data.Range.Util             Data/Range/Util.hs:(28,1)-(32,22)             663        2332    0.0    0.0     0.0    0.0
-          largestUpperBound            Data.Range.RangeInternal    Data/Range/RangeInternal.hs:24:6-22           645       22520    0.0    0.0     0.0    0.0
-          spanRanges                   Data.Range.RangeInternal    Data/Range/RangeInternal.hs:25:6-15           651       16890    0.0    0.0     0.0    0.0
-          largestLowerBound            Data.Range.RangeInternal    Data/Range/RangeInternal.hs:23:6-22           649       14634    0.0    0.0     0.0    0.0
-          calculateBoundOverlap        Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(122,1)-(134,22)  655        5630    0.0    0.5     0.0    0.5
-           largestLowerBound           Data.Range.RangeInternal    Data/Range/RangeInternal.hs:23:6-22           656       11260    0.0    0.0     0.0    0.0
-           largestUpperBound           Data.Range.RangeInternal    Data/Range/RangeInternal.hs:24:6-22           657        2815    0.0    0.0     0.0    0.0
-          insertionSortSpans           Data.Range.Spans            Data/Range/Spans.hs:11:1-73                   647        5630    5.3    0.6     5.3    1.7
-           insertionSort               Data.Range.Util             Data/Range/Util.hs:(60,1)-(67,17)             648       28150    0.0    1.1     0.0    1.1
-          intersectSpans               Data.Range.Spans            Data/Range/Spans.hs:(20,1)-(32,23)            654        5630    0.0    0.0     0.0    0.0
-          removeEmptySpans             Data.Range.Util             Data/Range/Util.hs:77:1-45                    646        5630    5.3    1.1     5.3    1.1
-           isEmptySpan                 Data.Range.Util             Data/Range/Util.hs:74:1-97                    661        3943    0.0    0.0     0.0    0.0
-          unionSpans                   Data.Range.Spans            Data/Range/Spans.hs:(45,1)-(48,18)            658        5630    0.0    0.0     0.0    0.0
-      a'                               Main                        2023/Day19/Aplenty.hs:40:54-55                630         938    0.0    0.0     0.0    0.0
-      m'                               Main                        2023/Day19/Aplenty.hs:40:39-40                664         713    0.0    0.0     0.0    0.0
-      s'                               Main                        2023/Day19/Aplenty.hs:40:69-70                669         635    0.0    0.0     0.0    0.0
-      x'                               Main                        2023/Day19/Aplenty.hs:40:24-25                671         529    0.0    0.0     0.0    0.0
-  inputP                               Main                        2023/Day19/Aplenty.hs:(26,1)-(36,159)         611           0   52.6   46.3    52.6   46.3
-   mkPart                              Main                        2023/Day19/Aplenty.hs:55:1-98                 631         200    0.0    0.0     0.0    0.0
+MAIN                                     MAIN                        <built-in>                                    304           0    0.0    0.3   100.0  100.0
+ CAF                                     Main                        <entire-module>                               606           0    0.0    0.0     0.0    0.0
+  inputP                                 Main                        2023/Day19/Aplenty.hs:(26,1)-(36,159)         610           1    0.0    0.0     0.0    0.0
+   inputP.conditionListP                 Main                        2023/Day19/Aplenty.hs:30:5-45                 615           1    0.0    0.0     0.0    0.0
+   inputP.identP                         Main                        2023/Day19/Aplenty.hs:29:5-25                 613           1    0.0    0.0     0.0    0.0
+   inputP.ifThenP                        Main                        2023/Day19/Aplenty.hs:(31,5)-(33,37)          617           1    0.0    0.0     0.0    0.0
+   inputP.integerP                       Main                        2023/Day19/Aplenty.hs:35:5-35                 622           1    0.0    0.0     0.0    0.0
+   inputP.orderingP                      Main                        2023/Day19/Aplenty.hs:34:5-53                 619           1    0.0    0.0     0.0    0.0
+   inputP.partsP                         Main                        2023/Day19/Aplenty.hs:36:5-159                636           1    0.0    0.0     0.0    0.0
+   inputP.workflowP                      Main                        2023/Day19/Aplenty.hs:28:5-78                 612           1    0.0    0.0     0.0    0.0
+  main                                   Main                        2023/Day19/Aplenty.hs:(11,1)-(23,49)          608           1    0.0    0.0     0.0    0.0
+  mkAllParts                             Main                        2023/Day19/Aplenty.hs:58:1-70                 723           1    0.0    0.0     0.0    0.0
+   +=+                                   Data.Range.Operators        Data/Range/Operators.hs:9:1-61                724           1    0.0    0.0     0.0    0.0
+  splitRange                             Main                        2023/Day19/Aplenty.hs:(73,1)-(77,60)          651           0    0.0    0.0     0.0    0.0
+   rangeAlgebra                          Data.Range.Algebra.Range    Data/Range/Algebra/Range.hs:10:1-90           657           1    0.0    0.0     0.0    0.0
+   splitRange.safeHead                   Main                        2023/Day19/Aplenty.hs:77:5-60                 652           1    0.0    0.0     0.0    0.0
+    splitRange.safeHead.\                Main                        2023/Day19/Aplenty.hs:77:30-36                697           1    0.0    0.0     0.0    0.0
+ CAF                                     Data.Range.Algebra          <entire-module>                               605           0    0.0    0.0     0.0    0.0
+  const                                  Data.Range.Algebra          Data/Range/Algebra.hs:49:1-24                 664           1    0.0    0.0     0.0    0.0
+ CAF                                     Data.Range.RangeInternal    <entire-module>                               602           0    0.0    0.0     0.0    0.0
+  emptyRangeMerge                        Data.Range.RangeInternal    Data/Range/RangeInternal.hs:31:1-39           668           1    0.0    0.0     0.0    0.0
+ CAF                                     GHC.Conc.Signal             <entire-module>                               418           0    0.0    0.0     0.0    0.0
+ CAF                                     GHC.IO.Encoding             <entire-module>                               400           0    0.0    0.0     0.0    0.0
+ CAF                                     GHC.IO.Encoding.Iconv       <entire-module>                               398           0    0.0    0.0     0.0    0.0
+ CAF                                     GHC.IO.Exception            <entire-module>                               392           0    0.0    0.0     0.0    0.0
+ CAF                                     GHC.IO.FD                   <entire-module>                               391           0    0.0    0.0     0.0    0.0
+ CAF                                     GHC.IO.Handle.FD            <entire-module>                               389           0    0.0    0.1     0.0    0.1
+ CAF                                     GHC.IO.Handle.Internals     <entire-module>                               388           0    0.0    0.0     0.0    0.0
+ CAF                                     GHC.Read                    <entire-module>                               371           0    0.0    0.0     0.0    0.0
+ CAF                                     GHC.Event.Thread            <entire-module>                               324           0    0.0    0.0     0.0    0.0
+ main                                    Main                        2023/Day19/Aplenty.hs:(11,1)-(23,49)          609           0    0.0    2.2   100.0   99.6
+  main.numPossibilities                  Main                        2023/Day19/Aplenty.hs:19:5-92                 729         568    0.0    0.1     0.0    0.3
+   main.rangeSize                        Main                        2023/Day19/Aplenty.hs:20:5-57                 730        2272    0.0    0.2     0.0    0.2
+    main.rangeSize.(...)                 Main                        2023/Day19/Aplenty.hs:20:23-44                731        2272    0.0    0.0     0.0    0.1
+     main.rangeBounds                    Main                        2023/Day19/Aplenty.hs:(21,5)-(23,49)          732        2272    0.0    0.1     0.0    0.1
+    main.rangeSize.x                     Main                        2023/Day19/Aplenty.hs:20:23-44                734        2272    0.0    0.0     0.0    0.0
+    main.rangeSize.y                     Main                        2023/Day19/Aplenty.hs:20:23-44                733        2272    0.0    0.0     0.0    0.0
+  main.score'                            Main                        2023/Day19/Aplenty.hs:(17,5)-(18,27)          722         114    0.0    0.0     0.0    0.0
+  main.f                                 Main                        2023/Day19/Aplenty.hs:13:9-65                 640           1    6.2    0.7    68.8   50.9
+   workflowFn                            Main                        2023/Day19/Aplenty.hs:(43,1)-(45,41)          641        2976    0.0    0.3    62.5   50.2
+    workflowFn'                          Main                        2023/Day19/Aplenty.hs:(48,1)-(52,34)          642        3636    0.0    0.4    62.5   50.0
+     workflowFn'.(...)                   Main                        2023/Day19/Aplenty.hs:49:9-45                 646        3636    0.0    0.0    62.5   49.5
+      splitParts'                        Main                        2023/Day19/Aplenty.hs:(61,1)-(62,54)          647        3636    0.0    0.0    62.5   49.5
+       splitParts                        Main                        2023/Day19/Aplenty.hs:(65,1)-(70,100)         648        2815    0.0    0.2    62.5   49.5
+        splitRange                       Main                        2023/Day19/Aplenty.hs:(73,1)-(77,60)          649        2815    6.2    4.4    62.5   48.6
+         iter                            Control.Monad.Free          src/Control/Monad/Free.hs:(312,1)-(313,40)    656       16890    0.0    2.0     0.0    2.0
+         getFree                         Data.Range.Algebra.Internal Data/Range/Algebra/Internal.hs:48:35-41       654        5630    0.0    0.0     0.0    0.0
+         intersection                    Data.Range.Algebra          Data/Range/Algebra.hs:61:1-74                 655        5630    0.0    0.0     0.0    0.0
+          getFree                        Data.Range.Algebra.Internal Data/Range/Algebra/Internal.hs:48:35-41       663       11260    0.0    0.0     0.0    0.0
+         splitRange.(...)                Main                        2023/Day19/Aplenty.hs:74:9-78                 680        2815    6.2    1.0     6.2    1.0
+          lbi                            Data.Range.Operators        Data/Range/Operators.hs:33:1-43               681        1777    0.0    0.0     0.0    0.0
+          ube                            Data.Range.Operators        Data/Range/Operators.hs:51:1-43               699        1777    0.0    0.0     0.0    0.0
+          lbe                            Data.Range.Operators        Data/Range/Operators.hs:39:1-43               709        1038    0.0    0.0     0.0    0.0
+          ubi                            Data.Range.Operators        Data/Range/Operators.hs:45:1-43               708        1038    0.0    0.0     0.0    0.0
+         splitRange.a                    Main                        2023/Day19/Aplenty.hs:74:9-78                 698        2815    0.0    0.0     0.0    0.0
+         splitRange.b                    Main                        2023/Day19/Aplenty.hs:74:9-78                 679        2815    0.0    0.0     0.0    0.0
+         rangeAlgebra                    Data.Range.Algebra.Range    Data/Range/Algebra/Range.hs:10:1-90           658           0    6.2    3.0    50.0   41.1
+          iter                           Control.Monad.Free          src/Control/Monad/Free.hs:(312,1)-(313,40)    659       16890    6.2    2.0     6.2    2.0
+          storeRanges                    Data.Range.RangeInternal    Data/Range/RangeInternal.hs:43:1-79           662       11260    6.2    2.1    18.8   14.8
+           storeRange                    Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(34,1)-(40,105)   665       11260    0.0    2.6     0.0    2.6
+            maxBounds                    Data.Range.Util             Data/Range/Util.hs:51:1-62                    725        2256    0.0    0.0     0.0    0.0
+             compareHigher               Data.Range.Util             Data/Range/Util.hs:(21,1)-(25,22)             726        2256    0.0    0.0     0.0    0.0
+            minBounds                    Data.Range.Util             Data/Range/Util.hs:48:1-61                    727        2256    0.0    0.0     0.0    0.0
+             compareLower                Data.Range.Util             Data/Range/Util.hs:(14,1)-(18,22)             728        2256    0.0    0.0     0.0    0.0
+           unionRangeMerges              Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(137,1)-(170,26)  669       11260   12.5    6.3    12.5   10.1
+            spanRanges                   Data.Range.RangeInternal    Data/Range/RangeInternal.hs:25:6-15           672       33780    0.0    0.0     0.0    0.0
+            largestLowerBound            Data.Range.RangeInternal    Data/Range/RangeInternal.hs:23:6-22           675       22520    0.0    0.0     0.0    0.0
+            largestUpperBound            Data.Range.RangeInternal    Data/Range/RangeInternal.hs:24:6-22           678       22520    0.0    0.0     0.0    0.0
+            insertionSortSpans           Data.Range.Spans            Data/Range/Spans.hs:11:1-73                   670       11260    0.0    1.3     0.0    1.7
+             insertionSort               Data.Range.Util             Data/Range/Util.hs:(60,1)-(67,17)             671       11260    0.0    0.4     0.0    0.4
+            unionSpans                   Data.Range.Spans            Data/Range/Spans.hs:(45,1)-(48,18)            673       11260    0.0    0.0     0.0    0.0
+            filterLowerBound             Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(173,1)-(179,73)  674        5630    0.0    1.0     0.0    1.0
+             spanRanges                  Data.Range.RangeInternal    Data/Range/RangeInternal.hs:25:6-15           676        5630    0.0    0.0     0.0    0.0
+            filterUpperBound             Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(182,1)-(188,72)  677        5630    0.0    1.0     0.0    1.0
+             spanRanges                  Data.Range.RangeInternal    Data/Range/RangeInternal.hs:25:6-15           691        5630    0.0    0.0     0.0    0.0
+          exportRangeMerge               Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(50,1)-(61,27)    682        5630    0.0    2.1     0.0    2.1
+           pointJoinType                 Data.Range.Util             Data/Range/Util.hs:(94,1)-(96,26)             718        1389    0.0    0.0     0.0    0.0
+          rangeMergeAlgebra              Data.Range.Algebra.Internal Data/Range/Algebra/Internal.hs:(57,1)-(60,75) 660        5630    0.0    0.3    18.8   19.2
+           intersectionRangeMerges       Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(85,1)-(119,32)   661        5630    6.2   13.7    18.8   18.9
+            intersectWith                Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(71,1)-(72,67)    688       22520    0.0    0.8     0.0    1.8
+             fixLower                    Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(75,1)-(77,44)    690        2815    0.0    0.4     0.0    0.4
+              maxBoundsIntersection      Data.Range.Util             Data/Range/Util.hs:57:1-86                    710        1611    0.0    0.0     0.0    0.0
+               compareHigherIntersection Data.Range.Util             Data/Range/Util.hs:(35,1)-(39,22)             711        1611    0.0    0.0     0.0    0.0
+             fixUpper                    Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(80,1)-(82,44)    700        2815    0.0    0.6     0.0    0.6
+              minBoundsIntersection      Data.Range.Util             Data/Range/Util.hs:54:1-85                    702        2332    0.0    0.0     0.0    0.0
+               compareLowerIntersection  Data.Range.Util             Data/Range/Util.hs:(28,1)-(32,22)             703        2332    0.0    0.0     0.0    0.0
+            largestUpperBound            Data.Range.RangeInternal    Data/Range/RangeInternal.hs:24:6-22           683       22520    0.0    0.0     0.0    0.0
+            spanRanges                   Data.Range.RangeInternal    Data/Range/RangeInternal.hs:25:6-15           689       16890    0.0    0.0     0.0    0.0
+            largestLowerBound            Data.Range.RangeInternal    Data/Range/RangeInternal.hs:23:6-22           687       14634    0.0    0.0     0.0    0.0
+            calculateBoundOverlap        Data.Range.RangeInternal    Data/Range/RangeInternal.hs:(122,1)-(134,22)  693        5630    0.0    0.5     0.0    0.5
+             largestLowerBound           Data.Range.RangeInternal    Data/Range/RangeInternal.hs:23:6-22           694       11260    0.0    0.0     0.0    0.0
+             largestUpperBound           Data.Range.RangeInternal    Data/Range/RangeInternal.hs:24:6-22           695        2815    0.0    0.0     0.0    0.0
+            insertionSortSpans           Data.Range.Spans            Data/Range/Spans.hs:11:1-73                   685        5630    0.0    0.6     6.2    1.7
+             insertionSort               Data.Range.Util             Data/Range/Util.hs:(60,1)-(67,17)             686       28150    6.2    1.0     6.2    1.0
+            intersectSpans               Data.Range.Spans            Data/Range/Spans.hs:(20,1)-(32,23)            692        5630    0.0    0.0     0.0    0.0
+            removeEmptySpans             Data.Range.Util             Data/Range/Util.hs:77:1-45                    684        5630    0.0    1.1     0.0    1.1
+             isEmptySpan                 Data.Range.Util             Data/Range/Util.hs:74:1-97                    701        3943    0.0    0.0     0.0    0.0
+            unionSpans                   Data.Range.Spans            Data/Range/Spans.hs:(45,1)-(48,18)            696        5630    6.2    0.0     6.2    0.0
+         splitRange.safeHead             Main                        2023/Day19/Aplenty.hs:77:5-60                 653           0    0.0    0.1     0.0    0.1
+          splitRange.safeHead.\          Main                        2023/Day19/Aplenty.hs:77:45-58                704        3943    0.0    0.0     0.0    0.0
+        splitParts.f                     Main                        2023/Day19/Aplenty.hs:69:20-59                650        1876    0.0    0.1     0.0    0.2
+         splitParts.f.\                  Main                        2023/Day19/Aplenty.hs:69:35-52                707        1081    0.0    0.1     0.0    0.1
+        splitParts.f                     Main                        2023/Day19/Aplenty.hs:68:20-59                705        1426    0.0    0.1     0.0    0.2
+         splitParts.f.\                  Main                        2023/Day19/Aplenty.hs:68:35-52                714         825    0.0    0.1     0.0    0.1
+        splitParts.f                     Main                        2023/Day19/Aplenty.hs:70:20-59                712        1270    0.0    0.1     0.0    0.2
+         splitParts.f.\                  Main                        2023/Day19/Aplenty.hs:70:35-52                717         762    0.0    0.1     0.0    0.1
+        splitParts.f                     Main                        2023/Day19/Aplenty.hs:67:20-59                719        1058    0.0    0.1     0.0    0.1
+         splitParts.f.\                  Main                        2023/Day19/Aplenty.hs:67:35-52                721         628    0.0    0.1     0.0    0.1
+        a'                               Main                        2023/Day19/Aplenty.hs:40:54-55                666         938    0.0    0.0     0.0    0.0
+        m'                               Main                        2023/Day19/Aplenty.hs:40:39-40                706         713    0.0    0.0     0.0    0.0
+        s'                               Main                        2023/Day19/Aplenty.hs:40:69-70                713         635    0.0    0.0     0.0    0.0
+        x'                               Main                        2023/Day19/Aplenty.hs:40:24-25                720         529    0.0    0.0     0.0    0.0
+     workflowFn'.as                      Main                        2023/Day19/Aplenty.hs:50:9-38                 644        3636    0.0    0.0     0.0    0.0
+     workflowFn'.bs                      Main                        2023/Day19/Aplenty.hs:51:9-40                 715        3636    0.0    0.0     0.0    0.0
+     workflowFn'.pFalse                  Main                        2023/Day19/Aplenty.hs:49:9-45                 716        3636    0.0    0.0     0.0    0.0
+     workflowFn'.pTrue                   Main                        2023/Day19/Aplenty.hs:49:9-45                 645        3636    0.0    0.0     0.0    0.0
+  inputP                                 Main                        2023/Day19/Aplenty.hs:(26,1)-(36,159)         611           0    0.0    0.1    31.2   46.1
+   inputP.conditionListP                 Main                        2023/Day19/Aplenty.hs:30:5-45                 616           0    0.0    0.2     0.0    0.2
+   inputP.identP                         Main                        2023/Day19/Aplenty.hs:29:5-25                 614           0    6.2    6.2    12.5   12.6
+    inputP.ifThenP                       Main                        2023/Day19/Aplenty.hs:(31,5)-(33,37)          630           0    0.0    0.1     6.2    4.8
+     inputP.conditionListP               Main                        2023/Day19/Aplenty.hs:30:5-45                 633           0    6.2    4.8     6.2    4.8
+      inputP.integerP                    Main                        2023/Day19/Aplenty.hs:35:5-35                 634           0    0.0    0.0     0.0    0.0
+       inputP.orderingP                  Main                        2023/Day19/Aplenty.hs:34:5-53                 635           0    0.0    0.0     0.0    0.0
+     inputP.integerP                     Main                        2023/Day19/Aplenty.hs:35:5-35                 631           0    0.0    0.0     0.0    0.0
+      inputP.orderingP                   Main                        2023/Day19/Aplenty.hs:34:5-53                 632           0    0.0    0.0     0.0    0.0
+    inputP.integerP                      Main                        2023/Day19/Aplenty.hs:35:5-35                 626           0    0.0    0.0     0.0    1.6
+     inputP.orderingP                    Main                        2023/Day19/Aplenty.hs:34:5-53                 627           0    0.0    0.0     0.0    1.6
+      inputP.ifThenP                     Main                        2023/Day19/Aplenty.hs:(31,5)-(33,37)          628           0    0.0    0.3     0.0    1.6
+       inputP.ifThenP.\                  Main                        2023/Day19/Aplenty.hs:32:27-41                643        1128    0.0    0.0     0.0    0.0
+       inputP.conditionListP             Main                        2023/Day19/Aplenty.hs:30:5-45                 629           0    0.0    1.3     0.0    1.3
+   inputP.ifThenP                        Main                        2023/Day19/Aplenty.hs:(31,5)-(33,37)          618           0    0.0    2.1     0.0    2.1
+   inputP.integerP                       Main                        2023/Day19/Aplenty.hs:35:5-35                 623           0   18.8   25.8    18.8   29.0
+    inputP.identP                        Main                        2023/Day19/Aplenty.hs:29:5-25                 637           0    0.0    0.0     0.0    1.8
+     inputP.ifThenP                      Main                        2023/Day19/Aplenty.hs:(31,5)-(33,37)          638           0    0.0    0.0     0.0    1.8
+      inputP.conditionListP              Main                        2023/Day19/Aplenty.hs:30:5-45                 639           0    0.0    1.8     0.0    1.8
+       mkPart                            Main                        2023/Day19/Aplenty.hs:55:1-98                 667         200    0.0    0.0     0.0    0.0
+    inputP.orderingP                     Main                        2023/Day19/Aplenty.hs:34:5-53                 624           0    0.0    0.0     0.0    1.4
+     inputP.ifThenP                      Main                        2023/Day19/Aplenty.hs:(31,5)-(33,37)          625           0    0.0    1.4     0.0    1.4
+   inputP.orderingP                      Main                        2023/Day19/Aplenty.hs:34:5-53                 620           0    0.0    1.7     0.0    2.1
+    inputP.ifThenP                       Main                        2023/Day19/Aplenty.hs:(31,5)-(33,37)          621           0    0.0    0.4     0.0    0.4

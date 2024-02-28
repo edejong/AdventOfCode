@@ -1,7 +1,7 @@
 {-# OPTIONS_GHC -Wno-incomplete-uni-patterns #-}
+import           Data.Maybe    (fromJust)
+import           Data.Sequence (Seq (..), (><))
 import qualified Data.Sequence as Seq
-import Data.Sequence (Seq (..), (><))
-import Data.Maybe (fromJust)
 
 main :: IO ()
 main = do

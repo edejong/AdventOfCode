@@ -1,9 +1,10 @@
 {-# OPTIONS_GHC -Wno-incomplete-uni-patterns
                 -Wno-incomplete-patterns #-}
-import GHC.Arr (accumArray, listArray, Array, bounds, assocs, (!), inRange, elems)
-import Linear hiding (rotate, trace)
-import Control.Applicative (liftA2)
-import Data.List (foldl', find)
+import           Control.Applicative (liftA2)
+import           Data.List           (find, foldl')
+import           GHC.Arr             (Array, accumArray, assocs, bounds, elems,
+                                      inRange, listArray, (!))
+import           Linear              hiding (rotate, trace)
 
 main :: IO ()
 main = do

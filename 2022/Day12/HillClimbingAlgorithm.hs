@@ -1,12 +1,11 @@
-module Day12.HillClimbingAlgorithm where
-import Data.Char (ord)
-import Data.List ( findIndices, nub )
-import Data.Set (Set, notMember, union)
-import qualified Data.Set as S
+import           Data.Char (ord)
+import           Data.List (findIndices, nub)
+import           Data.Set  (Set, notMember)
+import qualified Data.Set  as S
 
 main :: IO ()
 main = do
-    heightMap <- lines <$> readFile "2022/data/day12.txt"
+    heightMap <- lines <$> readFile "2022/Day12/day12.txt"
     let bounds = (length (head heightMap), length heightMap)
         coords = findPoints bounds heightMap
         endPoint = head . coords $ 'E'
@@ -33,11 +32,11 @@ neighbours :: Point -> [[Char]] -> Point -> [Point]
 neighbours (w, h) heightMap (x, y) =
     filter (canMove (x,y)) . filter inBounds $ [(x-1,y),(x+1,y),(x,y-1),(x,y+1)]
   where
-    inBounds (x, y) = x >= 0 && x < w && y >= 0 && y < h
+    inBounds (x', y') = x' >= 0 && x' < w && y' >= 0 && y' < h
     canMove from to = heightAt to <= heightAt from + 1
-    heightAt (x,y) = height ((heightMap !! y) !! x)
+    heightAt (x',y') = height ((heightMap !! y') !! x')
 
 height :: Char -> Int
 height 'S' = height 'a'
 height 'E' = height 'z'
-height c = ord c - ord 'a'
+height c   = ord c - ord 'a'

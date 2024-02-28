@@ -1,0 +1,68 @@
+	Thu Feb 29 20:35 2024 Time and Allocation Profiling Report  (Final)
+
+	   aoc2022-08 +RTS -N -i0.05 -p -hy -l-agu -s2022/Day08/aoc2022-08.stats -RTS
+
+	total time  =        0.01 secs   (19 ticks @ 1000 us, 8 processors)
+	total alloc =  70,326,760 bytes  (excludes profiling overheads)
+
+COST CENTRE              MODULE SRC                                            %time %alloc
+
+main                     Main   2022/Day08/TreetopTreeHouse.hs:(6,1)-(11,44)    47.4   53.2
+takeUntil                Main   2022/Day08/TreetopTreeHouse.hs:(41,1)-(42,61)   15.8    9.5
+viewDists                Main   2022/Day08/TreetopTreeHouse.hs:(29,1)-(30,46)   10.5   11.6
+MAIN                     MAIN   <built-in>                                       5.3    0.2
+viewDists2D.distsU       Main   2022/Day08/TreetopTreeHouse.hs:37:9-82           5.3    4.7
+isVisible2D.bs           Main   2022/Day08/TreetopTreeHouse.hs:24:9-56           5.3    4.0
+isVisible1D.isVisible1D' Main   2022/Day08/TreetopTreeHouse.hs:(16,5)-(19,47)    5.3    3.1
+isVisible1D              Main   2022/Day08/TreetopTreeHouse.hs:(14,1)-(19,47)    5.3    3.8
+viewDists2D.distsD       Main   2022/Day08/TreetopTreeHouse.hs:36:9-60           0.0    4.0
+viewDists2D              Main   2022/Day08/TreetopTreeHouse.hs:(33,1)-(38,48)    0.0    2.5
+isVisible2D              Main   2022/Day08/TreetopTreeHouse.hs:(22,1)-(25,35)    0.0    1.5
+
+
+                                                                                                                       individual      inherited
+COST CENTRE                   MODULE                  SRC                                           no.     entries  %time %alloc   %time %alloc
+
+MAIN                          MAIN                    <built-in>                                    129           0    5.3    0.2   100.0  100.0
+ CAF                          Main                    <entire-module>                               257           0    0.0    0.0     0.0    0.0
+  main                        Main                    2022/Day08/TreetopTreeHouse.hs:(6,1)-(11,44)  258           1    0.0    0.0     0.0    0.0
+  viewDists                   Main                    2022/Day08/TreetopTreeHouse.hs:(29,1)-(30,46) 271           1    0.0    0.0     0.0    0.0
+ CAF                          GHC.Conc.Signal         <entire-module>                               234           0    0.0    0.0     0.0    0.0
+ CAF                          GHC.IO.Encoding         <entire-module>                               216           0    0.0    0.0     0.0    0.0
+ CAF                          GHC.IO.Encoding.Iconv   <entire-module>                               214           0    0.0    0.0     0.0    0.0
+ CAF                          GHC.IO.Exception        <entire-module>                               208           0    0.0    0.0     0.0    0.0
+ CAF                          GHC.IO.FD               <entire-module>                               207           0    0.0    0.0     0.0    0.0
+ CAF                          GHC.IO.Handle.FD        <entire-module>                               205           0    0.0    0.0     0.0    0.0
+ CAF                          GHC.IO.Handle.Internals <entire-module>                               204           0    0.0    0.0     0.0    0.0
+ CAF                          GHC.Read                <entire-module>                               189           0    0.0    0.0     0.0    0.0
+ CAF                          GHC.Event.Thread        <entire-module>                               149           0    0.0    0.0     0.0    0.0
+ main                         Main                    2022/Day08/TreetopTreeHouse.hs:(6,1)-(11,44)  259           0   47.4   53.2    94.7   99.7
+  main.scenicScore            Main                    2022/Day08/TreetopTreeHouse.hs:11:5-44        277        9801    0.0    0.2     0.0    0.2
+  isVisible2D                 Main                    2022/Day08/TreetopTreeHouse.hs:(22,1)-(25,35) 260           1    0.0    1.5    15.8   12.4
+   isVisible2D.as             Main                    2022/Day08/TreetopTreeHouse.hs:23:9-32        261           1    0.0    0.0     5.3    3.5
+    isVisible1D               Main                    2022/Day08/TreetopTreeHouse.hs:(14,1)-(19,47) 265          99    0.0    1.9     5.3    3.5
+     isVisible1D.isVisible1D' Main                    2022/Day08/TreetopTreeHouse.hs:(16,5)-(19,47) 266       19800    5.3    1.6     5.3    1.6
+   isVisible2D.bs             Main                    2022/Day08/TreetopTreeHouse.hs:24:9-56        262           1    5.3    4.0    10.5    7.5
+    isVisible1D               Main                    2022/Day08/TreetopTreeHouse.hs:(14,1)-(19,47) 263          99    5.3    1.9     5.3    3.5
+     isVisible1D.isVisible1D' Main                    2022/Day08/TreetopTreeHouse.hs:(16,5)-(19,47) 264       19701    0.0    1.6     0.0    1.6
+  viewDists2D                 Main                    2022/Day08/TreetopTreeHouse.hs:(33,1)-(38,48) 267           1    0.0    2.5    31.6   33.9
+   viewDists2D.distsD         Main                    2022/Day08/TreetopTreeHouse.hs:36:9-60        270           1    0.0    4.0     5.3    9.5
+    viewDists                 Main                    2022/Day08/TreetopTreeHouse.hs:(29,1)-(30,46) 272           0    5.3    2.9     5.3    5.5
+     viewDists.\              Main                    2022/Day08/TreetopTreeHouse.hs:29:29-41       284        9801    0.0    0.0     0.0    2.6
+      viewDists.viewDist      Main                    2022/Day08/TreetopTreeHouse.hs:30:9-46        285        9801    0.0    0.2     0.0    2.6
+       takeUntil              Main                    2022/Day08/TreetopTreeHouse.hs:(41,1)-(42,61) 286       26249    0.0    2.3     0.0    2.3
+   viewDists2D.distsL         Main                    2022/Day08/TreetopTreeHouse.hs:35:9-56        269           1    0.0    0.7     0.0    6.2
+    viewDists                 Main                    2022/Day08/TreetopTreeHouse.hs:(29,1)-(30,46) 276           0    0.0    2.9     0.0    5.5
+     viewDists.\              Main                    2022/Day08/TreetopTreeHouse.hs:29:29-41       281        9801    0.0    0.0     0.0    2.6
+      viewDists.viewDist      Main                    2022/Day08/TreetopTreeHouse.hs:30:9-46        282        9801    0.0    0.2     0.0    2.6
+       takeUntil              Main                    2022/Day08/TreetopTreeHouse.hs:(41,1)-(42,61) 283       26962    0.0    2.4     0.0    2.4
+   viewDists2D.distsR         Main                    2022/Day08/TreetopTreeHouse.hs:34:9-34        268           1    0.0    0.0    10.5    5.5
+    viewDists                 Main                    2022/Day08/TreetopTreeHouse.hs:(29,1)-(30,46) 275           0    5.3    2.9    10.5    5.5
+     viewDists.\              Main                    2022/Day08/TreetopTreeHouse.hs:29:29-41       278        9801    0.0    0.0     5.3    2.6
+      viewDists.viewDist      Main                    2022/Day08/TreetopTreeHouse.hs:30:9-46        279        9801    0.0    0.2     5.3    2.6
+       takeUntil              Main                    2022/Day08/TreetopTreeHouse.hs:(41,1)-(42,61) 280       26327    5.3    2.3     5.3    2.3
+   viewDists2D.distsU         Main                    2022/Day08/TreetopTreeHouse.hs:37:9-82        273           1    5.3    4.7    15.8   10.2
+    viewDists                 Main                    2022/Day08/TreetopTreeHouse.hs:(29,1)-(30,46) 274           0    0.0    2.9    10.5    5.5
+     viewDists.\              Main                    2022/Day08/TreetopTreeHouse.hs:29:29-41       287        9801    0.0    0.0    10.5    2.6
+      viewDists.viewDist      Main                    2022/Day08/TreetopTreeHouse.hs:30:9-46        288        9801    0.0    0.2    10.5    2.6
+       takeUntil              Main                    2022/Day08/TreetopTreeHouse.hs:(41,1)-(42,61) 289       27090   10.5    2.4    10.5    2.4

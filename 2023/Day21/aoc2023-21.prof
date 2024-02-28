@@ -1,35 +1,83 @@
-	Wed Feb 14 09:02 2024 Time and Allocation Profiling Report  (Final)
+	Thu Feb 29 21:18 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2023-21 +RTS -N -p -hy -l-agu -RTS
+	   aoc2023-21 +RTS -N -i0.05 -p -hy -l-agu -s2023/Day21/aoc2023-21.stats -RTS
 
-	total time  =        0.15 secs   (550 ticks @ 1000 us, 8 processors)
-	total alloc = 1,203,022,776 bytes  (excludes profiling overheads)
+	total time  =        0.18 secs   (649 ticks @ 1000 us, 8 processors)
+	total alloc = 1,403,287,968 bytes  (excludes profiling overheads)
 
-COST CENTRE MODULE        SRC                                       %time %alloc
+COST CENTRE          MODULE        SRC                                       %time %alloc
 
-!*          Linear.Matrix src/Linear/Matrix.hs:127:1-53              43.3   31.7
-dfs         Main          2023/Day21/StepCounter.hs:(44,1)-(50,29)   36.2   57.9
-main        Main          2023/Day21/StepCounter.hs:(11,1)-(41,44)   15.1    3.9
-nbrs        Main          2023/Day21/StepCounter.hs:(56,1)-(58,30)    5.1    6.1
+!*                   Linear.Matrix src/Linear/Matrix.hs:127:1-53              41.3   27.2
+dfs.dfsStep.queue'   Main          2023/Day21/StepCounter.hs:49:13-104        21.4   38.6
+dfs.dfsStep.visited' Main          2023/Day21/StepCounter.hs:48:13-46         13.1   11.2
+main.sq              Main          2023/Day21/StepCounter.hs:23:9-57           8.5   11.9
+nbrs                 Main          2023/Day21/StepCounter.hs:(56,1)-(58,30)    8.0    7.3
+main                 Main          2023/Day21/StepCounter.hs:(11,1)-(41,44)    2.5    0.2
+main.getDiamond      Main          2023/Day21/StepCounter.hs:24:9-53           2.0    0.5
+main.arr'            Main          2023/Day21/StepCounter.hs:19:9-59           1.2    1.0
 
 
-                                                                                                 individual      inherited
-COST CENTRE  MODULE                  SRC                                      no.     entries  %time %alloc   %time %alloc
+                                                                                                              individual      inherited
+COST CENTRE               MODULE                  SRC                                      no.     entries  %time %alloc   %time %alloc
 
-MAIN         MAIN                    <built-in>                               359           0    0.0    0.0   100.0  100.0
- CAF         Main                    <entire-module>                          717           0    0.0    0.0     0.0    0.0
-  main       Main                    2023/Day21/StepCounter.hs:(11,1)-(41,44) 718           1    0.0    0.0     0.0    0.0
-  rot45      Main                    2023/Day21/StepCounter.hs:8:1-31         724           1    0.0    0.0     0.0    0.0
- CAF         GHC.Conc.Signal         <entire-module>                          473           0    0.0    0.0     0.0    0.0
- CAF         GHC.IO.Encoding         <entire-module>                          455           0    0.0    0.0     0.0    0.0
- CAF         GHC.IO.Encoding.Iconv   <entire-module>                          453           0    0.0    0.0     0.0    0.0
- CAF         GHC.IO.Exception        <entire-module>                          447           0    0.0    0.0     0.0    0.0
- CAF         GHC.IO.FD               <entire-module>                          446           0    0.0    0.0     0.0    0.0
- CAF         GHC.IO.Handle.FD        <entire-module>                          444           0    0.0    0.0     0.0    0.0
- CAF         GHC.IO.Handle.Internals <entire-module>                          443           0    0.0    0.0     0.0    0.0
- CAF         GHC.Event.Thread        <entire-module>                          379           0    0.0    0.0     0.0    0.0
- main        Main                    2023/Day21/StepCounter.hs:(11,1)-(41,44) 719           0   15.1    3.9   100.0  100.0
-  !*         Linear.Matrix           src/Linear/Matrix.hs:127:1-53            723     2979152   43.3   31.7    43.3   31.7
-  dfs        Main                    2023/Day21/StepCounter.hs:(44,1)-(50,29) 720           2   36.2   57.9    41.3   64.0
-   nbrs      Main                    2023/Day21/StepCounter.hs:(56,1)-(58,30) 721      191785    5.1    6.1     5.1    6.1
-  grow       Main                    2023/Day21/StepCounter.hs:53:1-58        722           1    0.4    0.4     0.4    0.4
+MAIN                      MAIN                    <built-in>                               359           0    0.0    0.0   100.0  100.0
+ CAF                      Main                    <entire-module>                          716           0    0.0    0.0     0.0    0.0
+  main                    Main                    2023/Day21/StepCounter.hs:(11,1)-(41,44) 718           1    0.0    0.0     0.0    0.0
+   main.evens             Main                    2023/Day21/StepCounter.hs:17:9-35        720           1    0.0    0.0     0.0    0.0
+   main.n                 Main                    2023/Day21/StepCounter.hs:26:9-13        740           1    0.0    0.0     0.0    0.0
+   main.odds              Main                    2023/Day21/StepCounter.hs:16:9-33        735           1    0.0    0.0     0.0    0.0
+   main.sq                Main                    2023/Day21/StepCounter.hs:23:9-57        747           1    0.0    0.0     0.0    0.0
+   main.d1o'              Main                    2023/Day21/StepCounter.hs:34:9-93        759           0    0.0    0.0     0.0    0.0
+   main.d1o''             Main                    2023/Day21/StepCounter.hs:35:9-92        762           0    0.0    0.0     0.0    0.0
+   main.d2e''b            Main                    2023/Day21/StepCounter.hs:37:9-79        765           0    0.0    0.0     0.0    0.0
+   main.d2o''a            Main                    2023/Day21/StepCounter.hs:36:9-79        768           0    0.0    0.0     0.0    0.0
+   main.ps                Main                    2023/Day21/StepCounter.hs:28:9-45        739           0    0.0    0.0     0.0    0.0
+  rot45                   Main                    2023/Day21/StepCounter.hs:8:1-31         750           1    0.0    0.0     0.0    0.0
+ CAF                      GHC.Conc.Signal         <entire-module>                          473           0    0.0    0.0     0.0    0.0
+ CAF                      GHC.IO.Encoding         <entire-module>                          455           0    0.0    0.0     0.0    0.0
+ CAF                      GHC.IO.Encoding.Iconv   <entire-module>                          453           0    0.0    0.0     0.0    0.0
+ CAF                      GHC.IO.Exception        <entire-module>                          447           0    0.0    0.0     0.0    0.0
+ CAF                      GHC.IO.FD               <entire-module>                          446           0    0.0    0.0     0.0    0.0
+ CAF                      GHC.IO.Handle.FD        <entire-module>                          444           0    0.0    0.0     0.0    0.0
+ CAF                      GHC.IO.Handle.Internals <entire-module>                          443           0    0.0    0.0     0.0    0.0
+ CAF                      GHC.Event.Thread        <entire-module>                          379           0    0.0    0.0     0.0    0.0
+ main                     Main                    2023/Day21/StepCounter.hs:(11,1)-(41,44) 719           0    2.5    0.2   100.0  100.0
+  dfs                     Main                    2023/Day21/StepCounter.hs:(44,1)-(50,29) 722           1    0.0    0.0     1.1    1.6
+   dfs.dfsStep            Main                    2023/Day21/StepCounter.hs:(47,5)-(50,29) 723          64    0.0    0.0     1.1    1.6
+    dfs.dfsStep.queue'    Main                    2023/Day21/StepCounter.hs:49:13-104      724          64    0.8    1.1     0.8    1.3
+     nbrs                 Main                    2023/Day21/StepCounter.hs:(56,1)-(58,30) 725        6926    0.0    0.3     0.0    0.3
+      nbrs.ps             Main                    2023/Day21/StepCounter.hs:57:9-79        726        6926    0.0    0.0     0.0    0.0
+    dfs.dfsStep.visited'  Main                    2023/Day21/StepCounter.hs:48:13-46       732          64    0.3    0.3     0.3    0.3
+  grow                    Main                    2023/Day21/StepCounter.hs:53:1-58        727           1    0.3    0.3     0.3    0.3
+  main.arr                Main                    2023/Day21/StepCounter.hs:15:9-81        730           1    0.5    0.2     0.5    0.2
+  main.arr'               Main                    2023/Day21/StepCounter.hs:19:9-59        731           1    1.2    1.0     1.2    1.0
+  main.calc               Main                    2023/Day21/StepCounter.hs:39:9-129       733           1    0.0    0.0     0.0    0.0
+  main.d1e                Main                    2023/Day21/StepCounter.hs:31:9-50        751           1    0.0    0.0     0.0    0.0
+   main.getDiamond        Main                    2023/Day21/StepCounter.hs:24:9-53        752           1    0.0    0.0     0.0    0.0
+  main.d1o                Main                    2023/Day21/StepCounter.hs:30:9-49        734           1    0.0    0.0     0.0    0.0
+   main.getDiamond        Main                    2023/Day21/StepCounter.hs:24:9-53        737           1    0.0    0.0     0.0    0.0
+  main.d1o'               Main                    2023/Day21/StepCounter.hs:34:9-93        757           1    0.0    0.0     0.8    0.1
+   main.getDiamond        Main                    2023/Day21/StepCounter.hs:24:9-53        758           4    0.8    0.1     0.8    0.1
+  main.d1o''              Main                    2023/Day21/StepCounter.hs:35:9-92        760           1    0.0    0.0     0.6    0.1
+   main.getDiamond        Main                    2023/Day21/StepCounter.hs:24:9-53        761           4    0.6    0.1     0.6    0.1
+  main.d2e                Main                    2023/Day21/StepCounter.hs:33:9-50        753           1    0.0    0.0     0.2    0.0
+   main.getDiamond        Main                    2023/Day21/StepCounter.hs:24:9-53        754           1    0.2    0.0     0.2    0.0
+  main.d2e''b             Main                    2023/Day21/StepCounter.hs:37:9-79        763           1    0.0    0.0     0.2    0.1
+   main.getDiamond        Main                    2023/Day21/StepCounter.hs:24:9-53        764           2    0.2    0.1     0.2    0.1
+  main.d2o                Main                    2023/Day21/StepCounter.hs:32:9-49        755           1    0.2    0.0     0.2    0.0
+   main.getDiamond        Main                    2023/Day21/StepCounter.hs:24:9-53        756           1    0.0    0.0     0.0    0.0
+  main.d2o''a             Main                    2023/Day21/StepCounter.hs:36:9-79        766           1    0.0    0.0     0.3    0.1
+   main.getDiamond        Main                    2023/Day21/StepCounter.hs:24:9-53        767           2    0.3    0.1     0.3    0.1
+  main.hSize              Main                    2023/Day21/StepCounter.hs:14:9-29        729           1    0.0    0.0     0.0    0.0
+  main.nRows              Main                    2023/Day21/StepCounter.hs:13:9-26        728           1    0.0    0.0     0.0    0.0
+  main.ps                 Main                    2023/Day21/StepCounter.hs:28:9-45        738           1    0.5    0.7    42.1   56.3
+   dfs                    Main                    2023/Day21/StepCounter.hs:(44,1)-(50,29) 741           1    0.2    0.1    41.6   55.5
+    dfs.dfsStep           Main                    2023/Day21/StepCounter.hs:(47,5)-(50,29) 742         327    0.0    0.0    41.4   55.4
+     dfs.dfsStep.queue'   Main                    2023/Day21/StepCounter.hs:49:13-104      743         327   20.6   37.5    28.7   44.6
+      nbrs                Main                    2023/Day21/StepCounter.hs:(56,1)-(58,30) 744      184859    8.0    7.0     8.0    7.0
+       nbrs.ps            Main                    2023/Day21/StepCounter.hs:57:9-79        745      184859    0.0    0.0     0.0    0.0
+     dfs.dfsStep.visited' Main                    2023/Day21/StepCounter.hs:48:13-46       746         327   12.8   10.9    12.8   10.9
+  main.evens              Main                    2023/Day21/StepCounter.hs:17:9-35        721           0    0.0    0.1     0.0    0.1
+  main.odds               Main                    2023/Day21/StepCounter.hs:16:9-33        736           0    0.5    0.6     0.5    0.6
+  main.sq                 Main                    2023/Day21/StepCounter.hs:23:9-57        748           0    8.5   11.9    49.8   39.1
+   !*                     Linear.Matrix           src/Linear/Matrix.hs:127:1-53            749     2979152   41.3   27.2    41.3   27.2

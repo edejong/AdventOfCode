@@ -1,0 +1,56 @@
+	Thu Feb 29 20:36 2024 Time and Allocation Profiling Report  (Final)
+
+	   aoc2022-12 +RTS -N -i0.05 -p -hy -l-agu -s2022/Day12/aoc2022-12.stats -RTS
+
+	total time  =        0.02 secs   (61 ticks @ 1000 us, 8 processors)
+	total alloc =  33,881,624 bytes  (excludes profiling overheads)
+
+COST CENTRE         MODULE SRC                                                 %time %alloc
+
+step.queue'         Main   2022/Day12/HillClimbingAlgorithm.hs:27:9-101         54.1   24.6
+neighbours.heightAt Main   2022/Day12/HillClimbingAlgorithm.hs:37:5-51          29.5    0.0
+step.visited'       Main   2022/Day12/HillClimbingAlgorithm.hs:26:9-53           8.2   32.5
+neighbours          Main   2022/Day12/HillClimbingAlgorithm.hs:(32,1)-(37,51)    3.3   25.2
+neighbours.canMove  Main   2022/Day12/HillClimbingAlgorithm.hs:36:5-54           1.6    0.0
+main                Main   2022/Day12/HillClimbingAlgorithm.hs:(7,1)-(13,64)     1.6    3.1
+findPoints          Main   2022/Day12/HillClimbingAlgorithm.hs:(19,1)-(21,76)    1.6    4.8
+height              Main   2022/Day12/HillClimbingAlgorithm.hs:(40,1)-(42,28)    0.0    4.1
+findPoints.coords   Main   2022/Day12/HillClimbingAlgorithm.hs:20:9-55           0.0    4.9
+
+
+                                                                                                                         individual      inherited
+COST CENTRE                MODULE                  SRC                                                no.     entries  %time %alloc   %time %alloc
+
+MAIN                       MAIN                    <built-in>                                         157           0    0.0    0.4   100.0  100.0
+ CAF                       Main                    <entire-module>                                    313           0    0.0    0.0     0.0    0.0
+  height                   Main                    2022/Day12/HillClimbingAlgorithm.hs:(40,1)-(42,28) 336           2    0.0    0.0     0.0    0.0
+  main                     Main                    2022/Day12/HillClimbingAlgorithm.hs:(7,1)-(13,64)  314           1    0.0    0.0     0.0    0.0
+ CAF                       GHC.Conc.Signal         <entire-module>                                    266           0    0.0    0.0     0.0    0.0
+ CAF                       GHC.IO.Encoding         <entire-module>                                    248           0    0.0    0.0     0.0    0.0
+ CAF                       GHC.IO.Encoding.Iconv   <entire-module>                                    246           0    0.0    0.0     0.0    0.0
+ CAF                       GHC.IO.Exception        <entire-module>                                    240           0    0.0    0.0     0.0    0.0
+ CAF                       GHC.IO.FD               <entire-module>                                    239           0    0.0    0.0     0.0    0.0
+ CAF                       GHC.IO.Handle.FD        <entire-module>                                    237           0    0.0    0.1     0.0    0.1
+ CAF                       GHC.IO.Handle.Internals <entire-module>                                    236           0    0.0    0.0     0.0    0.0
+ CAF                       GHC.Event.Thread        <entire-module>                                    177           0    0.0    0.0     0.0    0.0
+ main                      Main                    2022/Day12/HillClimbingAlgorithm.hs:(7,1)-(13,64)  315           0    1.6    3.1   100.0   99.5
+  main.bounds              Main                    2022/Day12/HillClimbingAlgorithm.hs:9:9-60         322           1    0.0    0.0     0.0    0.0
+  main.coords              Main                    2022/Day12/HillClimbingAlgorithm.hs:10:9-44        319           1    0.0    0.0     1.6    8.0
+   findPoints              Main                    2022/Day12/HillClimbingAlgorithm.hs:(19,1)-(21,76) 324           2    1.6    4.0     1.6    8.0
+    findPoints.\           Main                    2022/Day12/HillClimbingAlgorithm.hs:21:37-43       329       11808    0.0    0.0     0.0    0.0
+    findPoints.coords      Main                    2022/Day12/HillClimbingAlgorithm.hs:20:9-55        328           2    0.0    3.9     0.0    3.9
+  main.endPoint            Main                    2022/Day12/HillClimbingAlgorithm.hs:11:9-38        318           1    0.0    0.0     0.0    1.7
+   main.coords             Main                    2022/Day12/HillClimbingAlgorithm.hs:10:9-44        320           0    0.0    0.0     0.0    1.7
+    findPoints             Main                    2022/Day12/HillClimbingAlgorithm.hs:(19,1)-(21,76) 321           1    0.0    0.7     0.0    1.7
+     findPoints.\          Main                    2022/Day12/HillClimbingAlgorithm.hs:21:37-43       325        3000    0.0    0.0     0.0    0.0
+     findPoints.coords     Main                    2022/Day12/HillClimbingAlgorithm.hs:20:9-55        323           1    0.0    1.0     0.0    1.0
+  main.tmp                 Main                    2022/Day12/HillClimbingAlgorithm.hs:12:9-111       316           1    0.0    0.5    96.7   86.8
+   main.tmp.\              Main                    2022/Day12/HillClimbingAlgorithm.hs:12:58-76       317         843    0.0    0.0     0.0    0.0
+   step                    Main                    2022/Day12/HillClimbingAlgorithm.hs:(25,1)-(28,25) 326         841    0.0    0.0    96.7   86.3
+    step.visited'          Main                    2022/Day12/HillClimbingAlgorithm.hs:26:9-53        327         841    8.2   32.5     8.2   32.5
+    step.queue'            Main                    2022/Day12/HillClimbingAlgorithm.hs:27:9-101       330         839   54.1   24.6    88.5   53.8
+     neighbours            Main                    2022/Day12/HillClimbingAlgorithm.hs:(32,1)-(37,51) 331       17460    3.3   25.2    34.4   29.3
+      neighbours.inBounds  Main                    2022/Day12/HillClimbingAlgorithm.hs:35:5-56        332       69840    0.0    0.0     0.0    0.0
+      neighbours.canMove   Main                    2022/Day12/HillClimbingAlgorithm.hs:36:5-54        333       68733    1.6    0.0    31.1    4.1
+       neighbours.heightAt Main                    2022/Day12/HillClimbingAlgorithm.hs:37:5-51        334      137466   29.5    0.0    29.5    4.1
+        height             Main                    2022/Day12/HillClimbingAlgorithm.hs:(40,1)-(42,28) 335       86193    0.0    4.1     0.0    4.1

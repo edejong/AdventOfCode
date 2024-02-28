@@ -1,14 +1,14 @@
-	Sat Feb 24 15:58 2024 Time and Allocation Profiling Report  (Final)
+	Thu Feb 29 11:50 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2021-06 +RTS -N -p -hy -l-agu -RTS
+	   aoc2021-06 +RTS -N -i0.001 -p -hy -l-agu -s2021/Day06/aoc2021-06.stats -RTS
 
 	total time  =        0.00 secs   (2 ticks @ 1000 us, 8 processors)
-	total alloc =   1,628,032 bytes  (excludes profiling overheads)
+	total alloc =   1,628,112 bytes  (excludes profiling overheads)
 
 COST CENTRE   MODULE                    SRC                                                %time %alloc
 
 MAIN          MAIN                      <built-in>                                          50.0    8.5
-main.days     Main                      2021/Day06/Lanternfish.hs:7:9-52                    50.0    2.8
+main          Main                      2021/Day06/Lanternfish.hs:(5,1)-(10,77)             50.0   68.7
 CAF           GHC.IO.Handle.FD          <entire-module>                                      0.0    2.1
 splitInternal Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71)    0.0    4.0
 split         Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68            0.0    1.6
@@ -16,14 +16,14 @@ matchDelim    Data.List.Split.Internals src/Data/List/Split/Internals.hs:(72,1)-
 insertBlanks' Data.List.Split.Internals src/Data/List/Split/Internals.hs:(206,1)-(212,49)    0.0    2.1
 breakDelim    Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34)    0.0    2.8
 main.incDay   Main                      2021/Day06/Lanternfish.hs:10:9-77                    0.0    4.2
-main          Main                      2021/Day06/Lanternfish.hs:(5,1)-(10,77)              0.0   68.7
+main.days     Main                      2021/Day06/Lanternfish.hs:7:9-52                     0.0    2.8
 
 
                                                                                                                      individual      inherited
 COST CENTRE           MODULE                    SRC                                               no.     entries  %time %alloc   %time %alloc
 
 MAIN                  MAIN                      <built-in>                                        130           0   50.0    8.5   100.0  100.0
- CAF                  Main                      <entire-module>                                   258           0    0.0    0.1     0.0    0.1
+ CAF                  Main                      <entire-module>                                   259           0    0.0    0.1     0.0    0.1
   main                Main                      2021/Day06/Lanternfish.hs:(5,1)-(10,77)           260           1    0.0    0.0     0.0    0.0
    splitOn            Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         271           0    0.0    0.0     0.0    0.0
     dropDelims        Data.List.Split.Internals src/Data/List/Split/Internals.hs:320:1-37         273           1    0.0    0.0     0.0    0.0
@@ -39,8 +39,8 @@ MAIN                  MAIN                      <built-in>                      
  CAF                  GHC.IO.Handle.Internals   <entire-module>                                   205           0    0.0    0.0     0.0    0.0
  CAF                  GHC.Read                  <entire-module>                                   190           0    0.0    0.0     0.0    0.0
  CAF                  GHC.Event.Thread          <entire-module>                                   150           0    0.0    0.1     0.0    0.1
- main                 Main                      2021/Day06/Lanternfish.hs:(5,1)-(10,77)           261           0    0.0   68.7    50.0   88.9
-  main.days           Main                      2021/Day06/Lanternfish.hs:7:9-52                  262           1   50.0    2.8    50.0    7.0
+ main                 Main                      2021/Day06/Lanternfish.hs:(5,1)-(10,77)           261           0   50.0   68.7    50.0   88.9
+  main.days           Main                      2021/Day06/Lanternfish.hs:7:9-52                  262           1    0.0    2.8     0.0    7.0
    main.incDay        Main                      2021/Day06/Lanternfish.hs:10:9-77                 263         256    0.0    4.2     0.0    4.2
    main.hist          Main                      2021/Day06/Lanternfish.hs:9:9-60                  264           1    0.0    0.1     0.0    0.1
   splitOn             Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         265           1    0.0    0.0     0.0   13.3

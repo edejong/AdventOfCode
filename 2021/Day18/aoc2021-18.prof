@@ -1,30 +1,31 @@
-	Sat Feb 24 16:37 2024 Time and Allocation Profiling Report  (Final)
+	Thu Feb 29 11:52 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2021-18 +RTS -N -p -hy -l-agu -RTS
+	   aoc2021-18 +RTS -N -i0.001 -p -hy -l-agu -s2021/Day18/aoc2021-18.stats -RTS
 
-	total time  =        0.04 secs   (158 ticks @ 1000 us, 8 processors)
-	total alloc = 205,897,016 bytes  (excludes profiling overheads)
+	total time  =        0.04 secs   (147 ticks @ 1000 us, 8 processors)
+	total alloc = 205,897,152 bytes  (excludes profiling overheads)
 
-COST CENTRE MODULE    SRC                                     %time %alloc
+COST CENTRE    MODULE    SRC                                     %time %alloc
 
-==          Main      2021/Day18/Snailfish.hs:31:59-60         29.1    0.0
-converge    Main      2021/Day18/Snailfish.hs:(24,1)-(25,24)   27.2   24.6
-explode'    Main      2021/Day18/Snailfish.hs:(58,1)-(62,26)   21.5   33.2
-trySplit'   Main      2021/Day18/Snailfish.hs:(68,1)-(70,21)    6.3    9.9
-converge.xs Main      2021/Day18/Snailfish.hs:25:9-24           4.4   16.7
-addRight    Main      2021/Day18/Snailfish.hs:(47,1)-(49,45)    3.2    5.3
-trySplit    Main      2021/Day18/Snailfish.hs:65:1-38           1.3    0.0
-reduce      Main      2021/Day18/Snailfish.hs:52:1-47           1.3    1.5
-main        Main      2021/Day18/Snailfish.hs:(11,1)-(14,74)    1.3    0.9
-explode'.\  Main      2021/Day18/Snailfish.hs:60:27-57          1.3    0.0
-explode     Main      2021/Day18/Snailfish.hs:55:1-50           1.3    0.0
-addLeft     Main      2021/Day18/Snailfish.hs:(42,1)-(44,43)    0.0    5.7
+==             Main      2021/Day18/Snailfish.hs:31:59-60         32.0    0.0
+explode'       Main      2021/Day18/Snailfish.hs:(58,1)-(62,26)   23.8   33.2
+converge       Main      2021/Day18/Snailfish.hs:(24,1)-(25,24)   21.8   24.6
+trySplit'      Main      2021/Day18/Snailfish.hs:(68,1)-(70,21)    4.1    9.9
+converge.xs    Main      2021/Day18/Snailfish.hs:25:9-24           2.7   16.7
+addRight       Main      2021/Day18/Snailfish.hs:(47,1)-(49,45)    2.7    5.3
+addLeft        Main      2021/Day18/Snailfish.hs:(42,1)-(44,43)    2.7    5.7
+MAIN           MAIN      <built-in>                                2.0    0.1
+snailMagnitude Main      2021/Day18/Snailfish.hs:(79,1)-(80,71)    1.4    0.9
+main           Main      2021/Day18/Snailfish.hs:(11,1)-(14,74)    1.4    0.9
+explode'.\     Main      2021/Day18/Snailfish.hs:60:27-57          1.4    0.0
+explode        Main      2021/Day18/Snailfish.hs:55:1-50           1.4    0.0
+reduce         Main      2021/Day18/Snailfish.hs:52:1-47           0.0    1.5
 
 
                                                                                                       individual      inherited
 COST CENTRE         MODULE                  SRC                                    no.     entries  %time %alloc   %time %alloc
 
-MAIN                MAIN                    <built-in>                             189           0    0.6    0.1   100.0  100.0
+MAIN                MAIN                    <built-in>                             189           0    2.0    0.1   100.0  100.0
  CAF                Main                    <entire-module>                        376           0    0.0    0.0     0.0    0.0
   fromString        Main                    2021/Day18/Snailfish.hs:39:1-30        380           1    0.0    0.0     0.0    0.0
   main              Main                    2021/Day18/Snailfish.hs:(11,1)-(14,74) 378           1    0.0    0.0     0.0    0.0
@@ -41,40 +42,40 @@ MAIN                MAIN                    <built-in>                          
  CAF                GHC.IO.Handle.FD        <entire-module>                        269           0    0.0    0.0     0.0    0.0
  CAF                GHC.IO.Handle.Internals <entire-module>                        268           0    0.0    0.0     0.0    0.0
  CAF                GHC.Event.Thread        <entire-module>                        209           0    0.0    0.0     0.0    0.0
- main               Main                    2021/Day18/Snailfish.hs:(11,1)-(14,74) 379           0    1.3    0.9    99.4   99.9
-  snailMagnitude    Main                    2021/Day18/Snailfish.hs:(79,1)-(80,71) 406      247271    0.6    0.9     0.6    0.9
-  snailAdd          Main                    2021/Day18/Snailfish.hs:73:1-32        408        9900    0.0    0.1    91.1   89.9
-   reduce           Main                    2021/Day18/Snailfish.hs:52:1-47        409           0    1.3    1.4    91.1   89.8
-    converge        Main                    2021/Day18/Snailfish.hs:(24,1)-(25,24) 410       97861   25.9   22.8    89.9   88.4
-     ==             Main                    2021/Day18/Snailfish.hs:31:59-60       412     5149262   27.2    0.0    27.2    0.0
-     converge.xs    Main                    2021/Day18/Snailfish.hs:25:9-24        411       97861    3.8   15.5    36.7   65.6
-      explode       Main                    2021/Day18/Snailfish.hs:55:1-50        413      195504    1.3    0.0    26.6   41.1
-       explode'     Main                    2021/Day18/Snailfish.hs:(58,1)-(62,26) 414     4004254   21.5   30.9    25.3   41.1
-        explode'.\  Main                    2021/Day18/Snailfish.hs:60:27-57       416      216426    1.3    0.0     1.3    5.3
-         addLeft    Main                    2021/Day18/Snailfish.hs:(42,1)-(44,43) 419      297905    0.0    5.3     0.0    5.3
-        explode'.\  Main                    2021/Day18/Snailfish.hs:61:27-58       415      213746    0.6    0.0     2.5    4.9
-         addRight   Main                    2021/Day18/Snailfish.hs:(47,1)-(49,45) 418      279090    1.9    4.9     1.9    4.9
+ main               Main                    2021/Day18/Snailfish.hs:(11,1)-(14,74) 379           0    1.4    0.9    98.0   99.9
+  snailMagnitude    Main                    2021/Day18/Snailfish.hs:(79,1)-(80,71) 406      247271    1.4    0.9     1.4    0.9
+  snailAdd          Main                    2021/Day18/Snailfish.hs:73:1-32        408        9900    0.7    0.1    88.4   89.9
+   reduce           Main                    2021/Day18/Snailfish.hs:52:1-47        409           0    0.0    1.4    87.8   89.8
+    converge        Main                    2021/Day18/Snailfish.hs:(24,1)-(25,24) 410       97861   20.4   22.8    87.8   88.4
+     ==             Main                    2021/Day18/Snailfish.hs:31:59-60       412     5149262   29.3    0.0    29.3    0.0
+     converge.xs    Main                    2021/Day18/Snailfish.hs:25:9-24        411       97861    2.7   15.5    38.1   65.6
+      explode       Main                    2021/Day18/Snailfish.hs:55:1-50        413      195504    1.4    0.0    30.6   41.1
+       explode'     Main                    2021/Day18/Snailfish.hs:(58,1)-(62,26) 414     4004254   23.1   30.9    29.3   41.1
+        explode'.\  Main                    2021/Day18/Snailfish.hs:60:27-57       416      216426    1.4    0.0     4.1    5.3
+         addLeft    Main                    2021/Day18/Snailfish.hs:(42,1)-(44,43) 419      297905    2.7    5.3     2.7    5.3
+        explode'.\  Main                    2021/Day18/Snailfish.hs:61:27-58       415      213746    0.7    0.0     2.0    4.9
+         addRight   Main                    2021/Day18/Snailfish.hs:(47,1)-(49,45) 418      279090    1.4    4.9     1.4    4.9
        explode.\    Main                    2021/Day18/Snailfish.hs:55:34          417      107543    0.0    0.0     0.0    0.0
-      trySplit      Main                    2021/Day18/Snailfish.hs:65:1-38        420       87961    1.3    0.0     6.3    9.0
-       trySplit'    Main                    2021/Day18/Snailfish.hs:(68,1)-(70,21) 421     1541579    5.1    9.0     5.1    9.0
+      trySplit      Main                    2021/Day18/Snailfish.hs:65:1-38        420       87961    0.7    0.0     4.8    9.0
+       trySplit'    Main                    2021/Day18/Snailfish.hs:(68,1)-(70,21) 421     1541579    4.1    9.0     4.1    9.0
   pairs             Main                    2021/Day18/Snailfish.hs:28:1-62        407           1    0.0    0.3     0.0    0.3
-  snailSum          Main                    2021/Day18/Snailfish.hs:76:1-49        390           1    0.0    0.0     6.3    7.0
-   snailAdd         Main                    2021/Day18/Snailfish.hs:73:1-32        391          99    0.0    0.0     6.3    7.0
-    reduce          Main                    2021/Day18/Snailfish.hs:52:1-47        393           0    0.0    0.1     6.3    7.0
-     converge       Main                    2021/Day18/Snailfish.hs:(24,1)-(25,24) 394        7278    1.3    1.8     6.3    6.9
-      ==            Main                    2021/Day18/Snailfish.hs:31:59-60       396      384292    1.9    0.0     1.9    0.0
-      converge.xs   Main                    2021/Day18/Snailfish.hs:25:9-24        395        7278    0.6    1.2     3.2    5.1
-       explode      Main                    2021/Day18/Snailfish.hs:55:1-50        397       15015    0.0    0.0     1.3    3.0
-        explode'    Main                    2021/Day18/Snailfish.hs:(58,1)-(62,26) 398      309244    0.0    2.3     1.3    3.0
+  snailSum          Main                    2021/Day18/Snailfish.hs:76:1-49        390           1    0.0    0.0     6.1    7.0
+   snailAdd         Main                    2021/Day18/Snailfish.hs:73:1-32        391          99    0.0    0.0     6.1    7.0
+    reduce          Main                    2021/Day18/Snailfish.hs:52:1-47        393           0    0.0    0.1     6.1    7.0
+     converge       Main                    2021/Day18/Snailfish.hs:(24,1)-(25,24) 394        7278    1.4    1.8     6.1    6.9
+      ==            Main                    2021/Day18/Snailfish.hs:31:59-60       396      384292    2.7    0.0     2.7    0.0
+      converge.xs   Main                    2021/Day18/Snailfish.hs:25:9-24        395        7278    0.0    1.2     2.0    5.1
+       explode      Main                    2021/Day18/Snailfish.hs:55:1-50        397       15015    0.0    0.0     2.0    3.0
+        explode'    Main                    2021/Day18/Snailfish.hs:(58,1)-(62,26) 398      309244    0.7    2.3     2.0    3.0
          explode'.\ Main                    2021/Day18/Snailfish.hs:60:27-57       400       18343    0.0    0.0     0.0    0.4
           addLeft   Main                    2021/Day18/Snailfish.hs:(42,1)-(44,43) 403       24842    0.0    0.4     0.0    0.4
-         explode'.\ Main                    2021/Day18/Snailfish.hs:61:27-58       399       13001    0.0    0.0     1.3    0.4
-          addRight  Main                    2021/Day18/Snailfish.hs:(47,1)-(49,45) 402       18406    1.3    0.4     1.3    0.4
+         explode'.\ Main                    2021/Day18/Snailfish.hs:61:27-58       399       13001    0.0    0.0     1.4    0.4
+          addRight  Main                    2021/Day18/Snailfish.hs:(47,1)-(49,45) 402       18406    1.4    0.4     1.4    0.4
         explode.\   Main                    2021/Day18/Snailfish.hs:55:34          401        7836    0.0    0.0     0.0    0.0
-       trySplit     Main                    2021/Day18/Snailfish.hs:65:1-38        404        7179    0.0    0.0     1.3    0.9
-        trySplit'   Main                    2021/Day18/Snailfish.hs:(68,1)-(70,21) 405      101078    1.3    0.9     1.3    0.9
-  fromString        Main                    2021/Day18/Snailfish.hs:39:1-30        381           0    0.0    0.0     0.0    0.8
-   snailNum         Main                    2021/Day18/Snailfish.hs:17:1-23        383           0    0.0    0.0     0.0    0.8
+       trySplit     Main                    2021/Day18/Snailfish.hs:65:1-38        404        7179    0.0    0.0     0.0    0.9
+        trySplit'   Main                    2021/Day18/Snailfish.hs:(68,1)-(70,21) 405      101078    0.0    0.9     0.0    0.9
+  fromString        Main                    2021/Day18/Snailfish.hs:39:1-30        381           0    0.0    0.0     0.7    0.8
+   snailNum         Main                    2021/Day18/Snailfish.hs:17:1-23        383           0    0.7    0.0     0.7    0.8
     num             Main                    2021/Day18/Snailfish.hs:20:1-32        385           0    0.0    0.2     0.0    0.8
      pair           Main                    2021/Day18/Snailfish.hs:18:1-46        387           0    0.0    0.2     0.0    0.6
       pair'         Main                    2021/Day18/Snailfish.hs:19:1-52        389           0    0.0    0.4     0.0    0.4

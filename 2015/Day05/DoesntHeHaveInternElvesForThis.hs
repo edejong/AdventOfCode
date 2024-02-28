@@ -1,9 +1,8 @@
-module Day05.DoesntHeHaveInternElvesForThis where
 import Data.List (sort, isInfixOf)
 
 main :: IO ()
 main = do
-    xs <- lines <$> readFile "2015/data/day05.txt"
+    xs <- lines <$> readFile "2015/Day05/day05.txt"
     print $ length . filter isNice1 $ xs
     print $ length . filter isNice2 $ xs
 

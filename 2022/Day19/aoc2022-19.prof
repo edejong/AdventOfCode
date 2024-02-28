@@ -1,42 +1,72 @@
-	Fri Feb 16 18:58 2024 Time and Allocation Profiling Report  (Final)
+	Sat Mar  2 10:04 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2022-19 +RTS -N -p -hy -l-agu -RTS
+	   aoc2022-19 +RTS -N -i0.05 -p -hy -l-agu -s2022/Day19/aoc2022-19.stats -RTS
 
-	total time  =       10.02 secs   (37106 ticks @ 1000 us, 8 processors)
-	total alloc = 209,191,466,448 bytes  (excludes profiling overheads)
+	total time  =       16.97 secs   (62878 ticks @ 1000 us, 8 processors)
+	total alloc = 273,395,291,464 bytes  (excludes profiling overheads)
 
-COST CENTRE MODULE SRC                                             %time %alloc
+COST CENTRE                   MODULE SRC                                              %time %alloc
 
-maxGeodes   Main   2022/Day19/NotEnoughMinerals.hs:(20,1)-(33,74)   64.1   79.5
-wait        Main   2022/Day19/NotEnoughMinerals.hs:43:1-47          22.6   18.5
-timeNeeded  Main   2022/Day19/NotEnoughMinerals.hs:(36,1)-(40,55)   13.3    2.0
+maxGeodes.maxGeodes'.xs       Main   2022/Day19/NotEnoughMinerals.hs:(26,13)-(31,45)   34.6   53.8
+maxGeodes.maxGeodes'          Main   2022/Day19/NotEnoughMinerals.hs:(23,5)-(33,74)    16.7   16.2
+timeNeeded                    Main   2022/Day19/NotEnoughMinerals.hs:(36,1)-(40,55)    15.2    1.5
+wait                          Main   2022/Day19/NotEnoughMinerals.hs:43:1-47           13.9   14.2
+timeNeeded.timeNeeded'        Main   2022/Day19/NotEnoughMinerals.hs:(39,5)-(40,55)     6.0    0.8
+maxGeodes.maxGeodes'.xs.(...) Main   2022/Day19/NotEnoughMinerals.hs:30:21-56           4.9    9.0
+maxGeodes.maxGeodes'.\        Main   2022/Day19/NotEnoughMinerals.hs:33:46-64           2.5    0.0
+maxGeodes.maxGeodes'.x        Main   2022/Day19/NotEnoughMinerals.hs:32:13-36           2.4    3.3
+maxGeodes.maxGeodes'.xs.dt    Main   2022/Day19/NotEnoughMinerals.hs:28:21-52           1.8    0.0
+maxGeodes.maxGeodes'.reject   Main   2022/Day19/NotEnoughMinerals.hs:25:13-63           1.1    1.3
 
 
-                                                                                                                  individual      inherited
-COST CENTRE       MODULE                        SRC                                            no.     entries  %time %alloc   %time %alloc
+                                                                                                                                     individual      inherited
+COST CENTRE                         MODULE                        SRC                                             no.     entries  %time %alloc   %time %alloc
 
-MAIN              MAIN                          <built-in>                                     356           0    0.0    0.0   100.0  100.0
- CAF              Main                          <entire-module>                                710           0    0.0    0.0     0.0    0.0
-  main            Main                          2022/Day19/NotEnoughMinerals.hs:(8,1)-(15,123) 712           1    0.0    0.0     0.0    0.0
-   maxGeodes      Main                          2022/Day19/NotEnoughMinerals.hs:(20,1)-(33,74) 718           0    0.0    0.0     0.0    0.0
-    basis         Linear.Vector                 src/Linear/Vector.hs:317:1-46                  719           0    0.0    0.0     0.0    0.0
-     basisFor     Linear.Vector                 src/Linear/Vector.hs:(322,1)-(326,32)          720           1    0.0    0.0     0.0    0.0
-      runIndexed  Control.Lens.Internal.Indexed src/Control/Lens/Internal/Indexed.hs:116:35-44 722           1    0.0    0.0     0.0    0.0
-      runIndexing Control.Lens.Internal.Indexed src/Control/Lens/Internal/Indexed.hs:242:35-45 721           1    0.0    0.0     0.0    0.0
-  basisFor        Linear.Vector                 src/Linear/Vector.hs:(322,1)-(326,32)          723           0    0.0    0.0     0.0    0.0
-   runIndexed     Control.Lens.Internal.Indexed src/Control/Lens/Internal/Indexed.hs:116:35-44 725          19    0.0    0.0     0.0    0.0
-   runIndexing    Control.Lens.Internal.Indexed src/Control/Lens/Internal/Indexed.hs:242:35-45 724           4    0.0    0.0     0.0    0.0
- CAF              GHC.Conc.Signal               <entire-module>                                470           0    0.0    0.0     0.0    0.0
- CAF              GHC.IO.Encoding               <entire-module>                                452           0    0.0    0.0     0.0    0.0
- CAF              GHC.IO.Encoding.Iconv         <entire-module>                                450           0    0.0    0.0     0.0    0.0
- CAF              GHC.IO.Exception              <entire-module>                                444           0    0.0    0.0     0.0    0.0
- CAF              GHC.IO.FD                     <entire-module>                                443           0    0.0    0.0     0.0    0.0
- CAF              GHC.IO.Handle.FD              <entire-module>                                441           0    0.0    0.0     0.0    0.0
- CAF              GHC.IO.Handle.Internals       <entire-module>                                440           0    0.0    0.0     0.0    0.0
- CAF              GHC.Read                      <entire-module>                                423           0    0.0    0.0     0.0    0.0
- CAF              GHC.Event.Thread              <entire-module>                                376           0    0.0    0.0     0.0    0.0
- main             Main                          2022/Day19/NotEnoughMinerals.hs:(8,1)-(15,123) 713           0    0.0    0.0   100.0  100.0
-  maxGeodes       Main                          2022/Day19/NotEnoughMinerals.hs:(20,1)-(33,74) 714          33   64.1   79.5   100.0  100.0
-   wait           Main                          2022/Day19/NotEnoughMinerals.hs:43:1-47        715   323067628   22.6   18.5    22.6   18.5
-   timeNeeded     Main                          2022/Day19/NotEnoughMinerals.hs:(36,1)-(40,55) 716   256568692   13.3    2.0    13.3    2.0
-   basis          Linear.Vector                 src/Linear/Vector.hs:317:1-46                  717    86738714    0.0    0.0     0.0    0.0
+MAIN                                MAIN                          <built-in>                                      356           0    0.0    0.0   100.0  100.0
+ CAF                                Main                          <entire-module>                                 710           0    0.0    0.0     0.0    0.0
+  main                              Main                          2022/Day19/NotEnoughMinerals.hs:(8,1)-(15,123)  712           1    0.0    0.0     0.0    0.0
+   main.parseBlueprint              Main                          2022/Day19/NotEnoughMinerals.hs:14:5-103        726           1    0.0    0.0     0.0    0.0
+    main.parseBlueprint.\           Main                          2022/Day19/NotEnoughMinerals.hs:14:44-94        730           0    0.0    0.0     0.0    0.0
+   main.maxG                        Main                          2022/Day19/NotEnoughMinerals.hs:10:9-58         732           0    0.0    0.0     0.0    0.0
+    maxGeodes                       Main                          2022/Day19/NotEnoughMinerals.hs:(20,1)-(33,74)  733           0    0.0    0.0     0.0    0.0
+     maxGeodes.maxGeodes'           Main                          2022/Day19/NotEnoughMinerals.hs:(23,5)-(33,74)  734           0    0.0    0.0     0.0    0.0
+      maxGeodes.maxGeodes'.xs       Main                          2022/Day19/NotEnoughMinerals.hs:(26,13)-(31,45) 735           0    0.0    0.0     0.0    0.0
+       basis                        Linear.Vector                 src/Linear/Vector.hs:317:1-46                   736           0    0.0    0.0     0.0    0.0
+        basisFor                    Linear.Vector                 src/Linear/Vector.hs:(322,1)-(326,32)           737           1    0.0    0.0     0.0    0.0
+         runIndexed                 Control.Lens.Internal.Indexed src/Control/Lens/Internal/Indexed.hs:116:35-44  739           1    0.0    0.0     0.0    0.0
+         runIndexing                Control.Lens.Internal.Indexed src/Control/Lens/Internal/Indexed.hs:242:35-45  738           1    0.0    0.0     0.0    0.0
+  basisFor                          Linear.Vector                 src/Linear/Vector.hs:(322,1)-(326,32)           740           0    0.0    0.0     0.0    0.0
+   runIndexed                       Control.Lens.Internal.Indexed src/Control/Lens/Internal/Indexed.hs:116:35-44  748          19    0.0    0.0     0.0    0.0
+   runIndexing                      Control.Lens.Internal.Indexed src/Control/Lens/Internal/Indexed.hs:242:35-45  747           4    0.0    0.0     0.0    0.0
+ CAF                                GHC.Conc.Signal               <entire-module>                                 470           0    0.0    0.0     0.0    0.0
+ CAF                                GHC.IO.Encoding               <entire-module>                                 452           0    0.0    0.0     0.0    0.0
+ CAF                                GHC.IO.Encoding.Iconv         <entire-module>                                 450           0    0.0    0.0     0.0    0.0
+ CAF                                GHC.IO.Exception              <entire-module>                                 444           0    0.0    0.0     0.0    0.0
+ CAF                                GHC.IO.FD                     <entire-module>                                 443           0    0.0    0.0     0.0    0.0
+ CAF                                GHC.IO.Handle.FD              <entire-module>                                 441           0    0.0    0.0     0.0    0.0
+ CAF                                GHC.IO.Handle.Internals       <entire-module>                                 440           0    0.0    0.0     0.0    0.0
+ CAF                                GHC.Read                      <entire-module>                                 423           0    0.0    0.0     0.0    0.0
+ CAF                                GHC.Event.Thread              <entire-module>                                 376           0    0.0    0.0     0.0    0.0
+ main                               Main                          2022/Day19/NotEnoughMinerals.hs:(8,1)-(15,123)  713           0    0.0    0.0   100.0  100.0
+  main.maxG                         Main                          2022/Day19/NotEnoughMinerals.hs:10:9-58         714          33    0.0    0.0   100.0  100.0
+   maxGeodes                        Main                          2022/Day19/NotEnoughMinerals.hs:(20,1)-(33,74)  715          33    0.0    0.0   100.0  100.0
+    maxGeodes.maxGeodes'            Main                          2022/Day19/NotEnoughMinerals.hs:(23,5)-(33,74)  716   323067661   16.7   16.2   100.0  100.0
+     maxGeodes.maxGeodes'.\         Main                          2022/Day19/NotEnoughMinerals.hs:33:46-64        723   323067628    2.5    0.0     2.5    0.0
+     maxGeodes.maxGeodes'.reject    Main                          2022/Day19/NotEnoughMinerals.hs:25:13-63        724    86738714    1.1    1.3     1.1    1.3
+     maxGeodes.maxGeodes'.x         Main                          2022/Day19/NotEnoughMinerals.hs:32:13-36        721    86738714    2.4    3.3     5.7    7.1
+      wait                          Main                          2022/Day19/NotEnoughMinerals.hs:43:1-47         722    86738714    3.3    3.8     3.3    3.8
+     maxGeodes.maxGeodes'.xs        Main                          2022/Day19/NotEnoughMinerals.hs:(26,13)-(31,45) 717    86738714   34.6   53.8    74.0   75.4
+      maxGeodes.maxGeodes'.xs.dt    Main                          2022/Day19/NotEnoughMinerals.hs:28:21-52        718   256568692    1.8    0.0    23.1    2.3
+       timeNeeded                   Main                          2022/Day19/NotEnoughMinerals.hs:(36,1)-(40,55)  719   256568692   15.2    1.5    21.3    2.3
+        timeNeeded.timeNeeded'      Main                          2022/Day19/NotEnoughMinerals.hs:(39,5)-(40,55)  720  1026274768    6.0    0.8     6.0    0.8
+        timeNeeded.mask             Main                          2022/Day19/NotEnoughMinerals.hs:38:5-24         741   256568692    0.0    0.0     0.0    0.0
+      maxGeodes.maxGeodes'.xs.(...) Main                          2022/Day19/NotEnoughMinerals.hs:30:21-56        743   236328914    4.9    9.0    15.4   19.4
+       wait                         Main                          2022/Day19/NotEnoughMinerals.hs:43:1-47         744   236328914   10.6   10.4    10.6   10.4
+      maxGeodes.maxGeodes'.xs.ms    Main                          2022/Day19/NotEnoughMinerals.hs:30:21-56        745   236328914    0.0    0.0     0.0    0.0
+      maxGeodes.maxGeodes'.xs.t'    Main                          2022/Day19/NotEnoughMinerals.hs:30:21-56        742   236328914    0.8    0.0     0.8    0.0
+      basis                         Linear.Vector                 src/Linear/Vector.hs:317:1-46                   731    86738714    0.0    0.0     0.0    0.0
+      maxGeodes.maxGeodes'.xs.rs    Main                          2022/Day19/NotEnoughMinerals.hs:30:21-56        746    86738681    0.0    0.0     0.0    0.0
+    maxGeodes.maxRobots             Main                          2022/Day19/NotEnoughMinerals.hs:22:5-40         725          33    0.0    0.0     0.0    0.0
+  main.parseBlueprint               Main                          2022/Day19/NotEnoughMinerals.hs:14:5-103        727           0    0.0    0.0     0.0    0.0
+   main.mkBlueprint                 Main                          2022/Day19/NotEnoughMinerals.hs:15:5-123        728          30    0.0    0.0     0.0    0.0
+   main.parseBlueprint.\            Main                          2022/Day19/NotEnoughMinerals.hs:14:44-94        729          30    0.0    0.0     0.0    0.0

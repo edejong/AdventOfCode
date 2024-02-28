@@ -1,0 +1,27 @@
+'/Users/erikdejong/Projects/advent_of_code/dist-newstyle/build/aarch64-osx/ghc-9.4.8/adventOfCode-0.1.0.0/x/aoc2022-21/opt/build/aoc2022-21/aoc2022-21' +RTS '-N' '-i0.05' '-p' '-hy' '-l-agu' '-s2022/Day21/aoc2022-21.stats' 
+         557,992 bytes allocated in the heap
+         111,216 bytes copied during GC
+         155,000 bytes maximum residency (1 sample(s))
+          86,664 bytes maximum slop
+              42 MiB total memory in use (0 MB lost due to fragmentation)
+
+                                     Tot time (elapsed)  Avg pause  Max pause
+  Gen  0         0 colls,     0 par    0.000s   0.000s     0.0000s    0.0000s
+  Gen  1         1 colls,     0 par    0.000s   0.001s     0.0011s    0.0011s
+
+  TASKS: 18 (1 bound, 17 peak workers (17 total), using -N8)
+
+  SPARKS: 0 (0 converted, 0 overflowed, 0 dud, 0 GC'd, 0 fizzled)
+
+  INIT    time    0.001s  (  0.007s elapsed)
+  MUT     time    0.005s  (  0.006s elapsed)
+  GC      time    0.000s  (  0.001s elapsed)
+  RP      time    0.000s  (  0.000s elapsed)
+  PROF    time    0.000s  (  0.000s elapsed)
+  EXIT    time    0.000s  (  0.001s elapsed)
+  Total   time    0.006s  (  0.014s elapsed)
+
+  Alloc rate    120,699,113 bytes per MUT second
+
+  Productivity  81.3% of total user, 40.1% of total elapsed
+

@@ -1,17 +1,17 @@
-	Sat Feb 24 15:59 2024 Time and Allocation Profiling Report  (Final)
+	Thu Feb 29 11:50 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2021-09 +RTS -N -p -hy -l-agu -RTS
+	   aoc2021-09 +RTS -N -i0.001 -p -hy -l-agu -s2021/Day09/aoc2021-09.stats -RTS
 
-	total time  =        0.00 secs   (11 ticks @ 1000 us, 8 processors)
-	total alloc =  18,488,848 bytes  (excludes profiling overheads)
+	total time  =        0.00 secs   (9 ticks @ 1000 us, 8 processors)
+	total alloc =  18,488,776 bytes  (excludes profiling overheads)
 
 COST CENTRE     MODULE SRC                                      %time %alloc
 
-dfs.dfs'        Main   2021/Day09/SmokeBasin.hs:(28,5)-(32,39)   45.5    7.4
-neighbours      Main   2021/Day09/SmokeBasin.hs:(16,1)-(18,84)   18.2   41.8
-main            Main   2021/Day09/SmokeBasin.hs:(9,1)-(13,78)    18.2   15.5
-MAIN            MAIN   <built-in>                                 9.1    0.7
-main.lowPoints  Main   2021/Day09/SmokeBasin.hs:11:7-112          9.1   20.0
+dfs.dfs'        Main   2021/Day09/SmokeBasin.hs:(28,5)-(32,39)   33.3    7.4
+MAIN            MAIN   <built-in>                                22.2    0.7
+neighbours      Main   2021/Day09/SmokeBasin.hs:(16,1)-(18,84)   22.2   41.8
+main.lowPoints  Main   2021/Day09/SmokeBasin.hs:11:7-112         11.1   20.0
+main            Main   2021/Day09/SmokeBasin.hs:(9,1)-(13,78)    11.1   15.5
 gridFrom.coords Main   2021/Day09/SmokeBasin.hs:23:5-80           0.0    7.4
 dfs.dfs'.js     Main   2021/Day09/SmokeBasin.hs:31:25-83          0.0    6.5
 
@@ -19,7 +19,7 @@ dfs.dfs'.js     Main   2021/Day09/SmokeBasin.hs:31:25-83          0.0    6.5
                                                                                                              individual      inherited
 COST CENTRE               MODULE                  SRC                                     no.     entries  %time %alloc   %time %alloc
 
-MAIN                      MAIN                    <built-in>                              130           0    9.1    0.7   100.0  100.0
+MAIN                      MAIN                    <built-in>                              130           0   22.2    0.7   100.0  100.0
  CAF                      Main                    <entire-module>                         259           0    0.0    0.0     0.0    0.0
   main                    Main                    2021/Day09/SmokeBasin.hs:(9,1)-(13,78)  260           1    0.0    0.0     0.0    0.0
  CAF                      GHC.Conc.Signal         <entire-module>                         235           0    0.0    0.0     0.0    0.0
@@ -30,16 +30,16 @@ MAIN                      MAIN                    <built-in>                    
  CAF                      GHC.IO.Handle.FD        <entire-module>                         206           0    0.0    0.2     0.0    0.2
  CAF                      GHC.IO.Handle.Internals <entire-module>                         205           0    0.0    0.0     0.0    0.0
  CAF                      GHC.Event.Thread        <entire-module>                         150           0    0.0    0.0     0.0    0.0
- main                     Main                    2021/Day09/SmokeBasin.hs:(9,1)-(13,78)  261           0   18.2   15.5    90.9   99.0
-  dfs                     Main                    2021/Day09/SmokeBasin.hs:(26,1)-(33,22) 267         346    0.0    0.0    54.5   31.6
-   dfs.dfs'               Main                    2021/Day09/SmokeBasin.hs:(28,5)-(32,39) 268       22020   45.5    7.4    54.5   31.6
-    dfs.dfs'.js           Main                    2021/Day09/SmokeBasin.hs:31:25-83       269        7374    0.0    6.5     9.1   24.2
+ main                     Main                    2021/Day09/SmokeBasin.hs:(9,1)-(13,78)  261           0   11.1   15.5    77.8   99.0
+  dfs                     Main                    2021/Day09/SmokeBasin.hs:(26,1)-(33,22) 267         346    0.0    0.0    44.4   31.6
+   dfs.dfs'               Main                    2021/Day09/SmokeBasin.hs:(28,5)-(32,39) 268       22020   33.3    7.4    44.4   31.6
+    dfs.dfs'.js           Main                    2021/Day09/SmokeBasin.hs:31:25-83       269        7374    0.0    6.5    11.1   24.2
      dfs.dfs'.js.\        Main                    2021/Day09/SmokeBasin.hs:31:45-58       273       29177    0.0    0.0     0.0    0.0
-     neighbours           Main                    2021/Day09/SmokeBasin.hs:(16,1)-(18,84) 271        7374    9.1   17.8     9.1   17.8
+     neighbours           Main                    2021/Day09/SmokeBasin.hs:(16,1)-(18,84) 271        7374   11.1   17.8    11.1   17.8
       neighbours.inBounds Main                    2021/Day09/SmokeBasin.hs:18:5-84        272       29496    0.0    0.0     0.0    0.0
    dfs.bnds               Main                    2021/Day09/SmokeBasin.hs:33:5-22        270           1    0.0    0.0     0.0    0.0
   gridFrom                Main                    2021/Day09/SmokeBasin.hs:(21,1)-(23,80) 263           1    0.0    0.4     0.0    7.8
    gridFrom.coords        Main                    2021/Day09/SmokeBasin.hs:23:5-80        264           1    0.0    7.4     0.0    7.4
-  main.lowPoints          Main                    2021/Day09/SmokeBasin.hs:11:7-112       262           1    9.1   20.0    18.2   44.1
-   neighbours             Main                    2021/Day09/SmokeBasin.hs:(16,1)-(18,84) 265       10000    9.1   24.1     9.1   24.1
+  main.lowPoints          Main                    2021/Day09/SmokeBasin.hs:11:7-112       262           1   11.1   20.0    22.2   44.1
+   neighbours             Main                    2021/Day09/SmokeBasin.hs:(16,1)-(18,84) 265       10000   11.1   24.1    11.1   24.1
     neighbours.inBounds   Main                    2021/Day09/SmokeBasin.hs:18:5-84        266       40000    0.0    0.0     0.0    0.0

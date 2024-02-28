@@ -1,40 +1,119 @@
-	Wed Feb 14 08:58 2024 Time and Allocation Profiling Report  (Final)
+	Thu Feb 29 21:18 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2023-20 +RTS -N -p -hy -l-agu -RTS
+	   aoc2023-20 +RTS -N -i0.05 -p -hy -l-agu -s2023/Day20/aoc2023-20.stats -RTS
 
-	total time  =        0.05 secs   (180 ticks @ 1000 us, 8 processors)
-	total alloc = 524,441,664 bytes  (excludes profiling overheads)
+	total time  =        0.06 secs   (223 ticks @ 1000 us, 8 processors)
+	total alloc = 457,024,336 bytes  (excludes profiling overheads)
 
-COST CENTRE  MODULE    SRC                                            %time %alloc
+COST CENTRE                 MODULE    SRC                                            %time %alloc
 
-processQueue Main      2023/Day20/PulsePropagation.hs:(62,1)-(73,22)   61.1   69.0
-processPulse Main      2023/Day20/PulsePropagation.hs:(76,1)-(95,57)   36.7   30.8
-main         Main      2023/Day20/PulsePropagation.hs:(12,1)-(24,33)    1.7    0.1
+processQueue.updateSrc      Main      2023/Day20/PulsePropagation.hs:(72,5)-(73,22)   18.8    1.5
+processQueue.monitorSrc     Main      2023/Day20/PulsePropagation.hs:64:9-40          13.5   16.8
+processQueue                Main      2023/Day20/PulsePropagation.hs:(62,1)-(73,22)   13.0   28.0
+processPulse.(...)          Main      2023/Day20/PulsePropagation.hs:77:9-30          10.3    0.0
+processPulse.setModuleState Main      2023/Day20/PulsePropagation.hs:94:5-74           7.2   14.2
+processQueue.updateTotal    Main      2023/Day20/PulsePropagation.hs:71:5-71           6.7   11.4
+processPulse.getModuleState Main      2023/Day20/PulsePropagation.hs:93:5-42           6.3    0.0
+processPulse                Main      2023/Day20/PulsePropagation.hs:(76,1)-(95,57)    4.5   16.8
+processPulse.ps             Main      2023/Day20/PulsePropagation.hs:(86,9)-(90,19)    3.1    0.5
+processQueue.c'             Main      2023/Day20/PulsePropagation.hs:65:9-99           2.7    1.8
+processPulse.st'            Main      2023/Day20/PulsePropagation.hs:(80,9)-(84,18)    2.7    0.3
+processPulse.input          Main      2023/Day20/PulsePropagation.hs:78:9-52           2.7    0.0
+processPulse.bcast          Main      2023/Day20/PulsePropagation.hs:95:5-57           2.7    7.3
+processQueue.c'.\           Main      2023/Day20/PulsePropagation.hs:65:33-54          2.2    0.0
+processQueue.(...)          Main      2023/Day20/PulsePropagation.hs:66:9-44           1.3    0.0
+processQueue.updateCounter  Main      2023/Day20/PulsePropagation.hs:(69,5)-(70,40)    0.9    1.3
 
 
-                                                                                                             individual      inherited
-COST CENTRE         MODULE                  SRC                                           no.     entries  %time %alloc   %time %alloc
+                                                                                                                              individual      inherited
+COST CENTRE                          MODULE                  SRC                                           no.     entries  %time %alloc   %time %alloc
 
-MAIN                MAIN                    <built-in>                                    198           0    0.6    0.0   100.0  100.0
- CAF                Main                    <entire-module>                               395           0    0.0    0.0     0.0    0.0
-  inputP            Main                    2023/Day20/PulsePropagation.hs:(40,1)-(44,25) 402           1    0.0    0.0     0.0    0.0
-  main              Main                    2023/Day20/PulsePropagation.hs:(12,1)-(24,33) 396           1    0.0    0.0     0.0    0.0
- CAF                GHC.Conc.Signal         <entire-module>                               307           0    0.0    0.0     0.0    0.0
- CAF                GHC.IO.Encoding         <entire-module>                               289           0    0.0    0.0     0.0    0.0
- CAF                GHC.IO.Encoding.Iconv   <entire-module>                               287           0    0.0    0.0     0.0    0.0
- CAF                GHC.IO.Exception        <entire-module>                               281           0    0.0    0.0     0.0    0.0
- CAF                GHC.IO.FD               <entire-module>                               280           0    0.0    0.0     0.0    0.0
- CAF                GHC.IO.Handle.FD        <entire-module>                               278           0    0.0    0.0     0.0    0.0
- CAF                GHC.IO.Handle.Internals <entire-module>                               277           0    0.0    0.0     0.0    0.0
- CAF                GHC.Event.Thread        <entire-module>                               218           0    0.0    0.0     0.0    0.0
- main               Main                    2023/Day20/PulsePropagation.hs:(12,1)-(24,33) 397           0    1.7    0.1    99.4  100.0
-  counters          Main                    2023/Day20/PulsePropagation.hs:37:29-36       407       16926    0.0    0.0     0.0    0.0
-  pushButton        Main                    2023/Day20/PulsePropagation.hs:59:1-86        398           2    0.0    0.0    97.8   99.8
-   processQueue     Main                    2023/Day20/PulsePropagation.hs:(62,1)-(73,22) 400      346895   61.1   69.0    97.8   99.8
-    processPulse    Main                    2023/Day20/PulsePropagation.hs:(76,1)-(95,57) 401      341874   36.7   30.8    36.7   30.8
-     ==             Main                    2023/Day20/PulsePropagation.hs:26:75-76       406      143590    0.0    0.0     0.0    0.0
-  mkStateWithCounts Main                    2023/Day20/PulsePropagation.hs:(54,1)-(56,36) 399           1    0.0    0.0     0.0    0.0
-  mkSystemState     Main                    2023/Day20/PulsePropagation.hs:(47,1)-(51,25) 404           1    0.0    0.0     0.0    0.0
-   ==               Main                    2023/Day20/PulsePropagation.hs:26:75-76       405          58    0.0    0.0     0.0    0.0
-  st                Main                    2023/Day20/PulsePropagation.hs:37:66-67       408           1    0.0    0.0     0.0    0.0
-  inputP            Main                    2023/Day20/PulsePropagation.hs:(40,1)-(44,25) 403           0    0.0    0.1     0.0    0.1
+MAIN                                 MAIN                    <built-in>                                    198           0    0.4    0.0   100.0  100.0
+ CAF                                 Main                    <entire-module>                               394           0    0.0    0.0     0.0    0.0
+  inputP                             Main                    2023/Day20/PulsePropagation.hs:(40,1)-(44,25) 404           1    0.0    0.0     0.0    0.0
+   inputP.edgeP                      Main                    2023/Day20/PulsePropagation.hs:42:5-94        406           1    0.0    0.0     0.0    0.0
+   inputP.identP                     Main                    2023/Day20/PulsePropagation.hs:44:5-25        408           1    0.0    0.0     0.0    0.0
+  main                               Main                    2023/Day20/PulsePropagation.hs:(12,1)-(24,33) 396           1    0.0    0.0     0.0    0.0
+   main.outputs                      Main                    2023/Day20/PulsePropagation.hs:14:9-61        403           1    0.0    0.0     0.0    0.0
+ CAF                                 GHC.Conc.Signal         <entire-module>                               307           0    0.0    0.0     0.0    0.0
+ CAF                                 GHC.IO.Encoding         <entire-module>                               289           0    0.0    0.0     0.0    0.0
+ CAF                                 GHC.IO.Encoding.Iconv   <entire-module>                               287           0    0.0    0.0     0.0    0.0
+ CAF                                 GHC.IO.Exception        <entire-module>                               281           0    0.0    0.0     0.0    0.0
+ CAF                                 GHC.IO.FD               <entire-module>                               280           0    0.0    0.0     0.0    0.0
+ CAF                                 GHC.IO.Handle.FD        <entire-module>                               278           0    0.0    0.0     0.0    0.0
+ CAF                                 GHC.IO.Handle.Internals <entire-module>                               277           0    0.0    0.0     0.0    0.0
+ CAF                                 GHC.Event.Thread        <entire-module>                               218           0    0.0    0.0     0.0    0.0
+ main                                Main                    2023/Day20/PulsePropagation.hs:(12,1)-(24,33) 397           0    0.4    0.0    99.6  100.0
+  counters                           Main                    2023/Day20/PulsePropagation.hs:37:29-36       443           5    0.0    0.0     0.0    0.0
+  main.f                             Main                    2023/Day20/PulsePropagation.hs:21:9-100       448           4    0.4    0.0    78.9   79.3
+   counters                          Main                    2023/Day20/PulsePropagation.hs:37:29-36       468       15920    0.0    0.0     0.0    0.0
+   pushButton                        Main                    2023/Day20/PulsePropagation.hs:59:1-86        449           1    0.0    0.0    78.5   79.2
+    processQueue                     Main                    2023/Day20/PulsePropagation.hs:(62,1)-(73,22) 450      277909    9.9   22.5    78.5   79.2
+     processQueue.(...)              Main                    2023/Day20/PulsePropagation.hs:66:9-44        451      273889    1.3    0.0    30.9   31.3
+      processPulse                   Main                    2023/Day20/PulsePropagation.hs:(76,1)-(95,57) 452      273889    3.6   13.4    29.6   31.3
+       processPulse.(...)            Main                    2023/Day20/PulsePropagation.hs:77:9-30        453      273889    6.7    0.0     6.7    0.0
+       processPulse.ps               Main                    2023/Day20/PulsePropagation.hs:(86,9)-(90,19) 456      273889    2.2    0.4     4.9    6.3
+        processPulse.bcast           Main                    2023/Day20/PulsePropagation.hs:95:5-57        457      119302    2.7    5.8     2.7    5.8
+       processPulse.t                Main                    2023/Day20/PulsePropagation.hs:77:9-30        454      273889    0.0    0.0     0.0    0.0
+       processPulse.st'              Main                    2023/Day20/PulsePropagation.hs:(80,9)-(84,18) 461      273861    1.8    0.2     7.6   11.6
+        processPulse.updateState     Main                    2023/Day20/PulsePropagation.hs:79:9-53        462      142973    0.0    0.0     4.9   11.3
+         processPulse.setModuleState Main                    2023/Day20/PulsePropagation.hs:94:5-74        463      142973    4.9   11.3     4.9   11.3
+        processPulse.getModuleState  Main                    2023/Day20/PulsePropagation.hs:93:5-42        467       32169    0.9    0.0     0.9    0.0
+       processPulse.dsts             Main                    2023/Day20/PulsePropagation.hs:77:9-30        458      119302    0.0    0.0     0.0    0.0
+       processPulse.input            Main                    2023/Day20/PulsePropagation.hs:78:9-52        465      114993    2.7    0.0     2.7    0.0
+        ==                           Main                    2023/Day20/PulsePropagation.hs:26:75-76       466      114993    0.0    0.0     0.0    0.0
+       processPulse.newVal           Main                    2023/Day20/PulsePropagation.hs:85:9-40        459       87294    0.0    0.0     4.0    0.0
+        processPulse.getModuleState  Main                    2023/Day20/PulsePropagation.hs:93:5-42        460       87294    4.0    0.0     4.0    0.0
+     processQueue.ps                 Main                    2023/Day20/PulsePropagation.hs:66:9-44        455      273889    0.0    0.0     0.0    0.0
+     processQueue.st'                Main                    2023/Day20/PulsePropagation.hs:66:9-44        464      273860    0.0    0.0     0.0    0.0
+     processQueue.c'                 Main                    2023/Day20/PulsePropagation.hs:65:9-99        469      273848    1.8    1.4    26.5   12.1
+      processQueue.c'.\              Main                    2023/Day20/PulsePropagation.hs:65:33-54       471     1369240    2.2    0.0    18.8    1.5
+       processQueue.updateSrc        Main                    2023/Day20/PulsePropagation.hs:(72,5)-(73,22) 472     1369240   16.1    1.2    16.6    1.5
+        processQueue.updateCounter   Main                    2023/Day20/PulsePropagation.hs:(69,5)-(70,40) 474       31441    0.4    0.3     0.4    0.3
+      processQueue.updateTotal       Main                    2023/Day20/PulsePropagation.hs:71:5-71        470      273848    5.8    9.1     5.8    9.1
+     processQueue.monitorSrc         Main                    2023/Day20/PulsePropagation.hs:64:9-40        473      273848   11.2   13.4    11.2   13.4
+  main.cfg                           Main                    2023/Day20/PulsePropagation.hs:15:9-79        402           1    0.0    0.0     0.0    0.0
+  main.lcm'                          Main                    2023/Day20/PulsePropagation.hs:24:5-33        447           1    0.0    0.0     0.0    0.0
+  main.monitorSrc                    Main                    2023/Day20/PulsePropagation.hs:20:9-49        445           1    0.0    0.0     0.0    0.0
+   st                                Main                    2023/Day20/PulsePropagation.hs:37:66-67       446           1    0.0    0.0     0.0    0.0
+  main.st0                           Main                    2023/Day20/PulsePropagation.hs:16:9-52        400           1    0.0    0.0     0.0    0.0
+   mkStateWithCounts                 Main                    2023/Day20/PulsePropagation.hs:(54,1)-(56,36) 401           1    0.0    0.0     0.0    0.0
+    mkStateWithCounts.monitorSrc     Main                    2023/Day20/PulsePropagation.hs:56:5-36        436           1    0.0    0.0     0.0    0.0
+   mkSystemState                     Main                    2023/Day20/PulsePropagation.hs:(47,1)-(51,25) 426           1    0.0    0.0     0.0    0.0
+    mkSystemState.cs                 Main                    2023/Day20/PulsePropagation.hs:48:9-78        427           1    0.0    0.0     0.0    0.0
+     ==                              Main                    2023/Day20/PulsePropagation.hs:26:75-76       428          58    0.0    0.0     0.0    0.0
+    mkSystemState.cs'                Main                    2023/Day20/PulsePropagation.hs:49:9-141       430           1    0.0    0.0     0.0    0.0
+     mkSystemState.cs'.\             Main                    2023/Day20/PulsePropagation.hs:49:52-89       431         109    0.0    0.0     0.0    0.0
+    mkSystemState.os                 Main                    2023/Day20/PulsePropagation.hs:50:9-109       429           1    0.0    0.0     0.0    0.0
+  main.st1                           Main                    2023/Day20/PulsePropagation.hs:17:9-106       398           1    0.0    0.0    20.2   20.6
+   counters                          Main                    2023/Day20/PulsePropagation.hs:37:29-36       435        1001    0.0    0.0     0.0    0.0
+   pushButton                        Main                    2023/Day20/PulsePropagation.hs:59:1-86        399           1    0.0    0.0    20.2   20.5
+    processQueue                     Main                    2023/Day20/PulsePropagation.hs:(62,1)-(73,22) 411       68986    3.1    5.6    20.2   20.5
+     processQueue.(...)              Main                    2023/Day20/PulsePropagation.hs:66:9-44        412       67985    0.0    0.0     9.9    7.8
+      processPulse                   Main                    2023/Day20/PulsePropagation.hs:(76,1)-(95,57) 413       67985    0.9    3.3     9.9    7.8
+       processPulse.(...)            Main                    2023/Day20/PulsePropagation.hs:77:9-30        414       67985    3.6    0.0     3.6    0.0
+       processPulse.ps               Main                    2023/Day20/PulsePropagation.hs:(86,9)-(90,19) 417       67985    0.9    0.1     0.9    1.6
+        processPulse.bcast           Main                    2023/Day20/PulsePropagation.hs:95:5-57        418       29606    0.0    1.4     0.0    1.4
+       processPulse.t                Main                    2023/Day20/PulsePropagation.hs:77:9-30        415       67985    0.0    0.0     0.0    0.0
+       processPulse.st'              Main                    2023/Day20/PulsePropagation.hs:(80,9)-(84,18) 422       67957    0.9    0.1     3.6    2.9
+        processPulse.updateState     Main                    2023/Day20/PulsePropagation.hs:79:9-53        423       35468    0.0    0.0     2.2    2.8
+         processPulse.setModuleState Main                    2023/Day20/PulsePropagation.hs:94:5-74        424       35468    2.2    2.8     2.2    2.8
+        processPulse.getModuleState  Main                    2023/Day20/PulsePropagation.hs:93:5-42        434        7980    0.4    0.0     0.4    0.0
+       processPulse.dsts             Main                    2023/Day20/PulsePropagation.hs:77:9-30        419       29606    0.0    0.0     0.0    0.0
+       processPulse.input            Main                    2023/Day20/PulsePropagation.hs:78:9-52        432       28597    0.0    0.0     0.0    0.0
+        ==                           Main                    2023/Day20/PulsePropagation.hs:26:75-76       433       28597    0.0    0.0     0.0    0.0
+       processPulse.newVal           Main                    2023/Day20/PulsePropagation.hs:85:9-40        420       28597    0.0    0.0     0.9    0.0
+        processPulse.getModuleState  Main                    2023/Day20/PulsePropagation.hs:93:5-42        421       28597    0.9    0.0     0.9    0.0
+     processQueue.ps                 Main                    2023/Day20/PulsePropagation.hs:66:9-44        416       67985    0.0    0.0     0.0    0.0
+     processQueue.st'                Main                    2023/Day20/PulsePropagation.hs:66:9-44        425       67956    0.0    0.0     0.0    0.0
+     processQueue.c'                 Main                    2023/Day20/PulsePropagation.hs:65:9-99        437       67944    0.9    0.4     4.9    3.9
+      processQueue.c'.\              Main                    2023/Day20/PulsePropagation.hs:65:33-54       439      339720    0.0    0.0     2.7    0.3
+       processQueue.updateSrc        Main                    2023/Day20/PulsePropagation.hs:(72,5)-(73,22) 440      339720    2.7    0.3     2.7    0.3
+        processQueue.updateCounter   Main                    2023/Day20/PulsePropagation.hs:(69,5)-(70,40) 442        1000    0.0    0.0     0.0    0.0
+      processQueue.updateTotal       Main                    2023/Day20/PulsePropagation.hs:71:5-71        438       67944    0.9    2.3     1.3    3.2
+       processQueue.updateCounter    Main                    2023/Day20/PulsePropagation.hs:(69,5)-(70,40) 444       67944    0.4    1.0     0.4    1.0
+     processQueue.monitorSrc         Main                    2023/Day20/PulsePropagation.hs:64:9-40        441       67944    2.2    3.3     2.2    3.3
+  inputP                             Main                    2023/Day20/PulsePropagation.hs:(40,1)-(44,25) 405           0    0.0    0.0     0.0    0.1
+   inputP.moduleTypeP                Main                    2023/Day20/PulsePropagation.hs:43:5-105       407          59    0.0    0.0     0.0    0.0
+   inputP.identP                     Main                    2023/Day20/PulsePropagation.hs:44:5-25        409           0    0.0    0.0     0.0    0.1
+    inputP.moduleTypeP               Main                    2023/Day20/PulsePropagation.hs:43:5-105       410           0    0.0    0.0     0.0    0.0

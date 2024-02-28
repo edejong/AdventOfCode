@@ -1,20 +1,17 @@
-module Day17.PyroclasticFlow where
-import Control.Monad.State.Strict
-    ( modify', MonadState(get), replicateM_, modify, evalState, State )
-import Debug.Trace (trace, traceM)
-import Data.Maybe (fromJust)
-import Data.Set (Set)
-import qualified Data.Set as S
+import           Control.Monad.State.Strict (MonadState (get), State, evalState,
+                                             modify, modify', replicateM_)
+import           Data.Maybe                 (fromJust)
+import qualified Data.Set                   as S
 
 main :: IO ()
 main = do
-    xs <- readFile "2022/data/day17.txt"
+    xs <- readFile "2022/Day17/day17.txt"
     let h1 = evalState (calcTowerHeight 2022) (mkState xs)
     let h2 = evalState (calcTowerHeight 1000000000000) (mkState xs)
     print (h1, h2)
 
 shapes :: [Shape]
-shapes = 
+shapes =
   [
     ["####"]
 
@@ -35,13 +32,16 @@ shapes =
     , "##" ]
   ]
 
+constTunnelWidth :: Int
 constTunnelWidth = 7
+constStartX :: Int
 constStartX = 2
+constStartHeight :: Int
 constStartHeight = 3
 
 type Shape = [[Char]]
 type Tunnel = [[Char]]
-data Rock = Rock { x :: Int, shape :: Shape }
+data Rock = Rock { _x :: Int, _shape :: Shape }
 data MyState = MyState { maybeRock :: Maybe Rock, rockCount :: Int, tunnel :: Tunnel, jetPattern :: [Char], jetId :: Int, jetLen :: Int }
 
 shapeWidth :: Shape -> Int
@@ -58,7 +58,7 @@ nextShape s = rockCount s `mod` 5
 
 calcTowerHeight :: Int -> State MyState Int
 calcTowerHeight n = do
-  (cycleJetId, cycleShape) <- findCycle' 1 S.empty
+  (cycleJetId, cycleShape) <- findCycle' (1 :: Int) S.empty
   s1 <- get
   spawnAndDropRocksUntil (\s -> jetId s == cycleJetId && nextShape s == cycleShape)
   s2 <- get
@@ -70,11 +70,11 @@ calcTowerHeight n = do
   (+ (cycles * cycleHeight)) . towerHeight <$> get
   where
     towerHeight = length . trimEmpty . tunnel
-    findCycle' n set = do
+    findCycle' n' set = do
       spawnRock >> dropRock
       s <- get
       let tmp = (jetId s, nextShape s)
-      if tmp `S.member` set then return tmp else findCycle' (n + 1) (S.insert tmp set)
+      if tmp `S.member` set then return tmp else findCycle' (n' + 1) (S.insert tmp set)
 
 spawnAndDropRocksUntil :: (MyState -> Bool) -> State MyState ()
 spawnAndDropRocksUntil f = do
@@ -82,9 +82,9 @@ spawnAndDropRocksUntil f = do
   s <- get
   if f s then return () else spawnAndDropRocksUntil f
 
-spawnAndDropRocks :: Int -> State MyState ()
-spawnAndDropRocks n = do
-  replicateM_ n (spawnRock >> dropRock)
+-- spawnAndDropRocks :: Int -> State MyState ()
+-- spawnAndDropRocks n = do
+--   replicateM_ n (spawnRock >> dropRock)
 
 spawnRock :: State MyState ()
 spawnRock = do
@@ -148,19 +148,19 @@ collides (Rock x shape) tunnel
 merge :: Rock -> Tunnel -> Char -> Tunnel
 merge (Rock x (rs:rss)) (ts:tss) c = mergeRow c x rs ts : merge (Rock x rss) tss c
   where
-    mergeRow c 0 (r:rs) (t:ts) = (if r /= '.' then c else t) : mergeRow c 0 rs ts
-    mergeRow c n rs (t:ts) = t : mergeRow c (n-1) rs ts
-    mergeRow _ _ [] ts = ts
+    mergeRow c' 0 (r:rs') (t:ts') = (if r /= '.' then c' else t) : mergeRow c' 0 rs' ts'
+    mergeRow c' n rs' (t:ts') = t : mergeRow c' (n-1) rs' ts'
+    mergeRow _ _ [] ts' = ts'
     mergeRow _ _ _ [] = []
 merge _ tss _ = tss
 
 traceState :: String -> State MyState ()
-traceState msg = return () -- traceM msg >> get >>= traceM . drawState
+traceState _msg = return () -- traceM msg >> get >>= traceM . drawState
 
-drawState :: MyState -> String
-drawState (MyState maybeRock _ tunnel _ _ _) = drawTunnel maybeRock tunnel
+-- drawState :: MyState -> String
+-- drawState (MyState maybeRock _ tunnel _ _ _) = drawTunnel maybeRock tunnel
 
-drawTunnel :: Maybe Rock -> Tunnel -> String
-drawTunnel maybeRock tunnel =
-  let tunnel' = maybe tunnel (\rock -> merge rock tunnel '@') maybeRock
-  in unlines tunnel'
+-- drawTunnel :: Maybe Rock -> Tunnel -> String
+-- drawTunnel maybeRock tunnel =
+--   let tunnel' = maybe tunnel (\rock -> merge rock tunnel '@') maybeRock
+--   in unlines tunnel'

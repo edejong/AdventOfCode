@@ -1,22 +1,22 @@
-	Sat Feb 24 15:58 2024 Time and Allocation Profiling Report  (Final)
+	Thu Feb 29 11:50 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2021-07 +RTS -N -p -hy -l-agu -RTS
+	   aoc2021-07 +RTS -N -i0.001 -p -hy -l-agu -s2021/Day07/aoc2021-07.stats -RTS
 
-	total time  =        0.07 secs   (266 ticks @ 1000 us, 8 processors)
-	total alloc = 805,237,144 bytes  (excludes profiling overheads)
+	total time  =        0.09 secs   (330 ticks @ 1000 us, 8 processors)
+	total alloc = 805,237,240 bytes  (excludes profiling overheads)
 
 COST CENTRE  MODULE    SRC                                             %time %alloc
 
-main.minFuel Main      2021/Day07/TheTreacherOfWhales.hs:(8,5)-(9,87)   87.6   95.4
+main.minFuel Main      2021/Day07/TheTreacherOfWhales.hs:(8,5)-(9,87)   86.7   95.4
 main         Main      2021/Day07/TheTreacherOfWhales.hs:(4,1)-(9,87)    6.4    0.5
-main.\       Main      2021/Day07/TheTreacherOfWhales.hs:6:40-58         4.9    3.9
+main.\       Main      2021/Day07/TheTreacherOfWhales.hs:6:40-58         6.1    3.9
 
 
                                                                                                                      individual      inherited
 COST CENTRE           MODULE                    SRC                                               no.     entries  %time %alloc   %time %alloc
 
-MAIN                  MAIN                      <built-in>                                        130           0    0.8    0.0   100.0  100.0
- CAF                  Main                      <entire-module>                                   258           0    0.0    0.0     0.0    0.0
+MAIN                  MAIN                      <built-in>                                        130           0    0.3    0.0   100.0  100.0
+ CAF                  Main                      <entire-module>                                   259           0    0.3    0.0     0.3    0.0
   main                Main                      2021/Day07/TheTreacherOfWhales.hs:(4,1)-(9,87)    260           1    0.0    0.0     0.0    0.0
    splitOn            Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         268           0    0.0    0.0     0.0    0.0
     dropDelims        Data.List.Split.Internals src/Data/List/Split/Internals.hs:320:1-37         270           1    0.0    0.0     0.0    0.0
@@ -32,22 +32,22 @@ MAIN                  MAIN                      <built-in>                      
  CAF                  GHC.IO.Handle.Internals   <entire-module>                                   205           0    0.0    0.0     0.0    0.0
  CAF                  GHC.Read                  <entire-module>                                   190           0    0.0    0.0     0.0    0.0
  CAF                  GHC.Event.Thread          <entire-module>                                   150           0    0.0    0.0     0.0    0.0
- main                 Main                      2021/Day07/TheTreacherOfWhales.hs:(4,1)-(9,87)    261           0    6.4    0.5    99.2  100.0
-  main.minFuel        Main                      2021/Day07/TheTreacherOfWhales.hs:(8,5)-(9,87)    285           2   87.6   95.4    92.5   99.3
-   main.\             Main                      2021/Day07/TheTreacherOfWhales.hs:6:40-58         288     1959000    4.9    3.9     4.9    3.9
-  splitOn             Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         262           1    0.0    0.0     0.4    0.1
+ main                 Main                      2021/Day07/TheTreacherOfWhales.hs:(4,1)-(9,87)    261           0    6.4    0.5    99.4  100.0
+  main.minFuel        Main                      2021/Day07/TheTreacherOfWhales.hs:(8,5)-(9,87)    285           2   86.7   95.4    92.7   99.3
+   main.\             Main                      2021/Day07/TheTreacherOfWhales.hs:6:40-58         288     1959000    6.1    3.9     6.1    3.9
+  splitOn             Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         262           1    0.0    0.0     0.3    0.1
    onSublist          Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70         267           1    0.0    0.0     0.0    0.0
-   split              Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68         263           1    0.0    0.0     0.4    0.1
+   split              Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68         263           1    0.0    0.0     0.3    0.1
     fromElem          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(124,1)-(125,24) 286        1000    0.0    0.0     0.0    0.0
-    splitInternal     Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71) 273        1000    0.0    0.0     0.0    0.1
+    splitInternal     Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71) 273        1000    0.3    0.0     0.3    0.1
      breakDelim       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34) 276        3899    0.0    0.1     0.0    0.1
       matchDelim      Data.List.Split.Internals src/Data/List/Split/Internals.hs:(72,1)-(76,23)   277        4897    0.0    0.0     0.0    0.0
     delimiter         Data.List.Split.Internals src/Data/List/Split/Internals.hs:22:5-13          274           1    0.0    0.0     0.0    0.0
-    postProcess       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35) 264           1    0.0    0.0     0.4    0.0
+    postProcess       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35) 264           1    0.0    0.0     0.0    0.0
      condensePolicy   Data.List.Split.Internals src/Data/List/Split/Internals.hs:29:5-18          272           1    0.0    0.0     0.0    0.0
      delimPolicy      Data.List.Split.Internals src/Data/List/Split/Internals.hs:24:5-15          266           1    0.0    0.0     0.0    0.0
      doCondense       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(187,1)-(194,20) 271           1    0.0    0.0     0.0    0.0
-     doDrop           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(181,1)-(182,14) 280           1    0.4    0.0     0.4    0.0
+     doDrop           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(181,1)-(182,14) 280           1    0.0    0.0     0.0    0.0
      doMerge          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(216,1)-(218,14) 265           1    0.0    0.0     0.0    0.0
      dropFinal        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(248,1)-(254,17) 283           1    0.0    0.0     0.0    0.0
      dropInitial      Data.List.Split.Internals src/Data/List/Split/Internals.hs:(243,1)-(244,19) 281           1    0.0    0.0     0.0    0.0

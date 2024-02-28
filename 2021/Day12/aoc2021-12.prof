@@ -1,15 +1,15 @@
-	Sat Feb 24 16:03 2024 Time and Allocation Profiling Report  (Final)
+	Thu Feb 29 11:50 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2021-12 +RTS -N -p -hy -l-agu -RTS
+	   aoc2021-12 +RTS -N -i0.001 -p -hy -l-agu -s2021/Day12/aoc2021-12.stats -RTS
 
-	total time  =        0.03 secs   (119 ticks @ 1000 us, 8 processors)
-	total alloc =  33,715,200 bytes  (excludes profiling overheads)
+	total time  =        0.03 secs   (122 ticks @ 1000 us, 8 processors)
+	total alloc =  33,714,936 bytes  (excludes profiling overheads)
 
 COST CENTRE      MODULE SRC                                          %time %alloc
 
-countPaths       Main   2021/Day12/PassagePathing.hs:(18,1)-(26,49)   73.1   11.4
-countPaths.rest  Main   2021/Day12/PassagePathing.hs:26:5-49          21.0   87.7
-countPaths.small Main   2021/Day12/PassagePathing.hs:25:5-30           5.0    0.0
+countPaths       Main   2021/Day12/PassagePathing.hs:(18,1)-(26,49)   72.1   11.4
+countPaths.rest  Main   2021/Day12/PassagePathing.hs:26:5-49          19.7   87.7
+countPaths.small Main   2021/Day12/PassagePathing.hs:25:5-30           6.6    0.0
 
 
                                                                                                                       individual      inherited
@@ -39,10 +39,10 @@ MAIN                   MAIN                      <built-in>                     
  CAF                   GHC.IO.Handle.FD          <entire-module>                                   244           0    0.0    0.1     0.0    0.1
  CAF                   GHC.IO.Handle.Internals   <entire-module>                                   243           0    0.0    0.0     0.0    0.0
  CAF                   GHC.Event.Thread          <entire-module>                                   184           0    0.0    0.0     0.0    0.0
- main                  Main                      2021/Day12/PassagePathing.hs:(9,1)-(15,49)        329           0    0.0    0.2    99.2   99.5
-  countPaths           Main                      2021/Day12/PassagePathing.hs:(18,1)-(26,49)       330     2417008   73.1   11.4    99.2   99.1
-   countPaths.rest     Main                      2021/Day12/PassagePathing.hs:26:5-49              332     1912098   21.0   87.7    21.0   87.7
-   countPaths.small    Main                      2021/Day12/PassagePathing.hs:25:5-30              331      462476    5.0    0.0     5.0    0.0
+ main                  Main                      2021/Day12/PassagePathing.hs:(9,1)-(15,49)        329           0    0.8    0.2    99.2   99.5
+  countPaths           Main                      2021/Day12/PassagePathing.hs:(18,1)-(26,49)       330     2417008   72.1   11.4    98.4   99.1
+   countPaths.rest     Main                      2021/Day12/PassagePathing.hs:26:5-49              332     1912098   19.7   87.7    19.7   87.7
+   countPaths.small    Main                      2021/Day12/PassagePathing.hs:25:5-30              331      462476    6.6    0.0     6.6    0.0
   main.edges           Main                      2021/Day12/PassagePathing.hs:(11,9)-(12,81)       333           1    0.0    0.0     0.0    0.0
    main.edges.\        Main                      2021/Day12/PassagePathing.hs:12:32-43             363          46    0.0    0.0     0.0    0.0
    main.edges.\        Main                      2021/Day12/PassagePathing.hs:12:61-76             361          23    0.0    0.0     0.0    0.0

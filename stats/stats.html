@@ -1,0 +1,32 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <div>
+            <!-- <p></p> -->
+            <dl>
+                <dt>Beast of Bodmin</dt>
+                <dd>A large feline inhabiting Bodmin Moor.</dd>
+              
+                <dt>Morgawr</dt>
+                <dd>A sea serpent.</dd>
+              
+                <dt>Owlman</dt>
+                <dd>A giant owl-like creature.</dd>
+              </dl>
+        </div>
+        <div>
+            <object data="../aoc2022-01.prof.svg" type="image/svg+xml" id="flamegraph"></object>
+        </div>
+        <script src='./stats.js'></script>
+        <script>
+            const params = new URLSearchParams(document.location.search);
+            const year = params.get('year');
+            const day = params.get('day');
+            const name = params.get('name');
+            const proj = `aoc${year}-${day}`;
+            const fg = document.getElementById('flamegraph');
+            fg.data = `../${proj}.prof.svg`;
+        </script>
+    </body>
+</html>

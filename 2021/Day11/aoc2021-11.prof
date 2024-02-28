@@ -1,28 +1,29 @@
-	Sat Feb 24 16:01 2024 Time and Allocation Profiling Report  (Final)
+	Thu Feb 29 11:50 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2021-11 +RTS -N -p -hy -l-agu -RTS
+	   aoc2021-11 +RTS -N -i0.001 -p -hy -l-agu -s2021/Day11/aoc2021-11.stats -RTS
 
-	total time  =        0.00 secs   (6 ticks @ 1000 us, 8 processors)
-	total alloc =  31,978,848 bytes  (excludes profiling overheads)
+	total time  =        0.00 secs   (11 ticks @ 1000 us, 8 processors)
+	total alloc =  31,978,800 bytes  (excludes profiling overheads)
 
 COST CENTRE         MODULE SRC                                        %time %alloc
 
-neighbours          Main   2021/Day11/DumboOctopus.hs:(44,1)-(46,84)   33.3   21.4
-inc.flashPoints     Main   2021/Day11/DumboOctopus.hs:40:5-79          33.3    1.2
-MAIN                MAIN   <built-in>                                  16.7    0.4
-step.grid1'         Main   2021/Day11/DumboOctopus.hs:25:5-90          16.7    3.3
-step.(...)          Main   2021/Day11/DumboOctopus.hs:24:5-54           0.0   14.5
+inc.flashPoints     Main   2021/Day11/DumboOctopus.hs:40:5-79          27.3    1.2
+MAIN                MAIN   <built-in>                                  18.2    0.4
+neighbours          Main   2021/Day11/DumboOctopus.hs:(44,1)-(46,84)   18.2   21.4
+step.(...)          Main   2021/Day11/DumboOctopus.hs:24:5-54           9.1   14.5
+main                Main   2021/Day11/DumboOctopus.hs:(11,1)-(19,24)    9.1    0.2
+flash.increments'.\ Main   2021/Day11/DumboOctopus.hs:32:52-75          9.1   33.1
+flash.increments'   Main   2021/Day11/DumboOctopus.hs:32:5-99           9.1    6.5
+step.grid1'         Main   2021/Day11/DumboOctopus.hs:25:5-90           0.0    3.3
 inc.grid'           Main   2021/Day11/DumboOctopus.hs:39:5-29           0.0    7.5
 inc                 Main   2021/Day11/DumboOctopus.hs:(36,1)-(41,41)    0.0    1.1
-flash.increments'.\ Main   2021/Day11/DumboOctopus.hs:32:52-75          0.0   33.1
-flash.increments'   Main   2021/Day11/DumboOctopus.hs:32:5-99           0.0    6.5
 flash.increments    Main   2021/Day11/DumboOctopus.hs:31:5-69           0.0    9.5
 
 
                                                                                                                    individual      inherited
 COST CENTRE                   MODULE                  SRC                                       no.     entries  %time %alloc   %time %alloc
 
-MAIN                          MAIN                    <built-in>                                164           0   16.7    0.4   100.0  100.0
+MAIN                          MAIN                    <built-in>                                164           0   18.2    0.4   100.0  100.0
  CAF                          Main                    <entire-module>                           327           0    0.0    0.0     0.0    0.0
   main                        Main                    2021/Day11/DumboOctopus.hs:(11,1)-(19,24) 328           1    0.0    0.0     0.0    0.0
  CAF                          GHC.Conc.Signal         <entire-module>                           273           0    0.0    0.0     0.0    0.0
@@ -33,13 +34,13 @@ MAIN                          MAIN                    <built-in>                
  CAF                          GHC.IO.Handle.FD        <entire-module>                           244           0    0.0    0.1     0.0    0.1
  CAF                          GHC.IO.Handle.Internals <entire-module>                           243           0    0.0    0.0     0.0    0.0
  CAF                          GHC.Event.Thread        <entire-module>                           184           0    0.0    0.0     0.0    0.0
- main                         Main                    2021/Day11/DumboOctopus.hs:(11,1)-(19,24) 329           0    0.0    0.2    83.3   99.4
+ main                         Main                    2021/Day11/DumboOctopus.hs:(11,1)-(19,24) 329           0    9.1    0.2    81.8   99.4
   main.(...)                  Main                    2021/Day11/DumboOctopus.hs:18:9-84        357           1    0.0    0.0     0.0    0.1
    main.(...).\               Main                    2021/Day11/DumboOctopus.hs:18:46-65       359         228    0.0    0.1     0.0    0.1
-  main.(...)                  Main                    2021/Day11/DumboOctopus.hs:17:9-52        331           1    0.0    0.0    33.3   31.4
-   step                       Main                    2021/Day11/DumboOctopus.hs:(22,1)-(25,90) 332         100    0.0    0.0    33.3   31.4
-    step.(...)                Main                    2021/Day11/DumboOctopus.hs:24:5-54        334         100    0.0    4.4    16.7   30.3
-     inc                      Main                    2021/Day11/DumboOctopus.hs:(36,1)-(41,41) 337         549    0.0    0.4    16.7   25.9
+  main.(...)                  Main                    2021/Day11/DumboOctopus.hs:17:9-52        331           1    0.0    0.0     0.0   31.4
+   step                       Main                    2021/Day11/DumboOctopus.hs:(22,1)-(25,90) 332         100    0.0    0.0     0.0   31.4
+    step.(...)                Main                    2021/Day11/DumboOctopus.hs:24:5-54        334         100    0.0    4.4     0.0   30.3
+     inc                      Main                    2021/Day11/DumboOctopus.hs:(36,1)-(41,41) 337         549    0.0    0.4     0.0   25.9
       inc.(...)               Main                    2021/Day11/DumboOctopus.hs:41:5-41        339         549    0.0    0.0     0.0   22.7
        flash                  Main                    2021/Day11/DumboOctopus.hs:(28,1)-(33,37) 340         549    0.0    0.2     0.0   22.7
         flash.(...)           Main                    2021/Day11/DumboOctopus.hs:33:5-37        354         449    0.0    0.0     0.0    0.0
@@ -50,33 +51,33 @@ MAIN                          MAIN                    <built-in>                
          flash.increments'.\  Main                    2021/Day11/DumboOctopus.hs:32:52-75       353       11468    0.0   10.4     0.0   10.4
         flash.n               Main                    2021/Day11/DumboOctopus.hs:33:5-37        348         449    0.0    0.0     0.0    0.0
         flash.grid'           Main                    2021/Day11/DumboOctopus.hs:33:5-37        355         443    0.0    0.0     0.0    0.0
-      inc.flashPoints         Main                    2021/Day11/DumboOctopus.hs:40:5-79        341         549   16.7    0.4    16.7    0.4
+      inc.flashPoints         Main                    2021/Day11/DumboOctopus.hs:40:5-79        341         549    0.0    0.4     0.0    0.4
        inc.flashPoints.x      Main                    2021/Day11/DumboOctopus.hs:40:43-54       342       18698    0.0    0.0     0.0    0.0
       inc.n                   Main                    2021/Day11/DumboOctopus.hs:41:5-41        338         549    0.0    0.0     0.0    0.0
       inc.grid'               Main                    2021/Day11/DumboOctopus.hs:39:5-29        346         548    0.0    2.4     0.0    2.4
       inc.grid''              Main                    2021/Day11/DumboOctopus.hs:41:5-41        345         542    0.0    0.0     0.0    0.0
     step.n'                   Main                    2021/Day11/DumboOctopus.hs:24:5-54        333         100    0.0    0.0     0.0    0.0
     step.grid1                Main                    2021/Day11/DumboOctopus.hs:24:5-54        344          99    0.0    0.0     0.0    0.0
-    step.grid1'               Main                    2021/Day11/DumboOctopus.hs:25:5-90        343          99   16.7    1.0    16.7    1.0
+    step.grid1'               Main                    2021/Day11/DumboOctopus.hs:25:5-90        343          99    0.0    1.0     0.0    1.0
      step.grid1'.\            Main                    2021/Day11/DumboOctopus.hs:25:51-73       347        9900    0.0    0.0     0.0    0.0
   main.bnds                   Main                    2021/Day11/DumboOctopus.hs:13:9-57        335           1    0.0    0.0     0.0    0.0
   main.grid                   Main                    2021/Day11/DumboOctopus.hs:14:9-41        336           1    0.0    0.0     0.0    0.0
   main.n                      Main                    2021/Day11/DumboOctopus.hs:17:9-52        330           1    0.0    0.0     0.0    0.0
   main.n'                     Main                    2021/Day11/DumboOctopus.hs:18:9-84        356           1    0.0    0.0     0.0    0.0
-  main.steps                  Main                    2021/Day11/DumboOctopus.hs:15:9-38        358           1    0.0    0.1    50.0   67.7
-   step                       Main                    2021/Day11/DumboOctopus.hs:(22,1)-(25,90) 360         227    0.0    0.1    50.0   67.6
-    step.(...)                Main                    2021/Day11/DumboOctopus.hs:24:5-54        363         227    0.0   10.1    50.0   65.2
-     inc                      Main                    2021/Day11/DumboOctopus.hs:(36,1)-(41,41) 364        1118    0.0    0.7    50.0   55.1
-      inc.(...)               Main                    2021/Day11/DumboOctopus.hs:41:5-41        366        1118    0.0    0.0    33.3   48.5
-       flash                  Main                    2021/Day11/DumboOctopus.hs:(28,1)-(33,37) 367        1118    0.0    0.3    33.3   48.5
+  main.steps                  Main                    2021/Day11/DumboOctopus.hs:15:9-38        358           1    0.0    0.1    72.7   67.7
+   step                       Main                    2021/Day11/DumboOctopus.hs:(22,1)-(25,90) 360         227    0.0    0.1    72.7   67.6
+    step.(...)                Main                    2021/Day11/DumboOctopus.hs:24:5-54        363         227    9.1   10.1    72.7   65.2
+     inc                      Main                    2021/Day11/DumboOctopus.hs:(36,1)-(41,41) 364        1118    0.0    0.7    63.6   55.1
+      inc.(...)               Main                    2021/Day11/DumboOctopus.hs:41:5-41        366        1118    0.0    0.0    36.4   48.5
+       flash                  Main                    2021/Day11/DumboOctopus.hs:(28,1)-(33,37) 367        1118    0.0    0.3    36.4   48.5
         flash.(...)           Main                    2021/Day11/DumboOctopus.hs:33:5-37        378         891    0.0    0.1     0.0    0.1
         flash.grid'           Main                    2021/Day11/DumboOctopus.hs:33:5-37        372         891    0.0    0.0     0.0    0.0
-        flash.increments      Main                    2021/Day11/DumboOctopus.hs:31:5-69        373         891    0.0    6.5    33.3   21.1
-         neighbours           Main                    2021/Day11/DumboOctopus.hs:(44,1)-(46,84) 374        3560   33.3   14.6    33.3   14.6
+        flash.increments      Main                    2021/Day11/DumboOctopus.hs:31:5-69        373         891    0.0    6.5    18.2   21.1
+         neighbours           Main                    2021/Day11/DumboOctopus.hs:(44,1)-(46,84) 374        3560   18.2   14.6    18.2   14.6
           neighbours.inBounds Main                    2021/Day11/DumboOctopus.hs:46:5-84        375       28480    0.0    0.0     0.0    0.0
-        flash.increments'     Main                    2021/Day11/DumboOctopus.hs:32:5-99        376         891    0.0    4.3     0.0   27.0
-         flash.increments'.\  Main                    2021/Day11/DumboOctopus.hs:32:52-75       377       24522    0.0   22.7     0.0   22.7
-      inc.flashPoints         Main                    2021/Day11/DumboOctopus.hs:40:5-79        368        1118   16.7    0.8    16.7    0.8
+        flash.increments'     Main                    2021/Day11/DumboOctopus.hs:32:5-99        376         891    9.1    4.3    18.2   27.0
+         flash.increments'.\  Main                    2021/Day11/DumboOctopus.hs:32:52-75       377       24522    9.1   22.7     9.1   22.7
+      inc.flashPoints         Main                    2021/Day11/DumboOctopus.hs:40:5-79        368        1118   27.3    0.8    27.3    0.8
        inc.flashPoints.x      Main                    2021/Day11/DumboOctopus.hs:40:43-54       369       40044    0.0    0.0     0.0    0.0
       inc.grid'               Main                    2021/Day11/DumboOctopus.hs:39:5-29        370        1118    0.0    5.1     0.0    5.1
       inc.grid''              Main                    2021/Day11/DumboOctopus.hs:41:5-41        365        1118    0.0    0.0     0.0    0.0

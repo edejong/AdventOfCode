@@ -1,4 +1,4 @@
-import           Control.Applicative (liftA3, Applicative (liftA2))
+import           Control.Applicative (Applicative (liftA2), liftA3)
 import           Control.Lens
 import           Data.Foldable       (toList)
 import           GHC.Base            (when)

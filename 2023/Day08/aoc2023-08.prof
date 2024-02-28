@@ -1,27 +1,41 @@
-	Tue Feb 13 22:20 2024 Time and Allocation Profiling Report  (Final)
+	Thu Feb 29 20:40 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2023-08 +RTS -N -p -hy -l-agu -RTS
+	   aoc2023-08 +RTS -N -i0.05 -p -hy -l-agu -s2023/Day08/aoc2023-08.stats -RTS
 
-	total time  =        0.04 secs   (163 ticks @ 1000 us, 8 processors)
-	total alloc = 323,068,480 bytes  (excludes profiling overheads)
+	total time  =        0.05 secs   (173 ticks @ 1000 us, 8 processors)
+	total alloc = 330,111,080 bytes  (excludes profiling overheads)
 
-COST CENTRE MODULE SRC                                           %time %alloc
+COST CENTRE       MODULE SRC                                            %time %alloc
 
-main        Main   2023/Day08/HauntedWasteland.hs:(5,1)-(17,66)   99.4   99.9
+main.nodes        Main   2023/Day08/HauntedWasteland.hs:10:7-169         56.6   75.3
+main.followRoute  Main   2023/Day08/HauntedWasteland.hs:(16,5)-(17,66)   31.2    5.7
+main.nodes.\      Main   2023/Day08/HauntedWasteland.hs:10:55-164         8.1   13.9
+main.cycleLengths Main   2023/Day08/HauntedWasteland.hs:11:7-76           1.7    3.7
+main              Main   2023/Day08/HauntedWasteland.hs:(5,1)-(17,66)     1.7    0.7
 
 
-                                                                                                     individual      inherited
-COST CENTRE  MODULE                  SRC                                          no.     entries  %time %alloc   %time %alloc
+                                                                                                             individual      inherited
+COST CENTRE         MODULE                  SRC                                           no.     entries  %time %alloc   %time %alloc
 
-MAIN         MAIN                    <built-in>                                   163           0    0.6    0.0   100.0  100.0
- CAF         Main                    <entire-module>                              325           0    0.0    0.0     0.0    0.0
-  main       Main                    2023/Day08/HauntedWasteland.hs:(5,1)-(17,66) 326           1    0.0    0.0     0.0    0.0
- CAF         GHC.Conc.Signal         <entire-module>                              272           0    0.0    0.0     0.0    0.0
- CAF         GHC.IO.Encoding         <entire-module>                              254           0    0.0    0.0     0.0    0.0
- CAF         GHC.IO.Encoding.Iconv   <entire-module>                              252           0    0.0    0.0     0.0    0.0
- CAF         GHC.IO.Exception        <entire-module>                              246           0    0.0    0.0     0.0    0.0
- CAF         GHC.IO.FD               <entire-module>                              245           0    0.0    0.0     0.0    0.0
- CAF         GHC.IO.Handle.FD        <entire-module>                              243           0    0.0    0.0     0.0    0.0
- CAF         GHC.IO.Handle.Internals <entire-module>                              242           0    0.0    0.0     0.0    0.0
- CAF         GHC.Event.Thread        <entire-module>                              183           0    0.0    0.0     0.0    0.0
- main        Main                    2023/Day08/HauntedWasteland.hs:(5,1)-(17,66) 327           0   99.4   99.9    99.4   99.9
+MAIN                MAIN                    <built-in>                                    163           0    0.6    0.0   100.0  100.0
+ CAF                Main                    <entire-module>                               325           0    0.0    0.0     0.0    0.0
+  main              Main                    2023/Day08/HauntedWasteland.hs:(5,1)-(17,66)  326           1    0.0    0.0     0.0    0.0
+ CAF                GHC.Conc.Signal         <entire-module>                               272           0    0.0    0.0     0.0    0.0
+ CAF                GHC.IO.Encoding         <entire-module>                               254           0    0.0    0.0     0.0    0.0
+ CAF                GHC.IO.Encoding.Iconv   <entire-module>                               252           0    0.0    0.0     0.0    0.0
+ CAF                GHC.IO.Exception        <entire-module>                               246           0    0.0    0.0     0.0    0.0
+ CAF                GHC.IO.FD               <entire-module>                               245           0    0.0    0.0     0.0    0.0
+ CAF                GHC.IO.Handle.FD        <entire-module>                               243           0    0.0    0.0     0.0    0.0
+ CAF                GHC.IO.Handle.Internals <entire-module>                               242           0    0.0    0.0     0.0    0.0
+ CAF                GHC.Event.Thread        <entire-module>                               183           0    0.0    0.0     0.0    0.0
+ main               Main                    2023/Day08/HauntedWasteland.hs:(5,1)-(17,66)  327           0    1.7    0.7    99.4   99.9
+  main.cycleLengths Main                    2023/Day08/HauntedWasteland.hs:11:7-76        333           1    1.7    3.7    32.9    9.4
+   main.isStart     Main                    2023/Day08/HauntedWasteland.hs:(14,5)-(15,21) 334      216778    0.0    0.0     0.0    0.0
+   main.followRoute Main                    2023/Day08/HauntedWasteland.hs:(16,5)-(17,66) 335      107546   31.2    5.7    31.2    5.7
+  main.len          Main                    2023/Day08/HauntedWasteland.hs:8:7-24         337           1    0.0    0.0     0.0    0.0
+  main.nodes        Main                    2023/Day08/HauntedWasteland.hs:10:7-169       329           1   56.6   75.3    64.7   89.7
+   main.nodes.\     Main                    2023/Day08/HauntedWasteland.hs:10:55-164      331         766    8.1   13.9     8.1   14.4
+    main.nodes.\.i' Main                    2023/Day08/HauntedWasteland.hs:10:69-92       336      107534    0.0    0.5     0.0    0.5
+  main.route        Main                    2023/Day08/HauntedWasteland.hs:7:7-21         332           1    0.0    0.0     0.0    0.0
+  main.tmp          Main                    2023/Day08/HauntedWasteland.hs:9:7-93         328           1    0.0    0.0     0.0    0.1
+   main.tmp.\       Main                    2023/Day08/HauntedWasteland.hs:9:24-78        330         766    0.0    0.1     0.0    0.1

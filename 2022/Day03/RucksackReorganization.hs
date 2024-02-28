@@ -1,13 +1,11 @@
-module Day03.RucksackReorganization where
-import qualified Data.Set as Set
-import Data.Set (fromList)
-import Data.Char (isLower, ord)
-import Data.List (foldl')
-import Data.List.Split (chunksOf)
+import           Data.Char       (isLower, ord)
+import           Data.List       (foldl')
+import           Data.List.Split (chunksOf)
+import qualified Data.Set        as Set
 
 main :: IO ()
 main = do
-    xss <- lines <$> readFile "2022/data/day03.txt"
+    xss <- lines <$> readFile "2022/Day03/day03.txt"
     print (getResult (map split) xss, getResult (chunksOf 3) xss)
   where
     getResult f = sum . map (sum . map priority . intersections) . f

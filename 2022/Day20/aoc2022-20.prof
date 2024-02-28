@@ -1,20 +1,21 @@
-	Fri Feb 16 23:13 2024 Time and Allocation Profiling Report  (Final)
+	Thu Feb 29 21:55 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2022-20 +RTS -N -p -hy -l-agu -RTS
+	   aoc2022-20 +RTS -N -i0.05 -p -hy -l-agu -s2022/Day20/aoc2022-20.stats -RTS
 
-	total time  =        0.57 secs   (2116 ticks @ 1000 us, 8 processors)
-	total alloc = 5,650,413,712 bytes  (excludes profiling overheads)
+	total time  =        0.60 secs   (2210 ticks @ 1000 us, 8 processors)
+	total alloc = 5,650,413,520 bytes  (excludes profiling overheads)
 
 COST CENTRE MODULE SRC                                                  %time %alloc
 
-mix         Main   2022/Day20/GrovePositioningSystem.hs:(20,1)-(26,21)   96.6   96.6
-mix.(...)   Main   2022/Day20/GrovePositioningSystem.hs:23:17-50          1.5    1.7
+mix         Main   2022/Day20/GrovePositioningSystem.hs:(20,1)-(26,21)   96.5   96.6
+mix.(...)   Main   2022/Day20/GrovePositioningSystem.hs:23:17-50          1.4    1.7
+insertAt    Main   2022/Day20/GrovePositioningSystem.hs:(29,1)-(31,53)    1.0    1.0
 
 
                                                                                                                          individual      inherited
 COST CENTRE               MODULE                  SRC                                                 no.     entries  %time %alloc   %time %alloc
 
-MAIN                      MAIN                    <built-in>                                          157           0    0.2    0.0   100.0  100.0
+MAIN                      MAIN                    <built-in>                                          157           0    0.0    0.0   100.0  100.0
  CAF                      Main                    <entire-module>                                     312           0    0.0    0.0     0.0    0.0
   main                    Main                    2022/Day20/GrovePositioningSystem.hs:(7,1)-(10,46)  314           1    0.0    0.0     0.0    0.0
  CAF                      GHC.Conc.Signal         <entire-module>                                     266           0    0.0    0.0     0.0    0.0
@@ -27,20 +28,20 @@ MAIN                      MAIN                    <built-in>                    
  CAF                      GHC.Read                <entire-module>                                     220           0    0.0    0.0     0.0    0.0
  CAF                      Text.Read.Lex           <entire-module>                                     196           0    0.0    0.0     0.0    0.0
  CAF                      GHC.Event.Thread        <entire-module>                                     177           0    0.0    0.0     0.0    0.0
- main                     Main                    2022/Day20/GrovePositioningSystem.hs:(7,1)-(10,46)  315           0    0.7    0.6    99.8  100.0
-  decrypt                 Main                    2022/Day20/GrovePositioningSystem.hs:(13,1)-(17,80) 316           2    0.0    0.0    99.1   99.4
+ main                     Main                    2022/Day20/GrovePositioningSystem.hs:(7,1)-(10,46)  315           0    0.5    0.6   100.0  100.0
+  decrypt                 Main                    2022/Day20/GrovePositioningSystem.hs:(13,1)-(17,80) 316           2    0.0    0.0    99.5   99.4
    decrypt.i              Main                    2022/Day20/GrovePositioningSystem.hs:16:9-47        333           2    0.0    0.0     0.0    0.0
-   decrypt.xs'            Main                    2022/Day20/GrovePositioningSystem.hs:15:9-61        317           2    0.0    0.0    99.1   99.4
-    decrypt.mix'          Main                    2022/Day20/GrovePositioningSystem.hs:14:9-38        318           2    0.0    0.0    99.1   99.4
-     mix                  Main                    2022/Day20/GrovePositioningSystem.hs:(20,1)-(26,21) 319       55011   96.6   96.6    99.1   99.4
-      mix.(...)           Main                    2022/Day20/GrovePositioningSystem.hs:24:17-60       324       55000    0.1    0.0     0.9    1.1
-       insertCyclic       Main                    2022/Day20/GrovePositioningSystem.hs:(34,1)-(41,53) 325       55000    0.0    0.0     0.9    1.1
-        insertAt          Main                    2022/Day20/GrovePositioningSystem.hs:(29,1)-(31,53) 332       55000    0.7    1.0     0.7    1.0
-        insertCyclic.i'   Main                    2022/Day20/GrovePositioningSystem.hs:41:5-53        329       55000    0.1    0.1     0.1    0.1
-        insertCyclic.len  Main                    2022/Day20/GrovePositioningSystem.hs:40:5-19        328       55000    0.0    0.0     0.0    0.0
+   decrypt.xs'            Main                    2022/Day20/GrovePositioningSystem.hs:15:9-61        317           2    0.0    0.0    99.5   99.4
+    decrypt.mix'          Main                    2022/Day20/GrovePositioningSystem.hs:14:9-38        318           2    0.0    0.0    99.5   99.4
+     mix                  Main                    2022/Day20/GrovePositioningSystem.hs:(20,1)-(26,21) 319       55011   96.5   96.6    99.5   99.4
+      mix.(...)           Main                    2022/Day20/GrovePositioningSystem.hs:24:17-60       324       55000    0.0    0.0     1.5    1.1
+       insertCyclic       Main                    2022/Day20/GrovePositioningSystem.hs:(34,1)-(41,53) 325       55000    0.1    0.0     1.5    1.1
+        insertAt          Main                    2022/Day20/GrovePositioningSystem.hs:(29,1)-(31,53) 332       55000    1.0    1.0     1.0    1.0
+        insertCyclic.i'   Main                    2022/Day20/GrovePositioningSystem.hs:41:5-53        329       55000    0.3    0.1     0.3    0.1
+        insertCyclic.len  Main                    2022/Day20/GrovePositioningSystem.hs:40:5-19        328       55000    0.1    0.0     0.1    0.0
         insertCyclic.lenL Main                    2022/Day20/GrovePositioningSystem.hs:38:5-39        326       55000    0.0    0.0     0.0    0.0
         insertCyclic.lenR Main                    2022/Day20/GrovePositioningSystem.hs:39:5-39        327       55000    0.0    0.0     0.0    0.0
-      mix.(...)           Main                    2022/Day20/GrovePositioningSystem.hs:23:17-50       320       55000    1.5    1.7     1.5    1.7
+      mix.(...)           Main                    2022/Day20/GrovePositioningSystem.hs:23:17-50       320       55000    1.4    1.7     1.4    1.7
       mix.ls              Main                    2022/Day20/GrovePositioningSystem.hs:23:17-50       323       55000    0.0    0.0     0.0    0.0
       mix.ls2             Main                    2022/Day20/GrovePositioningSystem.hs:24:17-60       330       55000    0.0    0.0     0.0    0.0
       mix.r               Main                    2022/Day20/GrovePositioningSystem.hs:23:17-50       322       55000    0.0    0.0     0.0    0.0

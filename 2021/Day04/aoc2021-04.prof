@@ -1,23 +1,23 @@
-	Sat Feb 24 15:57 2024 Time and Allocation Profiling Report  (Final)
+	Thu Feb 29 11:50 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2021-04 +RTS -N -p -hy -l-agu -RTS
+	   aoc2021-04 +RTS -N -i0.001 -p -hy -l-agu -s2021/Day04/aoc2021-04.stats -RTS
 
-	total time  =        0.00 secs   (4 ticks @ 1000 us, 8 processors)
-	total alloc =  13,462,768 bytes  (excludes profiling overheads)
+	total time  =        0.00 secs   (9 ticks @ 1000 us, 8 processors)
+	total alloc =  13,462,848 bytes  (excludes profiling overheads)
 
 COST CENTRE   MODULE SRC                                 %time %alloc
 
-main.boards   Main   2021/Day04/Bingo.hs:11:7-87          50.0   76.5
-main.numDraws Main   2021/Day04/Bingo.hs:(20,5)-(21,77)   25.0    6.8
-main          Main   2021/Day04/Bingo.hs:(7,1)-(21,77)    25.0   10.2
-MAIN          MAIN   <built-in>                            0.0    1.0
+main.boards   Main   2021/Day04/Bingo.hs:11:7-87          55.6   76.5
+MAIN          MAIN   <built-in>                           22.2    1.0
+main.numDraws Main   2021/Day04/Bingo.hs:(20,5)-(21,77)   11.1    6.8
+main          Main   2021/Day04/Bingo.hs:(7,1)-(21,77)    11.1   10.2
 main.draws    Main   2021/Day04/Bingo.hs:9:7-58            0.0    2.8
 
 
                                                                                                                       individual      inherited
 COST CENTRE            MODULE                    SRC                                               no.     entries  %time %alloc   %time %alloc
 
-MAIN                   MAIN                      <built-in>                                        164           0    0.0    1.0   100.0  100.0
+MAIN                   MAIN                      <built-in>                                        164           0   22.2    1.0   100.0  100.0
  CAF                   Main                      <entire-module>                                   326           0    0.0    0.0     0.0    0.1
   main                 Main                      2021/Day04/Bingo.hs:(7,1)-(21,77)                 328           1    0.0    0.0     0.0    0.1
    main.draws          Main                      2021/Day04/Bingo.hs:9:7-58                        346           0    0.0    0.0     0.0    0.0
@@ -36,10 +36,10 @@ MAIN                   MAIN                      <built-in>                     
  CAF                   GHC.IO.Handle.Internals   <entire-module>                                   243           0    0.0    0.0     0.0    0.0
  CAF                   GHC.Read                  <entire-module>                                   227           0    0.0    0.0     0.0    0.0
  CAF                   GHC.Event.Thread          <entire-module>                                   184           0    0.0    0.0     0.0    0.0
- main                  Main                      2021/Day04/Bingo.hs:(7,1)-(21,77)                 329           0   25.0   10.2   100.0   98.6
+ main                  Main                      2021/Day04/Bingo.hs:(7,1)-(21,77)                 329           0   11.1   10.2    77.8   98.6
   main.(...)           Main                      2021/Day04/Bingo.hs:14:7-67                       370           1    0.0    0.0     0.0    0.0
   main.(...)           Main                      2021/Day04/Bingo.hs:13:7-73                       332           1    0.0    0.0     0.0    0.0
-  main.boards          Main                      2021/Day04/Bingo.hs:11:7-87                       333           1   50.0   76.5    50.0   76.9
+  main.boards          Main                      2021/Day04/Bingo.hs:11:7-87                       333           1   55.6   76.5    55.6   76.9
    chunksOf            Data.List.Split.Internals src/Data/List/Split/Internals.hs:(603,1)-(607,48) 334           1    0.0    0.3     0.0    0.4
     build              Data.List.Split.Internals src/Data/List/Split/Internals.hs:580:1-18         335           1    0.0    0.1     0.0    0.1
   main.draws           Main                      2021/Day04/Bingo.hs:9:7-58                        339           1    0.0    2.8     0.0    3.5
@@ -66,8 +66,8 @@ MAIN                   MAIN                      <built-in>                     
   main.drawsMap        Main                      2021/Day04/Bingo.hs:10:7-57                       338           1    0.0    0.4     0.0    0.4
   main.lastBoard       Main                      2021/Day04/Bingo.hs:14:7-67                       371           1    0.0    0.0     0.0    0.0
   main.lastRound       Main                      2021/Day04/Bingo.hs:14:7-67                       369           1    0.0    0.0     0.0    0.0
-  main.results         Main                      2021/Day04/Bingo.hs:12:7-59                       336           1    0.0    0.1    25.0    6.9
-   main.numDraws       Main                      2021/Day04/Bingo.hs:(20,5)-(21,77)                337         100   25.0    6.8    25.0    6.8
+  main.results         Main                      2021/Day04/Bingo.hs:12:7-59                       336           1    0.0    0.1    11.1    6.9
+   main.numDraws       Main                      2021/Day04/Bingo.hs:(20,5)-(21,77)                337         100   11.1    6.8    11.1    6.8
   main.sumLast         Main                      2021/Day04/Bingo.hs:16:7-68                       368           1    0.0    0.5     0.0    0.5
   main.sumWinner       Main                      2021/Day04/Bingo.hs:15:7-76                       330           1    0.0    0.2     0.0    0.2
   main.winningBoard    Main                      2021/Day04/Bingo.hs:13:7-73                       367           1    0.0    0.0     0.0    0.0

@@ -1,32 +1,39 @@
-	Tue Feb 13 21:47 2024 Time and Allocation Profiling Report  (Final)
+	Thu Feb 29 20:40 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2023-02 +RTS -N -p -hy -l-agu -RTS
+	   aoc2023-02 +RTS -N -i0.05 -p -hy -l-agu -s2023/Day02/aoc2023-02.stats -RTS
 
-	total time  =        0.00 secs   (2 ticks @ 1000 us, 8 processors)
-	total alloc =  12,416,064 bytes  (excludes profiling overheads)
+	total time  =        0.00 secs   (5 ticks @ 1000 us, 8 processors)
+	total alloc =  12,475,656 bytes  (excludes profiling overheads)
 
-COST CENTRE MODULE    SRC                                         %time %alloc
+COST CENTRE   MODULE    SRC                                        %time %alloc
 
-game        Main      2023/Day02/CubeConundrum.hs:(13,1)-(18,30)  100.0   81.1
-MAIN        MAIN      <built-in>                                    0.0    1.1
-main        Main      2023/Day02/CubeConundrum.hs:(6,1)-(10,74)     0.0   17.5
+game.int      Main      2023/Day02/CubeConundrum.hs:18:5-30         60.0   80.2
+MAIN          MAIN      <built-in>                                  20.0    1.1
+main.possible Main      2023/Day02/CubeConundrum.hs:8:9-80          20.0    0.9
+main          Main      2023/Day02/CubeConundrum.hs:(6,1)-(10,74)    0.0   16.4
 
 
-                                                                                                   individual      inherited
-COST CENTRE  MODULE                  SRC                                        no.     entries  %time %alloc   %time %alloc
+                                                                                                      individual      inherited
+COST CENTRE     MODULE                  SRC                                        no.     entries  %time %alloc   %time %alloc
 
-MAIN         MAIN                    <built-in>                                 188           0    0.0    1.1   100.0  100.0
- CAF         Main                    <entire-module>                            375           0    0.0    0.0     0.0    0.0
-  game       Main                    2023/Day02/CubeConundrum.hs:(13,1)-(18,30) 378           1    0.0    0.0     0.0    0.0
-  main       Main                    2023/Day02/CubeConundrum.hs:(6,1)-(10,74)  376           1    0.0    0.0     0.0    0.0
- CAF         GHC.Conc.Signal         <entire-module>                            297           0    0.0    0.0     0.0    0.0
- CAF         GHC.IO.Encoding         <entire-module>                            279           0    0.0    0.0     0.0    0.0
- CAF         GHC.IO.Encoding.Iconv   <entire-module>                            277           0    0.0    0.0     0.0    0.0
- CAF         GHC.IO.Exception        <entire-module>                            271           0    0.0    0.0     0.0    0.0
- CAF         GHC.IO.FD               <entire-module>                            270           0    0.0    0.0     0.0    0.0
- CAF         GHC.IO.Handle.FD        <entire-module>                            268           0    0.0    0.3     0.0    0.3
- CAF         GHC.IO.Handle.Internals <entire-module>                            267           0    0.0    0.0     0.0    0.0
- CAF         GHC.Read                <entire-module>                            251           0    0.0    0.0     0.0    0.0
- CAF         GHC.Event.Thread        <entire-module>                            208           0    0.0    0.0     0.0    0.0
- main        Main                    2023/Day02/CubeConundrum.hs:(6,1)-(10,74)  377           0    0.0   17.5   100.0   98.5
-  game       Main                    2023/Day02/CubeConundrum.hs:(13,1)-(18,30) 379           0  100.0   81.1   100.0   81.1
+MAIN            MAIN                    <built-in>                                 188           0   20.0    1.1   100.0  100.0
+ CAF            Main                    <entire-module>                            374           0    0.0    0.0     0.0    0.0
+  game          Main                    2023/Day02/CubeConundrum.hs:(13,1)-(18,30) 378           1    0.0    0.0     0.0    0.0
+   game.hand    Main                    2023/Day02/CubeConundrum.hs:15:5-67        382           1    0.0    0.0     0.0    0.0
+   game.int     Main                    2023/Day02/CubeConundrum.hs:18:5-30        380           1    0.0    0.0     0.0    0.0
+  main          Main                    2023/Day02/CubeConundrum.hs:(6,1)-(10,74)  376           1    0.0    0.0     0.0    0.0
+ CAF            GHC.Conc.Signal         <entire-module>                            297           0    0.0    0.0     0.0    0.0
+ CAF            GHC.IO.Encoding         <entire-module>                            279           0    0.0    0.0     0.0    0.0
+ CAF            GHC.IO.Encoding.Iconv   <entire-module>                            277           0    0.0    0.0     0.0    0.0
+ CAF            GHC.IO.Exception        <entire-module>                            271           0    0.0    0.0     0.0    0.0
+ CAF            GHC.IO.FD               <entire-module>                            270           0    0.0    0.0     0.0    0.0
+ CAF            GHC.IO.Handle.FD        <entire-module>                            268           0    0.0    0.3     0.0    0.3
+ CAF            GHC.IO.Handle.Internals <entire-module>                            267           0    0.0    0.0     0.0    0.0
+ CAF            GHC.Read                <entire-module>                            251           0    0.0    0.0     0.0    0.0
+ CAF            GHC.Event.Thread        <entire-module>                            208           0    0.0    0.0     0.0    0.0
+ main           Main                    2023/Day02/CubeConundrum.hs:(6,1)-(10,74)  377           0    0.0   16.4    80.0   98.5
+  main.possible Main                    2023/Day02/CubeConundrum.hs:8:9-80         384         100   20.0    0.9    20.0    0.9
+  game          Main                    2023/Day02/CubeConundrum.hs:(13,1)-(18,30) 379           0    0.0    0.5    60.0   81.2
+   game.clr     Main                    2023/Day02/CubeConundrum.hs:(16,5)-(17,81) 383         471    0.0    0.0     0.0    0.0
+   game.int     Main                    2023/Day02/CubeConundrum.hs:18:5-30        381           0   60.0   80.2    60.0   80.7
+    game.clr.\  Main                    2023/Day02/CubeConundrum.hs:16:20-87       385        1220    0.0    0.5     0.0    0.5

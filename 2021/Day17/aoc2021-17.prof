@@ -1,25 +1,24 @@
-	Sat Feb 24 16:36 2024 Time and Allocation Profiling Report  (Final)
+	Thu Feb 29 11:52 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2021-17 +RTS -N -p -hy -l-agu -RTS
+	   aoc2021-17 +RTS -N -i0.001 -p -hy -l-agu -s2021/Day17/aoc2021-17.stats -RTS
 
-	total time  =        0.00 secs   (6 ticks @ 1000 us, 8 processors)
-	total alloc =   5,023,560 bytes  (excludes profiling overheads)
+	total time  =        0.00 secs   (4 ticks @ 1000 us, 8 processors)
+	total alloc =   5,023,480 bytes  (excludes profiling overheads)
 
 COST CENTRE MODULE SRC                                     %time %alloc
 
-MAIN        MAIN   <built-in>                               33.3    2.7
-launch      Main   2021/Day17/TrickShot.hs:(22,1)-(25,68)   33.3   95.1
-parser.num  Main   2021/Day17/TrickShot.hs:30:5-64          16.7    0.5
-parser      Main   2021/Day17/TrickShot.hs:(28,1)-(31,48)   16.7    0.0
+launch      Main   2021/Day17/TrickShot.hs:(22,1)-(25,68)   50.0   95.1
+MAIN        MAIN   <built-in>                               25.0    2.7
+main        Main   2021/Day17/TrickShot.hs:(7,1)-(20,40)    25.0    0.7
 
 
                                                                                                       individual      inherited
 COST CENTRE         MODULE                  SRC                                    no.     entries  %time %alloc   %time %alloc
 
-MAIN                MAIN                    <built-in>                             189           0   33.3    2.7   100.0  100.0
- CAF                Main                    <entire-module>                        376           0    0.0    0.1    16.7    0.1
+MAIN                MAIN                    <built-in>                             189           0   25.0    2.7   100.0  100.0
+ CAF                Main                    <entire-module>                        376           0    0.0    0.1     0.0    0.1
   main              Main                    2021/Day17/TrickShot.hs:(7,1)-(20,40)  378           1    0.0    0.0     0.0    0.0
-  parser            Main                    2021/Day17/TrickShot.hs:(28,1)-(31,48) 380           1   16.7    0.0    16.7    0.0
+  parser            Main                    2021/Day17/TrickShot.hs:(28,1)-(31,48) 380           1    0.0    0.0     0.0    0.0
    parser.coord     Main                    2021/Day17/TrickShot.hs:31:5-48        382           1    0.0    0.0     0.0    0.0
    parser.num       Main                    2021/Day17/TrickShot.hs:30:5-64        384           1    0.0    0.0     0.0    0.0
  CAF                GHC.Conc.Signal         <entire-module>                        298           0    0.0    0.0     0.0    0.0
@@ -32,8 +31,8 @@ MAIN                MAIN                    <built-in>                          
  CAF                GHC.Read                <entire-module>                        252           0    0.0    0.0     0.0    0.0
  CAF                Text.Read.Lex           <entire-module>                        228           0    0.0    0.0     0.0    0.0
  CAF                GHC.Event.Thread        <entire-module>                        209           0    0.0    0.0     0.0    0.0
- main               Main                    2021/Day17/TrickShot.hs:(7,1)-(20,40)  379           0    0.0    0.7    50.0   96.4
-  launch            Main                    2021/Day17/TrickShot.hs:(22,1)-(25,68) 395      192710   33.3   95.1    33.3   95.1
+ main               Main                    2021/Day17/TrickShot.hs:(7,1)-(20,40)  379           0   25.0    0.7    75.0   96.4
+  launch            Main                    2021/Day17/TrickShot.hs:(22,1)-(25,68) 395      192710   50.0   95.1    50.0   95.1
   main.naturalSum   Main                    2021/Day17/TrickShot.hs:20:9-40        387           1    0.0    0.0     0.0    0.0
   main.xmax         Main                    2021/Day17/TrickShot.hs:18:9-29        392           1    0.0    0.0     0.0    0.0
   main.xmin         Main                    2021/Day17/TrickShot.hs:17:9-79        389           1    0.0    0.0     0.0    0.0
@@ -42,7 +41,7 @@ MAIN                MAIN                    <built-in>                          
   main.y            Main                    2021/Day17/TrickShot.hs:11:9-32        388           1    0.0    0.0     0.0    0.0
   main.ymax         Main                    2021/Day17/TrickShot.hs:16:9-39        393           1    0.0    0.0     0.0    0.0
   main.ymin         Main                    2021/Day17/TrickShot.hs:15:9-29        394           1    0.0    0.0     0.0    0.0
-  parser            Main                    2021/Day17/TrickShot.hs:(28,1)-(31,48) 381           0    0.0    0.0    16.7    0.6
+  parser            Main                    2021/Day17/TrickShot.hs:(28,1)-(31,48) 381           0    0.0    0.0     0.0    0.6
    parser.coord     Main                    2021/Day17/TrickShot.hs:31:5-48        383           0    0.0    0.0     0.0    0.0
-   parser.num       Main                    2021/Day17/TrickShot.hs:30:5-64        385           0   16.7    0.5    16.7    0.6
+   parser.num       Main                    2021/Day17/TrickShot.hs:30:5-64        385           0    0.0    0.5     0.0    0.6
     parser.coord    Main                    2021/Day17/TrickShot.hs:31:5-48        386           0    0.0    0.0     0.0    0.0

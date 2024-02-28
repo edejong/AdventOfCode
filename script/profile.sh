@@ -18,8 +18,13 @@ done
 
 srcdir="$year/Day$day"
 proj="aoc$year-$day"
+statsfile="$srcdir/$proj.stats"
 
-cabal run $proj -- +RTS -p -hy -l-agu -RTS
+# -hy     Profiling by type
+# -hd     Profiling by closure description
+# -i0.1   sampling rate
+
+cabal run $proj -- +RTS -i0.05 -p -hy -l-agu -s$statsfile # -I0 -A100M -RTS
 
 cat $proj.prof | ghc-prof-flamegraph > $proj.prof.svg
 eventlog2html $proj.eventlog

@@ -1,0 +1,131 @@
+	Thu Feb 29 21:35 2024 Time and Allocation Profiling Report  (Final)
+
+	   aoc2022-15 +RTS -N -i0.05 -p -hy -l-agu -s2022/Day15/aoc2022-15.stats -RTS
+
+	total time  =        1.81 secs   (6702 ticks @ 1000 us, 8 processors)
+	total alloc = 21,071,430,272 bytes  (excludes profiling overheads)
+
+COST CENTRE         MODULE    SRC                                               %time %alloc
+
+main.rss.\          Main      2022/Day15/BeaconExclusionZone.hs:20:29-93         46.7   48.4
+overlap.overlap'    Main      2022/Day15/BeaconExclusionZone.hs:(36,9)-(38,87)   14.6   29.7
+manhattanDist       Main      2022/Day15/BeaconExclusionZone.hs:41:1-68          13.1   10.0
+overlap             Main      2022/Day15/BeaconExclusionZone.hs:(35,1)-(38,87)    9.3    0.0
+mergeSortedRanges   Main      2022/Day15/BeaconExclusionZone.hs:(44,1)-(48,25)    4.6    1.2
+overlap.overlap'.d' Main      2022/Day15/BeaconExclusionZone.hs:38:48-66          3.4    2.8
+main.(...).\        Main      2022/Day15/BeaconExclusionZone.hs:21:46-59          3.1    0.0
+main.(...)          Main      2022/Day15/BeaconExclusionZone.hs:21:9-109          1.8    3.3
+clampRange          Main      2022/Day15/BeaconExclusionZone.hs:68:1-46           1.5    1.4
+main.rss            Main      2022/Day15/BeaconExclusionZone.hs:20:9-99           1.0    1.7
+main.rows           Main      2022/Day15/BeaconExclusionZone.hs:19:9-23           0.6    1.4
+
+
+                                                                                                                            individual      inherited
+COST CENTRE                  MODULE                    SRC                                               no.     entries  %time %alloc   %time %alloc
+
+MAIN                         MAIN                      <built-in>                                        130           0    0.0    0.0   100.0  100.0
+ CAF                         Main                      <entire-module>                                   258           0    0.0    0.0     0.6    1.4
+  main                       Main                      2022/Day15/BeaconExclusionZone.hs:(10,1)-(24,24)  260           1    0.0    0.0     0.6    1.4
+   main.(...)                Main                      2022/Day15/BeaconExclusionZone.hs:14:9-29         343           1    0.0    0.0     0.0    0.0
+   main.hi                   Main                      2022/Day15/BeaconExclusionZone.hs:14:9-29         344           1    0.0    0.0     0.0    0.0
+   main.lo                   Main                      2022/Day15/BeaconExclusionZone.hs:14:9-29         342           1    0.0    0.0     0.0    0.0
+   main.row                  Main                      2022/Day15/BeaconExclusionZone.hs:13:9-21         324           1    0.0    0.0     0.0    0.0
+   main.rows                 Main                      2022/Day15/BeaconExclusionZone.hs:19:9-23         341           1    0.6    1.4     0.6    1.4
+  parseCoord                 Main                      2022/Day15/BeaconExclusionZone.hs:32:1-98         267           0    0.0    0.0     0.0    0.0
+   parseCoord.(...)          Main                      2022/Day15/BeaconExclusionZone.hs:32:22-46        276           0    0.0    0.0     0.0    0.0
+    splitOn                  Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         277           0    0.0    0.0     0.0    0.0
+     dropDelims              Data.List.Split.Internals src/Data/List/Split/Internals.hs:320:1-37         279           1    0.0    0.0     0.0    0.0
+     onSublist               Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70         312           0    0.0    0.0     0.0    0.0
+  parseLine                  Main                      2022/Day15/BeaconExclusionZone.hs:29:1-103        291           0    0.0    0.0     0.0    0.0
+   parseLine.(...)           Main                      2022/Day15/BeaconExclusionZone.hs:29:22-47        292           0    0.0    0.0     0.0    0.0
+    splitOn                  Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         293           0    0.0    0.0     0.0    0.0
+     dropDelims              Data.List.Split.Internals src/Data/List/Split/Internals.hs:320:1-37         294           1    0.0    0.0     0.0    0.0
+     onSublist               Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70         299           0    0.0    0.0     0.0    0.0
+ CAF                         Data.List.Split.Internals <entire-module>                                   257           0    0.0    0.0     0.0    0.0
+  defaultSplitter            Data.List.Split.Internals src/Data/List/Split/Internals.hs:(55,1)-(62,5)    278           1    0.0    0.0     0.0    0.0
+ CAF                         GHC.Conc.Signal           <entire-module>                                   235           0    0.0    0.0     0.0    0.0
+ CAF                         GHC.IO.Encoding           <entire-module>                                   217           0    0.0    0.0     0.0    0.0
+ CAF                         GHC.IO.Encoding.Iconv     <entire-module>                                   215           0    0.0    0.0     0.0    0.0
+ CAF                         GHC.IO.Exception          <entire-module>                                   209           0    0.0    0.0     0.0    0.0
+ CAF                         GHC.IO.FD                 <entire-module>                                   208           0    0.0    0.0     0.0    0.0
+ CAF                         GHC.IO.Handle.FD          <entire-module>                                   206           0    0.0    0.0     0.0    0.0
+ CAF                         GHC.IO.Handle.Internals   <entire-module>                                   205           0    0.0    0.0     0.0    0.0
+ CAF                         GHC.Read                  <entire-module>                                   190           0    0.0    0.0     0.0    0.0
+ CAF                         Text.Read.Lex             <entire-module>                                   167           0    0.0    0.0     0.0    0.0
+ CAF                         GHC.Event.Thread          <entire-module>                                   150           0    0.0    0.0     0.0    0.0
+ main                        Main                      2022/Day15/BeaconExclusionZone.hs:(10,1)-(24,24)  261           0    0.0    0.0    99.4   98.6
+  parseLine                  Main                      2022/Day15/BeaconExclusionZone.hs:29:1-103        265          33    0.0    0.0     0.0    0.0
+   parseCoord                Main                      2022/Day15/BeaconExclusionZone.hs:32:1-98         266          66    0.0    0.0     0.0    0.0
+    parseCoord.(...)         Main                      2022/Day15/BeaconExclusionZone.hs:32:22-46        269          66    0.0    0.0     0.0    0.0
+     splitOn                 Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         270          66    0.0    0.0     0.0    0.0
+      onSublist              Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70         275          66    0.0    0.0     0.0    0.0
+      split                  Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68         271          66    0.0    0.0     0.0    0.0
+       fromElem              Data.List.Split.Internals src/Data/List/Split/Internals.hs:(124,1)-(125,24) 323         132    0.0    0.0     0.0    0.0
+       splitInternal         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71) 282         132    0.0    0.0     0.0    0.0
+        breakDelim           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34) 313        1281    0.0    0.0     0.0    0.0
+         matchDelim          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(72,1)-(76,23)   314        1347    0.0    0.0     0.0    0.0
+       delimiter             Data.List.Split.Internals src/Data/List/Split/Internals.hs:22:5-13          311          66    0.0    0.0     0.0    0.0
+       postProcess           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35) 272          66    0.0    0.0     0.0    0.0
+        condensePolicy       Data.List.Split.Internals src/Data/List/Split/Internals.hs:29:5-18          281          66    0.0    0.0     0.0    0.0
+        delimPolicy          Data.List.Split.Internals src/Data/List/Split/Internals.hs:24:5-15          274          66    0.0    0.0     0.0    0.0
+        doCondense           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(187,1)-(194,20) 280          66    0.0    0.0     0.0    0.0
+        doDrop               Data.List.Split.Internals src/Data/List/Split/Internals.hs:(181,1)-(182,14) 317          66    0.0    0.0     0.0    0.0
+        doMerge              Data.List.Split.Internals src/Data/List/Split/Internals.hs:(216,1)-(218,14) 273          66    0.0    0.0     0.0    0.0
+        dropFinal            Data.List.Split.Internals src/Data/List/Split/Internals.hs:(248,1)-(254,17) 320          66    0.0    0.0     0.0    0.0
+        dropInitial          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(243,1)-(244,19) 318          66    0.0    0.0     0.0    0.0
+        finalBlankPolicy     Data.List.Split.Internals src/Data/List/Split/Internals.hs:34:5-20          321          66    0.0    0.0     0.0    0.0
+        initBlankPolicy      Data.List.Split.Internals src/Data/List/Split/Internals.hs:32:5-19          319          66    0.0    0.0     0.0    0.0
+        insertBlanks         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(200,1)-(202,38) 315          66    0.0    0.0     0.0    0.0
+         insertBlanks'       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(206,1)-(212,49) 316         264    0.0    0.0     0.0    0.0
+    parseCoord.x             Main                      2022/Day15/BeaconExclusionZone.hs:32:22-46        326          66    0.0    0.0     0.0    0.0
+    parseCoord.y             Main                      2022/Day15/BeaconExclusionZone.hs:32:22-46        268          66    0.0    0.0     0.0    0.0
+   parseLine.(...)           Main                      2022/Day15/BeaconExclusionZone.hs:29:22-47        284          33    0.0    0.0     0.0    0.0
+    splitOn                  Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         285          33    0.0    0.0     0.0    0.0
+     onSublist               Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70         290          33    0.0    0.0     0.0    0.0
+     split                   Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68         286          33    0.0    0.0     0.0    0.0
+      fromElem               Data.List.Split.Internals src/Data/List/Split/Internals.hs:(124,1)-(125,24) 310          66    0.0    0.0     0.0    0.0
+      splitInternal          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71) 297          66    0.0    0.0     0.0    0.0
+       breakDelim            Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34) 300        2370    0.0    0.0     0.0    0.0
+        matchDelim           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(72,1)-(76,23)   301        2403    0.0    0.0     0.0    0.0
+      delimiter              Data.List.Split.Internals src/Data/List/Split/Internals.hs:22:5-13          298          33    0.0    0.0     0.0    0.0
+      postProcess            Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35) 287          33    0.0    0.0     0.0    0.0
+       condensePolicy        Data.List.Split.Internals src/Data/List/Split/Internals.hs:29:5-18          296          33    0.0    0.0     0.0    0.0
+       delimPolicy           Data.List.Split.Internals src/Data/List/Split/Internals.hs:24:5-15          289          33    0.0    0.0     0.0    0.0
+       doCondense            Data.List.Split.Internals src/Data/List/Split/Internals.hs:(187,1)-(194,20) 295          33    0.0    0.0     0.0    0.0
+       doDrop                Data.List.Split.Internals src/Data/List/Split/Internals.hs:(181,1)-(182,14) 304          33    0.0    0.0     0.0    0.0
+       doMerge               Data.List.Split.Internals src/Data/List/Split/Internals.hs:(216,1)-(218,14) 288          33    0.0    0.0     0.0    0.0
+       dropFinal             Data.List.Split.Internals src/Data/List/Split/Internals.hs:(248,1)-(254,17) 307          33    0.0    0.0     0.0    0.0
+       dropInitial           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(243,1)-(244,19) 305          33    0.0    0.0     0.0    0.0
+       finalBlankPolicy      Data.List.Split.Internals src/Data/List/Split/Internals.hs:34:5-20          308          33    0.0    0.0     0.0    0.0
+       initBlankPolicy       Data.List.Split.Internals src/Data/List/Split/Internals.hs:32:5-19          306          33    0.0    0.0     0.0    0.0
+       insertBlanks          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(200,1)-(202,38) 302          33    0.0    0.0     0.0    0.0
+        insertBlanks'        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(206,1)-(212,49) 303         132    0.0    0.0     0.0    0.0
+   parseLine.b               Main                      2022/Day15/BeaconExclusionZone.hs:29:22-47        283          33    0.0    0.0     0.0    0.0
+   parseLine.s               Main                      2022/Day15/BeaconExclusionZone.hs:29:22-47        327          33    0.0    0.0     0.0    0.0
+  main.(...)                 Main                      2022/Day15/BeaconExclusionZone.hs:21:9-109        339           1    1.8    3.3     6.4    4.7
+   clampRange                Main                      2022/Day15/BeaconExclusionZone.hs:68:1-46         354     4000001    1.5    1.4     1.5    1.4
+   main.(...).\              Main                      2022/Day15/BeaconExclusionZone.hs:21:46-59        345     4000001    3.1    0.0     3.1    0.0
+  main.beaconsOnRow          Main                      2022/Day15/BeaconExclusionZone.hs:15:9-77         264           1    0.0    0.0     0.0    0.0
+  main.part1                 Main                      2022/Day15/BeaconExclusionZone.hs:17:9-74         262           1    0.0    0.0     0.0    0.0
+   rangeLength               Main                      2022/Day15/BeaconExclusionZone.hs:65:1-30         336           2    0.0    0.0     0.0    0.0
+   removeFromRanges          Main                      2022/Day15/BeaconExclusionZone.hs:(51,1)-(55,26)  263           2    0.0    0.0     0.0    0.0
+    removeFromRange          Main                      2022/Day15/BeaconExclusionZone.hs:(58,1)-(62,31)  334           1    0.0    0.0     0.0    0.0
+     removeFromRange.isValid Main                      2022/Day15/BeaconExclusionZone.hs:62:5-31         335           2    0.0    0.0     0.0    0.0
+  main.part2                 Main                      2022/Day15/BeaconExclusionZone.hs:22:9-35         337           1    0.0    0.0     0.0    0.0
+  main.rs                    Main                      2022/Day15/BeaconExclusionZone.hs:16:9-77         325           1    0.0    0.0     0.0    0.0
+   overlap                   Main                      2022/Day15/BeaconExclusionZone.hs:(35,1)-(38,87)  328          33    0.0    0.0     0.0    0.0
+    manhattanDist            Main                      2022/Day15/BeaconExclusionZone.hs:41:1-68         329          33    0.0    0.0     0.0    0.0
+    overlap.overlap'         Main                      2022/Day15/BeaconExclusionZone.hs:(36,9)-(38,87)  330          33    0.0    0.0     0.0    0.0
+     overlap.overlap'.d      Main                      2022/Day15/BeaconExclusionZone.hs:38:29-45        331          17    0.0    0.0     0.0    0.0
+     overlap.overlap'.d'     Main                      2022/Day15/BeaconExclusionZone.hs:38:48-66        332          17    0.0    0.0     0.0    0.0
+   mergeSortedRanges         Main                      2022/Day15/BeaconExclusionZone.hs:(44,1)-(48,25)  333          17    0.0    0.0     0.0    0.0
+  main.rss                   Main                      2022/Day15/BeaconExclusionZone.hs:20:9-99         340           1    1.0    1.7    92.9   93.9
+   main.rss.\                Main                      2022/Day15/BeaconExclusionZone.hs:20:29-93        346     4000001   46.7   48.4    91.9   92.2
+    overlap                  Main                      2022/Day15/BeaconExclusionZone.hs:(35,1)-(38,87)  347   132000033    9.3    0.0    40.7   42.6
+     manhattanDist           Main                      2022/Day15/BeaconExclusionZone.hs:41:1-68         348   132000033   13.1   10.0    13.1   10.0
+     overlap.overlap'        Main                      2022/Day15/BeaconExclusionZone.hs:(36,9)-(38,87)  349   132000033   14.6   29.7    18.2   32.6
+      overlap.overlap'.d     Main                      2022/Day15/BeaconExclusionZone.hs:38:29-45        350    37307447    0.2    0.0     0.2    0.0
+      overlap.overlap'.d'    Main                      2022/Day15/BeaconExclusionZone.hs:38:48-66        351    37307447    3.4    2.8     3.4    2.8
+    mergeSortedRanges        Main                      2022/Day15/BeaconExclusionZone.hs:(44,1)-(48,25)  352    37307447    4.6    1.2     4.6    1.2
+  main.x                     Main                      2022/Day15/BeaconExclusionZone.hs:21:9-109        338           1    0.0    0.0     0.0    0.0
+  main.y                     Main                      2022/Day15/BeaconExclusionZone.hs:21:9-109        355           1    0.0    0.0     0.0    0.0

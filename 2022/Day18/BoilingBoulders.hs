@@ -1,25 +1,20 @@
 {-# LANGUAGE BlockArguments #-}
-{-# LANGUAGE TypeApplications #-}
-module Day18.BoilingBoulders where
-import Data.List.Split (splitOn)
-import Data.Set (Set)
-import qualified Data.Set as S
-import Data.Array.MArray
-import Data.Array.ST
-import Data.Array (Array)
-import Control.Monad.ST (ST)
-import Control.Monad (forM_, when)
-import Control.Monad.Cont (MonadIO(liftIO))
-import Data.Array.Base ((!))
+{-# OPTIONS_GHC -Wno-incomplete-uni-patterns #-}
+import           Control.Monad      (forM_, when)
+import           Control.Monad.ST   (ST)
+import           Data.Array.Base    ((!))
+import           Data.Array.MArray
+import           Data.Array.ST
+import           Data.List.Split    (splitOn)
 
 main :: IO ()
 main = do
-    xs <- map ((\[x,y,z] -> (x,y,z)) . map (read @Int) . splitOn ",") . lines <$> readFile "2022/data/day18.txt"
+    xs <- map ((\[x,y,z] -> (x,y,z)) . map (read @Int) . splitOn ",") . lines <$> readFile "2022/Day18/day18.txt"
     let arr = runSTArray do
-            arr <- newArray ((-1,-1,-1), (20,20,20)) 0 :: ST s (Arr s)
-            forM_ xs (\p -> writeArray arr p 1)
-            floodFill arr (-1,-1,-1) 0 2
-            return arr
+            arr' <- newArray ((-1,-1,-1), (20,20,20)) 0 :: ST s (Arr s)
+            forM_ xs (\p -> writeArray arr' p 1)
+            floodFill arr' (-1,-1,-1) 0 2
+            return arr'
     print $ sum . map (length . filter (\p -> arr ! p /= 1) . neighbours) $ xs
     print $ sum . map (length . filter (\p -> arr ! p == 2) . neighbours) $ xs
 

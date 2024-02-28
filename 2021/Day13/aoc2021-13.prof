@@ -1,26 +1,26 @@
-	Sat Feb 24 16:16 2024 Time and Allocation Profiling Report  (Final)
+	Thu Feb 29 11:50 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2021-13 +RTS -N -p -hy -l-agu -RTS
+	   aoc2021-13 +RTS -N -i0.001 -p -hy -l-agu -s2021/Day13/aoc2021-13.stats -RTS
 
-	total time  =        0.00 secs   (11 ticks @ 1000 us, 8 processors)
-	total alloc =  10,407,568 bytes  (excludes profiling overheads)
+	total time  =        0.00 secs   (9 ticks @ 1000 us, 8 processors)
+	total alloc =  10,407,592 bytes  (excludes profiling overheads)
 
 COST CENTRE    MODULE                    SRC                                                %time %alloc
 
-main.ps        Main                      2021/Day13/TransparentOrigami.hs:13:7-61            45.5   57.8
-doFolds.doFold Main                      2021/Day13/TransparentOrigami.hs:(23,5)-(24,76)     36.4    6.7
-MAIN           MAIN                      <built-in>                                           9.1    1.3
-breakDelim     Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34)    9.1   15.2
+doFolds.doFold Main                      2021/Day13/TransparentOrigami.hs:(23,5)-(24,76)     44.4    6.7
+main.ps        Main                      2021/Day13/TransparentOrigami.hs:13:7-61            33.3   57.8
+MAIN           MAIN                      <built-in>                                          22.2    1.3
 splitInternal  Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71)    0.0    2.2
 split          Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68            0.0    1.8
 insertBlanks'  Data.List.Split.Internals src/Data/List/Split/Internals.hs:(206,1)-(212,49)    0.0    1.2
+breakDelim     Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34)    0.0   15.2
 main           Main                      2021/Day13/TransparentOrigami.hs:(11,1)-(18,25)      0.0   10.2
 
 
                                                                                                                        individual      inherited
 COST CENTRE             MODULE                    SRC                                               no.     entries  %time %alloc   %time %alloc
 
-MAIN                    MAIN                      <built-in>                                        130           0    9.1    1.3   100.0  100.0
+MAIN                    MAIN                      <built-in>                                        130           0   22.2    1.3   100.0  100.0
  CAF                    Main                      <entire-module>                                   258           0    0.0    0.0     0.0    0.0
   doFolds               Main                      2021/Day13/TransparentOrigami.hs:(21,1)-(25,45)   286           1    0.0    0.0     0.0    0.0
   main                  Main                      2021/Day13/TransparentOrigami.hs:(11,1)-(18,25)   260           1    0.0    0.0     0.0    0.0
@@ -62,7 +62,7 @@ MAIN                    MAIN                      <built-in>                    
  CAF                    GHC.IO.Handle.Internals   <entire-module>                                   205           0    0.0    0.0     0.0    0.0
  CAF                    GHC.Read                  <entire-module>                                   190           0    0.0    0.0     0.0    0.0
  CAF                    GHC.Event.Thread          <entire-module>                                   150           0    0.0    0.0     0.0    0.0
- main                   Main                      2021/Day13/TransparentOrigami.hs:(11,1)-(18,25)   261           0    0.0   10.2    90.9   98.3
+ main                   Main                      2021/Day13/TransparentOrigami.hs:(11,1)-(18,25)   261           0    0.0   10.2    77.8   98.3
   main.fs               Main                      2021/Day13/TransparentOrigami.hs:14:7-73          288           1    0.0    0.5     0.0    0.6
    main.tuple           Main                      2021/Day13/TransparentOrigami.hs:18:5-25          316          12    0.0    0.0     0.0    0.0
    splitOn              Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         293           0    0.0    0.0     0.0    0.2
@@ -78,7 +78,7 @@ MAIN                    MAIN                      <built-in>                    
       dropInitial       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(243,1)-(244,19) 312          12    0.0    0.0     0.0    0.0
       insertBlanks      Data.List.Split.Internals src/Data/List/Split/Internals.hs:(200,1)-(202,38) 309          12    0.0    0.0     0.0    0.0
        insertBlanks'    Data.List.Split.Internals src/Data/List/Split/Internals.hs:(206,1)-(212,49) 310          48    0.0    0.0     0.0    0.0
-  main.ps               Main                      2021/Day13/TransparentOrigami.hs:13:7-61          320           1   45.5   57.8    45.5   70.9
+  main.ps               Main                      2021/Day13/TransparentOrigami.hs:13:7-61          320           1   33.3   57.8    33.3   70.9
    main.tuple           Main                      2021/Day13/TransparentOrigami.hs:18:5-25          322         722    0.0    0.0     0.0    0.0
    splitOn              Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         326           0    0.0    0.0     0.0   13.1
     split               Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68         327           0    0.0    1.8     0.0   13.1
@@ -101,12 +101,12 @@ MAIN                    MAIN                      <built-in>                    
     build               Data.List.Split.Internals src/Data/List/Split/Internals.hs:580:1-18         356           1    0.0    0.0     0.0    0.0
    printGrid.bnds       Main                      2021/Day13/TransparentOrigami.hs:35:4-21          357           1    0.0    0.0     0.0    0.0
    printGrid.width      Main                      2021/Day13/TransparentOrigami.hs:36:4-54          358           1    0.0    0.0     0.0    0.0
-  splitOn               Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         262           1    0.0    0.0     9.1    8.8
+  splitOn               Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         262           1    0.0    0.0     0.0    8.8
    onSublist            Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70         267           1    0.0    0.0     0.0    0.0
-   split                Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68         263           1    0.0    0.0     9.1    8.8
+   split                Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68         263           1    0.0    0.0     0.0    8.8
     fromElem            Data.List.Split.Internals src/Data/List/Split/Internals.hs:(124,1)-(125,24) 289           2    0.0    0.0     0.0    0.0
-    splitInternal       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71) 273           2    0.0    0.0     9.1    8.8
-     breakDelim         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34) 276        5999    9.1    8.8     9.1    8.8
+    splitInternal       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71) 273           2    0.0    0.0     0.0    8.8
+     breakDelim         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34) 276        5999    0.0    8.8     0.0    8.8
       matchDelim        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(72,1)-(76,23)   277        6732    0.0    0.0     0.0    0.0
     delimiter           Data.List.Split.Internals src/Data/List/Split/Internals.hs:22:5-13          274           1    0.0    0.0     0.0    0.0
     postProcess         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35) 264           1    0.0    0.0     0.0    0.0
@@ -121,6 +121,6 @@ MAIN                    MAIN                      <built-in>                    
      initBlankPolicy    Data.List.Split.Internals src/Data/List/Split/Internals.hs:32:5-19          282           1    0.0    0.0     0.0    0.0
      insertBlanks       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(200,1)-(202,38) 278           1    0.0    0.0     0.0    0.0
       insertBlanks'     Data.List.Split.Internals src/Data/List/Split/Internals.hs:(206,1)-(212,49) 279           4    0.0    0.0     0.0    0.0
-  doFolds               Main                      2021/Day13/TransparentOrigami.hs:(21,1)-(25,45)   287           0    0.0    0.0    36.4    6.7
-   doFolds.doFold       Main                      2021/Day13/TransparentOrigami.hs:(23,5)-(24,76)   319          13   36.4    6.7    36.4    6.7
+  doFolds               Main                      2021/Day13/TransparentOrigami.hs:(21,1)-(25,45)   287           0    0.0    0.0    44.4    6.7
+   doFolds.doFold       Main                      2021/Day13/TransparentOrigami.hs:(23,5)-(24,76)   319          13   44.4    6.7    44.4    6.7
     doFolds.foldFunc    Main                      2021/Day13/TransparentOrigami.hs:25:5-45          321        4505    0.0    0.0     0.0    0.0

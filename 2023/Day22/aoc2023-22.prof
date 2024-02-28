@@ -1,55 +1,106 @@
-	Wed Feb 14 10:30 2024 Time and Allocation Profiling Report  (Final)
+	Thu Feb 29 21:18 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2023-22 +RTS -N -p -hy -l-agu -RTS
+	   aoc2023-22 +RTS -N -i0.05 -p -hy -l-agu -s2023/Day22/aoc2023-22.stats -RTS
 
-	total time  =        0.02 secs   (90 ticks @ 1000 us, 8 processors)
-	total alloc = 119,810,760 bytes  (excludes profiling overheads)
+	total time  =        0.05 secs   (174 ticks @ 1000 us, 8 processors)
+	total alloc = 384,329,000 bytes  (excludes profiling overheads)
 
-COST CENTRE   MODULE SRC                                     %time %alloc
+COST CENTRE                           MODULE SRC                                     %time %alloc
 
-main          Main   2023/Day22/SandSlabs.hs:(15,1)-(34,93)   40.0   36.1
-settleBlocks  Main   2023/Day22/SandSlabs.hs:(61,1)-(73,18)   25.6   10.9
-dropBrick     Main   2023/Day22/SandSlabs.hs:(43,1)-(50,50)   23.3   52.3
-maxZ          Main   2023/Day22/SandSlabs.hs:58:1-33           5.6    0.0
-MAIN          MAIN   <built-in>                                2.2    0.1
-minZ          Main   2023/Day22/SandSlabs.hs:56:1-33           1.1    0.0
-getBounds'    Main   2023/Day22/SandSlabs.hs:53:1-70           1.1    0.3
-blocksOverlap Main   2023/Day22/SandSlabs.hs:(76,1)-(81,56)    1.1    0.0
+main.findSupports                     Main   2023/Day22/SandSlabs.hs:34:5-93          20.7    0.0
+blocksOverlap.(...)                   Main   2023/Day22/SandSlabs.hs:77:9-87          19.0   67.0
+blocksOverlap                         Main   2023/Day22/SandSlabs.hs:(76,1)-(81,56)   14.9    0.0
+settleBlocks.settle.b1                Main   2023/Day22/SandSlabs.hs:68:13-78          8.0    2.9
+dropBrick.drop'.allParentsHaveDropped Main   2023/Day22/SandSlabs.hs:48:13-74          6.3    1.8
+main.bs                               Main   2023/Day22/SandSlabs.hs:18:9-107          5.7    9.5
+maxZ                                  Main   2023/Day22/SandSlabs.hs:58:1-33           4.0    0.0
+dropBrick.drop'.fallingChildren       Main   2023/Day22/SandSlabs.hs:49:13-67          4.0    1.0
+dropBrick.drop'.dropped'              Main   2023/Day22/SandSlabs.hs:47:13-43          4.0    6.9
+dropBrick.drop'                       Main   2023/Day22/SandSlabs.hs:(45,5)-(50,50)    4.0    8.3
+main.findSupports.\                   Main   2023/Day22/SandSlabs.hs:34:68-92          2.9    0.0
+blocksOverlap.rangesOverlap           Main   2023/Day22/SandSlabs.hs:81:5-56           2.9    0.0
+minZ                                  Main   2023/Day22/SandSlabs.hs:56:1-33           1.7    0.0
+main.children                         Main   2023/Day22/SandSlabs.hs:27:9-111          1.1    0.5
 
 
-                                                                                                   individual      inherited
-COST CENTRE      MODULE                  SRC                                    no.     entries  %time %alloc   %time %alloc
+                                                                                                                             individual      inherited
+COST CENTRE                                MODULE                  SRC                                    no.     entries  %time %alloc   %time %alloc
 
-MAIN             MAIN                    <built-in>                             355           0    2.2    0.1   100.0  100.0
- CAF             Main                    <entire-module>                        708           0    0.0    0.0     0.0    0.0
-  getBounds'     Main                    2023/Day22/SandSlabs.hs:53:1-70        717           1    0.0    0.0     0.0    0.0
-  main           Main                    2023/Day22/SandSlabs.hs:(15,1)-(34,93) 710           1    0.0    0.0     0.0    0.0
- CAF             GHC.Conc.Signal         <entire-module>                        469           0    0.0    0.0     0.0    0.0
- CAF             GHC.IO.Encoding         <entire-module>                        451           0    0.0    0.0     0.0    0.0
- CAF             GHC.IO.Encoding.Iconv   <entire-module>                        449           0    0.0    0.0     0.0    0.0
- CAF             GHC.IO.Exception        <entire-module>                        443           0    0.0    0.0     0.0    0.0
- CAF             GHC.IO.FD               <entire-module>                        442           0    0.0    0.0     0.0    0.0
- CAF             GHC.IO.Handle.FD        <entire-module>                        440           0    0.0    0.0     0.0    0.0
- CAF             GHC.IO.Handle.Internals <entire-module>                        439           0    0.0    0.0     0.0    0.0
- CAF             GHC.Read                <entire-module>                        422           0    0.0    0.0     0.0    0.0
- CAF             GHC.Event.Thread        <entire-module>                        375           0    0.0    0.0     0.0    0.0
- main            Main                    2023/Day22/SandSlabs.hs:(15,1)-(34,93) 711           0   40.0   36.1    97.8   99.8
-  maxZ           Main                    2023/Day22/SandSlabs.hs:58:1-33        720     2119936    5.6    0.0     5.6    0.0
-   getBounds     Main                    2023/Day22/SandSlabs.hs:36:32-40       721     2119936    0.0    0.0     0.0    0.0
-  minZ           Main                    2023/Day22/SandSlabs.hs:56:1-33        727     2119936    1.1    0.0     1.1    0.0
-   getBounds     Main                    2023/Day22/SandSlabs.hs:36:32-40       728     2119936    0.0    0.0     0.0    0.0
-  blocksOverlap  Main                    2023/Day22/SandSlabs.hs:(76,1)-(81,56) 729       13773    0.0    0.0     0.0    0.0
-   getBounds     Main                    2023/Day22/SandSlabs.hs:36:32-40       730       27546    0.0    0.0     0.0    0.0
-  lbl            Main                    2023/Day22/SandSlabs.hs:36:22-24       712        5959    0.0    0.0     0.0    0.0
-  dropBrick      Main                    2023/Day22/SandSlabs.hs:(43,1)-(50,50) 731        1455   23.3   52.3    23.3   52.3
-  mkBrick        Main                    2023/Day22/SandSlabs.hs:(39,1)-(40,23) 713        1455    0.0    0.2     0.0    0.2
-  settleBlocks   Main                    2023/Day22/SandSlabs.hs:(61,1)-(73,18) 714           1   25.6   10.9    26.7   10.9
-   blocksOverlap Main                    2023/Day22/SandSlabs.hs:(76,1)-(81,56) 723     1059240    1.1    0.0     1.1    0.0
-    getBounds    Main                    2023/Day22/SandSlabs.hs:36:32-40       724     2118480    0.0    0.0     0.0    0.0
-   maxZ          Main                    2023/Day22/SandSlabs.hs:58:1-33        725       69133    0.0    0.0     0.0    0.0
-    getBounds    Main                    2023/Day22/SandSlabs.hs:36:32-40       726       69133    0.0    0.0     0.0    0.0
-   minZ          Main                    2023/Day22/SandSlabs.hs:56:1-33        715        2911    0.0    0.0     0.0    0.0
-    getBounds    Main                    2023/Day22/SandSlabs.hs:36:32-40       716        2911    0.0    0.0     0.0    0.0
-   getBounds     Main                    2023/Day22/SandSlabs.hs:36:32-40       722        1455    0.0    0.0     0.0    0.0
-  getBounds'     Main                    2023/Day22/SandSlabs.hs:53:1-70        718           0    1.1    0.3     1.1    0.3
-   getBounds     Main                    2023/Day22/SandSlabs.hs:36:32-40       719        1455    0.0    0.0     0.0    0.0
+MAIN                                       MAIN                    <built-in>                             355           0    0.0    0.0   100.0  100.0
+ CAF                                       Main                    <entire-module>                        708           0    0.0    0.0     0.0    0.0
+  getBounds'                               Main                    2023/Day22/SandSlabs.hs:53:1-70        726           1    0.0    0.0     0.0    0.0
+  main                                     Main                    2023/Day22/SandSlabs.hs:(15,1)-(34,93) 710           1    0.0    0.0     0.0    0.0
+ CAF                                       GHC.Conc.Signal         <entire-module>                        469           0    0.0    0.0     0.0    0.0
+ CAF                                       GHC.IO.Encoding         <entire-module>                        451           0    0.0    0.0     0.0    0.0
+ CAF                                       GHC.IO.Encoding.Iconv   <entire-module>                        449           0    0.0    0.0     0.0    0.0
+ CAF                                       GHC.IO.Exception        <entire-module>                        443           0    0.0    0.0     0.0    0.0
+ CAF                                       GHC.IO.FD               <entire-module>                        442           0    0.0    0.0     0.0    0.0
+ CAF                                       GHC.IO.Handle.FD        <entire-module>                        440           0    0.0    0.0     0.0    0.0
+ CAF                                       GHC.IO.Handle.Internals <entire-module>                        439           0    0.0    0.0     0.0    0.0
+ CAF                                       GHC.Read                <entire-module>                        422           0    0.0    0.0     0.0    0.0
+ CAF                                       GHC.Event.Thread        <entire-module>                        375           0    0.0    0.0     0.0    0.0
+ main                                      Main                    2023/Day22/SandSlabs.hs:(15,1)-(34,93) 711           0    0.6    1.0   100.0  100.0
+  lbl                                      Main                    2023/Day22/SandSlabs.hs:36:22-24       714        2910    0.0    0.0     0.0    0.0
+  dropBrick                                Main                    2023/Day22/SandSlabs.hs:(43,1)-(50,50) 772        1455    0.0    0.0    18.4   18.1
+   dropBrick.drop'                         Main                    2023/Day22/SandSlabs.hs:(45,5)-(50,50) 773       73912    4.0    8.3    18.4   18.1
+    dropBrick.drop'.dropped'               Main                    2023/Day22/SandSlabs.hs:47:13-43       774       72457    4.0    6.9     4.0    6.9
+    dropBrick.drop'.fallingChildren        Main                    2023/Day22/SandSlabs.hs:49:13-67       775       72457    4.0    1.0    10.3    2.8
+     dropBrick.drop'.allParentsHaveDropped Main                    2023/Day22/SandSlabs.hs:48:13-74       776       78255    6.3    1.8     6.3    1.8
+  main.canDisintegrate                     Main                    2023/Day22/SandSlabs.hs:29:9-87        713        1455    0.0    0.0     0.0    0.0
+   main.canDisintegrate.\                  Main                    2023/Day22/SandSlabs.hs:29:44-67       770        1141    0.0    0.0     0.0    0.0
+  main.(...)                               Main                    2023/Day22/SandSlabs.hs:20:9-40        725           1    0.0    0.0     0.0    0.1
+   getBounds'                              Main                    2023/Day22/SandSlabs.hs:53:1-70        727           0    0.0    0.1     0.0    0.1
+    getBounds                              Main                    2023/Day22/SandSlabs.hs:36:32-40       728        1455    0.0    0.0     0.0    0.0
+  main.bs                                  Main                    2023/Day22/SandSlabs.hs:18:9-107       712           1    5.7    9.5     5.7    9.6
+   main.bs.\                               Main                    2023/Day22/SandSlabs.hs:18:73-100      716       20882    0.0    0.0     0.0    0.0
+   mkBrick                                 Main                    2023/Day22/SandSlabs.hs:(39,1)-(40,23) 715        1455    0.0    0.1     0.0    0.1
+  main.bs'                                 Main                    2023/Day22/SandSlabs.hs:23:9-44        718           1    0.0    0.0    44.3   69.6
+   settleBlocks                            Main                    2023/Day22/SandSlabs.hs:(61,1)-(73,18) 719           1    0.0    0.0    44.3   69.6
+    settleBlocks.settle                    Main                    2023/Day22/SandSlabs.hs:(65,5)-(73,18) 730        1456    0.0    0.1    44.3   69.2
+     settleBlocks.settle.b1                Main                    2023/Day22/SandSlabs.hs:68:13-78       740        1455    8.0    2.9    44.3   69.1
+      blocksOverlap                        Main                    2023/Day22/SandSlabs.hs:(76,1)-(81,56) 741     1059240   14.4    0.0    36.2   66.1
+       blocksOverlap.rangesOverlap         Main                    2023/Day22/SandSlabs.hs:81:5-56        742     1353690    2.9    0.0     2.9    0.0
+       blocksOverlap.(...)                 Main                    2023/Day22/SandSlabs.hs:77:9-87        744     1059240   19.0   66.1    19.0   66.1
+        blocksOverlap.getXYRange           Main                    2023/Day22/SandSlabs.hs:80:5-68        746     2118480    0.0    0.0     0.0    0.0
+        getBounds                          Main                    2023/Day22/SandSlabs.hs:36:32-40       745     2118480    0.0    0.0     0.0    0.0
+       blocksOverlap.ax                    Main                    2023/Day22/SandSlabs.hs:77:9-87        743     1059240    0.0    0.0     0.0    0.0
+       blocksOverlap.bx                    Main                    2023/Day22/SandSlabs.hs:77:9-87        747     1059240    0.0    0.0     0.0    0.0
+       blocksOverlap.ay                    Main                    2023/Day22/SandSlabs.hs:77:9-87        749      294450    0.0    0.0     0.0    0.0
+       blocksOverlap.by                    Main                    2023/Day22/SandSlabs.hs:77:9-87        748      294450    0.0    0.0     0.0    0.0
+      maxZ                                 Main                    2023/Day22/SandSlabs.hs:58:1-33        750       67678    0.0    0.0     0.0    0.0
+       getBounds                           Main                    2023/Day22/SandSlabs.hs:36:32-40       751       67678    0.0    0.0     0.0    0.0
+     settleBlocks.settle.b2'               Main                    2023/Day22/SandSlabs.hs:71:13-44       734        1455    0.0    0.0     0.0    0.0
+     settleBlocks.settle.b2bnds'           Main                    2023/Day22/SandSlabs.hs:70:13-66       757        1455    0.0    0.0     0.0    0.0
+      getBounds                            Main                    2023/Day22/SandSlabs.hs:36:32-40       758        1455    0.0    0.0     0.0    0.0
+     settleBlocks.settle.dz                Main                    2023/Day22/SandSlabs.hs:69:13-40       752        1455    0.0    0.0     0.0    0.0
+      maxZ                                 Main                    2023/Day22/SandSlabs.hs:58:1-33        755        1455    0.0    0.0     0.0    0.0
+       getBounds                           Main                    2023/Day22/SandSlabs.hs:36:32-40       756        1455    0.0    0.0     0.0    0.0
+      minZ                                 Main                    2023/Day22/SandSlabs.hs:56:1-33        753        1455    0.0    0.0     0.0    0.0
+       getBounds                           Main                    2023/Day22/SandSlabs.hs:36:32-40       754        1455    0.0    0.0     0.0    0.0
+     settleBlocks.settle.xs'               Main                    2023/Day22/SandSlabs.hs:67:13-27       735        1455    0.0    0.0     0.0    0.0
+    settleBlocks.bs'                       Main                    2023/Day22/SandSlabs.hs:62:9-37        720           1    0.0    0.4     0.0    0.4
+     minZ                                  Main                    2023/Day22/SandSlabs.hs:56:1-33        721        1456    0.0    0.0     0.0    0.0
+      getBounds                            Main                    2023/Day22/SandSlabs.hs:36:32-40       722        1456    0.0    0.0     0.0    0.0
+  main.children                            Main                    2023/Day22/SandSlabs.hs:27:9-111       717           1    1.1    0.5     1.1    0.5
+  main.edges                               Main                    2023/Day22/SandSlabs.hs:25:9-69        731           1    0.0    0.1    29.9    1.0
+   main.edges.\                            Main                    2023/Day22/SandSlabs.hs:25:28-64       732        1456    0.0    0.0    29.9    0.9
+    lbl                                    Main                    2023/Day22/SandSlabs.hs:36:22-24       733        3049    0.0    0.0     0.0    0.0
+    main.findSupports                      Main                    2023/Day22/SandSlabs.hs:34:5-93        736        1456   20.7    0.0    29.9    0.9
+     main.findSupports.\                   Main                    2023/Day22/SandSlabs.hs:34:68-92       737     2119936    2.9    0.0     8.6    0.0
+      maxZ                                 Main                    2023/Day22/SandSlabs.hs:58:1-33        738     2119936    4.0    0.0     4.0    0.0
+       getBounds                           Main                    2023/Day22/SandSlabs.hs:36:32-40       739     2119936    0.0    0.0     0.0    0.0
+      minZ                                 Main                    2023/Day22/SandSlabs.hs:56:1-33        759     2119936    1.7    0.0     1.7    0.0
+       getBounds                           Main                    2023/Day22/SandSlabs.hs:36:32-40       760     2119936    0.0    0.0     0.0    0.0
+     blocksOverlap                         Main                    2023/Day22/SandSlabs.hs:(76,1)-(81,56) 761       13773    0.6    0.0     0.6    0.9
+      blocksOverlap.rangesOverlap          Main                    2023/Day22/SandSlabs.hs:81:5-56        762       18003    0.0    0.0     0.0    0.0
+      blocksOverlap.(...)                  Main                    2023/Day22/SandSlabs.hs:77:9-87        764       13773    0.0    0.9     0.0    0.9
+       blocksOverlap.getXYRange            Main                    2023/Day22/SandSlabs.hs:80:5-68        766       27546    0.0    0.0     0.0    0.0
+       getBounds                           Main                    2023/Day22/SandSlabs.hs:36:32-40       765       27546    0.0    0.0     0.0    0.0
+      blocksOverlap.ax                     Main                    2023/Day22/SandSlabs.hs:77:9-87        763       13773    0.0    0.0     0.0    0.0
+      blocksOverlap.bx                     Main                    2023/Day22/SandSlabs.hs:77:9-87        767       13773    0.0    0.0     0.0    0.0
+      blocksOverlap.ay                     Main                    2023/Day22/SandSlabs.hs:77:9-87        769        4230    0.0    0.0     0.0    0.0
+      blocksOverlap.by                     Main                    2023/Day22/SandSlabs.hs:77:9-87        768        4230    0.0    0.0     0.0    0.0
+  main.floorBlock                          Main                    2023/Day22/SandSlabs.hs:21:9-61        723           1    0.0    0.0     0.0    0.0
+  main.maxX                                Main                    2023/Day22/SandSlabs.hs:20:9-40        724           1    0.0    0.0     0.0    0.0
+  main.maxY                                Main                    2023/Day22/SandSlabs.hs:20:9-40        729           1    0.0    0.0     0.0    0.0
+  main.parents                             Main                    2023/Day22/SandSlabs.hs:26:9-39        771           1    0.0    0.2     0.0    0.2

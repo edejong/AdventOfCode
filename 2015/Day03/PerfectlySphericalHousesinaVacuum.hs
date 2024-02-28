@@ -1,11 +1,10 @@
 {-# OPTIONS_GHC -Wno-incomplete-patterns #-}
-module Day03.PerfectlySphericalHousesinaVacuum where
 import Data.List ( nub, transpose )
 import Data.Sequence (unfoldl)
 
 main :: IO ()
 main = do
-    xs <- readFile "2015/data/day03.txt"
+    xs <- readFile "2015/Day03/day03.txt"
     print $ length . nub . path xs $ (0, 0)
     print $ length . nub . concatMap (\ inp -> path inp (0, 0)) . deinterleave $ xs
 
