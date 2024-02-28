@@ -1,12 +1,8 @@
-{-# LANGUAGE TypeApplications #-}
-
-module Day07.TheTreacherOfWhales where
-
-import Data.List.Split (splitOn)
+import           Data.List.Split (splitOn)
 
 main :: IO ()
 main = do
-  xs <- map (read @Int) . splitOn "," <$> readFile "2021/data/day07.txt"
+  xs <- map (read @Int) . splitOn "," <$> readFile "2021/Day07/day07.txt"
   print (minFuel id xs, minFuel (\n -> n * (n + 1) `div` 2) xs) -- (part1, part2)
   where
     minFuel f xs =

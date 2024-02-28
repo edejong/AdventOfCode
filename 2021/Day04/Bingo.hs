@@ -1,14 +1,11 @@
-{-# LANGUAGE TypeApplications #-}
-module Day04.Bingo where
-import Data.Function (on)
-import Data.List (maximumBy, minimumBy, sortOn, transpose, (\\))
-import Data.List.Split (chunksOf, splitOn)
-import Data.Map (Map, fromList, (!))
-import qualified Data.Map as Map
+import           Data.Function   (on)
+import           Data.List       (maximumBy, minimumBy, sortOn, transpose, (\\))
+import           Data.List.Split (chunksOf, splitOn)
+import           Data.Map        (fromList, (!))
 
 main :: IO ()
 main = do
-  input <- lines <$> readFile "data/day04.txt"
+  input <- lines <$> readFile "2021/Day04/day04.txt"
   let draws = map (read @Int) . splitOn "," . head $ input
       drawsMap = fromList . sortOn snd $ zip draws [0 ..]
       boards = map (map (map (read @Int) . words) . drop 1) . chunksOf 6 . tail $ input

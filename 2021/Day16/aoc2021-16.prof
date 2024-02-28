@@ -1,0 +1,80 @@
+	Sat Feb 24 16:34 2024 Time and Allocation Profiling Report  (Final)
+
+	   aoc2021-16 +RTS -N -p -hy -l-agu -RTS
+
+	total time  =        0.00 secs   (3 ticks @ 1000 us, 8 processors)
+	total alloc =   9,808,888 bytes  (excludes profiling overheads)
+
+COST CENTRE             MODULE          SRC                                           %time %alloc
+
+CAF                     GHC.IO.Encoding <entire-module>                                33.3    0.0
+hexDigitToBin.\         Main            2021/Day16/PacketDecoder.hs:37:35-77           33.3    0.0
+binToInt                Main            2021/Day16/PacketDecoder.hs:43:1-57            33.3   12.6
+MAIN                    MAIN            <built-in>                                      0.0    1.4
+subPacketsOfTotalLength Main            2021/Day16/PacketDecoder.hs:(108,1)-(113,27)    0.0   44.9
+nibble                  Main            2021/Day16/PacketDecoder.hs:89:1-29             0.0   12.3
+literalBin              Main            2021/Day16/PacketDecoder.hs:86:1-75             0.0    1.9
+int                     Main            2021/Day16/PacketDecoder.hs:76:1-41             0.0   15.1
+hexStringToBin          Main            2021/Day16/PacketDecoder.hs:40:1-40             0.0    3.3
+hexDigitToBin           Main            2021/Day16/PacketDecoder.hs:37:1-109            0.0    5.6
+
+
+                                                                                                                        individual      inherited
+COST CENTRE                       MODULE                SRC                                          no.     entries  %time %alloc   %time %alloc
+
+MAIN                              MAIN                  <built-in>                                   189           0    0.0    1.4   100.0  100.0
+ CAF                              Main                  <entire-module>                              376           0    0.0    0.0     0.0    0.0
+  binToInt                        Main                  2021/Day16/PacketDecoder.hs:43:1-57          392           2    0.0    0.0     0.0    0.0
+  hexDigitToBin                   Main                  2021/Day16/PacketDecoder.hs:37:1-109         386           1    0.0    0.0     0.0    0.0
+  hexStringToBin                  Main                  2021/Day16/PacketDecoder.hs:40:1-40          384           1    0.0    0.0     0.0    0.0
+  int                             Main                  2021/Day16/PacketDecoder.hs:76:1-41          389           1    0.0    0.0     0.0    0.0
+  literal                         Main                  2021/Day16/PacketDecoder.hs:83:1-43          401           1    0.0    0.0     0.0    0.0
+  literalBin                      Main                  2021/Day16/PacketDecoder.hs:86:1-75          403           1    0.0    0.0     0.0    0.0
+  main                            Main                  2021/Day16/PacketDecoder.hs:(27,1)-(33,26)   378           1    0.0    0.0     0.0    0.0
+  nibble                          Main                  2021/Day16/PacketDecoder.hs:89:1-29          405           1    0.0    0.0     0.0    0.0
+  operator                        Main                  2021/Day16/PacketDecoder.hs:(92,1)-(94,24)   394           1    0.0    0.0     0.0    0.0
+   operator'                      Main                  2021/Day16/PacketDecoder.hs:(97,1)-(105,46)  397           0    0.0    0.0     0.0    0.0
+    int                           Main                  2021/Day16/PacketDecoder.hs:76:1-41          398           2    0.0    0.0     0.0    0.0
+  packet                          Main                  2021/Day16/PacketDecoder.hs:(69,1)-(73,41)   380           1    0.0    0.0     0.0    0.0
+   int                            Main                  2021/Day16/PacketDecoder.hs:76:1-41          382           1    0.0    0.0     0.0    0.0
+ CAF                              GHC.Conc.Signal       <entire-module>                              298           0    0.0    0.0     0.0    0.0
+ CAF                              GHC.IO.Encoding       <entire-module>                              280           0   33.3    0.0    33.3    0.0
+ CAF                              GHC.IO.Encoding.Iconv <entire-module>                              278           0    0.0    0.0     0.0    0.0
+ CAF                              GHC.IO.FD             <entire-module>                              271           0    0.0    0.0     0.0    0.0
+ CAF                              GHC.IO.Handle.FD      <entire-module>                              269           0    0.0    0.4     0.0    0.4
+ CAF                              GHC.Event.Thread      <entire-module>                              209           0    0.0    0.0     0.0    0.0
+ main                             Main                  2021/Day16/PacketDecoder.hs:(27,1)-(33,26)   379           0    0.0    0.9    66.7   98.2
+  eval                            Main                  2021/Day16/PacketDecoder.hs:(52,1)-(65,34)   416         268    0.0    0.2     0.0    0.4
+   eval.(...)                     Main                  2021/Day16/PacketDecoder.hs:64:5-22          420         169    0.0    0.0     0.0    0.0
+   eval.v                         Main                  2021/Day16/PacketDecoder.hs:64:5-22          421         169    0.0    0.0     0.0    0.0
+   eval.(...)                     Main                  2021/Day16/PacketDecoder.hs:65:5-34          417          99    0.0    0.0     0.0    0.0
+   eval.subPackets                Main                  2021/Day16/PacketDecoder.hs:65:5-34          418          99    0.0    0.0     0.0    0.0
+   eval.xs                        Main                  2021/Day16/PacketDecoder.hs:62:5-28          419          99    0.0    0.2     0.0    0.2
+   eval.(...)                     Main                  2021/Day16/PacketDecoder.hs:63:5-16          424          20    0.0    0.0     0.0    0.0
+   eval.a                         Main                  2021/Day16/PacketDecoder.hs:63:5-16          423          20    0.0    0.0     0.0    0.0
+   eval.b                         Main                  2021/Day16/PacketDecoder.hs:63:5-16          425          20    0.0    0.0     0.0    0.0
+  sumVersions                     Main                  2021/Day16/PacketDecoder.hs:(47,1)-(49,24)   400         268    0.0    0.5     0.0    0.5
+  hexStringToBin                  Main                  2021/Day16/PacketDecoder.hs:40:1-40          385           0    0.0    3.3    33.3    8.9
+   hexDigitToBin                  Main                  2021/Day16/PacketDecoder.hs:37:1-109         387           0    0.0    5.5    33.3    5.5
+    hexDigitToBin.\               Main                  2021/Day16/PacketDecoder.hs:37:35-77         388        5234   33.3    0.0    33.3    0.0
+  packet                          Main                  2021/Day16/PacketDecoder.hs:(69,1)-(73,41)   381           0    0.0    0.2    33.3   87.6
+   int                            Main                  2021/Day16/PacketDecoder.hs:76:1-41          383           0    0.0   15.1    33.3   87.4
+    bodyForType                   Main                  2021/Day16/PacketDecoder.hs:(79,1)-(80,34)   390         268    0.0    0.0    33.3   64.8
+     literal                      Main                  2021/Day16/PacketDecoder.hs:83:1-43          402           0    0.0    0.1    33.3   19.9
+      literalBin                  Main                  2021/Day16/PacketDecoder.hs:86:1-75          404           0    0.0    1.9    33.3   19.8
+       nibble                     Main                  2021/Day16/PacketDecoder.hs:89:1-29          406           0    0.0   12.3    33.3   17.9
+        binToInt                  Main                  2021/Day16/PacketDecoder.hs:43:1-57          422           0   33.3    5.1    33.3    5.1
+        operator                  Main                  2021/Day16/PacketDecoder.hs:(92,1)-(94,24)   407           0    0.0    0.0     0.0    0.6
+         operator'                Main                  2021/Day16/PacketDecoder.hs:(97,1)-(105,46)  408           0    0.0    0.3     0.0    0.6
+          subPacketsOfTotalLength Main                  2021/Day16/PacketDecoder.hs:(108,1)-(113,27) 409           0    0.0    0.3     0.0    0.3
+     operator                     Main                  2021/Day16/PacketDecoder.hs:(92,1)-(94,24)   395           0    0.0    0.1     0.0   44.9
+      operator'                   Main                  2021/Day16/PacketDecoder.hs:(97,1)-(105,46)  396          99    0.0    0.2     0.0   44.8
+       subPacketsOfTotalLength    Main                  2021/Day16/PacketDecoder.hs:(108,1)-(113,27) 399          47    0.0   44.6     0.0   44.6
+        literal                   Main                  2021/Day16/PacketDecoder.hs:83:1-43          410           0    0.0    0.0     0.0    0.0
+         literalBin               Main                  2021/Day16/PacketDecoder.hs:86:1-75          411           0    0.0    0.0     0.0    0.0
+          nibble                  Main                  2021/Day16/PacketDecoder.hs:89:1-29          412           0    0.0    0.0     0.0    0.0
+       literal                    Main                  2021/Day16/PacketDecoder.hs:83:1-43          413           0    0.0    0.0     0.0    0.0
+        literalBin                Main                  2021/Day16/PacketDecoder.hs:86:1-75          414           0    0.0    0.0     0.0    0.0
+         nibble                   Main                  2021/Day16/PacketDecoder.hs:89:1-29          415           0    0.0    0.0     0.0    0.0
+    toEnum                        Main                  2021/Day16/PacketDecoder.hs:16:41-44         391         268    0.0    0.0     0.0    0.0
+    binToInt                      Main                  2021/Day16/PacketDecoder.hs:43:1-57          393           0    0.0    7.5     0.0    7.5

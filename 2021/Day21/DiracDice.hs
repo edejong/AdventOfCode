@@ -1,11 +1,9 @@
-{-# LANGUAGE TypeApplications #-}
-module Day21.DiracDice where
-import Data.Tuple (swap)
-import Data.Array.Unboxed (array, (!), Array)
+import           GHC.Arr (Array, array, (!))
+import           Data.Tuple         (swap)
 
 main :: IO ()
 main = do
-    xs <- map ((read @Integer) . drop 2 . dropWhile (/= ':')) . lines <$> readFile "2021/data/day21-test.txt"
+    xs <- map ((read @Integer) . drop 2 . dropWhile (/= ':')) . lines <$> readFile "2021/Day21/day21-test.txt"
     print $ uncurry (*) (playGame 1000 (head xs, 0) (xs !! 1, 0) 0)
     print $ uncurry max (countWins (head xs, 21) (xs !! 1, 21))
 
@@ -24,8 +22,8 @@ countWins :: (Integer, Integer) -> (Integer, Integer) -> (Integer, Integer)
 countWins p1@(pos1, score1) p2@(pos2, score2) = cache ! (p1, p2)
   where
     cache :: Array ((Integer, Integer),(Integer, Integer)) (Integer, Integer)
-    cache = array (((1, 0), (1, 0)), ((10, 27), (10, 27))) 
-              [(((pos1, score1), (pos2, score2)), countWins' pos1 score1 pos2 score2) 
+    cache = array (((1, 0), (1, 0)), ((10, 27), (10, 27)))
+              [(((pos1, score1), (pos2, score2)), countWins' pos1 score1 pos2 score2)
               | score1 <- [0..27], score2 <- [0..27],  pos1 <- [1..10],  pos2 <- [1..10]]
       where rolls = [d1+d2+d3 | d1 <- [1..3], d2 <- [1..3], d3 <- [1..3]]
             plus (x1, y1) (x2, y2) = (x1+x2, y1+y2)

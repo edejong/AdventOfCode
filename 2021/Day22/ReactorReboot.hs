@@ -1,21 +1,21 @@
-module Day22.ReactorReboot where
-import Text.Parsec (sepBy1, endOfLine, string, try, (<|>), char, many1, digit)
-import Text.Parsec.String (Parser, parseFromFile)
-import Data.List (foldl')
+import           Data.List          (foldl')
+import           Text.Parsec        (char, digit, endOfLine, many1, sepBy1,
+                                     string, try, (<|>))
+import           Text.Parsec.String (Parser, parseFromFile)
 
 type Range = (Int, Int)
 data Cuboid = Cuboid { x::Range, y::Range, z::Range } deriving (Eq, Show)
 
 main :: IO ()
 main = do
-    steps <- either (error . show) id <$> parseFromFile parser "2021/data/day22.txt"
+    steps <- either (error . show) id <$> parseFromFile parser "2021/Day22/day22.txt"
     let part1Bounds = Cuboid (-50, 50) (-50, 50) (-50, 50)
     print $ sum . map volume $ doSteps . filter ((`isInside` part1Bounds) . snd) $ steps
     print $ sum . map volume $ doSteps steps
 
 doSteps :: [(Bool, Cuboid)] -> [Cuboid]
 doSteps = foldl' (flip (uncurry doStep)) []
-  where doStep switchOn c = foldr (\ x -> (++) (x `subtractCuboid` c)) ([c | switchOn])
+  where doStep swOn c = foldr (\ x' -> (++) (x' `subtractCuboid` c)) ([c | swOn])
 
 ------ Cuboid
 
@@ -52,8 +52,10 @@ subtractCuboid (Cuboid (x0, x1) (y0, y1) (z0, z1)) (Cuboid (x2, x3) (y2, y3) (z2
 
 ------ Parser
 
+parser :: Parser [(Bool, Cuboid)]
 parser = sepBy1 step endOfLine
-step = (\on x y z -> (on, Cuboid x y z)) <$> switchOn <* char ' ' <*> range 'x' <*> (char ',' *> range 'y') <*> (char ',' *> range 'z')
-switchOn = (== "on") <$> (try (string "on") <|> string "off")
-range dim = (,) <$> (char dim *> char '=' *> int) <*> (string ".." *> int)
-int = read <$> (many1 digit <|> string "-" <> many1 digit)
+  where
+    step = (\on x' y' z' -> (on, Cuboid x' y' z')) <$> switchOn <* char ' ' <*> range 'x' <*> (char ',' *> range 'y') <*> (char ',' *> range 'z')
+    switchOn = (== "on") <$> (try (string "on") <|> string "off")
+    range dim = (,) <$> (char dim *> char '=' *> int) <*> (string ".." *> int)
+    int = read <$> (many1 digit <|> string "-" <> many1 digit)

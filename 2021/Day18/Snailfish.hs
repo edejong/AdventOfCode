@@ -1,15 +1,15 @@
-module Day18.Snailfish where
 import qualified Control.Applicative as A ((<|>))
-import Data.Char (digitToInt)
-import Text.Parsec (digit, string, (<|>), between, char, parse, ParseError)
-import Text.Parsec.String (Parser)
-import Data.Either (fromRight)
-import Data.List (find, foldl', unfoldr, tails)
-import Data.Maybe (fromJust, fromMaybe)
+import           Data.Char           (digitToInt)
+import           Data.Either         (fromRight)
+import           Data.List           (find, foldl', tails, unfoldr)
+import           Data.Maybe          (fromJust, fromMaybe)
+import           Text.Parsec         (ParseError, between, char, digit, parse,
+                                      string, (<|>))
+import           Text.Parsec.String  (Parser)
 
 main :: IO ()
 main = do
-    Right xs <- mapM fromString . lines <$> readFile "2021/data/day18.txt"
+    Right xs <- mapM fromString . lines <$> readFile "2021/Day18/day18.txt"
     print $ snailMagnitude . snailSum $ xs
     print $ maximum . map (snailMagnitude . uncurry snailAdd) . pairs $ xs
 
@@ -31,7 +31,7 @@ pairs l = concat [[(x,y), (y,x)] | (x:ys) <- tails l, y <- ys]
 data SnailNum = Num Int | Pair SnailNum SnailNum deriving Eq
 
 instance Show SnailNum where
-  show (Num n) = show n
+  show (Num n)    = show n
   show (Pair a b) = "[" ++ show a ++ "," ++ show b ++ "]"
 
 -- Would be nicer to create a Read instance
@@ -39,13 +39,13 @@ fromString :: String -> Either ParseError SnailNum
 fromString = parse snailNum ""
 
 addLeft :: Int -> SnailNum -> SnailNum
-addLeft 0 n = n
-addLeft x (Num v) = Num (x + v)
+addLeft 0 n          = n
+addLeft x (Num v)    = Num (x + v)
 addLeft x (Pair l r) = Pair (addLeft x l) r
 
 addRight :: Int -> SnailNum -> SnailNum
-addRight 0 n = n
-addRight x (Num v) = Num (x + v)
+addRight 0 n          = n
+addRight x (Num v)    = Num (x + v)
 addRight x (Pair l r) = Pair l (addRight x r)
 
 reduce :: SnailNum -> SnailNum
@@ -76,5 +76,5 @@ snailSum :: [SnailNum] -> SnailNum
 snailSum xs = foldl' snailAdd (head xs) (tail xs)
 
 snailMagnitude :: SnailNum -> Int
-snailMagnitude (Num x) = x
+snailMagnitude (Num x)    = x
 snailMagnitude (Pair l r) = 3 * snailMagnitude l + 2 * snailMagnitude r

@@ -1,11 +1,10 @@
-module Day16.PacketDecoder where
-import Data.Char (digitToInt, intToDigit)
-import Data.List (unfoldr)
-import Data.Bits ((.&.), Bits (shiftR))
-import Numeric (showIntAtBase, readInt)
-import Text.ParserCombinators.Parsec
-import Text.Parsec.String (Parser)
-import Data.Either (fromRight)
+import           Data.Bits                     (Bits (shiftR), (.&.))
+import           Data.Char                     (digitToInt, intToDigit)
+import           Data.Either                   (fromRight)
+import           Data.List                     (unfoldr)
+import           Numeric                       (readInt, showIntAtBase)
+import           Text.Parsec.String            (Parser)
+import           Text.ParserCombinators.Parsec
 
 data PacketType = SumType
                 | ProductType
@@ -26,7 +25,7 @@ data Body = Literal Integer
 
 main :: IO ()
 main = do
-    xs <- readFile "2021/data/day16.txt"
+    xs <- readFile "2021/Day16/day16.txt"
     case parse packet "" (hexStringToBin xs) of
         Left err -> print err
         Right p -> do
@@ -59,7 +58,7 @@ eval (Packet (Header ver op) body) = case op of
     GreaterThanType -> if a > b then 1 else 0
     LessThanType    -> if a < b then 1 else 0
     EqualToType     -> if a == b then 1 else 0
-  where 
+  where
     xs = map eval subPackets
     (a:b:_) = xs
     (Literal v) = body
@@ -78,7 +77,7 @@ int n = binToInt <$> count n (oneOf "01")
 
 bodyForType :: PacketType -> Parser Body
 bodyForType LiteralType = literal
-bodyForType _ = operator
+bodyForType _           = operator
 
 literal :: Parser Body
 literal = Literal . binToInt <$> literalBin
@@ -110,5 +109,5 @@ subPacketsOfTotalLength 0 = return []
 subPacketsOfTotalLength n = do
     s <- count n (oneOf "01")
     return $ case parse (many packet) "" s of
-               Left e -> error (show e)
+               Left e  -> error (show e)
                Right p -> p

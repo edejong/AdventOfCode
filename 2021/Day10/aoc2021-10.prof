@@ -1,0 +1,44 @@
+	Sat Feb 24 15:59 2024 Time and Allocation Profiling Report  (Final)
+
+	   aoc2021-10 +RTS -N -p -hy -l-agu -RTS
+
+	total time  =        0.00 secs   (3 ticks @ 1000 us, 8 processors)
+	total alloc =   2,081,248 bytes  (excludes profiling overheads)
+
+COST CENTRE MODULE           SRC                                         %time %alloc
+
+MAIN        MAIN             <built-in>                                   33.3    6.6
+parse       Main             2021/Day10/SyntaxScoring.hs:(14,1)-(18,22)   33.3    8.4
+main        Main             2021/Day10/SyntaxScoring.hs:(7,1)-(11,75)    33.3   80.5
+CAF         GHC.IO.Handle.FD <entire-module>                               0.0    1.7
+score2      Main             2021/Day10/SyntaxScoring.hs:(24,1)-(25,66)    0.0    1.2
+
+
+                                                                                                         individual      inherited
+COST CENTRE        MODULE                  SRC                                        no.     entries  %time %alloc   %time %alloc
+
+MAIN               MAIN                    <built-in>                                 163           0   33.3    6.6   100.0  100.0
+ CAF               Main                    <entire-module>                            325           0    0.0    0.1     0.0    0.1
+  main             Main                    2021/Day10/SyntaxScoring.hs:(7,1)-(11,75)  326           1    0.0    0.0     0.0    0.0
+  score1           Main                    2021/Day10/SyntaxScoring.hs:21:1-70        334           1    0.0    0.0     0.0    0.0
+  score2           Main                    2021/Day10/SyntaxScoring.hs:(24,1)-(25,66) 337           1    0.0    0.0     0.0    0.0
+   score2.scores   Main                    2021/Day10/SyntaxScoring.hs:25:9-66        340           1    0.0    0.0     0.0    0.0
+  parse            Main                    2021/Day10/SyntaxScoring.hs:(14,1)-(18,22) 331           0    0.0    0.0     0.0    0.0
+   parse.parens    Main                    2021/Day10/SyntaxScoring.hs:16:9-78        332           1    0.0    0.0     0.0    0.0
+    parse.parens.\ Main                    2021/Day10/SyntaxScoring.hs:16:45-50       333           4    0.0    0.0     0.0    0.0
+ CAF               GHC.Conc.Signal         <entire-module>                            272           0    0.0    0.0     0.0    0.0
+ CAF               GHC.IO.Encoding         <entire-module>                            254           0    0.0    0.1     0.0    0.1
+ CAF               GHC.IO.Encoding.Iconv   <entire-module>                            252           0    0.0    0.0     0.0    0.0
+ CAF               GHC.IO.Exception        <entire-module>                            246           0    0.0    0.0     0.0    0.0
+ CAF               GHC.IO.FD               <entire-module>                            245           0    0.0    0.0     0.0    0.0
+ CAF               GHC.IO.Handle.FD        <entire-module>                            243           0    0.0    1.7     0.0    1.7
+ CAF               GHC.IO.Handle.Internals <entire-module>                            242           0    0.0    0.0     0.0    0.0
+ CAF               GHC.Event.Thread        <entire-module>                            183           0    0.0    0.1     0.0    0.1
+ main              Main                    2021/Day10/SyntaxScoring.hs:(7,1)-(11,75)  327           0   33.3   80.5    66.7   91.3
+  parse            Main                    2021/Day10/SyntaxScoring.hs:(14,1)-(18,22) 330        7697   33.3    8.4    33.3    8.4
+  main.(...)       Main                    2021/Day10/SyntaxScoring.hs:9:7-53         329           1    0.0    0.2     0.0    0.2
+  main.corrupted   Main                    2021/Day10/SyntaxScoring.hs:9:7-53         328           1    0.0    0.0     0.0    0.0
+  main.incomplete  Main                    2021/Day10/SyntaxScoring.hs:9:7-53         336           1    0.0    0.0     0.0    0.0
+  score1           Main                    2021/Day10/SyntaxScoring.hs:21:1-70        335           0    0.0    0.0     0.0    0.0
+  score2           Main                    2021/Day10/SyntaxScoring.hs:(24,1)-(25,66) 338           0    0.0    1.2     0.0    2.1
+   score2.\        Main                    2021/Day10/SyntaxScoring.hs:24:25-44       339         642    0.0    0.9     0.0    0.9

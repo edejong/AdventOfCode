@@ -1,0 +1,174 @@
+	Sat Feb 24 16:55 2024 Time and Allocation Profiling Report  (Final)
+
+	   aoc2021-23 +RTS -N -p -hy -l-agu -RTS
+
+	total time  =        1.08 secs   (4013 ticks @ 1000 us, 8 processors)
+	total alloc = 4,392,777,008 bytes  (excludes profiling overheads)
+
+COST CENTRE                   MODULE                SRC                                            %time %alloc
+
+minimalCost'.moves'           Main                  2021/Day23/Amphipod.hs:42:5-95                  34.6    2.7
+minimalCost'.visited'         Main                  2021/Day23/Amphipod.hs:41:5-33                  11.1    3.5
+unsafeInsertNew               Data.IntPSQ.Internal  src/Data/IntPSQ/Internal.hs:(230,1)-(254,68)     9.3   26.5
+deleteView                    Data.IntPSQ.Internal  src/Data/IntPSQ/Internal.hs:(390,1)-(413,70)     5.7    7.2
+alter                         Data.HashPSQ.Internal src/Data/HashPSQ/Internal.hs:(224,1)-(243,14)    4.8    3.4
+adjust                        Main                  2021/Day23/Amphipod.hs:80:1-68                   4.6   15.8
+minView                       Data.HashPSQ.Internal src/Data/HashPSQ/Internal.hs:(334,1)-(344,55)    3.8    4.2
+moves.movesIntoHallway        Main                  2021/Day23/Amphipod.hs:51:5-124                  3.5    9.0
+hashWithSalt1                 Data.Hashable.Class   src/Data/Hashable/Class.hs:279:1-45              3.0    1.9
+defaultHashWithSalt           Data.Hashable.Class   src/Data/Hashable/Class.hs:301:1-50              2.6    3.0
+moves.hallwayOccupied         Main                  2021/Day23/Amphipod.hs:48:5-115                  2.2    1.8
+moves.hallwayOpenRangePerDoor Main                  2021/Day23/Amphipod.hs:50:5-113                  1.5    1.8
+moves.inHallway               Main                  2021/Day23/Amphipod.hs:54:5-74                   1.5    2.4
+move                          Main                  2021/Day23/Amphipod.hs:(60,1)-(69,29)            1.2    4.9
+move.(...)                    Main                  2021/Day23/Amphipod.hs:64:5-96                   0.8    1.1
+moves.unemptyRooms            Main                  2021/Day23/Amphipod.hs:53:5-119                  0.7    1.7
+moves.hallwayOpenRanges       Main                  2021/Day23/Amphipod.hs:49:5-122                  0.7    1.9
+moves                         Main                  2021/Day23/Amphipod.hs:(46,1)-(57,47)            0.5    1.1
+moves.hallwayOccupied.\       Main                  2021/Day23/Amphipod.hs:48:40-57                  0.2    1.3
+
+
+                                                                                                                                individual      inherited
+COST CENTRE                            MODULE                  SRC                                           no.     entries  %time %alloc   %time %alloc
+
+MAIN                                   MAIN                    <built-in>                                    223           0    0.1    0.0   100.0  100.0
+ CAF                                   Main                    <entire-module>                               444           0    0.0    0.0     0.0    0.0
+  main                                 Main                    2021/Day23/Amphipod.hs:(16,1)-(21,37)         446           1    0.0    0.0     0.0    0.0
+  readBurrow                           Main                    2021/Day23/Amphipod.hs:(75,1)-(77,31)         459           1    0.0    0.0     0.0    0.0
+  targetRoom                           Main                    2021/Day23/Amphipod.hs:72:1-37                531           1    0.0    0.0     0.0    0.0
+  alter                                Data.HashPSQ.Internal   src/Data/HashPSQ/Internal.hs:(224,1)-(243,14) 520           0    0.0    0.0     0.0    0.0
+   defaultHash                         Data.Hashable.Class     src/Data/Hashable/Class.hs:308:1-38           521           0    0.0    0.0     0.0    0.0
+    hashWithSalt1                      Data.Hashable.Class     src/Data/Hashable/Class.hs:279:1-45           522           1    0.0    0.0     0.0    0.0
+     defaultLiftHashWithSalt           Data.Hashable.Class     src/Data/Hashable/Class.hs:291:1-60           523           0    0.0    0.0     0.0    0.0
+  insert                               Data.HashPSQ.Internal   src/Data/HashPSQ/Internal.hs:(175,1)-(191,58) 466           0    0.0    0.0     0.0    0.0
+   defaultHash                         Data.Hashable.Class     src/Data/Hashable/Class.hs:308:1-38           467           0    0.0    0.0     0.0    0.0
+    hashWithSalt1                      Data.Hashable.Class     src/Data/Hashable/Class.hs:279:1-45           468           1    0.0    0.0     0.0    0.0
+     defaultLiftHashWithSalt           Data.Hashable.Class     src/Data/Hashable/Class.hs:291:1-60           469           0    0.0    0.0     0.0    0.0
+  minimalCost'                         Main                    2021/Day23/Amphipod.hs:(35,1)-(43,37)         489           0    0.0    0.0     0.0    0.0
+   minimalCost'.moves'                 Main                    2021/Day23/Amphipod.hs:42:5-95                490           0    0.0    0.0     0.0    0.0
+    moves                              Main                    2021/Day23/Amphipod.hs:(46,1)-(57,47)         491           0    0.0    0.0     0.0    0.0
+     moves.targetAmphipod              Main                    2021/Day23/Amphipod.hs:57:5-47                539           1    0.0    0.0     0.0    0.0
+     moves.movesIntoHallway            Main                    2021/Day23/Amphipod.hs:51:5-124               492           0    0.0    0.0     0.0    0.0
+ CAF                                   Data.HashPSQ.Internal   <entire-module>                               443           0    0.0    0.0     0.0    0.0
+  empty                                Data.HashPSQ.Internal   src/Data/HashPSQ/Internal.hs:157:1-28         452           1    0.0    0.0     0.0    0.0
+ CAF                                   Data.IntPSQ.Internal    <entire-module>                               442           0    0.0    0.0     0.0    0.0
+  empty                                Data.IntPSQ.Internal    src/Data/IntPSQ/Internal.hs:209:1-11          453           1    0.0    0.0     0.0    0.0
+ CAF                                   Data.OrdPSQ.Internal    <entire-module>                               441           0    0.0    0.0     0.0    0.0
+  empty                                Data.OrdPSQ.Internal    src/Data/OrdPSQ/Internal.hs:182:1-12          471           1    0.0    0.0     0.0    0.0
+ CAF                                   GHC.Conc.Signal         <entire-module>                               336           0    0.0    0.0     0.0    0.0
+ CAF                                   GHC.IO.Encoding         <entire-module>                               318           0    0.0    0.0     0.0    0.0
+ CAF                                   GHC.IO.Encoding.Iconv   <entire-module>                               316           0    0.0    0.0     0.0    0.0
+ CAF                                   GHC.IO.Exception        <entire-module>                               310           0    0.0    0.0     0.0    0.0
+ CAF                                   GHC.IO.FD               <entire-module>                               309           0    0.0    0.0     0.0    0.0
+ CAF                                   GHC.IO.Handle.FD        <entire-module>                               307           0    0.0    0.0     0.0    0.0
+ CAF                                   GHC.IO.Handle.Internals <entire-module>                               306           0    0.0    0.0     0.0    0.0
+ CAF                                   GHC.Event.Thread        <entire-module>                               243           0    0.0    0.0     0.0    0.0
+ main                                  Main                    2021/Day23/Amphipod.hs:(16,1)-(21,37)         447           0    0.0    0.0    99.9  100.0
+  minimalCost                          Main                    2021/Day23/Amphipod.hs:32:1-77                448           2    0.0    0.0    99.9  100.0
+   minimalCost'                        Main                    2021/Day23/Amphipod.hs:(35,1)-(43,37)         472      211515    0.3    0.3    99.9  100.0
+    isFinished                         Main                    2021/Day23/Amphipod.hs:24:1-106               473      211515    0.7    0.5     0.7    0.5
+    minimalCost'.(...)                 Main                    2021/Day23/Amphipod.hs:39:5-49                475      211515    0.0    0.0     3.9    4.2
+     minView                           Data.HashPSQ.Internal   src/Data/HashPSQ/Internal.hs:(334,1)-(344,55) 476      211515    3.8    4.2     3.8    4.2
+      minView                          Data.OrdPSQ.Internal    src/Data/OrdPSQ/Internal.hs:(352,1)-(353,63)  477      211515    0.0    0.0     0.0    0.0
+    minimalCost'.b                     Main                    2021/Day23/Amphipod.hs:39:5-49                474      211515    0.0    0.0     0.0    0.0
+    minimalCost'.h'                    Main                    2021/Day23/Amphipod.hs:39:5-49                494      211513    0.0    0.0     0.0    0.0
+    minimalCost'.h''                   Main                    2021/Day23/Amphipod.hs:40:5-27                495      211513    0.2    0.3    26.9   43.8
+     minimalCost'.f                    Main                    2021/Day23/Amphipod.hs:43:5-37                496      463540    0.1    0.4    26.8   43.5
+      insertOrReducePrio               Main                    2021/Day23/Amphipod.hs:(27,1)-(29,47)         497      463540    0.3    0.0    26.6   43.1
+       alter                           Data.HashPSQ.Internal   src/Data/HashPSQ/Internal.hs:(224,1)-(243,14) 498      463540    4.8    3.4    26.4   43.1
+        unsafeInsertNew                Data.IntPSQ.Internal    src/Data/IntPSQ/Internal.hs:(230,1)-(254,68)  503     5944326    9.3   26.5     9.3   26.5
+        defaultHash                    Data.Hashable.Class     src/Data/Hashable/Class.hs:308:1-38           504      463540    0.2    0.3     6.0    5.2
+         hashWithSalt1                 Data.Hashable.Class     src/Data/Hashable/Class.hs:279:1-45           505     1390620    3.0    1.9     5.8    4.8
+          defaultHashWithSalt          Data.Hashable.Class     src/Data/Hashable/Class.hs:301:1-50           509     8120632    2.6    3.0     2.6    3.0
+           hashInt                     Data.Hashable.LowLevel  src/Data/Hashable/LowLevel.hs:(64,1)-(80,31)  510     8120632    0.0    0.0     0.0    0.0
+          hashInt                      Data.Hashable.LowLevel  src/Data/Hashable/LowLevel.hs:(64,1)-(80,31)  517     2781240    0.0    0.0     0.0    0.0
+          defaultLiftHashWithSalt      Data.Hashable.Class     src/Data/Hashable/Class.hs:291:1-60           506      463540    0.2    0.0     0.2    0.0
+        deleteView                     Data.IntPSQ.Internal    src/Data/IntPSQ/Internal.hs:(390,1)-(413,70)  499      463540    5.7    7.2     5.7    7.2
+        insertOrReducePrio.f           Main                    2021/Day23/Amphipod.hs:(28,9)-(29,47)         502      463540    0.2    0.0     0.2    0.0
+        mkBucket                       Data.HashPSQ.Internal   src/Data/HashPSQ/Internal.hs:(82,1)-(87,57)   541      239405    0.0    0.4     0.3    0.8
+         insert                        Data.OrdPSQ.Internal    src/Data/OrdPSQ/Internal.hs:(198,1)-(211,70)  543      239405    0.2    0.3     0.2    0.3
+          singleton                    Data.OrdPSQ.Internal    src/Data/OrdPSQ/Internal.hs:186:1-42          544      239405    0.0    0.0     0.0    0.0
+         minView                       Data.OrdPSQ.Internal    src/Data/OrdPSQ/Internal.hs:(352,1)-(353,63)  542      239405    0.0    0.0     0.0    0.0
+    minimalCost'.moves'                Main                    2021/Day23/Amphipod.hs:42:5-95                478      211513   34.6    2.7    56.9   47.6
+     moves                             Main                    2021/Day23/Amphipod.hs:(46,1)-(57,47)         479      211513    0.5    1.1    22.3   44.9
+      moves.hallwayOccupied            Main                    2021/Day23/Amphipod.hs:48:5-115               484      211513    2.2    1.8     2.5    3.1
+       moves.hallwayOccupied.\         Main                    2021/Day23/Amphipod.hs:48:40-57               485      211513    0.2    1.3     0.2    1.3
+      moves.hallwayOpenRangePerDoor    Main                    2021/Day23/Amphipod.hs:50:5-113               481      211513    1.5    1.8     1.5    1.8
+       moves.hallwayOpenRangePerDoor.\ Main                    2021/Day23/Amphipod.hs:50:61-75               488     1880899    0.0    0.0     0.0    0.0
+      moves.hallwayOpenRanges          Main                    2021/Day23/Amphipod.hs:49:5-122               486      211513    0.7    1.9     0.7    1.9
+       moves.hallwayOpenRanges.\       Main                    2021/Day23/Amphipod.hs:49:73-82               487      994115    0.0    0.0     0.0    0.0
+      moves.inHallway                  Main                    2021/Day23/Amphipod.hs:54:5-74                500      211513    1.5    2.4     1.5    2.4
+      moves.movesIntoHallway           Main                    2021/Day23/Amphipod.hs:51:5-124               483      211513    3.5    9.0     9.9   26.0
+       move                            Main                    2021/Day23/Amphipod.hs:(60,1)-(69,29)         493      473650    0.9    3.7     6.5   16.9
+        move.(...)                     Main                    2021/Day23/Amphipod.hs:64:5-96                514      473650    0.5    0.7     0.5    0.7
+        move.a                         Main                    2021/Day23/Amphipod.hs:64:5-96                515      473650    0.1    0.0     0.1    0.0
+        move.c                         Main                    2021/Day23/Amphipod.hs:64:5-96                512      473650    0.1    0.0     0.1    0.0
+        move.f                         Main                    2021/Day23/Amphipod.hs:64:5-96                525      473650    0.2    0.0     0.2    0.0
+        move.hallway'                  Main                    2021/Day23/Amphipod.hs:68:5-43                507      473650    0.2    0.2     2.7    9.4
+         adjust                        Main                    2021/Day23/Amphipod.hs:80:1-68                508      473650    2.4    9.3     2.5    9.3
+          adjust.\                     Main                    2021/Day23/Amphipod.hs:80:48-55               511      473650    0.1    0.0     0.1    0.0
+        move.room                      Main                    2021/Day23/Amphipod.hs:63:5-21                516      473650    0.3    0.0     0.3    0.0
+        move.rooms'                    Main                    2021/Day23/Amphipod.hs:69:5-29                518      473650    0.0    0.0     1.0    2.7
+         adjust                        Main                    2021/Day23/Amphipod.hs:80:1-68                519      473650    0.8    2.7     1.0    2.7
+          adjust.\                     Main                    2021/Day23/Amphipod.hs:80:48-55               524      473650    0.1    0.0     0.2    0.0
+           move.f                      Main                    2021/Day23/Amphipod.hs:64:5-96                526           0    0.1    0.0     0.1    0.0
+        move.toHallway                 Main                    2021/Day23/Amphipod.hs:62:5-37                513      473650    0.2    0.0     0.2    0.0
+        move.cost'                     Main                    2021/Day23/Amphipod.hs:67:5-46                530      372239    0.2    0.1     0.2    0.2
+         targetRoom                    Main                    2021/Day23/Amphipod.hs:72:1-37                532           0    0.0    0.1     0.0    0.1
+        move.doorPos                   Main                    2021/Day23/Amphipod.hs:65:5-23                528      372239    0.0    0.0     0.0    0.0
+        move.n                         Main                    2021/Day23/Amphipod.hs:64:5-96                527      372239    0.0    0.0     0.0    0.0
+        move.numSteps                  Main                    2021/Day23/Amphipod.hs:66:5-63                529      372239    0.2    0.1     0.2    0.1
+      moves.movesIntoRooms             Main                    2021/Day23/Amphipod.hs:52:5-123               501      211513    0.8    0.7     4.7    6.6
+       moves.canEnter                  Main                    2021/Day23/Amphipod.hs:55:5-81                535     1110594    0.6    0.0     0.6    0.0
+        moves.canEnter.a               Main                    2021/Day23/Amphipod.hs:55:35-54               538      854060    0.1    0.0     0.1    0.0
+       moves.movesIntoRooms.r          Main                    2021/Day23/Amphipod.hs:52:79-94               536     1110594    0.2    0.0     0.3    0.4
+        targetRoom                     Main                    2021/Day23/Amphipod.hs:72:1-37                537           0    0.1    0.4     0.1    0.4
+       moves.canReach                  Main                    2021/Day23/Amphipod.hs:56:5-100               545      368763    0.2    0.0     0.3    0.0
+        moves.canReach.(...)           Main                    2021/Day23/Amphipod.hs:56:35-73               547      368763    0.1    0.0     0.1    0.0
+        moves.canReach.l'              Main                    2021/Day23/Amphipod.hs:56:35-73               546      368763    0.0    0.0     0.0    0.0
+        moves.canReach.r'              Main                    2021/Day23/Amphipod.hs:56:35-73               548      368763    0.0    0.0     0.0    0.0
+       move                            Main                    2021/Day23/Amphipod.hs:(60,1)-(69,29)         549      149221    0.2    1.2     2.6    5.5
+        move.(...)                     Main                    2021/Day23/Amphipod.hs:64:5-96                555      149221    0.2    0.3     0.2    0.3
+        move.a                         Main                    2021/Day23/Amphipod.hs:64:5-96                562      149221    0.0    0.0     0.0    0.0
+        move.c                         Main                    2021/Day23/Amphipod.hs:64:5-96                553      149221    0.2    0.0     0.2    0.0
+        move.f                         Main                    2021/Day23/Amphipod.hs:64:5-96                559      149221    0.0    0.0     0.0    0.0
+        move.hallway'                  Main                    2021/Day23/Amphipod.hs:68:5-43                550      149221    0.0    0.1     1.0    3.0
+         adjust                        Main                    2021/Day23/Amphipod.hs:80:1-68                551      149221    1.0    2.9     1.0    2.9
+          adjust.\                     Main                    2021/Day23/Amphipod.hs:80:48-55               552      149221    0.0    0.0     0.0    0.0
+        move.rooms'                    Main                    2021/Day23/Amphipod.hs:69:5-29                556      149221    0.0    0.0     0.4    0.9
+         adjust                        Main                    2021/Day23/Amphipod.hs:80:1-68                557      149221    0.4    0.8     0.4    0.9
+          adjust.\                     Main                    2021/Day23/Amphipod.hs:80:48-55               558      149221    0.0    0.0     0.0    0.1
+           move.f                      Main                    2021/Day23/Amphipod.hs:64:5-96                560           0    0.0    0.0     0.0    0.1
+            move.(...)                 Main                    2021/Day23/Amphipod.hs:64:5-96                561           0    0.0    0.1     0.0    0.1
+        move.toHallway                 Main                    2021/Day23/Amphipod.hs:62:5-37                554      149221    0.2    0.0     0.2    0.0
+        move.cost'                     Main                    2021/Day23/Amphipod.hs:67:5-46                567       91301    0.1    0.0     0.1    0.1
+         targetRoom                    Main                    2021/Day23/Amphipod.hs:72:1-37                568           0    0.0    0.0     0.0    0.0
+        move.doorPos                   Main                    2021/Day23/Amphipod.hs:65:5-23                564       91301    0.0    0.0     0.0    0.0
+        move.n                         Main                    2021/Day23/Amphipod.hs:64:5-96                563       91301    0.0    0.0     0.0    0.0
+        move.numSteps                  Main                    2021/Day23/Amphipod.hs:66:5-63                565       91301    0.1    0.0     0.1    0.0
+        move.room                      Main                    2021/Day23/Amphipod.hs:63:5-21                566       91301    0.0    0.0     0.0    0.0
+      moves.unemptyRooms               Main                    2021/Day23/Amphipod.hs:53:5-119               480      211513    0.7    1.7     0.7    1.7
+       moves.unemptyRooms.\            Main                    2021/Day23/Amphipod.hs:53:57-73               482      846052    0.0    0.0     0.0    0.0
+      moves.targetAmphipod             Main                    2021/Day23/Amphipod.hs:57:5-47                540           0    0.1    0.3     0.1    0.3
+    minimalCost'.visited'              Main                    2021/Day23/Amphipod.hs:41:5-33                534      211511   11.1    3.5    11.1    3.5
+    minimalCost'.cost                  Main                    2021/Day23/Amphipod.hs:39:5-49                533      171628    0.0    0.0     0.0    0.0
+   singleton                           Data.HashPSQ.Internal   src/Data/HashPSQ/Internal.hs:161:1-36         449           2    0.0    0.0     0.0    0.0
+    insert                             Data.HashPSQ.Internal   src/Data/HashPSQ/Internal.hs:(175,1)-(191,58) 450           2    0.0    0.0     0.0    0.0
+     defaultHash                       Data.Hashable.Class     src/Data/Hashable/Class.hs:308:1-38           455           2    0.0    0.0     0.0    0.0
+      hashWithSalt1                    Data.Hashable.Class     src/Data/Hashable/Class.hs:279:1-45           456           6    0.0    0.0     0.0    0.0
+       defaultHashWithSalt             Data.Hashable.Class     src/Data/Hashable/Class.hs:301:1-50           463          46    0.0    0.0     0.0    0.0
+        hashInt                        Data.Hashable.LowLevel  src/Data/Hashable/LowLevel.hs:(64,1)-(80,31)  464          46    0.0    0.0     0.0    0.0
+       hashInt                         Data.Hashable.LowLevel  src/Data/Hashable/LowLevel.hs:(64,1)-(80,31)  465          12    0.0    0.0     0.0    0.0
+       defaultLiftHashWithSalt         Data.Hashable.Class     src/Data/Hashable/Class.hs:291:1-60           457           2    0.0    0.0     0.0    0.0
+     deleteView                        Data.IntPSQ.Internal    src/Data/IntPSQ/Internal.hs:(390,1)-(413,70)  451           2    0.0    0.0     0.0    0.0
+     unsafeInsertNew                   Data.IntPSQ.Internal    src/Data/IntPSQ/Internal.hs:(230,1)-(254,68)  454           2    0.0    0.0     0.0    0.0
+  main.part1                           Main                    2021/Day23/Amphipod.hs:18:9-28                458           1    0.0    0.0     0.0    0.0
+   readBurrow                          Main                    2021/Day23/Amphipod.hs:(75,1)-(77,31)         460           0    0.0    0.0     0.0    0.0
+    readBurrow.f                       Main                    2021/Day23/Amphipod.hs:77:5-31                461          61    0.0    0.0     0.0    0.0
+    readBurrow.\                       Main                    2021/Day23/Amphipod.hs:75:27-81               462           1    0.0    0.0     0.0    0.0
+  main.part2                           Main                    2021/Day23/Amphipod.hs:19:9-84                569           1    0.0    0.0     0.0    0.0
+   insertAt                            Main                    2021/Day23/Amphipod.hs:83:1-54                571           1    0.0    0.0     0.0    0.0
+    insertAt.\                         Main                    2021/Day23/Amphipod.hs:83:29-41               572           1    0.0    0.0     0.0    0.0
+   readBurrow                          Main                    2021/Day23/Amphipod.hs:(75,1)-(77,31)         570           0    0.0    0.0     0.0    0.0
+    readBurrow.f                       Main                    2021/Day23/Amphipod.hs:77:5-31                573          79    0.0    0.0     0.0    0.0
+    readBurrow.\                       Main                    2021/Day23/Amphipod.hs:75:27-81               574           1    0.0    0.0     0.0    0.0

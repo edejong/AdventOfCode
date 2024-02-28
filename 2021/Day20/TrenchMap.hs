@@ -1,7 +1,4 @@
-{-# LANGUAGE FlexibleContexts #-}
 {-# LANGUAGE ExplicitNamespaces #-}
-module Day20.TrenchMap where
-
 import qualified Data.Array.Repa as R hiding (map)
 import Data.Array.Repa( (!), computeP, ix1, ix2, sumAllS, fromListUnboxed, inShape, Source(Array, extent), type (:.)((:.)), DIM1, DIM2, Z(Z), D, U )
 import Data.List.Split (chunksOf)
@@ -14,7 +11,7 @@ type EnhancementAlgo = Array U DIM1 Int
 
 main :: IO ()
 main = do
-    (algo, im) <- either (error . show) id <$> parseFromFile parser "2021/data/day20-test.txt"
+    (algo, im) <- either (error . show) id <$> parseFromFile parser "2021/Day20/day20-test.txt"
     im1 <- enhanceN algo 2 im
     im2 <- enhanceN algo 50 im
     -- putStrLn $ showImg im1

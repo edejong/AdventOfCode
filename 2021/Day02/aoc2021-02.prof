@@ -1,0 +1,37 @@
+	Sat Feb 24 15:56 2024 Time and Allocation Profiling Report  (Final)
+
+	   aoc2021-02 +RTS -N -p -hy -l-agu -RTS
+
+	total time  =        0.00 secs   (4 ticks @ 1000 us, 8 processors)
+	total alloc =   6,359,600 bytes  (excludes profiling overheads)
+
+COST CENTRE   MODULE SRC                               %time %alloc
+
+main.parse.n' Main   2021/Day02/Dive.hs:11:11-21        50.0   54.6
+MAIN          MAIN   <built-in>                         25.0    2.2
+main          Main   2021/Day02/Dive.hs:(5,1)-(12,70)   25.0   39.7
+main.f        Main   2021/Day02/Dive.hs:9:5-50           0.0    2.9
+
+
+                                                                                              individual      inherited
+COST CENTRE      MODULE                  SRC                               no.     entries  %time %alloc   %time %alloc
+
+MAIN             MAIN                    <built-in>                        129           0   25.0    2.2   100.0  100.0
+ CAF             Main                    <entire-module>                   257           0    0.0    0.0     0.0    0.0
+  main           Main                    2021/Day02/Dive.hs:(5,1)-(12,70)  258           1    0.0    0.0     0.0    0.0
+  main.parse     Main                    2021/Day02/Dive.hs:(10,5)-(12,70) 264           0    0.0    0.0     0.0    0.0
+   main.parse.n' Main                    2021/Day02/Dive.hs:11:11-21       265           0    0.0    0.0     0.0    0.0
+ CAF             GHC.Conc.Signal         <entire-module>                   234           0    0.0    0.0     0.0    0.0
+ CAF             GHC.IO.Encoding         <entire-module>                   216           0    0.0    0.0     0.0    0.0
+ CAF             GHC.IO.Encoding.Iconv   <entire-module>                   214           0    0.0    0.0     0.0    0.0
+ CAF             GHC.IO.Exception        <entire-module>                   208           0    0.0    0.0     0.0    0.0
+ CAF             GHC.IO.FD               <entire-module>                   207           0    0.0    0.0     0.0    0.0
+ CAF             GHC.IO.Handle.FD        <entire-module>                   205           0    0.0    0.5     0.0    0.5
+ CAF             GHC.IO.Handle.Internals <entire-module>                   204           0    0.0    0.0     0.0    0.0
+ CAF             GHC.Read                <entire-module>                   189           0    0.0    0.0     0.0    0.0
+ CAF             GHC.Event.Thread        <entire-module>                   149           0    0.0    0.0     0.0    0.0
+ main            Main                    2021/Day02/Dive.hs:(5,1)-(12,70)  259           0   25.0   39.7    75.0   97.2
+  main.f         Main                    2021/Day02/Dive.hs:9:5-50         260        1000    0.0    2.9     0.0    2.9
+  main.parse     Main                    2021/Day02/Dive.hs:(10,5)-(12,70) 261        1000    0.0    0.1    50.0   54.6
+   main.parse.n' Main                    2021/Day02/Dive.hs:11:11-21       263        1000   50.0   54.6    50.0   54.6
+  main.\         Main                    2021/Day02/Dive.hs:7:25-38        262           1    0.0    0.0     0.0    0.0

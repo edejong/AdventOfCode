@@ -1,11 +1,11 @@
-module Day03.BinaryDiagnostic where
+{-# OPTIONS_GHC -Wno-incomplete-uni-patterns #-}
 
 main :: IO ()
 main = do
-  xss <- lines <$> readFile "data/day03.txt"
+  xss <- lines <$> readFile "2021/Day03/day03.txt"
   let [ga, o2, ep, co2] =
         [(readBin . countAndFilter f1 f2) xss | f1 <- [(<), (>=)], f2 <- [\_ _ -> True, (==)]]
-  print (ga * ep, o2 * co2)
+  print (ga * ep :: Int, o2 * co2 :: Int)
   where
     readBin = foldl (\n c -> n * 2 + if c == '0' then 0 else 1) 0
 

@@ -1,12 +1,12 @@
-module Day08.SevenSegmentSearch where
-import Data.Map (fromList, Map, (!))
-import Data.List.Split (splitOn)
-import Data.List (sort, foldl', (\\), sortOn)
+{-# OPTIONS_GHC -Wno-incomplete-uni-patterns #-}
+import           Data.List       (foldl', sort, sortOn, (\\))
+import           Data.List.Split (splitOn)
+import           Data.Map        (Map, fromList, (!))
 
 main :: IO ()
 main = do
-    xs <- map (map (splitOn " ") . splitOn " | ") . lines <$> readFile "2021/data/day08.txt"
-    print $ length . filter (\s -> length s `elem` [2,3,4,7]) . concatMap (!!1) $ xs
+    xs <- map (map (splitOn " ") . splitOn " | ") . lines <$> readFile "2021/Day08/day08.txt"
+    print $ length . concatMap (filter (\s -> length s `elem` [2,3,4,7]) . (!!1)) $ xs
     print $ sum . map decode $ xs
 
 decode :: [[String]] -> Int

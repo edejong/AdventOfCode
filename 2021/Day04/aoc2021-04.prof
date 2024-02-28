@@ -1,0 +1,74 @@
+	Sat Feb 24 15:57 2024 Time and Allocation Profiling Report  (Final)
+
+	   aoc2021-04 +RTS -N -p -hy -l-agu -RTS
+
+	total time  =        0.00 secs   (4 ticks @ 1000 us, 8 processors)
+	total alloc =  13,462,768 bytes  (excludes profiling overheads)
+
+COST CENTRE   MODULE SRC                                 %time %alloc
+
+main.boards   Main   2021/Day04/Bingo.hs:11:7-87          50.0   76.5
+main.numDraws Main   2021/Day04/Bingo.hs:(20,5)-(21,77)   25.0    6.8
+main          Main   2021/Day04/Bingo.hs:(7,1)-(21,77)    25.0   10.2
+MAIN          MAIN   <built-in>                            0.0    1.0
+main.draws    Main   2021/Day04/Bingo.hs:9:7-58            0.0    2.8
+
+
+                                                                                                                      individual      inherited
+COST CENTRE            MODULE                    SRC                                               no.     entries  %time %alloc   %time %alloc
+
+MAIN                   MAIN                      <built-in>                                        164           0    0.0    1.0   100.0  100.0
+ CAF                   Main                      <entire-module>                                   326           0    0.0    0.0     0.0    0.1
+  main                 Main                      2021/Day04/Bingo.hs:(7,1)-(21,77)                 328           1    0.0    0.0     0.0    0.1
+   main.draws          Main                      2021/Day04/Bingo.hs:9:7-58                        346           0    0.0    0.0     0.0    0.0
+    splitOn            Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         347           0    0.0    0.0     0.0    0.0
+     dropDelims        Data.List.Split.Internals src/Data/List/Split/Internals.hs:320:1-37         349           1    0.0    0.0     0.0    0.0
+     onSublist         Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70         354           0    0.0    0.0     0.0    0.0
+   main.drawsMap       Main                      2021/Day04/Bingo.hs:10:7-57                       364           0    0.0    0.1     0.0    0.1
+ CAF                   Data.List.Split.Internals <entire-module>                                   325           0    0.0    0.0     0.0    0.0
+  defaultSplitter      Data.List.Split.Internals src/Data/List/Split/Internals.hs:(55,1)-(62,5)    348           1    0.0    0.0     0.0    0.0
+ CAF                   GHC.Conc.Signal           <entire-module>                                   273           0    0.0    0.0     0.0    0.0
+ CAF                   GHC.IO.Encoding           <entire-module>                                   255           0    0.0    0.0     0.0    0.0
+ CAF                   GHC.IO.Encoding.Iconv     <entire-module>                                   253           0    0.0    0.0     0.0    0.0
+ CAF                   GHC.IO.Exception          <entire-module>                                   247           0    0.0    0.0     0.0    0.0
+ CAF                   GHC.IO.FD                 <entire-module>                                   246           0    0.0    0.0     0.0    0.0
+ CAF                   GHC.IO.Handle.FD          <entire-module>                                   244           0    0.0    0.3     0.0    0.3
+ CAF                   GHC.IO.Handle.Internals   <entire-module>                                   243           0    0.0    0.0     0.0    0.0
+ CAF                   GHC.Read                  <entire-module>                                   227           0    0.0    0.0     0.0    0.0
+ CAF                   GHC.Event.Thread          <entire-module>                                   184           0    0.0    0.0     0.0    0.0
+ main                  Main                      2021/Day04/Bingo.hs:(7,1)-(21,77)                 329           0   25.0   10.2   100.0   98.6
+  main.(...)           Main                      2021/Day04/Bingo.hs:14:7-67                       370           1    0.0    0.0     0.0    0.0
+  main.(...)           Main                      2021/Day04/Bingo.hs:13:7-73                       332           1    0.0    0.0     0.0    0.0
+  main.boards          Main                      2021/Day04/Bingo.hs:11:7-87                       333           1   50.0   76.5    50.0   76.9
+   chunksOf            Data.List.Split.Internals src/Data/List/Split/Internals.hs:(603,1)-(607,48) 334           1    0.0    0.3     0.0    0.4
+    build              Data.List.Split.Internals src/Data/List/Split/Internals.hs:580:1-18         335           1    0.0    0.1     0.0    0.1
+  main.draws           Main                      2021/Day04/Bingo.hs:9:7-58                        339           1    0.0    2.8     0.0    3.5
+   splitOn             Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         340           1    0.0    0.0     0.0    0.6
+    onSublist          Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70         345           1    0.0    0.0     0.0    0.0
+    split              Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68         341           1    0.0    0.1     0.0    0.6
+     fromElem          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(124,1)-(125,24) 366         100    0.0    0.0     0.0    0.0
+     splitInternal     Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71) 352         100    0.0    0.2     0.0    0.5
+      breakDelim       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34) 355         290    0.0    0.2     0.0    0.3
+       matchDelim      Data.List.Split.Internals src/Data/List/Split/Internals.hs:(72,1)-(76,23)   356         388    0.0    0.1     0.0    0.1
+     delimiter         Data.List.Split.Internals src/Data/List/Split/Internals.hs:22:5-13          353           1    0.0    0.0     0.0    0.0
+     postProcess       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35) 342           1    0.0    0.0     0.0    0.1
+      condensePolicy   Data.List.Split.Internals src/Data/List/Split/Internals.hs:29:5-18          351           1    0.0    0.0     0.0    0.0
+      delimPolicy      Data.List.Split.Internals src/Data/List/Split/Internals.hs:24:5-15          344           1    0.0    0.0     0.0    0.0
+      doCondense       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(187,1)-(194,20) 350           1    0.0    0.0     0.0    0.0
+      doDrop           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(181,1)-(182,14) 359           1    0.0    0.0     0.0    0.0
+      doMerge          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(216,1)-(218,14) 343           1    0.0    0.0     0.0    0.0
+      dropFinal        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(248,1)-(254,17) 362           1    0.0    0.0     0.0    0.0
+      dropInitial      Data.List.Split.Internals src/Data/List/Split/Internals.hs:(243,1)-(244,19) 360           1    0.0    0.0     0.0    0.0
+      finalBlankPolicy Data.List.Split.Internals src/Data/List/Split/Internals.hs:34:5-20          363           1    0.0    0.0     0.0    0.0
+      initBlankPolicy  Data.List.Split.Internals src/Data/List/Split/Internals.hs:32:5-19          361           1    0.0    0.0     0.0    0.0
+      insertBlanks     Data.List.Split.Internals src/Data/List/Split/Internals.hs:(200,1)-(202,38) 357           1    0.0    0.0     0.0    0.1
+       insertBlanks'   Data.List.Split.Internals src/Data/List/Split/Internals.hs:(206,1)-(212,49) 358         200    0.0    0.1     0.0    0.1
+  main.drawsMap        Main                      2021/Day04/Bingo.hs:10:7-57                       338           1    0.0    0.4     0.0    0.4
+  main.lastBoard       Main                      2021/Day04/Bingo.hs:14:7-67                       371           1    0.0    0.0     0.0    0.0
+  main.lastRound       Main                      2021/Day04/Bingo.hs:14:7-67                       369           1    0.0    0.0     0.0    0.0
+  main.results         Main                      2021/Day04/Bingo.hs:12:7-59                       336           1    0.0    0.1    25.0    6.9
+   main.numDraws       Main                      2021/Day04/Bingo.hs:(20,5)-(21,77)                337         100   25.0    6.8    25.0    6.8
+  main.sumLast         Main                      2021/Day04/Bingo.hs:16:7-68                       368           1    0.0    0.5     0.0    0.5
+  main.sumWinner       Main                      2021/Day04/Bingo.hs:15:7-76                       330           1    0.0    0.2     0.0    0.2
+  main.winningBoard    Main                      2021/Day04/Bingo.hs:13:7-73                       367           1    0.0    0.0     0.0    0.0
+  main.winningRound    Main                      2021/Day04/Bingo.hs:13:7-73                       331           1    0.0    0.0     0.0    0.0

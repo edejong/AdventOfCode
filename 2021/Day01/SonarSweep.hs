@@ -1,9 +1,6 @@
-module Day01.SonarSweep where
-import Data.Char ()
-import Data.List (tails)
-import Data.Maybe (catMaybes, fromJust)
+import           Data.Char ()
 
 main :: IO ()
 main = do
-  xs <- map (read :: String -> Int) . lines <$> readFile "data/day01.txt"
+  xs <- map (read @Int) . lines <$> readFile "2021/Day01/day01.txt"
   print $ map (\n -> length (filter (uncurry (<)) (zip xs (drop n xs)))) [1, 3]

@@ -1,0 +1,46 @@
+	Sat Feb 24 15:56 2024 Time and Allocation Profiling Report  (Final)
+
+	   aoc2021-03 +RTS -N -p -hy -l-agu -RTS
+
+	total time  =        0.00 secs   (2 ticks @ 1000 us, 8 processors)
+	total alloc =   6,592,072 bytes  (excludes profiling overheads)
+
+COST CENTRE      MODULE SRC                                            %time %alloc
+
+main             Main   2021/Day03/BinaryDiagnostic.hs:(4,1)-(10,65)    50.0   33.9
+countAndFilter   Main   2021/Day03/BinaryDiagnostic.hs:(13,1)-(19,64)   50.0   25.8
+MAIN             MAIN   <built-in>                                       0.0    2.1
+countAndFilter.c Main   2021/Day03/BinaryDiagnostic.hs:16:7-60           0.0   37.5
+
+
+                                                                                                                       individual      inherited
+COST CENTRE                   MODULE                  SRC                                           no.     entries  %time %alloc   %time %alloc
+
+MAIN                          MAIN                    <built-in>                                    129           0    0.0    2.1   100.0  100.0
+ CAF                          Main                    <entire-module>                               257           0    0.0    0.0     0.0    0.0
+  main                        Main                    2021/Day03/BinaryDiagnostic.hs:(4,1)-(10,65)  258           1    0.0    0.0     0.0    0.0
+   main.readBin               Main                    2021/Day03/BinaryDiagnostic.hs:10:5-65        262           1    0.0    0.0     0.0    0.0
+  countAndFilter              Main                    2021/Day03/BinaryDiagnostic.hs:(13,1)-(19,64) 269           0    0.0    0.0     0.0    0.0
+   countAndFilter.bitDiff     Main                    2021/Day03/BinaryDiagnostic.hs:19:5-64        270           1    0.0    0.0     0.0    0.0
+ CAF                          GHC.Conc.Signal         <entire-module>                               234           0    0.0    0.0     0.0    0.0
+ CAF                          GHC.IO.Encoding         <entire-module>                               216           0    0.0    0.0     0.0    0.0
+ CAF                          GHC.IO.Encoding.Iconv   <entire-module>                               214           0    0.0    0.0     0.0    0.0
+ CAF                          GHC.IO.Exception        <entire-module>                               208           0    0.0    0.0     0.0    0.0
+ CAF                          GHC.IO.FD               <entire-module>                               207           0    0.0    0.0     0.0    0.0
+ CAF                          GHC.IO.Handle.FD        <entire-module>                               205           0    0.0    0.5     0.0    0.5
+ CAF                          GHC.IO.Handle.Internals <entire-module>                               204           0    0.0    0.0     0.0    0.0
+ CAF                          GHC.Event.Thread        <entire-module>                               149           0    0.0    0.0     0.0    0.0
+ main                         Main                    2021/Day03/BinaryDiagnostic.hs:(4,1)-(10,65)  259           0   50.0   33.9   100.0   97.3
+  main.(...)                  Main                    2021/Day03/BinaryDiagnostic.hs:(6,7)-(7,94)   261           1    0.0    0.0    50.0   63.3
+   countAndFilter             Main                    2021/Day03/BinaryDiagnostic.hs:(13,1)-(19,64) 264          49   50.0   25.8    50.0   63.3
+    countAndFilter.\          Main                    2021/Day03/BinaryDiagnostic.hs:17:58-70       265       26034    0.0    0.0     0.0    0.0
+     main.(...).\             Main                    2021/Day03/BinaryDiagnostic.hs:7:83-86        266       22004    0.0    0.0     0.0    0.0
+    countAndFilter.c          Main                    2021/Day03/BinaryDiagnostic.hs:16:7-60        268          45    0.0   37.5     0.0   37.5
+    countAndFilter.bitDiff    Main                    2021/Day03/BinaryDiagnostic.hs:19:5-64        271           0    0.0    0.0     0.0    0.0
+     countAndFilter.bitDiff.\ Main                    2021/Day03/BinaryDiagnostic.hs:19:31-61       272       28030    0.0    0.0     0.0    0.0
+  main.co2                    Main                    2021/Day03/BinaryDiagnostic.hs:(6,7)-(7,94)   275           1    0.0    0.0     0.0    0.0
+  main.ep                     Main                    2021/Day03/BinaryDiagnostic.hs:(6,7)-(7,94)   273           1    0.0    0.0     0.0    0.0
+  main.ga                     Main                    2021/Day03/BinaryDiagnostic.hs:(6,7)-(7,94)   260           1    0.0    0.0     0.0    0.0
+  main.o2                     Main                    2021/Day03/BinaryDiagnostic.hs:(6,7)-(7,94)   274           1    0.0    0.0     0.0    0.0
+  main.readBin                Main                    2021/Day03/BinaryDiagnostic.hs:10:5-65        263           0    0.0    0.0     0.0    0.0
+   main.readBin.\             Main                    2021/Day03/BinaryDiagnostic.hs:10:30-62       267          48    0.0    0.0     0.0    0.0

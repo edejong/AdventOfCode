@@ -1,15 +1,13 @@
-module Day09.SmokeBasin where
-
-import Data.Array (Array, array, bounds, indices, (!))
-import Data.Char (digitToInt)
-import Data.List (sort, sortOn, (\\))
-import Data.Ord (Down (Down), comparing)
+import           Data.Char (digitToInt)
+import           Data.List (sortOn)
+import           Data.Ord  (Down (..))
+import           GHC.Arr   (Array, array, bounds, indices, (!))
 
 type Point = (Int, Int)
 
 main :: IO ()
 main = do
-  grid <- gridFrom . map (map digitToInt) . lines <$> readFile "2021/data/day09.txt"
+  grid <- gridFrom . map (map digitToInt) . lines <$> readFile "2021/Day09/day09.txt"
   let lowPoints = [i | i <- indices grid, (grid ! i) <= (minimum . map (grid !) . neighbours (bounds grid) $ i)]
   print $ (sum . map (grid !) $ lowPoints) + length lowPoints
   print $ product . take 3 . sortOn Down . map (length . dfs grid) $ lowPoints
@@ -28,8 +26,8 @@ dfs :: Array Point Int -> Point -> [Point]
 dfs grid i = dfs' [i] []
   where
     dfs' [] result = result
-    dfs' (i : is) result
-      | i `elem` result = dfs' is result
-      | otherwise = let js = (filter (\j -> (grid ! j) < 9) . neighbours bnds $ i) in 
-          dfs' (js ++ is) (i : result)
+    dfs' (i' : is) result
+      | i' `elem` result = dfs' is result
+      | otherwise = let js = (filter (\j -> (grid ! j) < 9) . neighbours bnds $ i') in
+          dfs' (js ++ is) (i' : result)
     bnds = bounds grid

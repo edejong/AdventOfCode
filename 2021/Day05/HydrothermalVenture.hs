@@ -1,16 +1,14 @@
-{-# LANGUAGE TypeApplications #-}
-{-# LANGUAGE TupleSections #-}
 {-# OPTIONS_GHC -Wno-incomplete-patterns #-}
-module Day05.HydrothermalVenture where
-import Data.Array ( accumArray, elems )
-import Data.List.Split ( dropBlanks, dropDelims, oneOf, split )
+import           Data.List.Split (dropBlanks, dropDelims, oneOf, split)
+import           GHC.Arr         (accumArray, elems)
+
 main :: IO ()
 main = do
-  segments <- map parseLine . lines <$> readFile "data/day05.txt"
+  segments <- map parseLine . lines <$> readFile "2021/Day05/day05.txt"
   let points = concatMap (\(x,y) -> [x,y]) segments
       bnds = let xs = map fst points; ys = map snd points in ((minimum xs, minimum ys), (maximum xs, maximum ys))
       grid = accumArray (+) 0 bnds . map (,1) $ concatMap segmentCoords segments
-  print (length . filter (>1) . elems $grid)
+  print (length . filter ( > (1::Int)) . elems $ grid)
   where
     parseLine = toCoord . map (read @Int) . split (dropDelims . dropBlanks $ oneOf ",->")
     toCoord [x1, y1, x2, y2] = ((x1, y1), (x2, y2))

@@ -1,16 +1,14 @@
-module Day19.BeaconScanner where
-
-import Numeric.LinearAlgebra
+import           Data.List             (nub, sort)
+import           Numeric.LinearAlgebra
 import qualified Numeric.LinearAlgebra as LA
-import Text.Parsec
-import Text.Parsec.String ( parseFromFile )
-import Data.List ( nub, sort )
+import           Text.Parsec
+import           Text.Parsec.String    (parseFromFile)
 
 type Scanner = [Vector R]
 
 main :: IO ()
 main = do
-    Right xs <- parseFromFile parser "2021/data/day19.txt"
+    Right xs <- parseFromFile parser "2021/Day19/day19.txt"
     let (bs,ps) = combineAllScanners xs
     print $ length bs
     print $ maximum [manhattanDist p1 p2 | p1 <- ps, p2 <- ps]
@@ -51,7 +49,7 @@ combineAllScanners' s1 [] [] ps = (s1, ps)
 combineAllScanners' s1 [] ss' ps = combineAllScanners' s1 ss' [] ps
 combineAllScanners' s1 (s2:ss) ss' ps = case combineScanners s1 s2 of
   Just (s1',p) -> combineAllScanners' s1' ss ss' (p:ps)
-  Nothing -> combineAllScanners' s1 ss (s2:ss') ps
+  Nothing      -> combineAllScanners' s1 ss (s2:ss') ps
 
 combineScanners :: Scanner -> Scanner -> Maybe (Scanner, Vector R)
 combineScanners a b

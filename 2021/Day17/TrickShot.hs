@@ -1,13 +1,11 @@
-module Day17.TrickShot where
-
-import Text.ParserCombinators.Parsec
-import Text.Parsec.String (Parser)
-import Data.List (find)
-import Data.Maybe (fromJust)
+import           Data.List                     (find)
+import           Data.Maybe                    (fromJust)
+import           Text.Parsec.String            (Parser)
+import           Text.ParserCombinators.Parsec
 
 main :: IO ()
 main = do
-    xs <- parseFromFile parser "2021/data/day17.txt" >>= either (error . show) pure
+    xs <- parseFromFile parser "2021/Day17/day17.txt" >>= either (error . show) pure
 
     -- Part 1
     let y = abs . fst . snd $ xs
