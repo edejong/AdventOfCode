@@ -251,7 +251,7 @@ executable aoc2021-24
     import:           defaults, exec-defaults
     main-is:          ArithmeticLogicUnit.hs
     hs-source-dirs:   2021/Day24
-    build-depends:    lens, QuickCheck
+    build-depends:    lens, linear
 
 executable aoc2022-01
     import:           defaults, exec-defaults

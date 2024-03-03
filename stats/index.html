@@ -263,8 +263,8 @@
                                     const year = chart.canvas.id.slice(6);
                                     const day = "" + (tooltipItem.dataIndex + 1);
                                     const entry = rows[year][day];
-                                    console.log(entry);
-                                    return `day ${day}: ${entry.name}`
+                                    const name = entry === undefined ? '???' : entry.name;
+                                    return `day ${day}: ${name}`
                                 },
                             },
                         },

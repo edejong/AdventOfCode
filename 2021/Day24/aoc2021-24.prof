@@ -1,72 +1,45 @@
-	Thu Feb 29 11:55 2024 Time and Allocation Profiling Report  (Final)
+	Sun Mar  3 19:10 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2021-24 +RTS -N -i0.001 -p -hy -l-agu -s2021/Day24/aoc2021-24.stats -RTS
+	   aoc2021-24 +RTS -N -i0.05 -p -hy -l-agu -s2021/Day24/aoc2021-24.stats -RTS
 
-	total time  =        0.00 secs   (3 ticks @ 1000 us, 8 processors)
-	total alloc =   2,092,408 bytes  (excludes profiling overheads)
+	total time  =        0.13 secs   (465 ticks @ 1000 us, 8 processors)
+	total alloc = 1,708,530,864 bytes  (excludes profiling overheads)
 
-COST CENTRE   MODULE           SRC                                                 %time %alloc
+COST CENTRE    MODULE SRC                                               %time %alloc
 
-MAIN          MAIN             <built-in>                                           66.7    6.6
-main          Main             2021/Day24/ArithmeticLogicUnit.hs:(20,1)-(36,39)     33.3   42.8
-CAF           GHC.IO.Handle.FD <entire-module>                                       0.0    1.7
-readConsts.f  Main             2021/Day24/ArithmeticLogicUnit.hs:(44,9)-(45,64)      0.0    8.0
-prefer        Main             2021/Day24/ArithmeticLogicUnit.hs:118:1-37            0.0    1.3
-optimised     Main             2021/Day24/ArithmeticLogicUnit.hs:(108,1)-(115,47)    0.0    5.9
-instrP.b      Main             2021/Day24/ArithmeticLogicUnit.hs:88:5-66             0.0   24.3
-instrP._a     Main             2021/Day24/ArithmeticLogicUnit.hs:86:5-15             0.0    1.2
-instrP        Main             2021/Day24/ArithmeticLogicUnit.hs:(74,1)-(94,22)      0.0    1.6
-genDigits.gen Main             2021/Day24/ArithmeticLogicUnit.hs:(171,5)-(172,99)    0.0    5.7
+optimised.f    Main   2021/Day24/ArithmeticLogicUnit.hs:(48,5)-(55,18)   93.3   97.1
+optimised.f.z' Main   2021/Day24/ArithmeticLogicUnit.hs:51:15-74          6.7    2.8
 
 
-                                                                                                                     individual      inherited
-COST CENTRE            MODULE                  SRC                                                no.     entries  %time %alloc   %time %alloc
+                                                                                                                  individual      inherited
+COST CENTRE           MODULE                  SRC                                              no.     entries  %time %alloc   %time %alloc
 
-MAIN                   MAIN                    <built-in>                                         284           0   66.7    6.6   100.0  100.0
- CAF                   Main                    <entire-module>                                    566           0    0.0    0.1     0.0    0.2
-  main                 Main                    2021/Day24/ArithmeticLogicUnit.hs:(20,1)-(36,39)   568           1    0.0    0.0     0.0    0.0
-   main.inputs         Main                    2021/Day24/ArithmeticLogicUnit.hs:30:9-46          590           1    0.0    0.0     0.0    0.0
-   genDigits           Main                    2021/Day24/ArithmeticLogicUnit.hs:(165,1)-(172,99) 602           0    0.0    0.0     0.0    0.0
-    genDigits.ds       Main                    2021/Day24/ArithmeticLogicUnit.hs:169:5-26         603           1    0.0    0.0     0.0    0.0
-  instrP               Main                    2021/Day24/ArithmeticLogicUnit.hs:(74,1)-(94,22)   584           0    0.0    0.0     0.0    0.0
-   instrP.b            Main                    2021/Day24/ArithmeticLogicUnit.hs:88:5-66          585           0    0.0    0.0     0.0    0.0
-  optimised            Main                    2021/Day24/ArithmeticLogicUnit.hs:(108,1)-(115,47) 595           0    0.0    0.0     0.0    0.0
-  readConsts           Main                    2021/Day24/ArithmeticLogicUnit.hs:(42,1)-(46,21)   573           0    0.0    0.0     0.0    0.0
-   readConsts.f        Main                    2021/Day24/ArithmeticLogicUnit.hs:(44,9)-(45,64)   574           0    0.0    0.0     0.0    0.0
- CAF                   Debug.Trace             <entire-module>                                    412           0    0.0    0.0     0.0    0.0
- CAF                   GHC.Conc.Signal         <entire-module>                                    398           0    0.0    0.0     0.0    0.0
- CAF                   GHC.IO.Encoding         <entire-module>                                    380           0    0.0    0.2     0.0    0.2
- CAF                   GHC.IO.Encoding.Iconv   <entire-module>                                    378           0    0.0    0.0     0.0    0.0
- CAF                   GHC.IO.Exception        <entire-module>                                    372           0    0.0    0.0     0.0    0.0
- CAF                   GHC.IO.FD               <entire-module>                                    371           0    0.0    0.0     0.0    0.0
- CAF                   GHC.IO.Handle.FD        <entire-module>                                    369           0    0.0    1.7     0.0    1.7
- CAF                   GHC.IO.Handle.Internals <entire-module>                                    368           0    0.0    0.0     0.0    0.0
- CAF                   GHC.Read                <entire-module>                                    351           0    0.0    0.0     0.0    0.0
- CAF                   Text.Read.Lex           <entire-module>                                    325           0    0.0    0.0     0.0    0.0
- CAF                   GHC.Event.Thread        <entire-module>                                    304           0    0.0    0.1     0.0    0.1
- main                  Main                    2021/Day24/ArithmeticLogicUnit.hs:(20,1)-(36,39)   569           0   33.3   42.8    33.3   91.2
-  genDigits            Main                    2021/Day24/ArithmeticLogicUnit.hs:(165,1)-(172,99) 598           1    0.0    0.0     0.0    7.2
-   genDigits.gen       Main                    2021/Day24/ArithmeticLogicUnit.hs:(171,5)-(172,99) 600         126    0.0    5.7     0.0    7.1
-    prefer             Main                    2021/Day24/ArithmeticLogicUnit.hs:118:1-37         601          26    0.0    1.3     0.0    1.3
-     genDigits.gen.\   Main                    2021/Day24/ArithmeticLogicUnit.hs:172:59-75        604         219    0.0    0.0     0.0    0.0
-   genDigits.foo       Main                    2021/Day24/ArithmeticLogicUnit.hs:166:9-31         599           1    0.0    0.1     0.0    0.1
-  main.consts          Main                    2021/Day24/ArithmeticLogicUnit.hs:23:9-69          570           1    0.0    0.0     0.0    8.0
-   readConsts          Main                    2021/Day24/ArithmeticLogicUnit.hs:(42,1)-(46,21)   571           3    0.0    0.0     0.0    8.0
-    readConsts.f       Main                    2021/Day24/ArithmeticLogicUnit.hs:(44,9)-(45,64)   572          45    0.0    8.0     0.0    8.0
-    readConsts.subLen  Main                    2021/Day24/ArithmeticLogicUnit.hs:43:9-35          575           3    0.0    0.0     0.0    0.0
-  main.optimisedProg   Main                    2021/Day24/ArithmeticLogicUnit.hs:28:9-58          591           1    0.0    0.0     0.0    5.9
-   runOptimised        Main                    2021/Day24/ArithmeticLogicUnit.hs:(103,1)-(105,10) 592           1    0.0    0.0     0.0    5.9
-    runOptimised.(...) Main                    2021/Day24/ArithmeticLogicUnit.hs:104:9-55         593           1    0.0    0.0     0.0    5.9
-     optimised         Main                    2021/Day24/ArithmeticLogicUnit.hs:(108,1)-(115,47) 594          15    0.0    5.9     0.0    5.9
-      optimised.z'     Main                    2021/Day24/ArithmeticLogicUnit.hs:(110,9)-(113,45) 596          14    0.0    0.0     0.0    0.0
-    runOptimised.z'    Main                    2021/Day24/ArithmeticLogicUnit.hs:104:9-55         597           1    0.0    0.0     0.0    0.0
-  main.referenceProg   Main                    2021/Day24/ArithmeticLogicUnit.hs:27:9-45          576           1    0.0    0.0     0.0   27.3
-   run                 Main                    2021/Day24/ArithmeticLogicUnit.hs:(65,1)-(67,18)   577           1    0.0    0.0     0.0   27.3
-    run.(...)          Main                    2021/Day24/ArithmeticLogicUnit.hs:66:10-66         579           1    0.0    0.0     0.0   27.3
-     instrP            Main                    2021/Day24/ArithmeticLogicUnit.hs:(74,1)-(94,22)   580         266    0.0    1.6     0.0   27.3
-      instrP._a        Main                    2021/Day24/ArithmeticLogicUnit.hs:86:5-15          581         252    0.0    1.2     0.0    1.4
-       instrP.r        Main                    2021/Day24/ArithmeticLogicUnit.hs:(89,5)-(93,21)   582         252    0.0    0.2     0.0    0.2
-      instrP.b         Main                    2021/Day24/ArithmeticLogicUnit.hs:88:5-66          583         238    0.0   24.3     0.0   24.3
-      instrP._b        Main                    2021/Day24/ArithmeticLogicUnit.hs:87:5-15          586          98    0.0    0.0     0.0    0.0
-       instrP.r        Main                    2021/Day24/ArithmeticLogicUnit.hs:(89,5)-(93,21)   587          98    0.0    0.0     0.0    0.0
-    run.st'            Main                    2021/Day24/ArithmeticLogicUnit.hs:66:10-66         578           1    0.0    0.0     0.0    0.0
+MAIN                  MAIN                    <built-in>                                       129           0    0.0    0.0   100.0  100.0
+ CAF                  Main                    <entire-module>                                  257           0    0.0    0.0     0.0    0.0
+  main                Main                    2021/Day24/ArithmeticLogicUnit.hs:(3,1)-(7,42)   258           1    0.0    0.0     0.0    0.0
+  optimised           Main                    2021/Day24/ArithmeticLogicUnit.hs:(45,1)-(55,18) 269           0    0.0    0.0     0.0    0.0
+   optimised.ds       Main                    2021/Day24/ArithmeticLogicUnit.hs:47:5-41        270           0    0.0    0.0     0.0    0.0
+  readConsts          Main                    2021/Day24/ArithmeticLogicUnit.hs:(10,1)-(14,21) 271           0    0.0    0.0     0.0    0.0
+   readConsts.f       Main                    2021/Day24/ArithmeticLogicUnit.hs:(12,9)-(13,64) 272           0    0.0    0.0     0.0    0.0
+ CAF                  GHC.Conc.Signal         <entire-module>                                  234           0    0.0    0.0     0.0    0.0
+ CAF                  GHC.IO.Encoding         <entire-module>                                  216           0    0.0    0.0     0.0    0.0
+ CAF                  GHC.IO.Encoding.Iconv   <entire-module>                                  214           0    0.0    0.0     0.0    0.0
+ CAF                  GHC.IO.Exception        <entire-module>                                  208           0    0.0    0.0     0.0    0.0
+ CAF                  GHC.IO.FD               <entire-module>                                  207           0    0.0    0.0     0.0    0.0
+ CAF                  GHC.IO.Handle.FD        <entire-module>                                  205           0    0.0    0.0     0.0    0.0
+ CAF                  GHC.IO.Handle.Internals <entire-module>                                  204           0    0.0    0.0     0.0    0.0
+ CAF                  GHC.Read                <entire-module>                                  189           0    0.0    0.0     0.0    0.0
+ CAF                  Text.Read.Lex           <entire-module>                                  166           0    0.0    0.0     0.0    0.0
+ CAF                  GHC.Event.Thread        <entire-module>                                  149           0    0.0    0.0     0.0    0.0
+ main                 Main                    2021/Day24/ArithmeticLogicUnit.hs:(3,1)-(7,42)   259           0    0.0    0.0   100.0  100.0
+  optimised           Main                    2021/Day24/ArithmeticLogicUnit.hs:(45,1)-(55,18) 260           2    0.0    0.0   100.0  100.0
+   optimised.f        Main                    2021/Day24/ArithmeticLogicUnit.hs:(48,5)-(55,18) 265     2884796   93.3   97.1   100.0  100.0
+    optimised.f.z'    Main                    2021/Day24/ArithmeticLogicUnit.hs:51:15-74       274     2884794    6.7    2.8     6.7    2.8
+   optimised.ds       Main                    2021/Day24/ArithmeticLogicUnit.hs:47:5-41        268           2    0.0    0.0     0.0    0.0
+  main.(...)          Main                    2021/Day24/ArithmeticLogicUnit.hs:5:9-73         262           1    0.0    0.0     0.0    0.0
+   readConsts         Main                    2021/Day24/ArithmeticLogicUnit.hs:(10,1)-(14,21) 263           3    0.0    0.0     0.0    0.0
+    readConsts.f      Main                    2021/Day24/ArithmeticLogicUnit.hs:(12,9)-(13,64) 264          45    0.0    0.0     0.0    0.0
+    readConsts.subLen Main                    2021/Day24/ArithmeticLogicUnit.hs:11:9-35        273           3    0.0    0.0     0.0    0.0
+  main.is             Main                    2021/Day24/ArithmeticLogicUnit.hs:5:9-73         261           1    0.0    0.0     0.0    0.0
+  main.js             Main                    2021/Day24/ArithmeticLogicUnit.hs:5:9-73         266           1    0.0    0.0     0.0    0.0
+  main.ks             Main                    2021/Day24/ArithmeticLogicUnit.hs:5:9-73         267           1    0.0    0.0     0.0    0.0
