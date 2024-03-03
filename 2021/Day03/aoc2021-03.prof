@@ -1,47 +1,50 @@
-	Thu Feb 29 11:50 2024 Time and Allocation Profiling Report  (Final)
+	Tue Mar  5 14:52 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2021-03 +RTS -N -i0.001 -p -hy -l-agu -s2021/Day03/aoc2021-03.stats -RTS
+	   aoc2021-03 +RTS -N -i0.05 -p -hy -l-agu --machine-readable -t2021/Day03/aoc2021-03.stats -A32M -B -RTS
 
-	total time  =        0.00 secs   (5 ticks @ 1000 us, 8 processors)
-	total alloc =   6,591,744 bytes  (excludes profiling overheads)
+	total time  =        0.00 secs   (4 ticks @ 1000 us, 8 processors)
+	total alloc =   6,582,448 bytes  (excludes profiling overheads)
 
-COST CENTRE            MODULE SRC                                            %time %alloc
+COST CENTRE      MODULE SRC                                            %time %alloc
 
-MAIN                   MAIN   <built-in>                                      40.0    2.1
-main                   Main   2021/Day03/BinaryDiagnostic.hs:(4,1)-(10,65)    20.0   33.9
-countAndFilter.bitDiff Main   2021/Day03/BinaryDiagnostic.hs:19:5-64          20.0    0.0
-countAndFilter         Main   2021/Day03/BinaryDiagnostic.hs:(13,1)-(19,64)   20.0   25.8
-countAndFilter.c       Main   2021/Day03/BinaryDiagnostic.hs:16:7-60           0.0   37.5
+MAIN             MAIN   <built-in>                                      25.0    2.0
+main             Main   2021/Day03/BinaryDiagnostic.hs:(4,1)-(10,65)    25.0   34.0
+countAndFilter.c Main   2021/Day03/BinaryDiagnostic.hs:16:7-60          25.0   37.5
+countAndFilter.\ Main   2021/Day03/BinaryDiagnostic.hs:17:58-70         25.0    0.0
+countAndFilter   Main   2021/Day03/BinaryDiagnostic.hs:(13,1)-(19,64)    0.0   25.9
 
 
                                                                                                                        individual      inherited
 COST CENTRE                   MODULE                  SRC                                           no.     entries  %time %alloc   %time %alloc
 
-MAIN                          MAIN                    <built-in>                                    129           0   40.0    2.1   100.0  100.0
- CAF                          Main                    <entire-module>                               256           0    0.0    0.0     0.0    0.0
-  main                        Main                    2021/Day03/BinaryDiagnostic.hs:(4,1)-(10,65)  258           1    0.0    0.0     0.0    0.0
-   main.readBin               Main                    2021/Day03/BinaryDiagnostic.hs:10:5-65        262           1    0.0    0.0     0.0    0.0
-  countAndFilter              Main                    2021/Day03/BinaryDiagnostic.hs:(13,1)-(19,64) 269           0    0.0    0.0     0.0    0.0
-   countAndFilter.bitDiff     Main                    2021/Day03/BinaryDiagnostic.hs:19:5-64        270           1    0.0    0.0     0.0    0.0
- CAF                          GHC.Conc.Signal         <entire-module>                               234           0    0.0    0.0     0.0    0.0
- CAF                          GHC.IO.Encoding         <entire-module>                               216           0    0.0    0.0     0.0    0.0
- CAF                          GHC.IO.Encoding.Iconv   <entire-module>                               214           0    0.0    0.0     0.0    0.0
- CAF                          GHC.IO.Exception        <entire-module>                               208           0    0.0    0.0     0.0    0.0
- CAF                          GHC.IO.FD               <entire-module>                               207           0    0.0    0.0     0.0    0.0
- CAF                          GHC.IO.Handle.FD        <entire-module>                               205           0    0.0    0.5     0.0    0.5
- CAF                          GHC.IO.Handle.Internals <entire-module>                               204           0    0.0    0.0     0.0    0.0
- CAF                          GHC.Event.Thread        <entire-module>                               149           0    0.0    0.0     0.0    0.0
- main                         Main                    2021/Day03/BinaryDiagnostic.hs:(4,1)-(10,65)  259           0   20.0   33.9    60.0   97.3
-  main.(...)                  Main                    2021/Day03/BinaryDiagnostic.hs:(6,7)-(7,94)   261           1    0.0    0.0    40.0   63.3
-   countAndFilter             Main                    2021/Day03/BinaryDiagnostic.hs:(13,1)-(19,64) 264          49   20.0   25.8    40.0   63.3
-    countAndFilter.\          Main                    2021/Day03/BinaryDiagnostic.hs:17:58-70       265       26034    0.0    0.0     0.0    0.0
-     main.(...).\             Main                    2021/Day03/BinaryDiagnostic.hs:7:83-86        266       22004    0.0    0.0     0.0    0.0
-    countAndFilter.c          Main                    2021/Day03/BinaryDiagnostic.hs:16:7-60        268          45    0.0   37.5     0.0   37.5
-    countAndFilter.bitDiff    Main                    2021/Day03/BinaryDiagnostic.hs:19:5-64        271           0   20.0    0.0    20.0    0.0
-     countAndFilter.bitDiff.\ Main                    2021/Day03/BinaryDiagnostic.hs:19:31-61       272       28030    0.0    0.0     0.0    0.0
-  main.co2                    Main                    2021/Day03/BinaryDiagnostic.hs:(6,7)-(7,94)   275           1    0.0    0.0     0.0    0.0
-  main.ep                     Main                    2021/Day03/BinaryDiagnostic.hs:(6,7)-(7,94)   273           1    0.0    0.0     0.0    0.0
-  main.ga                     Main                    2021/Day03/BinaryDiagnostic.hs:(6,7)-(7,94)   260           1    0.0    0.0     0.0    0.0
-  main.o2                     Main                    2021/Day03/BinaryDiagnostic.hs:(6,7)-(7,94)   274           1    0.0    0.0     0.0    0.0
-  main.readBin                Main                    2021/Day03/BinaryDiagnostic.hs:10:5-65        263           0    0.0    0.0     0.0    0.0
-   main.readBin.\             Main                    2021/Day03/BinaryDiagnostic.hs:10:30-62       267          48    0.0    0.0     0.0    0.0
+MAIN                          MAIN                    <built-in>                                    135           0   25.0    2.0   100.0  100.0
+ CAF                          Main                    <entire-module>                               269           0    0.0    0.0     0.0    0.0
+  main                        Main                    2021/Day03/BinaryDiagnostic.hs:(4,1)-(10,65)  270           1    0.0    0.0     0.0    0.0
+   main.readBin               Main                    2021/Day03/BinaryDiagnostic.hs:10:5-65        274           1    0.0    0.0     0.0    0.0
+  countAndFilter              Main                    2021/Day03/BinaryDiagnostic.hs:(13,1)-(19,64) 281           0    0.0    0.0     0.0    0.0
+   countAndFilter.bitDiff     Main                    2021/Day03/BinaryDiagnostic.hs:19:5-64        282           1    0.0    0.0     0.0    0.0
+ CAF                          GHC.Conc.Signal         <entire-module>                               247           0    0.0    0.0     0.0    0.0
+ CAF                          GHC.IO.Encoding         <entire-module>                               228           0    0.0    0.0     0.0    0.0
+ CAF                          GHC.IO.Encoding.Iconv   <entire-module>                               226           0    0.0    0.0     0.0    0.0
+ CAF                          GHC.IO.Exception        <entire-module>                               220           0    0.0    0.0     0.0    0.0
+ CAF                          GHC.IO.FD               <entire-module>                               219           0    0.0    0.0     0.0    0.0
+ CAF                          GHC.IO.Handle.FD        <entire-module>                               217           0    0.0    0.5     0.0    0.5
+ CAF                          GHC.IO.Handle.Internals <entire-module>                               216           0    0.0    0.0     0.0    0.0
+ CAF                          GHC.Event.Poll          <entire-module>                               157           0    0.0    0.0     0.0    0.0
+ CAF                          GHC.Event.Thread        <entire-module>                               156           0    0.0    0.0     0.0    0.0
+ main                         Main                    2021/Day03/BinaryDiagnostic.hs:(4,1)-(10,65)  271           0   25.0   34.0    75.0   97.4
+  main.(...)                  Main                    2021/Day03/BinaryDiagnostic.hs:(6,7)-(7,94)   273           1    0.0    0.0    50.0   63.4
+   countAndFilter             Main                    2021/Day03/BinaryDiagnostic.hs:(13,1)-(19,64) 276          49    0.0   25.9    50.0   63.4
+    countAndFilter.\          Main                    2021/Day03/BinaryDiagnostic.hs:17:58-70       277       26034   25.0    0.0    25.0    0.0
+     main.(...).\             Main                    2021/Day03/BinaryDiagnostic.hs:7:83-86        278       22004    0.0    0.0     0.0    0.0
+    countAndFilter.c          Main                    2021/Day03/BinaryDiagnostic.hs:16:7-60        280          45   25.0   37.5    25.0   37.5
+    countAndFilter.bitDiff    Main                    2021/Day03/BinaryDiagnostic.hs:19:5-64        283           0    0.0    0.0     0.0    0.0
+     countAndFilter.bitDiff.\ Main                    2021/Day03/BinaryDiagnostic.hs:19:31-61       284       28030    0.0    0.0     0.0    0.0
+   main.readBin               Main                    2021/Day03/BinaryDiagnostic.hs:10:5-65        286           0    0.0    0.0     0.0    0.0
+    main.readBin.\            Main                    2021/Day03/BinaryDiagnostic.hs:10:30-62       287          36    0.0    0.0     0.0    0.0
+  main.co2                    Main                    2021/Day03/BinaryDiagnostic.hs:(6,7)-(7,94)   289           1    0.0    0.0     0.0    0.0
+  main.ep                     Main                    2021/Day03/BinaryDiagnostic.hs:(6,7)-(7,94)   285           1    0.0    0.0     0.0    0.0
+  main.ga                     Main                    2021/Day03/BinaryDiagnostic.hs:(6,7)-(7,94)   272           1    0.0    0.0     0.0    0.0
+  main.o2                     Main                    2021/Day03/BinaryDiagnostic.hs:(6,7)-(7,94)   288           1    0.0    0.0     0.0    0.0
+  main.readBin                Main                    2021/Day03/BinaryDiagnostic.hs:10:5-65        275           0    0.0    0.0     0.0    0.0
+   main.readBin.\             Main                    2021/Day03/BinaryDiagnostic.hs:10:30-62       279          12    0.0    0.0     0.0    0.0

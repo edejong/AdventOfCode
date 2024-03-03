@@ -44,7 +44,7 @@ EOL
 
 read -r -d '' VAR <<- EOM
 executable aoc${year}-${day}
-    import:           defaults
+    import:           defaults, exec-defaults
     main-is:          ${title}.hs
     hs-source-dirs:   ${srcdir}
 --     build-depends:

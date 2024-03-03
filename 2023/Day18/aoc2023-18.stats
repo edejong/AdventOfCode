@@ -1,29 +1,62 @@
-'/Users/erikdejong/Projects/advent_of_code/dist-newstyle/build/aarch64-osx/ghc-9.4.8/adventOfCode-0.1.0.0/x/aoc2023-18/opt/build/aoc2023-18/aoc2023-18' +RTS '-N' '-i0.05' '-p' '-hy' '-l-agu' '-s2023/Day18/aoc2023-18.stats' 
-      16,590,504 bytes allocated in the heap
-       1,126,896 bytes copied during GC
-         633,176 bytes maximum residency (2 sample(s))
-         104,104 bytes maximum slop
-              42 MiB total memory in use (0 MB lost due to fragmentation)
-
-                                     Tot time (elapsed)  Avg pause  Max pause
-  Gen  0         2 colls,     2 par    0.001s   0.001s     0.0003s    0.0003s
-  Gen  1         2 colls,     1 par    0.001s   0.001s     0.0005s    0.0008s
-
-  Parallel GC work balance: 26.44% (serial 0%, perfect 100%)
-
-  TASKS: 18 (1 bound, 17 peak workers (17 total), using -N8)
-
-  SPARKS: 0 (0 converted, 0 overflowed, 0 dud, 0 GC'd, 0 fizzled)
-
-  INIT    time    0.000s  (  0.008s elapsed)
-  MUT     time    0.004s  (  0.005s elapsed)
-  GC      time    0.002s  (  0.001s elapsed)
-  RP      time    0.000s  (  0.000s elapsed)
-  PROF    time    0.000s  (  0.000s elapsed)
-  EXIT    time    0.000s  (  0.001s elapsed)
-  Total   time    0.007s  (  0.016s elapsed)
-
-  Alloc rate    3,914,701,274 bytes per MUT second
-
-  Productivity  65.0% of total user, 34.0% of total elapsed
-
+'/Users/erikdejong/Projects/advent_of_code/dist-newstyle/build/aarch64-osx/ghc-9.8.2/adventOfCode-0.1.0.0/x/aoc2023-18/opt/build/aoc2023-18/aoc2023-18' +RTS '-N' '-i0.05' '-p' '-hy' '-l-agu' '--machine-readable' '-t2023/Day18/aoc2023-18.stats' '-A32M' '-B' 
+ [("bytes allocated", "17388480")
+ ,("num_GCs", "1")
+ ,("average_bytes_used", "167040")
+ ,("max_bytes_used", "167040")
+ ,("num_byte_usage_samples", "1")
+ ,("peak_megabytes_allocated", "269")
+ ,("init_cpu_seconds", "0.036569")
+ ,("init_wall_seconds", "0.036294")
+ ,("mut_cpu_seconds", "0.006766")
+ ,("mut_wall_seconds", "0.007540")
+ ,("GC_cpu_seconds", "0.000000")
+ ,("GC_wall_seconds", "0.000584")
+ ,("exit_cpu_seconds", "0.001855")
+ ,("exit_wall_seconds", "0.000329")
+ ,("rp_cpu_seconds", "0.000000")
+ ,("rp_wall_seconds", "0.000000")
+ ,("hc_cpu_seconds", "0.000000")
+ ,("hc_wall_seconds", "0.000000")
+ ,("total_cpu_seconds", "0.045195")
+ ,("total_wall_seconds", "0.044750")
+ ,("major_gcs", "1")
+ ,("allocated_bytes", "17388480")
+ ,("max_live_bytes", "167040")
+ ,("max_large_objects_bytes", "54080")
+ ,("max_compact_bytes", "0")
+ ,("max_slop_bytes", "95104")
+ ,("max_mem_in_use_bytes", "282066944")
+ ,("cumulative_live_bytes", "167040")
+ ,("copied_bytes", "113024")
+ ,("par_copied_bytes", "0")
+ ,("cumulative_par_max_copied_bytes", "0")
+ ,("cumulative_par_balanced_copied_bytes", "0")
+ ,("fragmentation_bytes", "0")
+ ,("alloc_rate", "2569979308")
+ ,("productivity_cpu_percent", "0.149817")
+ ,("productivity_wall_percent", "0.168559")
+ ,("bound_task_count", "1")
+ ,("sparks_count", "0")
+ ,("sparks_converted", "0")
+ ,("sparks_overflowed", "0")
+ ,("sparks_dud ", "0")
+ ,("sparks_gcd", "0")
+ ,("sparks_fizzled", "0")
+ ,("work_balance", "0.000000")
+ ,("n_capabilities", "8")
+ ,("task_count", "18")
+ ,("peak_worker_count", "17")
+ ,("worker_count", "17")
+ ,("gen_0_collections", "0")
+ ,("gen_0_par_collections", "0")
+ ,("gen_0_cpu_seconds", "0.000000")
+ ,("gen_0_wall_seconds", "0.000000")
+ ,("gen_0_max_pause_seconds", "0.000000")
+ ,("gen_0_avg_pause_seconds", "0.000000")
+ ,("gen_1_collections", "1")
+ ,("gen_1_par_collections", "0")
+ ,("gen_1_cpu_seconds", "0.000000")
+ ,("gen_1_wall_seconds", "0.000584")
+ ,("gen_1_max_pause_seconds", "0.000584")
+ ,("gen_1_avg_pause_seconds", "0.000584")
+ ]

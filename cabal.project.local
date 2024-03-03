@@ -2,3 +2,4 @@ ignore-project: False
 tests: True
 profiling: True
 profiling-detail: all-functions
+jobs:4

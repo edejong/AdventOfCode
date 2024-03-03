@@ -1,60 +1,61 @@
-	Thu Feb 29 21:18 2024 Time and Allocation Profiling Report  (Final)
+	Tue Mar  5 15:17 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2023-18 +RTS -N -i0.05 -p -hy -l-agu -s2023/Day18/aoc2023-18.stats -RTS
+	   aoc2023-18 +RTS -N -i0.05 -p -hy -l-agu --machine-readable -t2023/Day18/aoc2023-18.stats -A32M -B -RTS
 
-	total time  =        0.00 secs   (4 ticks @ 1000 us, 8 processors)
-	total alloc =   8,971,272 bytes  (excludes profiling overheads)
+	total time  =        0.00 secs   (8 ticks @ 1000 us, 8 processors)
+	total alloc =   8,818,816 bytes  (excludes profiling overheads)
 
 COST CENTRE          MODULE    SRC                                          %time %alloc
 
-parseLine.parseClr.n Main      2023/Day18/LavaductLagoon.hs:21:22-67         50.0   26.5
+main                 Main      2023/Day18/LavaductLagoon.hs:(8,1)-(14,82)    50.0   21.9
 MAIN                 MAIN      <built-in>                                    25.0    1.5
-parseLine.\          Main      2023/Day18/LavaductLagoon.hs:19:28-57         25.0   25.9
+parseLine.parseClr.n Main      2023/Day18/LavaductLagoon.hs:21:22-67         25.0   26.1
 polygonArea          Main      2023/Day18/LavaductLagoon.hs:40:1-105          0.0    3.6
 pathArea.pathLen     Main      2023/Day18/LavaductLagoon.hs:33:9-68           0.0    3.6
-parseLine            Main      2023/Day18/LavaductLagoon.hs:(19,1)-(23,64)    0.0   14.0
-main.f               Main      2023/Day18/LavaductLagoon.hs:14:5-82           0.0    1.2
-main                 Main      2023/Day18/LavaductLagoon.hs:(8,1)-(14,82)     0.0   20.7
+parseLine.\          Main      2023/Day18/LavaductLagoon.hs:19:28-57          0.0   25.6
+parseLine            Main      2023/Day18/LavaductLagoon.hs:(19,1)-(23,64)    0.0   14.3
 
 
                                                                                                                  individual      inherited
 COST CENTRE               MODULE                  SRC                                         no.     entries  %time %alloc   %time %alloc
 
-MAIN                      MAIN                    <built-in>                                  129           0   25.0    1.5   100.0  100.0
- CAF                      Main                    <entire-module>                             257           0    0.0    0.0    25.0    0.0
-  main                    Main                    2023/Day18/LavaductLagoon.hs:(8,1)-(14,82)  258           1    0.0    0.0     0.0    0.0
-  parseLine               Main                    2023/Day18/LavaductLagoon.hs:(19,1)-(23,64) 266           1    0.0    0.0    25.0    0.0
-   parseLine.dir          Main                    2023/Day18/LavaductLagoon.hs:23:5-64        278           1    0.0    0.0     0.0    0.0
-   parseLine.\            Main                    2023/Day18/LavaductLagoon.hs:19:28-57       270           0   25.0    0.0    25.0    0.0
- CAF                      GHC.Conc.Signal         <entire-module>                             234           0    0.0    0.0     0.0    0.0
- CAF                      GHC.IO.Encoding         <entire-module>                             216           0    0.0    0.0     0.0    0.0
- CAF                      GHC.IO.Encoding.Iconv   <entire-module>                             214           0    0.0    0.0     0.0    0.0
- CAF                      GHC.IO.Exception        <entire-module>                             208           0    0.0    0.0     0.0    0.0
- CAF                      GHC.IO.FD               <entire-module>                             207           0    0.0    0.0     0.0    0.0
- CAF                      GHC.IO.Handle.FD        <entire-module>                             205           0    0.0    0.4     0.0    0.4
- CAF                      GHC.IO.Handle.Internals <entire-module>                             204           0    0.0    0.0     0.0    0.0
- CAF                      GHC.Read                <entire-module>                             189           0    0.0    0.0     0.0    0.0
- CAF                      GHC.Event.Thread        <entire-module>                             149           0    0.0    0.0     0.0    0.0
- main                     Main                    2023/Day18/LavaductLagoon.hs:(8,1)-(14,82)  259           0    0.0   20.7    50.0   98.0
-  main.f                  Main                    2023/Day18/LavaductLagoon.hs:14:5-82        260        1330    0.0    1.2     0.0    2.2
-   main.f.\               Main                    2023/Day18/LavaductLagoon.hs:14:32-67       261        1328    0.0    0.0     0.0    1.1
-    main.f.\.p            Main                    2023/Day18/LavaductLagoon.hs:14:36-48       264        1326    0.0    0.0     0.0    1.1
-     dig                  Main                    2023/Day18/LavaductLagoon.hs:28:1-108       265        1326    0.0    0.8     0.0    1.1
-      dig.\               Main                    2023/Day18/LavaductLagoon.hs:28:37-46       273         338    0.0    0.1     0.0    0.1
-      dig.\               Main                    2023/Day18/LavaductLagoon.hs:28:75-84       272         333    0.0    0.1     0.0    0.1
-      dig.\               Main                    2023/Day18/LavaductLagoon.hs:28:94-103      274         329    0.0    0.1     0.0    0.1
-      dig.\               Main                    2023/Day18/LavaductLagoon.hs:28:56-65       269         326    0.0    0.1     0.0    0.1
-  pathArea                Main                    2023/Day18/LavaductLagoon.hs:(32,1)-(34,52) 262           2    0.0    0.0     0.0    8.4
-   pathArea.pathLen       Main                    2023/Day18/LavaductLagoon.hs:33:9-68        263           2    0.0    3.6     0.0    4.1
-    manhattanDist         Main                    2023/Day18/LavaductLagoon.hs:37:1-61        271        1328    0.0    0.6     0.0    0.6
-   polygonArea            Main                    2023/Day18/LavaductLagoon.hs:40:1-105       275           2    0.0    3.6     0.0    4.3
-    polygonArea.\         Main                    2023/Day18/LavaductLagoon.hs:40:65-81       276        1328    0.0    0.7     0.0    0.7
-  parseLine               Main                    2023/Day18/LavaductLagoon.hs:(19,1)-(23,64) 267           0    0.0   14.0    50.0   66.6
-   parseLine.\            Main                    2023/Day18/LavaductLagoon.hs:19:28-57       268         663    0.0   25.9    50.0   52.6
-    parseLine.parseClr    Main                    2023/Day18/LavaductLagoon.hs:(21,5)-(22,36) 277         663    0.0    0.2    50.0   26.7
-     parseLine.parseClr.n Main                    2023/Day18/LavaductLagoon.hs:21:22-67       281         663   50.0   26.5    50.0   26.5
-   parseLine.dir          Main                    2023/Day18/LavaductLagoon.hs:23:5-64        279           0    0.0    0.0     0.0    0.0
-    parseLine.dir.\       Main                    2023/Day18/LavaductLagoon.hs:23:49-51       283         174    0.0    0.0     0.0    0.0
-    parseLine.dir.\       Main                    2023/Day18/LavaductLagoon.hs:23:37-39       284         166    0.0    0.0     0.0    0.0
-    parseLine.dir.\       Main                    2023/Day18/LavaductLagoon.hs:23:61-63       282         165    0.0    0.0     0.0    0.0
-    parseLine.dir.\       Main                    2023/Day18/LavaductLagoon.hs:23:25-27       280         158    0.0    0.0     0.0    0.0
+MAIN                      MAIN                    <built-in>                                  135           0   25.0    1.5   100.0  100.0
+ CAF                      Main                    <entire-module>                             269           0    0.0    0.0     0.0    0.0
+  main                    Main                    2023/Day18/LavaductLagoon.hs:(8,1)-(14,82)  270           1    0.0    0.0     0.0    0.0
+  parseLine               Main                    2023/Day18/LavaductLagoon.hs:(19,1)-(23,64) 278           1    0.0    0.0     0.0    0.0
+   parseLine.dir          Main                    2023/Day18/LavaductLagoon.hs:23:5-64        290           1    0.0    0.0     0.0    0.0
+   parseLine.\            Main                    2023/Day18/LavaductLagoon.hs:19:28-57       282           0    0.0    0.0     0.0    0.0
+    parseLine.parseClr    Main                    2023/Day18/LavaductLagoon.hs:(21,5)-(22,36) 294           0    0.0    0.0     0.0    0.0
+     parseLine.parseClr.n Main                    2023/Day18/LavaductLagoon.hs:21:22-67       295           0    0.0    0.0     0.0    0.0
+ CAF                      GHC.Conc.Signal         <entire-module>                             247           0    0.0    0.0     0.0    0.0
+ CAF                      GHC.IO.Encoding         <entire-module>                             228           0    0.0    0.0     0.0    0.0
+ CAF                      GHC.IO.Encoding.Iconv   <entire-module>                             226           0    0.0    0.0     0.0    0.0
+ CAF                      GHC.IO.Exception        <entire-module>                             220           0    0.0    0.0     0.0    0.0
+ CAF                      GHC.IO.FD               <entire-module>                             219           0    0.0    0.0     0.0    0.0
+ CAF                      GHC.IO.Handle.FD        <entire-module>                             217           0    0.0    0.4     0.0    0.4
+ CAF                      GHC.IO.Handle.Internals <entire-module>                             216           0    0.0    0.0     0.0    0.0
+ CAF                      GHC.Event.Poll          <entire-module>                             157           0    0.0    0.0     0.0    0.0
+ CAF                      GHC.Event.Thread        <entire-module>                             156           0    0.0    0.0     0.0    0.0
+ main                     Main                    2023/Day18/LavaductLagoon.hs:(8,1)-(14,82)  271           0   50.0   21.9    75.0   98.1
+  main.f                  Main                    2023/Day18/LavaductLagoon.hs:14:5-82        272        1330    0.0    0.4     0.0    1.4
+   main.f.\               Main                    2023/Day18/LavaductLagoon.hs:14:32-67       273        1328    0.0    0.0     0.0    1.1
+    main.f.\.p            Main                    2023/Day18/LavaductLagoon.hs:14:36-48       276        1326    0.0    0.0     0.0    1.1
+     dig                  Main                    2023/Day18/LavaductLagoon.hs:28:1-108       277        1326    0.0    0.8     0.0    1.1
+      dig.\               Main                    2023/Day18/LavaductLagoon.hs:28:37-46       285         338    0.0    0.1     0.0    0.1
+      dig.\               Main                    2023/Day18/LavaductLagoon.hs:28:75-84       284         333    0.0    0.1     0.0    0.1
+      dig.\               Main                    2023/Day18/LavaductLagoon.hs:28:94-103      286         329    0.0    0.1     0.0    0.1
+      dig.\               Main                    2023/Day18/LavaductLagoon.hs:28:56-65       281         326    0.0    0.1     0.0    0.1
+  pathArea                Main                    2023/Day18/LavaductLagoon.hs:(32,1)-(34,52) 274           2    0.0    0.0     0.0    8.5
+   pathArea.pathLen       Main                    2023/Day18/LavaductLagoon.hs:33:9-68        275           2    0.0    3.6     0.0    4.2
+    manhattanDist         Main                    2023/Day18/LavaductLagoon.hs:37:1-61        283        1328    0.0    0.6     0.0    0.6
+   polygonArea            Main                    2023/Day18/LavaductLagoon.hs:40:1-105       287           2    0.0    3.6     0.0    4.3
+    polygonArea.\         Main                    2023/Day18/LavaductLagoon.hs:40:65-81       288        1328    0.0    0.7     0.0    0.7
+  parseLine               Main                    2023/Day18/LavaductLagoon.hs:(19,1)-(23,64) 279           0    0.0   14.3    25.0   66.2
+   parseLine.\            Main                    2023/Day18/LavaductLagoon.hs:19:28-57       280         663    0.0   25.6    25.0   51.9
+    parseLine.parseClr    Main                    2023/Day18/LavaductLagoon.hs:(21,5)-(22,36) 289         663    0.0    0.2    25.0   26.3
+     parseLine.parseClr.n Main                    2023/Day18/LavaductLagoon.hs:21:22-67       293         663   25.0   26.1    25.0   26.1
+   parseLine.dir          Main                    2023/Day18/LavaductLagoon.hs:23:5-64        291           0    0.0    0.0     0.0    0.0
+    parseLine.dir.\       Main                    2023/Day18/LavaductLagoon.hs:23:49-51       297         174    0.0    0.0     0.0    0.0
+    parseLine.dir.\       Main                    2023/Day18/LavaductLagoon.hs:23:37-39       298         166    0.0    0.0     0.0    0.0
+    parseLine.dir.\       Main                    2023/Day18/LavaductLagoon.hs:23:61-63       296         165    0.0    0.0     0.0    0.0
+    parseLine.dir.\       Main                    2023/Day18/LavaductLagoon.hs:23:25-27       292         158    0.0    0.0     0.0    0.0

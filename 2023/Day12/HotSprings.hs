@@ -2,7 +2,7 @@
 
 import Data.List.Split (splitOn)
 import Data.List (intercalate)
-import Data.Function.Memoize (memoize2)
+import Data.MemoTrie
 
 main :: IO ()
 main = do
@@ -14,7 +14,7 @@ main = do
     expand xs ys = (intercalate "?" . replicate 5 $ xs, concat . replicate 5 $ ys)
 
 possibilities :: String -> [Int] -> Int
-possibilities = memoize2 possibilities'
+possibilities = memo2 possibilities'
   where
     possibilities' :: String -> [Int] -> Int
     possibilities' [] _ = 0

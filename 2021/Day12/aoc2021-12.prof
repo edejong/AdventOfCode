@@ -1,63 +1,65 @@
-	Thu Feb 29 11:50 2024 Time and Allocation Profiling Report  (Final)
+	Tue Mar  5 14:52 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2021-12 +RTS -N -i0.001 -p -hy -l-agu -s2021/Day12/aoc2021-12.stats -RTS
+	   aoc2021-12 +RTS -N -i0.05 -p -hy -l-agu --machine-readable -t2021/Day12/aoc2021-12.stats -A32M -B -RTS
 
-	total time  =        0.03 secs   (122 ticks @ 1000 us, 8 processors)
-	total alloc =  33,714,936 bytes  (excludes profiling overheads)
+	total time  =        0.05 secs   (179 ticks @ 1000 us, 8 processors)
+	total alloc =  33,708,200 bytes  (excludes profiling overheads)
 
-COST CENTRE      MODULE SRC                                          %time %alloc
+COST CENTRE      MODULE    SRC                                          %time %alloc
 
-countPaths       Main   2021/Day12/PassagePathing.hs:(18,1)-(26,49)   72.1   11.4
-countPaths.rest  Main   2021/Day12/PassagePathing.hs:26:5-49          19.7   87.7
-countPaths.small Main   2021/Day12/PassagePathing.hs:25:5-30           6.6    0.0
+countPaths       Main      2021/Day12/PassagePathing.hs:(18,1)-(26,49)   84.9   11.4
+countPaths.rest  Main      2021/Day12/PassagePathing.hs:26:5-49          11.2   87.7
+countPaths.small Main      2021/Day12/PassagePathing.hs:25:5-30           2.2    0.0
 
 
                                                                                                                       individual      inherited
 COST CENTRE            MODULE                    SRC                                               no.     entries  %time %alloc   %time %alloc
 
-MAIN                   MAIN                      <built-in>                                        164           0    0.8    0.4   100.0  100.0
- CAF                   Main                      <entire-module>                                   326           0    0.0    0.0     0.0    0.0
-  main                 Main                      2021/Day12/PassagePathing.hs:(9,1)-(15,49)        328           1    0.0    0.0     0.0    0.0
-   splitOn             Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         334           1    0.0    0.0     0.0    0.0
-    dropDelims         Data.List.Split.Internals src/Data/List/Split/Internals.hs:320:1-37         344           1    0.0    0.0     0.0    0.0
-    onSublist          Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70         342           1    0.0    0.0     0.0    0.0
-    split              Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68         335           1    0.0    0.0     0.0    0.0
-     delimiter         Data.List.Split.Internals src/Data/List/Split/Internals.hs:22:5-13          349           1    0.0    0.0     0.0    0.0
-     postProcess       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35) 338           1    0.0    0.0     0.0    0.0
-      condensePolicy   Data.List.Split.Internals src/Data/List/Split/Internals.hs:29:5-18          347           1    0.0    0.0     0.0    0.0
-      delimPolicy      Data.List.Split.Internals src/Data/List/Split/Internals.hs:24:5-15          341           1    0.0    0.0     0.0    0.0
-      doMerge          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(216,1)-(218,14) 340           1    0.0    0.0     0.0    0.0
-      finalBlankPolicy Data.List.Split.Internals src/Data/List/Split/Internals.hs:34:5-20          359           1    0.0    0.0     0.0    0.0
-      initBlankPolicy  Data.List.Split.Internals src/Data/List/Split/Internals.hs:32:5-19          357           1    0.0    0.0     0.0    0.0
- CAF                   Data.List.Split.Internals <entire-module>                                   325           0    0.0    0.0     0.0    0.0
-  defaultSplitter      Data.List.Split.Internals src/Data/List/Split/Internals.hs:(55,1)-(62,5)    343           1    0.0    0.0     0.0    0.0
- CAF                   GHC.Conc.Signal           <entire-module>                                   273           0    0.0    0.0     0.0    0.0
- CAF                   GHC.IO.Encoding           <entire-module>                                   255           0    0.0    0.0     0.0    0.0
- CAF                   GHC.IO.Encoding.Iconv     <entire-module>                                   253           0    0.0    0.0     0.0    0.0
- CAF                   GHC.IO.Exception          <entire-module>                                   247           0    0.0    0.0     0.0    0.0
- CAF                   GHC.IO.FD                 <entire-module>                                   246           0    0.0    0.0     0.0    0.0
- CAF                   GHC.IO.Handle.FD          <entire-module>                                   244           0    0.0    0.1     0.0    0.1
- CAF                   GHC.IO.Handle.Internals   <entire-module>                                   243           0    0.0    0.0     0.0    0.0
- CAF                   GHC.Event.Thread          <entire-module>                                   184           0    0.0    0.0     0.0    0.0
- main                  Main                      2021/Day12/PassagePathing.hs:(9,1)-(15,49)        329           0    0.8    0.2    99.2   99.5
-  countPaths           Main                      2021/Day12/PassagePathing.hs:(18,1)-(26,49)       330     2417008   72.1   11.4    98.4   99.1
-   countPaths.rest     Main                      2021/Day12/PassagePathing.hs:26:5-49              332     1912098   19.7   87.7    19.7   87.7
-   countPaths.small    Main                      2021/Day12/PassagePathing.hs:25:5-30              331      462476    6.6    0.0     6.6    0.0
-  main.edges           Main                      2021/Day12/PassagePathing.hs:(11,9)-(12,81)       333           1    0.0    0.0     0.0    0.0
-   main.edges.\        Main                      2021/Day12/PassagePathing.hs:12:32-43             363          46    0.0    0.0     0.0    0.0
-   main.edges.\        Main                      2021/Day12/PassagePathing.hs:12:61-76             361          23    0.0    0.0     0.0    0.0
-  main.graph           Main                      2021/Day12/PassagePathing.hs:13:9-72              364           1    0.0    0.0     0.0    0.0
-   main.graph.\        Main                      2021/Day12/PassagePathing.hs:13:37-59             365          43    0.0    0.0     0.0    0.0
-  splitOn              Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         336           0    0.0    0.0     0.0    0.1
-   split               Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68         337           0    0.0    0.0     0.0    0.1
-    fromElem           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(124,1)-(125,24) 362          46    0.0    0.0     0.0    0.0
-    splitInternal      Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71) 348          46    0.0    0.0     0.0    0.1
-     breakDelim        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34) 350         150    0.0    0.0     0.0    0.1
-      matchDelim       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(72,1)-(76,23)   351         150    0.0    0.0     0.0    0.0
-    postProcess        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35) 339           0    0.0    0.0     0.0    0.0
-     doCondense        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(187,1)-(194,20) 346          23    0.0    0.0     0.0    0.0
-     doDrop            Data.List.Split.Internals src/Data/List/Split/Internals.hs:(181,1)-(182,14) 355          23    0.0    0.0     0.0    0.0
-     dropFinal         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(248,1)-(254,17) 358          23    0.0    0.0     0.0    0.0
-     dropInitial       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(243,1)-(244,19) 356          23    0.0    0.0     0.0    0.0
-     insertBlanks      Data.List.Split.Internals src/Data/List/Split/Internals.hs:(200,1)-(202,38) 353          23    0.0    0.0     0.0    0.0
-      insertBlanks'    Data.List.Split.Internals src/Data/List/Split/Internals.hs:(206,1)-(212,49) 354          92    0.0    0.0     0.0    0.0
+MAIN                   MAIN                      <built-in>                                        172           0    0.6    0.4   100.0  100.0
+ CAF                   Main                      <entire-module>                                   342           0    0.0    0.0     0.0    0.0
+  main                 Main                      2021/Day12/PassagePathing.hs:(9,1)-(15,49)        344           1    0.0    0.0     0.0    0.0
+   splitOn             Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         350           1    0.0    0.0     0.0    0.0
+    dropDelims         Data.List.Split.Internals src/Data/List/Split/Internals.hs:320:1-37         360           1    0.0    0.0     0.0    0.0
+    onSublist          Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70         358           1    0.0    0.0     0.0    0.0
+    split              Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68         351           1    0.0    0.0     0.0    0.0
+     delimiter         Data.List.Split.Internals src/Data/List/Split/Internals.hs:22:5-13          365           1    0.0    0.0     0.0    0.0
+     postProcess       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35) 354           1    0.0    0.0     0.0    0.0
+      condensePolicy   Data.List.Split.Internals src/Data/List/Split/Internals.hs:29:5-18          363           1    0.0    0.0     0.0    0.0
+      delimPolicy      Data.List.Split.Internals src/Data/List/Split/Internals.hs:24:5-15          357           1    0.0    0.0     0.0    0.0
+      doMerge          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(216,1)-(218,14) 356           1    0.0    0.0     0.0    0.0
+      finalBlankPolicy Data.List.Split.Internals src/Data/List/Split/Internals.hs:34:5-20          375           1    0.0    0.0     0.0    0.0
+      initBlankPolicy  Data.List.Split.Internals src/Data/List/Split/Internals.hs:32:5-19          373           1    0.0    0.0     0.0    0.0
+ CAF                   Data.List.Split.Internals <entire-module>                                   341           0    0.0    0.0     0.0    0.0
+  defaultSplitter      Data.List.Split.Internals src/Data/List/Split/Internals.hs:(55,1)-(62,5)    359           1    0.0    0.0     0.0    0.0
+ CAF                   GHC.Conc.Signal           <entire-module>                                   288           0    0.0    0.0     0.0    0.0
+ CAF                   GHC.IO.Encoding           <entire-module>                                   269           0    0.0    0.0     0.0    0.0
+ CAF                   GHC.IO.Encoding.Iconv     <entire-module>                                   267           0    0.0    0.0     0.0    0.0
+ CAF                   GHC.IO.Exception          <entire-module>                                   261           0    0.6    0.0     0.6    0.0
+ CAF                   GHC.IO.FD                 <entire-module>                                   260           0    0.0    0.0     0.0    0.0
+ CAF                   GHC.IO.Handle.FD          <entire-module>                                   258           0    0.0    0.1     0.0    0.1
+ CAF                   GHC.IO.Handle.Internals   <entire-module>                                   257           0    0.0    0.0     0.0    0.0
+ CAF                   GHC.Weak.Finalize         <entire-module>                                   228           0    0.0    0.0     0.0    0.0
+ CAF                   GHC.Event.Poll            <entire-module>                                   194           0    0.0    0.0     0.0    0.0
+ CAF                   GHC.Event.Thread          <entire-module>                                   193           0    0.0    0.0     0.0    0.0
+ main                  Main                      2021/Day12/PassagePathing.hs:(9,1)-(15,49)        345           0    0.6    0.2    98.9   99.5
+  countPaths           Main                      2021/Day12/PassagePathing.hs:(18,1)-(26,49)       346     2417008   84.9   11.4    98.3   99.1
+   countPaths.rest     Main                      2021/Day12/PassagePathing.hs:26:5-49              348     1912098   11.2   87.7    11.2   87.7
+   countPaths.small    Main                      2021/Day12/PassagePathing.hs:25:5-30              347      462476    2.2    0.0     2.2    0.0
+  main.edges           Main                      2021/Day12/PassagePathing.hs:(11,9)-(12,81)       349           1    0.0    0.0     0.0    0.0
+   main.edges.\        Main                      2021/Day12/PassagePathing.hs:12:32-43             379          46    0.0    0.0     0.0    0.0
+   main.edges.\        Main                      2021/Day12/PassagePathing.hs:12:61-76             377          23    0.0    0.0     0.0    0.0
+  main.graph           Main                      2021/Day12/PassagePathing.hs:13:9-72              380           1    0.0    0.0     0.0    0.0
+   main.graph.\        Main                      2021/Day12/PassagePathing.hs:13:37-59             381          43    0.0    0.0     0.0    0.0
+  splitOn              Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         352           0    0.0    0.0     0.0    0.1
+   split               Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68         353           0    0.0    0.0     0.0    0.1
+    fromElem           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(124,1)-(125,24) 378          46    0.0    0.0     0.0    0.0
+    splitInternal      Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71) 364          46    0.0    0.0     0.0    0.1
+     breakDelim        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34) 366         150    0.0    0.0     0.0    0.1
+      matchDelim       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(72,1)-(76,23)   367         150    0.0    0.0     0.0    0.0
+    postProcess        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35) 355           0    0.0    0.0     0.0    0.0
+     doCondense        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(187,1)-(194,20) 362          23    0.0    0.0     0.0    0.0
+     doDrop            Data.List.Split.Internals src/Data/List/Split/Internals.hs:(181,1)-(182,14) 371          23    0.0    0.0     0.0    0.0
+     dropFinal         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(248,1)-(254,17) 374          23    0.0    0.0     0.0    0.0
+     dropInitial       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(243,1)-(244,19) 372          23    0.0    0.0     0.0    0.0
+     insertBlanks      Data.List.Split.Internals src/Data/List/Split/Internals.hs:(200,1)-(202,38) 369          23    0.0    0.0     0.0    0.0
+      insertBlanks'    Data.List.Split.Internals src/Data/List/Split/Internals.hs:(206,1)-(212,49) 370          92    0.0    0.0     0.0    0.0

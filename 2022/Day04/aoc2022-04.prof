@@ -1,66 +1,65 @@
-	Thu Feb 29 20:35 2024 Time and Allocation Profiling Report  (Final)
+	Tue Mar  5 15:25 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2022-04 +RTS -N -i0.05 -p -hy -l-agu -s2022/Day04/aoc2022-04.stats -RTS
+	   aoc2022-04 +RTS -N -i0.05 -p -hy -l-agu --machine-readable -t2022/Day04/aoc2022-04.stats -A32M -B -RTS
 
-	total time  =        0.00 secs   (9 ticks @ 1000 us, 8 processors)
-	total alloc =  23,034,280 bytes  (excludes profiling overheads)
+	total time  =        0.00 secs   (7 ticks @ 1000 us, 8 processors)
+	total alloc =  22,640,488 bytes  (excludes profiling overheads)
 
 COST CENTRE   MODULE                    SRC                                                %time %alloc
 
-main          Main                      2022/Day04/CampCleanup.hs:(4,1)-(11,45)             66.7   75.5
-MAIN          MAIN                      <built-in>                                          11.1    0.6
-matchDelim    Data.List.Split.Internals src/Data/List/Split/Internals.hs:(72,1)-(76,23)     11.1    1.4
-fromElem      Data.List.Split.Internals src/Data/List/Split/Internals.hs:(124,1)-(125,24)   11.1    0.0
-splitInternal Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71)    0.0    4.1
-split         Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68            0.0    3.3
+main          Main                      2022/Day04/CampCleanup.hs:(5,1)-(12,45)             42.9   75.1
+MAIN          MAIN                      <built-in>                                          14.3    0.6
+splitInternal Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71)   14.3    4.1
+doCondense    Data.List.Split.Internals src/Data/List/Split/Internals.hs:(187,1)-(194,20)   14.3    0.0
+breakDelim    Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34)   14.3   11.2
+split         Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68            0.0    3.4
+matchDelim    Data.List.Split.Internals src/Data/List/Split/Internals.hs:(72,1)-(76,23)      0.0    1.4
 insertBlanks' Data.List.Split.Internals src/Data/List/Split/Internals.hs:(206,1)-(212,49)    0.0    2.2
 doDrop        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(181,1)-(182,14)    0.0    1.3
-breakDelim    Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34)    0.0   11.0
 
 
                                                                                                                       individual      inherited
 COST CENTRE            MODULE                    SRC                                               no.     entries  %time %alloc   %time %alloc
 
-MAIN                   MAIN                      <built-in>                                        130           0   11.1    0.6   100.0  100.0
- CAF                   Main                      <entire-module>                                   258           0    0.0    0.0     0.0    0.0
-  main                 Main                      2022/Day04/CampCleanup.hs:(4,1)-(11,45)           260           1    0.0    0.0     0.0    0.0
-   splitOn             Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         263           2    0.0    0.0     0.0    0.0
-    dropDelims         Data.List.Split.Internals src/Data/List/Split/Internals.hs:320:1-37         273           2    0.0    0.0     0.0    0.0
-    onSublist          Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70         271           2    0.0    0.0     0.0    0.0
-    split              Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68         264           2    0.0    0.0     0.0    0.0
-     delimiter         Data.List.Split.Internals src/Data/List/Split/Internals.hs:22:5-13          278           2    0.0    0.0     0.0    0.0
-     postProcess       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35) 267           2    0.0    0.0     0.0    0.0
-      condensePolicy   Data.List.Split.Internals src/Data/List/Split/Internals.hs:29:5-18          276           2    0.0    0.0     0.0    0.0
-      delimPolicy      Data.List.Split.Internals src/Data/List/Split/Internals.hs:24:5-15          270           2    0.0    0.0     0.0    0.0
-      doMerge          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(216,1)-(218,14) 269           2    0.0    0.0     0.0    0.0
-      finalBlankPolicy Data.List.Split.Internals src/Data/List/Split/Internals.hs:34:5-20          288           2    0.0    0.0     0.0    0.0
-      initBlankPolicy  Data.List.Split.Internals src/Data/List/Split/Internals.hs:32:5-19          286           2    0.0    0.0     0.0    0.0
- CAF                   Data.List.Split.Internals <entire-module>                                   257           0    0.0    0.0     0.0    0.0
-  defaultSplitter      Data.List.Split.Internals src/Data/List/Split/Internals.hs:(55,1)-(62,5)    272           1    0.0    0.0     0.0    0.0
- CAF                   GHC.Conc.Signal           <entire-module>                                   235           0    0.0    0.0     0.0    0.0
- CAF                   GHC.IO.Encoding           <entire-module>                                   217           0    0.0    0.0     0.0    0.0
- CAF                   GHC.IO.Encoding.Iconv     <entire-module>                                   215           0    0.0    0.0     0.0    0.0
- CAF                   GHC.IO.Exception          <entire-module>                                   209           0    0.0    0.0     0.0    0.0
- CAF                   GHC.IO.FD                 <entire-module>                                   208           0    0.0    0.0     0.0    0.0
- CAF                   GHC.IO.Handle.FD          <entire-module>                                   206           0    0.0    0.2     0.0    0.2
- CAF                   GHC.IO.Handle.Internals   <entire-module>                                   205           0    0.0    0.0     0.0    0.0
- CAF                   GHC.Read                  <entire-module>                                   190           0    0.0    0.0     0.0    0.0
- CAF                   GHC.Event.Thread          <entire-module>                                   150           0    0.0    0.0     0.0    0.0
- main                  Main                      2022/Day04/CampCleanup.hs:(4,1)-(11,45)           261           0   66.7   75.5    88.9   99.2
-  main.f1              Main                      2022/Day04/CampCleanup.hs:6:9-52                  262        1000    0.0    0.0     0.0    0.0
-   main.contains       Main                      2022/Day04/CampCleanup.hs:10:5-69                 290        1462    0.0    0.0     0.0    0.0
-  main.f2              Main                      2022/Day04/CampCleanup.hs:7:9-34                  292        1000    0.0    0.0     0.0    0.0
-   main.overlaps       Main                      2022/Day04/CampCleanup.hs:11:5-45                 293        1000    0.0    0.0     0.0    0.0
-  splitOn              Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         265           0    0.0    0.0    22.2   23.7
-   split               Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68         266           0    0.0    3.3    22.2   23.7
-    fromElem           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(124,1)-(125,24) 291        6000   11.1    0.0    11.1    0.0
-    splitInternal      Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71) 277        6000    0.0    4.1    11.1   16.5
-     breakDelim        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34) 279       22722    0.0   11.0    11.1   12.4
-      matchDelim       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(72,1)-(76,23)   280       22722   11.1    1.4    11.1    1.4
-    postProcess        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35) 268           0    0.0    0.5     0.0    4.0
-     doCondense        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(187,1)-(194,20) 275        3000    0.0    0.0     0.0    0.0
-     doDrop            Data.List.Split.Internals src/Data/List/Split/Internals.hs:(181,1)-(182,14) 284        3000    0.0    1.3     0.0    1.3
-     dropFinal         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(248,1)-(254,17) 287        3000    0.0    0.0     0.0    0.0
-     dropInitial       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(243,1)-(244,19) 285        3000    0.0    0.0     0.0    0.0
-     insertBlanks      Data.List.Split.Internals src/Data/List/Split/Internals.hs:(200,1)-(202,38) 282        3000    0.0    0.0     0.0    2.2
-      insertBlanks'    Data.List.Split.Internals src/Data/List/Split/Internals.hs:(206,1)-(212,49) 283       12000    0.0    2.2     0.0    2.2
+MAIN                   MAIN                      <built-in>                                        136           0   14.3    0.6   100.0  100.0
+ CAF                   Main                      <entire-module>                                   270           0    0.0    0.0     0.0    0.0
+  main                 Main                      2022/Day04/CampCleanup.hs:(5,1)-(12,45)           272           1    0.0    0.0     0.0    0.0
+   splitOn             Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         275           2    0.0    0.0     0.0    0.0
+    dropDelims         Data.List.Split.Internals src/Data/List/Split/Internals.hs:320:1-37         285           2    0.0    0.0     0.0    0.0
+    onSublist          Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70         283           2    0.0    0.0     0.0    0.0
+    split              Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68         276           2    0.0    0.0     0.0    0.0
+     delimiter         Data.List.Split.Internals src/Data/List/Split/Internals.hs:22:5-13          290           2    0.0    0.0     0.0    0.0
+     postProcess       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35) 279           2    0.0    0.0     0.0    0.0
+      condensePolicy   Data.List.Split.Internals src/Data/List/Split/Internals.hs:29:5-18          288           2    0.0    0.0     0.0    0.0
+      delimPolicy      Data.List.Split.Internals src/Data/List/Split/Internals.hs:24:5-15          282           2    0.0    0.0     0.0    0.0
+      doMerge          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(216,1)-(218,14) 281           2    0.0    0.0     0.0    0.0
+      finalBlankPolicy Data.List.Split.Internals src/Data/List/Split/Internals.hs:34:5-20          300           2    0.0    0.0     0.0    0.0
+      initBlankPolicy  Data.List.Split.Internals src/Data/List/Split/Internals.hs:32:5-19          298           2    0.0    0.0     0.0    0.0
+ CAF                   Data.List.Split.Internals <entire-module>                                   269           0    0.0    0.0     0.0    0.0
+  defaultSplitter      Data.List.Split.Internals src/Data/List/Split/Internals.hs:(55,1)-(62,5)    284           1    0.0    0.0     0.0    0.0
+ CAF                   GHC.Conc.Signal           <entire-module>                                   248           0    0.0    0.0     0.0    0.0
+ CAF                   GHC.IO.Encoding           <entire-module>                                   229           0    0.0    0.0     0.0    0.0
+ CAF                   GHC.IO.Encoding.Iconv     <entire-module>                                   227           0    0.0    0.0     0.0    0.0
+ CAF                   GHC.IO.Exception          <entire-module>                                   221           0    0.0    0.0     0.0    0.0
+ CAF                   GHC.IO.FD                 <entire-module>                                   220           0    0.0    0.0     0.0    0.0
+ CAF                   GHC.IO.Handle.FD          <entire-module>                                   218           0    0.0    0.2     0.0    0.2
+ CAF                   GHC.IO.Handle.Internals   <entire-module>                                   217           0    0.0    0.0     0.0    0.0
+ CAF                   GHC.Event.Thread          <entire-module>                                   157           0    0.0    0.0     0.0    0.0
+ main                  Main                      2022/Day04/CampCleanup.hs:(5,1)-(12,45)           273           0   42.9   75.1    85.7   99.2
+  main.f1              Main                      2022/Day04/CampCleanup.hs:7:9-52                  274        1000    0.0    0.0     0.0    0.0
+   main.contains       Main                      2022/Day04/CampCleanup.hs:11:5-69                 302        1462    0.0    0.0     0.0    0.0
+  main.f2              Main                      2022/Day04/CampCleanup.hs:8:9-34                  304        1000    0.0    0.0     0.0    0.0
+   main.overlaps       Main                      2022/Day04/CampCleanup.hs:12:5-45                 305        1000    0.0    0.0     0.0    0.0
+  splitOn              Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         277           0    0.0    0.0    42.9   24.2
+   split               Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68         278           0    0.0    3.4    42.9   24.2
+    fromElem           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(124,1)-(125,24) 303        6000    0.0    0.0     0.0    0.0
+    splitInternal      Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71) 289        6000   14.3    4.1    28.6   16.7
+     breakDelim        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34) 291       22722   14.3   11.2    14.3   12.6
+      matchDelim       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(72,1)-(76,23)   292       22722    0.0    1.4     0.0    1.4
+    postProcess        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35) 280           0    0.0    0.5    14.3    4.0
+     doCondense        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(187,1)-(194,20) 287        3000   14.3    0.0    14.3    0.0
+     doDrop            Data.List.Split.Internals src/Data/List/Split/Internals.hs:(181,1)-(182,14) 296        3000    0.0    1.3     0.0    1.3
+     dropFinal         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(248,1)-(254,17) 299        3000    0.0    0.0     0.0    0.0
+     dropInitial       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(243,1)-(244,19) 297        3000    0.0    0.0     0.0    0.0
+     insertBlanks      Data.List.Split.Internals src/Data/List/Split/Internals.hs:(200,1)-(202,38) 294        3000    0.0    0.0     0.0    2.2
+      insertBlanks'    Data.List.Split.Internals src/Data/List/Split/Internals.hs:(206,1)-(212,49) 295       12000    0.0    2.2     0.0    2.2

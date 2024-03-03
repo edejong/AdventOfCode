@@ -1,41 +1,41 @@
-	Thu Feb 29 20:40 2024 Time and Allocation Profiling Report  (Final)
+	Tue Mar  5 15:13 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2023-06 +RTS -N -i0.05 -p -hy -l-agu -s2023/Day06/aoc2023-06.stats -RTS
+	   aoc2023-06 +RTS -N -i0.05 -p -hy -l-agu --machine-readable -t2023/Day06/aoc2023-06.stats -A32M -B -RTS
 
 	total time  =        0.00 secs   (2 ticks @ 1000 us, 8 processors)
-	total alloc =     258,808 bytes  (excludes profiling overheads)
+	total alloc =     249,600 bytes  (excludes profiling overheads)
 
 COST CENTRE MODULE           SRC                                     %time %alloc
 
-MAIN        MAIN             <built-in>                               50.0   53.2
-solve       Main             2023/Day06/WaitForIt.hs:(11,1)-(12,89)   50.0   14.2
-CAF         GHC.IO.Handle.FD <entire-module>                           0.0   13.4
-CAF         GHC.IO.Encoding  <entire-module>                           0.0    1.1
-main        Main             2023/Day06/WaitForIt.hs:(6,1)-(8,53)      0.0   16.0
+MAIN        MAIN             <built-in>                               50.0   52.3
+main        Main             2023/Day06/WaitForIt.hs:(6,1)-(8,53)     50.0   17.0
+CAF         GHC.IO.Handle.FD <entire-module>                           0.0   13.9
+CAF         GHC.IO.Encoding  <entire-module>                           0.0    1.2
+solve       Main             2023/Day06/WaitForIt.hs:(11,1)-(12,89)    0.0   14.4
 
 
                                                                                                     individual      inherited
 COST CENTRE       MODULE                  SRC                                    no.     entries  %time %alloc   %time %alloc
 
-MAIN              MAIN                    <built-in>                             129           0   50.0   53.2   100.0  100.0
- CAF              Main                    <entire-module>                        257           0    0.0    0.7     0.0    0.7
-  main            Main                    2023/Day06/WaitForIt.hs:(6,1)-(8,53)   258           1    0.0    0.0     0.0    0.0
-  solve           Main                    2023/Day06/WaitForIt.hs:(11,1)-(12,89) 260           1    0.0    0.0     0.0    0.0
- CAF              GHC.Conc.Signal         <entire-module>                        234           0    0.0    0.2     0.0    0.2
- CAF              GHC.IO.Encoding         <entire-module>                        216           0    0.0    1.1     0.0    1.1
- CAF              GHC.IO.Encoding.Iconv   <entire-module>                        214           0    0.0    0.1     0.0    0.1
- CAF              GHC.IO.Exception        <entire-module>                        208           0    0.0    0.2     0.0    0.2
- CAF              GHC.IO.FD               <entire-module>                        207           0    0.0    0.0     0.0    0.0
- CAF              GHC.IO.Handle.FD        <entire-module>                        205           0    0.0   13.4     0.0   13.4
- CAF              GHC.IO.Handle.Internals <entire-module>                        204           0    0.0    0.0     0.0    0.0
- CAF              GHC.Read                <entire-module>                        189           0    0.0    0.0     0.0    0.0
- CAF              GHC.Event.Thread        <entire-module>                        149           0    0.0    0.5     0.0    0.5
- main             Main                    2023/Day06/WaitForIt.hs:(6,1)-(8,53)   259           0    0.0   16.0    50.0   30.5
-  solve           Main                    2023/Day06/WaitForIt.hs:(11,1)-(12,89) 261           0   50.0   14.2    50.0   14.5
-   solve.f        Main                    2023/Day06/WaitForIt.hs:12:9-89        263           4    0.0    0.1     0.0    0.2
-    solve.f.(...) Main                    2023/Day06/WaitForIt.hs:12:21-48       265           4    0.0    0.0     0.0    0.1
-     roots        Main                    2023/Day06/WaitForIt.hs:15:1-87        266           4    0.0    0.1     0.0    0.1
-      roots.x     Main                    2023/Day06/WaitForIt.hs:15:19-47       267           4    0.0    0.0     0.0    0.0
-    solve.f.x1    Main                    2023/Day06/WaitForIt.hs:12:21-48       268           4    0.0    0.0     0.0    0.0
-    solve.f.x2    Main                    2023/Day06/WaitForIt.hs:12:21-48       264           4    0.0    0.0     0.0    0.0
-   solve.\        Main                    2023/Day06/WaitForIt.hs:11:50-58       262           2    0.0    0.1     0.0    0.1
+MAIN              MAIN                    <built-in>                             135           0   50.0   52.3   100.0  100.0
+ CAF              Main                    <entire-module>                        269           0    0.0    0.0     0.0    0.1
+  main            Main                    2023/Day06/WaitForIt.hs:(6,1)-(8,53)   270           1    0.0    0.0     0.0    0.0
+  solve           Main                    2023/Day06/WaitForIt.hs:(11,1)-(12,89) 272           1    0.0    0.0     0.0    0.0
+ CAF              GHC.Conc.Signal         <entire-module>                        247           0    0.0    0.3     0.0    0.3
+ CAF              GHC.IO.Encoding         <entire-module>                        228           0    0.0    1.2     0.0    1.2
+ CAF              GHC.IO.Encoding.Iconv   <entire-module>                        226           0    0.0    0.1     0.0    0.1
+ CAF              GHC.IO.Exception        <entire-module>                        220           0    0.0    0.2     0.0    0.2
+ CAF              GHC.IO.FD               <entire-module>                        219           0    0.0    0.0     0.0    0.0
+ CAF              GHC.IO.Handle.FD        <entire-module>                        217           0    0.0   13.9     0.0   13.9
+ CAF              GHC.IO.Handle.Internals <entire-module>                        216           0    0.0    0.0     0.0    0.0
+ CAF              GHC.Event.Poll          <entire-module>                        157           0    0.0    0.0     0.0    0.0
+ CAF              GHC.Event.Thread        <entire-module>                        156           0    0.0    0.2     0.0    0.2
+ main             Main                    2023/Day06/WaitForIt.hs:(6,1)-(8,53)   271           0   50.0   17.0    50.0   31.7
+  solve           Main                    2023/Day06/WaitForIt.hs:(11,1)-(12,89) 273           0    0.0   14.4     0.0   14.7
+   solve.f        Main                    2023/Day06/WaitForIt.hs:12:9-89        275           4    0.0    0.1     0.0    0.2
+    solve.f.(...) Main                    2023/Day06/WaitForIt.hs:12:21-48       277           4    0.0    0.0     0.0    0.1
+     roots        Main                    2023/Day06/WaitForIt.hs:15:1-87        278           4    0.0    0.1     0.0    0.1
+      roots.x     Main                    2023/Day06/WaitForIt.hs:15:19-47       279           4    0.0    0.0     0.0    0.0
+    solve.f.x1    Main                    2023/Day06/WaitForIt.hs:12:21-48       280           4    0.0    0.0     0.0    0.0
+    solve.f.x2    Main                    2023/Day06/WaitForIt.hs:12:21-48       276           4    0.0    0.0     0.0    0.0
+   solve.\        Main                    2023/Day06/WaitForIt.hs:11:50-58       274           2    0.0    0.1     0.0    0.1

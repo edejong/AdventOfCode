@@ -1,79 +1,80 @@
-	Thu Feb 29 21:32 2024 Time and Allocation Profiling Report  (Final)
+	Tue Mar  5 15:25 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2022-14 +RTS -N -i0.05 -p -hy -l-agu -s2022/Day14/aoc2022-14.stats -RTS
+	   aoc2022-14 +RTS -N -i0.05 -p -hy -l-agu --machine-readable -t2022/Day14/aoc2022-14.stats -A32M -B -RTS
 
-	total time  =        0.07 secs   (256 ticks @ 1000 us, 8 processors)
-	total alloc = 913,668,104 bytes  (excludes profiling overheads)
+	total time  =        0.07 secs   (245 ticks @ 1000 us, 8 processors)
+	total alloc = 912,783,304 bytes  (excludes profiling overheads)
 
-COST CENTRE MODULE SRC                                             %time %alloc
+COST CENTRE MODULE                    SRC                                                %time %alloc
 
-tryDrop'    Main   2022/Day14/RegolithReservoir.hs:(50,1)-(61,81)   51.2    0.0
-tryDrop     Main   2022/Day14/RegolithReservoir.hs:(43,1)-(47,43)   41.0   95.4
-main        Main   2022/Day14/RegolithReservoir.hs:(9,1)-(14,24)     2.7    2.5
-MAIN        MAIN   <built-in>                                        2.0    0.0
+tryDrop'    Main                      2022/Day14/RegolithReservoir.hs:(48,1)-(59,81)      46.5    0.0
+tryDrop     Main                      2022/Day14/RegolithReservoir.hs:(41,1)-(45,43)      45.3   95.4
+main        Main                      2022/Day14/RegolithReservoir.hs:(8,1)-(13,24)        2.4    2.5
+breakDelim  Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34)    2.0    0.5
 
 
                                                                                                                        individual      inherited
 COST CENTRE             MODULE                    SRC                                               no.     entries  %time %alloc   %time %alloc
 
-MAIN                    MAIN                      <built-in>                                        138           0    2.0    0.0   100.0  100.0
- CAF                    Main                      <entire-module>                                   274           0    0.0    0.0     0.0    0.0
-  main                  Main                      2022/Day14/RegolithReservoir.hs:(9,1)-(14,24)     276           1    0.0    0.0     0.0    0.0
-   splitOn              Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         280           2    0.0    0.0     0.0    0.0
-    dropDelims          Data.List.Split.Internals src/Data/List/Split/Internals.hs:320:1-37         290           2    0.0    0.0     0.0    0.0
-    onSublist           Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70         288           2    0.0    0.0     0.0    0.0
-    split               Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68         281           2    0.0    0.0     0.0    0.0
-     delimiter          Data.List.Split.Internals src/Data/List/Split/Internals.hs:22:5-13          295           2    0.0    0.0     0.0    0.0
-     postProcess        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35) 284           2    0.0    0.0     0.0    0.0
-      condensePolicy    Data.List.Split.Internals src/Data/List/Split/Internals.hs:29:5-18          293           2    0.0    0.0     0.0    0.0
-      delimPolicy       Data.List.Split.Internals src/Data/List/Split/Internals.hs:24:5-15          287           2    0.0    0.0     0.0    0.0
-      doMerge           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(216,1)-(218,14) 286           2    0.0    0.0     0.0    0.0
-      finalBlankPolicy  Data.List.Split.Internals src/Data/List/Split/Internals.hs:34:5-20          305           2    0.0    0.0     0.0    0.0
-      initBlankPolicy   Data.List.Split.Internals src/Data/List/Split/Internals.hs:32:5-19          303           2    0.0    0.0     0.0    0.0
-  solve.dropSand        Main                      2022/Day14/RegolithReservoir.hs:(26,5)-(29,80)    317           0    0.0    0.0     0.0    0.0
-   tryDrop              Main                      2022/Day14/RegolithReservoir.hs:(43,1)-(47,43)    318           0    0.0    0.0     0.0    0.0
-    tryDrop.down        Main                      2022/Day14/RegolithReservoir.hs:44:9-22           319           1    0.0    0.0     0.0    0.0
-    tryDrop.left        Main                      2022/Day14/RegolithReservoir.hs:45:9-24           326           1    0.0    0.0     0.0    0.0
-    tryDrop.right       Main                      2022/Day14/RegolithReservoir.hs:46:9-25           327           1    0.0    0.0     0.0    0.0
- CAF                    Data.List.Split.Internals <entire-module>                                   273           0    0.0    0.0     0.0    0.0
-  defaultSplitter       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(55,1)-(62,5)    289           1    0.0    0.0     0.0    0.0
- CAF                    GHC.Conc.Signal           <entire-module>                                   247           0    0.0    0.0     0.0    0.0
- CAF                    GHC.IO.Encoding           <entire-module>                                   229           0    0.0    0.0     0.0    0.0
- CAF                    GHC.IO.Encoding.Iconv     <entire-module>                                   227           0    0.0    0.0     0.0    0.0
- CAF                    GHC.IO.Exception          <entire-module>                                   221           0    0.0    0.0     0.0    0.0
- CAF                    GHC.IO.FD                 <entire-module>                                   220           0    0.0    0.0     0.0    0.0
- CAF                    GHC.IO.Handle.FD          <entire-module>                                   218           0    0.0    0.0     0.0    0.0
- CAF                    GHC.IO.Handle.Internals   <entire-module>                                   217           0    0.0    0.0     0.0    0.0
- CAF                    GHC.Read                  <entire-module>                                   201           0    0.4    0.0     0.4    0.0
- CAF                    GHC.Event.Thread          <entire-module>                                   158           0    0.0    0.0     0.0    0.0
- main                   Main                      2022/Day14/RegolithReservoir.hs:(9,1)-(14,24)     277           0    2.7    2.5    97.7  100.0
-  solve                 Main                      2022/Day14/RegolithReservoir.hs:(17,1)-(29,80)    278           2    0.0    0.1    94.1   96.5
-   solve.dropSand       Main                      2022/Day14/RegolithReservoir.hs:(26,5)-(29,80)    315       28701    0.0    0.0    93.0   95.4
-    tryDrop             Main                      2022/Day14/RegolithReservoir.hs:(43,1)-(47,43)    316     3340996   41.0   95.4    93.0   95.4
-     tryDrop'           Main                      2022/Day14/RegolithReservoir.hs:(50,1)-(61,81)    320     6624994   51.2    0.0    51.6    0.0
-      tryDrop'.inBounds Main                      2022/Day14/RegolithReservoir.hs:61:5-81           321     6596294    0.4    0.0     0.4    0.0
-     tryDrop.down       Main                      2022/Day14/RegolithReservoir.hs:44:9-22           322     3312295    0.0    0.0     0.0    0.0
-     tryDrop.left       Main                      2022/Day14/RegolithReservoir.hs:45:9-24           323     2159386    0.0    0.0     0.0    0.0
-     tryDrop.right      Main                      2022/Day14/RegolithReservoir.hs:46:9-25           324     1095392    0.4    0.0     0.4    0.0
-   solve.\              Main                      2022/Day14/RegolithReservoir.hs:23:25-45          314       28263    0.0    0.0     0.0    0.0
-   solve.bounds         Main                      2022/Day14/RegolithReservoir.hs:20:9-73           306           2    0.0    0.0     0.0    0.0
-   solve.coords         Main                      2022/Day14/RegolithReservoir.hs:21:9-38           310           2    0.4    0.2     1.2    1.0
-    asCoords            Main                      2022/Day14/RegolithReservoir.hs:(34,1)-(37,49)    311         335    0.4    0.2     0.8    0.8
-     asCoords.f         Main                      2022/Day14/RegolithReservoir.hs:36:5-73           312        4395    0.4    0.4     0.4    0.6
-      asCoords.range'   Main                      2022/Day14/RegolithReservoir.hs:37:5-49           313       13970    0.0    0.3     0.0    0.3
-   solve.xs'            Main                      2022/Day14/RegolithReservoir.hs:18:9-46           279           2    0.0    0.0     0.0    0.0
-   solve.ys'            Main                      2022/Day14/RegolithReservoir.hs:19:9-44           309           2    0.0    0.0     0.0    0.0
-  main.maxY             Main                      2022/Day14/RegolithReservoir.hs:11:9-48           325           1    0.0    0.0     0.0    0.0
-  splitOn               Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         282           0    0.0    0.0     0.8    0.9
-   split                Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68         283           0    0.0    0.1     0.8    0.9
-    fromElem            Data.List.Split.Internals src/Data/List/Split/Internals.hs:(124,1)-(125,24) 307        7092    0.0    0.0     0.0    0.0
-    splitInternal       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71) 294        7092    0.0    0.1     0.8    0.7
-     breakDelim         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34) 296       34740    0.8    0.5     0.8    0.6
-      matchDelim        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(72,1)-(76,23)   297       43361    0.0    0.1     0.0    0.1
-    postProcess         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35) 285           0    0.0    0.0     0.0    0.1
-     doCondense         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(187,1)-(194,20) 292        2531    0.0    0.0     0.0    0.0
-     doDrop             Data.List.Split.Internals src/Data/List/Split/Internals.hs:(181,1)-(182,14) 301        2531    0.0    0.0     0.0    0.0
-     dropFinal          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(248,1)-(254,17) 304        2531    0.0    0.0     0.0    0.0
-     dropInitial        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(243,1)-(244,19) 302        2531    0.0    0.0     0.0    0.0
-     insertBlanks       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(200,1)-(202,38) 299        2531    0.0    0.0     0.0    0.1
-      insertBlanks'     Data.List.Split.Internals src/Data/List/Split/Internals.hs:(206,1)-(212,49) 300       14184    0.0    0.1     0.0    0.1
+MAIN                    MAIN                      <built-in>                                        144           0    0.4    0.0   100.0  100.0
+ CAF                    Main                      <entire-module>                                   286           0    0.0    0.0     0.0    0.0
+  main                  Main                      2022/Day14/RegolithReservoir.hs:(8,1)-(13,24)     288           1    0.0    0.0     0.0    0.0
+   splitOn              Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         292           2    0.0    0.0     0.0    0.0
+    dropDelims          Data.List.Split.Internals src/Data/List/Split/Internals.hs:320:1-37         302           2    0.0    0.0     0.0    0.0
+    onSublist           Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70         300           2    0.0    0.0     0.0    0.0
+    split               Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68         293           2    0.0    0.0     0.0    0.0
+     delimiter          Data.List.Split.Internals src/Data/List/Split/Internals.hs:22:5-13          307           2    0.0    0.0     0.0    0.0
+     postProcess        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35) 296           2    0.0    0.0     0.0    0.0
+      condensePolicy    Data.List.Split.Internals src/Data/List/Split/Internals.hs:29:5-18          305           2    0.0    0.0     0.0    0.0
+      delimPolicy       Data.List.Split.Internals src/Data/List/Split/Internals.hs:24:5-15          299           2    0.0    0.0     0.0    0.0
+      doMerge           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(216,1)-(218,14) 298           2    0.0    0.0     0.0    0.0
+      finalBlankPolicy  Data.List.Split.Internals src/Data/List/Split/Internals.hs:34:5-20          317           2    0.0    0.0     0.0    0.0
+      initBlankPolicy   Data.List.Split.Internals src/Data/List/Split/Internals.hs:32:5-19          315           2    0.0    0.0     0.0    0.0
+  solve.dropSand        Main                      2022/Day14/RegolithReservoir.hs:(25,5)-(28,80)    329           0    0.0    0.0     0.0    0.0
+   tryDrop              Main                      2022/Day14/RegolithReservoir.hs:(41,1)-(45,43)    330           0    0.0    0.0     0.0    0.0
+    tryDrop.down        Main                      2022/Day14/RegolithReservoir.hs:42:9-22           331           1    0.0    0.0     0.0    0.0
+    tryDrop.left        Main                      2022/Day14/RegolithReservoir.hs:43:9-24           338           1    0.0    0.0     0.0    0.0
+    tryDrop.right       Main                      2022/Day14/RegolithReservoir.hs:44:9-25           339           1    0.0    0.0     0.0    0.0
+ CAF                    Data.List.Split.Internals <entire-module>                                   285           0    0.0    0.0     0.0    0.0
+  defaultSplitter       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(55,1)-(62,5)    301           1    0.0    0.0     0.0    0.0
+ CAF                    GHC.Conc.Signal           <entire-module>                                   260           0    0.0    0.0     0.0    0.0
+ CAF                    GHC.IO.Encoding           <entire-module>                                   241           0    0.0    0.0     0.0    0.0
+ CAF                    GHC.IO.Encoding.Iconv     <entire-module>                                   239           0    0.0    0.0     0.0    0.0
+ CAF                    GHC.IO.Exception          <entire-module>                                   233           0    0.0    0.0     0.0    0.0
+ CAF                    GHC.IO.FD                 <entire-module>                                   232           0    0.0    0.0     0.0    0.0
+ CAF                    GHC.IO.Handle.FD          <entire-module>                                   230           0    0.0    0.0     0.0    0.0
+ CAF                    GHC.IO.Handle.Internals   <entire-module>                                   229           0    0.0    0.0     0.0    0.0
+ CAF                    GHC.Weak.Finalize         <entire-module>                                   200           0    0.0    0.0     0.0    0.0
+ CAF                    GHC.Event.Poll            <entire-module>                                   166           0    0.0    0.0     0.0    0.0
+ CAF                    GHC.Event.Thread          <entire-module>                                   165           0    0.0    0.0     0.0    0.0
+ main                   Main                      2022/Day14/RegolithReservoir.hs:(8,1)-(13,24)     289           0    2.4    2.5    99.6  100.0
+  solve                 Main                      2022/Day14/RegolithReservoir.hs:(16,1)-(28,80)    290           2    0.0    0.1    93.5   96.6
+   solve.dropSand       Main                      2022/Day14/RegolithReservoir.hs:(25,5)-(28,80)    327       28701    0.0    0.0    92.2   95.4
+    tryDrop             Main                      2022/Day14/RegolithReservoir.hs:(41,1)-(45,43)    328     3340996   45.3   95.4    92.2   95.4
+     tryDrop'           Main                      2022/Day14/RegolithReservoir.hs:(48,1)-(59,81)    332     6624994   46.5    0.0    46.5    0.0
+      tryDrop'.inBounds Main                      2022/Day14/RegolithReservoir.hs:59:5-81           333     6596294    0.0    0.0     0.0    0.0
+     tryDrop.down       Main                      2022/Day14/RegolithReservoir.hs:42:9-22           334     3312295    0.0    0.0     0.0    0.0
+     tryDrop.left       Main                      2022/Day14/RegolithReservoir.hs:43:9-24           335     2159386    0.4    0.0     0.4    0.0
+     tryDrop.right      Main                      2022/Day14/RegolithReservoir.hs:44:9-25           336     1095392    0.0    0.0     0.0    0.0
+   solve.\              Main                      2022/Day14/RegolithReservoir.hs:22:25-45          326       28263    0.0    0.0     0.0    0.0
+   solve.bounds         Main                      2022/Day14/RegolithReservoir.hs:19:9-73           318           2    0.4    0.0     0.4    0.0
+   solve.coords         Main                      2022/Day14/RegolithReservoir.hs:20:9-38           322           2    0.0    0.2     0.8    0.9
+    asCoords            Main                      2022/Day14/RegolithReservoir.hs:(33,1)-(36,49)    323         335    0.0    0.2     0.8    0.8
+     asCoords.f         Main                      2022/Day14/RegolithReservoir.hs:35:5-73           324        4395    0.4    0.3     0.8    0.6
+      asCoords.range'   Main                      2022/Day14/RegolithReservoir.hs:36:5-49           325       13970    0.4    0.3     0.4    0.3
+   solve.xs'            Main                      2022/Day14/RegolithReservoir.hs:17:9-46           291           2    0.0    0.0     0.0    0.0
+   solve.ys'            Main                      2022/Day14/RegolithReservoir.hs:18:9-44           321           2    0.0    0.0     0.0    0.0
+  main.maxY             Main                      2022/Day14/RegolithReservoir.hs:10:9-48           337           1    0.4    0.0     0.4    0.0
+  splitOn               Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         294           0    0.0    0.0     3.3    0.9
+   split                Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68         295           0    0.0    0.1     3.3    0.9
+    fromElem            Data.List.Split.Internals src/Data/List/Split/Internals.hs:(124,1)-(125,24) 319        7092    0.0    0.0     0.0    0.0
+    splitInternal       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71) 306        7092    0.4    0.1     2.9    0.7
+     breakDelim         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34) 308       34740    2.0    0.5     2.4    0.6
+      matchDelim        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(72,1)-(76,23)   309       43361    0.4    0.1     0.4    0.1
+    postProcess         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35) 297           0    0.0    0.0     0.4    0.1
+     doCondense         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(187,1)-(194,20) 304        2531    0.0    0.0     0.0    0.0
+     doDrop             Data.List.Split.Internals src/Data/List/Split/Internals.hs:(181,1)-(182,14) 313        2531    0.0    0.0     0.0    0.0
+     dropFinal          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(248,1)-(254,17) 316        2531    0.0    0.0     0.0    0.0
+     dropInitial        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(243,1)-(244,19) 314        2531    0.0    0.0     0.0    0.0
+     insertBlanks       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(200,1)-(202,38) 311        2531    0.0    0.0     0.4    0.1
+      insertBlanks'     Data.List.Split.Internals src/Data/List/Split/Internals.hs:(206,1)-(212,49) 312       14184    0.4    0.1     0.4    0.1

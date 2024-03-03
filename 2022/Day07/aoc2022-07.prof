@@ -1,98 +1,97 @@
-	Thu Feb 29 20:35 2024 Time and Allocation Profiling Report  (Final)
+	Tue Mar  5 15:25 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2022-07 +RTS -N -i0.05 -p -hy -l-agu -s2022/Day07/aoc2022-07.stats -RTS
+	   aoc2022-07 +RTS -N -i0.05 -p -hy -l-agu --machine-readable -t2022/Day07/aoc2022-07.stats -A32M -B -RTS
 
 	total time  =        0.00 secs   (4 ticks @ 1000 us, 8 processors)
-	total alloc =   5,111,136 bytes  (excludes profiling overheads)
+	total alloc =   5,073,544 bytes  (excludes profiling overheads)
 
 COST CENTRE    MODULE                    SRC                                                %time %alloc
 
-MAIN           MAIN                      <built-in>                                          25.0    2.7
-CAF            GHC.IO.Encoding           <entire-module>                                     25.0    0.1
-prompt         Main                      2022/Day07/NoSpaceLeftOnDevice.hs:(23,1)-(42,45)    25.0    2.1
-lsDir.toFile   Main                      2022/Day07/NoSpaceLeftOnDevice.hs:60:5-74           25.0   28.1
+MAIN           MAIN                      <built-in>                                          25.0    2.6
+main.dirSizes  Main                      2022/Day07/NoSpaceLeftOnDevice.hs:12:9-93           25.0    0.2
+main           Main                      2022/Day07/NoSpaceLeftOnDevice.hs:(9,1)-(16,24)     25.0   37.6
+lsDir.toFile   Main                      2022/Day07/NoSpaceLeftOnDevice.hs:60:5-74           25.0   27.8
 splitInternal  Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71)    0.0    1.8
 split          Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68            0.0    1.9
 postProcess    Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35)    0.0    1.2
-breakDelim     Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34)    0.0   12.7
+breakDelim     Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34)    0.0   12.8
 totalSize.size Main                      2022/Day07/NoSpaceLeftOnDevice.hs:70:9-41            0.0    1.5
-toList         Main                      2022/Day07/NoSpaceLeftOnDevice.hs:(77,1)-(78,90)     0.0    3.0
-main           Main                      2022/Day07/NoSpaceLeftOnDevice.hs:(9,1)-(16,24)      0.0   37.3
+toList         Main                      2022/Day07/NoSpaceLeftOnDevice.hs:(77,1)-(78,88)     0.0    3.1
+prompt         Main                      2022/Day07/NoSpaceLeftOnDevice.hs:(23,1)-(42,45)     0.0    2.1
 lsDir.(...)    Main                      2022/Day07/NoSpaceLeftOnDevice.hs:53:9-43            0.0    1.3
 
 
                                                                                                                           individual      inherited
 COST CENTRE                MODULE                    SRC                                               no.     entries  %time %alloc   %time %alloc
 
-MAIN                       MAIN                      <built-in>                                        156           0   25.0    2.7   100.0  100.0
- CAF                       Main                      <entire-module>                                   310           0    0.0    0.0     0.0    0.1
-  main                     Main                      2022/Day07/NoSpaceLeftOnDevice.hs:(9,1)-(16,24)   312           1    0.0    0.0     0.0    0.0
-  prompt                   Main                      2022/Day07/NoSpaceLeftOnDevice.hs:(23,1)-(42,45)  316           1    0.0    0.0     0.0    0.0
-  lsDir                    Main                      2022/Day07/NoSpaceLeftOnDevice.hs:(51,1)-(60,74)  349           0    0.0    0.0     0.0    0.0
-   lsDir.toFile            Main                      2022/Day07/NoSpaceLeftOnDevice.hs:60:5-74         350           0    0.0    0.0     0.0    0.0
-    lsDir.toFile.(...)     Main                      2022/Day07/NoSpaceLeftOnDevice.hs:60:21-49        351           0    0.0    0.0     0.0    0.0
-     splitOn               Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         352           0    0.0    0.0     0.0    0.0
-      dropDelims           Data.List.Split.Internals src/Data/List/Split/Internals.hs:320:1-37         354           1    0.0    0.0     0.0    0.0
-      onSublist            Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70         359           0    0.0    0.0     0.0    0.0
-  lsDir.toFile             Main                      2022/Day07/NoSpaceLeftOnDevice.hs:60:5-74         340           0    0.0    0.0     0.0    0.0
- CAF                       Data.List.Split.Internals <entire-module>                                   309           0    0.0    0.0     0.0    0.0
-  defaultSplitter          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(55,1)-(62,5)    353           1    0.0    0.0     0.0    0.0
- CAF                       GHC.Conc.Signal           <entire-module>                                   264           0    0.0    0.0     0.0    0.0
- CAF                       GHC.IO.Encoding           <entire-module>                                   246           0   25.0    0.1    25.0    0.1
- CAF                       GHC.IO.Encoding.Iconv     <entire-module>                                   244           0    0.0    0.0     0.0    0.0
- CAF                       GHC.IO.Exception          <entire-module>                                   238           0    0.0    0.0     0.0    0.0
- CAF                       GHC.IO.FD                 <entire-module>                                   237           0    0.0    0.0     0.0    0.0
- CAF                       GHC.IO.Handle.FD          <entire-module>                                   235           0    0.0    0.7     0.0    0.7
- CAF                       GHC.IO.Handle.Internals   <entire-module>                                   234           0    0.0    0.0     0.0    0.0
- CAF                       GHC.Read                  <entire-module>                                   219           0    0.0    0.0     0.0    0.0
- CAF                       GHC.Event.Thread          <entire-module>                                   176           0    0.0    0.0     0.0    0.0
- main                      Main                      2022/Day07/NoSpaceLeftOnDevice.hs:(9,1)-(16,24)   313           0    0.0   37.3    50.0   96.5
-  main.(...)               Main                      2022/Day07/NoSpaceLeftOnDevice.hs:11:9-36         315           1    0.0    0.0    50.0   53.1
-   prompt                  Main                      2022/Day07/NoSpaceLeftOnDevice.hs:(23,1)-(42,45)  317           0   25.0    2.1    50.0   53.1
-    prompt.(...)           Main                      2022/Day07/NoSpaceLeftOnDevice.hs:28:13-27        320         523    0.0    0.0     0.0    0.0
-    prompt.command         Main                      2022/Day07/NoSpaceLeftOnDevice.hs:30:13-31        318         523    0.0    0.0     0.0    0.0
-    prompt.xs              Main                      2022/Day07/NoSpaceLeftOnDevice.hs:28:13-27        319         523    0.0    0.0     0.0    0.0
-    prompt.xss'            Main                      2022/Day07/NoSpaceLeftOnDevice.hs:28:13-27        322         523    0.0    0.0     0.0    0.0
-    chDir                  Main                      2022/Day07/NoSpaceLeftOnDevice.hs:(45,1)-(48,39)  321         175    0.0    0.6     0.0    0.6
-    lsDir                  Main                      2022/Day07/NoSpaceLeftOnDevice.hs:(51,1)-(60,74)  323         175    0.0    1.0    25.0   50.4
-     lsDir.toFile          Main                      2022/Day07/NoSpaceLeftOnDevice.hs:60:5-74         339         294   25.0   28.1    25.0   47.9
-      lsDir.toFile.(...)   Main                      2022/Day07/NoSpaceLeftOnDevice.hs:60:21-49        342         294    0.0    0.0     0.0   19.8
-       splitOn             Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         343         294    0.0    0.1     0.0   19.8
-        onSublist          Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70         348         294    0.0    0.0     0.0    0.0
-        split              Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68         344         294    0.0    1.9     0.0   19.7
-         splitInternal     Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71) 357         588    0.0    1.8     0.0   15.1
-          breakDelim       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34) 360        4849    0.0   12.7     0.0   13.3
-           matchDelim      Data.List.Split.Internals src/Data/List/Split/Internals.hs:(72,1)-(76,23)   361        4849    0.0    0.6     0.0    0.6
-         delimiter         Data.List.Split.Internals src/Data/List/Split/Internals.hs:22:5-13          358         294    0.0    0.0     0.0    0.0
-         fromElem          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(124,1)-(125,24) 370         294    0.0    0.0     0.0    0.0
-         postProcess       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35) 345         294    0.0    1.2     0.0    2.7
-          condensePolicy   Data.List.Split.Internals src/Data/List/Split/Internals.hs:29:5-18          356         294    0.0    0.0     0.0    0.0
-          delimPolicy      Data.List.Split.Internals src/Data/List/Split/Internals.hs:24:5-15          347         294    0.0    0.0     0.0    0.0
-          doCondense       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(187,1)-(194,20) 355         294    0.0    0.0     0.0    0.0
-          doDrop           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(181,1)-(182,14) 364         294    0.0    0.6     0.0    0.6
-          doMerge          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(216,1)-(218,14) 346         294    0.0    0.0     0.0    0.0
-          dropFinal        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(248,1)-(254,17) 367         294    0.0    0.0     0.0    0.0
-          dropInitial      Data.List.Split.Internals src/Data/List/Split/Internals.hs:(243,1)-(244,19) 365         294    0.0    0.0     0.0    0.0
-          finalBlankPolicy Data.List.Split.Internals src/Data/List/Split/Internals.hs:34:5-20          368         294    0.0    0.0     0.0    0.0
-          initBlankPolicy  Data.List.Split.Internals src/Data/List/Split/Internals.hs:32:5-19          366         294    0.0    0.0     0.0    0.0
-          insertBlanks     Data.List.Split.Internals src/Data/List/Split/Internals.hs:(200,1)-(202,38) 362         294    0.0    0.0     0.0    1.0
-           insertBlanks'   Data.List.Split.Internals src/Data/List/Split/Internals.hs:(206,1)-(212,49) 363        1176    0.0    1.0     0.0    1.0
-      lsDir.toFile.size    Main                      2022/Day07/NoSpaceLeftOnDevice.hs:60:21-49        341         294    0.0    0.0     0.0    0.0
-     lsDir.(...)           Main                      2022/Day07/NoSpaceLeftOnDevice.hs:53:9-43         325         175    0.0    1.3     0.0    1.3
-      lsDir.isCommand      Main                      2022/Day07/NoSpaceLeftOnDevice.hs:58:5-33         326         642    0.0    0.0     0.0    0.0
-     lsDir.files           Main                      2022/Day07/NoSpaceLeftOnDevice.hs:53:9-43         335         175    0.0    0.0     0.0    0.0
-     lsDir.files'          Main                      2022/Day07/NoSpaceLeftOnDevice.hs:55:9-43         336         175    0.0    0.3     0.0    0.3
-      lsDir.isDir          Main                      2022/Day07/NoSpaceLeftOnDevice.hs:59:5-37         337         468    0.0    0.0     0.0    0.0
-     lsDir.xss'            Main                      2022/Day07/NoSpaceLeftOnDevice.hs:53:9-43         324         175    0.0    0.0     0.0    0.0
-  main.dirSizes            Main                      2022/Day07/NoSpaceLeftOnDevice.hs:12:9-93         328           1    0.0    0.2     0.0    5.9
-   isDir                   Main                      2022/Day07/NoSpaceLeftOnDevice.hs:(63,1)-(64,28)  331         469    0.0    0.0     0.0    0.0
-   toList                  Main                      2022/Day07/NoSpaceLeftOnDevice.hs:(77,1)-(78,90)  330         469    0.0    3.0     0.0    3.0
-   totalSize               Main                      2022/Day07/NoSpaceLeftOnDevice.hs:(67,1)-(74,42)  329         469    0.0    0.3     0.0    2.6
-    totalSize.entries'     Main                      2022/Day07/NoSpaceLeftOnDevice.hs:69:9-40         334         175    0.0    0.8     0.0    0.8
-    totalSize.size         Main                      2022/Day07/NoSpaceLeftOnDevice.hs:70:9-41         333         175    0.0    1.5     0.0    1.5
-     totalSize.getSize     Main                      2022/Day07/NoSpaceLeftOnDevice.hs:(73,5)-(74,42)  338         468    0.0    0.0     0.0    0.0
-   main.dirSizes.\         Main                      2022/Day07/NoSpaceLeftOnDevice.hs:12:48-49        332         175    0.0    0.0     0.0    0.0
-  main.part1               Main                      2022/Day07/NoSpaceLeftOnDevice.hs:13:9-51         314           1    0.0    0.1     0.0    0.1
-  main.part2               Main                      2022/Day07/NoSpaceLeftOnDevice.hs:15:9-60         371           1    0.0    0.0     0.0    0.0
-  main.root                Main                      2022/Day07/NoSpaceLeftOnDevice.hs:11:9-36         327           1    0.0    0.0     0.0    0.0
-  main.spaceNeeded         Main                      2022/Day07/NoSpaceLeftOnDevice.hs:14:9-59         372           1    0.0    0.0     0.0    0.0
+MAIN                       MAIN                      <built-in>                                        164           0   25.0    2.6   100.0  100.0
+ CAF                       Main                      <entire-module>                                   326           0    0.0    0.0     0.0    0.0
+  main                     Main                      2022/Day07/NoSpaceLeftOnDevice.hs:(9,1)-(16,24)   328           1    0.0    0.0     0.0    0.0
+  prompt                   Main                      2022/Day07/NoSpaceLeftOnDevice.hs:(23,1)-(42,45)  332           1    0.0    0.0     0.0    0.0
+  lsDir                    Main                      2022/Day07/NoSpaceLeftOnDevice.hs:(51,1)-(60,74)  356           0    0.0    0.0     0.0    0.0
+   lsDir.toFile            Main                      2022/Day07/NoSpaceLeftOnDevice.hs:60:5-74         357           0    0.0    0.0     0.0    0.0
+    lsDir.toFile.(...)     Main                      2022/Day07/NoSpaceLeftOnDevice.hs:60:21-49        366           0    0.0    0.0     0.0    0.0
+     splitOn               Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         367           0    0.0    0.0     0.0    0.0
+      dropDelims           Data.List.Split.Internals src/Data/List/Split/Internals.hs:320:1-37         369           1    0.0    0.0     0.0    0.0
+      onSublist            Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70         374           0    0.0    0.0     0.0    0.0
+ CAF                       Data.List.Split.Internals <entire-module>                                   325           0    0.0    0.0     0.0    0.0
+  defaultSplitter          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(55,1)-(62,5)    368           1    0.0    0.0     0.0    0.0
+ CAF                       GHC.Conc.Signal           <entire-module>                                   279           0    0.0    0.0     0.0    0.0
+ CAF                       GHC.IO.Encoding           <entire-module>                                   260           0    0.0    0.1     0.0    0.1
+ CAF                       GHC.IO.Encoding.Iconv     <entire-module>                                   258           0    0.0    0.0     0.0    0.0
+ CAF                       GHC.IO.Exception          <entire-module>                                   252           0    0.0    0.0     0.0    0.0
+ CAF                       GHC.IO.FD                 <entire-module>                                   251           0    0.0    0.0     0.0    0.0
+ CAF                       GHC.IO.Handle.FD          <entire-module>                                   249           0    0.0    0.7     0.0    0.7
+ CAF                       GHC.IO.Handle.Internals   <entire-module>                                   248           0    0.0    0.0     0.0    0.0
+ CAF                       GHC.Event.Poll            <entire-module>                                   186           0    0.0    0.0     0.0    0.0
+ CAF                       GHC.Event.Thread          <entire-module>                                   185           0    0.0    0.0     0.0    0.0
+ main                      Main                      2022/Day07/NoSpaceLeftOnDevice.hs:(9,1)-(16,24)   329           0   25.0   37.6    75.0   96.6
+  main.(...)               Main                      2022/Day07/NoSpaceLeftOnDevice.hs:11:9-36         331           1    0.0    0.0    25.0   53.0
+   prompt                  Main                      2022/Day07/NoSpaceLeftOnDevice.hs:(23,1)-(42,45)  333           0    0.0    2.1    25.0   53.0
+    prompt.(...)           Main                      2022/Day07/NoSpaceLeftOnDevice.hs:28:13-27        336         523    0.0    0.0     0.0    0.0
+    prompt.command         Main                      2022/Day07/NoSpaceLeftOnDevice.hs:30:13-31        334         523    0.0    0.0     0.0    0.0
+    prompt.xs              Main                      2022/Day07/NoSpaceLeftOnDevice.hs:28:13-27        335         523    0.0    0.0     0.0    0.0
+    prompt.xss'            Main                      2022/Day07/NoSpaceLeftOnDevice.hs:28:13-27        338         523    0.0    0.0     0.0    0.0
+    chDir                  Main                      2022/Day07/NoSpaceLeftOnDevice.hs:(45,1)-(48,39)  337         175    0.0    0.6     0.0    0.6
+    lsDir                  Main                      2022/Day07/NoSpaceLeftOnDevice.hs:(51,1)-(60,74)  339         175    0.0    1.0    25.0   50.3
+     lsDir.toFile          Main                      2022/Day07/NoSpaceLeftOnDevice.hs:60:5-74         355         294   25.0   27.8    25.0   47.7
+      lsDir.toFile.(...)   Main                      2022/Day07/NoSpaceLeftOnDevice.hs:60:21-49        359         294    0.0    0.0     0.0   19.9
+       splitOn             Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         360         294    0.0    0.1     0.0   19.9
+        onSublist          Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70         365         294    0.0    0.0     0.0    0.0
+        split              Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68         361         294    0.0    1.9     0.0   19.8
+         splitInternal     Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71) 372         588    0.0    1.8     0.0   15.2
+          breakDelim       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34) 375        4849    0.0   12.8     0.0   13.4
+           matchDelim      Data.List.Split.Internals src/Data/List/Split/Internals.hs:(72,1)-(76,23)   376        4849    0.0    0.6     0.0    0.6
+         delimiter         Data.List.Split.Internals src/Data/List/Split/Internals.hs:22:5-13          373         294    0.0    0.0     0.0    0.0
+         fromElem          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(124,1)-(125,24) 385         294    0.0    0.0     0.0    0.0
+         postProcess       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35) 362         294    0.0    1.2     0.0    2.7
+          condensePolicy   Data.List.Split.Internals src/Data/List/Split/Internals.hs:29:5-18          371         294    0.0    0.0     0.0    0.0
+          delimPolicy      Data.List.Split.Internals src/Data/List/Split/Internals.hs:24:5-15          364         294    0.0    0.0     0.0    0.0
+          doCondense       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(187,1)-(194,20) 370         294    0.0    0.0     0.0    0.0
+          doDrop           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(181,1)-(182,14) 379         294    0.0    0.6     0.0    0.6
+          doMerge          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(216,1)-(218,14) 363         294    0.0    0.0     0.0    0.0
+          dropFinal        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(248,1)-(254,17) 382         294    0.0    0.0     0.0    0.0
+          dropInitial      Data.List.Split.Internals src/Data/List/Split/Internals.hs:(243,1)-(244,19) 380         294    0.0    0.0     0.0    0.0
+          finalBlankPolicy Data.List.Split.Internals src/Data/List/Split/Internals.hs:34:5-20          383         294    0.0    0.0     0.0    0.0
+          initBlankPolicy  Data.List.Split.Internals src/Data/List/Split/Internals.hs:32:5-19          381         294    0.0    0.0     0.0    0.0
+          insertBlanks     Data.List.Split.Internals src/Data/List/Split/Internals.hs:(200,1)-(202,38) 377         294    0.0    0.0     0.0    1.0
+           insertBlanks'   Data.List.Split.Internals src/Data/List/Split/Internals.hs:(206,1)-(212,49) 378        1176    0.0    1.0     0.0    1.0
+      lsDir.toFile.size    Main                      2022/Day07/NoSpaceLeftOnDevice.hs:60:21-49        358         294    0.0    0.0     0.0    0.0
+     lsDir.(...)           Main                      2022/Day07/NoSpaceLeftOnDevice.hs:53:9-43         341         175    0.0    1.3     0.0    1.3
+      lsDir.isCommand      Main                      2022/Day07/NoSpaceLeftOnDevice.hs:58:5-33         342         642    0.0    0.0     0.0    0.0
+     lsDir.files           Main                      2022/Day07/NoSpaceLeftOnDevice.hs:53:9-43         351         175    0.0    0.0     0.0    0.0
+     lsDir.files'          Main                      2022/Day07/NoSpaceLeftOnDevice.hs:55:9-44         352         175    0.0    0.3     0.0    0.3
+      lsDir.isDir'         Main                      2022/Day07/NoSpaceLeftOnDevice.hs:59:5-38         353         468    0.0    0.0     0.0    0.0
+     lsDir.xss'            Main                      2022/Day07/NoSpaceLeftOnDevice.hs:53:9-43         340         175    0.0    0.0     0.0    0.0
+  main.dirSizes            Main                      2022/Day07/NoSpaceLeftOnDevice.hs:12:9-93         344           1   25.0    0.2    25.0    6.0
+   isDir                   Main                      2022/Day07/NoSpaceLeftOnDevice.hs:(63,1)-(64,28)  347         469    0.0    0.0     0.0    0.0
+   toList                  Main                      2022/Day07/NoSpaceLeftOnDevice.hs:(77,1)-(78,88)  346         469    0.0    3.1     0.0    3.1
+   totalSize               Main                      2022/Day07/NoSpaceLeftOnDevice.hs:(67,1)-(74,35)  345         469    0.0    0.3     0.0    2.6
+    totalSize.entries'     Main                      2022/Day07/NoSpaceLeftOnDevice.hs:69:9-40         350         175    0.0    0.8     0.0    0.8
+    totalSize.size         Main                      2022/Day07/NoSpaceLeftOnDevice.hs:70:9-41         349         175    0.0    1.5     0.0    1.5
+     totalSize.getSize     Main                      2022/Day07/NoSpaceLeftOnDevice.hs:(73,5)-(74,35)  354         468    0.0    0.0     0.0    0.0
+   main.dirSizes.\         Main                      2022/Day07/NoSpaceLeftOnDevice.hs:12:48-49        348         175    0.0    0.0     0.0    0.0
+  main.part1               Main                      2022/Day07/NoSpaceLeftOnDevice.hs:13:9-51         330           1    0.0    0.1     0.0    0.1
+  main.part2               Main                      2022/Day07/NoSpaceLeftOnDevice.hs:15:9-60         386           1    0.0    0.0     0.0    0.0
+  main.root                Main                      2022/Day07/NoSpaceLeftOnDevice.hs:11:9-36         343           1    0.0    0.0     0.0    0.0
+  main.spaceNeeded         Main                      2022/Day07/NoSpaceLeftOnDevice.hs:14:9-59         387           1    0.0    0.0     0.0    0.0

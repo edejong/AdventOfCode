@@ -1,24 +1,24 @@
-	Thu Feb 29 21:17 2024 Time and Allocation Profiling Report  (Final)
+	Tue Mar  5 15:16 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2023-17 +RTS -N -i0.05 -p -hy -l-agu -s2023/Day17/aoc2023-17.stats -RTS
+	   aoc2023-17 +RTS -N -i0.05 -p -hy -l-agu --machine-readable -t2023/Day17/aoc2023-17.stats -A32M -B -RTS
 
-	total time  =        0.70 secs   (2598 ticks @ 1000 us, 8 processors)
-	total alloc = 3,840,772,056 bytes  (excludes profiling overheads)
+	total time  =        0.71 secs   (2640 ticks @ 1000 us, 8 processors)
+	total alloc = 3,817,011,296 bytes  (excludes profiling overheads)
 
 COST CENTRE           MODULE                             SRC                                                   %time %alloc
 
-mkEdge                Data.Graph.Inductive.NodeMap       Data/Graph/Inductive/NodeMap.hs:(81,1)-(84,25)         49.0    1.0
-insEdges              Data.Graph.Inductive.Graph         Data/Graph/Inductive/Graph.hs:332:1-42                 12.3   36.8
-dijkstra              Data.Graph.Inductive.Query.SP      Data/Graph/Inductive/Query/SP.hs:(29,1)-(36,11)        12.3   16.0
-mkNode                Data.Graph.Inductive.NodeMap       Data/Graph/Inductive/NodeMap.hs:(68,1)-(73,27)          6.2    2.4
-merge                 Data.Graph.Inductive.Internal.Heap Data/Graph/Inductive/Internal/Heap.hs:(55,1)-(59,40)    5.5    6.9
-genEdges.f            Main                               2023/Day17/ClumsyCrucible.hs:41:5-49                    4.9    6.2
-genEdges.nbrs         Main                               2023/Day17/ClumsyCrucible.hs:40:5-84                    2.8   10.2
-shortestPath.edgesMap Main                               2023/Day17/ClumsyCrucible.hs:46:7-65                    2.2    7.3
-genEdges.asEdge       Main                               2023/Day17/ClumsyCrucible.hs:38:5-65                    0.8    3.0
-main.\                Main                               2023/Day17/ClumsyCrucible.hs:11:26-33                   0.6    1.8
+mkEdge                Data.Graph.Inductive.NodeMap       Data/Graph/Inductive/NodeMap.hs:(81,1)-(84,25)         47.5    1.0
+insEdges              Data.Graph.Inductive.Graph         Data/Graph/Inductive/Graph.hs:332:1-42                 12.8   37.1
+dijkstra              Data.Graph.Inductive.Query.SP      Data/Graph/Inductive/Query/SP.hs:(29,1)-(36,11)        12.8   15.6
+merge                 Data.Graph.Inductive.Internal.Heap Data/Graph/Inductive/Internal/Heap.hs:(55,1)-(59,40)    6.7    6.9
+mkNode                Data.Graph.Inductive.NodeMap       Data/Graph/Inductive/NodeMap.hs:(68,1)-(73,27)          6.6    2.5
+genEdges.f            Main                               2023/Day17/ClumsyCrucible.hs:41:5-49                    3.7    6.3
+shortestPath.edgesMap Main                               2023/Day17/ClumsyCrucible.hs:46:7-65                    2.7    7.3
+genEdges.nbrs         Main                               2023/Day17/ClumsyCrucible.hs:40:5-84                    1.8   10.2
+genEdges.asEdge       Main                               2023/Day17/ClumsyCrucible.hs:38:5-65                    1.0    3.0
 genEdges.mkEdges'     Main                               2023/Day17/ClumsyCrucible.hs:37:5-100                   0.6    1.8
-genEdges.fooo         Main                               2023/Day17/ClumsyCrucible.hs:39:5-40                    0.5    1.7
+main.\                Main                               2023/Day17/ClumsyCrucible.hs:11:26-33                   0.5    1.8
+genEdges.fooo         Main                               2023/Day17/ClumsyCrucible.hs:39:5-40                    0.3    1.7
 genGraph.g            Main                               2023/Day17/ClumsyCrucible.hs:31:7-33                    0.2    1.1
 genGraph.edges''      Main                               2023/Day17/ClumsyCrucible.hs:30:7-48                    0.2    1.1
 
@@ -26,98 +26,99 @@ genGraph.edges''      Main                               2023/Day17/ClumsyCrucib
                                                                                                                                          individual      inherited
 COST CENTRE               MODULE                                 SRC                                                  no.     entries  %time %alloc   %time %alloc
 
-MAIN                      MAIN                                   <built-in>                                           174           0    0.0    0.0   100.0  100.0
- CAF                      Main                                   <entire-module>                                      346           0    0.0    0.0     0.0    0.0
-  main                    Main                                   2023/Day17/ClumsyCrucible.hs:(10,1)-(13,76)          348           1    0.0    0.0     0.0    0.0
-  main.\                  Main                                   2023/Day17/ClumsyCrucible.hs:11:26-33                412           0    0.0    0.0     0.0    0.0
- CAF                      Data.Graph.Inductive.NodeMap           <entire-module>                                      342           0    0.0    0.0     0.0    0.0
-  new                     Data.Graph.Inductive.NodeMap           Data/Graph/Inductive/NodeMap.hs:53:1-40              378           1    0.0    0.0     0.0    0.0
- CAF                      GHC.Conc.Signal                        <entire-module>                                      283           0    0.0    0.0     0.0    0.0
- CAF                      GHC.IO.Encoding                        <entire-module>                                      265           0    0.0    0.0     0.0    0.0
- CAF                      GHC.IO.Encoding.Iconv                  <entire-module>                                      263           0    0.0    0.0     0.0    0.0
- CAF                      GHC.IO.Exception                       <entire-module>                                      257           0    0.0    0.0     0.0    0.0
- CAF                      GHC.IO.FD                              <entire-module>                                      256           0    0.0    0.0     0.0    0.0
- CAF                      GHC.IO.Handle.FD                       <entire-module>                                      254           0    0.0    0.0     0.0    0.0
- CAF                      GHC.IO.Handle.Internals                <entire-module>                                      253           0    0.0    0.0     0.0    0.0
- CAF                      GHC.Read                               <entire-module>                                      237           0    0.0    0.0     0.0    0.0
- CAF                      GHC.Event.Thread                       <entire-module>                                      194           0    0.0    0.0     0.0    0.0
- main                     Main                                   2023/Day17/ClumsyCrucible.hs:(10,1)-(13,76)          349           0    0.1    0.1   100.0  100.0
-  main.\                  Main                                   2023/Day17/ClumsyCrucible.hs:11:26-33                411       19880    0.6    1.8     0.6    1.8
-  genGraph                Main                                   2023/Day17/ClumsyCrucible.hs:(20,1)-(32,29)          350           2    0.0    0.0    78.7   67.9
-   genGraph.(...)         Main                                   2023/Day17/ClumsyCrucible.hs:26:7-91                 389           2    0.0    0.0     0.0    0.0
-    mkNodes               Data.Graph.Inductive.NodeMap           Data/Graph/Inductive/NodeMap.hs:92:1-21              390           2    0.0    0.0     0.0    0.0
-     mkNode               Data.Graph.Inductive.NodeMap           Data/Graph/Inductive/NodeMap.hs:(68,1)-(73,27)       391           4    0.0    0.0     0.0    0.0
-      compare             Main                                   2023/Day17/ClumsyCrucible.hs:16:38-40                393           4    0.0    0.0     0.0    0.0
-   genGraph.(...)         Main                                   2023/Day17/ClumsyCrucible.hs:24:7-48                 364           2    0.0    0.0     6.5    3.0
-    mkNodes               Data.Graph.Inductive.NodeMap           Data/Graph/Inductive/NodeMap.hs:92:1-21              365           2    0.3    0.6     6.5    3.0
-     mkNode               Data.Graph.Inductive.NodeMap           Data/Graph/Inductive/NodeMap.hs:(68,1)-(73,27)       379       79524    6.2    2.4     6.2    2.4
-      compare             Main                                   2023/Day17/ClumsyCrucible.hs:16:38-40                380       79524    0.0    0.0     0.0    0.0
-   genGraph.(...)         Main                                   2023/Day17/ClumsyCrucible.hs:21:7-56                 362           2    0.0    0.0     0.0    0.0
-   genGraph.edges'        Main                                   2023/Day17/ClumsyCrucible.hs:25:7-75                 367           2    0.0    0.0    59.3   25.3
-    genEdges              Main                                   2023/Day17/ClumsyCrucible.hs:(35,1)-(41,49)          369           2    0.1    0.7     9.7   23.6
-     genEdges.mkEdges'    Main                                   2023/Day17/ClumsyCrucible.hs:37:5-100                370           4    0.6    1.8     9.6   22.9
-      genEdges.asEdge     Main                                   2023/Day17/ClumsyCrucible.hs:38:5-65                 381      764220    0.8    3.0     0.8    3.0
-      genEdges.fooo       Main                                   2023/Day17/ClumsyCrucible.hs:39:5-40                 373           0    0.5    1.7     8.2   18.1
-       genEdges.nbrs      Main                                   2023/Day17/ClumsyCrucible.hs:40:5-84                 375      159048    2.8   10.2     7.7   16.4
-        genEdges.f        Main                                   2023/Day17/ClumsyCrucible.hs:41:5-49                 385      764220    4.9    6.2     4.9    6.2
-     genEdges.fooo        Main                                   2023/Day17/ClumsyCrucible.hs:39:5-40                 372           2    0.0    0.0     0.0    0.0
-    mkEdges               Data.Graph.Inductive.NodeMap           Data/Graph/Inductive/NodeMap.hs:88:1-27              368           2    0.4    0.8    49.6    1.8
-     mkEdge               Data.Graph.Inductive.NodeMap           Data/Graph/Inductive/NodeMap.hs:(81,1)-(84,25)       382      764220   49.0    1.0    49.2    1.0
-      compare             Main                                   2023/Day17/ClumsyCrucible.hs:16:38-40                384     2292660    0.2    0.0     0.2    0.0
-   genGraph.edges''       Main                                   2023/Day17/ClumsyCrucible.hs:30:7-48                 386           2    0.2    1.1     0.2    1.1
-   genGraph.end           Main                                   2023/Day17/ClumsyCrucible.hs:26:7-91                 392           2    0.0    0.0     0.0    0.0
-   genGraph.endEdges      Main                                   2023/Day17/ClumsyCrucible.hs:28:7-102                400           2    0.0    0.0     0.0    0.0
-    mkEdges               Data.Graph.Inductive.NodeMap           Data/Graph/Inductive/NodeMap.hs:88:1-27              401           2    0.0    0.0     0.0    0.0
-     mkEdge               Data.Graph.Inductive.NodeMap           Data/Graph/Inductive/NodeMap.hs:(81,1)-(84,25)       402           4    0.0    0.0     0.0    0.0
-      compare             Main                                   2023/Day17/ClumsyCrucible.hs:16:38-40                403          14    0.0    0.0     0.0    0.0
-   genGraph.g             Main                                   2023/Day17/ClumsyCrucible.hs:31:7-33                 387           2    0.2    1.1    12.5   37.9
-    insEdges              Data.Graph.Inductive.Graph             Data/Graph/Inductive/Graph.hs:332:1-42               394           2   12.3   36.8    12.3   36.8
-   genGraph.nCols         Main                                   2023/Day17/ClumsyCrucible.hs:21:7-56                 363           2    0.0    0.0     0.0    0.0
-   genGraph.nRows         Main                                   2023/Day17/ClumsyCrucible.hs:21:7-56                 361           2    0.0    0.0     0.0    0.0
-   genGraph.nodeLabels    Main                                   2023/Day17/ClumsyCrucible.hs:23:7-115                360           2    0.0    0.2     0.0    0.2
-   genGraph.nodeMap       Main                                   2023/Day17/ClumsyCrucible.hs:24:7-48                 377           2    0.0    0.0     0.0    0.0
-   genGraph.nodeMap'      Main                                   2023/Day17/ClumsyCrucible.hs:26:7-91                 397           2    0.0    0.0     0.0    0.0
-   genGraph.nodes'        Main                                   2023/Day17/ClumsyCrucible.hs:24:7-48                 359           2    0.0    0.0     0.0    0.0
-   genGraph.nodes''       Main                                   2023/Day17/ClumsyCrucible.hs:29:7-38                 366           2    0.0    0.1     0.0    0.1
-   genGraph.start         Main                                   2023/Day17/ClumsyCrucible.hs:26:7-91                 388           2    0.0    0.0     0.0    0.0
-   genGraph.startEdges    Main                                   2023/Day17/ClumsyCrucible.hs:27:7-90                 395           2    0.0    0.0     0.0    0.0
-    mkEdges               Data.Graph.Inductive.NodeMap           Data/Graph/Inductive/NodeMap.hs:88:1-27              396           2    0.0    0.0     0.0    0.0
-     mkEdge               Data.Graph.Inductive.NodeMap           Data/Graph/Inductive/NodeMap.hs:(81,1)-(84,25)       398           4    0.0    0.0     0.0    0.0
-      compare             Main                                   2023/Day17/ClumsyCrucible.hs:16:38-40                399          10    0.0    0.0     0.0    0.0
-   genGraph.xss'          Main                                   2023/Day17/ClumsyCrucible.hs:22:7-82                 371           2    0.0    0.0     0.1    0.2
-    genGraph.xss'.\       Main                                   2023/Day17/ClumsyCrucible.hs:22:32-70                374         282    0.1    0.2     0.1    0.2
-     genGraph.xss'.\.\    Main                                   2023/Day17/ClumsyCrucible.hs:22:49-59                383       39762    0.0    0.0     0.0    0.0
-  main.\                  Main                                   2023/Day17/ClumsyCrucible.hs:13:32-55                415           1    0.0    0.0    15.2   20.5
-   shortestPath           Main                                   2023/Day17/ClumsyCrucible.hs:(44,1)-(47,59)          416           1    0.0    0.0    15.2   20.5
-    shortestPath.edgesMap Main                                   2023/Day17/ClumsyCrucible.hs:46:7-65                 431           1    1.5    5.0     1.5    5.0
-    shortestPath.route    Main                                   2023/Day17/ClumsyCrucible.hs:45:7-39                 417           1    0.0    0.0    13.7   15.5
-     sp                   Data.Graph.Inductive.Query.SP          Data/Graph/Inductive/Query/SP.hs:(78,1)-(80,14)      418           1    0.0    0.0    13.7   15.5
-      getLPathNodes       Data.Graph.Inductive.Internal.RootPath Data/Graph/Inductive/Internal/RootPath.hs:46:1-51    424           1    0.0    0.0     0.0    0.0
-       getLPath           Data.Graph.Inductive.Internal.RootPath Data/Graph/Inductive/Internal/RootPath.hs:35:1-35    425           1    0.0    0.0     0.0    0.0
-      spTree              Data.Graph.Inductive.Query.SP          Data/Graph/Inductive/Query/SP.hs:50:1-43             419           1    0.0    0.0    13.6   15.5
-       dijkstra           Data.Graph.Inductive.Query.SP          Data/Graph/Inductive/Query/SP.hs:(29,1)-(36,11)      420      298415    9.4   10.6    13.6   15.5
-        unit              Data.Graph.Inductive.Internal.Heap     Data/Graph/Inductive/Internal/Heap.hs:49:1-30        428      298640    0.0    0.0     0.0    0.0
-        isEmpty           Data.Graph.Inductive.Internal.Heap     Data/Graph/Inductive/Internal/Heap.hs:(67,1)-(68,21) 421      298415    0.0    0.0     0.0    0.0
-        splitMin          Data.Graph.Inductive.Internal.Heap     Data/Graph/Inductive/Internal/Heap.hs:(79,1)-(80,50) 423      298415    0.0    0.0     4.0    4.4
-         mergeAll         Data.Graph.Inductive.Internal.Heap     Data/Graph/Inductive/Internal/Heap.hs:(62,1)-(64,53) 429     1884326    0.5    0.0     4.0    4.4
-          merge           Data.Graph.Inductive.Internal.Heap     Data/Graph/Inductive/Internal/Heap.hs:(55,1)-(59,40) 430     3171824    3.6    4.4     3.6    4.4
-        mergeAll          Data.Graph.Inductive.Internal.Heap     Data/Graph/Inductive/Internal/Heap.hs:(62,1)-(64,53) 426      204360    0.0    0.0     0.2    0.4
-         merge            Data.Graph.Inductive.Internal.Heap     Data/Graph/Inductive/Internal/Heap.hs:(55,1)-(59,40) 427      329206    0.2    0.4     0.2    0.4
-       unit               Data.Graph.Inductive.Internal.Heap     Data/Graph/Inductive/Internal/Heap.hs:49:1-30        422           1    0.0    0.0     0.0    0.0
-  main.\                  Main                                   2023/Day17/ClumsyCrucible.hs:12:32-55                351           1    0.0    0.0     5.5    9.7
-   shortestPath           Main                                   2023/Day17/ClumsyCrucible.hs:(44,1)-(47,59)          352           1    0.0    0.0     5.5    9.7
-    shortestPath.edgesMap Main                                   2023/Day17/ClumsyCrucible.hs:46:7-65                 414           1    0.7    2.3     0.7    2.3
-    shortestPath.route    Main                                   2023/Day17/ClumsyCrucible.hs:45:7-39                 353           1    0.0    0.0     4.7    7.5
-     sp                   Data.Graph.Inductive.Query.SP          Data/Graph/Inductive/Query/SP.hs:(78,1)-(80,14)      354           1    0.0    0.0     4.7    7.5
-      getLPathNodes       Data.Graph.Inductive.Internal.RootPath Data/Graph/Inductive/Internal/RootPath.hs:46:1-51    405           1    0.0    0.0     0.0    0.0
-       getLPath           Data.Graph.Inductive.Internal.RootPath Data/Graph/Inductive/Internal/RootPath.hs:35:1-35    406           1    0.0    0.0     0.0    0.0
-      spTree              Data.Graph.Inductive.Query.SP          Data/Graph/Inductive/Query/SP.hs:50:1-43             355           1    0.0    0.0     4.7    7.5
-       dijkstra           Data.Graph.Inductive.Query.SP          Data/Graph/Inductive/Query/SP.hs:(29,1)-(36,11)      356      130765    2.9    5.4     4.7    7.5
-        unit              Data.Graph.Inductive.Internal.Heap     Data/Graph/Inductive/Internal/Heap.hs:49:1-30        409      130960    0.0    0.0     0.0    0.0
-        isEmpty           Data.Graph.Inductive.Internal.Heap     Data/Graph/Inductive/Internal/Heap.hs:(67,1)-(68,21) 357      130765    0.0    0.0     0.0    0.0
-        splitMin          Data.Graph.Inductive.Internal.Heap     Data/Graph/Inductive/Internal/Heap.hs:(79,1)-(80,50) 404      130765    0.0    0.0     1.7    1.9
-         mergeAll         Data.Graph.Inductive.Internal.Heap     Data/Graph/Inductive/Internal/Heap.hs:(62,1)-(64,53) 410      802933    0.1    0.0     1.7    1.9
-          merge           Data.Graph.Inductive.Internal.Heap     Data/Graph/Inductive/Internal/Heap.hs:(55,1)-(59,40) 413     1344338    1.6    1.9     1.6    1.9
-        mergeAll          Data.Graph.Inductive.Internal.Heap     Data/Graph/Inductive/Internal/Heap.hs:(62,1)-(64,53) 407      117994    0.0    0.0     0.1    0.2
-         merge            Data.Graph.Inductive.Internal.Heap     Data/Graph/Inductive/Internal/Heap.hs:(55,1)-(59,40) 408      156492    0.1    0.2     0.1    0.2
-       unit               Data.Graph.Inductive.Internal.Heap     Data/Graph/Inductive/Internal/Heap.hs:49:1-30        358           1    0.0    0.0     0.0    0.0
+MAIN                      MAIN                                   <built-in>                                           181           0    0.0    0.0   100.0  100.0
+ CAF                      Main                                   <entire-module>                                      360           0    0.0    0.0     0.0    0.0
+  main                    Main                                   2023/Day17/ClumsyCrucible.hs:(10,1)-(13,76)          362           1    0.0    0.0     0.0    0.0
+   main.\                 Main                                   2023/Day17/ClumsyCrucible.hs:11:26-33                426           0    0.0    0.0     0.0    0.0
+ CAF                      Data.Graph.Inductive.NodeMap           <entire-module>                                      356           0    0.0    0.0     0.0    0.0
+  new                     Data.Graph.Inductive.NodeMap           Data/Graph/Inductive/NodeMap.hs:53:1-40              392           1    0.0    0.0     0.0    0.0
+ CAF                      GHC.Conc.Signal                        <entire-module>                                      297           0    0.0    0.0     0.0    0.0
+ CAF                      GHC.IO.Encoding                        <entire-module>                                      278           0    0.0    0.0     0.0    0.0
+ CAF                      GHC.IO.Encoding.Iconv                  <entire-module>                                      276           0    0.0    0.0     0.0    0.0
+ CAF                      GHC.IO.Exception                       <entire-module>                                      270           0    0.0    0.0     0.0    0.0
+ CAF                      GHC.IO.FD                              <entire-module>                                      269           0    0.0    0.0     0.0    0.0
+ CAF                      GHC.IO.Handle.FD                       <entire-module>                                      267           0    0.0    0.0     0.0    0.0
+ CAF                      GHC.IO.Handle.Internals                <entire-module>                                      266           0    0.0    0.0     0.0    0.0
+ CAF                      GHC.Weak.Finalize                      <entire-module>                                      237           0    0.0    0.0     0.0    0.0
+ CAF                      GHC.Event.Poll                         <entire-module>                                      203           0    0.0    0.0     0.0    0.0
+ CAF                      GHC.Event.Thread                       <entire-module>                                      202           0    0.0    0.0     0.0    0.0
+ main                     Main                                   2023/Day17/ClumsyCrucible.hs:(10,1)-(13,76)          363           0    0.1    0.1   100.0  100.0
+  main.\                  Main                                   2023/Day17/ClumsyCrucible.hs:11:26-33                425       19880    0.5    1.8     0.5    1.8
+  genGraph                Main                                   2023/Day17/ClumsyCrucible.hs:(20,1)-(32,29)          364           2    0.0    0.0    76.2   68.2
+   genGraph.(...)         Main                                   2023/Day17/ClumsyCrucible.hs:26:7-91                 403           2    0.0    0.0     0.0    0.0
+    mkNodes               Data.Graph.Inductive.NodeMap           Data/Graph/Inductive/NodeMap.hs:92:1-21              404           2    0.0    0.0     0.0    0.0
+     mkNode               Data.Graph.Inductive.NodeMap           Data/Graph/Inductive/NodeMap.hs:(68,1)-(73,27)       405           4    0.0    0.0     0.0    0.0
+      compare             Main                                   2023/Day17/ClumsyCrucible.hs:16:38-40                407           4    0.0    0.0     0.0    0.0
+   genGraph.(...)         Main                                   2023/Day17/ClumsyCrucible.hs:24:7-48                 378           2    0.0    0.0     6.9    3.0
+    mkNodes               Data.Graph.Inductive.NodeMap           Data/Graph/Inductive/NodeMap.hs:92:1-21              379           2    0.3    0.6     6.9    3.0
+     mkNode               Data.Graph.Inductive.NodeMap           Data/Graph/Inductive/NodeMap.hs:(68,1)-(73,27)       393       79524    6.6    2.5     6.6    2.5
+      compare             Main                                   2023/Day17/ClumsyCrucible.hs:16:38-40                394       79524    0.0    0.0     0.0    0.0
+   genGraph.(...)         Main                                   2023/Day17/ClumsyCrucible.hs:21:7-56                 376           2    0.0    0.0     0.0    0.0
+   genGraph.edges'        Main                                   2023/Day17/ClumsyCrucible.hs:25:7-75                 381           2    0.0    0.0    55.9   25.5
+    genEdges              Main                                   2023/Day17/ClumsyCrucible.hs:(35,1)-(41,49)          383           2    0.3    0.7     7.7   23.7
+     genEdges.mkEdges'    Main                                   2023/Day17/ClumsyCrucible.hs:37:5-100                384           4    0.6    1.8     7.4   23.0
+      genEdges.asEdge     Main                                   2023/Day17/ClumsyCrucible.hs:38:5-65                 395      764220    1.0    3.0     1.0    3.0
+      genEdges.fooo       Main                                   2023/Day17/ClumsyCrucible.hs:39:5-40                 387           0    0.3    1.7     5.8   18.2
+       genEdges.nbrs      Main                                   2023/Day17/ClumsyCrucible.hs:40:5-84                 389      159048    1.8   10.2     5.5   16.5
+        genEdges.f        Main                                   2023/Day17/ClumsyCrucible.hs:41:5-49                 399      764220    3.7    6.3     3.7    6.3
+     genEdges.fooo        Main                                   2023/Day17/ClumsyCrucible.hs:39:5-40                 386           2    0.0    0.0     0.0    0.0
+    mkEdges               Data.Graph.Inductive.NodeMap           Data/Graph/Inductive/NodeMap.hs:88:1-27              382           2    0.6    0.8    48.3    1.8
+     mkEdge               Data.Graph.Inductive.NodeMap           Data/Graph/Inductive/NodeMap.hs:(81,1)-(84,25)       396      764220   47.5    1.0    47.7    1.0
+      compare             Main                                   2023/Day17/ClumsyCrucible.hs:16:38-40                398     2292660    0.2    0.0     0.2    0.0
+   genGraph.edges''       Main                                   2023/Day17/ClumsyCrucible.hs:30:7-48                 400           2    0.2    1.1     0.2    1.1
+   genGraph.end           Main                                   2023/Day17/ClumsyCrucible.hs:26:7-91                 406           2    0.0    0.0     0.0    0.0
+   genGraph.endEdges      Main                                   2023/Day17/ClumsyCrucible.hs:28:7-102                414           2    0.0    0.0     0.0    0.0
+    mkEdges               Data.Graph.Inductive.NodeMap           Data/Graph/Inductive/NodeMap.hs:88:1-27              415           2    0.0    0.0     0.0    0.0
+     mkEdge               Data.Graph.Inductive.NodeMap           Data/Graph/Inductive/NodeMap.hs:(81,1)-(84,25)       416           4    0.0    0.0     0.0    0.0
+      compare             Main                                   2023/Day17/ClumsyCrucible.hs:16:38-40                417          14    0.0    0.0     0.0    0.0
+   genGraph.g             Main                                   2023/Day17/ClumsyCrucible.hs:31:7-33                 401           2    0.2    1.1    13.0   38.1
+    insEdges              Data.Graph.Inductive.Graph             Data/Graph/Inductive/Graph.hs:332:1-42               408           2   12.8   37.1    12.8   37.1
+   genGraph.nCols         Main                                   2023/Day17/ClumsyCrucible.hs:21:7-56                 377           2    0.0    0.0     0.0    0.0
+   genGraph.nRows         Main                                   2023/Day17/ClumsyCrucible.hs:21:7-56                 375           2    0.0    0.0     0.0    0.0
+   genGraph.nodeLabels    Main                                   2023/Day17/ClumsyCrucible.hs:23:7-115                374           2    0.0    0.2     0.0    0.2
+   genGraph.nodeMap       Main                                   2023/Day17/ClumsyCrucible.hs:24:7-48                 391           2    0.0    0.0     0.0    0.0
+   genGraph.nodeMap'      Main                                   2023/Day17/ClumsyCrucible.hs:26:7-91                 411           2    0.0    0.0     0.0    0.0
+   genGraph.nodes'        Main                                   2023/Day17/ClumsyCrucible.hs:24:7-48                 373           2    0.0    0.0     0.0    0.0
+   genGraph.nodes''       Main                                   2023/Day17/ClumsyCrucible.hs:29:7-38                 380           2    0.0    0.1     0.0    0.1
+   genGraph.start         Main                                   2023/Day17/ClumsyCrucible.hs:26:7-91                 402           2    0.0    0.0     0.0    0.0
+   genGraph.startEdges    Main                                   2023/Day17/ClumsyCrucible.hs:27:7-90                 409           2    0.0    0.0     0.0    0.0
+    mkEdges               Data.Graph.Inductive.NodeMap           Data/Graph/Inductive/NodeMap.hs:88:1-27              410           2    0.0    0.0     0.0    0.0
+     mkEdge               Data.Graph.Inductive.NodeMap           Data/Graph/Inductive/NodeMap.hs:(81,1)-(84,25)       412           4    0.0    0.0     0.0    0.0
+      compare             Main                                   2023/Day17/ClumsyCrucible.hs:16:38-40                413          10    0.0    0.0     0.0    0.0
+   genGraph.xss'          Main                                   2023/Day17/ClumsyCrucible.hs:22:7-82                 385           2    0.0    0.0     0.2    0.2
+    genGraph.xss'.\       Main                                   2023/Day17/ClumsyCrucible.hs:22:32-70                388         282    0.2    0.2     0.2    0.2
+     genGraph.xss'.\.\    Main                                   2023/Day17/ClumsyCrucible.hs:22:49-59                397       39762    0.0    0.0     0.0    0.0
+  main.\                  Main                                   2023/Day17/ClumsyCrucible.hs:13:32-55                429           1    0.0    0.0    17.4   20.2
+   shortestPath           Main                                   2023/Day17/ClumsyCrucible.hs:(44,1)-(47,59)          430           1    0.0    0.0    17.4   20.2
+    shortestPath.edgesMap Main                                   2023/Day17/ClumsyCrucible.hs:46:7-65                 445           1    1.9    5.1     1.9    5.1
+    shortestPath.route    Main                                   2023/Day17/ClumsyCrucible.hs:45:7-39                 431           1    0.0    0.0    15.6   15.2
+     sp                   Data.Graph.Inductive.Query.SP          Data/Graph/Inductive/Query/SP.hs:(78,1)-(80,14)      432           1    0.0    0.0    15.6   15.2
+      getLPathNodes       Data.Graph.Inductive.Internal.RootPath Data/Graph/Inductive/Internal/RootPath.hs:46:1-51    438           1    0.0    0.0     0.0    0.0
+       getLPath           Data.Graph.Inductive.Internal.RootPath Data/Graph/Inductive/Internal/RootPath.hs:35:1-35    439           1    0.0    0.0     0.0    0.0
+      spTree              Data.Graph.Inductive.Query.SP          Data/Graph/Inductive/Query/SP.hs:50:1-43             433           1    0.0    0.0    15.6   15.2
+       dijkstra           Data.Graph.Inductive.Query.SP          Data/Graph/Inductive/Query/SP.hs:(29,1)-(36,11)      434      298415   10.0   10.3    15.6   15.2
+        unit              Data.Graph.Inductive.Internal.Heap     Data/Graph/Inductive/Internal/Heap.hs:49:1-30        442      298640    0.0    0.0     0.0    0.0
+        isEmpty           Data.Graph.Inductive.Internal.Heap     Data/Graph/Inductive/Internal/Heap.hs:(67,1)-(68,21) 435      298415    0.0    0.0     0.0    0.0
+        splitMin          Data.Graph.Inductive.Internal.Heap     Data/Graph/Inductive/Internal/Heap.hs:(79,1)-(80,50) 437      298415    0.0    0.0     5.2    4.4
+         mergeAll         Data.Graph.Inductive.Internal.Heap     Data/Graph/Inductive/Internal/Heap.hs:(62,1)-(64,53) 443     1884326    0.6    0.0     5.2    4.4
+          merge           Data.Graph.Inductive.Internal.Heap     Data/Graph/Inductive/Internal/Heap.hs:(55,1)-(59,40) 444     3171824    4.5    4.4     4.5    4.4
+        mergeAll          Data.Graph.Inductive.Internal.Heap     Data/Graph/Inductive/Internal/Heap.hs:(62,1)-(64,53) 440      204360    0.0    0.0     0.4    0.4
+         merge            Data.Graph.Inductive.Internal.Heap     Data/Graph/Inductive/Internal/Heap.hs:(55,1)-(59,40) 441      329206    0.4    0.4     0.4    0.4
+       unit               Data.Graph.Inductive.Internal.Heap     Data/Graph/Inductive/Internal/Heap.hs:49:1-30        436           1    0.0    0.0     0.0    0.0
+  main.\                  Main                                   2023/Day17/ClumsyCrucible.hs:12:32-55                365           1    0.0    0.0     5.8    9.6
+   shortestPath           Main                                   2023/Day17/ClumsyCrucible.hs:(44,1)-(47,59)          366           1    0.0    0.0     5.8    9.6
+    shortestPath.edgesMap Main                                   2023/Day17/ClumsyCrucible.hs:46:7-65                 428           1    0.8    2.3     0.8    2.3
+    shortestPath.route    Main                                   2023/Day17/ClumsyCrucible.hs:45:7-39                 367           1    0.0    0.0     4.9    7.3
+     sp                   Data.Graph.Inductive.Query.SP          Data/Graph/Inductive/Query/SP.hs:(78,1)-(80,14)      368           1    0.0    0.0     4.9    7.3
+      getLPathNodes       Data.Graph.Inductive.Internal.RootPath Data/Graph/Inductive/Internal/RootPath.hs:46:1-51    419           1    0.0    0.0     0.0    0.0
+       getLPath           Data.Graph.Inductive.Internal.RootPath Data/Graph/Inductive/Internal/RootPath.hs:35:1-35    420           1    0.0    0.0     0.0    0.0
+      spTree              Data.Graph.Inductive.Query.SP          Data/Graph/Inductive/Query/SP.hs:50:1-43             369           1    0.0    0.0     4.9    7.3
+       dijkstra           Data.Graph.Inductive.Query.SP          Data/Graph/Inductive/Query/SP.hs:(29,1)-(36,11)      370      130765    2.8    5.3     4.9    7.3
+        unit              Data.Graph.Inductive.Internal.Heap     Data/Graph/Inductive/Internal/Heap.hs:49:1-30        423      130960    0.0    0.0     0.0    0.0
+        isEmpty           Data.Graph.Inductive.Internal.Heap     Data/Graph/Inductive/Internal/Heap.hs:(67,1)-(68,21) 371      130765    0.0    0.0     0.0    0.0
+        splitMin          Data.Graph.Inductive.Internal.Heap     Data/Graph/Inductive/Internal/Heap.hs:(79,1)-(80,50) 418      130765    0.0    0.0     1.9    1.9
+         mergeAll         Data.Graph.Inductive.Internal.Heap     Data/Graph/Inductive/Internal/Heap.hs:(62,1)-(64,53) 424      802933    0.3    0.0     1.9    1.9
+          merge           Data.Graph.Inductive.Internal.Heap     Data/Graph/Inductive/Internal/Heap.hs:(55,1)-(59,40) 427     1344338    1.6    1.9     1.6    1.9
+        mergeAll          Data.Graph.Inductive.Internal.Heap     Data/Graph/Inductive/Internal/Heap.hs:(62,1)-(64,53) 421      117994    0.0    0.0     0.2    0.2
+         merge            Data.Graph.Inductive.Internal.Heap     Data/Graph/Inductive/Internal/Heap.hs:(55,1)-(59,40) 422      156492    0.2    0.2     0.2    0.2
+       unit               Data.Graph.Inductive.Internal.Heap     Data/Graph/Inductive/Internal/Heap.hs:49:1-30        372           1    0.0    0.0     0.0    0.0

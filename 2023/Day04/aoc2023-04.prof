@@ -1,37 +1,38 @@
-	Thu Feb 29 20:40 2024 Time and Allocation Profiling Report  (Final)
+	Tue Mar  5 15:13 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2023-04 +RTS -N -i0.05 -p -hy -l-agu -s2023/Day04/aoc2023-04.stats -RTS
+	   aoc2023-04 +RTS -N -i0.05 -p -hy -l-agu --machine-readable -t2023/Day04/aoc2023-04.stats -A32M -B -RTS
 
 	total time  =        0.00 secs   (6 ticks @ 1000 us, 8 processors)
-	total alloc =   5,316,808 bytes  (excludes profiling overheads)
+	total alloc =   5,324,200 bytes  (excludes profiling overheads)
 
 COST CENTRE     MODULE                SRC                                                    %time %alloc
 
-main.scratch    Main                  2023/Day04/Scratchcards.hs:15:5-49                      50.0    7.5
-MAIN            MAIN                  <built-in>                                              16.7    2.6
+MAIN            MAIN                  <built-in>                                              33.3    2.5
+main            Main                  2023/Day04/Scratchcards.hs:(10,1)-(18,23)               33.3   57.2
 readTextDevice  Data.Text.Internal.IO libraries/text/src/Data/Text/Internal/IO.hs:133:39-64   16.7    0.1
-main            Main                  2023/Day04/Scratchcards.hs:(10,1)-(18,23)               16.7   56.9
-main.scorePart2 Main                  2023/Day04/Scratchcards.hs:(17,5)-(18,23)                0.0   32.0
+main.scratch    Main                  2023/Day04/Scratchcards.hs:15:5-49                      16.7    7.5
+main.scorePart2 Main                  2023/Day04/Scratchcards.hs:(17,5)-(18,23)                0.0   31.9
 
 
                                                                                                                    individual      inherited
 COST CENTRE       MODULE                  SRC                                                   no.     entries  %time %alloc   %time %alloc
 
-MAIN              MAIN                    <built-in>                                            209           0   16.7    2.6   100.0  100.0
- CAF              Main                    <entire-module>                                       417           0    0.0    0.0     0.0    0.0
-  main            Main                    2023/Day04/Scratchcards.hs:(10,1)-(18,23)             418           1    0.0    0.0     0.0    0.0
- CAF              Data.Text.Array         <entire-module>                                       414           0    0.0    0.0     0.0    0.0
- CAF              Data.Text.IO            <entire-module>                                       411           0    0.0    0.0     0.0    0.0
- CAF              GHC.Conc.Signal         <entire-module>                                       321           0    0.0    0.0     0.0    0.0
- CAF              GHC.IO.Encoding         <entire-module>                                       303           0    0.0    0.1     0.0    0.1
- CAF              GHC.IO.Encoding.Iconv   <entire-module>                                       301           0    0.0    0.0     0.0    0.0
- CAF              GHC.IO.Exception        <entire-module>                                       295           0    0.0    0.0     0.0    0.0
- CAF              GHC.IO.FD               <entire-module>                                       294           0    0.0    0.0     0.0    0.0
- CAF              GHC.IO.Handle.FD        <entire-module>                                       292           0    0.0    0.7     0.0    0.7
- CAF              GHC.IO.Handle.Internals <entire-module>                                       291           0    0.0    0.0     0.0    0.0
- CAF              GHC.Event.Thread        <entire-module>                                       229           0    0.0    0.0     0.0    0.0
- main             Main                    2023/Day04/Scratchcards.hs:(10,1)-(18,23)             419           0   16.7   56.9    83.3   96.6
-  main.scratch    Main                    2023/Day04/Scratchcards.hs:15:5-49                    421         427   50.0    7.5    50.0    7.5
-  main.scorePart2 Main                    2023/Day04/Scratchcards.hs:(17,5)-(18,23)             424         215    0.0   32.0     0.0   32.0
-  main.score      Main                    2023/Day04/Scratchcards.hs:16:5-45                    423         214    0.0    0.1     0.0    0.1
-  readTextDevice  Data.Text.Internal.IO   libraries/text/src/Data/Text/Internal/IO.hs:133:39-64 420          14   16.7    0.1    16.7    0.1
+MAIN              MAIN                    <built-in>                                            218           0   33.3    2.5   100.0  100.0
+ CAF              Main                    <entire-module>                                       434           0    0.0    0.0     0.0    0.0
+  main            Main                    2023/Day04/Scratchcards.hs:(10,1)-(18,23)             436           1    0.0    0.0     0.0    0.0
+ CAF              Data.Text.Array         <entire-module>                                       432           0    0.0    0.0     0.0    0.0
+ CAF              Data.Text.Internal      <entire-module>                                       428           0    0.0    0.0     0.0    0.0
+ CAF              GHC.Conc.Signal         <entire-module>                                       337           0    0.0    0.0     0.0    0.0
+ CAF              GHC.IO.Encoding         <entire-module>                                       318           0    0.0    0.1     0.0    0.1
+ CAF              GHC.IO.Encoding.Iconv   <entire-module>                                       316           0    0.0    0.0     0.0    0.0
+ CAF              GHC.IO.Exception        <entire-module>                                       310           0    0.0    0.0     0.0    0.0
+ CAF              GHC.IO.FD               <entire-module>                                       309           0    0.0    0.0     0.0    0.0
+ CAF              GHC.IO.Handle.FD        <entire-module>                                       307           0    0.0    0.7     0.0    0.7
+ CAF              GHC.IO.Handle.Internals <entire-module>                                       306           0    0.0    0.0     0.0    0.0
+ CAF              GHC.Event.Poll          <entire-module>                                       240           0    0.0    0.0     0.0    0.0
+ CAF              GHC.Event.Thread        <entire-module>                                       239           0    0.0    0.0     0.0    0.0
+ main             Main                    2023/Day04/Scratchcards.hs:(10,1)-(18,23)             437           0   33.3   57.2    66.7   96.8
+  main.scratch    Main                    2023/Day04/Scratchcards.hs:15:5-49                    439         427   16.7    7.5    16.7    7.5
+  main.scorePart2 Main                    2023/Day04/Scratchcards.hs:(17,5)-(18,23)             441         215    0.0   31.9     0.0   31.9
+  main.score      Main                    2023/Day04/Scratchcards.hs:16:5-45                    440         214    0.0    0.1     0.0    0.1
+  readTextDevice  Data.Text.Internal.IO   libraries/text/src/Data/Text/Internal/IO.hs:133:39-64 438          14   16.7    0.1    16.7    0.1

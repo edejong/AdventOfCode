@@ -22,13 +22,15 @@ statsfile="$srcdir/$proj.stats"
 
 # -hy     Profiling by type
 # -hd     Profiling by closure description
-# -i0.1   sampling rate
+# -i0.05  sampling rate
 
-cabal run $proj -- +RTS -i0.05 -p -hy -l-agu -s$statsfile # -I0 -A100M -RTS
+# https://downloads.haskell.org/ghc/latest/docs/users_guide/runtime_control.html#rts-options-to-produce-runtime-statistics
+
+cabal run $proj -- +RTS -p -hy -l-agu --machine-readable -t$statsfile -A32M -B -RTS # -I0 -A100M -RTS   -A100m -H100m
 
 cat $proj.prof | ghc-prof-flamegraph > $proj.prof.svg
 eventlog2html $proj.eventlog
 
 mv $proj.prof $srcdir
-rm $proj.eventlog
+# rm $proj.eventlog
 rm $proj.hp

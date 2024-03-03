@@ -1,49 +1,50 @@
-	Thu Feb 29 20:35 2024 Time and Allocation Profiling Report  (Final)
+	Wed Mar  6 22:48 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2022-09 +RTS -N -i0.05 -p -hy -l-agu -s2022/Day09/aoc2022-09.stats -RTS
+	   aoc2022-09 +RTS -N -p -hy -l-agu --machine-readable -t2022/Day09/aoc2022-09.stats -A32M -B -RTS
 
-	total time  =        0.04 secs   (149 ticks @ 1000 us, 8 processors)
-	total alloc =  38,004,832 bytes  (excludes profiling overheads)
+	total time  =        0.06 secs   (214 ticks @ 1000 us, 8 processors)
+	total alloc =  37,805,016 bytes  (excludes profiling overheads)
 
 COST CENTRE      MODULE SRC                                      %time %alloc
 
-main             Main   2022/Day09/RopeBridge.hs:(4,1)-(10,53)    94.6    6.7
-main.\           Main   2022/Day09/RopeBridge.hs:5:23-54           1.3   18.6
-followStep.(...) Main   2022/Day09/RopeBridge.hs:33:9-37           1.3    4.3
-followStep       Main   2022/Day09/RopeBridge.hs:(30,1)-(33,37)    1.3   25.8
-main.follow      Main   2022/Day09/RopeBridge.hs:10:5-53           0.7   34.7
-step             Main   2022/Day09/RopeBridge.hs:(16,1)-(21,27)    0.0    6.0
-move             Main   2022/Day09/RopeBridge.hs:(24,1)-(27,28)    0.0    1.9
-main.hs          Main   2022/Day09/RopeBridge.hs:6:9-38            0.0    1.4
+main             Main   2022/Day09/RopeBridge.hs:(4,1)-(10,53)    93.9    6.8
+followStep       Main   2022/Day09/RopeBridge.hs:(31,1)-(34,37)    4.2   26.0
+followStep.(...) Main   2022/Day09/RopeBridge.hs:34:9-37           0.9    4.4
+step             Main   2022/Day09/RopeBridge.hs:(16,1)-(21,27)    0.5    6.1
+move             Main   2022/Day09/RopeBridge.hs:(24,1)-(28,20)    0.0    1.9
+main.hs          Main   2022/Day09/RopeBridge.hs:6:9-38            0.0    1.5
+main.follow      Main   2022/Day09/RopeBridge.hs:10:5-53           0.0   34.9
+main.\           Main   2022/Day09/RopeBridge.hs:5:23-54           0.0   18.1
 
 
                                                                                                         individual      inherited
 COST CENTRE          MODULE                  SRC                                     no.     entries  %time %alloc   %time %alloc
 
-MAIN                 MAIN                    <built-in>                              129           0    0.7    0.4   100.0  100.0
- CAF                 Main                    <entire-module>                         257           0    0.0    0.0     0.0    0.0
-  main               Main                    2022/Day09/RopeBridge.hs:(4,1)-(10,53)  258           1    0.0    0.0     0.0    0.0
-   main.follow       Main                    2022/Day09/RopeBridge.hs:10:5-53        261           1    0.0    0.0     0.0    0.0
-  main.\             Main                    2022/Day09/RopeBridge.hs:5:23-54        266           0    0.0    0.0     0.0    0.0
- CAF                 GHC.Conc.Signal         <entire-module>                         234           0    0.0    0.0     0.0    0.0
- CAF                 GHC.IO.Encoding         <entire-module>                         216           0    0.0    0.0     0.0    0.0
- CAF                 GHC.IO.Encoding.Iconv   <entire-module>                         214           0    0.0    0.0     0.0    0.0
- CAF                 GHC.IO.Exception        <entire-module>                         208           0    0.0    0.0     0.0    0.0
- CAF                 GHC.IO.FD               <entire-module>                         207           0    0.0    0.0     0.0    0.0
- CAF                 GHC.IO.Handle.FD        <entire-module>                         205           0    0.0    0.1     0.0    0.1
- CAF                 GHC.IO.Handle.Internals <entire-module>                         204           0    0.0    0.0     0.0    0.0
- CAF                 GHC.Read                <entire-module>                         189           0    0.0    0.0     0.0    0.0
- CAF                 GHC.Event.Thread        <entire-module>                         149           0    0.0    0.0     0.0    0.0
- main                Main                    2022/Day09/RopeBridge.hs:(4,1)-(10,53)  259           0   94.6    6.7    99.3   99.5
-  main.\             Main                    2022/Day09/RopeBridge.hs:5:23-54        265        2000    1.3   18.6     1.3   18.6
-  main.hs            Main                    2022/Day09/RopeBridge.hs:6:9-38         263           1    0.0    1.4     0.0    9.4
-   step              Main                    2022/Day09/RopeBridge.hs:(16,1)-(21,27) 264       13442    0.0    6.0     0.0    7.9
-    step.p'          Main                    2022/Day09/RopeBridge.hs:19:9-23        268       11441    0.0    0.0     0.0    1.9
-     move            Main                    2022/Day09/RopeBridge.hs:(24,1)-(27,28) 269       11441    0.0    1.9     0.0    1.9
-    step.xs'         Main                    2022/Day09/RopeBridge.hs:20:9-33        267       11441    0.0    0.0     0.0    0.0
-  main.ts            Main                    2022/Day09/RopeBridge.hs:7:9-22         260           1    0.0    0.0     0.0    0.0
-  main.follow        Main                    2022/Day09/RopeBridge.hs:10:5-53        262           0    0.7   34.7     3.4   64.8
-   followStep        Main                    2022/Day09/RopeBridge.hs:(30,1)-(33,37) 270      102969    1.3   25.8     2.7   30.2
-    followStep.(...) Main                    2022/Day09/RopeBridge.hs:33:9-37        272      102969    1.3    4.3     1.3    4.3
-    followStep.dx    Main                    2022/Day09/RopeBridge.hs:33:9-37        271      102969    0.0    0.0     0.0    0.0
-    followStep.dy    Main                    2022/Day09/RopeBridge.hs:33:9-37        273      102969    0.0    0.0     0.0    0.0
+MAIN                 MAIN                    <built-in>                              135           0    0.5    0.3   100.0  100.0
+ CAF                 Main                    <entire-module>                         268           0    0.0    0.0     0.0    0.0
+  main               Main                    2022/Day09/RopeBridge.hs:(4,1)-(10,53)  270           1    0.0    0.0     0.0    0.0
+   main.follow       Main                    2022/Day09/RopeBridge.hs:10:5-53        273           1    0.0    0.0     0.0    0.0
+   main.\            Main                    2022/Day09/RopeBridge.hs:5:23-54        278           0    0.0    0.0     0.0    0.0
+ CAF                 GHC.Conc.Signal         <entire-module>                         247           0    0.0    0.0     0.0    0.0
+ CAF                 GHC.IO.Encoding         <entire-module>                         228           0    0.0    0.0     0.0    0.0
+ CAF                 GHC.IO.Encoding.Iconv   <entire-module>                         226           0    0.0    0.0     0.0    0.0
+ CAF                 GHC.IO.Exception        <entire-module>                         220           0    0.0    0.0     0.0    0.0
+ CAF                 GHC.IO.FD               <entire-module>                         219           0    0.0    0.0     0.0    0.0
+ CAF                 GHC.IO.Handle.FD        <entire-module>                         217           0    0.0    0.1     0.0    0.1
+ CAF                 GHC.IO.Handle.Internals <entire-module>                         216           0    0.0    0.0     0.0    0.0
+ CAF                 GHC.Weak.Finalize       <entire-module>                         188           0    0.0    0.0     0.0    0.0
+ CAF                 GHC.Event.Poll          <entire-module>                         157           0    0.0    0.0     0.0    0.0
+ CAF                 GHC.Event.Thread        <entire-module>                         156           0    0.0    0.0     0.0    0.0
+ main                Main                    2022/Day09/RopeBridge.hs:(4,1)-(10,53)  271           0   93.9    6.8    99.5   99.5
+  main.\             Main                    2022/Day09/RopeBridge.hs:5:23-54        277        2000    0.0   18.1     0.0   18.1
+  main.hs            Main                    2022/Day09/RopeBridge.hs:6:9-38         275           1    0.0    1.5     0.5    9.4
+   step              Main                    2022/Day09/RopeBridge.hs:(16,1)-(21,27) 276       13442    0.5    6.1     0.5    8.0
+    step.p'          Main                    2022/Day09/RopeBridge.hs:19:9-23        280       11441    0.0    0.0     0.0    1.9
+     move            Main                    2022/Day09/RopeBridge.hs:(24,1)-(28,20) 281       11441    0.0    1.9     0.0    1.9
+    step.xs'         Main                    2022/Day09/RopeBridge.hs:20:9-33        279       11441    0.0    0.0     0.0    0.0
+  main.ts            Main                    2022/Day09/RopeBridge.hs:7:9-22         272           1    0.0    0.0     0.0    0.0
+  main.follow        Main                    2022/Day09/RopeBridge.hs:10:5-53        274           0    0.0   34.9     5.1   65.2
+   followStep        Main                    2022/Day09/RopeBridge.hs:(31,1)-(34,37) 282      102969    4.2   26.0     5.1   30.3
+    followStep.(...) Main                    2022/Day09/RopeBridge.hs:34:9-37        284      102969    0.9    4.4     0.9    4.4
+    followStep.dx    Main                    2022/Day09/RopeBridge.hs:34:9-37        283      102969    0.0    0.0     0.0    0.0
+    followStep.dy    Main                    2022/Day09/RopeBridge.hs:34:9-37        285      102969    0.0    0.0     0.0    0.0

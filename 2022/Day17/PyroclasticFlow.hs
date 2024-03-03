@@ -1,5 +1,6 @@
+import           Control.Monad              (replicateM_)
 import           Control.Monad.State.Strict (MonadState (get), State, evalState,
-                                             modify, modify', replicateM_)
+                                             modify, modify')
 import           Data.Maybe                 (fromJust)
 import qualified Data.Set                   as S
 

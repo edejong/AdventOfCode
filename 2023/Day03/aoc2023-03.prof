@@ -1,67 +1,66 @@
-	Thu Feb 29 20:40 2024 Time and Allocation Profiling Report  (Final)
+	Tue Mar  5 15:13 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2023-03 +RTS -N -i0.05 -p -hy -l-agu -s2023/Day03/aoc2023-03.stats -RTS
+	   aoc2023-03 +RTS -N -i0.05 -p -hy -l-agu --machine-readable -t2023/Day03/aoc2023-03.stats -A32M -B -RTS
 
-	total time  =        0.00 secs   (11 ticks @ 1000 us, 8 processors)
-	total alloc =  28,229,496 bytes  (excludes profiling overheads)
+	total time  =        0.00 secs   (10 ticks @ 1000 us, 8 processors)
+	total alloc =  28,113,480 bytes  (excludes profiling overheads)
 
 COST CENTRE                  MODULE    SRC                                      %time %alloc
 
-main                         Main      2023/Day03/GearRatios.hs:(6,1)-(16,133)   27.3   12.0
-adjacentNums.expand.\        Main      2023/Day03/GearRatios.hs:24:27-114        27.3   24.4
-MAIN                         MAIN      <built-in>                                18.2    0.5
-adjacentNums.labels'         Main      2023/Day03/GearRatios.hs:21:9-64          18.2   20.0
-adjacentNums.readNums.(...)  Main      2023/Day03/GearRatios.hs:30:9-43           9.1    1.6
+adjacentNums.expand.\        Main      2023/Day03/GearRatios.hs:24:27-114        30.0   24.5
+adjacentNums.labels'         Main      2023/Day03/GearRatios.hs:21:9-64          20.0   20.1
+MAIN                         MAIN      <built-in>                                10.0    0.5
+main                         Main      2023/Day03/GearRatios.hs:(6,1)-(16,133)   10.0   12.0
+adjacentNums.readNums.num    Main      2023/Day03/GearRatios.hs:31:9-33          10.0   16.1
+adjacentNums.readNums.(...)  Main      2023/Day03/GearRatios.hs:30:9-43          10.0    1.6
+adjacentNums.expand.\.\.cs   Main      2023/Day03/GearRatios.hs:24:51-62         10.0    1.9
 main.tmp                     Main      2023/Day03/GearRatios.hs:13:9-75           0.0    2.5
-adjacentNums.readNums.num    Main      2023/Day03/GearRatios.hs:31:9-33           0.0   16.4
 adjacentNums.readNums.labels Main      2023/Day03/GearRatios.hs:32:9-53           0.0    1.0
 adjacentNums.labels          Main      2023/Day03/GearRatios.hs:20:9-91           0.0   12.4
-adjacentNums.expand.\.\.cs   Main      2023/Day03/GearRatios.hs:24:51-62          0.0    1.9
 adjacentNums                 Main      2023/Day03/GearRatios.hs:(19,1)-(32,53)    0.0    5.9
 
 
                                                                                                                       individual      inherited
 COST CENTRE                        MODULE                  SRC                                     no.     entries  %time %alloc   %time %alloc
 
-MAIN                               MAIN                    <built-in>                              129           0   18.2    0.5   100.0  100.0
- CAF                               Main                    <entire-module>                         257           0    0.0    0.0     0.0    5.4
-  main                             Main                    2023/Day03/GearRatios.hs:(6,1)-(16,133) 258           1    0.0    0.0     0.0    5.4
-   main.part1                      Main                    2023/Day03/GearRatios.hs:9:9-70         263           0    0.0    0.0     0.0    5.4
-    adjacentNums                   Main                    2023/Day03/GearRatios.hs:(19,1)-(32,53) 264           0    0.0    0.0     0.0    5.4
-     adjacentNums.expand           Main                    2023/Day03/GearRatios.hs:24:5-124       265           1    0.0    0.0     0.0    0.0
-     adjacentNums.labels           Main                    2023/Day03/GearRatios.hs:20:9-91        269           0    0.0    5.4     0.0    5.4
-  adjacentNums.readNums            Main                    2023/Day03/GearRatios.hs:(26,5)-(32,53) 284           0    0.0    0.0     0.0    0.0
-   adjacentNums.readNums.num       Main                    2023/Day03/GearRatios.hs:31:9-33        285           0    0.0    0.0     0.0    0.0
- CAF                               GHC.Conc.Signal         <entire-module>                         234           0    0.0    0.0     0.0    0.0
- CAF                               GHC.IO.Encoding         <entire-module>                         216           0    0.0    0.0     0.0    0.0
- CAF                               GHC.IO.Encoding.Iconv   <entire-module>                         214           0    0.0    0.0     0.0    0.0
- CAF                               GHC.IO.Exception        <entire-module>                         208           0    0.0    0.0     0.0    0.0
- CAF                               GHC.IO.FD               <entire-module>                         207           0    0.0    0.0     0.0    0.0
- CAF                               GHC.IO.Handle.FD        <entire-module>                         205           0    0.0    0.1     0.0    0.1
- CAF                               GHC.IO.Handle.Internals <entire-module>                         204           0    0.0    0.0     0.0    0.0
- CAF                               GHC.Read                <entire-module>                         189           0    0.0    0.0     0.0    0.0
- CAF                               GHC.Event.Thread        <entire-module>                         149           0    0.0    0.0     0.0    0.0
- main                              Main                    2023/Day03/GearRatios.hs:(6,1)-(16,133) 259           0   27.3   12.0    81.8   94.0
-  main.part1                       Main                    2023/Day03/GearRatios.hs:9:9-70         260           1    0.0    0.0    54.5   79.0
-   adjacentNums                    Main                    2023/Day03/GearRatios.hs:(19,1)-(32,53) 261           1    0.0    5.9    54.5   79.0
-    adjacentNums.readNums          Main                    2023/Day03/GearRatios.hs:(26,5)-(32,53) 272       17397    0.0    0.6     9.1   19.7
-     adjacentNums.readNums.(...)   Main                    2023/Day03/GearRatios.hs:30:9-43        274       17257    9.1    1.6     9.1    1.6
-     adjacentNums.readNums.ds      Main                    2023/Day03/GearRatios.hs:30:9-43        273       17257    0.0    0.0     0.0    0.0
-     adjacentNums.readNums.labels  Main                    2023/Day03/GearRatios.hs:32:9-53        275        1237    0.0    1.0     0.0    1.0
-     adjacentNums.readNums.xs'     Main                    2023/Day03/GearRatios.hs:30:9-43        282        1237    0.0    0.0     0.0    0.0
-     adjacentNums.readNums.num     Main                    2023/Day03/GearRatios.hs:31:9-33        283        1098    0.0   16.4     0.0   16.4
-    adjacentNums.labels            Main                    2023/Day03/GearRatios.hs:20:9-91        268           1    0.0    7.0     0.0    7.1
-     adjacentNums.labels.\         Main                    2023/Day03/GearRatios.hs:20:44-58       280       14776    0.0    0.1     0.0    0.1
-      main.part1.\                 Main                    2023/Day03/GearRatios.hs:9:37-65        281       14776    0.0    0.0     0.0    0.0
-    adjacentNums.labels'           Main                    2023/Day03/GearRatios.hs:21:9-64        262           1   18.2   20.0    18.2   33.6
-     adjacentNums.expand           Main                    2023/Day03/GearRatios.hs:24:5-124       267           0    0.0    0.1     0.0   13.6
-      adjacentNums.expand.\        Main                    2023/Day03/GearRatios.hs:24:27-114      270         140    0.0   12.2     0.0   13.5
-       adjacentNums.expand.\.\     Main                    2023/Day03/GearRatios.hs:24:47-68       278        9801    0.0    0.0     0.0    1.3
-        adjacentNums.expand.\.\.cs Main                    2023/Day03/GearRatios.hs:24:51-62       279        9801    0.0    1.3     0.0    1.3
-    adjacentNums.expand            Main                    2023/Day03/GearRatios.hs:24:5-124       266           0    0.0    0.1    27.3   12.9
-     adjacentNums.expand.\         Main                    2023/Day03/GearRatios.hs:24:27-114      271         140   27.3   12.2    27.3   12.8
-      adjacentNums.expand.\.\      Main                    2023/Day03/GearRatios.hs:24:47-68       276        3580    0.0    0.0     0.0    0.6
-       adjacentNums.expand.\.\.cs  Main                    2023/Day03/GearRatios.hs:24:51-62       277        3580    0.0    0.6     0.0    0.6
-  main.tmp                         Main                    2023/Day03/GearRatios.hs:13:9-75        286           1    0.0    2.5     0.0    3.0
-   main.group                      Main                    2023/Day03/GearRatios.hs:16:5-133       287           1    0.0    0.2     0.0    0.4
-    main.group.\                   Main                    2023/Day03/GearRatios.hs:16:53-112      288        1097    0.0    0.2     0.0    0.2
+MAIN                               MAIN                    <built-in>                              135           0   10.0    0.5   100.0  100.0
+ CAF                               Main                    <entire-module>                         269           0    0.0    0.0     0.0    5.4
+  main                             Main                    2023/Day03/GearRatios.hs:(6,1)-(16,133) 270           1    0.0    0.0     0.0    5.4
+   main.part1                      Main                    2023/Day03/GearRatios.hs:9:9-70         275           0    0.0    0.0     0.0    5.4
+    adjacentNums                   Main                    2023/Day03/GearRatios.hs:(19,1)-(32,53) 276           0    0.0    0.0     0.0    5.4
+     adjacentNums.expand           Main                    2023/Day03/GearRatios.hs:24:5-124       277           1    0.0    0.0     0.0    0.0
+     adjacentNums.labels           Main                    2023/Day03/GearRatios.hs:20:9-91        281           0    0.0    5.4     0.0    5.4
+     adjacentNums.readNums         Main                    2023/Day03/GearRatios.hs:(26,5)-(32,53) 296           0    0.0    0.0     0.0    0.0
+      adjacentNums.readNums.num    Main                    2023/Day03/GearRatios.hs:31:9-33        297           0    0.0    0.0     0.0    0.0
+ CAF                               GHC.Conc.Signal         <entire-module>                         247           0    0.0    0.0     0.0    0.0
+ CAF                               GHC.IO.Encoding         <entire-module>                         228           0    0.0    0.0     0.0    0.0
+ CAF                               GHC.IO.Encoding.Iconv   <entire-module>                         226           0    0.0    0.0     0.0    0.0
+ CAF                               GHC.IO.Exception        <entire-module>                         220           0    0.0    0.0     0.0    0.0
+ CAF                               GHC.IO.FD               <entire-module>                         219           0    0.0    0.0     0.0    0.0
+ CAF                               GHC.IO.Handle.FD        <entire-module>                         217           0    0.0    0.1     0.0    0.1
+ CAF                               GHC.IO.Handle.Internals <entire-module>                         216           0    0.0    0.0     0.0    0.0
+ CAF                               GHC.Event.Thread        <entire-module>                         156           0    0.0    0.0     0.0    0.0
+ main                              Main                    2023/Day03/GearRatios.hs:(6,1)-(16,133) 271           0   10.0   12.0    90.0   94.0
+  main.part1                       Main                    2023/Day03/GearRatios.hs:9:9-70         272           1    0.0    0.0    80.0   78.9
+   adjacentNums                    Main                    2023/Day03/GearRatios.hs:(19,1)-(32,53) 273           1    0.0    5.9    80.0   78.9
+    adjacentNums.readNums          Main                    2023/Day03/GearRatios.hs:(26,5)-(32,53) 284       17397    0.0    0.6    20.0   19.4
+     adjacentNums.readNums.(...)   Main                    2023/Day03/GearRatios.hs:30:9-43        286       17257   10.0    1.6    10.0    1.6
+     adjacentNums.readNums.ds      Main                    2023/Day03/GearRatios.hs:30:9-43        285       17257    0.0    0.0     0.0    0.0
+     adjacentNums.readNums.labels  Main                    2023/Day03/GearRatios.hs:32:9-53        287        1237    0.0    1.0     0.0    1.0
+     adjacentNums.readNums.xs'     Main                    2023/Day03/GearRatios.hs:30:9-43        294        1237    0.0    0.0     0.0    0.0
+     adjacentNums.readNums.num     Main                    2023/Day03/GearRatios.hs:31:9-33        295        1098   10.0   16.1    10.0   16.1
+    adjacentNums.labels            Main                    2023/Day03/GearRatios.hs:20:9-91        280           1    0.0    7.0     0.0    7.1
+     adjacentNums.labels.\         Main                    2023/Day03/GearRatios.hs:20:44-58       292       14776    0.0    0.1     0.0    0.1
+      main.part1.\                 Main                    2023/Day03/GearRatios.hs:9:37-65        293       14776    0.0    0.0     0.0    0.0
+    adjacentNums.labels'           Main                    2023/Day03/GearRatios.hs:21:9-64        274           1   20.0   20.1    60.0   33.7
+     adjacentNums.expand           Main                    2023/Day03/GearRatios.hs:24:5-124       279           0    0.0    0.1    40.0   13.6
+      adjacentNums.expand.\        Main                    2023/Day03/GearRatios.hs:24:27-114      282         140   30.0   12.3    40.0   13.6
+       adjacentNums.expand.\.\     Main                    2023/Day03/GearRatios.hs:24:47-68       290        9801    0.0    0.0    10.0    1.3
+        adjacentNums.expand.\.\.cs Main                    2023/Day03/GearRatios.hs:24:51-62       291        9801   10.0    1.3    10.0    1.3
+    adjacentNums.expand            Main                    2023/Day03/GearRatios.hs:24:5-124       278           0    0.0    0.1     0.0   12.9
+     adjacentNums.expand.\         Main                    2023/Day03/GearRatios.hs:24:27-114      283         140    0.0   12.3     0.0   12.9
+      adjacentNums.expand.\.\      Main                    2023/Day03/GearRatios.hs:24:47-68       288        3580    0.0    0.0     0.0    0.6
+       adjacentNums.expand.\.\.cs  Main                    2023/Day03/GearRatios.hs:24:51-62       289        3580    0.0    0.6     0.0    0.6
+  main.tmp                         Main                    2023/Day03/GearRatios.hs:13:9-75        298           1    0.0    2.5     0.0    3.0
+   main.group                      Main                    2023/Day03/GearRatios.hs:16:5-133       299           1    0.0    0.2     0.0    0.4
+    main.group.\                   Main                    2023/Day03/GearRatios.hs:16:53-112      300        1097    0.0    0.2     0.0    0.2

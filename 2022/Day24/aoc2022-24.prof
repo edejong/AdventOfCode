@@ -1,74 +1,76 @@
-	Thu Feb 29 20:38 2024 Time and Allocation Profiling Report  (Final)
+	Thu Mar  7 00:09 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2022-24 +RTS -N -i0.05 -p -hy -l-agu -s2022/Day24/aoc2022-24.stats -RTS
+	   aoc2022-24 +RTS -N -p -hy -l-agu --machine-readable -t2022/Day24/aoc2022-24.stats -A32M -B -RTS
 
-	total time  =        0.33 secs   (1212 ticks @ 1000 us, 8 processors)
-	total alloc = 1,467,493,960 bytes  (excludes profiling overheads)
+	total time  =        0.32 secs   (1168 ticks @ 1000 us, 8 processors)
+	total alloc = 1,253,884,376 bytes  (excludes profiling overheads)
 
 COST CENTRE          MODULE    SRC                                          %time %alloc
 
-shortestPath.bfs     Main      2022/Day24/BlizzardBasin.hs:(23,5)-(29,33)    75.7    2.7
-shortestPath.bfs.ps1 Main      2022/Day24/BlizzardBasin.hs:27:13-44           5.4   21.7
-blizz.xs             Main      2022/Day24/BlizzardBasin.hs:(36,9)-(43,51)     4.0   36.0
-blizz.xs.\           Main      2022/Day24/BlizzardBasin.hs:(37,11)-(43,12)    3.1   13.0
-blizz.wrap           Main      2022/Day24/BlizzardBasin.hs:33:9-57            3.1    9.7
-shortestPath.bfs.ps2 Main      2022/Day24/BlizzardBasin.hs:28:13-79           2.8    3.4
-blizz.arr'           Main      2022/Day24/BlizzardBasin.hs:45:9-71            2.6   13.3
-blizz.toChar         Main      2022/Day24/BlizzardBasin.hs:44:9-85            2.6    0.0
+shortestPath.bfs     Main      2022/Day24/BlizzardBasin.hs:(23,5)-(29,33)    75.0    3.2
+blizz.arr'           Main      2022/Day24/BlizzardBasin.hs:45:9-71            4.4   15.5
+shortestPath.bfs.ps1 Main      2022/Day24/BlizzardBasin.hs:27:13-44           4.3   25.3
+shortestPath.bfs.ps2 Main      2022/Day24/BlizzardBasin.hs:28:13-79           4.1    4.0
+blizz.xs.\           Main      2022/Day24/BlizzardBasin.hs:(37,11)-(43,12)    3.6   12.9
+blizz.wrap           Main      2022/Day24/BlizzardBasin.hs:33:9-57            3.5   11.3
+blizz.xs             Main      2022/Day24/BlizzardBasin.hs:(36,9)-(43,51)     3.4   27.4
+blizz.toChar         Main      2022/Day24/BlizzardBasin.hs:44:9-85            1.0    0.0
 
 
                                                                                                                   individual      inherited
 COST CENTRE                MODULE                  SRC                                         no.     entries  %time %alloc   %time %alloc
 
-MAIN                       MAIN                    <built-in>                                  354           0    0.1    0.0   100.0  100.0
- CAF                       Main                    <entire-module>                             706           0    0.0    0.0     0.0    0.0
-  main                     Main                    2022/Day24/BlizzardBasin.hs:(10,1)-(16,58)  708           1    0.0    0.0     0.0    0.0
-   main.reverseRoute       Main                    2022/Day24/BlizzardBasin.hs:15:9-85         721           0    0.0    0.0     0.0    0.0
-    shortestPath           Main                    2022/Day24/BlizzardBasin.hs:(19,1)-(29,33)  722           0    0.0    0.0     0.0    0.0
-     shortestPath.(...)    Main                    2022/Day24/BlizzardBasin.hs:21:5-57         744           1    0.0    0.0     0.0    0.0
-     shortestPath.e        Main                    2022/Day24/BlizzardBasin.hs:21:5-57         748           1    0.0    0.0     0.0    0.0
-     shortestPath.n        Main                    2022/Day24/BlizzardBasin.hs:21:5-57         743           1    0.0    0.0     0.0    0.0
-     shortestPath.nbrs     Main                    2022/Day24/BlizzardBasin.hs:22:5-32         723           1    0.0    0.0     0.0    0.0
-     shortestPath.s        Main                    2022/Day24/BlizzardBasin.hs:21:5-57         745           1    0.0    0.0     0.0    0.0
-     shortestPath.w        Main                    2022/Day24/BlizzardBasin.hs:21:5-57         747           1    0.0    0.0     0.0    0.0
-     shortestPath.bfs      Main                    2022/Day24/BlizzardBasin.hs:(23,5)-(29,33)  730           0    0.0    0.0     0.0    0.0
-      shortestPath.bfs.blz Main                    2022/Day24/BlizzardBasin.hs:26:13-33        731           0    0.0    0.0     0.0    0.0
-       blizz               Main                    2022/Day24/BlizzardBasin.hs:(32,1)-(46,11)  732           0    0.0    0.0     0.0    0.0
-        blizz.(...)        Main                    2022/Day24/BlizzardBasin.hs:35:9-61         734           1    0.0    0.0     0.0    0.0
-        blizz.e            Main                    2022/Day24/BlizzardBasin.hs:35:9-61         739           1    0.0    0.0     0.0    0.0
-        blizz.n            Main                    2022/Day24/BlizzardBasin.hs:35:9-61         738           1    0.0    0.0     0.0    0.0
-        blizz.s            Main                    2022/Day24/BlizzardBasin.hs:35:9-61         737           1    0.0    0.0     0.0    0.0
-        blizz.toChar       Main                    2022/Day24/BlizzardBasin.hs:44:9-85         740           1    0.0    0.0     0.0    0.0
-        blizz.w            Main                    2022/Day24/BlizzardBasin.hs:35:9-61         733           1    0.0    0.0     0.0    0.0
- CAF                       GHC.Conc.Signal         <entire-module>                             468           0    0.0    0.0     0.0    0.0
- CAF                       GHC.IO.Encoding         <entire-module>                             450           0    0.0    0.0     0.0    0.0
- CAF                       GHC.IO.Encoding.Iconv   <entire-module>                             448           0    0.0    0.0     0.0    0.0
- CAF                       GHC.IO.Exception        <entire-module>                             442           0    0.0    0.0     0.0    0.0
- CAF                       GHC.IO.FD               <entire-module>                             441           0    0.0    0.0     0.0    0.0
- CAF                       GHC.IO.Handle.FD        <entire-module>                             439           0    0.0    0.0     0.0    0.0
- CAF                       GHC.IO.Handle.Internals <entire-module>                             438           0    0.0    0.0     0.0    0.0
- CAF                       GHC.Event.Thread        <entire-module>                             374           0    0.0    0.0     0.0    0.0
- main                      Main                    2022/Day24/BlizzardBasin.hs:(10,1)-(16,58)  709           0    0.1    0.0    99.9  100.0
-  main.reverseRoute        Main                    2022/Day24/BlizzardBasin.hs:15:9-85         710           4    0.0    0.0    99.8   99.9
-   shortestPath            Main                    2022/Day24/BlizzardBasin.hs:(19,1)-(29,33)  711           3    0.0    0.0    99.8   99.9
-    shortestPath.bfs       Main                    2022/Day24/BlizzardBasin.hs:(23,5)-(29,33)  712         945   75.7    2.7    99.8   99.9
-     shortestPath.bfs.blz  Main                    2022/Day24/BlizzardBasin.hs:26:13-33        725         942    0.0    0.0    16.0   72.2
-      blizz                Main                    2022/Day24/BlizzardBasin.hs:(32,1)-(46,11)  726         942    0.2    0.0    16.0   72.2
-       blizz.arr'          Main                    2022/Day24/BlizzardBasin.hs:45:9-71         728         942    2.6   13.3     2.6   13.3
-       blizz.xs            Main                    2022/Day24/BlizzardBasin.hs:(36,9)-(43,51)  727         942    4.0   36.0    10.2   58.7
-        blizz.xs.\         Main                    2022/Day24/BlizzardBasin.hs:(37,11)-(43,12) 729     2857086    3.1   13.0     6.2   22.6
-         blizz.wrap        Main                    2022/Day24/BlizzardBasin.hs:33:9-57         735     2534922    3.1    9.7     3.1    9.7
-       blizz.bnds          Main                    2022/Day24/BlizzardBasin.hs:34:9-53         736           1    0.0    0.0     0.0    0.0
-       blizz.toChar        Main                    2022/Day24/BlizzardBasin.hs:44:9-85         741           0    2.6    0.0     3.0    0.2
-        blizz.toChar.\     Main                    2022/Day24/BlizzardBasin.hs:44:44           746      510558    0.0    0.0     0.0    0.0
-        blizz.toChar.\     Main                    2022/Day24/BlizzardBasin.hs:44:32-34        742      416494    0.0    0.0     0.0    0.0
-        blizz.toChar.\     Main                    2022/Day24/BlizzardBasin.hs:44:53-83        749      199366    0.4    0.2     0.4    0.2
-     shortestPath.bfs.ps1  Main                    2022/Day24/BlizzardBasin.hs:27:13-44        720         942    5.4   21.7     5.4   21.7
-     shortestPath.bfs.ps2  Main                    2022/Day24/BlizzardBasin.hs:28:13-79        724         942    2.8    3.4     2.8    3.4
-  main.(...)               Main                    2022/Day24/BlizzardBasin.hs:12:9-57         715           1    0.0    0.0     0.0    0.0
-  main.(...)               Main                    2022/Day24/BlizzardBasin.hs:14:9-59         714           1    0.0    0.0     0.0    0.0
-  main.arr                 Main                    2022/Day24/BlizzardBasin.hs:13:9-60         718           1    0.0    0.0     0.0    0.0
-  main.goal                Main                    2022/Day24/BlizzardBasin.hs:14:9-59         713           1    0.0    0.0     0.0    0.0
-  main.nCols               Main                    2022/Day24/BlizzardBasin.hs:12:9-57         716           1    0.0    0.0     0.0    0.0
-  main.nRows               Main                    2022/Day24/BlizzardBasin.hs:12:9-57         717           1    0.0    0.0     0.0    0.0
-  main.start               Main                    2022/Day24/BlizzardBasin.hs:14:9-59         719           1    0.0    0.0     0.0    0.0
+MAIN                       MAIN                    <built-in>                                  366           0    0.0    0.0   100.0  100.0
+ CAF                       Main                    <entire-module>                             730           0    0.0    0.0     0.0    0.0
+  main                     Main                    2022/Day24/BlizzardBasin.hs:(10,1)-(16,58)  732           1    0.0    0.0     0.0    0.0
+   main.reverseRoute       Main                    2022/Day24/BlizzardBasin.hs:15:9-85         745           0    0.0    0.0     0.0    0.0
+    shortestPath           Main                    2022/Day24/BlizzardBasin.hs:(19,1)-(29,33)  746           0    0.0    0.0     0.0    0.0
+     shortestPath.(...)    Main                    2022/Day24/BlizzardBasin.hs:21:5-57         768           1    0.0    0.0     0.0    0.0
+     shortestPath.e        Main                    2022/Day24/BlizzardBasin.hs:21:5-57         772           1    0.0    0.0     0.0    0.0
+     shortestPath.n        Main                    2022/Day24/BlizzardBasin.hs:21:5-57         767           1    0.0    0.0     0.0    0.0
+     shortestPath.nbrs     Main                    2022/Day24/BlizzardBasin.hs:22:5-32         747           1    0.0    0.0     0.0    0.0
+     shortestPath.s        Main                    2022/Day24/BlizzardBasin.hs:21:5-57         769           1    0.0    0.0     0.0    0.0
+     shortestPath.w        Main                    2022/Day24/BlizzardBasin.hs:21:5-57         771           1    0.0    0.0     0.0    0.0
+     shortestPath.bfs      Main                    2022/Day24/BlizzardBasin.hs:(23,5)-(29,33)  754           0    0.0    0.0     0.0    0.0
+      shortestPath.bfs.blz Main                    2022/Day24/BlizzardBasin.hs:26:13-33        755           0    0.0    0.0     0.0    0.0
+       blizz               Main                    2022/Day24/BlizzardBasin.hs:(32,1)-(46,11)  756           0    0.0    0.0     0.0    0.0
+        blizz.(...)        Main                    2022/Day24/BlizzardBasin.hs:35:9-61         758           1    0.0    0.0     0.0    0.0
+        blizz.e            Main                    2022/Day24/BlizzardBasin.hs:35:9-61         763           1    0.0    0.0     0.0    0.0
+        blizz.n            Main                    2022/Day24/BlizzardBasin.hs:35:9-61         762           1    0.0    0.0     0.0    0.0
+        blizz.s            Main                    2022/Day24/BlizzardBasin.hs:35:9-61         761           1    0.0    0.0     0.0    0.0
+        blizz.toChar       Main                    2022/Day24/BlizzardBasin.hs:44:9-85         764           1    0.0    0.0     0.0    0.0
+        blizz.w            Main                    2022/Day24/BlizzardBasin.hs:35:9-61         757           1    0.0    0.0     0.0    0.0
+ CAF                       GHC.Conc.Signal         <entire-module>                             488           0    0.0    0.0     0.0    0.0
+ CAF                       GHC.IO.Encoding         <entire-module>                             469           0    0.0    0.0     0.0    0.0
+ CAF                       GHC.IO.Encoding.Iconv   <entire-module>                             467           0    0.0    0.0     0.0    0.0
+ CAF                       GHC.IO.Exception        <entire-module>                             461           0    0.0    0.0     0.0    0.0
+ CAF                       GHC.IO.FD               <entire-module>                             460           0    0.0    0.0     0.0    0.0
+ CAF                       GHC.IO.Handle.FD        <entire-module>                             458           0    0.0    0.0     0.0    0.0
+ CAF                       GHC.IO.Handle.Internals <entire-module>                             457           0    0.0    0.0     0.0    0.0
+ CAF                       GHC.Weak.Finalize       <entire-module>                             424           0    0.0    0.0     0.0    0.0
+ CAF                       GHC.Event.Poll          <entire-module>                             388           0    0.0    0.0     0.0    0.0
+ CAF                       GHC.Event.Thread        <entire-module>                             387           0    0.0    0.0     0.0    0.0
+ main                      Main                    2022/Day24/BlizzardBasin.hs:(10,1)-(16,58)  733           0    0.0    0.0   100.0  100.0
+  main.reverseRoute        Main                    2022/Day24/BlizzardBasin.hs:15:9-85         734           4    0.0    0.0   100.0   99.9
+   shortestPath            Main                    2022/Day24/BlizzardBasin.hs:(19,1)-(29,33)  735           3    0.0    0.0   100.0   99.9
+    shortestPath.bfs       Main                    2022/Day24/BlizzardBasin.hs:(23,5)-(29,33)  736         945   75.0    3.2   100.0   99.9
+     shortestPath.bfs.blz  Main                    2022/Day24/BlizzardBasin.hs:26:13-33        749         942    0.0    0.0    16.6   67.4
+      blizz                Main                    2022/Day24/BlizzardBasin.hs:(32,1)-(46,11)  750         942    0.5    0.0    16.6   67.4
+       blizz.arr'          Main                    2022/Day24/BlizzardBasin.hs:45:9-71         752         942    4.4   15.5     4.4   15.5
+       blizz.xs            Main                    2022/Day24/BlizzardBasin.hs:(36,9)-(43,51)  751         942    3.4   27.4    10.5   51.6
+        blizz.xs.\         Main                    2022/Day24/BlizzardBasin.hs:(37,11)-(43,12) 753     2857086    3.6   12.9     7.1   24.2
+         blizz.wrap        Main                    2022/Day24/BlizzardBasin.hs:33:9-57         759     2534922    3.5   11.3     3.5   11.3
+       blizz.bnds          Main                    2022/Day24/BlizzardBasin.hs:34:9-53         760           1    0.0    0.0     0.0    0.0
+       blizz.toChar        Main                    2022/Day24/BlizzardBasin.hs:44:9-85         765           0    1.0    0.0     1.2    0.3
+        blizz.toChar.\     Main                    2022/Day24/BlizzardBasin.hs:44:44           770      510558    0.0    0.0     0.0    0.0
+        blizz.toChar.\     Main                    2022/Day24/BlizzardBasin.hs:44:32-34        766      416494    0.0    0.0     0.0    0.0
+        blizz.toChar.\     Main                    2022/Day24/BlizzardBasin.hs:44:53-83        773      199366    0.2    0.3     0.2    0.3
+     shortestPath.bfs.ps1  Main                    2022/Day24/BlizzardBasin.hs:27:13-44        744         942    4.3   25.3     4.3   25.3
+     shortestPath.bfs.ps2  Main                    2022/Day24/BlizzardBasin.hs:28:13-79        748         942    4.1    4.0     4.1    4.0
+  main.(...)               Main                    2022/Day24/BlizzardBasin.hs:12:9-57         739           1    0.0    0.0     0.0    0.0
+  main.(...)               Main                    2022/Day24/BlizzardBasin.hs:14:9-59         738           1    0.0    0.0     0.0    0.0
+  main.arr                 Main                    2022/Day24/BlizzardBasin.hs:13:9-60         742           1    0.0    0.0     0.0    0.0
+  main.goal                Main                    2022/Day24/BlizzardBasin.hs:14:9-59         737           1    0.0    0.0     0.0    0.0
+  main.nCols               Main                    2022/Day24/BlizzardBasin.hs:12:9-57         740           1    0.0    0.0     0.0    0.0
+  main.nRows               Main                    2022/Day24/BlizzardBasin.hs:12:9-57         741           1    0.0    0.0     0.0    0.0
+  main.start               Main                    2022/Day24/BlizzardBasin.hs:14:9-59         743           1    0.0    0.0     0.0    0.0

@@ -1,57 +1,59 @@
-	Thu Feb 29 21:18 2024 Time and Allocation Profiling Report  (Final)
+	Tue Mar  5 15:21 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2023-24 +RTS -N -i0.05 -p -hy -l-agu -s2023/Day24/aoc2023-24.stats -RTS
+	   aoc2023-24 +RTS -N -i0.05 -p -hy -l-agu --machine-readable -t2023/Day24/aoc2023-24.stats -A32M -B -RTS
 
-	total time  =        0.00 secs   (0 ticks @ 1000 us, 8 processors)
-	total alloc =     400,144 bytes  (excludes profiling overheads)
+	total time  =        0.00 secs   (2 ticks @ 1000 us, 8 processors)
+	total alloc =     388,544 bytes  (excludes profiling overheads)
 
-COST CENTRE         MODULE           SRC                                             %time %alloc
+COST CENTRE         MODULE                SRC                                                %time %alloc
 
-MAIN                MAIN             <built-in>                                        0.0   34.4
-CAF                 GHC.IO.Handle.FD <entire-module>                                   0.0    8.7
-main.parseHailstone Main             2023/Day24/NeverTellMeTheOdds.hs:10:9-125         0.0   37.3
-main                Main             2023/Day24/NeverTellMeTheOdds.hs:(9,1)-(57,20)    0.0   13.9
+MAIN                MAIN                  <built-in>                                          50.0   33.6
+CAF                 GHC.IO.Encoding.Iconv <entire-module>                                     50.0    0.1
+CAF                 GHC.IO.Handle.FD      <entire-module>                                      0.0    8.9
+main.parseHailstone Main                  2023/Day24/NeverTellMeTheOdds.hs:10:9-125            0.0   37.9
+main                Main                  2023/Day24/NeverTellMeTheOdds.hs:(9,1)-(28,38)       0.0   14.5
+intersectLines2D    Main                  2023/Day24/NeverTellMeTheOdds.hs:(107,1)-(115,47)    0.0    1.0
 
 
                                                                                                                             individual      inherited
 COST CENTRE                    MODULE                  SRC                                               no.     entries  %time %alloc   %time %alloc
 
-MAIN                           MAIN                    <built-in>                                        355           0    0.0   34.4     0.0  100.0
- CAF                           Main                    <entire-module>                                   708           0    0.0    0.4     0.0    0.6
-  main                         Main                    2023/Day24/NeverTellMeTheOdds.hs:(9,1)-(57,20)    710           1    0.0    0.2     0.0    0.2
-   main.bnds                   Main                    2023/Day24/NeverTellMeTheOdds.hs:12:9-22          733           1    0.0    0.0     0.0    0.0
-   main.res                    Main                    2023/Day24/NeverTellMeTheOdds.hs:14:9-104         729           0    0.0    0.0     0.0    0.0
-    intersectInArea            Main                    2023/Day24/NeverTellMeTheOdds.hs:(95,1)-(104,62)  730           0    0.0    0.0     0.0    0.0
-     intersectInArea.(...)     Main                    2023/Day24/NeverTellMeTheOdds.hs:103:5-36         732           1    0.0    0.0     0.0    0.0
-     intersectInArea.hi        Main                    2023/Day24/NeverTellMeTheOdds.hs:103:5-36         734           1    0.0    0.0     0.0    0.0
-     intersectInArea.lo        Main                    2023/Day24/NeverTellMeTheOdds.hs:103:5-36         731           1    0.0    0.0     0.0    0.0
- CAF                           GHC.Conc.Signal         <entire-module>                                   469           0    0.0    0.2     0.0    0.2
- CAF                           GHC.IO.Encoding         <entire-module>                                   451           0    0.0    0.7     0.0    0.7
- CAF                           GHC.IO.Encoding.Iconv   <entire-module>                                   449           0    0.0    0.0     0.0    0.0
- CAF                           GHC.IO.Exception        <entire-module>                                   443           0    0.0    0.1     0.0    0.1
- CAF                           GHC.IO.FD               <entire-module>                                   442           0    0.0    0.0     0.0    0.0
- CAF                           GHC.IO.Handle.FD        <entire-module>                                   440           0    0.0    8.7     0.0    8.7
- CAF                           GHC.IO.Handle.Internals <entire-module>                                   439           0    0.0    0.0     0.0    0.0
- CAF                           GHC.Read                <entire-module>                                   422           0    0.0    0.0     0.0    0.0
- CAF                           Text.Read.Lex           <entire-module>                                   396           0    0.0    0.2     0.0    0.2
- CAF                           GHC.Event.Thread        <entire-module>                                   375           0    0.0    0.3     0.0    0.3
- main                          Main                    2023/Day24/NeverTellMeTheOdds.hs:(9,1)-(57,20)    711           0    0.0   13.8     0.0   54.7
-  main.\                       Main                    2023/Day24/NeverTellMeTheOdds.hs:16:42-85         713          10    0.0    0.0     0.0    0.0
-   main.\.\                    Main                    2023/Day24/NeverTellMeTheOdds.hs:16:76-80         736           8    0.0    0.0     0.0    0.0
-   main.\.\                    Main                    2023/Day24/NeverTellMeTheOdds.hs:16:65-68         735           2    0.0    0.0     0.0    0.0
-  main.parseHailstone          Main                    2023/Day24/NeverTellMeTheOdds.hs:10:9-125         716           1    0.0   37.3     0.0   37.5
-   main.parseHailstone.\       Main                    2023/Day24/NeverTellMeTheOdds.hs:10:51-79         717           5    0.0    0.2     0.0    0.2
-    mkHailstone                Main                    2023/Day24/NeverTellMeTheOdds.hs:62:1-62          718           5    0.0    0.0     0.0    0.0
-  main.res                     Main                    2023/Day24/NeverTellMeTheOdds.hs:14:9-104         712           1    0.0    0.6     0.0    3.4
-   line2D                      Main                    2023/Day24/NeverTellMeTheOdds.hs:(72,1)-(74,53)   714          14    0.0    0.3     0.0    0.3
-    line2D.point2D             Main                    2023/Day24/NeverTellMeTheOdds.hs:73:9-47          719          28    0.0    0.0     0.0    0.0
-    pos                        Main                    2023/Day24/NeverTellMeTheOdds.hs:59:23-25         715          28    0.0    0.0     0.0    0.0
-    vel                        Main                    2023/Day24/NeverTellMeTheOdds.hs:59:40-42         720          14    0.0    0.0     0.0    0.0
-   intersectInArea             Main                    2023/Day24/NeverTellMeTheOdds.hs:(95,1)-(104,62)  721          10    0.0    0.0     0.0    2.5
-    intersectLines2D           Main                    2023/Day24/NeverTellMeTheOdds.hs:(107,1)-(115,47) 722          10    0.0    1.0     0.0    2.4
-     intersectLines2D.denom    Main                    2023/Day24/NeverTellMeTheOdds.hs:111:5-45         723          10    0.0    0.2     0.0    0.2
-     intersectLines2D.pxTimesD Main                    2023/Day24/NeverTellMeTheOdds.hs:112:5-68         725           9    0.0    0.4     0.0    0.4
-     intersectLines2D.t        Main                    2023/Day24/NeverTellMeTheOdds.hs:114:5-47         724           9    0.0    0.4     0.0    0.4
-     intersectLines2D.u        Main                    2023/Day24/NeverTellMeTheOdds.hs:115:5-47         726           6    0.0    0.2     0.0    0.2
-     intersectLines2D.pyTimesD Main                    2023/Day24/NeverTellMeTheOdds.hs:113:5-68         728           5    0.0    0.2     0.0    0.2
-    intersectInArea.inArea     Main                    2023/Day24/NeverTellMeTheOdds.hs:104:5-62         727           5    0.0    0.0     0.0    0.0
+MAIN                           MAIN                    <built-in>                                        367           0   50.0   33.6   100.0  100.0
+ CAF                           Main                    <entire-module>                                   732           0    0.0    0.0     0.0    0.2
+  main                         Main                    2023/Day24/NeverTellMeTheOdds.hs:(9,1)-(28,38)    734           1    0.0    0.2     0.0    0.2
+   main.bnds                   Main                    2023/Day24/NeverTellMeTheOdds.hs:12:9-22          758           1    0.0    0.0     0.0    0.0
+   main.parseHailstone         Main                    2023/Day24/NeverTellMeTheOdds.hs:10:9-125         743           0    0.0    0.0     0.0    0.0
+   main.res                    Main                    2023/Day24/NeverTellMeTheOdds.hs:14:9-104         754           0    0.0    0.0     0.0    0.0
+    intersectInArea            Main                    2023/Day24/NeverTellMeTheOdds.hs:(95,1)-(104,62)  755           0    0.0    0.0     0.0    0.0
+     intersectInArea.(...)     Main                    2023/Day24/NeverTellMeTheOdds.hs:103:5-36         757           1    0.0    0.0     0.0    0.0
+     intersectInArea.hi        Main                    2023/Day24/NeverTellMeTheOdds.hs:103:5-36         759           1    0.0    0.0     0.0    0.0
+     intersectInArea.lo        Main                    2023/Day24/NeverTellMeTheOdds.hs:103:5-36         756           1    0.0    0.0     0.0    0.0
+ CAF                           GHC.Conc.Signal         <entire-module>                                   489           0    0.0    0.2     0.0    0.2
+ CAF                           GHC.IO.Encoding         <entire-module>                                   470           0    0.0    0.8     0.0    0.8
+ CAF                           GHC.IO.Encoding.Iconv   <entire-module>                                   468           0   50.0    0.1    50.0    0.1
+ CAF                           GHC.IO.Exception        <entire-module>                                   462           0    0.0    0.1     0.0    0.1
+ CAF                           GHC.IO.FD               <entire-module>                                   461           0    0.0    0.0     0.0    0.0
+ CAF                           GHC.IO.Handle.FD        <entire-module>                                   459           0    0.0    8.9     0.0    8.9
+ CAF                           GHC.IO.Handle.Internals <entire-module>                                   458           0    0.0    0.0     0.0    0.0
+ CAF                           GHC.Event.Poll          <entire-module>                                   389           0    0.0    0.0     0.0    0.0
+ CAF                           GHC.Event.Thread        <entire-module>                                   388           0    0.0    0.1     0.0    0.1
+ main                          Main                    2023/Day24/NeverTellMeTheOdds.hs:(9,1)-(28,38)    735           0    0.0   14.3     0.0   56.0
+  main.\                       Main                    2023/Day24/NeverTellMeTheOdds.hs:16:42-85         737          10    0.0    0.0     0.0    0.0
+   main.\.\                    Main                    2023/Day24/NeverTellMeTheOdds.hs:16:76-80         761           8    0.0    0.0     0.0    0.0
+   main.\.\                    Main                    2023/Day24/NeverTellMeTheOdds.hs:16:65-68         760           2    0.0    0.0     0.0    0.0
+  main.parseHailstone          Main                    2023/Day24/NeverTellMeTheOdds.hs:10:9-125         740           1    0.0   37.9     0.0   38.1
+   main.parseHailstone.\       Main                    2023/Day24/NeverTellMeTheOdds.hs:10:51-79         741           5    0.0    0.2     0.0    0.2
+    mkHailstone                Main                    2023/Day24/NeverTellMeTheOdds.hs:62:1-62          742           5    0.0    0.0     0.0    0.0
+  main.res                     Main                    2023/Day24/NeverTellMeTheOdds.hs:14:9-104         736           1    0.0    0.6     0.0    3.5
+   line2D                      Main                    2023/Day24/NeverTellMeTheOdds.hs:(72,1)-(74,53)   738          14    0.0    0.3     0.0    0.3
+    line2D.point2D             Main                    2023/Day24/NeverTellMeTheOdds.hs:73:9-47          744          28    0.0    0.0     0.0    0.0
+    pos                        Main                    2023/Day24/NeverTellMeTheOdds.hs:59:23-25         739          28    0.0    0.0     0.0    0.0
+    vel                        Main                    2023/Day24/NeverTellMeTheOdds.hs:59:40-42         745          14    0.0    0.0     0.0    0.0
+   intersectInArea             Main                    2023/Day24/NeverTellMeTheOdds.hs:(95,1)-(104,62)  746          10    0.0    0.0     0.0    2.6
+    intersectLines2D           Main                    2023/Day24/NeverTellMeTheOdds.hs:(107,1)-(115,47) 747          10    0.0    1.0     0.0    2.5
+     intersectLines2D.denom    Main                    2023/Day24/NeverTellMeTheOdds.hs:111:5-45         748          10    0.0    0.2     0.0    0.2
+     intersectLines2D.pxTimesD Main                    2023/Day24/NeverTellMeTheOdds.hs:112:5-68         750           9    0.0    0.4     0.0    0.4
+     intersectLines2D.t        Main                    2023/Day24/NeverTellMeTheOdds.hs:114:5-47         749           9    0.0    0.4     0.0    0.4
+     intersectLines2D.u        Main                    2023/Day24/NeverTellMeTheOdds.hs:115:5-47         751           6    0.0    0.2     0.0    0.2
+     intersectLines2D.pyTimesD Main                    2023/Day24/NeverTellMeTheOdds.hs:113:5-68         753           5    0.0    0.2     0.0    0.2
+    intersectInArea.inArea     Main                    2023/Day24/NeverTellMeTheOdds.hs:104:5-62         752           5    0.0    0.0     0.0    0.0

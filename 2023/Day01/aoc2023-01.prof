@@ -1,48 +1,48 @@
-	Thu Feb 29 20:40 2024 Time and Allocation Profiling Report  (Final)
+	Tue Mar  5 15:13 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2023-01 +RTS -N -i0.05 -p -hy -l-agu -s2023/Day01/aoc2023-01.stats -RTS
+	   aoc2023-01 +RTS -N -i0.05 -p -hy -l-agu --machine-readable -t2023/Day01/aoc2023-01.stats -A32M -B -RTS
 
-	total time  =        0.00 secs   (16 ticks @ 1000 us, 8 processors)
-	total alloc =  58,951,312 bytes  (excludes profiling overheads)
+	total time  =        0.00 secs   (14 ticks @ 1000 us, 8 processors)
+	total alloc =  58,940,960 bytes  (excludes profiling overheads)
 
-COST CENTRE   MODULE SRC                                     %time %alloc
+COST CENTRE   MODULE    SRC                                     %time %alloc
 
-main.num.\    Main   2023/Day01/Trebuchet.hs:12:37-50         25.0   45.7
-main.firstNum Main   2023/Day01/Trebuchet.hs:10:5-93          25.0   14.0
-main.\        Main   2023/Day01/Trebuchet.hs:7:31-56          18.8    6.5
-main.lastNum  Main   2023/Day01/Trebuchet.hs:11:5-91          12.5   18.9
-MAIN          MAIN   <built-in>                                6.2    0.2
-main.\        Main   2023/Day01/Trebuchet.hs:8:33-96           6.2    6.8
-main          Main   2023/Day01/Trebuchet.hs:(5,1)-(12,135)    6.2    7.1
+main.num.\    Main      2023/Day01/Trebuchet.hs:12:37-50         21.4   45.7
+main.firstNum Main      2023/Day01/Trebuchet.hs:10:5-93          21.4   14.2
+main.\        Main      2023/Day01/Trebuchet.hs:7:31-56          21.4    6.3
+MAIN          MAIN      <built-in>                               14.3    0.2
+main.lastNum  Main      2023/Day01/Trebuchet.hs:11:5-91           7.1   19.0
+main.\        Main      2023/Day01/Trebuchet.hs:8:33-96           7.1    6.6
+main          Main      2023/Day01/Trebuchet.hs:(5,1)-(12,135)    7.1    7.1
 
 
                                                                                                     individual      inherited
 COST CENTRE       MODULE                  SRC                                    no.     entries  %time %alloc   %time %alloc
 
-MAIN              MAIN                    <built-in>                             186           0    6.2    0.2   100.0  100.0
- CAF              Main                    <entire-module>                        370           0    0.0    0.0     0.0    0.0
-  main            Main                    2023/Day01/Trebuchet.hs:(5,1)-(12,135) 372           1    0.0    0.0     0.0    0.0
-   main.firstNum  Main                    2023/Day01/Trebuchet.hs:10:5-93        377           1    0.0    0.0     0.0    0.0
-   main.lastNum   Main                    2023/Day01/Trebuchet.hs:11:5-91        379           1    0.0    0.0     0.0    0.0
-   main.num       Main                    2023/Day01/Trebuchet.hs:12:5-135       381           1    0.0    0.0     0.0    0.0
-    main.num.\    Main                    2023/Day01/Trebuchet.hs:12:37-50       383           9    0.0    0.0     0.0    0.0
-   main.\         Main                    2023/Day01/Trebuchet.hs:8:33-96        387           0    0.0    0.0     0.0    0.0
-  main.\          Main                    2023/Day01/Trebuchet.hs:7:31-56        375           0    0.0    0.0     0.0    0.0
- CAF              GHC.Conc.Signal         <entire-module>                        295           0    0.0    0.0     0.0    0.0
- CAF              GHC.IO.Encoding         <entire-module>                        277           0    0.0    0.0     0.0    0.0
- CAF              GHC.IO.Encoding.Iconv   <entire-module>                        275           0    0.0    0.0     0.0    0.0
- CAF              GHC.IO.Exception        <entire-module>                        269           0    0.0    0.0     0.0    0.0
- CAF              GHC.IO.FD               <entire-module>                        268           0    0.0    0.0     0.0    0.0
- CAF              GHC.IO.Handle.FD        <entire-module>                        266           0    0.0    0.1     0.0    0.1
- CAF              GHC.IO.Handle.Internals <entire-module>                        265           0    0.0    0.0     0.0    0.0
- CAF              GHC.Read                <entire-module>                        249           0    0.0    0.0     0.0    0.0
- CAF              GHC.Event.Thread        <entire-module>                        206           0    0.0    0.0     0.0    0.0
- main             Main                    2023/Day01/Trebuchet.hs:(5,1)-(12,135) 373           0    6.2    7.1    93.8   99.7
-  main.\          Main                    2023/Day01/Trebuchet.hs:8:33-96        376        1000    6.2    6.8     6.2    6.8
-  main.\          Main                    2023/Day01/Trebuchet.hs:7:31-56        374        1000   18.8    6.5    18.8    6.5
-  main.firstNum   Main                    2023/Day01/Trebuchet.hs:10:5-93        378           0   18.8    8.7    18.8    8.7
-  main.lastNum    Main                    2023/Day01/Trebuchet.hs:11:5-91        380           0   12.5   10.8    12.5   10.8
-  main.num        Main                    2023/Day01/Trebuchet.hs:12:5-135       382           0    0.0    0.8    31.2   59.9
-   main.num.\     Main                    2023/Day01/Trebuchet.hs:12:37-50       384           0   25.0   45.7    31.2   59.1
-    main.firstNum Main                    2023/Day01/Trebuchet.hs:10:5-93        386           0    6.2    5.4     6.2    5.4
-    main.lastNum  Main                    2023/Day01/Trebuchet.hs:11:5-91        385           0    0.0    8.1     0.0    8.1
+MAIN              MAIN                    <built-in>                             203           0   14.3    0.2   100.0  100.0
+ CAF              Main                    <entire-module>                        404           0    0.0    0.0     0.0    0.0
+  main            Main                    2023/Day01/Trebuchet.hs:(5,1)-(12,135) 406           1    0.0    0.0     0.0    0.0
+   main.firstNum  Main                    2023/Day01/Trebuchet.hs:10:5-93        411           1    0.0    0.0     0.0    0.0
+   main.lastNum   Main                    2023/Day01/Trebuchet.hs:11:5-91        413           1    0.0    0.0     0.0    0.0
+   main.num       Main                    2023/Day01/Trebuchet.hs:12:5-135       415           1    0.0    0.0     0.0    0.0
+    main.num.\    Main                    2023/Day01/Trebuchet.hs:12:37-50       417           9    0.0    0.0     0.0    0.0
+   main.\         Main                    2023/Day01/Trebuchet.hs:8:33-96        421           0    0.0    0.0     0.0    0.0
+   main.\         Main                    2023/Day01/Trebuchet.hs:7:31-56        409           0    0.0    0.0     0.0    0.0
+ CAF              GHC.Conc.Signal         <entire-module>                        319           0    0.0    0.0     0.0    0.0
+ CAF              GHC.IO.Encoding         <entire-module>                        300           0    0.0    0.0     0.0    0.0
+ CAF              GHC.IO.Encoding.Iconv   <entire-module>                        298           0    0.0    0.0     0.0    0.0
+ CAF              GHC.IO.Exception        <entire-module>                        292           0    0.0    0.0     0.0    0.0
+ CAF              GHC.IO.FD               <entire-module>                        291           0    0.0    0.0     0.0    0.0
+ CAF              GHC.IO.Handle.FD        <entire-module>                        289           0    0.0    0.1     0.0    0.1
+ CAF              GHC.IO.Handle.Internals <entire-module>                        288           0    0.0    0.0     0.0    0.0
+ CAF              GHC.Event.Poll          <entire-module>                        225           0    0.0    0.0     0.0    0.0
+ CAF              GHC.Event.Thread        <entire-module>                        224           0    0.0    0.0     0.0    0.0
+ main             Main                    2023/Day01/Trebuchet.hs:(5,1)-(12,135) 407           0    7.1    7.1    85.7   99.7
+  main.\          Main                    2023/Day01/Trebuchet.hs:8:33-96        410        1000    7.1    6.6     7.1    6.6
+  main.\          Main                    2023/Day01/Trebuchet.hs:7:31-56        408        1000   21.4    6.3    21.4    6.3
+  main.firstNum   Main                    2023/Day01/Trebuchet.hs:10:5-93        412           0   14.3    8.8    14.3    8.8
+  main.lastNum    Main                    2023/Day01/Trebuchet.hs:11:5-91        414           0    7.1   10.8     7.1   10.8
+  main.num        Main                    2023/Day01/Trebuchet.hs:12:5-135       416           0    0.0    0.8    28.6   60.1
+   main.num.\     Main                    2023/Day01/Trebuchet.hs:12:37-50       418           0   21.4   45.7    28.6   59.4
+    main.firstNum Main                    2023/Day01/Trebuchet.hs:10:5-93        420           0    7.1    5.4     7.1    5.4
+    main.lastNum  Main                    2023/Day01/Trebuchet.hs:11:5-91        419           0    0.0    8.3     0.0    8.3

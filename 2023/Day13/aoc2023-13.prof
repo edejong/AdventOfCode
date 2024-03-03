@@ -1,66 +1,68 @@
-	Thu Feb 29 21:14 2024 Time and Allocation Profiling Report  (Final)
+	Tue Mar  5 15:14 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2023-13 +RTS -N -i0.05 -p -hy -l-agu -s2023/Day13/aoc2023-13.stats -RTS
+	   aoc2023-13 +RTS -N -i0.05 -p -hy -l-agu --machine-readable -t2023/Day13/aoc2023-13.stats -A32M -B -RTS
 
-	total time  =        0.01 secs   (29 ticks @ 1000 us, 8 processors)
-	total alloc =  41,266,504 bytes  (excludes profiling overheads)
+	total time  =        0.01 secs   (26 ticks @ 1000 us, 8 processors)
+	total alloc =  41,256,592 bytes  (excludes profiling overheads)
 
 COST CENTRE            MODULE                    SRC                                                %time %alloc
 
-mirrorIndex.diff       Main                      2023/Day13/PointofIncidence.hs:16:5-50              72.4   59.5
-main.f.\               Main                      2023/Day13/PointofIncidence.hs:9:36-122              6.9   10.7
-main                   Main                      2023/Day13/PointofIncidence.hs:(5,1)-(9,123)         6.9    6.9
-MAIN                   MAIN                      <built-in>                                           3.4    0.3
-breakDelim             Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34)    3.4    6.1
-mirrorIndex.splits     Main                      2023/Day13/PointofIncidence.hs:14:5-55               3.4    6.0
-mirrorIndex.mirrorDiff Main                      2023/Day13/PointofIncidence.hs:15:5-51               3.4    9.1
+mirrorIndex.diff       Main                      2023/Day13/PointofIncidence.hs:16:5-50              61.5   59.6
+mirrorIndex.mirrorDiff Main                      2023/Day13/PointofIncidence.hs:15:5-51              11.5    9.1
+main                   Main                      2023/Day13/PointofIncidence.hs:(5,1)-(9,123)        11.5    6.9
+main.f.\               Main                      2023/Day13/PointofIncidence.hs:9:36-122              7.7   10.7
+MAIN                   MAIN                      <built-in>                                           3.8    0.3
+onSublist              Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70            3.8    0.0
+breakDelim             Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34)    0.0    6.1
+mirrorIndex.splits     Main                      2023/Day13/PointofIncidence.hs:14:5-55               0.0    6.0
 mirrorIndex            Main                      2023/Day13/PointofIncidence.hs:(12,1)-(16,50)        0.0    1.1
 
 
                                                                                                                            individual      inherited
 COST CENTRE                 MODULE                    SRC                                               no.     entries  %time %alloc   %time %alloc
 
-MAIN                        MAIN                      <built-in>                                        130           0    3.4    0.3   100.0  100.0
- CAF                        Main                      <entire-module>                                   258           0    0.0    0.0     0.0    0.0
-  main                      Main                      2023/Day13/PointofIncidence.hs:(5,1)-(9,123)      260           1    0.0    0.0     0.0    0.0
-   splitOn                  Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         268           0    0.0    0.0     0.0    0.0
-    dropDelims              Data.List.Split.Internals src/Data/List/Split/Internals.hs:320:1-37         270           1    0.0    0.0     0.0    0.0
-    onSublist               Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70         275           0    0.0    0.0     0.0    0.0
-  mirrorIndex               Main                      2023/Day13/PointofIncidence.hs:(12,1)-(16,50)     288           0    0.0    0.0     0.0    0.0
- CAF                        Data.List.Split.Internals <entire-module>                                   257           0    0.0    0.0     0.0    0.0
-  defaultSplitter           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(55,1)-(62,5)    269           1    0.0    0.0     0.0    0.0
- CAF                        GHC.Conc.Signal           <entire-module>                                   235           0    0.0    0.0     0.0    0.0
- CAF                        GHC.IO.Encoding           <entire-module>                                   217           0    0.0    0.0     0.0    0.0
- CAF                        GHC.IO.Encoding.Iconv     <entire-module>                                   215           0    0.0    0.0     0.0    0.0
- CAF                        GHC.IO.Exception          <entire-module>                                   209           0    0.0    0.0     0.0    0.0
- CAF                        GHC.IO.FD                 <entire-module>                                   208           0    0.0    0.0     0.0    0.0
- CAF                        GHC.IO.Handle.FD          <entire-module>                                   206           0    0.0    0.1     0.0    0.1
- CAF                        GHC.IO.Handle.Internals   <entire-module>                                   205           0    0.0    0.0     0.0    0.0
- CAF                        GHC.Event.Thread          <entire-module>                                   150           0    0.0    0.0     0.0    0.0
- main                       Main                      2023/Day13/PointofIncidence.hs:(5,1)-(9,123)      261           0    6.9    6.9    96.6   99.6
-  main.f                    Main                      2023/Day13/PointofIncidence.hs:9:5-123            285           2    0.0    0.0    86.2   86.4
-   main.f.\                 Main                      2023/Day13/PointofIncidence.hs:9:36-122           286         200    6.9   10.7    86.2   86.4
-    mirrorIndex             Main                      2023/Day13/PointofIncidence.hs:(12,1)-(16,50)     287         400    0.0    1.0    79.3   75.7
-     mirrorIndex.mirrorDiff Main                      2023/Day13/PointofIncidence.hs:15:5-51            292        4568    3.4    9.1    75.9   68.7
-      mirrorIndex.diff      Main                      2023/Day13/PointofIncidence.hs:16:5-50            293       16452   72.4   59.5    72.4   59.5
-     mirrorIndex.splits     Main                      2023/Day13/PointofIncidence.hs:14:5-55            289         400    3.4    6.0     3.4    6.0
-  splitOn                   Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         262           1    0.0    0.0     3.4    6.2
-   onSublist                Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70         267           1    0.0    0.0     0.0    0.0
-   split                    Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68         263           1    0.0    0.0     3.4    6.2
-    fromElem                Data.List.Split.Internals src/Data/List/Split/Internals.hs:(124,1)-(125,24) 290         100    0.0    0.0     0.0    0.0
-    splitInternal           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71) 273         100    0.0    0.1     3.4    6.1
-     breakDelim             Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34) 276       16534    3.4    6.1     3.4    6.1
-      matchDelim            Data.List.Split.Internals src/Data/List/Split/Internals.hs:(72,1)-(76,23)   277       17881    0.0    0.0     0.0    0.0
-    delimiter               Data.List.Split.Internals src/Data/List/Split/Internals.hs:22:5-13          274           1    0.0    0.0     0.0    0.0
-    postProcess             Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35) 264           1    0.0    0.0     0.0    0.0
-     condensePolicy         Data.List.Split.Internals src/Data/List/Split/Internals.hs:29:5-18          272           1    0.0    0.0     0.0    0.0
-     delimPolicy            Data.List.Split.Internals src/Data/List/Split/Internals.hs:24:5-15          266           1    0.0    0.0     0.0    0.0
-     doCondense             Data.List.Split.Internals src/Data/List/Split/Internals.hs:(187,1)-(194,20) 271           1    0.0    0.0     0.0    0.0
-     doDrop                 Data.List.Split.Internals src/Data/List/Split/Internals.hs:(181,1)-(182,14) 280           1    0.0    0.0     0.0    0.0
-     doMerge                Data.List.Split.Internals src/Data/List/Split/Internals.hs:(216,1)-(218,14) 265           1    0.0    0.0     0.0    0.0
-     dropFinal              Data.List.Split.Internals src/Data/List/Split/Internals.hs:(248,1)-(254,17) 283           1    0.0    0.0     0.0    0.0
-     dropInitial            Data.List.Split.Internals src/Data/List/Split/Internals.hs:(243,1)-(244,19) 281           1    0.0    0.0     0.0    0.0
-     finalBlankPolicy       Data.List.Split.Internals src/Data/List/Split/Internals.hs:34:5-20          284           1    0.0    0.0     0.0    0.0
-     initBlankPolicy        Data.List.Split.Internals src/Data/List/Split/Internals.hs:32:5-19          282           1    0.0    0.0     0.0    0.0
-     insertBlanks           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(200,1)-(202,38) 278           1    0.0    0.0     0.0    0.0
-      insertBlanks'         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(206,1)-(212,49) 279         200    0.0    0.0     0.0    0.0
+MAIN                        MAIN                      <built-in>                                        136           0    3.8    0.3   100.0  100.0
+ CAF                        Main                      <entire-module>                                   270           0    0.0    0.0     0.0    0.0
+  main                      Main                      2023/Day13/PointofIncidence.hs:(5,1)-(9,123)      272           1    0.0    0.0     0.0    0.0
+   splitOn                  Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         280           0    0.0    0.0     0.0    0.0
+    dropDelims              Data.List.Split.Internals src/Data/List/Split/Internals.hs:320:1-37         282           1    0.0    0.0     0.0    0.0
+    onSublist               Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70         287           0    0.0    0.0     0.0    0.0
+  mirrorIndex               Main                      2023/Day13/PointofIncidence.hs:(12,1)-(16,50)     300           0    0.0    0.0     0.0    0.0
+ CAF                        Data.List.Split.Internals <entire-module>                                   269           0    0.0    0.0     0.0    0.0
+  defaultSplitter           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(55,1)-(62,5)    281           1    0.0    0.0     0.0    0.0
+ CAF                        GHC.Conc.Signal           <entire-module>                                   248           0    0.0    0.0     0.0    0.0
+ CAF                        GHC.IO.Encoding           <entire-module>                                   229           0    0.0    0.0     0.0    0.0
+ CAF                        GHC.IO.Encoding.Iconv     <entire-module>                                   227           0    0.0    0.0     0.0    0.0
+ CAF                        GHC.IO.Exception          <entire-module>                                   221           0    0.0    0.0     0.0    0.0
+ CAF                        GHC.IO.FD                 <entire-module>                                   220           0    0.0    0.0     0.0    0.0
+ CAF                        GHC.IO.Handle.FD          <entire-module>                                   218           0    0.0    0.1     0.0    0.1
+ CAF                        GHC.IO.Handle.Internals   <entire-module>                                   217           0    0.0    0.0     0.0    0.0
+ CAF                        GHC.Event.Poll            <entire-module>                                   158           0    0.0    0.0     0.0    0.0
+ CAF                        GHC.Event.Thread          <entire-module>                                   157           0    0.0    0.0     0.0    0.0
+ main                       Main                      2023/Day13/PointofIncidence.hs:(5,1)-(9,123)      273           0   11.5    6.9    96.2   99.6
+  main.f                    Main                      2023/Day13/PointofIncidence.hs:9:5-123            297           2    0.0    0.0    80.8   86.5
+   main.f.\                 Main                      2023/Day13/PointofIncidence.hs:9:36-122           298         200    7.7   10.7    80.8   86.5
+    mirrorIndex             Main                      2023/Day13/PointofIncidence.hs:(12,1)-(16,50)     299         400    0.0    1.0    73.1   75.7
+     mirrorIndex.mirrorDiff Main                      2023/Day13/PointofIncidence.hs:15:5-51            304        4568   11.5    9.1    73.1   68.7
+      mirrorIndex.diff      Main                      2023/Day13/PointofIncidence.hs:16:5-50            305       16452   61.5   59.6    61.5   59.6
+     mirrorIndex.splits     Main                      2023/Day13/PointofIncidence.hs:14:5-55            301         400    0.0    6.0     0.0    6.0
+  splitOn                   Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         274           1    0.0    0.0     3.8    6.2
+   onSublist                Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70         279           1    3.8    0.0     3.8    0.0
+   split                    Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68         275           1    0.0    0.0     0.0    6.2
+    fromElem                Data.List.Split.Internals src/Data/List/Split/Internals.hs:(124,1)-(125,24) 302         100    0.0    0.0     0.0    0.0
+    splitInternal           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71) 285         100    0.0    0.1     0.0    6.1
+     breakDelim             Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34) 288       16534    0.0    6.1     0.0    6.1
+      matchDelim            Data.List.Split.Internals src/Data/List/Split/Internals.hs:(72,1)-(76,23)   289       17881    0.0    0.0     0.0    0.0
+    delimiter               Data.List.Split.Internals src/Data/List/Split/Internals.hs:22:5-13          286           1    0.0    0.0     0.0    0.0
+    postProcess             Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35) 276           1    0.0    0.0     0.0    0.0
+     condensePolicy         Data.List.Split.Internals src/Data/List/Split/Internals.hs:29:5-18          284           1    0.0    0.0     0.0    0.0
+     delimPolicy            Data.List.Split.Internals src/Data/List/Split/Internals.hs:24:5-15          278           1    0.0    0.0     0.0    0.0
+     doCondense             Data.List.Split.Internals src/Data/List/Split/Internals.hs:(187,1)-(194,20) 283           1    0.0    0.0     0.0    0.0
+     doDrop                 Data.List.Split.Internals src/Data/List/Split/Internals.hs:(181,1)-(182,14) 292           1    0.0    0.0     0.0    0.0
+     doMerge                Data.List.Split.Internals src/Data/List/Split/Internals.hs:(216,1)-(218,14) 277           1    0.0    0.0     0.0    0.0
+     dropFinal              Data.List.Split.Internals src/Data/List/Split/Internals.hs:(248,1)-(254,17) 295           1    0.0    0.0     0.0    0.0
+     dropInitial            Data.List.Split.Internals src/Data/List/Split/Internals.hs:(243,1)-(244,19) 293           1    0.0    0.0     0.0    0.0
+     finalBlankPolicy       Data.List.Split.Internals src/Data/List/Split/Internals.hs:34:5-20          296           1    0.0    0.0     0.0    0.0
+     initBlankPolicy        Data.List.Split.Internals src/Data/List/Split/Internals.hs:32:5-19          294           1    0.0    0.0     0.0    0.0
+     insertBlanks           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(200,1)-(202,38) 290           1    0.0    0.0     0.0    0.0
+      insertBlanks'         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(206,1)-(212,49) 291         200    0.0    0.0     0.0    0.0

@@ -1,6 +1,5 @@
 {-# OPTIONS_GHC -Wno-incomplete-uni-patterns #-}
-
-import Data.Function.Memoize (memoize)
+import Data.MemoTrie
 import Data.Graph.Inductive
 import Data.List (foldl', nub)
 import Data.Maybe (fromJust)
@@ -80,7 +79,7 @@ longestPath graph start dest = longestPath' 0 start
             foo = filter (\(n,_) -> n `notMember` visited) . lsuc'' $ node
             bar = (minBound :) . map (\(n,w) -> w + longestPath' visited' n) $ foo
          in maximum bar
-    lsuc'' = memoize (lsuc' . context graph)
+    lsuc'' = memo (lsuc' . context graph)
 
 collapse :: Gr Point Int -> Gr Point Int
 collapse graph = foldl' (flip tryRemoveNode) graph (nodes graph)

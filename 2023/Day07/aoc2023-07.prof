@@ -1,54 +1,56 @@
-	Thu Feb 29 20:40 2024 Time and Allocation Profiling Report  (Final)
+	Tue Mar  5 15:13 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2023-07 +RTS -N -i0.05 -p -hy -l-agu -s2023/Day07/aoc2023-07.stats -RTS
+	   aoc2023-07 +RTS -N -i0.05 -p -hy -l-agu --machine-readable -t2023/Day07/aoc2023-07.stats -A32M -B -RTS
 
 	total time  =        0.00 secs   (11 ticks @ 1000 us, 8 processors)
-	total alloc =  24,881,976 bytes  (excludes profiling overheads)
+	total alloc =  24,680,872 bytes  (excludes profiling overheads)
 
 COST CENTRE MODULE SRC                                      %time %alloc
 
-hist        Main   2023/Day07/CamelCards.hs:22:1-70          36.4   25.4
-main        Main   2023/Day07/CamelCards.hs:(9,1)-(15,104)   27.3   19.3
-score'      Main   2023/Day07/CamelCards.hs:36:1-105         18.2   10.0
-MAIN        MAIN   <built-in>                                 9.1    0.6
-main.xs1.\  Main   2023/Day07/CamelCards.hs:11:30-68          9.1   16.0
-score       Main   2023/Day07/CamelCards.hs:(25,1)-(33,14)    0.0    2.8
-mkHand      Main   2023/Day07/CamelCards.hs:19:1-46           0.0    7.7
-main.xs2.\  Main   2023/Day07/CamelCards.hs:14:30-68          0.0   16.0
+mkHand      Main   2023/Day07/CamelCards.hs:19:1-46          36.4    7.7
+main.xs2.\  Main   2023/Day07/CamelCards.hs:14:30-68         18.2   15.8
+main        Main   2023/Day07/CamelCards.hs:(9,1)-(15,104)   18.2   19.5
+MAIN        MAIN   <built-in>                                 9.1    0.5
+main.xs1.\  Main   2023/Day07/CamelCards.hs:11:30-68          9.1   15.8
+hist        Main   2023/Day07/CamelCards.hs:22:1-70           9.1   25.6
+score'      Main   2023/Day07/CamelCards.hs:36:1-105          0.0   10.1
+score       Main   2023/Day07/CamelCards.hs:(25,1)-(33,14)    0.0    2.9
 
 
-                                                                                                 individual      inherited
-COST CENTRE   MODULE                  SRC                                     no.     entries  %time %alloc   %time %alloc
+                                                                                                  individual      inherited
+COST CENTRE    MODULE                  SRC                                     no.     entries  %time %alloc   %time %alloc
 
-MAIN          MAIN                    <built-in>                              163           0    9.1    0.6   100.0  100.0
- CAF          Main                    <entire-module>                         325           0    0.0    0.0     0.0    0.0
-  hist        Main                    2023/Day07/CamelCards.hs:22:1-70        331           1    0.0    0.0     0.0    0.0
-  main        Main                    2023/Day07/CamelCards.hs:(9,1)-(15,104) 326           1    0.0    0.0     0.0    0.0
-  main.xs1.\  Main                    2023/Day07/CamelCards.hs:11:30-68       336           0    0.0    0.0     0.0    0.0
-  main.xs2.\  Main                    2023/Day07/CamelCards.hs:14:30-68       346           0    0.0    0.0     0.0    0.0
- CAF          GHC.Conc.Signal         <entire-module>                         272           0    0.0    0.0     0.0    0.0
- CAF          GHC.IO.Encoding         <entire-module>                         254           0    0.0    0.0     0.0    0.0
- CAF          GHC.IO.Encoding.Iconv   <entire-module>                         252           0    0.0    0.0     0.0    0.0
- CAF          GHC.IO.Exception        <entire-module>                         246           0    0.0    0.0     0.0    0.0
- CAF          GHC.IO.FD               <entire-module>                         245           0    0.0    0.0     0.0    0.0
- CAF          GHC.IO.Handle.FD        <entire-module>                         243           0    0.0    0.1     0.0    0.1
- CAF          GHC.IO.Handle.Internals <entire-module>                         242           0    0.0    0.0     0.0    0.0
- CAF          GHC.Read                <entire-module>                         226           0    0.0    0.0     0.0    0.0
- CAF          GHC.Event.Thread        <entire-module>                         183           0    0.0    0.0     0.0    0.0
- main         Main                    2023/Day07/CamelCards.hs:(9,1)-(15,104) 327           0   27.3   19.3    90.9   99.3
-  main.\      Main                    2023/Day07/CamelCards.hs:15:63-97       338        1000    0.0    0.3    36.4   28.8
-   main.\.xs' Main                    2023/Day07/CamelCards.hs:15:67-77       342        1000    0.0    0.0     0.0    0.0
-   score'     Main                    2023/Day07/CamelCards.hs:36:1-105       339        1000   18.2   10.0    36.4   28.5
-    score'.\  Main                    2023/Day07/CamelCards.hs:36:56-78       345       15785    0.0    0.0     0.0    0.0
-    score     Main                    2023/Day07/CamelCards.hs:(25,1)-(33,14) 340        1912    0.0    1.9    18.2   18.5
-     hist     Main                    2023/Day07/CamelCards.hs:22:1-70        341           0   18.2   16.6    18.2   16.6
-  main.\      Main                    2023/Day07/CamelCards.hs:12:63-96       329        1000    0.0    0.4    18.2   10.1
-   main.\.xs' Main                    2023/Day07/CamelCards.hs:12:67-77       333        1000    0.0    0.0     0.0    0.0
-   score      Main                    2023/Day07/CamelCards.hs:(25,1)-(33,14) 330        1000    0.0    0.9    18.2    9.8
-    hist      Main                    2023/Day07/CamelCards.hs:22:1-70        332           0   18.2    8.8    18.2    8.8
-  main.xs1    Main                    2023/Day07/CamelCards.hs:11:9-72        328           1    0.0    0.6     9.1   20.5
-   main.xs1.\ Main                    2023/Day07/CamelCards.hs:11:30-68       334        1000    9.1   16.0     9.1   19.9
-    mkHand    Main                    2023/Day07/CamelCards.hs:19:1-46        335        1000    0.0    3.8     0.0    3.8
-  main.xs2    Main                    2023/Day07/CamelCards.hs:14:9-72        337           1    0.0    0.6     0.0   20.5
-   main.xs2.\ Main                    2023/Day07/CamelCards.hs:14:30-68       343        1000    0.0   16.0     0.0   19.9
-    mkHand    Main                    2023/Day07/CamelCards.hs:19:1-46        344        1000    0.0    3.8     0.0    3.8
+MAIN           MAIN                    <built-in>                              171           0    9.1    0.5   100.0  100.0
+ CAF           Main                    <entire-module>                         341           0    0.0    0.0     0.0    0.0
+  hist         Main                    2023/Day07/CamelCards.hs:22:1-70        347           1    0.0    0.0     0.0    0.0
+  main         Main                    2023/Day07/CamelCards.hs:(9,1)-(15,104) 342           1    0.0    0.0     0.0    0.0
+   main.xs1    Main                    2023/Day07/CamelCards.hs:11:9-72        352           0    0.0    0.0     0.0    0.0
+    main.xs1.\ Main                    2023/Day07/CamelCards.hs:11:30-68       353           0    0.0    0.0     0.0    0.0
+   main.xs2    Main                    2023/Day07/CamelCards.hs:14:9-72        363           0    0.0    0.0     0.0    0.0
+    main.xs2.\ Main                    2023/Day07/CamelCards.hs:14:30-68       364           0    0.0    0.0     0.0    0.0
+ CAF           GHC.Conc.Signal         <entire-module>                         287           0    0.0    0.0     0.0    0.0
+ CAF           GHC.IO.Encoding         <entire-module>                         268           0    0.0    0.0     0.0    0.0
+ CAF           GHC.IO.Encoding.Iconv   <entire-module>                         266           0    0.0    0.0     0.0    0.0
+ CAF           GHC.IO.Exception        <entire-module>                         260           0    0.0    0.0     0.0    0.0
+ CAF           GHC.IO.FD               <entire-module>                         259           0    0.0    0.0     0.0    0.0
+ CAF           GHC.IO.Handle.FD        <entire-module>                         257           0    0.0    0.1     0.0    0.1
+ CAF           GHC.IO.Handle.Internals <entire-module>                         256           0    0.0    0.0     0.0    0.0
+ CAF           GHC.Event.Poll          <entire-module>                         193           0    0.0    0.0     0.0    0.0
+ CAF           GHC.Event.Thread        <entire-module>                         192           0    0.0    0.0     0.0    0.0
+ main          Main                    2023/Day07/CamelCards.hs:(9,1)-(15,104) 343           0   18.2   19.5    90.9   99.3
+  main.\       Main                    2023/Day07/CamelCards.hs:15:63-97       355        1000    0.0    0.3     9.1   29.1
+   main.\.xs'  Main                    2023/Day07/CamelCards.hs:15:67-77       359        1000    0.0    0.0     0.0    0.0
+   score'      Main                    2023/Day07/CamelCards.hs:36:1-105       356        1000    0.0   10.1     9.1   28.8
+    score'.\   Main                    2023/Day07/CamelCards.hs:36:56-78       362       15785    0.0    0.0     0.0    0.0
+    score      Main                    2023/Day07/CamelCards.hs:(25,1)-(33,14) 357        1912    0.0    1.9     9.1   18.6
+     hist      Main                    2023/Day07/CamelCards.hs:22:1-70        358           0    9.1   16.7     9.1   16.7
+  main.\       Main                    2023/Day07/CamelCards.hs:12:63-96       345        1000    0.0    0.4     0.0   10.2
+   main.\.xs'  Main                    2023/Day07/CamelCards.hs:12:67-77       349        1000    0.0    0.0     0.0    0.0
+   score       Main                    2023/Day07/CamelCards.hs:(25,1)-(33,14) 346        1000    0.0    0.9     0.0    9.8
+    hist       Main                    2023/Day07/CamelCards.hs:22:1-70        348           0    0.0    8.9     0.0    8.9
+  main.xs1     Main                    2023/Day07/CamelCards.hs:11:9-72        344           1    0.0    0.6    27.3   20.3
+   main.xs1.\  Main                    2023/Day07/CamelCards.hs:11:30-68       350        1000    9.1   15.8    27.3   19.6
+    mkHand     Main                    2023/Day07/CamelCards.hs:19:1-46        351        1000   18.2    3.9    18.2    3.9
+  main.xs2     Main                    2023/Day07/CamelCards.hs:14:9-72        354           1    0.0    0.6    36.4   20.3
+   main.xs2.\  Main                    2023/Day07/CamelCards.hs:14:30-68       360        1000   18.2   15.8    36.4   19.6
+    mkHand     Main                    2023/Day07/CamelCards.hs:19:1-46        361        1000   18.2    3.9    18.2    3.9

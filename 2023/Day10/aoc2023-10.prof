@@ -1,56 +1,57 @@
-	Thu Feb 29 20:40 2024 Time and Allocation Profiling Report  (Final)
+	Tue Mar  5 15:13 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2023-10 +RTS -N -i0.05 -p -hy -l-agu -s2023/Day10/aoc2023-10.stats -RTS
+	   aoc2023-10 +RTS -N -i0.05 -p -hy -l-agu --machine-readable -t2023/Day10/aoc2023-10.stats -A32M -B -RTS
 
-	total time  =        0.00 secs   (8 ticks @ 1000 us, 8 processors)
-	total alloc =  12,111,232 bytes  (excludes profiling overheads)
+	total time  =        0.00 secs   (6 ticks @ 1000 us, 8 processors)
+	total alloc =  11,995,144 bytes  (excludes profiling overheads)
 
 COST CENTRE   MODULE    SRC                                    %time %alloc
 
-MAIN          MAIN      <built-in>                              37.5    1.1
-polygonArea   Main      2023/Day10/PipeMaze.hs:55:1-111         25.0   26.2
-main.poly     Main      2023/Day10/PipeMaze.hs:13:7-112         12.5    9.6
-main.maze     Main      2023/Day10/PipeMaze.hs:11:7-56          12.5    1.3
-main          Main      2023/Day10/PipeMaze.hs:(8,1)-(15,56)    12.5   27.7
-walk.f        Main      2023/Day10/PipeMaze.hs:25:5-52           0.0   11.4
-walk          Main      2023/Day10/PipeMaze.hs:(23,1)-(25,52)    0.0    6.1
-step.next     Main      2023/Day10/PipeMaze.hs:(30,5)-(42,24)    0.0    7.0
-polygonArea.\ Main      2023/Day10/PipeMaze.hs:55:71-87          0.0    1.7
-main.start    Main      2023/Day10/PipeMaze.hs:12:7-70           0.0    7.4
+polygonArea   Main      2023/Day10/PipeMaze.hs:55:1-111         33.3   26.5
+MAIN          MAIN      <built-in>                              16.7    1.1
+walk.f        Main      2023/Day10/PipeMaze.hs:25:5-52          16.7   15.0
+main.start    Main      2023/Day10/PipeMaze.hs:12:7-70          16.7    7.5
+main          Main      2023/Day10/PipeMaze.hs:(8,1)-(15,56)    16.7   28.0
+walk          Main      2023/Day10/PipeMaze.hs:(23,1)-(25,52)    0.0    6.2
+step.next     Main      2023/Day10/PipeMaze.hs:(30,5)-(42,24)    0.0    2.6
+polygonArea.\ Main      2023/Day10/PipeMaze.hs:55:71-87          0.0    1.8
+main.poly     Main      2023/Day10/PipeMaze.hs:13:7-112          0.0    9.7
+main.maze     Main      2023/Day10/PipeMaze.hs:11:7-56           0.0    1.3
 
 
                                                                                                   individual      inherited
 COST CENTRE      MODULE                  SRC                                   no.     entries  %time %alloc   %time %alloc
 
-MAIN             MAIN                    <built-in>                            129           0   37.5    1.1   100.0  100.0
- CAF             Main                    <entire-module>                       257           0    0.0    0.0     0.0    0.0
-  main           Main                    2023/Day10/PipeMaze.hs:(8,1)-(15,56)  258           1    0.0    0.0     0.0    0.0
- CAF             GHC.Conc.Signal         <entire-module>                       234           0    0.0    0.0     0.0    0.0
- CAF             GHC.IO.Encoding         <entire-module>                       216           0    0.0    0.0     0.0    0.0
- CAF             GHC.IO.Encoding.Iconv   <entire-module>                       214           0    0.0    0.0     0.0    0.0
- CAF             GHC.IO.Exception        <entire-module>                       208           0    0.0    0.0     0.0    0.0
- CAF             GHC.IO.FD               <entire-module>                       207           0    0.0    0.0     0.0    0.0
- CAF             GHC.IO.Handle.FD        <entire-module>                       205           0    0.0    0.3     0.0    0.3
- CAF             GHC.IO.Handle.Internals <entire-module>                       204           0    0.0    0.0     0.0    0.0
- CAF             GHC.Event.Thread        <entire-module>                       149           0    0.0    0.0     0.0    0.0
- main            Main                    2023/Day10/PipeMaze.hs:(8,1)-(15,56)  259           0   12.5   27.7    62.5   98.5
-  main.(...)     Main                    2023/Day10/PipeMaze.hs:10:7-46        260           1    0.0    0.0     0.0    0.0
-  main.h         Main                    2023/Day10/PipeMaze.hs:10:7-46        263           1    0.0    0.0     0.0    0.0
-  main.maze      Main                    2023/Day10/PipeMaze.hs:11:7-56        262           1   12.5    1.3    12.5    1.3
-  main.poly      Main                    2023/Day10/PipeMaze.hs:13:7-112       264           1   12.5    9.6    12.5   34.1
-   main.poly.\   Main                    2023/Day10/PipeMaze.hs:13:64-82       265           2    0.0    0.0     0.0   24.5
-    walk         Main                    2023/Day10/PipeMaze.hs:(23,1)-(25,52) 266           2    0.0    6.1     0.0   24.5
-     walk.f      Main                    2023/Day10/PipeMaze.hs:25:5-52        269       13227    0.0   11.4     0.0   18.3
-      step       Main                    2023/Day10/PipeMaze.hs:(28,1)-(43,18) 270       13227    0.0    0.0     0.0    7.0
-       step.next Main                    2023/Day10/PipeMaze.hs:(30,5)-(42,24) 271       13227    0.0    7.0     0.0    7.0
-        north    Main                    2023/Day10/PipeMaze.hs:46:1-38        276        3346    0.0    0.0     0.0    0.0
-        south    Main                    2023/Day10/PipeMaze.hs:48:1-38        274        3346    0.0    0.0     0.0    0.0
-        east     Main                    2023/Day10/PipeMaze.hs:50:1-37        275        3267    0.0    0.0     0.0    0.0
-        west     Main                    2023/Day10/PipeMaze.hs:52:1-37        277        3266    0.0    0.0     0.0    0.0
-      walk.f.\   Main                    2023/Day10/PipeMaze.hs:25:24-29       273       13225    0.0    0.0     0.0    0.0
-    east         Main                    2023/Day10/PipeMaze.hs:50:1-37        267           1    0.0    0.0     0.0    0.0
-    west         Main                    2023/Day10/PipeMaze.hs:52:1-37        272           1    0.0    0.0     0.0    0.0
-  main.start     Main                    2023/Day10/PipeMaze.hs:12:7-70        268           1    0.0    7.4     0.0    7.4
-  main.w         Main                    2023/Day10/PipeMaze.hs:10:7-46        261           1    0.0    0.0     0.0    0.0
-  polygonArea    Main                    2023/Day10/PipeMaze.hs:55:1-111       278           1   25.0   26.2    25.0   28.0
-   polygonArea.\ Main                    2023/Day10/PipeMaze.hs:55:71-87       279       13225    0.0    1.7     0.0    1.7
+MAIN             MAIN                    <built-in>                            135           0   16.7    1.1   100.0  100.0
+ CAF             Main                    <entire-module>                       268           0    0.0    0.0     0.0    0.0
+  main           Main                    2023/Day10/PipeMaze.hs:(8,1)-(15,56)  270           1    0.0    0.0     0.0    0.0
+ CAF             GHC.Conc.Signal         <entire-module>                       247           0    0.0    0.0     0.0    0.0
+ CAF             GHC.IO.Encoding         <entire-module>                       228           0    0.0    0.0     0.0    0.0
+ CAF             GHC.IO.Encoding.Iconv   <entire-module>                       226           0    0.0    0.0     0.0    0.0
+ CAF             GHC.IO.Exception        <entire-module>                       220           0    0.0    0.0     0.0    0.0
+ CAF             GHC.IO.FD               <entire-module>                       219           0    0.0    0.0     0.0    0.0
+ CAF             GHC.IO.Handle.FD        <entire-module>                       217           0    0.0    0.3     0.0    0.3
+ CAF             GHC.IO.Handle.Internals <entire-module>                       216           0    0.0    0.0     0.0    0.0
+ CAF             GHC.Event.Poll          <entire-module>                       157           0    0.0    0.0     0.0    0.0
+ CAF             GHC.Event.Thread        <entire-module>                       156           0    0.0    0.0     0.0    0.0
+ main            Main                    2023/Day10/PipeMaze.hs:(8,1)-(15,56)  271           0   16.7   28.0    83.3   98.6
+  main.(...)     Main                    2023/Day10/PipeMaze.hs:10:7-46        272           1    0.0    0.0     0.0    0.0
+  main.h         Main                    2023/Day10/PipeMaze.hs:10:7-46        275           1    0.0    0.0     0.0    0.0
+  main.maze      Main                    2023/Day10/PipeMaze.hs:11:7-56        274           1    0.0    1.3     0.0    1.3
+  main.poly      Main                    2023/Day10/PipeMaze.hs:13:7-112       276           1    0.0    9.7    16.7   33.5
+   main.poly.\   Main                    2023/Day10/PipeMaze.hs:13:64-82       277           2    0.0    0.0    16.7   23.8
+    walk         Main                    2023/Day10/PipeMaze.hs:(23,1)-(25,52) 278           2    0.0    6.2    16.7   23.8
+     walk.f      Main                    2023/Day10/PipeMaze.hs:25:5-52        281       13227   16.7   15.0    16.7   17.6
+      step       Main                    2023/Day10/PipeMaze.hs:(28,1)-(43,18) 282       13227    0.0    0.0     0.0    2.6
+       step.next Main                    2023/Day10/PipeMaze.hs:(30,5)-(42,24) 283       13227    0.0    2.6     0.0    2.6
+        north    Main                    2023/Day10/PipeMaze.hs:46:1-38        288        3346    0.0    0.0     0.0    0.0
+        south    Main                    2023/Day10/PipeMaze.hs:48:1-38        285        3346    0.0    0.0     0.0    0.0
+        east     Main                    2023/Day10/PipeMaze.hs:50:1-37        287        3267    0.0    0.0     0.0    0.0
+        west     Main                    2023/Day10/PipeMaze.hs:52:1-37        289        3266    0.0    0.0     0.0    0.0
+      walk.f.\   Main                    2023/Day10/PipeMaze.hs:25:24-29       286       13225    0.0    0.0     0.0    0.0
+    east         Main                    2023/Day10/PipeMaze.hs:50:1-37        279           1    0.0    0.0     0.0    0.0
+    west         Main                    2023/Day10/PipeMaze.hs:52:1-37        284           1    0.0    0.0     0.0    0.0
+  main.start     Main                    2023/Day10/PipeMaze.hs:12:7-70        280           1   16.7    7.5    16.7    7.5
+  main.w         Main                    2023/Day10/PipeMaze.hs:10:7-46        273           1    0.0    0.0     0.0    0.0
+  polygonArea    Main                    2023/Day10/PipeMaze.hs:55:1-111       290           1   33.3   26.5    33.3   28.2
+   polygonArea.\ Main                    2023/Day10/PipeMaze.hs:55:71-87       291       13225    0.0    1.8     0.0    1.8

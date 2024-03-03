@@ -1,74 +1,75 @@
-	Thu Feb 29 11:50 2024 Time and Allocation Profiling Report  (Final)
+	Tue Mar  5 14:53 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2021-14 +RTS -N -i0.001 -p -hy -l-agu -s2021/Day14/aoc2021-14.stats -RTS
+	   aoc2021-14 +RTS -N -i0.05 -p -hy -l-agu --machine-readable -t2021/Day14/aoc2021-14.stats -A32M -B -RTS
 
 	total time  =        0.00 secs   (2 ticks @ 1000 us, 8 processors)
-	total alloc =     717,368 bytes  (excludes profiling overheads)
+	total alloc =     708,912 bytes  (excludes profiling overheads)
 
 COST CENTRE MODULE                    SRC                                                  %time %alloc
 
-MAIN        MAIN                      <built-in>                                           100.0   19.2
-CAF         GHC.IO.Handle.FD          <entire-module>                                        0.0    4.8
+MAIN        MAIN                      <built-in>                                            50.0   18.4
+main        Main                      2021/Day14/ExtendedPolymerization.hs:(9,1)-(20,43)    50.0    8.0
+CAF         GHC.IO.Handle.FD          <entire-module>                                        0.0    4.9
 breakDelim  Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34)      0.0    1.0
-step.step'  Main                      2021/Day14/ExtendedPolymerization.hs:28:5-79           0.0   53.4
-step        Main                      2021/Day14/ExtendedPolymerization.hs:(26,1)-(28,79)    0.0    8.0
-main        Main                      2021/Day14/ExtendedPolymerization.hs:(9,1)-(20,43)     0.0    7.8
+step.step'  Main                      2021/Day14/ExtendedPolymerization.hs:28:5-79           0.0   54.0
+step        Main                      2021/Day14/ExtendedPolymerization.hs:(26,1)-(28,79)    0.0    8.1
 
 
                                                                                                                          individual      inherited
 COST CENTRE             MODULE                    SRC                                                 no.     entries  %time %alloc   %time %alloc
 
-MAIN                    MAIN                      <built-in>                                          164           0  100.0   19.2   100.0  100.0
- CAF                    Main                      <entire-module>                                     326           0    0.0    0.2     0.0    0.4
-  hist                  Main                      2021/Day14/ExtendedPolymerization.hs:23:1-53        371           1    0.0    0.0     0.0    0.0
-  main                  Main                      2021/Day14/ExtendedPolymerization.hs:(9,1)-(20,43)  328           1    0.0    0.0     0.0    0.2
-   main.rules           Main                      2021/Day14/ExtendedPolymerization.hs:12:9-102       337           0    0.0    0.0     0.0    0.2
-    splitOn             Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40           338           1    0.0    0.0     0.0    0.2
-     dropDelims         Data.List.Split.Internals src/Data/List/Split/Internals.hs:320:1-37           348           1    0.0    0.0     0.0    0.0
-     onSublist          Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70           346           1    0.0    0.1     0.0    0.1
-     split              Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68           339           1    0.0    0.0     0.0    0.0
-      delimiter         Data.List.Split.Internals src/Data/List/Split/Internals.hs:22:5-13            353           1    0.0    0.0     0.0    0.0
-      postProcess       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35)   342           1    0.0    0.0     0.0    0.0
-       condensePolicy   Data.List.Split.Internals src/Data/List/Split/Internals.hs:29:5-18            351           1    0.0    0.0     0.0    0.0
-       delimPolicy      Data.List.Split.Internals src/Data/List/Split/Internals.hs:24:5-15            345           1    0.0    0.0     0.0    0.0
-       doMerge          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(216,1)-(218,14)   344           1    0.0    0.0     0.0    0.0
-       finalBlankPolicy Data.List.Split.Internals src/Data/List/Split/Internals.hs:34:5-20            363           1    0.0    0.0     0.0    0.0
-       initBlankPolicy  Data.List.Split.Internals src/Data/List/Split/Internals.hs:32:5-19            361           1    0.0    0.0     0.0    0.0
- CAF                    Data.List.Split.Internals <entire-module>                                     325           0    0.0    0.0     0.0    0.0
-  defaultSplitter       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(55,1)-(62,5)      347           1    0.0    0.0     0.0    0.0
- CAF                    GHC.Conc.Signal           <entire-module>                                     273           0    0.0    0.1     0.0    0.1
- CAF                    GHC.IO.Encoding           <entire-module>                                     255           0    0.0    0.4     0.0    0.4
- CAF                    GHC.IO.Encoding.Iconv     <entire-module>                                     253           0    0.0    0.0     0.0    0.0
- CAF                    GHC.IO.Exception          <entire-module>                                     247           0    0.0    0.1     0.0    0.1
- CAF                    GHC.IO.FD                 <entire-module>                                     246           0    0.0    0.0     0.0    0.0
- CAF                    GHC.IO.Handle.FD          <entire-module>                                     244           0    0.0    4.8     0.0    4.8
- CAF                    GHC.IO.Handle.Internals   <entire-module>                                     243           0    0.0    0.0     0.0    0.0
- CAF                    GHC.Event.Thread          <entire-module>                                     184           0    0.0    0.2     0.0    0.2
- main                   Main                      2021/Day14/ExtendedPolymerization.hs:(9,1)-(20,43)  329           0    0.0    7.8     0.0   74.8
-  main.rules            Main                      2021/Day14/ExtendedPolymerization.hs:12:9-102       336           1    0.0    0.0     0.0    4.1
-   main.rules.\         Main                      2021/Day14/ExtendedPolymerization.hs:12:37-59       365          16    0.0    0.5     0.0    0.5
-   splitOn              Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40           340           0    0.0    0.0     0.0    3.6
-    split               Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68           341           0    0.0    0.6     0.0    3.6
-     fromElem           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(124,1)-(125,24)   366          32    0.0    0.0     0.0    0.0
-     splitInternal      Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71)   352          32    0.0    0.7     0.0    2.4
-      breakDelim        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34)   354          80    0.0    1.0     0.0    1.7
-       matchDelim       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(72,1)-(76,23)     355         128    0.0    0.7     0.0    0.7
-     postProcess        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35)   343           0    0.0    0.1     0.0    0.7
-      doCondense        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(187,1)-(194,20)   350          16    0.0    0.0     0.0    0.0
-      doDrop            Data.List.Split.Internals src/Data/List/Split/Internals.hs:(181,1)-(182,14)   359          16    0.0    0.2     0.0    0.2
-      dropFinal         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(248,1)-(254,17)   362          16    0.0    0.0     0.0    0.0
-      dropInitial       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(243,1)-(244,19)   360          16    0.0    0.0     0.0    0.0
-      insertBlanks      Data.List.Split.Internals src/Data/List/Split/Internals.hs:(200,1)-(202,38)   357          16    0.0    0.0     0.0    0.4
-       insertBlanks'    Data.List.Split.Internals src/Data/List/Split/Internals.hs:(206,1)-(212,49)   358          64    0.0    0.4     0.0    0.4
-  main.template         Main                      2021/Day14/ExtendedPolymerization.hs:11:9-26        331           1    0.0    0.0     0.0    0.0
-  main.tmp              Main                      2021/Day14/ExtendedPolymerization.hs:17:9-101       333           1    0.0    0.1     0.0    0.1
-   main.tmp.\           Main                      2021/Day14/ExtendedPolymerization.hs:17:70-75       368           3    0.0    0.0     0.0    0.0
-  main.tmp'             Main                      2021/Day14/ExtendedPolymerization.hs:18:9-86        330           1    0.0    0.1     0.0    0.1
-  main.x0               Main                      2021/Day14/ExtendedPolymerization.hs:14:9-64        335           1    0.0    0.5     0.0    0.8
-   main.x0.\            Main                      2021/Day14/ExtendedPolymerization.hs:14:40-50       367          16    0.0    0.0     0.0    0.3
-    hist                Main                      2021/Day14/ExtendedPolymerization.hs:23:1-53        372           0    0.0    0.0     0.0    0.3
-     hist.\             Main                      2021/Day14/ExtendedPolymerization.hs:23:23-42       373          30    0.0    0.3     0.0    0.3
-  main.xs               Main                      2021/Day14/ExtendedPolymerization.hs:15:9-36        332           1    0.0    0.5     0.0   61.9
-   step                 Main                      2021/Day14/ExtendedPolymerization.hs:(26,1)-(28,79) 334          40    0.0    8.0     0.0   61.4
-    step.\              Main                      2021/Day14/ExtendedPolymerization.hs:26:40-58       369         565    0.0    0.0     0.0   53.4
-     step.step'         Main                      2021/Day14/ExtendedPolymerization.hs:28:5-79        370         565    0.0   53.4     0.0   53.4
+MAIN                    MAIN                      <built-in>                                          172           0   50.0   18.4   100.0  100.0
+ CAF                    Main                      <entire-module>                                     342           0    0.0    0.0     0.0    0.2
+  hist                  Main                      2021/Day14/ExtendedPolymerization.hs:23:1-53        387           1    0.0    0.0     0.0    0.0
+  main                  Main                      2021/Day14/ExtendedPolymerization.hs:(9,1)-(20,43)  344           1    0.0    0.0     0.0    0.2
+   main.rules           Main                      2021/Day14/ExtendedPolymerization.hs:12:9-102       353           0    0.0    0.0     0.0    0.2
+    splitOn             Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40           354           1    0.0    0.0     0.0    0.2
+     dropDelims         Data.List.Split.Internals src/Data/List/Split/Internals.hs:320:1-37           364           1    0.0    0.0     0.0    0.0
+     onSublist          Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70           362           1    0.0    0.1     0.0    0.1
+     split              Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68           355           1    0.0    0.0     0.0    0.0
+      delimiter         Data.List.Split.Internals src/Data/List/Split/Internals.hs:22:5-13            369           1    0.0    0.0     0.0    0.0
+      postProcess       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35)   358           1    0.0    0.0     0.0    0.0
+       condensePolicy   Data.List.Split.Internals src/Data/List/Split/Internals.hs:29:5-18            367           1    0.0    0.0     0.0    0.0
+       delimPolicy      Data.List.Split.Internals src/Data/List/Split/Internals.hs:24:5-15            361           1    0.0    0.0     0.0    0.0
+       doMerge          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(216,1)-(218,14)   360           1    0.0    0.0     0.0    0.0
+       finalBlankPolicy Data.List.Split.Internals src/Data/List/Split/Internals.hs:34:5-20            379           1    0.0    0.0     0.0    0.0
+       initBlankPolicy  Data.List.Split.Internals src/Data/List/Split/Internals.hs:32:5-19            377           1    0.0    0.0     0.0    0.0
+ CAF                    Data.List.Split.Internals <entire-module>                                     341           0    0.0    0.0     0.0    0.0
+  defaultSplitter       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(55,1)-(62,5)      363           1    0.0    0.0     0.0    0.0
+ CAF                    GHC.Conc.Signal           <entire-module>                                     288           0    0.0    0.1     0.0    0.1
+ CAF                    GHC.IO.Encoding           <entire-module>                                     269           0    0.0    0.4     0.0    0.4
+ CAF                    GHC.IO.Encoding.Iconv     <entire-module>                                     267           0    0.0    0.0     0.0    0.0
+ CAF                    GHC.IO.Exception          <entire-module>                                     261           0    0.0    0.1     0.0    0.1
+ CAF                    GHC.IO.FD                 <entire-module>                                     260           0    0.0    0.0     0.0    0.0
+ CAF                    GHC.IO.Handle.FD          <entire-module>                                     258           0    0.0    4.9     0.0    4.9
+ CAF                    GHC.IO.Handle.Internals   <entire-module>                                     257           0    0.0    0.0     0.0    0.0
+ CAF                    GHC.Event.Poll            <entire-module>                                     194           0    0.0    0.0     0.0    0.0
+ CAF                    GHC.Event.Thread          <entire-module>                                     193           0    0.0    0.1     0.0    0.1
+ main                   Main                      2021/Day14/ExtendedPolymerization.hs:(9,1)-(20,43)  345           0   50.0    8.0    50.0   75.8
+  main.rules            Main                      2021/Day14/ExtendedPolymerization.hs:12:9-102       352           1    0.0    0.0     0.0    4.2
+   main.rules.\         Main                      2021/Day14/ExtendedPolymerization.hs:12:37-59       381          16    0.0    0.5     0.0    0.5
+   splitOn              Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40           356           0    0.0    0.0     0.0    3.7
+    split               Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68           357           0    0.0    0.6     0.0    3.7
+     fromElem           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(124,1)-(125,24)   382          32    0.0    0.0     0.0    0.0
+     splitInternal      Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71)   368          32    0.0    0.7     0.0    2.4
+      breakDelim        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34)   370          80    0.0    1.0     0.0    1.7
+       matchDelim       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(72,1)-(76,23)     371         128    0.0    0.7     0.0    0.7
+     postProcess        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35)   359           0    0.0    0.1     0.0    0.7
+      doCondense        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(187,1)-(194,20)   366          16    0.0    0.0     0.0    0.0
+      doDrop            Data.List.Split.Internals src/Data/List/Split/Internals.hs:(181,1)-(182,14)   375          16    0.0    0.2     0.0    0.2
+      dropFinal         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(248,1)-(254,17)   378          16    0.0    0.0     0.0    0.0
+      dropInitial       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(243,1)-(244,19)   376          16    0.0    0.0     0.0    0.0
+      insertBlanks      Data.List.Split.Internals src/Data/List/Split/Internals.hs:(200,1)-(202,38)   373          16    0.0    0.0     0.0    0.4
+       insertBlanks'    Data.List.Split.Internals src/Data/List/Split/Internals.hs:(206,1)-(212,49)   374          64    0.0    0.4     0.0    0.4
+  main.template         Main                      2021/Day14/ExtendedPolymerization.hs:11:9-26        347           1    0.0    0.0     0.0    0.0
+  main.tmp              Main                      2021/Day14/ExtendedPolymerization.hs:17:9-101       349           1    0.0    0.1     0.0    0.1
+   main.tmp.\           Main                      2021/Day14/ExtendedPolymerization.hs:17:70-75       384           3    0.0    0.0     0.0    0.0
+  main.tmp'             Main                      2021/Day14/ExtendedPolymerization.hs:18:9-86        346           1    0.0    0.1     0.0    0.1
+  main.x0               Main                      2021/Day14/ExtendedPolymerization.hs:14:9-64        351           1    0.0    0.5     0.0    0.8
+   main.x0.\            Main                      2021/Day14/ExtendedPolymerization.hs:14:40-50       383          16    0.0    0.0     0.0    0.3
+    hist                Main                      2021/Day14/ExtendedPolymerization.hs:23:1-53        388           0    0.0    0.0     0.0    0.3
+     hist.\             Main                      2021/Day14/ExtendedPolymerization.hs:23:23-42       389          30    0.0    0.3     0.0    0.3
+  main.xs               Main                      2021/Day14/ExtendedPolymerization.hs:15:9-36        348           1    0.0    0.5     0.0   62.6
+   step                 Main                      2021/Day14/ExtendedPolymerization.hs:(26,1)-(28,79) 350          40    0.0    8.1     0.0   62.1
+    step.\              Main                      2021/Day14/ExtendedPolymerization.hs:26:40-58       385         565    0.0    0.0     0.0   54.0
+     step.step'         Main                      2021/Day14/ExtendedPolymerization.hs:28:5-79        386         565    0.0   54.0     0.0   54.0

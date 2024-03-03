@@ -1,56 +1,54 @@
-	Thu Feb 29 20:35 2024 Time and Allocation Profiling Report  (Final)
+	Tue Mar  5 15:25 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2022-01 +RTS -N -i0.05 -p -hy -l-agu -s2022/Day01/aoc2022-01.stats -RTS
+	   aoc2022-01 +RTS -N -i0.05 -p -hy -l-agu --machine-readable -t2022/Day01/aoc2022-01.stats -A32M -B -RTS
 
-	total time  =        0.00 secs   (7 ticks @ 1000 us, 8 processors)
-	total alloc =  12,617,272 bytes  (excludes profiling overheads)
+	total time  =        0.00 secs   (5 ticks @ 1000 us, 8 processors)
+	total alloc =  12,415,928 bytes  (excludes profiling overheads)
 
 COST CENTRE MODULE                    SRC                                                %time %alloc
 
-main        Main                      2022/Day01/CalorieCounting.hs:(5,1)-(7,46)          57.1   85.4
-MAIN        MAIN                      <built-in>                                          28.6    1.1
-matchDelim  Data.List.Split.Internals src/Data/List/Split/Internals.hs:(72,1)-(76,23)     14.3    0.3
-breakDelim  Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34)    0.0   12.0
+main        Main                      2022/Day01/CalorieCounting.hs:(5,1)-(7,46)          80.0   85.2
+MAIN        MAIN                      <built-in>                                          20.0    1.0
+breakDelim  Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34)    0.0   12.2
 
 
                                                                                                                      individual      inherited
 COST CENTRE           MODULE                    SRC                                               no.     entries  %time %alloc   %time %alloc
 
-MAIN                  MAIN                      <built-in>                                        130           0   28.6    1.1   100.0  100.0
- CAF                  Main                      <entire-module>                                   259           0    0.0    0.0     0.0    0.0
-  main                Main                      2022/Day01/CalorieCounting.hs:(5,1)-(7,46)        260           1    0.0    0.0     0.0    0.0
-   splitOn            Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         268           0    0.0    0.0     0.0    0.0
-    dropDelims        Data.List.Split.Internals src/Data/List/Split/Internals.hs:320:1-37         270           1    0.0    0.0     0.0    0.0
-    onSublist         Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70         275           0    0.0    0.0     0.0    0.0
- CAF                  Data.List.Split.Internals <entire-module>                                   257           0    0.0    0.0     0.0    0.0
-  defaultSplitter     Data.List.Split.Internals src/Data/List/Split/Internals.hs:(55,1)-(62,5)    269           1    0.0    0.0     0.0    0.0
- CAF                  GHC.Conc.Signal           <entire-module>                                   235           0    0.0    0.0     0.0    0.0
- CAF                  GHC.IO.Encoding           <entire-module>                                   217           0    0.0    0.0     0.0    0.0
- CAF                  GHC.IO.Encoding.Iconv     <entire-module>                                   215           0    0.0    0.0     0.0    0.0
- CAF                  GHC.IO.Exception          <entire-module>                                   209           0    0.0    0.0     0.0    0.0
- CAF                  GHC.IO.FD                 <entire-module>                                   208           0    0.0    0.0     0.0    0.0
- CAF                  GHC.IO.Handle.FD          <entire-module>                                   206           0    0.0    0.3     0.0    0.3
- CAF                  GHC.IO.Handle.Internals   <entire-module>                                   205           0    0.0    0.0     0.0    0.0
- CAF                  GHC.Read                  <entire-module>                                   190           0    0.0    0.0     0.0    0.0
- CAF                  GHC.Event.Thread          <entire-module>                                   150           0    0.0    0.0     0.0    0.0
- main                 Main                      2022/Day01/CalorieCounting.hs:(5,1)-(7,46)        261           0   57.1   85.4    71.4   98.6
-  splitOn             Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         262           1    0.0    0.0    14.3   13.2
-   onSublist          Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70         267           1    0.0    0.0     0.0    0.0
-   split              Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68         263           1    0.0    0.2    14.3   13.2
-    fromElem          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(124,1)-(125,24) 286         245    0.0    0.0     0.0    0.0
-    splitInternal     Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71) 273         245    0.0    0.4    14.3   12.7
-     breakDelim       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34) 276       10185    0.0   12.0    14.3   12.3
-      matchDelim      Data.List.Split.Internals src/Data/List/Split/Internals.hs:(72,1)-(76,23)   277       12423   14.3    0.3    14.3    0.3
-    delimiter         Data.List.Split.Internals src/Data/List/Split/Internals.hs:22:5-13          274           1    0.0    0.0     0.0    0.0
-    postProcess       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35) 264           1    0.0    0.0     0.0    0.3
-     condensePolicy   Data.List.Split.Internals src/Data/List/Split/Internals.hs:29:5-18          272           1    0.0    0.0     0.0    0.0
-     delimPolicy      Data.List.Split.Internals src/Data/List/Split/Internals.hs:24:5-15          266           1    0.0    0.0     0.0    0.0
-     doCondense       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(187,1)-(194,20) 271           1    0.0    0.0     0.0    0.0
-     doDrop           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(181,1)-(182,14) 280           1    0.0    0.1     0.0    0.1
-     doMerge          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(216,1)-(218,14) 265           1    0.0    0.0     0.0    0.0
-     dropFinal        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(248,1)-(254,17) 283           1    0.0    0.0     0.0    0.0
-     dropInitial      Data.List.Split.Internals src/Data/List/Split/Internals.hs:(243,1)-(244,19) 281           1    0.0    0.0     0.0    0.0
-     finalBlankPolicy Data.List.Split.Internals src/Data/List/Split/Internals.hs:34:5-20          284           1    0.0    0.0     0.0    0.0
-     initBlankPolicy  Data.List.Split.Internals src/Data/List/Split/Internals.hs:32:5-19          282           1    0.0    0.0     0.0    0.0
-     insertBlanks     Data.List.Split.Internals src/Data/List/Split/Internals.hs:(200,1)-(202,38) 278           1    0.0    0.0     0.0    0.2
-      insertBlanks'   Data.List.Split.Internals src/Data/List/Split/Internals.hs:(206,1)-(212,49) 279         490    0.0    0.2     0.0    0.2
+MAIN                  MAIN                      <built-in>                                        136           0   20.0    1.0   100.0  100.0
+ CAF                  Main                      <entire-module>                                   270           0    0.0    0.0     0.0    0.0
+  main                Main                      2022/Day01/CalorieCounting.hs:(5,1)-(7,46)        272           1    0.0    0.0     0.0    0.0
+   splitOn            Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         280           0    0.0    0.0     0.0    0.0
+    dropDelims        Data.List.Split.Internals src/Data/List/Split/Internals.hs:320:1-37         282           1    0.0    0.0     0.0    0.0
+    onSublist         Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70         287           0    0.0    0.0     0.0    0.0
+ CAF                  Data.List.Split.Internals <entire-module>                                   269           0    0.0    0.0     0.0    0.0
+  defaultSplitter     Data.List.Split.Internals src/Data/List/Split/Internals.hs:(55,1)-(62,5)    281           1    0.0    0.0     0.0    0.0
+ CAF                  GHC.Conc.Signal           <entire-module>                                   248           0    0.0    0.0     0.0    0.0
+ CAF                  GHC.IO.Encoding           <entire-module>                                   229           0    0.0    0.0     0.0    0.0
+ CAF                  GHC.IO.Encoding.Iconv     <entire-module>                                   227           0    0.0    0.0     0.0    0.0
+ CAF                  GHC.IO.Exception          <entire-module>                                   221           0    0.0    0.0     0.0    0.0
+ CAF                  GHC.IO.FD                 <entire-module>                                   220           0    0.0    0.0     0.0    0.0
+ CAF                  GHC.IO.Handle.FD          <entire-module>                                   218           0    0.0    0.3     0.0    0.3
+ CAF                  GHC.IO.Handle.Internals   <entire-module>                                   217           0    0.0    0.0     0.0    0.0
+ CAF                  GHC.Event.Thread          <entire-module>                                   157           0    0.0    0.0     0.0    0.0
+ main                 Main                      2022/Day01/CalorieCounting.hs:(5,1)-(7,46)        273           0   80.0   85.2    80.0   98.6
+  splitOn             Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         274           1    0.0    0.0     0.0   13.4
+   onSublist          Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70         279           1    0.0    0.0     0.0    0.0
+   split              Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68         275           1    0.0    0.2     0.0   13.4
+    fromElem          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(124,1)-(125,24) 298         245    0.0    0.0     0.0    0.0
+    splitInternal     Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71) 285         245    0.0    0.4     0.0   12.9
+     breakDelim       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34) 288       10185    0.0   12.2     0.0   12.5
+      matchDelim      Data.List.Split.Internals src/Data/List/Split/Internals.hs:(72,1)-(76,23)   289       12423    0.0    0.3     0.0    0.3
+    delimiter         Data.List.Split.Internals src/Data/List/Split/Internals.hs:22:5-13          286           1    0.0    0.0     0.0    0.0
+    postProcess       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35) 276           1    0.0    0.0     0.0    0.3
+     condensePolicy   Data.List.Split.Internals src/Data/List/Split/Internals.hs:29:5-18          284           1    0.0    0.0     0.0    0.0
+     delimPolicy      Data.List.Split.Internals src/Data/List/Split/Internals.hs:24:5-15          278           1    0.0    0.0     0.0    0.0
+     doCondense       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(187,1)-(194,20) 283           1    0.0    0.0     0.0    0.0
+     doDrop           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(181,1)-(182,14) 292           1    0.0    0.1     0.0    0.1
+     doMerge          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(216,1)-(218,14) 277           1    0.0    0.0     0.0    0.0
+     dropFinal        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(248,1)-(254,17) 295           1    0.0    0.0     0.0    0.0
+     dropInitial      Data.List.Split.Internals src/Data/List/Split/Internals.hs:(243,1)-(244,19) 293           1    0.0    0.0     0.0    0.0
+     finalBlankPolicy Data.List.Split.Internals src/Data/List/Split/Internals.hs:34:5-20          296           1    0.0    0.0     0.0    0.0
+     initBlankPolicy  Data.List.Split.Internals src/Data/List/Split/Internals.hs:32:5-19          294           1    0.0    0.0     0.0    0.0
+     insertBlanks     Data.List.Split.Internals src/Data/List/Split/Internals.hs:(200,1)-(202,38) 290           1    0.0    0.0     0.0    0.2
+      insertBlanks'   Data.List.Split.Internals src/Data/List/Split/Internals.hs:(206,1)-(212,49) 291         490    0.0    0.2     0.0    0.2

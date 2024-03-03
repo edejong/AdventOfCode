@@ -29,27 +29,27 @@ common defaults
   -- https://downloads.haskell.org/ghc/latest/docs/users_guide/debugging.html#suppressing-unwanted-information
   ghc-options:
         -Wall
+        -Wcompat
         -threaded
         -j4
-        -- -ddump-simpl
-        -- -ddump-to-file
-        -- -dsuppress-idinfo
-        -- -dsuppress-module-prefixes
-        -- -dppr-case-as-let
-        -- -dppr-cols=1000
+        +RTS -A32m -RTS
   default-language: GHC2021
-  default-extensions:
-          LambdaCase
-        , PartialTypeSignatures
-        , ScopedTypeVariables
-        , TupleSections
-        , TypeApplications
+
+common dump-core
+    ghc-options:
+        -ddump-simpl
+        -ddump-to-file
+        -dsuppress-idinfo
+        -dsuppress-module-prefixes
+        -dppr-case-as-let
+        -dppr-cols=1000
 
 common exec-defaults
   build-depends:    algos
   ghc-options:
         -rtsopts
         -with-rtsopts=-N
+  default-extensions: LambdaCase
 
 test-suite algos-test
     import:           defaults
@@ -59,7 +59,7 @@ test-suite algos-test
     main-is:          AlgorithmsTest.hs
     build-depends:
         algos,
-        falsify,
+        -- falsify,
         tasty,
         tasty-hunit
     
@@ -252,6 +252,12 @@ executable aoc2021-24
     main-is:          ArithmeticLogicUnit.hs
     hs-source-dirs:   2021/Day24
     build-depends:    lens, linear
+
+executable aoc2021-25
+    import:           defaults, exec-defaults
+    main-is:          SeaCucumber.hs
+    hs-source-dirs:   2021/Day25
+    build-depends:    linear
 
 executable aoc2022-01
     import:           defaults, exec-defaults
@@ -463,7 +469,7 @@ executable aoc2023-12
     import:           defaults, exec-defaults
     main-is:          HotSprings.hs
     hs-source-dirs:   2023/Day12
-    build-depends:    memoize, split
+    build-depends:    MemoTrie, split
 
 executable aoc2023-13
     import:           defaults, exec-defaults
@@ -528,7 +534,7 @@ executable aoc2023-23
     import:           defaults, exec-defaults
     main-is:          ALongWalk.hs
     hs-source-dirs:   2023/Day23
-    build-depends:    containers, fgl, lens, memoize
+    build-depends:    containers, fgl, lens, MemoTrie
 
 executable aoc2023-24
     import:           defaults, exec-defaults

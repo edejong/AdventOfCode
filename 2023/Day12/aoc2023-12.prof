@@ -1,0 +1,77 @@
+	Wed Mar  6 22:41 2024 Time and Allocation Profiling Report  (Final)
+
+	   aoc2023-12 +RTS -N -p -hy -l-agu --machine-readable -t2023/Day12/aoc2023-12.stats -A32M -B -RTS
+
+	total time  =        2.39 secs   (8856 ticks @ 1000 us, 8 processors)
+	total alloc = 23,509,280,360 bytes  (excludes profiling overheads)
+
+COST CENTRE                  MODULE        SRC                                      %time %alloc
+
+possibilities.possibilities' Main          2023/Day12/HotSprings.hs:(20,5)-(32,49)   89.7   76.5
+memo                         Data.MemoTrie src/Data/MemoTrie.hs:156:1-20             10.1   23.2
+
+
+                                                                                                                                         individual      inherited
+COST CENTRE                               MODULE                    SRC                                               no.     entries  %time %alloc   %time %alloc
+
+MAIN                                      MAIN                      <built-in>                                        138           0    0.0    0.0   100.0  100.0
+ CAF                                      Main                      <entire-module>                                   274           0    0.0    0.0    99.5   99.6
+  main                                    Main                      2023/Day12/HotSprings.hs:(8,1)-(14,82)            276           1    0.0    0.0     0.0    0.0
+   main.parseLine                         Main                      2023/Day12/HotSprings.hs:13:5-81                  296           0    0.0    0.0     0.0    0.0
+    splitOn                               Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         297           0    0.0    0.0     0.0    0.0
+     dropDelims                           Data.List.Split.Internals src/Data/List/Split/Internals.hs:320:1-37         299           1    0.0    0.0     0.0    0.0
+     onSublist                            Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70         305           0    0.0    0.0     0.0    0.0
+  possibilities                           Main                      2023/Day12/HotSprings.hs:(17,1)-(32,49)           278           1    0.0    0.0    99.5   99.6
+   memo2                                  Data.MemoTrie             src/Data/MemoTrie.hs:170:1-16                     279           1    0.0    0.0    99.5   99.6
+    memo                                  Data.MemoTrie             src/Data/MemoTrie.hs:156:1-20                     289           1    0.0    0.0     0.0    0.0
+    mup                                   Data.MemoTrie             src/Data/MemoTrie.hs:168:1-26                     280           1    0.0    0.0    99.5   99.6
+     memo                                 Data.MemoTrie             src/Data/MemoTrie.hs:156:1-20                     281           1    9.7   23.0    99.5   99.6
+      possibilities.possibilities'        Main                      2023/Day12/HotSprings.hs:(20,5)-(32,49)           317      667287   89.7   76.5    89.8   76.6
+       possibilities.possibilities'.(...) Main                      2023/Day12/HotSprings.hs:31:9-31                  318      220111    0.1    0.2     0.1    0.2
+       possibilities.possibilities'.as    Main                      2023/Day12/HotSprings.hs:31:9-31                  319      220111    0.0    0.0     0.0    0.0
+       possibilities.possibilities'.bs    Main                      2023/Day12/HotSprings.hs:31:9-31                  320      191413    0.0    0.0     0.0    0.0
+       possibilities.possibilities'.bs'   Main                      2023/Day12/HotSprings.hs:32:9-49                  321      161498    0.0    0.0     0.0    0.0
+     possibilities.possibilities'         Main                      2023/Day12/HotSprings.hs:(20,5)-(32,49)           322           0    0.0    0.0     0.0    0.0
+      possibilities.possibilities'.bs'    Main                      2023/Day12/HotSprings.hs:32:9-49                  323           1    0.0    0.0     0.0    0.0
+ CAF                                      Data.List.Split.Internals <entire-module>                                   273           0    0.0    0.0     0.0    0.0
+  defaultSplitter                         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(55,1)-(62,5)    298           1    0.0    0.0     0.0    0.0
+ CAF                                      GHC.Conc.Signal           <entire-module>                                   250           0    0.0    0.0     0.0    0.0
+ CAF                                      GHC.IO.Encoding           <entire-module>                                   231           0    0.0    0.0     0.0    0.0
+ CAF                                      GHC.IO.Encoding.Iconv     <entire-module>                                   229           0    0.0    0.0     0.0    0.0
+ CAF                                      GHC.IO.Exception          <entire-module>                                   223           0    0.0    0.0     0.0    0.0
+ CAF                                      GHC.IO.FD                 <entire-module>                                   222           0    0.0    0.0     0.0    0.0
+ CAF                                      GHC.IO.Handle.FD          <entire-module>                                   220           0    0.0    0.0     0.0    0.0
+ CAF                                      GHC.IO.Handle.Internals   <entire-module>                                   219           0    0.0    0.0     0.0    0.0
+ CAF                                      GHC.Weak.Finalize         <entire-module>                                   191           0    0.0    0.0     0.0    0.0
+ CAF                                      GHC.Event.Poll            <entire-module>                                   160           0    0.0    0.0     0.0    0.0
+ CAF                                      GHC.Event.Thread          <entire-module>                                   159           0    0.0    0.0     0.0    0.0
+ main                                     Main                      2023/Day12/HotSprings.hs:(8,1)-(14,82)            277           0    0.0    0.0     0.5    0.4
+  main.expand                             Main                      2023/Day12/HotSprings.hs:14:5-82                  324        1000    0.0    0.0     0.0    0.0
+  main.parseLine                          Main                      2023/Day12/HotSprings.hs:13:5-81                  286        1000    0.0    0.0     0.1    0.1
+   main.parseLine.(...)                   Main                      2023/Day12/HotSprings.hs:13:24-39                 288        1000    0.0    0.0     0.0    0.0
+   main.parseLine.a                       Main                      2023/Day12/HotSprings.hs:13:24-39                 287        1000    0.0    0.0     0.0    0.0
+   main.parseLine.b                       Main                      2023/Day12/HotSprings.hs:13:24-39                 303        1000    0.0    0.0     0.0    0.0
+   splitOn                                Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         290        1000    0.0    0.0     0.0    0.0
+    onSublist                             Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70         295        1000    0.0    0.0     0.0    0.0
+    split                                 Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68         291        1000    0.0    0.0     0.0    0.0
+     fromElem                             Data.List.Split.Internals src/Data/List/Split/Internals.hs:(124,1)-(125,24) 315        3318    0.0    0.0     0.0    0.0
+     splitInternal                        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71) 302        3318    0.0    0.0     0.0    0.0
+      breakDelim                          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34) 306        6704    0.0    0.0     0.0    0.0
+       matchDelim                         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(72,1)-(76,23)   307        8022    0.0    0.0     0.0    0.0
+     delimiter                            Data.List.Split.Internals src/Data/List/Split/Internals.hs:22:5-13          304        1000    0.0    0.0     0.0    0.0
+     postProcess                          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35) 292        1000    0.0    0.0     0.0    0.0
+      condensePolicy                      Data.List.Split.Internals src/Data/List/Split/Internals.hs:29:5-18          301        1000    0.0    0.0     0.0    0.0
+      delimPolicy                         Data.List.Split.Internals src/Data/List/Split/Internals.hs:24:5-15          294        1000    0.0    0.0     0.0    0.0
+      doCondense                          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(187,1)-(194,20) 300        1000    0.0    0.0     0.0    0.0
+      doDrop                              Data.List.Split.Internals src/Data/List/Split/Internals.hs:(181,1)-(182,14) 310        1000    0.0    0.0     0.0    0.0
+      doMerge                             Data.List.Split.Internals src/Data/List/Split/Internals.hs:(216,1)-(218,14) 293        1000    0.0    0.0     0.0    0.0
+      dropFinal                           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(248,1)-(254,17) 313        1000    0.0    0.0     0.0    0.0
+      dropInitial                         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(243,1)-(244,19) 311        1000    0.0    0.0     0.0    0.0
+      finalBlankPolicy                    Data.List.Split.Internals src/Data/List/Split/Internals.hs:34:5-20          314        1000    0.0    0.0     0.0    0.0
+      initBlankPolicy                     Data.List.Split.Internals src/Data/List/Split/Internals.hs:32:5-19          312        1000    0.0    0.0     0.0    0.0
+      insertBlanks                        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(200,1)-(202,38) 308        1000    0.0    0.0     0.0    0.0
+       insertBlanks'                      Data.List.Split.Internals src/Data/List/Split/Internals.hs:(206,1)-(212,49) 309        6636    0.0    0.0     0.0    0.0
+  possibilities                           Main                      2023/Day12/HotSprings.hs:(17,1)-(32,49)           282           0    0.0    0.0     0.4    0.3
+   memo2                                  Data.MemoTrie             src/Data/MemoTrie.hs:170:1-16                     283           0    0.0    0.0     0.4    0.3
+    mup                                   Data.MemoTrie             src/Data/MemoTrie.hs:168:1-26                     284           0    0.0    0.0     0.4    0.3
+     memo                                 Data.MemoTrie             src/Data/MemoTrie.hs:156:1-20                     285           0    0.4    0.3     0.4    0.3

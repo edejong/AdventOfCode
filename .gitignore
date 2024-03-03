@@ -1,5 +1,8 @@
 dist-newstyle
+*.eventlog
 *.eventlog.html
+*.prof
 *.prof.svg
 .vscode/phoityne.log
 .vscode/dist-cabal-repl/*
+aoc2021-15.prof

@@ -1,70 +1,73 @@
-	Thu Feb 29 20:35 2024 Time and Allocation Profiling Report  (Final)
+	Tue Mar  5 15:25 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2022-05 +RTS -N -i0.05 -p -hy -l-agu -s2022/Day05/aoc2022-05.stats -RTS
+	   aoc2022-05 +RTS -N -i0.05 -p -hy -l-agu --machine-readable -t2022/Day05/aoc2022-05.stats -A32M -B -RTS
 
-	total time  =        0.00 secs   (3 ticks @ 1000 us, 8 processors)
-	total alloc =  10,685,256 bytes  (excludes profiling overheads)
+	total time  =        0.00 secs   (4 ticks @ 1000 us, 8 processors)
+	total alloc =  10,529,720 bytes  (excludes profiling overheads)
 
 COST CENTRE        MODULE                    SRC                                                %time %alloc
 
-main.parseMoveLine Main                      2022/Day05/SupplyStacks.hs:15:5-83                  66.7   54.9
-MAIN               MAIN                      <built-in>                                          33.3    1.3
-breakDelim         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34)    0.0   14.1
-main.ys'           Main                      2022/Day05/SupplyStacks.hs:10:9-44                   0.0   12.0
-main.move.stacks'  Main                      2022/Day05/SupplyStacks.hs:(20,13)-(21,89)           0.0   12.0
-main               Main                      2022/Day05/SupplyStacks.hs:(7,1)-(22,28)             0.0    4.1
+MAIN               MAIN                      <built-in>                                          25.0    1.2
+onSublist          Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70           25.0    0.0
+main.parseMoveLine Main                      2022/Day05/SupplyStacks.hs:16:5-83                  25.0   54.3
+main.move          Main                      2022/Day05/SupplyStacks.hs:(17,5)-(23,28)           25.0    0.6
+breakDelim         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34)    0.0   14.3
+main.ys'           Main                      2022/Day05/SupplyStacks.hs:11:9-44                   0.0   12.2
+main.move.stacks'  Main                      2022/Day05/SupplyStacks.hs:(21,13)-(22,89)           0.0   12.2
+main               Main                      2022/Day05/SupplyStacks.hs:(8,1)-(23,28)             0.0    4.1
 
 
                                                                                                                        individual      inherited
 COST CENTRE             MODULE                    SRC                                               no.     entries  %time %alloc   %time %alloc
 
-MAIN                    MAIN                      <built-in>                                        130           0   33.3    1.3   100.0  100.0
- CAF                    Main                      <entire-module>                                   258           0    0.0    0.0     0.0    0.0
-  main                  Main                      2022/Day05/SupplyStacks.hs:(7,1)-(22,28)          260           1    0.0    0.0     0.0    0.0
-   main.parseMoveLine   Main                      2022/Day05/SupplyStacks.hs:15:5-83                290           1    0.0    0.0     0.0    0.0
-   main.getChars        Main                      2022/Day05/SupplyStacks.hs:14:5-63                296           0    0.0    0.0     0.0    0.0
-   splitOn              Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         268           0    0.0    0.0     0.0    0.0
-    dropDelims          Data.List.Split.Internals src/Data/List/Split/Internals.hs:320:1-37         270           1    0.0    0.0     0.0    0.0
-    onSublist           Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70         275           0    0.0    0.0     0.0    0.0
- CAF                    Data.List.Split.Internals <entire-module>                                   257           0    0.0    0.0     0.0    0.0
-  defaultSplitter       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(55,1)-(62,5)    269           1    0.0    0.0     0.0    0.0
- CAF                    GHC.Conc.Signal           <entire-module>                                   235           0    0.0    0.0     0.0    0.0
- CAF                    GHC.IO.Encoding           <entire-module>                                   217           0    0.0    0.0     0.0    0.0
- CAF                    GHC.IO.Encoding.Iconv     <entire-module>                                   215           0    0.0    0.0     0.0    0.0
- CAF                    GHC.IO.Exception          <entire-module>                                   209           0    0.0    0.0     0.0    0.0
- CAF                    GHC.IO.FD                 <entire-module>                                   208           0    0.0    0.0     0.0    0.0
- CAF                    GHC.IO.Handle.FD          <entire-module>                                   206           0    0.0    0.3     0.0    0.3
- CAF                    GHC.IO.Handle.Internals   <entire-module>                                   205           0    0.0    0.0     0.0    0.0
- CAF                    GHC.Read                  <entire-module>                                   190           0    0.0    0.0     0.0    0.0
- CAF                    GHC.Event.Thread          <entire-module>                                   150           0    0.0    0.0     0.0    0.0
- main                   Main                      2022/Day05/SupplyStacks.hs:(7,1)-(22,28)          261           0    0.0    4.1    66.7   98.3
-  main.getResult        Main                      2022/Day05/SupplyStacks.hs:13:5-41                286           2    0.0    0.0     0.0   12.7
-   main.move            Main                      2022/Day05/SupplyStacks.hs:(16,5)-(22,28)         287        1006    0.0    0.6     0.0   12.6
-    main.move.stacks'   Main                      2022/Day05/SupplyStacks.hs:(20,13)-(21,89)        293        1004    0.0   12.0     0.0   12.0
-    main.move.fromStack Main                      2022/Day05/SupplyStacks.hs:18:13-49               297        1003    0.0    0.0     0.0    0.0
-    main.move.toStack   Main                      2022/Day05/SupplyStacks.hs:19:13-45               299         686    0.0    0.0     0.0    0.0
-  main.xs'              Main                      2022/Day05/SupplyStacks.hs:9:9-84                 294           1    0.0    0.5     0.0    0.6
-   main.getChars        Main                      2022/Day05/SupplyStacks.hs:14:5-63                295           8    0.0    0.1     0.0    0.1
-  main.ys'              Main                      2022/Day05/SupplyStacks.hs:10:9-44                288           1    0.0   12.0     0.0   12.0
-  splitOn               Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         262           1    0.0    0.0     0.0   14.1
-   onSublist            Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70         267           1    0.0    0.0     0.0    0.0
-   split                Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68         263           1    0.0    0.0     0.0   14.1
-    fromElem            Data.List.Split.Internals src/Data/List/Split/Internals.hs:(124,1)-(125,24) 289           2    0.0    0.0     0.0    0.0
-    splitInternal       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71) 273           2    0.0    0.0     0.0   14.1
-     breakDelim         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34) 276        9939    0.0   14.1     0.0   14.1
-      matchDelim        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(72,1)-(76,23)   277       10449    0.0    0.0     0.0    0.0
-    delimiter           Data.List.Split.Internals src/Data/List/Split/Internals.hs:22:5-13          274           1    0.0    0.0     0.0    0.0
-    postProcess         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35) 264           1    0.0    0.0     0.0    0.0
-     condensePolicy     Data.List.Split.Internals src/Data/List/Split/Internals.hs:29:5-18          272           1    0.0    0.0     0.0    0.0
-     delimPolicy        Data.List.Split.Internals src/Data/List/Split/Internals.hs:24:5-15          266           1    0.0    0.0     0.0    0.0
-     doCondense         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(187,1)-(194,20) 271           1    0.0    0.0     0.0    0.0
-     doDrop             Data.List.Split.Internals src/Data/List/Split/Internals.hs:(181,1)-(182,14) 280           1    0.0    0.0     0.0    0.0
-     doMerge            Data.List.Split.Internals src/Data/List/Split/Internals.hs:(216,1)-(218,14) 265           1    0.0    0.0     0.0    0.0
-     dropFinal          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(248,1)-(254,17) 283           1    0.0    0.0     0.0    0.0
-     dropInitial        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(243,1)-(244,19) 281           1    0.0    0.0     0.0    0.0
-     finalBlankPolicy   Data.List.Split.Internals src/Data/List/Split/Internals.hs:34:5-20          284           1    0.0    0.0     0.0    0.0
-     initBlankPolicy    Data.List.Split.Internals src/Data/List/Split/Internals.hs:32:5-19          282           1    0.0    0.0     0.0    0.0
-     insertBlanks       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(200,1)-(202,38) 278           1    0.0    0.0     0.0    0.0
-      insertBlanks'     Data.List.Split.Internals src/Data/List/Split/Internals.hs:(206,1)-(212,49) 279           4    0.0    0.0     0.0    0.0
-  main.parseMoveLine    Main                      2022/Day05/SupplyStacks.hs:15:5-83                291           0   66.7   54.9    66.7   54.9
-   main.parseMoveLine.\ Main                      2022/Day05/SupplyStacks.hs:15:61-82               292        9113    0.0    0.0     0.0    0.0
+MAIN                    MAIN                      <built-in>                                        136           0   25.0    1.2   100.0  100.0
+ CAF                    Main                      <entire-module>                                   270           0    0.0    0.0     0.0    0.0
+  main                  Main                      2022/Day05/SupplyStacks.hs:(8,1)-(23,28)          272           1    0.0    0.0     0.0    0.0
+   main.parseMoveLine   Main                      2022/Day05/SupplyStacks.hs:16:5-83                302           1    0.0    0.0     0.0    0.0
+   main.getChars        Main                      2022/Day05/SupplyStacks.hs:15:5-70                308           0    0.0    0.0     0.0    0.0
+   splitOn              Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         280           0    0.0    0.0     0.0    0.0
+    dropDelims          Data.List.Split.Internals src/Data/List/Split/Internals.hs:320:1-37         282           1    0.0    0.0     0.0    0.0
+    onSublist           Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70         287           0    0.0    0.0     0.0    0.0
+ CAF                    Data.List.Split.Internals <entire-module>                                   269           0    0.0    0.0     0.0    0.0
+  defaultSplitter       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(55,1)-(62,5)    281           1    0.0    0.0     0.0    0.0
+ CAF                    GHC.Conc.Signal           <entire-module>                                   248           0    0.0    0.0     0.0    0.0
+ CAF                    GHC.IO.Encoding           <entire-module>                                   229           0    0.0    0.0     0.0    0.0
+ CAF                    GHC.IO.Encoding.Iconv     <entire-module>                                   227           0    0.0    0.0     0.0    0.0
+ CAF                    GHC.IO.Exception          <entire-module>                                   221           0    0.0    0.0     0.0    0.0
+ CAF                    GHC.IO.FD                 <entire-module>                                   220           0    0.0    0.0     0.0    0.0
+ CAF                    GHC.IO.Handle.FD          <entire-module>                                   218           0    0.0    0.3     0.0    0.3
+ CAF                    GHC.IO.Handle.Internals   <entire-module>                                   217           0    0.0    0.0     0.0    0.0
+ CAF                    GHC.Event.Poll            <entire-module>                                   158           0    0.0    0.0     0.0    0.0
+ CAF                    GHC.Event.Thread          <entire-module>                                   157           0    0.0    0.0     0.0    0.0
+ main                   Main                      2022/Day05/SupplyStacks.hs:(8,1)-(23,28)          273           0    0.0    4.1    75.0   98.4
+  main.getResult        Main                      2022/Day05/SupplyStacks.hs:14:5-41                298           2    0.0    0.0    25.0   12.8
+   main.move            Main                      2022/Day05/SupplyStacks.hs:(17,5)-(23,28)         299        1006   25.0    0.6    25.0   12.8
+    main.move.stacks'   Main                      2022/Day05/SupplyStacks.hs:(21,13)-(22,89)        305        1004    0.0   12.2     0.0   12.2
+    main.move.fromStack Main                      2022/Day05/SupplyStacks.hs:19:13-49               309        1003    0.0    0.0     0.0    0.0
+    main.move.toStack   Main                      2022/Day05/SupplyStacks.hs:20:13-45               311         686    0.0    0.0     0.0    0.0
+  main.xs'              Main                      2022/Day05/SupplyStacks.hs:10:9-84                306           1    0.0    0.5     0.0    0.6
+   main.getChars        Main                      2022/Day05/SupplyStacks.hs:15:5-70                307           8    0.0    0.0     0.0    0.0
+  main.ys'              Main                      2022/Day05/SupplyStacks.hs:11:9-44                300           1    0.0   12.2     0.0   12.2
+  splitOn               Data.List.Split.Internals src/Data/List/Split/Internals.hs:488:1-40         274           1    0.0    0.0    25.0   14.4
+   onSublist            Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70         279           1    0.0    0.0     0.0    0.0
+   split                Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68         275           1    0.0    0.0    25.0   14.4
+    fromElem            Data.List.Split.Internals src/Data/List/Split/Internals.hs:(124,1)-(125,24) 301           2    0.0    0.0     0.0    0.0
+    splitInternal       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71) 285           2    0.0    0.0    25.0   14.3
+     breakDelim         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34) 288        9939    0.0   14.3    25.0   14.3
+      matchDelim        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(72,1)-(76,23)   289       10449    0.0    0.0    25.0    0.0
+       onSublist        Data.List.Split.Internals src/Data/List/Split/Internals.hs:299:1-70         297           0   25.0    0.0    25.0    0.0
+    delimiter           Data.List.Split.Internals src/Data/List/Split/Internals.hs:22:5-13          286           1    0.0    0.0     0.0    0.0
+    postProcess         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35) 276           1    0.0    0.0     0.0    0.0
+     condensePolicy     Data.List.Split.Internals src/Data/List/Split/Internals.hs:29:5-18          284           1    0.0    0.0     0.0    0.0
+     delimPolicy        Data.List.Split.Internals src/Data/List/Split/Internals.hs:24:5-15          278           1    0.0    0.0     0.0    0.0
+     doCondense         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(187,1)-(194,20) 283           1    0.0    0.0     0.0    0.0
+     doDrop             Data.List.Split.Internals src/Data/List/Split/Internals.hs:(181,1)-(182,14) 292           1    0.0    0.0     0.0    0.0
+     doMerge            Data.List.Split.Internals src/Data/List/Split/Internals.hs:(216,1)-(218,14) 277           1    0.0    0.0     0.0    0.0
+     dropFinal          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(248,1)-(254,17) 295           1    0.0    0.0     0.0    0.0
+     dropInitial        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(243,1)-(244,19) 293           1    0.0    0.0     0.0    0.0
+     finalBlankPolicy   Data.List.Split.Internals src/Data/List/Split/Internals.hs:34:5-20          296           1    0.0    0.0     0.0    0.0
+     initBlankPolicy    Data.List.Split.Internals src/Data/List/Split/Internals.hs:32:5-19          294           1    0.0    0.0     0.0    0.0
+     insertBlanks       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(200,1)-(202,38) 290           1    0.0    0.0     0.0    0.0
+      insertBlanks'     Data.List.Split.Internals src/Data/List/Split/Internals.hs:(206,1)-(212,49) 291           4    0.0    0.0     0.0    0.0
+  main.parseMoveLine    Main                      2022/Day05/SupplyStacks.hs:16:5-83                303           0   25.0   54.3    25.0   54.3
+   main.parseMoveLine.\ Main                      2022/Day05/SupplyStacks.hs:16:61-82               304        9113    0.0    0.0     0.0    0.0

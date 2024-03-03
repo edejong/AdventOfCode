@@ -1,82 +1,84 @@
-	Thu Feb 29 21:15 2024 Time and Allocation Profiling Report  (Final)
+	Tue Mar  5 15:14 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2023-16 +RTS -N -i0.05 -p -hy -l-agu -s2023/Day16/aoc2023-16.stats -RTS
+	   aoc2023-16 +RTS -N -i0.05 -p -hy -l-agu --machine-readable -t2023/Day16/aoc2023-16.stats -A32M -B -RTS
 
-	total time  =       35.43 secs   (131278 ticks @ 1000 us, 8 processors)
-	total alloc = 5,563,292,776 bytes  (excludes profiling overheads)
+	total time  =       35.04 secs   (129816 ticks @ 1000 us, 8 processors)
+	total alloc = 5,563,284,768 bytes  (excludes profiling overheads)
 
 COST CENTRE    MODULE SRC                                              %time %alloc
 
-dfs            Main   2023/Day16/TheFloorWillBeLava.hs:(29,1)-(36,33)   98.2    3.6
-dfs.visited'   Main   2023/Day16/TheFloorWillBeLava.hs:36:5-33           1.0   38.8
-movePos        Main   2023/Day16/TheFloorWillBeLava.hs:(54,1)-(57,42)    0.2    3.8
+dfs            Main   2023/Day16/TheFloorWillBeLava.hs:(29,1)-(36,33)   98.5    3.6
+dfs.visited'   Main   2023/Day16/TheFloorWillBeLava.hs:36:5-33           0.8   38.8
 main.routesE.\ Main   2023/Day16/TheFloorWillBeLava.hs:19:40-91          0.1   14.2
+main.routesN.\ Main   2023/Day16/TheFloorWillBeLava.hs:22:40-95          0.1   11.7
 main.routesS.\ Main   2023/Day16/TheFloorWillBeLava.hs:21:40-91          0.1   11.0
 main.routesW.\ Main   2023/Day16/TheFloorWillBeLava.hs:20:40-95          0.1   11.0
-main.routesN.\ Main   2023/Day16/TheFloorWillBeLava.hs:22:40-95          0.1   11.7
+movePos        Main   2023/Day16/TheFloorWillBeLava.hs:(54,1)-(57,42)    0.1    3.8
 move           Main   2023/Day16/TheFloorWillBeLava.hs:(39,1)-(51,34)    0.1    5.6
 
 
                                                                                                              individual      inherited
 COST CENTRE       MODULE                  SRC                                             no.     entries  %time %alloc   %time %alloc
 
-MAIN              MAIN                    <built-in>                                      157           0    0.0    0.0   100.0  100.0
- CAF              Main                    <entire-module>                                 313           0    0.0    0.0     0.0    0.0
-  main            Main                    2023/Day16/TheFloorWillBeLava.hs:(12,1)-(23,54) 314           1    0.0    0.0     0.0    0.0
- CAF              GHC.Conc.Signal         <entire-module>                                 266           0    0.0    0.0     0.0    0.0
- CAF              GHC.IO.Encoding         <entire-module>                                 248           0    0.0    0.0     0.0    0.0
- CAF              GHC.IO.Encoding.Iconv   <entire-module>                                 246           0    0.0    0.0     0.0    0.0
- CAF              GHC.IO.Exception        <entire-module>                                 240           0    0.0    0.0     0.0    0.0
- CAF              GHC.IO.FD               <entire-module>                                 239           0    0.0    0.0     0.0    0.0
- CAF              GHC.IO.Handle.FD        <entire-module>                                 237           0    0.0    0.0     0.0    0.0
- CAF              GHC.IO.Handle.Internals <entire-module>                                 236           0    0.0    0.0     0.0    0.0
- CAF              GHC.Event.Thread        <entire-module>                                 177           0    0.0    0.0     0.0    0.0
- main             Main                    2023/Day16/TheFloorWillBeLava.hs:(12,1)-(23,54) 315           0    0.0    0.2   100.0  100.0
-  main.(...)      Main                    2023/Day16/TheFloorWillBeLava.hs:14:7-54        319           1    0.0    0.0     0.0    0.0
-  main.arr        Main                    2023/Day16/TheFloorWillBeLava.hs:15:7-59        317           1    0.0    0.0     0.0    0.0
-  main.nCols      Main                    2023/Day16/TheFloorWillBeLava.hs:14:7-54        320           1    0.0    0.0     0.0    0.0
-  main.nRows      Main                    2023/Day16/TheFloorWillBeLava.hs:14:7-54        318           1    0.0    0.0     0.0    0.0
-  main.route      Main                    2023/Day16/TheFloorWillBeLava.hs:16:7-41        316           1    0.0    0.0     0.4    0.2
-   dfs            Main                    2023/Day16/TheFloorWillBeLava.hs:(29,1)-(36,33) 321       12905    0.4    0.0     0.4    0.2
-    dfs.as        Main                    2023/Day16/TheFloorWillBeLava.hs:33:11-37       323       12556    0.0    0.0     0.0    0.0
-     move         Main                    2023/Day16/TheFloorWillBeLava.hs:(39,1)-(51,34) 324       12556    0.0    0.0     0.0    0.0
-      movePos     Main                    2023/Day16/TheFloorWillBeLava.hs:(54,1)-(57,42) 325       12904    0.0    0.0     0.0    0.0
-    dfs.visited'  Main                    2023/Day16/TheFloorWillBeLava.hs:36:5-33        322       12556    0.0    0.1     0.0    0.1
-     compare      Main                    2023/Day16/TheFloorWillBeLava.hs:26:40-42       327        4799    0.0    0.0     0.0    0.0
-    ==            Main                    2023/Day16/TheFloorWillBeLava.hs:26:36-37       326        5370    0.0    0.0     0.0    0.0
-  main.routesE    Main                    2023/Day16/TheFloorWillBeLava.hs:19:7-105       328           1    0.0    0.0    29.6   29.6
-   main.routesE.\ Main                    2023/Day16/TheFloorWillBeLava.hs:19:40-91       329         110    0.1   14.2    29.6   29.6
-    dfs           Main                    2023/Day16/TheFloorWillBeLava.hs:(29,1)-(36,33) 330     1086834   29.1    1.1    29.5   15.3
-     dfs.as       Main                    2023/Day16/TheFloorWillBeLava.hs:33:11-37       332     1057434    0.1    0.0     0.1    2.8
-      move        Main                    2023/Day16/TheFloorWillBeLava.hs:(39,1)-(51,34) 333     1057434    0.0    1.6     0.1    2.8
-       movePos    Main                    2023/Day16/TheFloorWillBeLava.hs:(54,1)-(57,42) 334     1086724    0.0    1.1     0.0    1.1
-     dfs.visited' Main                    2023/Day16/TheFloorWillBeLava.hs:36:5-33        331     1057434    0.3   11.5     0.3   11.5
-      compare     Main                    2023/Day16/TheFloorWillBeLava.hs:26:40-42       336      403192    0.0    0.0     0.0    0.0
-     ==           Main                    2023/Day16/TheFloorWillBeLava.hs:26:36-37       335      452142    0.0    0.0     0.0    0.0
-  main.routesN    Main                    2023/Day16/TheFloorWillBeLava.hs:22:7-109       355           1    0.0    0.0    24.3   24.3
-   main.routesN.\ Main                    2023/Day16/TheFloorWillBeLava.hs:22:40-95       356         110    0.1   11.7    24.3   24.3
-    dfs           Main                    2023/Day16/TheFloorWillBeLava.hs:(29,1)-(36,33) 357      893887   23.8    0.9    24.2   12.6
-     dfs.as       Main                    2023/Day16/TheFloorWillBeLava.hs:33:11-37       359      869680    0.0    0.0     0.1    2.3
-      move        Main                    2023/Day16/TheFloorWillBeLava.hs:(39,1)-(51,34) 360      869680    0.0    1.3     0.1    2.3
-       movePos    Main                    2023/Day16/TheFloorWillBeLava.hs:(54,1)-(57,42) 361      893777    0.1    0.9     0.1    0.9
-     dfs.visited' Main                    2023/Day16/TheFloorWillBeLava.hs:36:5-33        358      869680    0.2    9.4     0.3    9.4
-      compare     Main                    2023/Day16/TheFloorWillBeLava.hs:26:40-42       363      331688    0.0    0.0     0.0    0.0
-     ==           Main                    2023/Day16/TheFloorWillBeLava.hs:26:36-37       362      371426    0.0    0.0     0.0    0.0
-  main.routesS    Main                    2023/Day16/TheFloorWillBeLava.hs:21:7-105       346           1    0.0    0.0    22.9   22.9
-   main.routesS.\ Main                    2023/Day16/TheFloorWillBeLava.hs:21:40-91       347         110    0.1   11.0    22.9   22.9
-    dfs           Main                    2023/Day16/TheFloorWillBeLava.hs:(29,1)-(36,33) 348      843657   22.5    0.8    22.8   11.9
-     dfs.as       Main                    2023/Day16/TheFloorWillBeLava.hs:33:11-37       350      820813    0.0    0.0     0.1    2.1
-      move        Main                    2023/Day16/TheFloorWillBeLava.hs:(39,1)-(51,34) 351      820813    0.0    1.3     0.1    2.1
-       movePos    Main                    2023/Day16/TheFloorWillBeLava.hs:(54,1)-(57,42) 352      843547    0.0    0.9     0.0    0.9
-     dfs.visited' Main                    2023/Day16/TheFloorWillBeLava.hs:36:5-33        349      820813    0.2    8.9     0.2    8.9
-      compare     Main                    2023/Day16/TheFloorWillBeLava.hs:26:40-42       354      313818    0.0    0.0     0.0    0.0
-     ==           Main                    2023/Day16/TheFloorWillBeLava.hs:26:36-37       353      351310    0.0    0.0     0.0    0.0
-  main.routesW    Main                    2023/Day16/TheFloorWillBeLava.hs:20:7-109       337           1    0.0    0.0    22.8   22.8
-   main.routesW.\ Main                    2023/Day16/TheFloorWillBeLava.hs:20:40-95       338         110    0.1   11.0    22.8   22.8
-    dfs           Main                    2023/Day16/TheFloorWillBeLava.hs:(29,1)-(36,33) 339      841539   22.4    0.8    22.7   11.8
-     dfs.as       Main                    2023/Day16/TheFloorWillBeLava.hs:33:11-37       341      818780    0.0    0.0     0.1    2.1
-      move        Main                    2023/Day16/TheFloorWillBeLava.hs:(39,1)-(51,34) 342      818780    0.0    1.3     0.1    2.1
-       movePos    Main                    2023/Day16/TheFloorWillBeLava.hs:(54,1)-(57,42) 343      841429    0.0    0.9     0.0    0.9
-     dfs.visited' Main                    2023/Day16/TheFloorWillBeLava.hs:36:5-33        340      818780    0.2    8.9     0.2    8.9
-      compare     Main                    2023/Day16/TheFloorWillBeLava.hs:26:40-42       345      312187    0.0    0.0     0.0    0.0
-     ==           Main                    2023/Day16/TheFloorWillBeLava.hs:26:36-37       344      349422    0.0    0.0     0.0    0.0
+MAIN              MAIN                    <built-in>                                      165           0    0.0    0.0   100.0  100.0
+ CAF              Main                    <entire-module>                                 328           0    0.0    0.0     0.0    0.0
+  main            Main                    2023/Day16/TheFloorWillBeLava.hs:(12,1)-(23,54) 330           1    0.0    0.0     0.0    0.0
+ CAF              GHC.Conc.Signal         <entire-module>                                 281           0    0.0    0.0     0.0    0.0
+ CAF              GHC.IO.Encoding         <entire-module>                                 262           0    0.0    0.0     0.0    0.0
+ CAF              GHC.IO.Encoding.Iconv   <entire-module>                                 260           0    0.0    0.0     0.0    0.0
+ CAF              GHC.IO.Exception        <entire-module>                                 254           0    0.0    0.0     0.0    0.0
+ CAF              GHC.IO.FD               <entire-module>                                 253           0    0.0    0.0     0.0    0.0
+ CAF              GHC.IO.Handle.FD        <entire-module>                                 251           0    0.0    0.0     0.0    0.0
+ CAF              GHC.IO.Handle.Internals <entire-module>                                 250           0    0.0    0.0     0.0    0.0
+ CAF              GHC.Weak.Finalize       <entire-module>                                 221           0    0.0    0.0     0.0    0.0
+ CAF              GHC.Event.Poll          <entire-module>                                 187           0    0.0    0.0     0.0    0.0
+ CAF              GHC.Event.Thread        <entire-module>                                 186           0    0.0    0.0     0.0    0.0
+ main             Main                    2023/Day16/TheFloorWillBeLava.hs:(12,1)-(23,54) 331           0    0.0    0.2   100.0  100.0
+  main.(...)      Main                    2023/Day16/TheFloorWillBeLava.hs:14:7-54        335           1    0.0    0.0     0.0    0.0
+  main.arr        Main                    2023/Day16/TheFloorWillBeLava.hs:15:7-59        333           1    0.0    0.0     0.0    0.0
+  main.nCols      Main                    2023/Day16/TheFloorWillBeLava.hs:14:7-54        336           1    0.0    0.0     0.0    0.0
+  main.nRows      Main                    2023/Day16/TheFloorWillBeLava.hs:14:7-54        334           1    0.0    0.0     0.0    0.0
+  main.route      Main                    2023/Day16/TheFloorWillBeLava.hs:16:7-41        332           1    0.0    0.0     0.4    0.2
+   dfs            Main                    2023/Day16/TheFloorWillBeLava.hs:(29,1)-(36,33) 337       12905    0.3    0.0     0.4    0.2
+    dfs.as        Main                    2023/Day16/TheFloorWillBeLava.hs:33:11-37       339       12556    0.0    0.0     0.0    0.0
+     move         Main                    2023/Day16/TheFloorWillBeLava.hs:(39,1)-(51,34) 340       12556    0.0    0.0     0.0    0.0
+      movePos     Main                    2023/Day16/TheFloorWillBeLava.hs:(54,1)-(57,42) 341       12904    0.0    0.0     0.0    0.0
+    dfs.visited'  Main                    2023/Day16/TheFloorWillBeLava.hs:36:5-33        338       12556    0.0    0.1     0.0    0.1
+     compare      Main                    2023/Day16/TheFloorWillBeLava.hs:26:40-42       343        4799    0.0    0.0     0.0    0.0
+    ==            Main                    2023/Day16/TheFloorWillBeLava.hs:26:36-37       342        5370    0.0    0.0     0.0    0.0
+  main.routesE    Main                    2023/Day16/TheFloorWillBeLava.hs:19:7-105       344           1    0.0    0.0    29.5   29.6
+   main.routesE.\ Main                    2023/Day16/TheFloorWillBeLava.hs:19:40-91       345         110    0.1   14.2    29.5   29.6
+    dfs           Main                    2023/Day16/TheFloorWillBeLava.hs:(29,1)-(36,33) 346     1086834   29.1    1.1    29.4   15.3
+     dfs.as       Main                    2023/Day16/TheFloorWillBeLava.hs:33:11-37       348     1057434    0.0    0.0     0.1    2.8
+      move        Main                    2023/Day16/TheFloorWillBeLava.hs:(39,1)-(51,34) 349     1057434    0.0    1.6     0.0    2.8
+       movePos    Main                    2023/Day16/TheFloorWillBeLava.hs:(54,1)-(57,42) 350     1086724    0.0    1.1     0.0    1.1
+     dfs.visited' Main                    2023/Day16/TheFloorWillBeLava.hs:36:5-33        347     1057434    0.2   11.5     0.2   11.5
+      compare     Main                    2023/Day16/TheFloorWillBeLava.hs:26:40-42       352      403192    0.0    0.0     0.0    0.0
+     ==           Main                    2023/Day16/TheFloorWillBeLava.hs:26:36-37       351      452142    0.0    0.0     0.0    0.0
+  main.routesN    Main                    2023/Day16/TheFloorWillBeLava.hs:22:7-109       371           1    0.0    0.0    24.3   24.3
+   main.routesN.\ Main                    2023/Day16/TheFloorWillBeLava.hs:22:40-95       372         110    0.1   11.7    24.3   24.3
+    dfs           Main                    2023/Day16/TheFloorWillBeLava.hs:(29,1)-(36,33) 373      893887   24.0    0.9    24.2   12.6
+     dfs.as       Main                    2023/Day16/TheFloorWillBeLava.hs:33:11-37       375      869680    0.0    0.0     0.1    2.3
+      move        Main                    2023/Day16/TheFloorWillBeLava.hs:(39,1)-(51,34) 376      869680    0.0    1.3     0.0    2.3
+       movePos    Main                    2023/Day16/TheFloorWillBeLava.hs:(54,1)-(57,42) 377      893777    0.0    0.9     0.0    0.9
+     dfs.visited' Main                    2023/Day16/TheFloorWillBeLava.hs:36:5-33        374      869680    0.2    9.4     0.2    9.4
+      compare     Main                    2023/Day16/TheFloorWillBeLava.hs:26:40-42       379      331688    0.0    0.0     0.0    0.0
+     ==           Main                    2023/Day16/TheFloorWillBeLava.hs:26:36-37       378      371426    0.0    0.0     0.0    0.0
+  main.routesS    Main                    2023/Day16/TheFloorWillBeLava.hs:21:7-105       362           1    0.0    0.0    23.1   22.9
+   main.routesS.\ Main                    2023/Day16/TheFloorWillBeLava.hs:21:40-91       363         110    0.1   11.0    23.1   22.9
+    dfs           Main                    2023/Day16/TheFloorWillBeLava.hs:(29,1)-(36,33) 364      843657   22.7    0.8    23.0   11.9
+     dfs.as       Main                    2023/Day16/TheFloorWillBeLava.hs:33:11-37       366      820813    0.0    0.0     0.1    2.1
+      move        Main                    2023/Day16/TheFloorWillBeLava.hs:(39,1)-(51,34) 367      820813    0.0    1.3     0.0    2.1
+       movePos    Main                    2023/Day16/TheFloorWillBeLava.hs:(54,1)-(57,42) 368      843547    0.0    0.9     0.0    0.9
+     dfs.visited' Main                    2023/Day16/TheFloorWillBeLava.hs:36:5-33        365      820813    0.2    8.9     0.2    8.9
+      compare     Main                    2023/Day16/TheFloorWillBeLava.hs:26:40-42       370      313818    0.0    0.0     0.0    0.0
+     ==           Main                    2023/Day16/TheFloorWillBeLava.hs:26:36-37       369      351310    0.0    0.0     0.0    0.0
+  main.routesW    Main                    2023/Day16/TheFloorWillBeLava.hs:20:7-109       353           1    0.0    0.0    22.7   22.8
+   main.routesW.\ Main                    2023/Day16/TheFloorWillBeLava.hs:20:40-95       354         110    0.1   11.0    22.7   22.8
+    dfs           Main                    2023/Day16/TheFloorWillBeLava.hs:(29,1)-(36,33) 355      841539   22.4    0.8    22.6   11.8
+     dfs.as       Main                    2023/Day16/TheFloorWillBeLava.hs:33:11-37       357      818780    0.0    0.0     0.1    2.1
+      move        Main                    2023/Day16/TheFloorWillBeLava.hs:(39,1)-(51,34) 358      818780    0.0    1.3     0.0    2.1
+       movePos    Main                    2023/Day16/TheFloorWillBeLava.hs:(54,1)-(57,42) 359      841429    0.0    0.9     0.0    0.9
+     dfs.visited' Main                    2023/Day16/TheFloorWillBeLava.hs:36:5-33        356      818780    0.2    8.9     0.2    8.9
+      compare     Main                    2023/Day16/TheFloorWillBeLava.hs:26:40-42       361      312187    0.0    0.0     0.0    0.0
+     ==           Main                    2023/Day16/TheFloorWillBeLava.hs:26:36-37       360      349422    0.0    0.0     0.0    0.0
