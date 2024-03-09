@@ -2,7 +2,7 @@ import           Data.List       (foldl', sortBy)
 import           Data.List.Split (splitOn)
 import           Data.Map        (Map, (!))
 import qualified Data.Map        as M
-import Data.Ord (comparing, Down (..))
+import           Data.Ord        (Down (..), comparing)
 
 data Monkey = Monkey MonkeyId MonkeyOp MonkeyTest deriving Show
 type MonkeyId = Int

@@ -1,6 +1,6 @@
 {-# OPTIONS_GHC -Wno-incomplete-patterns #-}
-import Data.List ( nub, transpose )
-import Data.Sequence (unfoldl)
+import           Data.List     (nub, transpose)
+import           Data.Sequence (unfoldl)
 
 main :: IO ()
 main = do
@@ -16,9 +16,9 @@ move '<' (x, y) = (x-1, y)
 
 path :: (Num a1, Num a2) => [Char] -> (a2, a1) -> [(a2, a1)]
 path (x:xs) p = let p' = move x p in p : path xs p'
-path _ p = [p]
+path _ p      = [p]
 
 deinterleave :: [a] -> [[a]]
 deinterleave xs = transpose . deinterleave' $ xs
   where deinterleave' (x:y:xs) = [x,y] : deinterleave' xs
-        deinterleave' _ = []
+        deinterleave' _        = []

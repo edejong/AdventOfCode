@@ -1,5 +1,5 @@
-import Data.Char (isDigit)
-import Text.Parsec
+import           Data.Char   (isDigit)
+import           Text.Parsec
 
 main :: IO ()
 main = do

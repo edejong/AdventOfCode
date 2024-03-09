@@ -1,5 +1,5 @@
-import           GHC.Arr (Array, array, (!))
-import           Data.Tuple         (swap)
+import           Data.Tuple (swap)
+import           GHC.Arr    (Array, array, (!))
 
 main :: IO ()
 main = do

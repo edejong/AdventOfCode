@@ -1,7 +1,7 @@
 {-# OPTIONS_GHC -Wno-incomplete-uni-patterns #-}
 import           Data.Char
-import           Data.List       (find)
-import qualified Data.Map        as Map
+import           Data.List (find)
+import qualified Data.Map  as Map
 import           GHC.Arr
 
 type Point = (Int, Int)

@@ -1,4 +1,4 @@
-import Data.Map ((!))
+import           Data.Map ((!))
 import qualified Data.Map as M
 
 main :: IO ()
@@ -12,6 +12,6 @@ main = do
   print @Integer $ foldr lcm (head cycleLengths) (tail cycleLengths)
   where
     isStart ([_, _, 'A'], 0) = True
-    isStart _ = False
+    isStart _                = False
     followRoute _ ([_, _, 'Z'], _) = 0
-    followRoute m pos = 1 + followRoute m (iterate (m !) pos !! 1)
+    followRoute m pos              = 1 + followRoute m (iterate (m !) pos !! 1)

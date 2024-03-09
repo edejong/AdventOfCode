@@ -1,8 +1,8 @@
 {-# OPTIONS_GHC -Wno-incomplete-uni-patterns #-}
 
-import Data.List.Split (splitOn)
-import Data.List (intercalate)
-import Data.MemoTrie
+import           Data.List       (intercalate)
+import           Data.List.Split (splitOn)
+import           Data.MemoTrie
 
 main :: IO ()
 main = do

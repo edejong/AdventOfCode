@@ -1,6 +1,6 @@
 {-# OPTIONS_GHC -Wno-incomplete-uni-patterns #-}
 
-import Data.Char (isDigit)
+import           Data.Char (isDigit)
 
 main :: IO ()
 main = do

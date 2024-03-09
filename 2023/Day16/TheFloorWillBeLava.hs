@@ -1,6 +1,6 @@
-import Data.Set (Set)
+import           Data.Set (Set)
 import qualified Data.Set as S
-import GHC.Arr
+import           GHC.Arr
 
 -- Pretty brute force solution; doesn't use the facts that most of the routes
 -- massively overlap.
@@ -36,19 +36,19 @@ dfs m n@(pos, dir) visited
     visited' = S.insert n visited
 
 move :: Point -> Char -> Dir -> [(Point, Dir)]
-move pos '|' E = [movePos pos N, movePos pos S]
-move pos '|' W = [movePos pos N, movePos pos S]
-move pos '-' S = [movePos pos E, movePos pos W]
-move pos '-' N = [movePos pos E, movePos pos W]
-move pos '/' N = [movePos pos E]
-move pos '/' E = [movePos pos N]
-move pos '/' S = [movePos pos W]
-move pos '/' W = [movePos pos S]
+move pos '|' E  = [movePos pos N, movePos pos S]
+move pos '|' W  = [movePos pos N, movePos pos S]
+move pos '-' S  = [movePos pos E, movePos pos W]
+move pos '-' N  = [movePos pos E, movePos pos W]
+move pos '/' N  = [movePos pos E]
+move pos '/' E  = [movePos pos N]
+move pos '/' S  = [movePos pos W]
+move pos '/' W  = [movePos pos S]
 move pos '\\' N = [movePos pos W]
 move pos '\\' W = [movePos pos N]
 move pos '\\' E = [movePos pos S]
 move pos '\\' S = [movePos pos E]
-move pos _ dir = [movePos pos dir]
+move pos _ dir  = [movePos pos dir]
 
 movePos :: Point -> Dir -> (Point, Dir)
 movePos (row, col) N = ((row - 1, col), N)

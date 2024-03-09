@@ -1,12 +1,12 @@
-import Control.Lens hiding (children)
-import Data.Char (isDigit)
-import Data.List (sortOn, foldl')
-import Data.Ord ( Down(Down) )
-import Data.Set (Set)
-import qualified Data.Set as Set
-import Data.IntMap (IntMap, (!))
-import qualified Data.IntMap as IntMap
-import Linear
+import           Control.Lens hiding (children)
+import           Data.Char    (isDigit)
+import           Data.IntMap  (IntMap, (!))
+import qualified Data.IntMap  as IntMap
+import           Data.List    (foldl', sortOn)
+import           Data.Ord     (Down (Down))
+import           Data.Set     (Set)
+import qualified Data.Set     as Set
+import           Linear
 
 -- Fairly brute force solution, not using any intelligent sorting when searching.
 -- Yet surprisingly fast.

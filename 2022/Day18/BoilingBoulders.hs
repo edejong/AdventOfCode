@@ -1,11 +1,11 @@
 {-# LANGUAGE BlockArguments #-}
 {-# OPTIONS_GHC -Wno-incomplete-uni-patterns #-}
-import           Control.Monad      (forM_, when)
-import           Control.Monad.ST   (ST)
-import           Data.Array.Base    ((!))
+import           Control.Monad     (forM_, when)
+import           Control.Monad.ST  (ST)
+import           Data.Array.Base   ((!))
 import           Data.Array.MArray
 import           Data.Array.ST
-import           Data.List.Split    (splitOn)
+import           Data.List.Split   (splitOn)
 
 main :: IO ()
 main = do

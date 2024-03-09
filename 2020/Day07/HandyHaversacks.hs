@@ -1,11 +1,10 @@
-{-# LANGUAGE TupleSections #-}
-module Day07.HandyHaversacks where
-import Text.ParserCombinators.Parsec
-import Text.Parsec (endOfLine)
-import Text.Parsec.Token (GenTokenParser(whiteSpace))
-import Data.Map ( Map, (!), empty, fromList, insertWith, toList )
-import Data.Graph (graphFromEdges, dfs)
-import Data.Maybe (fromJust)
+import           Data.Graph                    (dfs, graphFromEdges)
+import           Data.Map                      (Map, empty, fromList,
+                                                insertWith, toList, (!))
+import           Data.Maybe                    (fromJust)
+import           Text.Parsec                   (endOfLine)
+import           Text.Parsec.Token             (GenTokenParser (whiteSpace))
+import           Text.ParserCombinators.Parsec
 
 inputFile = endBy line endOfLine
 line = (,) <$> (bagDesc <* (spaces >> string "bags contain" >> spaces)) <*> bagContents <* char '.'
@@ -17,7 +16,7 @@ main :: IO ()
 main = do
   result <- parseFromFile inputFile "2020/data/day07.txt"
   rules <- case result of
-               Left err -> print err >> return []
+               Left err  -> print err >> return []
                Right res -> return res
   let bags = map fst rules
 

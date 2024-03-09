@@ -1,10 +1,10 @@
 {-# OPTIONS_GHC -Wno-incomplete-uni-patterns #-}
 {-# OPTIONS_GHC -Wno-incomplete-patterns #-}
-import Data.Bifunctor (second)
-import Data.Graph.Inductive
-import Data.List (transpose, tails, inits, foldl')
-import Data.Map ((!), fromList)
-import Data.Maybe (fromJust)
+import           Data.Bifunctor       (second)
+import           Data.Graph.Inductive
+import           Data.List            (foldl', inits, tails, transpose)
+import           Data.Map             (fromList, (!))
+import           Data.Maybe           (fromJust)
 
 main :: IO ()
 main = do

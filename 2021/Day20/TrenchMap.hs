@@ -1,10 +1,12 @@
 {-# LANGUAGE ExplicitNamespaces #-}
-import qualified Data.Array.Repa as R hiding (map)
-import Data.Array.Repa( (!), computeP, ix1, ix2, sumAllS, fromListUnboxed, inShape, Source(Array, extent), type (:.)((:.)), DIM1, DIM2, Z(Z), D, U )
-import Data.List.Split (chunksOf)
-import Data.List (foldl')
-import Text.Parsec.String (parseFromFile)
-import Text.Parsec (endOfLine, many, oneOf, sepBy1)
+import           Data.Array.Repa    (D, DIM1, DIM2, Source (Array, extent), U,
+                                     Z (Z), computeP, fromListUnboxed, inShape,
+                                     ix1, ix2, sumAllS, type (:.) ((:.)), (!))
+import qualified Data.Array.Repa    as R hiding (map)
+import           Data.List          (foldl')
+import           Data.List.Split    (chunksOf)
+import           Text.Parsec        (endOfLine, many, oneOf, sepBy1)
+import           Text.Parsec.String (parseFromFile)
 
 type Image r = Array r DIM2 Int
 type EnhancementAlgo = Array U DIM1 Int

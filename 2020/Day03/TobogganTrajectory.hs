@@ -1,5 +1,3 @@
-module Day03.TobogganTrajectory where
-
 main :: IO ()
 main = do
     rows <- lines <$> readFile "2020/data/day03.txt"

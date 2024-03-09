@@ -1,8 +1,8 @@
 {-# OPTIONS_GHC -Wno-incomplete-uni-patterns #-}
 {-# OPTIONS_GHC -Wno-incomplete-patterns #-}
 
-import Data.List (unfoldr, uncons)
-import Numeric (readHex)
+import           Data.List (uncons, unfoldr)
+import           Numeric   (readHex)
 
 main :: IO ()
 main = do

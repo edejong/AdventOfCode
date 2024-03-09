@@ -1,12 +1,13 @@
 {-# OPTIONS_GHC -Wno-incomplete-patterns #-}
 
-import Data.List (iterate', foldl')
-import qualified Data.Map as M
-import Data.Map (Map, (!))
-import qualified Data.Sequence as Seq
-import Data.Sequence (Seq ((:<|)))
-import Text.Parsec ( letter, spaces, string, many1, sepBy1, (<|>) )
-import Text.Parsec.String (Parser, parseFromFile)
+import           Data.List          (foldl', iterate')
+import           Data.Map           (Map, (!))
+import qualified Data.Map           as M
+import           Data.Sequence      (Seq ((:<|)))
+import qualified Data.Sequence      as Seq
+import           Text.Parsec        (letter, many1, sepBy1, spaces, string,
+                                     (<|>))
+import           Text.Parsec.String (Parser, parseFromFile)
 
 main :: IO ()
 main = do
@@ -67,7 +68,7 @@ processQueue cfg (pulse :<| queue) (ST c s) = do
     processQueue cfg (queue <> Seq.fromList ps) (ST c' st')
   where
     updateCounter False (x, y) = (x+1, y)
-    updateCounter True (x, y) = (x, y+1)
+    updateCounter True (x, y)  = (x, y+1)
     updateTotal (Pulse _ val _) = M.adjust (updateCounter val) "totals"
     updateSrc n (Pulse src val _) | n == src = M.adjust (updateCounter val) src
     updateSrc _ _ = id
@@ -79,15 +80,15 @@ processPulse cfg (Pulse src val name) s =
         updateState x = setModuleState name input x s
         st' = case (t, val) of
             (Flipflop, False) -> updateState (not (getModuleState name s))
-            (Conjunction, _) -> updateState val
-            (Output, _) -> updateState val
-            _ -> s
+            (Conjunction, _)  -> updateState val
+            (Output, _)       -> updateState val
+            _                 -> s
         newVal = getModuleState name st'
         ps = case (t, val) of
             (Flipflop, False) -> bcast dsts newVal
-            (Conjunction, _) -> bcast dsts (not newVal)
-            (Broadcaster, _) -> bcast dsts val
-            _ -> []
+            (Conjunction, _)  -> bcast dsts (not newVal)
+            (Broadcaster, _)  -> bcast dsts val
+            _                 -> []
      in (st', ps)
   where
     getModuleState name' = and . (! name')

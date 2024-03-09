@@ -1,6 +1,6 @@
 {-# OPTIONS_GHC -Wno-incomplete-patterns #-}
-import Text.Parsec
-import Text.Parsec.String
+import           Text.Parsec
+import           Text.Parsec.String
 
 main :: IO ()
 main = do

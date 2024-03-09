@@ -1,9 +1,7 @@
-{-# LANGUAGE TypeApplications #-}
-module Day04.PassportProcessing where
-import Data.List ( (\\) )
-import Data.List.Split (splitOn, splitOneOf)
-import Text.Read ( readMaybe )
-import Data.Char ( isDigit, isHexDigit )
+import           Data.Char       (isDigit, isHexDigit)
+import           Data.List       ((\\))
+import           Data.List.Split (splitOn, splitOneOf)
+import           Text.Read       (readMaybe)
 
 main :: IO ()
 main = do
@@ -15,7 +13,7 @@ main = do
 allRequiredFieldsPresent :: [[Char]] -> Bool
 allRequiredFieldsPresent passport = case (fields \\ ["cid"]) \\ map (head . splitOn ":") passport of
                             [] -> True
-                            _ -> False
+                            _  -> False
   where fields = ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid", "cid"]
 
 isValid :: [Char] -> Bool
@@ -26,7 +24,7 @@ isValid xs = let val = drop 4 xs in case take 3 xs of
     "hgt" -> let h = takeWhile isDigit val in case dropWhile isDigit val of
         "cm" -> intBetween 150 193 h
         "in" -> intBetween 59 76 h
-        _ -> False
+        _    -> False
     "hcl" -> head val == '#' && all isHexDigit (tail val)
     "ecl" -> val `elem` ["amb", "blu", "brn", "gry", "grn", "hzl", "oth"]
     "pid" -> length val == 9 && all isDigit val

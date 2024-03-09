@@ -1,6 +1,6 @@
 {-# OPTIONS_GHC -Wno-incomplete-uni-patterns #-}
-import Data.Char
-import Data.List (transpose, nub, sort)
+import           Data.Char
+import           Data.List (nub, sort, transpose)
 
 main :: IO ()
 main = do

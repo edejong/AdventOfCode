@@ -70,7 +70,7 @@ totalSize (Directory name _ entries) =
         size = sum $ map getSize entries'
     in Directory name size entries'
   where
-    getSize (File _ sz)               = sz
+    getSize (File _ sz)        = sz
     getSize (Directory _ sz _) = sz
 
 toList :: Entry -> [Entry]

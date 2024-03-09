@@ -1,4 +1,4 @@
-import Data.List (sort, isInfixOf)
+import           Data.List (isInfixOf, sort)
 
 main :: IO ()
 main = do
@@ -14,7 +14,7 @@ isNice1 xs = hasThreeVowels xs && hasRepeat 1 xs && (not . containsAnyOf ["ab","
 isNice2 :: Ord a => [a] -> Bool
 isNice2 xs = hasPair xs && hasRepeat 2 xs
   where hasPair (x:y:xs) = [x,y] `isInfixOf` xs || hasPair (y:xs)
-        hasPair _ = False
+        hasPair _        = False
 
 hasRepeat :: Eq a => Int -> [a] -> Bool
 hasRepeat n xs = or . zipWith (==) xs $ drop n xs

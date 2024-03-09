@@ -1,5 +1,5 @@
-import Data.List.Split (splitOn)
-import Data.List (tails, inits, transpose)
+import           Data.List       (inits, tails, transpose)
+import           Data.List.Split (splitOn)
 
 main :: IO ()
 main = do

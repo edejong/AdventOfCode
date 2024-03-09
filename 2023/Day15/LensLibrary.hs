@@ -1,11 +1,11 @@
 {-# OPTIONS_GHC -Wno-incomplete-patterns #-}
-import Data.Char (isAlpha, ord)
-import Data.Foldable (toList)
-import Data.List (foldl')
-import Data.List.Split (splitOn)
-import Data.Sequence (Seq)
-import qualified Data.Sequence as S
-import Data.Word (Word8)
+import           Data.Char       (isAlpha, ord)
+import           Data.Foldable   (toList)
+import           Data.List       (foldl')
+import           Data.List.Split (splitOn)
+import           Data.Sequence   (Seq)
+import qualified Data.Sequence   as S
+import           Data.Word       (Word8)
 
 main :: IO ()
 main = do
@@ -26,11 +26,11 @@ parseOp xs =
   let (as, bs) = span isAlpha xs
    in case bs of
         '=' : n -> Insert (as, read n)
-        "-" -> Remove as
+        "-"     -> Remove as
 
 doOp :: Op -> Boxes -> Boxes
 doOp (Insert lens) = insertLens lens (hash . fst $ lens)
-doOp (Remove lbl) = removeLens lbl (hash lbl)
+doOp (Remove lbl)  = removeLens lbl (hash lbl)
 
 insertLens :: Lens -> Int -> Boxes -> Boxes
 insertLens l@(lbl, _) = S.adjust insert

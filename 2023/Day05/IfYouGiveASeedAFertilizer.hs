@@ -1,11 +1,11 @@
 {-# OPTIONS_GHC -Wno-incomplete-uni-patterns #-}
-import Text.Parsec
-import Text.Parsec.String (Parser, parseFromFile)
-import qualified Text.Parsec.Token as P
-import Text.Parsec.Language (haskellDef)
-import Data.List ( foldl' )
-import Data.Range
-import Data.List.Split (chunksOf)
+import           Data.List            (foldl')
+import           Data.List.Split      (chunksOf)
+import           Data.Range
+import           Text.Parsec
+import           Text.Parsec.Language (haskellDef)
+import           Text.Parsec.String   (Parser, parseFromFile)
+import qualified Text.Parsec.Token    as P
 
 main :: IO ()
 main = do

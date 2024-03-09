@@ -1,7 +1,7 @@
-import Data.Digest.Pure.MD5 ( md5 )
-import Data.ByteString.Lazy.Char8 ( readFile, pack, append )
-import Prelude hiding (concat, readFile)
-import Data.List (find)
+import           Data.ByteString.Lazy.Char8 (append, pack, readFile)
+import           Data.Digest.Pure.MD5       (md5)
+import           Data.List                  (find)
+import           Prelude                    hiding (concat, readFile)
 
 main :: IO ()
 main = do

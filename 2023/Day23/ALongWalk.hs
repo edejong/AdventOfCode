@@ -1,10 +1,11 @@
 {-# OPTIONS_GHC -Wno-incomplete-uni-patterns #-}
-import Data.MemoTrie
-import Data.Graph.Inductive
-import Data.List (foldl', nub)
-import Data.Maybe (fromJust)
-import GHC.Arr ( inRange, (!), assocs, bounds, listArray, Array, accumArray )
-import qualified GHC.Bits as Bits
+import           Data.Graph.Inductive
+import           Data.List            (foldl', nub)
+import           Data.Maybe           (fromJust)
+import           Data.MemoTrie
+import           GHC.Arr              (Array, accumArray, assocs, bounds,
+                                       inRange, listArray, (!))
+import qualified GHC.Bits             as Bits
 
 type BitSet = Int
 
@@ -103,7 +104,7 @@ nbrs arr p@(row,col) =
                 'v' -> down
                 '<' -> left
                 '>' -> right
-                _ -> []
+                _   -> []
      in filter (inRange (bounds arr)) ps
   where
     up = filter ((`elem` ".<^>") . (arr !)) . filter (inRange (bounds arr)) $ [(row-1,col)]

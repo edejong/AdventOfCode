@@ -1,8 +1,8 @@
 {-# OPTIONS_GHC -Wno-incomplete-patterns #-}
-import GHC.Arr ( range, (//), bounds, elems, listArray, Array )
-import Data.Bifunctor ( Bifunctor(second, first) )
-import Data.List ( nub, transpose )
-import Data.List.Split ( chunksOf, splitOn )
+import           Data.Bifunctor  (Bifunctor (first, second))
+import           Data.List       (nub, transpose)
+import           Data.List.Split (chunksOf, splitOn)
+import           GHC.Arr         (Array, bounds, elems, listArray, range, (//))
 
 type Point = (Int, Int)
 type Grid = Array Point Char

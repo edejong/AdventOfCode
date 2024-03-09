@@ -1,6 +1,5 @@
-module Day02.PasswordPhilosophy where
-import Data.List.Split ( dropBlanks, dropDelims, oneOf, split )
-import Data.List.NonEmpty (xor, fromList)
+import           Data.List.NonEmpty (fromList, xor)
+import           Data.List.Split    (dropBlanks, dropDelims, oneOf, split)
 
 main :: IO ()
 main = do

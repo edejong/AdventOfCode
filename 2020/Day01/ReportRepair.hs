@@ -1,9 +1,9 @@
-{-# LANGUAGE TypeApplications #-}
 {-# OPTIONS_GHC -Wno-incomplete-patterns #-}
-module Day01.ReportRepair (main) where
-import Data.List (sort, find)
-import Data.Sequence (fromList, ViewL ((:<)), ViewR ((:>)), viewl, viewr, Seq ((:<|), Empty, (:|>)), (|>), (<|))
-import Data.Maybe (isJust)
+import           Data.List     (find, sort)
+import           Data.Maybe    (isJust)
+import           Data.Sequence (Seq (Empty, (:<|), (:|>)), ViewL ((:<)),
+                                ViewR ((:>)), fromList, viewl, viewr, (<|),
+                                (|>))
 
 main :: IO ()
 main = do
@@ -19,5 +19,5 @@ findSum k (x :<| (xs :|> y))
   | otherwise = Just (x * y)
 
 subLists :: [a] -> [[a]]
-subLists [] = []
+subLists []     = []
 subLists (x:xs) = xs : map (x:) (subLists xs)

@@ -1,17 +1,17 @@
-	Tue Mar  5 15:00 2024 Time and Allocation Profiling Report  (Final)
+	Sat Mar  9 21:43 2024 Time and Allocation Profiling Report  (Final)
 
-	   aoc2022-16 +RTS -N -i0.05 -p -hy -l-agu --machine-readable -t2022/Day16/aoc2022-16.stats -A32M -B -RTS
+	   aoc2022-16 +RTS -N -p -hy -l-agu --machine-readable -t2022/Day16/aoc2022-16.stats -A32M -B -RTS
 
-	total time  =       21.43 secs   (79392 ticks @ 1000 us, 8 processors)
-	total alloc = 39,628,344,496 bytes  (excludes profiling overheads)
+	total time  =       20.14 secs   (74604 ticks @ 1000 us, 8 processors)
+	total alloc = 39,628,009,080 bytes  (excludes profiling overheads)
 
 COST CENTRE         MODULE    SRC                                                 %time %alloc
 
-maxPressure         Main      2022/Day16/ProboscideaVolcanium.hs:(72,1)-(85,21)    94.6   54.7
-maxPressure.\       Main      2022/Day16/ProboscideaVolcanium.hs:83:59-101          2.8   23.3
+maxPressure         Main      2022/Day16/ProboscideaVolcanium.hs:(72,1)-(85,21)    94.2   54.7
+maxPressure.\       Main      2022/Day16/ProboscideaVolcanium.hs:83:59-101          3.0   23.3
 maxPressure.moves   Main      2022/Day16/ProboscideaVolcanium.hs:(81,13)-(82,94)    1.3   13.7
 maxPressure.key     Main      2022/Day16/ProboscideaVolcanium.hs:76:9-35            0.6    4.5
-maxPressure.moves.\ Main      2022/Day16/ProboscideaVolcanium.hs:82:46-72           0.3    1.1
+maxPressure.moves.\ Main      2022/Day16/ProboscideaVolcanium.hs:82:46-72           0.4    1.1
 maxPressure.(...)   Main      2022/Day16/ProboscideaVolcanium.hs:80:13-74           0.2    2.6
 
 
@@ -46,16 +46,16 @@ MAIN                           MAIN                      <built-in>             
  CAF                           GHC.Event.Poll            <entire-module>                                    194           0    0.0    0.0     0.0    0.0
  CAF                           GHC.Event.Thread          <entire-module>                                    193           0    0.0    0.0     0.0    0.0
  main                          Main                      2022/Day16/ProboscideaVolcanium.hs:(15,1)-(30,120) 345           0    0.0    0.0   100.0  100.0
-  maxPressure                  Main                      2022/Day16/ProboscideaVolcanium.hs:(72,1)-(85,21)  346    36039133   94.6   54.7   100.0  100.0
-   maxPressure.\               Main                      2022/Day16/ProboscideaVolcanium.hs:83:59-101       448    30281556    2.8   23.3     3.2   26.0
+  maxPressure                  Main                      2022/Day16/ProboscideaVolcanium.hs:(72,1)-(85,21)  346    36039133   94.2   54.7   100.0  100.0
+   maxPressure.\               Main                      2022/Day16/ProboscideaVolcanium.hs:83:59-101       448    30281556    3.0   23.3     3.5   26.0
     maxPressure.(...)          Main                      2022/Day16/ProboscideaVolcanium.hs:80:13-74        451     7188700    0.2    2.6     0.3    2.6
      maxPressure.(...).\       Main                      2022/Day16/ProboscideaVolcanium.hs:80:40-61        453     7188700    0.1    0.0     0.1    0.0
-    maxPressure.lbl            Main                      2022/Day16/ProboscideaVolcanium.hs:80:13-74        450     7188700    0.0    0.0     0.0    0.0
+    maxPressure.lbl            Main                      2022/Day16/ProboscideaVolcanium.hs:80:13-74        450     7188700    0.1    0.0     0.1    0.0
     maxPressure.t              Main                      2022/Day16/ProboscideaVolcanium.hs:80:13-74        454     7188700    0.1    0.0     0.1    0.0
-    maxPressure.xs'            Main                      2022/Day16/ProboscideaVolcanium.hs:80:13-74        455     7188700    0.0    0.0     0.0    0.0
+    maxPressure.xs'            Main                      2022/Day16/ProboscideaVolcanium.hs:80:13-74        455     7188700    0.1    0.0     0.1    0.0
    maxPressure.key             Main                      2022/Day16/ProboscideaVolcanium.hs:76:9-35         347    24730292    0.6    4.5     0.6    4.5
-   maxPressure.moves           Main                      2022/Day16/ProboscideaVolcanium.hs:(81,13)-(82,94) 348     7194288    1.3   13.7     1.6   14.8
-    maxPressure.moves.\        Main                      2022/Day16/ProboscideaVolcanium.hs:82:46-72        447    26802221    0.3    1.1     0.3    1.1
+   maxPressure.moves           Main                      2022/Day16/ProboscideaVolcanium.hs:(81,13)-(82,94) 348     7194288    1.3   13.7     1.7   14.8
+    maxPressure.moves.\        Main                      2022/Day16/ProboscideaVolcanium.hs:82:46-72        447    26802221    0.4    1.1     0.4    1.1
     tunnels                    Main                      2022/Day16/ProboscideaVolcanium.hs:32:53-59        445     7194288    0.0    0.0     0.0    0.0
     pressure                   Main                      2022/Day16/ProboscideaVolcanium.hs:32:36-43        456     3479335    0.0    0.0     0.0    0.0
    maxPressure.(...)           Main                      2022/Day16/ProboscideaVolcanium.hs:80:13-74        458        5586    0.0    0.0     0.0    0.0

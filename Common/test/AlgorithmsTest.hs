@@ -1,10 +1,10 @@
-import Data.List
-import Test.Tasty
-import Test.Tasty.Falsify
+import           Data.List
 import qualified Test.Falsify.Generator as Gen
-import qualified Test.Falsify.Range as Range
 import qualified Test.Falsify.Predicate as P
-import Test.Falsify.Predicate ((.$))
+import           Test.Falsify.Predicate ((.$))
+import qualified Test.Falsify.Range     as Range
+import           Test.Tasty
+import           Test.Tasty.Falsify
 
 main :: IO ()
 main = defaultMain tests

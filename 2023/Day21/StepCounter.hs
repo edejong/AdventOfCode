@@ -1,8 +1,8 @@
-import qualified GHC.Arr as Arr
-import GHC.Arr (Array, (!))
+import           Data.Set (Set)
 import qualified Data.Set as Set
-import Data.Set (Set)
-import Linear (V2(V2), (!*))
+import           GHC.Arr  (Array, (!))
+import qualified GHC.Arr  as Arr
+import           Linear   (V2 (V2), (!*))
 
 rot45 :: V2 (V2 Int)
 rot45 = V2 (V2 1 1) (V2 (-1) 1)

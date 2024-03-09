@@ -1,8 +1,8 @@
 {-# OPTIONS_GHC -Wno-incomplete-uni-patterns #-}
-import           Data.List          (findIndices, sort)
-import           Data.List.Split    (splitOn)
-import           Text.Parsec        (between, char, digit, many1, parse, sepBy,
-                                     (<|>))
+import           Data.List       (findIndices, sort)
+import           Data.List.Split (splitOn)
+import           Text.Parsec     (between, char, digit, many1, parse, sepBy,
+                                  (<|>))
 
 main :: IO ()
 main = do

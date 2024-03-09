@@ -1,7 +1,7 @@
 {-# OPTIONS_GHC -Wno-incomplete-uni-patterns #-}
 
-import Data.Function (on)
-import Data.List (sort, tails, transpose)
+import           Data.Function (on)
+import           Data.List     (sort, tails, transpose)
 
 main :: IO ()
 main = do

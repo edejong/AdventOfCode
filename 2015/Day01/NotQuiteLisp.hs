@@ -1,5 +1,5 @@
-import Data.List (unfoldr)
-import Data.Maybe (listToMaybe)
+import           Data.List  (unfoldr)
+import           Data.Maybe (listToMaybe)
 
 main :: IO ()
 main = do

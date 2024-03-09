@@ -1,6 +1,5 @@
-module Day05.BinaryBoarding where
-import Numeric (readInt)
-import Data.List ((\\))
+import           Data.List ((\\))
+import           Numeric   (readInt)
 
 main :: IO ()
 main = do

@@ -1,10 +1,6 @@
-{-# LANGUAGE TupleSections #-}
-
-module Day06.CustomCustoms where
-
-import Data.List (nub)
-import Data.List.Split (splitOn)
-import Data.Map (fromListWith, toList)
+import           Data.List       (nub)
+import           Data.List.Split (splitOn)
+import           Data.Map        (fromListWith, toList)
 
 main :: IO ()
 main = do

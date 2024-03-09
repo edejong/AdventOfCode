@@ -1,8 +1,8 @@
 {-# OPTIONS_GHC -Wno-incomplete-uni-patterns #-}
-import Control.Lens
-import Data.List (tails, intercalate)
-import Linear (V2 (V2), V3 (V3), R2 (_xy))
-import Data.Ratio ((%))
+import           Control.Lens
+import           Data.List    (intercalate, tails)
+import           Data.Ratio   ((%))
+import           Linear       (R2 (_xy), V2 (V2), V3 (V3))
 -- import Math.MFSolve
 
 main :: IO ()
@@ -24,11 +24,11 @@ main = do
     --     (p - Pi) × (v - Vi) == 0
     -- Solving this set for three hailstones yields 9 equations. I cheated and
     -- used sympy for this as mfsolve does not seem to be working.
-    
+
     print (669042940632377 :: Integer)
 
     -- let [p1, p2, p3, v1, v2, v3] = map (makeVariable . SimpleVar) . words $ "p1 p2 p3 v1 v2 v3" :: [Expr SimpleVar Double]
-    
+
     -- showVars $ flip execSolver noDeps $ do
     --   (8 - v2)*(p3 - 134367602892386) + (p2 - 321166281702430)*(v3 - 338) === 0
     --   (338 - v3)*(p1 - 176253337504656) + (p3 - 134367602892386)*(v1 - 190) === 0

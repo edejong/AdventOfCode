@@ -1,5 +1,5 @@
-import CycleDetect
-import Data.List (transpose)
+import           CycleDetect
+import           Data.List   (transpose)
 
 main :: IO ()
 main = do
