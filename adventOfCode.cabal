@@ -198,7 +198,7 @@ executable aoc2021-15
     import:           defaults, exec-defaults
     main-is:          Chiton.hs
     hs-source-dirs:   2021/Day15
-    build-depends:    array, heap
+    build-depends:    fgl
 
 executable aoc2021-16
     import:           defaults, exec-defaults
