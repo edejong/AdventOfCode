@@ -14,7 +14,7 @@ innerBag = (\n bag -> (read n::Int, bag)) <$> (many digit <* spaces) <*> (bagDes
 
 main :: IO ()
 main = do
-  result <- parseFromFile inputFile "2020/data/day07.txt"
+  result <- parseFromFile inputFile "2020/Day07/day07.txt"
   rules <- case result of
                Left err  -> print err >> return []
                Right res -> return res

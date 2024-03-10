@@ -3,7 +3,7 @@ import           Data.List.Split    (dropBlanks, dropDelims, oneOf, split)
 
 main :: IO ()
 main = do
-    xs <- map parse . lines <$> readFile "2020/data/day02-test.txt"
+    xs <- map parse . lines <$> readFile "2020/Day02/day02-test.txt"
     print $ length . filter isValid1 $ xs
     print $ length . filter isValid2 $ xs
 

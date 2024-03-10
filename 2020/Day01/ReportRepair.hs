@@ -7,7 +7,7 @@ import           Data.Sequence (Seq (Empty, (:<|), (:|>)), ViewL ((:<)),
 
 main :: IO ()
 main = do
-    xs <- sort . map (read @Int) . lines <$> readFile "2020/data/day01.txt"
+    xs <- sort . map (read @Int) . lines <$> readFile "2020/Day01/day01.txt"
     print $ findSum 2020 . fromList $ xs
     print $ find isJust $ fmap (\k -> fmap (k*) $ findSum (2020-k) . fromList $ xs) xs
 

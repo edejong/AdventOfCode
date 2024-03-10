@@ -5,7 +5,7 @@ import           Text.Read       (readMaybe)
 
 main :: IO ()
 main = do
-    passports <- map (splitOneOf " \n") . splitOn "\n\n" <$> readFile "2020/data/day04.txt"
+    passports <- map (splitOneOf " \n") . splitOn "\n\n" <$> readFile "2020/Day04/day04.txt"
     let passports1 = filter allRequiredFieldsPresent passports
     let passports2 = filter (all isValid) passports1
     print (length passports1, length passports2)

@@ -1,6 +1,6 @@
 main :: IO ()
 main = do
-    rows <- lines <$> readFile "2020/data/day03.txt"
+    rows <- lines <$> readFile "2020/Day03/day03.txt"
     print $ foldr ((*) . uncurry (slide rows)) 1 [(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)]
 
 slide :: [[Char]] -> Int -> Int -> Int
