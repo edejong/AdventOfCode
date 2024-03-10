@@ -1,4 +1,0 @@
-brew "node"
-brew "pnpm"
-brew "purescript"
-brew "spago"
